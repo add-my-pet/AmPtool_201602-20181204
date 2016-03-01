@@ -77,7 +77,7 @@ function legend = select_legend(legend)
   Hlegend = shlegend(legend_local,[],[],i_legend);
   pause
  
-  close (HFig_legend)
+  close (HFig_legend); close(Hlegend);
   legend = legend_local; % export to output
 end
 
