@@ -14,16 +14,25 @@ function about_add_my_pet
 %
 % Output png and html files: 
 
+fileid = fopen('img/update.txt', 'w');
+fprintf(fileid, datestr(date,26)); 
+
 pie_Animalia;
 saveas (gca, 'img/pie_Animalia.png')
 
 pie_model;
 saveas (gca, 'img/pie_model.png')
 
-[dates taxa_new dates_new] = get_date_subm;
+[dates entries_new dates_new] = get_date_subm;
 surv_dates = surv(dates, 2006); 
 surv_dates([1; end - 1; end],:) = [];    
 n = size(surv_dates, 1)/2;
+for i=1:5
+  fileid = fopen(['img/date_entry_', num2str(i), '.txt'], 'w');
+  fprintf(fileid, dates_new(i,:)); 
+  fileid = fopen(['img/entry_', num2str(i), '.txt'], 'w');
+  fprintf(fileid, entries_new{i}); 
+end
     
 plot(surv_dates(:,1), n * (1 - surv_dates(:,2)), 'g', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
