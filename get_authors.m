@@ -16,9 +16,6 @@ function [authors nr entry] = get_authors
 % * authors: cell-array with authors, arranged alphabetically on family name
 % * nr: vector of number of entries that they (co)authored
 % * entry: cell-array of cell-arrays with entry names
-%
-%% Remarks
-% The sequence of rows in CM is select('Animalia') 
 
 %% Example of use
 % [authors nr entries] = get_authors; entries{find(ismember(authors, 'Elke Zimmer'))}

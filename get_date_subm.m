@@ -22,7 +22,7 @@ function [dates taxa_new dates_new] = get_date_subm(n_new)
 % * date_new: n_new-vector with date-strings when latest taxa were submitted
 
 %% Remarks
-% about_add_my_pet make a plot of this
+% about_add_my_pet makes a plot of this
 %
 %% Example of use
 % get_date_subm

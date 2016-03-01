@@ -6,7 +6,7 @@ function CM = commplete_mre
 %% created 2016/02/21 by Bas Kooijman
 
 %% Syntax
-% CM = <../shcomplete_mre.m *shcomplete_mre*>
+% CM = <../complete_mre.m *complete_mre*>
 
 %% Description
 % COMPLETE and MRE in the sequence of select('Animalia')
