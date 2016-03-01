@@ -74,7 +74,7 @@ end
       global T MS LW MEC MFC 
       list = {'+','o','*','.','x','s','d','^','v','>','<','p','h'};
       n = length(list); i = 1:n;
-      i = i(strcmp(list, 'o'));
+      i = i(strcmp(list, T));
       T = list(listdlg('PromptString', 'Select Type', 'ListString', list, 'Selectionmode', 'single', 'InitialValue', i));
       T = T{1}; 
       plot(0, 0, T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC); axis('off');

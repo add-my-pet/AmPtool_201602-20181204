@@ -9,10 +9,10 @@ function legend = select_legend(legend)
 % legend = <../select_legend.m *select_legend*> (legend)
 
 %% Description
-% Select or edit a legend.
-% The active row is indicated and can be changed with button #. 
+% Select or edit a legend; the active row is indicated and can be changed with button #. 
+% Edit maker specs with button marker and taxon name with button taxon.
+% Edit the sequence with buttons v and ^, insert with >, remove with x. 
 % The sequence matters if taxa are not mutually exclusive and some markers will be plotted on top of each other.
-% Edit sequence with buttons v and ^, insert with >, remove with x. 
 %
 % Input:
 %
@@ -23,8 +23,8 @@ function legend = select_legend(legend)
 % * legend: (m,2)-matrix with markers (5-vector of cells) and taxa (string)
 
 %% Remarks
-% Select marker with select_marker
-% Press Esc when done
+% Complete marker specs edit by pressing Esc.
+% Press Esc when done with editing ledend specs.
 
 %% Example of use
 % legend = select_legend;
@@ -32,9 +32,9 @@ function legend = select_legend(legend)
   global legend_local i_legend Hlegend
   
   if ~exist('legend', 'var')
-    legend_local = {{'.', 10, 4, [0 0 0], [0 0 0]}, 'Animalia'; ...
-                    {'o', 10, 4, [1 0 0], [1 0 0]}, 'Chordata'; ...
-                    {'o', 10, 4, [0 0 1], [0 0 1]}, 'Aves';};
+    legend_local = {{'.', 10, 2, [0 0 0], [0 0 0]}, 'Animalia'; ...
+                    {'o', 10, 2, [1 0 0], [1 0 0]}, 'Chordata'; ...
+                    {'v', 10, 2, [0 0 1], [0 0 1]}, 'Aves';};
   else
     legend_local = legend;
   end
@@ -77,7 +77,7 @@ function legend = select_legend(legend)
   Hlegend = shlegend(legend_local,[],[],i_legend);
   pause
  
-  close (HFig_legend)
+  close (HFig_legend); close(Hlegend);
   legend = legend_local; % export to output
 end
 
@@ -116,7 +116,8 @@ end
     end
     function C = insert_Callback(source, eventdata) 
       global legend_local  i_legend Hlegend
-      n = size(legend_local,1); N = (1:n)'; new = {{'.', 12, 4, [0 0 0], [0 0 0]}, 'Animalia'};
+      N = (1:size(legend_local,1))'; 
+      new = {{'.', 12, 4, [0 0 0], [0 0 0]}, 'Animalia'}; % default marker, taxon
       legend_local = [legend_local(N<i_legend,:); new; legend_local(N>=i_legend,:)];
       close(Hlegend); Hlegend = shlegend(legend_local,[],[],i_legend);
     end

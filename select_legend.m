@@ -9,7 +9,7 @@ function legend = select_legend(legend)
 % legend = <../select_legend.m *select_legend*> (legend)
 
 %% Description
-% Select or edit a legend; the active row is indicated and can be changed with button #. 
+% Select or edit a legend; the active item is indicated and can be changed with button #. 
 % Edit maker specs with button marker and taxon name with button taxon.
 % Edit the sequence with buttons v and ^, insert with >, remove with x. 
 % The sequence matters if taxa are not mutually exclusive and some markers will be plotted on top of each other.
@@ -32,17 +32,17 @@ function legend = select_legend(legend)
   global legend_local i_legend Hlegend
   
   if ~exist('legend', 'var')
-    legend_local = {{'.', 10, 4, [0 0 0], [0 0 0]}, 'Animalia'; ...
-                    {'o', 10, 4, [1 0 0], [1 0 0]}, 'Chordata'; ...
-                    {'o', 10, 4, [0 0 1], [0 0 1]}, 'Aves';};
+    legend_local = {{'.', 10, 2, [0 0 0], [0 0 0]}, 'Animalia'; ...
+                    {'o', 10, 2, [1 0 0], [1 0 0]}, 'Chordata'; ...
+                    {'v', 10, 2, [0 0 1], [0 0 1]}, 'Aves';};
   else
     legend_local = legend;
   end
 
-  n = size(legend_local,1); i_legend = n;
-  x = 30; y = 10; % lower-left corner of botton block
-  dx = 60;        % width of botton
-  HFig_legend = figure('Position', [500, 800, 8*dx, dx]);
+  i_legend = size(legend_local,1); % default index of active item
+  x = 30; y = 10; % lower-left corner of button block
+  dx = 60;        % width of button
+  HFig_legend = figure('Position', [500, 800, 8*dx, dx]); % initiate fig with buttons
   
   % Component
   Hnr     = uicontrol('Style','pushbutton',...
@@ -116,8 +116,9 @@ end
     end
     function C = insert_Callback(source, eventdata) 
       global legend_local  i_legend Hlegend
-      n = size(legend_local,1); N = (1:n)'; new = {{'.', 12, 4, [0 0 0], [0 0 0]}, 'Animalia'};
-      legend_local = [legend_local(N<i_legend,:); new; legend_local(N>=i_legend,:)];
+      N = (1:size(legend_local,1))'; % index-vector of legend items
+      item = {{'.', 12, 4, [0 0 0], [0 0 0]}, 'Animalia'}; % default marker, taxon
+      legend_local = [legend_local(N<i_legend,:); item; legend_local(N>=i_legend,:)];
       close(Hlegend); Hlegend = shlegend(legend_local,[],[],i_legend);
     end
     function C = remove_Callback(source, eventdata) 
