@@ -81,20 +81,14 @@ end
     end
     function C = MS_Callback(source, eventdata) 
       global T MS LW MEC MFC 
-      list = {'1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'};
-      n = length(list); i = 1:n;
-      i = i(strcmp(list, '12'));
-      MS = list(listdlg('PromptString', 'Select Type', 'ListString', list, 'Selectionmode', 'single', 'InitialValue', i));
-      MS = str2num(MS{1}); 
+      list = {num2str((1:25)')};
+      MS = listdlg('PromptString', 'Select Type', 'ListString', list, 'Selectionmode', 'single', 'InitialValue', MS);
       plot(0, 0, T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC); axis('off');
     end
     function C = LW_Callback(h, str) 
       global T MS LW MEC MFC 
-      list = {'1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20'};
-      n = length(list); i = 1:n;
-      i = i(strcmp(list, '4'));
-      LW = list(listdlg('PromptString', 'Select Type', 'ListString', list, 'Selectionmode', 'single', 'InitialValue', i));
-      LW = str2num(LW{1}); 
+      list = {num2str((1:20)')};
+      LW = listdlg('PromptString', 'Select Type', 'ListString', list, 'Selectionmode', 'single', 'InitialValue', LW);
       plot(0, 0, T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC); axis('off');
     end
     function C = MEC_Callback(source, HMarker) 
