@@ -85,18 +85,18 @@ end
       MS = listdlg('PromptString', 'Select Type', 'ListString', list, 'Selectionmode', 'single', 'InitialValue', MS);
       plot(0, 0, T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC); axis('off');
     end
-    function C = LW_Callback(h, str) 
+    function C = LW_Callback(source, eventdata) 
       global T MS LW MEC MFC 
       list = {num2str((1:20)')};
       LW = listdlg('PromptString', 'Select Type', 'ListString', list, 'Selectionmode', 'single', 'InitialValue', LW);
       plot(0, 0, T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC); axis('off');
     end
-    function C = MEC_Callback(source, HMarker) 
+    function C = MEC_Callback(source, eventdata) 
       global T MS LW MEC MFC 
       MEC = uisetcolor(HMarker, 'Set MarkerEdge Color');
       plot(0, 0, T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC); axis('off');
     end
-    function C = MFC_Callback(source, HMarker) 
+    function C = MFC_Callback(source, eventdata) 
       global T MS LW MEC MFC
       MFC = uisetcolor(HMarker, 'Set MarkerFace Color');
       plot(0, 0, T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC); axis('off');
