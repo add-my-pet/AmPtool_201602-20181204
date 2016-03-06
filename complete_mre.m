@@ -36,7 +36,6 @@ function CM = commplete_mre
       load (['results_', entries{i}])
       CM(i,:) = [metaData.COMPLETE, metaPar.MRE]; 
     end
-    CM = CM(CM(:,2) < 1,:); % remove Plodia, not ready yet
     
     
   catch
