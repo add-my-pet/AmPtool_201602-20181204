@@ -45,7 +45,7 @@ plot(CM(:,1), CM(:,2), '.g', 'MarkerSize', 20)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('COMPLETE')
 ylabel('MRE')
-saveas (gca,'img/COMPLET_MRE.png')
+saveas (gca,'img/COMPLETE_MRE.png')
 
 surv_COMPLETE = surv(CM(:,1),0);
 plot(surv_COMPLETE(:,1), surv_COMPLETE(:,2), 'b', 'Linewidth', 2)
