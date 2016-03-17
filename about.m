@@ -1,5 +1,5 @@
-%% about_add_my_pet
-% generates html
+%% about
+% generates html, png
 
 %%
 function about
