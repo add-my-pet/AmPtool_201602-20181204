@@ -58,7 +58,7 @@ xlabel('Mean Relative Error')
 saveas (gca,'img/MRE.png')
 
 % Write about.html
-path = 'HREF = http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/'; % path to entries
+path = 'HREF = http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/i_results_'; % path to entries
 fid_about = fopen('about.html', 'w+'); % open file for writing, delete existing content
 fprintf(fid_about, '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">\n\n');
 fprintf(fid_about, '<HTML>\n');
@@ -84,23 +84,23 @@ fprintf(fid_about, '      <TR >\n');
 fprintf(fid_about, '        <TH colspan="2" WIDTH=300>Latest additions to the collection</TH>\n');
 fprintf(fid_about, '      </TR>\n');
 fprintf(fid_about, '      <TR>\n');
-fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{1}, '.html><I>', entries_new{1}, '</I></a></TD>\n']);
+fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{1}, '.html TARGET="_top"><I>', entries_new{1}, '</I></a></TD>\n']);
 fprintf(fid_about, ['        <TD WIDTH=100>', dates_new(1,:), '</TD>\n']);
 fprintf(fid_about, '      </TR>\n');
 fprintf(fid_about, '      <TR>\n');
-fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{1}, '.html><I>', entries_new{2}, '</I></a></TD>\n']);
+fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{2}, '.html TARGET="_top"><I>', entries_new{2}, '</I></a></TD>\n']);
 fprintf(fid_about, ['        <TD WIDTH=100>', dates_new(2,:), '</TD>\n']);
 fprintf(fid_about, '      </TR>\n');
 fprintf(fid_about, '      <TR>\n');
-fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{1}, '.html><I>', entries_new{3}, '</I></a></TD>\n']);
+fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{3}, '.html><I>', entries_new{3}, '</I></a></TD>\n']);
 fprintf(fid_about, ['        <TD WIDTH=100>', dates_new(3,:), '</TD>\n']);
 fprintf(fid_about, '      </TR>\n');
 fprintf(fid_about, '      <TR>\n');
-fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{1}, '.html><I>', entries_new{4}, '</I></a></TD>\n']);
+fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{4}, '.html><I>', entries_new{4}, '</I></a></TD>\n']);
 fprintf(fid_about, ['        <TD WIDTH=100>', dates_new(4,:), '</TD>\n']);
 fprintf(fid_about, '      </TR>\n');
 fprintf(fid_about, '      <TR>\n');
-fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{1}, '.html><I>', entries_new{5}, '</I></a></TD>\n']);
+fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{5}, '.html><I>', entries_new{5}, '</I></a></TD>\n']);
 fprintf(fid_about, ['        <TD WIDTH=100>', dates_new(5,:), '</TD>\n']);
 fprintf(fid_about, '      </TR>\n');
 fprintf(fid_about, '    </TABLE>\n');
