@@ -92,15 +92,15 @@ fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{2}, '.html TA
 fprintf(fid_about, ['        <TD WIDTH=100>', dates_new(2,:), '</TD>\n']);
 fprintf(fid_about, '      </TR>\n');
 fprintf(fid_about, '      <TR>\n');
-fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{3}, '.html><I>', entries_new{3}, '</I></a></TD>\n']);
+fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{3}, '.html TARGET="_top"><I>', entries_new{3}, '</I></a></TD>\n']);
 fprintf(fid_about, ['        <TD WIDTH=100>', dates_new(3,:), '</TD>\n']);
 fprintf(fid_about, '      </TR>\n');
 fprintf(fid_about, '      <TR>\n');
-fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{4}, '.html><I>', entries_new{4}, '</I></a></TD>\n']);
+fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{4}, '.html TARGET="_top"><I>', entries_new{4}, '</I></a></TD>\n']);
 fprintf(fid_about, ['        <TD WIDTH=100>', dates_new(4,:), '</TD>\n']);
 fprintf(fid_about, '      </TR>\n');
 fprintf(fid_about, '      <TR>\n');
-fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{5}, '.html><I>', entries_new{5}, '</I></a></TD>\n']);
+fprintf(fid_about, ['       	<TD WIDTH=300><a ', path, entries_new{5}, '.html TARGET="_top"><I>', entries_new{5}, '</I></a></TD>\n']);
 fprintf(fid_about, ['        <TD WIDTH=100>', dates_new(5,:), '</TD>\n']);
 fprintf(fid_about, '      </TR>\n');
 fprintf(fid_about, '    </TABLE>\n');
