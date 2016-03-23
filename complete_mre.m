@@ -2,7 +2,7 @@
 % gives COMPLETE, and MRE 
 
 %%
-function CM = commplete_mre
+function CM = complete_mre
 %% created 2016/02/21 by Bas Kooijman
 
 %% Syntax
