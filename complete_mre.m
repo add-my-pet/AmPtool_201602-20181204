@@ -30,18 +30,23 @@ function CM = complete_mre
   WD = pwd;                % store current path
   cd(['../entries/',entries{1}]) % goto entries
 
-  try
     for i = 1:n
+        
+      try
       cd (['../', entries{i}])
       load (['results_', entries{i}])
       CM(i,:) = [metaData.COMPLETE, metaPar.MRE]; 
+      
+      catch 
+          fprintf('%s is not in the entries directory \n',entries{i})
+          CM(i,:) = [NaN, NaN];
+      end
+      
     end
-    
-    
-  catch
-    disp('Name of taxon is not recognized')
-  end
    
-  cd(WD)                   % goto original path
+  cd(WD)  % goto original path
+
+
+
 end
 
