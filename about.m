@@ -16,16 +16,24 @@ function about
 % * in entries_admin/img: COMPLETE.png, COMPLETE_MRE.png, MRE.png, entries.png, pie_Animal.png, pie_model.png update.txt  
 % * in entries_admin: about.html 
 
-%% Remark
+%% Remarks
+% Copy png files to 
+% /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img
+% and about.html file to
+% /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet
+% to present them on the web.
+% file update.txt is not used, since most recent entry date is sufficiently close
 
 fileid = fopen('img/update.txt', 'w');
 fprintf(fileid, datestr(date,26)); 
 
 pie_Animalia;
 saveas (gca, 'img/pie_Animalia.png')
+close all
 
 pie_model;
 saveas (gca, 'img/pie_model.png')
+close all
 
 [dates entries_new dates_new] = get_date_subm;
 surv_dates = surv(dates, 2006); 
@@ -37,25 +45,31 @@ set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('time, yr')
 ylabel('# of add\_my\_pet entries')
 saveas (gca,'img/entries.png')
+close all
 
-CM = complete_mre;
-plot(CM(:,1), CM(:,2), '.g', 'MarkerSize', 20)
+CM = complete_mre; n_entries = size(CM,1);
+C_median = median(CM(:,1)); M_median = median(CM(:,2));
+
+plot(CM(:,1), CM(:,2), '.b', 'MarkerSize', 20)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('COMPLETE')
 ylabel('MRE')
 saveas (gca,'img/COMPLETE_MRE.png')
+close all
 
 surv_COMPLETE = surv(CM(:,1),0);
-plot(surv_COMPLETE(:,1), surv_COMPLETE(:,2), 'b', 'Linewidth', 2)
+plot([0; C_median; C_median], [0.5;0.5;0], 'r', surv_COMPLETE(:,1), surv_COMPLETE(:,2), 'b', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('COMPLETE')
 saveas (gca,'img/COMPLETE.png')
+close all
 
 surv_MRE = surv(CM(:,2),0);
-plot(surv_MRE(:,1), surv_MRE(:,2), 'r', 'Linewidth', 2)
+plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('Mean Relative Error')
 saveas (gca,'img/MRE.png')
+close all
 
 % Write about.html
 path = 'HREF = http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/i_results_'; % path to entries
@@ -73,9 +87,9 @@ fprintf(fid_about, '  <H2 ALIGN = "left">Entries in time</H2>\n');
 fprintf(fid_about, '  <div class="about">\n');
 fprintf(fid_about, '    <IMG SRC="img/entries.png" WIDTH=300px>\n');
 fprintf(fid_about, '    <div class = "caption">  \n');
-fprintf(fid_about, '      The add-my-pet collection started at 12 Feb 2009 as part of the\n');
+fprintf(fid_about, '      The add-my-pet collection started at 2009/-2/12 as part of the\n');
 fprintf(fid_about, '      <A HREF ="http://www.bio.vu.nl/thb/deb/course/" target="_blank"> DEB tele course 2009</A>.\n');
-fprintf(fid_about, '      The numbers of entries have been steadily increasing ever since, as can be seen on this image.\n');
+fprintf(fid_about, ['      The collection has ', num2str(n_entries), ' entries at ', datestr(date,26), '\n']);
 fprintf(fid_about, '    </div>\n');
 fprintf(fid_about, '  </div>\n\n');
 fprintf(fid_about, '  <div class="about">\n');
