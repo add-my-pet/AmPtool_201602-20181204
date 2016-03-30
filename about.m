@@ -26,6 +26,7 @@ function about
 
 fileid = fopen('img/update.txt', 'w');
 fprintf(fileid, datestr(date,26)); 
+fclose(fileid);
 
 pie_Animalia;
 saveas (gca, 'img/pie_Animalia.png')
