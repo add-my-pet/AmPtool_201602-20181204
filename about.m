@@ -41,7 +41,7 @@ surv_dates = surv(dates, 2006);
 surv_dates([1; end - 1; end],:) = [];    
 n = size(surv_dates, 1)/2;
     
-plot(surv_dates(:,1), n * (1 - surv_dates(:,2)), 'g', 'Linewidth', 2)
+plot(surv_dates(:,1), n * (1 - surv_dates(:,2)), 'b', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('time, yr')
 ylabel('# of add\_my\_pet entries')
@@ -88,7 +88,7 @@ fprintf(fid_about, '  <H2 ALIGN = "left">Entries in time</H2>\n');
 fprintf(fid_about, '  <div class="about">\n');
 fprintf(fid_about, '    <IMG SRC="img/entries.png" WIDTH=300px>\n');
 fprintf(fid_about, '    <div class = "caption">  \n');
-fprintf(fid_about, '      The add-my-pet collection started at 2009/-2/12 as part of the\n');
+fprintf(fid_about, '      The add-my-pet collection started at 2009/02/12 as part of the\n');
 fprintf(fid_about, '      <A HREF ="http://www.bio.vu.nl/thb/deb/course/" target="_blank"> DEB tele course 2009</A>.\n');
 fprintf(fid_about, ['      The collection has ', num2str(n_entries), ' entries at ', datestr(date,26), '\n']);
 fprintf(fid_about, '    </div>\n');
