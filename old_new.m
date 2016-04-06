@@ -43,8 +43,8 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   n_new = length(entries_new);
   TA_new = zeros(n_new,1);
   z_new = zeros(n_new,1);
-  pAm_new  = zeros(n_new,1); % pAm_j = pAm .* sM;
-  v_new    = zeros(n_new,1); % vj = v .* sM; % cm/d, energy conductance after metamorphosis
+  pAm_new  = zeros(n_new,1); 
+  v_new    = zeros(n_new,1); 
   kap_new  = zeros(n_new,1);
   kapR_new = zeros(n_new,1);
   pM_new   = zeros(n_new,1);
@@ -100,6 +100,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
       else
         delM_new(i)  = 1;
       end
+      TA_new(i)   = par.T_A; 
       MRE_new(i)  = metaPar.MRE; 
       COMPLETE_new(i) = metaData.COMPLETE; 
     end
@@ -130,6 +131,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   muE     = [];
   dV      = []; 
   delM    = [];
+  TA      = [];
   MRE     = [];
   COMPLETE= [];       
 
@@ -154,6 +156,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
        muE     = [muE; [muE_old(i), muE_new(sel)]];
        dV      = [dV; [dV_old(i), dV_new(sel)]]; 
        delM    = [delM; [delM_old(i), delM_new(sel)]];
+       TA      = [TA; [TA_old(i), TA_new(sel)]];
        MRE     = [MRE; [MRE_old(i), MRE_new(sel)]];
        COMPLETE= [COMPLETE; [COMPLETE_old(i), COMPLETE_new(sel)]];       
      end
@@ -162,40 +165,61 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
 
   close all
    
-  figure
+  fig1 = figure(1);
   plot(log10(z(:,1)), log10(z(:,2)), '.b', 'MarkerSize', 20)
   set(gca, 'FontSize', 15, 'Box', 'on')
   xlabel('old _{10}log z, -')  
   ylabel('new _{10}log z, -')
   saveas (gca, 'z_z.png')
+  h1 = datacursormode(fig1);
+  h1.UpdateFcn = @(obj, event_obj)logdata_xy(obj, event_obj, entries, z);
+  h1.SnapToDataVertex = 'on';
+  datacursormode on % mouse click on plot
+
   
-  figure
+  fig2 = figure(2);
   plot(log10(pAm(:,1)), log10(pAm(:,2)), '.b', 'MarkerSize', 20)
   set(gca, 'FontSize', 15, 'Box', 'on')
   xlabel('old {_{10}log p_{Am}}, J/d.cm^2')  
   ylabel('new {_{10}log p_{Am}}, J/d.cm^2')
   saveas (gca, 'pAm_pAm.png')
+  h2 = datacursormode(fig2);
+  h2.UpdateFcn = @(obj, event_obj)logdata_xy(obj, event_obj, entries, pAm);
+  h2.SnapToDataVertex = 'on';
+  datacursormode on % mouse click on plot
   
-  figure
+  fig3 = figure(3);
   plot(log10(v(:,1)), log10(v(:,2)), '.b', 'MarkerSize', 20)
   set(gca, 'FontSize', 15, 'Box', 'on')
   xlabel('old _{10}log v, cm/d')  
   ylabel('new _{10}log v, cm/d')
   saveas (gca, 'v_v.png')
+  h3 = datacursormode(fig3);
+  h3.UpdateFcn = @(obj, event_obj)logdata_xy(obj, event_obj, entries, v);
+  h3.SnapToDataVertex = 'on';
+  datacursormode on % mouse click on plot
 
-  figure
+  fig4 = figure(4);
   plot(kap(:,1), kap(:,2), '.b', 'MarkerSize', 20)
   set(gca, 'FontSize', 15, 'Box', 'on')
   xlabel('old kap, -')  
   ylabel('new kap, -')
   saveas (gca, 'kap_kap.png')
+  h4 = datacursormode(fig4);
+  h4.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, kap);
+  h4.SnapToDataVertex = 'on';
+  datacursormode on % mouse click on plot
 
-  figure
+  fig5 = figure(5);
   plot(log10(pM(:,1)), log10(pM(:,2)), '.b', 'MarkerSize', 20)
   set(gca, 'FontSize', 15, 'Box', 'on')
   xlabel('old _{10}log [p_M], J/d.cm^3')  
   ylabel('new _{10}log [p_M], J/d.cm^3')
   saveas (gca, 'pM_pM.png')
+  h5 = datacursormode(fig5);
+  h5.UpdateFcn = @(obj, event_obj)logdata_xy(obj, event_obj, entries, pM);
+  h5.SnapToDataVertex = 'on';
+  datacursormode on % mouse click on plot
 
   figure
   plot(log10(kJ(:,1)), log10(kJ(:,2)), '.b', 'MarkerSize', 20)
@@ -254,6 +278,13 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   saveas (gca, 'dV_dV.png')
 
   figure
+  plot(log10(TA(:,1)), log10(TA(:,2)), '.b', 'MarkerSize', 20)
+  set(gca, 'FontSize', 15, 'Box', 'on')
+  xlabel('local _{10}log TA, K')  
+  ylabel('new _{10}log TA, K')
+  saveas (gca, 'TA_TA.png')
+
+  figure
   plot(MRE(:,1), MRE(:,2), '.b', 'MarkerSize', 20)
   set(gca, 'FontSize', 15, 'Box', 'on')
   xlabel('old MRE, -')  
@@ -266,3 +297,31 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   xlabel('old COMPLETE, -')  
   ylabel('new COMPLETE, -')
   saveas (gca, 'COMPLETE_COMPLETE.png')
+
+end
+
+function txt = logdata_xy(obj,event_obj,entries, xy)
+    % Display Species name
+    pos = event_obj.Position;
+    i = find((log10(xy(:,1)) == pos(1)),1);
+    j = find((log10(xy(:,2)) == pos(2)),1);
+    if (i == j)
+        txt = entries{i};
+    else
+        txt ='NA';
+    end
+    %txt = {['Time: ',num2str(pos(1))],['Amplitude: ',num2str(pos(2))]};
+end
+
+function txt = data_xy(obj,event_obj,entries, xy)
+    % Display Species name
+    pos = event_obj.Position;
+    i = find((xy(:,1) == pos(1)),1);
+    j = find((xy(:,2) == pos(2)),1);
+    if (i == j)
+        txt = entries{i};
+    else
+        txt ='NA';
+    end
+    %txt = {['Time: ',num2str(pos(1))],['Amplitude: ',num2str(pos(2))]};
+end
