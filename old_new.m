@@ -172,8 +172,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log z, -')
   saveas (gca, 'z_z.png')
   h1 = datacursormode(fig1);
-  h1.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(z));
-  h1.SnapToDataVertex = 'on';
+  h1.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(z));
   datacursormode on % mouse click on plot
 
   
@@ -184,8 +183,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new {_{10}log p_{Am}}, J/d.cm^2')
   saveas (gca, 'pAm_pAm.png')
   h2 = datacursormode(fig2);
-  h2.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(pAm));
-  h2.SnapToDataVertex = 'on';
+  h2.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(pAm));
   datacursormode on % mouse click on plot
   
   fig3 = figure(3);
@@ -195,8 +193,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log v, cm/d')
   saveas (gca, 'v_v.png')
   h3 = datacursormode(fig3);
-  h3.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(v));
-  h3.SnapToDataVertex = 'on';
+  h3.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(v));
   datacursormode on % mouse click on plot
 
   fig4 = figure(4);
@@ -206,8 +203,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new kap, -')
   saveas (gca, 'kap_kap.png')
   h4 = datacursormode(fig4);
-  h4.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, kap);
-  h4.SnapToDataVertex = 'on';
+  h4.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, kap);
   datacursormode on % mouse click on plot
 
   fig5 = figure(5);
@@ -217,8 +213,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log [p_M], J/d.cm^3')
   saveas (gca, 'pM_pM.png')
   h5 = datacursormode(fig5);
-  h5.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(pM));
-  h5.SnapToDataVertex = 'on';
+  h5.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(pM));
   datacursormode on % mouse click on plot
 
   fig6 = figure(6);
@@ -228,8 +223,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log kJ, 1/d')
   saveas (gca, 'kJ_kJ.png')
   h6 = datacursormode(fig6);
-  h6.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(kJ));
-  h6.SnapToDataVertex = 'on';
+  h6.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(kJ));
   datacursormode on % mouse click on plot
 
   fig7 = figure(7);
@@ -239,8 +233,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log [E_G], J/cm^3')
   saveas (gca, 'EG_EG.png')
   h7 = datacursormode(fig7);
-  h7.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(EG));
-  h7.SnapToDataVertex = 'on';
+  h7.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(EG));
   datacursormode on % mouse click on plot
 
   fig8 = figure(8);
@@ -250,8 +243,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log E_Hb, J')
   saveas (gca, 'EHb_EHb.png')
   h8 = datacursormode(fig8);
-  h8.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(EHb));
-  h8.SnapToDataVertex = 'on';
+  h8.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(EHb));
   datacursormode on % mouse click on plot
 
   fig9 = figure(9);
@@ -261,8 +253,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log E_Hj, J')
   saveas (gca, 'EHj_EHj.png')
   h9 = datacursormode(fig9);
-  h9.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(EHj));
-  h9.SnapToDataVertex = 'on';
+  h9.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(EHj));
   datacursormode on % mouse click on plot
 
   fig10 = figure(10);
@@ -272,8 +263,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log E_Hp, J')
   saveas (gca, 'EHp_EHp.png')
   h10 = datacursormode(fig10);
-  h10.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(EHp));
-  h10.SnapToDataVertex = 'on';
+  h10.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(EHp));
   datacursormode on % mouse click on plot
   
   fig11 = figure(11);
@@ -283,8 +273,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log h_a, 1/d^2')
   saveas (gca, 'ha_ha.png')
   h11 = datacursormode(fig11);
-  h11.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(ha));
-  h11.SnapToDataVertex = 'on';
+  h11.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(ha));
   datacursormode on % mouse click on plot
 
   fig12 = figure(12);
@@ -294,8 +283,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log s_G, -')
   saveas (gca, 'sG_sG.png')
   h12 = datacursormode(fig12);
-  h12.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(sG));
-  h12.SnapToDataVertex = 'on';
+  h12.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(sG));
   datacursormode on % mouse click on plot
 
   fig13 = figure(13);
@@ -305,8 +293,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log d_V, g/cm^3')
   saveas (gca, 'dV_dV.png')
   h13 = datacursormode(fig13);
-  h13.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(dV));
-  h13.SnapToDataVertex = 'on';
+  h13.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(dV));
   datacursormode on % mouse click on plot
 
   fig14 = figure(14);
@@ -316,8 +303,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new _{10}log TA, K')
   saveas (gca, 'TA_TA.png')
   h14 = datacursormode(fig14);
-  h14.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, log10(TA));
-  h14.SnapToDataVertex = 'on';
+  h14.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(TA));
   datacursormode on % mouse click on plot
 
   fig15 = figure(15);
@@ -327,8 +313,7 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new MRE, -')
   saveas (gca, 'MRE_MRE.png')
   h15 = datacursormode(fig15);
-  h15.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, MRE);
-  h15.SnapToDataVertex = 'on';
+  h15.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, MRE);
   datacursormode on % mouse click on plot
 
   fig16 = figure(16);
@@ -338,18 +323,8 @@ function [entries z pAm v kap kapR pM pT kJ EG EHb EHj EHp ha sG muE dV delM MRE
   ylabel('new COMPLETE, -')
   saveas (gca, 'COMPLETE_COMPLETE.png')
   h16 = datacursormode(fig16);
-  h16.UpdateFcn = @(obj, event_obj)data_xy(obj, event_obj, entries, COMPLETE);
-  h16.SnapToDataVertex = 'on';
+  h16.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, COMPLETE);
   datacursormode on % mouse click on plot
 
 end
 
-function txt = data_xy(obj, event_obj, entries, xy)
-    % xy: (n,2)-matrix with point coordinates
-    % entries: n-cell vector with names of entries
-    % txt: string with entries name
-    pos = event_obj.Position; % position of mouse-click
-    n = size(xy,1); % number of points
-    [x i] = min(sum((xy - pos(ones(n,1),:)).^2,2)); % minimum squared distance
-    txt = entries{i}; % string with entry name
-end
