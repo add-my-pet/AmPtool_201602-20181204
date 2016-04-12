@@ -23,7 +23,7 @@ function [stat entries] = Li_ggH(legend)
 % be aware that the sequence of taxa in legend matters
 
 %% Example of use
-% Li_ggH(legend_RSED);
+% Li_ggH(legend_RSED); % this uses the standard legend for all entries
 
   % compose selection matrix
   m = size(legend,1); 
@@ -175,7 +175,7 @@ function [stat entries] = Li_ggH(legend)
   ylabel('_{10}log g_H^b, -')
   %saveas (gca, 'g_gHb.png')
   h4 = datacursormode(fig4);
-  h4.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(stat(:,[1 4])));
+  h4.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(stat(:,[3 4])));
   datacursormode on % mouse click on plot
 
   fig5 = figure(5); % 3-5
@@ -189,7 +189,7 @@ function [stat entries] = Li_ggH(legend)
   ylabel('_{10}log g_H^p, -')
   %saveas (gca, 'g_gHp.png')
   h5 = datacursormode(fig5);
-  h5.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(stat(:,[1 5])));
+  h5.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, log10(stat(:,[3 5])));
   datacursormode on % mouse click on plot
 
   shlegend(legend);
