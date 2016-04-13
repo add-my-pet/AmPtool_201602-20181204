@@ -1,0 +1,6 @@
+attributes=serveall
+
+Default-Document=index.php
+file = index.php
+cgi-handler=/usr/local/bin/php.cgi
+

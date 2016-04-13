@@ -1,0 +1,3 @@
+serveall=true&default_document=index.php
+
+file=index.php&handler=/usr/local/bin/php.cgi&content=application/x-httpd-php&title=File index.php&attributes=512
