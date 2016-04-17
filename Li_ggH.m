@@ -16,8 +16,8 @@ function [stat entries] = Li_ggH(legend)
 %
 % Output
 %
-% * stat: (n,5)-matrix with L_i s_M g g_Hb g_Hp kap
-% * entries: n-string of names with entries
+% * stat: (n,6)-matrix with L_i s_M g g_Hb g_Hp kap
+% * entries: n-string with names of entries
 
 %% Remarks
 % be aware that the sequence of taxa in legend matters
@@ -32,12 +32,12 @@ function [stat entries] = Li_ggH(legend)
   for i = 2:m
     sel = [sel, select_01('Animalia', legend{i,2})];
   end
-  sel = once(sel); % remove double selections
+  sel = once(sel);   % remove double selections
   
   stat = zeros(n,6); % initiate statistics
   
    
-  WD = pwd;        % store current path
+  WD = pwd;          % store current path
   cd(['../entries/',entries{1}]) % goto entries
   
   try
@@ -49,7 +49,7 @@ function [stat entries] = Li_ggH(legend)
       % primary pars for all models
       kap = par.kap; 
       p_M = par.p_M; 
-      z = par.z; p_Am = z * p_M/ kap;
+      p_Am = par.z * p_M/ kap;
       v = par.v; 
       E_G = par.E_G;
       k_J = par.k_J;
