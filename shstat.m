@@ -130,9 +130,9 @@ function [fig xy entries missing] = shstat(x, y, legend, label_title)
   h = datacursormode(fig);
   h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, xy_plot);
   datacursormode on % mouse click on plot
-
-  shlegend(legend);
   
+  shlegend(legend);
+
   n_missing = length(missing);
   if n_missing >0
     fprintf(['warning from shstat: ', num2str(n_missing), ' entries are missing in the plot\n']);
