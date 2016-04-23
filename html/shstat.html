@@ -1,0 +1,204 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>shstat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-23"><meta name="DC.source" content="shstat.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">shstat</a></li><li><a href="#2">created 2016/04/23 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>shstat<a name="1"></a></h2><p>plots statistics and/or parameters</p><h2>created 2016/04/23 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[xy entries missing] =  <a href="../shstat.m"><b>shstat</b></a>(x, y, legend, options, title)</p><h2>Description<a name="4"></a></h2><p>plots statistics and/or parameters using allStat.mat as source (which must exist).</p><p>Input:</p><div><ul><li>x: string with name of independent variable</li><li>y: string with name of dependent variable</li><li>legend: (m,2)-array with legend (marker, taxa pairs)</li><li>label_title: optional string for title of figure</li></ul></div><p>Output</p><div><ul><li>fig</li><li>xy: (n,2)-matrix with (x,y)-values</li><li>entries: n-cell string with names of entries</li><li>missing: cell string with names of entries that should have been plotted, but are missing</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Be aware that the sequence of taxa in legend matters. Make sure that allStat has been generated at the correct temperature; all parameters are at T_ref. Make sure that allStat is consistent with select('Animalia'). Set options with shstat_options (such as logarithmic transformation).</p><h2>Example of use<a name="6"></a></h2><p>see <a href="mydata_shstat.m"><b>mydata_shstat</b></a></p><p class="footer"><br>
+      Published with MATLAB&reg; 7.14<br></p></div><!--
+##### SOURCE BEGIN #####
+%% shstat
+% plots statistics and/or parameters
+
+function [fig xy entries missing] = shstat(x, y, legend, label_title)
+%% created 2016/04/23 by Bas Kooijman
+
+%% Syntax
+% [xy entries missing] =  <../shstat.m *shstat*>(x, y, legend, options, title)
+
+%% Description
+% plots statistics and/or parameters using allStat.mat as source (which must exist). 
+%
+% Input:
+%
+% * x: string with name of independent variable
+% * y: string with name of dependent variable
+% * legend: (m,2)-array with legend (marker, taxa pairs)
+% * label_title: optional string for title of figure
+%
+% Output
+%
+% * fig
+% * xy: (n,2)-matrix with (x,y)-values
+% * entries: n-cell string with names of entries
+% * missing: cell string with names of entries that should have been plotted, but are missing 
+
+%% Remarks
+% Be aware that the sequence of taxa in legend matters.
+% Make sure that allStat has been generated at the correct temperature; all parameters are at T_ref.
+% Make sure that allStat is consistent with select('Animalia').
+% Set options with shstat_options (such as logarithmic transformation).
+
+%% Example of use
+% see <mydata_shstat.m *mydata_shstat*>
+
+  global x_transform y_transform x_label y_label
+  
+  % compose selection matrix
+  m = size(legend,1); % number of taxa to be plotted
+  [sel entries] = select_01('Animalia', legend{1,2});
+  n = length(sel);    % numer of taxa in Animalia
+  for i = 2:m
+    sel = [sel, select_01('Animalia', legend{i,2})];
+  end
+  sel = once(sel);   % remove double selections
+  Sel = sum(sel,2) == 1;  % total selection
+  
+  missing = [];      % initiate missing entries
+  units_x = []; units_y = []; label_x = []; label_y = [];
+  xy = zeros(n,2);   % initiate (x,y)-pairs
+  load('allStat')    % get all parameters and statistics
+  
+  for i = 1:n        % get (x,y)-values
+    if isfield(allStat.(entries{i}), x)
+      xy(i,1) = allStat.(entries{i}).(x);
+      units_x = allStat.(entries{i}).units.(x);
+      label_x = allStat.(entries{i}).label.(x);
+    else
+      xy(i,1) = NaN; 
+      if Sel == 1
+        missing = [missing; entries(i)];
+      end
+    end
+    if isfield(allStat.(entries{i}), y)
+      xy(i,2) = allStat.(entries{i}).(y);
+      units_y = allStat.(entries{i}).units.(y);
+      label_y = allStat.(entries{i}).label.(y);
+    else
+      xy(i,2) = NaN; 
+      if Sel == 1
+        missing = [missing; entries(i)];
+      end
+    end        
+  end
+  
+  % transformation, xlabel, ylabel
+  xy_plot = xy; % copy (x,y) value to values to be plotted
+  symbol_x = x; symbol_y = y; % initiate text for symbols
+  [nm1 nm2] = strtok(x,'_');
+  if ~isempty(nm2)
+    symbol_x = [nm1, '_{', nm2(2:end), '}'];
+  end
+  [nm1 nm2] = strtok(y,'_');
+  if ~isempty(nm2)
+    symbol_y = [nm1, '_{', nm2(2:end), '}'];
+  end  
+  if strcmp (x_transform, 'log10')
+    xy_plot(:,1) = log10(xy_plot(:,1));
+    if strcmp(x_label, 'on')
+      label_x = [label_x, ', _{10}log ', symbol_x, ', ', units_x];
+    else
+      label_x = ['_{10}log ', symbol_x, ', ', units_x];
+    end
+  else
+    if strcmp(x_label, 'on')
+      label_x = [label_x, ', ', symbol_x, ', ', units_x];
+    else
+      label_x = [symbol_x, ', ', units_x];
+    end
+  end
+  if strcmp (y_transform, 'log10')
+    xy_plot(:,2) = log10(xy_plot(:,2));
+    if strcmp(y_label, 'on')
+      label_y = [label_y, ', _{10}log ', symbol_y, ', ', units_y];
+    else
+      label_y = ['_{10}log ', symbol_y, ', ', units_y];
+    end
+  else
+    if strcmp(y_label, 'on')
+      label_y = [label_y, ', ', symbol_y, ', ', units_y];
+    else
+      label_y = [symbol_y, ', ', units_y];
+    end
+  end
+  
+  fig = figure(1); 
+  hold on
+  for i = 1:m % scan taxa
+    marker = legend{i,1}; T = marker{1}; MS = marker{2}; LW = marker{3}; MEC = marker{4}; MFC = marker{5};  
+    plot(xy_plot(sel(:,i),1), xy_plot(sel(:,i),2), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
+  end
+  set(gca, 'FontSize', 15, 'Box', 'on')
+  xlabel(label_x)  
+  ylabel(label_y)
+  if exist('label_title', 'var')
+    title(label_title)
+  end
+      
+  %saveas (gca, [x, '_', 'y.png'])
+  h = datacursormode(fig);
+  h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, xy_plot);
+  datacursormode on % mouse click on plot
+
+  shlegend(legend);
+  
+  n_missing = length(missing);
+  if n_missing >0
+    fprintf(['warning from shstat: ', num2str(n_missing), ' entries are missing in the plot\n']);
+  end
+end
+
+
+##### SOURCE END #####
+--></body></html>

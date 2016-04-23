@@ -1,12 +1,12 @@
-%% get_dataAll
+%% get_allStat
 % obtain a structure with all pars and stats for all entries
 
 %%
-function dataAll = get_dataAll(T, f)
+function allStat = get_allStat(T, f)
 % created 2016/04/22 by Bas Kooijman
 
 %% Syntax
-% dataAll = <get_dataAll *get_dataAll*> (T, f)
+% allStat = <get_allStat *get_allStat*> (T, f)
 
 %% Description
 % gets model, MRE, CLOMPLETE, all parameters and statistics of all entries.
@@ -15,18 +15,18 @@ function dataAll = get_dataAll(T, f)
 % Input:
 %
 % * T: optional scalar with body temperature in Kelvin (default T_typical, which is entry-specific)
-% * f: optional scalar with schaled functional response (default 1)
+% * f: optional scalar with scaled functional response (default 1)
 %
 % Output:
 % 
-% * dataAll: structure with all parameter and statistics values, including their units and labels
+% * allStat: structure with all parameters and statistics values, including their units and labels
 
 %% Remarks
 % Can be used to compute statistics for all entries at the start of a session on the comparison of parameter and statistics values
-% For 411 entries, the dataAll.mat file is 2.6 Mb
+% For 411 entries, the allStat.mat file is 2.6 Mb.
 
 %% Example of use
-% dataAll = get_dataAll;
+% allStat = get_allStat; see mydata_shstat
 
   if ~exist('T', 'var') || isempty(T)
     set_T = 0; % identyfier for temperature setting
@@ -48,34 +48,38 @@ function dataAll = get_dataAll(T, f)
   try
     for i = 1:ne
       cd (['../', entries{i}])
-      entries{i} % show progress on screen
+      fprintf([entries{i}, '\n']); % show progress on screen (takes some time)
       load (['results_', entries{i}])
+      
+      % parameters
       par = rmfield_wtxt(par, 'free');   % remove substructure free from par
-      dataAll.(entries{i}).model = metaPar.model;
-      dataAll.(entries{i}).MRE = metaPar.MRE;
-      dataAll.(entries{i}).COMPLETE = metaData.COMPLETE;
+      allStat.(entries{i}).model = metaPar.model;
+      allStat.(entries{i}).MRE = metaPar.MRE;
+      allStat.(entries{i}).COMPLETE = metaData.COMPLETE;
       [nm nst] = fieldnmnst_st(par);     % get number of parameter fields
-      for j = 1:nst
-        dataAll.(entries{i}).(nm{j}) = par.(nm{j});
-        dataAll.(entries{i}).units.(nm{j}) = txtPar.units.(nm{j});
-        dataAll.(entries{i}).label.(nm{j}) = txtPar.label.(nm{j});
+      for j = 1:nst % add all parameters at T_ref
+        allStat.(entries{i}).(nm{j}) = par.(nm{j});
+        allStat.(entries{i}).units.(nm{j}) = txtPar.units.(nm{j});
+        allStat.(entries{i}).label.(nm{j}) = txtPar.label.(nm{j});
       end
-      dataAll.(entries{i}).f = f; % overwrite scaled function response
+      
+      % statistics
+      allStat.(entries{i}).f = f; % overwrite scaled function response
       if set_T == 0
         [stat, txtStat] = statistics_st(metaPar.model, par, metaData.T_typical, f);
       else
-        [stat, txtStat] = statistics_st(metaPar.model, par, metaData.T, f);
+        [stat, txtStat] = statistics_st(metaPar.model, par, T, f);
       end
       [nm nst] = fieldnmnst_st(stat);    % get number of parameter fields
-      for j = 1:nst
-        dataAll.(entries{i}).(nm{j}) = stat.(nm{j});
-        dataAll.(entries{i}).units.(nm{j}) = txtStat.units.(nm{j});
-        dataAll.(entries{i}).label.(nm{j}) = txtStat.label.(nm{j});
+      for j = 1:nst % add all statistis at T or T_typical
+        allStat.(entries{i}).(nm{j}) = stat.(nm{j});
+        allStat.(entries{i}).units.(nm{j}) = txtStat.units.(nm{j});
+        allStat.(entries{i}).label.(nm{j}) = txtStat.label.(nm{j});
       end
     end
    
   catch 
-    disp(['Data of entry ', entries{i},' could not extracted'])
+    disp(['Statistics of entry ', entries{i},' could not extracted'])
   end
    
   cd(WD)                   % goto original path
