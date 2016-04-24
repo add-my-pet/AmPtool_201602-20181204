@@ -18,7 +18,7 @@ function [list nr entry] = get_authors
 % * entry: cell-array of cell-arrays with entry names
 
 %% Example of use
-% [authors nr entry entries] = get_authors; entries{find(ismember(authors, 'Elke Zimmer'))}
+% [authors nr entry] = get_authors; entry{find(ismember(authors, 'Elke Zimmer'))}
 
   [authors entries] = read_allStat('author');
   ne = length(entries);
