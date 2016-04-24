@@ -1,7 +1,7 @@
 %% mydata_shstat
 
 % generate updated allStat if necessary
-% write_allStat(C2K(20),1);
+% write_allStat(C2K(20),1); % notice that default allStat is at T_typical
 
 % compose your legend if you wish
 % mylegend = select_legend; % replace legend_* by mylegend is you active this
@@ -9,12 +9,12 @@
 close all % remove any existing figure
 shstat_options('default');
 
-example = 4; % edit this number
+example = 3; % edit this number
 switch example
-  case 1 % first example close to default settings
+  case 1 % close to default settings
     shstat('g', 'g_Hb', legend_RSED); 
 
-  case 2 % second example with more tricks
+  case 2 % second example with more tricks: no transformation
     shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
     shstat_options('x_label', 'on');
@@ -31,7 +31,7 @@ switch example
     plot(ss, kap_ss(:,1), 'k', ... % plot boundery for kappa-values
          ss, kap_ss(:,2), 'k', 'Linewidth', 2)
 
-  case 3 % third example equals 2, but with logarithmic transformation on the indpendent variable
+  case 3 % equals 2, but with logarithmic transformation on indpendent variable only
     shstat_options('default');
     %shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
@@ -49,7 +49,7 @@ switch example
     plot(log10(ss), kap_ss(:,1), 'k', ... % plot boundery for kappa-values
          log10(ss), kap_ss(:,2), 'k', 'Linewidth', 2)
 
-  case 4 % survivor function for log v and log v_j
+  case 4 % bypass shstat if computations are required
     vsM = read_allStat('v', 's_M'); logv = log10(vsM(:,1)); logvj = log10(prod(vsM,2));
     v_median = median(logv); vj_median = median(logvj);
     surv_v = surv(logv); surv_vj = surv(logvj);
