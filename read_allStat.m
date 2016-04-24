@@ -39,7 +39,7 @@ function [var entries units label] = read_allStat(varargin)
         units{j} = allStat.(entries{i}).units.(varargin{j});
         label{j} = allStat.(entries{i}).label.(varargin{j});
       else
-        var(i,j) = NaN; 
+        var{i,j} = NaN; 
       end
     end
   end

@@ -9,14 +9,12 @@
 close all % remove any existing figure
 shstat_options('default');
 
-example = 3; % edit this number
+example = 4; % edit this number
 switch example
-  case 1
-    % first example close to default settings
+  case 1 % first example close to default settings
     shstat('g', 'g_Hb', legend_RSED); 
 
-  case 2
-    % second example with more tricks
+  case 2 % second example with more tricks
     shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
     shstat_options('x_label', 'on');
@@ -33,8 +31,7 @@ switch example
     plot(ss, kap_ss(:,1), 'k', ... % plot boundery for kappa-values
          ss, kap_ss(:,2), 'k', 'Linewidth', 2)
 
-  case 3
-    % third example equals 2, but with logarithmic transformation on the indpendent variable
+  case 3 % third example equals 2, but with logarithmic transformation on the indpendent variable
     shstat_options('default');
     %shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
@@ -51,6 +48,17 @@ switch example
     end
     plot(log10(ss), kap_ss(:,1), 'k', ... % plot boundery for kappa-values
          log10(ss), kap_ss(:,2), 'k', 'Linewidth', 2)
+
+  case 4 % survivor function for log v and log v_j
+    vsM = read_allStat('v', 's_M'); logv = log10(vsM(:,1)); logvj = log10(prod(vsM,2));
+    v_median = median(logv); vj_median = median(logvj);
+    surv_v = surv(logv); surv_vj = surv(logvj);
+    hold on
+    plot([-3.5; vj_median; vj_median], [0.5;0.5;0], 'r', surv_vj(:,1), surv_vj(:,2), 'r', 'Linewidth', 2)
+    plot([-3.5; v_median; v_median], [0.5;0.5;0], 'b', surv_v(:,1), surv_v(:,2), 'b', 'Linewidth', 2)
+    set(gca, 'FontSize', 15, 'Box', 'on')
+    xlabel('_{10} log v, cm/d')
+    title('v at T_{ref}, before and after acceleration')
 
 
 end
