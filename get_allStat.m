@@ -9,12 +9,12 @@ function allStat = get_allStat(T, f)
 % allStat = <get_allStat *get_allStat*> (T, f)
 
 %% Description
-% gets model, MRE, CLOMPLETE, all parameters and statistics of all entries.
-% Parameters are always expressed at T_ref, irrespective of input T.
+% gets model, MRE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of all entries.
+% Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.
 %
 % Input:
 %
-% * T: optional scalar with body temperature in Kelvin (default T_typical, which is entry-specific)
+% * T: optional scalar with body temperature in Kelvin for ststistics (default T_typical, which is entry-specific)
 % * f: optional scalar with scaled functional response (default 1)
 %
 % Output:
@@ -22,8 +22,9 @@ function allStat = get_allStat(T, f)
 % * allStat: structure with all parameters and statistics values, including their units and labels
 
 %% Remarks
-% Can be used to compute statistics for all entries at the start of a session on the comparison of parameter and statistics values
-% For 411 entries, the allStat.mat file is 2.6 Mb.
+% Statistics are given at T_typical or T. 
+% Meant to be used in combination with <write_allStat.html *write_allStat*> and <read_allStat.html *read_allStat*>.
+% Since running this function takes some time, progress is written to screen.
 
 %% Example of use
 % allStat = get_allStat; see mydata_shstat
@@ -51,11 +52,16 @@ function allStat = get_allStat(T, f)
       fprintf([entries{i}, '\n']); % show progress on screen (takes some time)
       load (['results_', entries{i}])
       
+      % initiation
+      allStat.(entries{i}).model = metaPar.model; allStat.(entries{i}).units.model = '-'; allStat.(entries{i}).label.model = 'DEB model';
+      allStat.(entries{i}).MRE = metaPar.MRE; allStat.(entries{i}).units.MRE = '-'; allStat.(entries{i}).label.MRE = 'Mean Relative Error';
+      allStat.(entries{i}).COMPLETE = metaData.COMPLETE; allStat.(entries{i}).units.COMPLETE = '-'; allStat.(entries{i}).label.COMPLETE = 'completeness';
+      allStat.(entries{i}).author = metaData.author(:)'; allStat.(entries{i}).units.author = '-'; allStat.(entries{i}).label.author = 'submitting author';
+      allStat.(entries{i}).date_subm = metaData.date_subm; allStat.(entries{i}).units.date_subm = '-'; allStat.(entries{i}).label.date_subm = 'submitting date';
+      allStat.(entries{i}).date_acc = metaData.date_acc; allStat.(entries{i}).units.date_acc = '-'; allStat.(entries{i}).label.date_acc = 'acceptance date';
+      
       % parameters
       par = rmfield_wtxt(par, 'free');   % remove substructure free from par
-      allStat.(entries{i}).model = metaPar.model;
-      allStat.(entries{i}).MRE = metaPar.MRE;
-      allStat.(entries{i}).COMPLETE = metaData.COMPLETE;
       [nm nst] = fieldnmnst_st(par);     % get number of parameter fields
       for j = 1:nst % add all parameters at T_ref
         allStat.(entries{i}).(nm{j}) = par.(nm{j});

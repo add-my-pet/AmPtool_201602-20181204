@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>pie_model</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-24"><meta name="DC.source" content="pie_model.m"><style type="text/css">
+      --><title>read_allStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-24"><meta name="DC.source" content="read_allStat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,55 +55,64 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>pie_model</h1><!--introduction--><p>counts number of entries of the various model types</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/02/21 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>created 2016/02/21 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[n model index] = <a href="../pie_model.m"><b>pie_model</b></a> (taxon)</p><h2>Description<a name="4"></a></h2><p>The frequency of the various models in the add_my_pet collection are counted and the result is presented in a pie</p><p>Output (apart from figure):</p><div><ul><li>n: nm-vector containing model counts in taxa</li><li>model: nm-vector with names of models</li><li>index: (ne,nm) binary matrix with models of each of ne members of the taxon</li></ul></div><h2>Remarks<a name="5"></a></h2><p>sum(n) = total number of animal species in the add_my_pet collection about_add_my_pet make a plot of this</p><h2>Example of use<a name="6"></a></h2><p>[n model index] = pie_model;</p><p class="footer"><br>
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">read_allStat</a></li><li><a href="#2">created 2016/04/24 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>read_allStat<a name="1"></a></h2><p>read statistics and/or parameters in allStat.mat</p><h2>created 2016/04/24 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[var entries units label] = <a href="../read_allStat.m"><b>read_allStat</b></a>(vararg)</p><h2>Description<a name="4"></a></h2><p>read statistics and/or parameters in allStat.mat.</p><p>Input:</p><div><ul><li>vararg: names of variables</li></ul></div><p>Output</p><div><ul><li>var: (n,x)-matrix with values of variables or cell-array if some variable is not numerical</li><li>entries: n-cell string with names of entries</li><li>units: cell string with units of variables</li><li>label: cell string with description of variables</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Make sure that allStat has been generated at the correct temperature; All parameters are at T_ref, the statistics at T or T_typical, see <a href="write_allStat.html"><b>write_allStat</b></a>.</p><h2>Example of use<a name="6"></a></h2><p>complete_mre = read_allStat('COMPLETE', 'MRE');</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
-%% pie_model
-% counts number of entries of the various model types
+%% read_allStat
+% read statistics and/or parameters in allStat.mat
 
-%%
-function [n model index] = pie_model 
-%% created 2016/02/21 by Bas Kooijman
+function [var entries units label] = read_allStat(varargin)
+%% created 2016/04/24 by Bas Kooijman
 
 %% Syntax
-% [n model index] = <../pie_model.m *pie_model*> (taxon)
+% [var entries units label] = <../read_allStat.m *read_allStat*>(vararg)
 
 %% Description
-% The frequency of the various models in the add_my_pet collection are counted and the result is presented in a pie
+% read statistics and/or parameters in allStat.mat. 
 %
-% Output (apart from figure):
-% 
-% * n: nm-vector containing model counts in taxa
-% * model: nm-vector with names of models
-% * index: (ne,nm) binary matrix with models of each of ne members of the taxon
+% Input:
+%
+% * vararg: names of variables
+%
+% Output
+%
+% * var: (n,x)-matrix with values of variables or cell-array if some variable is not numerical 
+% * entries: n-cell string with names of entries
+% * units: cell string with units of variables
+% * label: cell string with description of variables
 
 %% Remarks
-% sum(n) = total number of animal species in the add_my_pet collection
-% about_add_my_pet make a plot of this
+% Make sure that allStat has been generated at the correct temperature; 
+% All parameters are at T_ref, the statistics at T or T_typical, see <write_allStat.html *write_allStat*>.
 
 %% Example of use
-% [n model index] = pie_model;
-
-  model = {'std', 'stf', 'stx', 'ssj', 'sbp', 'abp', 'abj', 'asj', 'hep', 'hex'};
-  [models entries] = read_allStat('model');
-   
-  ne = length(entries); nm = length(model); index = zeros(ne,nm);
-  for i = 1:ne
-    index(i,:) = strcmp(model,models{i}); 
-  end
-  n = sum(index,1);
+% complete_mre = read_allStat('COMPLETE', 'MRE'); 
   
-  txt = model; y = n; 
-  y(9) = y(9) + y(10); txt{9} = {'hep+hex'}; y(10) = []; txt(10) = [];
-  y(7) = y(7) + y(8);  txt{7} = {'abj+asj'}; y(8)  = []; txt(8)  = [];
-  y(5) = y(5) + y(6);  txt{5} = {'sbp+abp'}; y(6)  = []; txt(6)  = [];
-  pie3s(y, 'Bevel', 'Elliptical', 'Labels', txt);
-
-  if ~(sum(n) == ne)
-    fprintf('Warning: model types need updating')
+  load('allStat')    % get all parameters and statistics in structure allStat
+  entries = fieldnames(allStat); n = length(entries); var = cell(n,nargin);
+  units = cell(nargin,1); label = cell(nargin,1);
+  
+  for i = 1:n
+    for j = 1:nargin
+      if isfield(allStat.(entries{i}), varargin{j})
+        var{i,j} = allStat.(entries{i}).(varargin{j});
+        units{j} = allStat.(entries{i}).units.(varargin{j});
+        label{j} = allStat.(entries{i}).label.(varargin{j});
+      else
+        var(i,j) = NaN; 
+      end
+    end
   end
-end
-
+  
+  % convert cell array to numerical array if possible
+  num = 0;
+  for j = 1:nargin
+    num = num +  isnumeric(var{1,j});
+  end
+  if num == nargin
+    var = cell2mat(var);
+  end
+  
 
 ##### SOURCE END #####
 --></body></html>

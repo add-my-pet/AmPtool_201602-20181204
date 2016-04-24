@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>get_allStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-23"><meta name="DC.source" content="get_allStat.m"><style type="text/css">
+      --><title>get_allStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-24"><meta name="DC.source" content="get_allStat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>get_allStat</h1><!--introduction--><p>obtain a structure with all pars and stats for all entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>allStat = <a href="get_allStat"><b>get_allStat</b></a> (T, f)</p><h2>Description<a name="4"></a></h2><p>gets model, MRE, CLOMPLETE, all parameters and statistics of all entries. Parameters are always expressed at T_ref, irrespective of input T.</p><p>Input:</p><div><ul><li>T: optional scalar with body temperature in Kelvin (default T_typical, which is entry-specific)</li><li>f: optional scalar with scaled functional response (default 1)</li></ul></div><p>Output:</p><div><ul><li>allStat: structure with all parameters and statistics values, including their units and labels</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Can be used to compute statistics for all entries at the start of a session on the comparison of parameter and statistics values For 411 entries, the allStat.mat file is 2.6 Mb.</p><h2>Example of use<a name="6"></a></h2><p>allStat = get_allStat; see mydata_shstat</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>get_allStat</h1><!--introduction--><p>obtain a structure with all pars and stats for all entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>allStat = <a href="get_allStat"><b>get_allStat</b></a> (T, f)</p><h2>Description<a name="4"></a></h2><p>gets model, MRE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of all entries. Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.</p><p>Input:</p><div><ul><li>T: optional scalar with body temperature in Kelvin for ststistics (default T_typical, which is entry-specific)</li><li>f: optional scalar with scaled functional response (default 1)</li></ul></div><p>Output:</p><div><ul><li>allStat: structure with all parameters and statistics values, including their units and labels</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Statistics are given at T_typical or T. Meant to be used in combination with <a href="write_allStat.html"><b>write_allStat</b></a> and <a href="read_allStat.html"><b>read_allStat</b></a>. Since running this function takes some time, progress is written to screen.</p><h2>Example of use<a name="6"></a></h2><p>allStat = get_allStat; see mydata_shstat</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% get_allStat
@@ -69,12 +69,12 @@ function allStat = get_allStat(T, f)
 % allStat = <get_allStat *get_allStat*> (T, f)
 
 %% Description
-% gets model, MRE, CLOMPLETE, all parameters and statistics of all entries.
-% Parameters are always expressed at T_ref, irrespective of input T.
+% gets model, MRE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of all entries.
+% Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.
 %
 % Input:
 %
-% * T: optional scalar with body temperature in Kelvin (default T_typical, which is entry-specific)
+% * T: optional scalar with body temperature in Kelvin for ststistics (default T_typical, which is entry-specific)
 % * f: optional scalar with scaled functional response (default 1)
 %
 % Output:
@@ -82,8 +82,9 @@ function allStat = get_allStat(T, f)
 % * allStat: structure with all parameters and statistics values, including their units and labels
 
 %% Remarks
-% Can be used to compute statistics for all entries at the start of a session on the comparison of parameter and statistics values
-% For 411 entries, the allStat.mat file is 2.6 Mb.
+% Statistics are given at T_typical or T. 
+% Meant to be used in combination with <write_allStat.html *write_allStat*> and <read_allStat.html *read_allStat*>.
+% Since running this function takes some time, progress is written to screen.
 
 %% Example of use
 % allStat = get_allStat; see mydata_shstat
@@ -111,11 +112,16 @@ function allStat = get_allStat(T, f)
       fprintf([entries{i}, '\n']); % show progress on screen (takes some time)
       load (['results_', entries{i}])
       
+      % initiation
+      allStat.(entries{i}).model = metaPar.model; allStat.(entries{i}).units.model = '-'; allStat.(entries{i}).label.model = 'DEB model';
+      allStat.(entries{i}).MRE = metaPar.MRE; allStat.(entries{i}).units.MRE = '-'; allStat.(entries{i}).label.MRE = 'Mean Relative Error';
+      allStat.(entries{i}).COMPLETE = metaData.COMPLETE; allStat.(entries{i}).units.COMPLETE = '-'; allStat.(entries{i}).label.COMPLETE = 'completeness';
+      allStat.(entries{i}).author = metaData.author(:)'; allStat.(entries{i}).units.author = '-'; allStat.(entries{i}).label.author = 'submitting author';
+      allStat.(entries{i}).date_subm = metaData.date_subm; allStat.(entries{i}).units.date_subm = '-'; allStat.(entries{i}).label.date_subm = 'submitting date';
+      allStat.(entries{i}).date_acc = metaData.date_acc; allStat.(entries{i}).units.date_acc = '-'; allStat.(entries{i}).label.date_acc = 'acceptance date';
+      
       % parameters
       par = rmfield_wtxt(par, 'free');   % remove substructure free from par
-      allStat.(entries{i}).model = metaPar.model;
-      allStat.(entries{i}).MRE = metaPar.MRE;
-      allStat.(entries{i}).COMPLETE = metaData.COMPLETE;
       [nm nst] = fieldnmnst_st(par);     % get number of parameter fields
       for j = 1:nst % add all parameters at T_ref
         allStat.(entries{i}).(nm{j}) = par.(nm{j});

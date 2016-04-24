@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>shstat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-23"><meta name="DC.source" content="shstat.m"><style type="text/css">
+      --><title>shstat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-24"><meta name="DC.source" content="shstat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">shstat</a></li><li><a href="#2">created 2016/04/23 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>shstat<a name="1"></a></h2><p>plots statistics and/or parameters</p><h2>created 2016/04/23 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[xy entries missing] =  <a href="../shstat.m"><b>shstat</b></a>(x, y, legend, options, title)</p><h2>Description<a name="4"></a></h2><p>plots statistics and/or parameters using allStat.mat as source (which must exist).</p><p>Input:</p><div><ul><li>x: string with name of independent variable</li><li>y: string with name of dependent variable</li><li>legend: (m,2)-array with legend (marker, taxa pairs)</li><li>label_title: optional string for title of figure</li></ul></div><p>Output</p><div><ul><li>fig</li><li>xy: (n,2)-matrix with (x,y)-values</li><li>entries: n-cell string with names of entries</li><li>missing: cell string with names of entries that should have been plotted, but are missing</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Be aware that the sequence of taxa in legend matters. Make sure that allStat has been generated at the correct temperature; all parameters are at T_ref. Make sure that allStat is consistent with select('Animalia'). Set options with shstat_options (such as logarithmic transformation).</p><h2>Example of use<a name="6"></a></h2><p>see <a href="mydata_shstat.m"><b>mydata_shstat</b></a></p><p class="footer"><br>
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">shstat</a></li><li><a href="#2">created 2016/04/23 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>shstat<a name="1"></a></h2><p>plots statistics and/or parameters</p><h2>created 2016/04/23 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[fig xy entries missing] =  <a href="../shstat.m"><b>shstat</b></a>(x, y, legend, options, title)</p><h2>Description<a name="4"></a></h2><p>plots statistics and/or parameters using allStat.mat as source (which must exist).</p><p>Input:</p><div><ul><li>x: string with name of independent variable</li><li>y: string with name of dependent variable</li><li>legend: (m,2)-array with legend (marker, taxa pairs)</li><li>label_title: optional string for title of figure</li></ul></div><p>Output</p><div><ul><li>fig</li><li>xy: (n,2)-matrix with (x,y)-values</li><li>entries: n-cell string with names of entries</li><li>missing: cell string with names of entries that should have been plotted, but are missing</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Be aware that the sequence of taxa in legend matters. Make sure that allStat has been generated at the correct temperature; all parameters are at T_ref. Make sure that allStat is consistent with select('Animalia'). Set options with shstat_options (such as logarithmic transformation).</p><h2>Example of use<a name="6"></a></h2><p>see <a href="mydata_shstat.m"><b>mydata_shstat</b></a></p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% shstat
@@ -65,7 +65,7 @@ function [fig xy entries missing] = shstat(x, y, legend, label_title)
 %% created 2016/04/23 by Bas Kooijman
 
 %% Syntax
-% [xy entries missing] =  <../shstat.m *shstat*>(x, y, legend, options, title)
+% [fig xy entries missing] =  <../shstat.m *shstat*>(x, y, legend, options, title)
 
 %% Description
 % plots statistics and/or parameters using allStat.mat as source (which must exist). 
@@ -94,43 +94,27 @@ function [fig xy entries missing] = shstat(x, y, legend, label_title)
 % see <mydata_shstat.m *mydata_shstat*>
 
   global x_transform y_transform x_label y_label
-  
-  % compose selection matrix
+
+  % get (x,y)-values, units, label
+  [xy entries units label] = read_allStat(x,y);
+  units_x = units{1}; units_y = units{2}; label_x = label{1}; label_y = label{2};
+
+  % compose selection matrix, missing
   m = size(legend,1); % number of taxa to be plotted
-  [sel entries] = select_01('Animalia', legend{1,2});
-  n = length(sel);    % numer of taxa in Animalia
+  [sel entries_sel] = select_01('Animalia', legend{1,2});
+  if ~isequaln(entries, entries_sel)
+    fprintf('Error in shstat: entries in allStat do not correspond with entries in select(''Animalia'')\n')
+    fig = []; missing = []; return
+  end
+  n = length(sel);    % numer of taxa in Animalia 
   for i = 2:m
     sel = [sel, select_01('Animalia', legend{i,2})];
   end
-  sel = once(sel);   % remove double selections
-  Sel = sum(sel,2) == 1;  % total selection
-  
-  missing = [];      % initiate missing entries
-  units_x = []; units_y = []; label_x = []; label_y = [];
-  xy = zeros(n,2);   % initiate (x,y)-pairs
-  load('allStat')    % get all parameters and statistics
-  
-  for i = 1:n        % get (x,y)-values
-    if isfield(allStat.(entries{i}), x)
-      xy(i,1) = allStat.(entries{i}).(x);
-      units_x = allStat.(entries{i}).units.(x);
-      label_x = allStat.(entries{i}).label.(x);
-    else
-      xy(i,1) = NaN; 
-      if Sel == 1
-        missing = [missing; entries(i)];
-      end
-    end
-    if isfield(allStat.(entries{i}), y)
-      xy(i,2) = allStat.(entries{i}).(y);
-      units_y = allStat.(entries{i}).units.(y);
-      label_y = allStat.(entries{i}).label.(y);
-    else
-      xy(i,2) = NaN; 
-      if Sel == 1
-        missing = [missing; entries(i)];
-      end
-    end        
+  sel = once(sel);   % remove double selections  
+  missing = entries(isnan(sum(xy(sum(sel,2) == 1,:),2))); % determine missing entries
+  n_missing = length(missing);
+  if ~(n_missing == 0)
+    fprintf(['Warning in shstat: ', num2str(n_missing), ' entries are missing in the figure\n'])
   end
   
   % transformation, xlabel, ylabel
@@ -190,13 +174,9 @@ function [fig xy entries missing] = shstat(x, y, legend, label_title)
   h = datacursormode(fig);
   h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, xy_plot);
   datacursormode on % mouse click on plot
-
-  shlegend(legend);
   
-  n_missing = length(missing);
-  if n_missing >0
-    fprintf(['warning from shstat: ', num2str(n_missing), ' entries are missing in the plot\n']);
-  end
+  shlegend(legend);
+
 end
 
 

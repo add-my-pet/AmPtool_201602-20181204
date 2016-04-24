@@ -24,9 +24,11 @@ function about
 % to present them on the web.
 % file update.txt is not used, since most recent entry date is sufficiently close
 
-fileid = fopen('img/update.txt', 'w');
-fprintf(fileid, datestr(date,26)); 
-fclose(fileid);
+% fileid = fopen('img/update.txt', 'w');
+% fprintf(fileid, datestr(date,26)); 
+% fclose(fileid);
+
+write_allStat;
 
 pie_Animalia;
 saveas (gca, 'img/pie_Animalia.png')
@@ -48,7 +50,7 @@ ylabel('# of add\_my\_pet entries')
 saveas (gca,'img/entries.png')
 close all
 
-CM = complete_mre; n_entries = size(CM,1);
+CM = read_allStat('COMPLETE', 'MRE'); n_entries = size(CM,1);
 C_median = median(CM(:,1)); M_median = median(CM(:,2));
 
 plot(CM(:,1), CM(:,2), '.b', 'MarkerSize', 20)

@@ -31,30 +31,12 @@ function [dates taxa_new dates_new] = get_date_subm(n_new)
     n_new = 5;
   end
 
-  entries = select('Animalia');
-  n = length(entries);
-  dates = zeros(n,1);
-   
-  WD = pwd;                % store current path
-  cd(['../entries/',entries{1}]) % goto entries
-
-  try
-    for i = 1:n
-      cd (['../', entries{i}])
-      load (['results_', entries{i}])
-      dates(i) = datenum(metaData.date_subm); 
-    end
+  [dates entries] = read_allStat('date_subm'); 
+  dates = datenum(dates); 
   
-    [sdates I] = sort(dates,1,'descend'); 
-    taxa_new = entries(I(1:n_new)); 
-    dates_new = datestr(dates(I(1:n_new)), 26);
+  [sdates I] = sort(dates,1,'descend'); 
+  taxa_new = entries(I(1:n_new)); 
+  dates_new = datestr(dates(I(1:n_new)), 26);
     
-    dates = 2006 + (dates - datenum([2006 01 01]))/ 365;
+  dates = 2006 + (dates - datenum([2006 01 01]))/ 365;
     
-  catch
-    disp('Name of taxon is not recognized')
-  end
-   
-  cd(WD)                   % goto original path
-end
-

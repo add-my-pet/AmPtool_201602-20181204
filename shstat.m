@@ -5,7 +5,7 @@ function [fig xy entries missing] = shstat(x, y, legend, label_title)
 %% created 2016/04/23 by Bas Kooijman
 
 %% Syntax
-% [xy entries missing] =  <../shstat.m *shstat*>(x, y, legend, options, title)
+% [fig xy entries missing] =  <../shstat.m *shstat*>(x, y, legend, options, title)
 
 %% Description
 % plots statistics and/or parameters using allStat.mat as source (which must exist). 
@@ -34,43 +34,27 @@ function [fig xy entries missing] = shstat(x, y, legend, label_title)
 % see <mydata_shstat.m *mydata_shstat*>
 
   global x_transform y_transform x_label y_label
-  
-  % compose selection matrix
+
+  % get (x,y)-values, units, label
+  [xy entries units label] = read_allStat(x,y);
+  units_x = units{1}; units_y = units{2}; label_x = label{1}; label_y = label{2};
+
+  % compose selection matrix, missing
   m = size(legend,1); % number of taxa to be plotted
-  [sel entries] = select_01('Animalia', legend{1,2});
-  n = length(sel);    % numer of taxa in Animalia
+  [sel entries_sel] = select_01('Animalia', legend{1,2});
+  if ~isequaln(entries, entries_sel)
+    fprintf('Error in shstat: entries in allStat do not correspond with entries in select(''Animalia'')\n')
+    fig = []; missing = []; return
+  end
+  n = length(sel);    % numer of taxa in Animalia 
   for i = 2:m
     sel = [sel, select_01('Animalia', legend{i,2})];
   end
-  sel = once(sel);   % remove double selections
-  Sel = sum(sel,2) == 1;  % total selection
-  
-  missing = [];      % initiate missing entries
-  units_x = []; units_y = []; label_x = []; label_y = [];
-  xy = zeros(n,2);   % initiate (x,y)-pairs
-  load('allStat')    % get all parameters and statistics
-  
-  for i = 1:n        % get (x,y)-values
-    if isfield(allStat.(entries{i}), x)
-      xy(i,1) = allStat.(entries{i}).(x);
-      units_x = allStat.(entries{i}).units.(x);
-      label_x = allStat.(entries{i}).label.(x);
-    else
-      xy(i,1) = NaN; 
-      if Sel == 1
-        missing = [missing; entries(i)];
-      end
-    end
-    if isfield(allStat.(entries{i}), y)
-      xy(i,2) = allStat.(entries{i}).(y);
-      units_y = allStat.(entries{i}).units.(y);
-      label_y = allStat.(entries{i}).label.(y);
-    else
-      xy(i,2) = NaN; 
-      if Sel == 1
-        missing = [missing; entries(i)];
-      end
-    end        
+  sel = once(sel);   % remove double selections  
+  missing = entries(isnan(sum(xy(sum(sel,2) == 1,:),2))); % determine missing entries
+  n_missing = length(missing);
+  if ~(n_missing == 0)
+    fprintf(['Warning in shstat: ', num2str(n_missing), ' entries are missing in the figure\n'])
   end
   
   % transformation, xlabel, ylabel
@@ -133,9 +117,5 @@ function [fig xy entries missing] = shstat(x, y, legend, label_title)
   
   shlegend(legend);
 
-  n_missing = length(missing);
-  if n_missing >0
-    fprintf(['warning from shstat: ', num2str(n_missing), ' entries are missing in the plot\n']);
-  end
 end
 
