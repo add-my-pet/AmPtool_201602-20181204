@@ -1,0 +1,181 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>shprimpar</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-25"><meta name="DC.source" content="shprimpar.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+
+  </style></head><body><div class="content"><h1>shprimpar</h1><!--introduction--><p>generates survivor plots for primary parameters</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/04/25 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li></ul></div><h2>created 2016/04/25 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p><a href="../shprimpar"><b>shprimpar</b></a></p><h2>Description<a name="4"></a></h2><p>generates survivor plots for primary parameters</p><p>Output: no explicit output but figures are produced and pns-files written</p><div><ul><li>in entries_admin/img: pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png EHb.png EHp.png ha.png sG.png</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Copy png files to /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img</p><p class="footer"><br>
+      Published with MATLAB&reg; 7.14<br></p></div><!--
+##### SOURCE BEGIN #####
+%% shprimpar
+% generates survivor plots for primary parameters
+
+%%
+function shprimpar
+%% created 2016/04/25 by Bas Kooijman
+
+%% Syntax
+% <../shprimpar *shprimpar*>
+
+%% Description
+% generates survivor plots for primary parameters
+%
+% Output: no explicit output but figures are produced and pns-files written
+%
+% * in entries_admin/img: pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png EHb.png EHp.png ha.png sG.png
+
+%% Remarks
+% Copy png files to 
+% /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img
+
+close all
+
+figure % {p_Am}/z, scaled specific assimilation
+pAmz = read_allStat('p_Am','z','s_M'); logpAmz = log10(pAmz(:,1) ./ pAmz(:,2));
+logpAmz_median = median(logpAmz); 
+surv_logpAmz = surv(logpAmz); 
+plot([0; logpAmz_median; logpAmz_median], [0.5;0.5;0], 'r', surv_logpAmz(:,1), surv_logpAmz(:,2), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('_{10}log \{p_{Am}\}/z, J/d.cm^2')
+title('_{10}log \{p_{Am}\}/z at T_{ref}')
+saveas (gca, 'img/pAm.png')
+
+figure % v, energy conductance
+vsM = read_allStat('v', 's_M'); logv = log10(vsM(:,1)); logvj = log10(prod(vsM,2));
+v_median = median(logv); vj_median = median(logvj);
+surv_v = surv(logv); surv_vj = surv(logvj);
+hold on
+plot([-3.5; vj_median; vj_median], [0.5;0.5;0], 'r', surv_vj(:,1), surv_vj(:,2), 'r', 'Linewidth', 2)
+plot([-3.5; v_median; v_median], [0.5;0.5;0], 'b', surv_v(:,1), surv_v(:,2), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('_{10} log v, cm/d')
+title('v at T_{ref}, before and after acceleration')
+saveas (gca, 'img/v.png')
+
+figure % kappa, allocation fraction to soma
+kap = read_allStat('kap'); 
+kap_median = median(kap); 
+surv_kap = surv(kap); 
+plot([0; kap_median; kap_median], [0.5;0.5;0], 'r', surv_kap(:,1), surv_kap(:,2), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('\kappa, -')
+saveas (gca, 'img/kap.png')
+
+figure % [p_M], specific somatic maintenance
+logpM = log10(read_allStat('p_M')); 
+logpM_median = median(logpM); 
+surv_logpM = surv(logpM); 
+plot([0; logpM_median; logpM_median], [0.5;0.5;0], 'r', surv_logpM(:,1), surv_logpM(:,2), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('_{10}log [p_M], J/d')
+title('[p_M] at T_{ref}')
+saveas (gca, 'img/pM.png')
+
+figure % [E_G] d_V, cost for structure
+EGdV = read_allStat('E_G','d_V'); EG = (EGdV(:,1) ./ EGdV(:,2));
+EG_median = median(EG); 
+surv_EG = surv(EG); 
+plot([0; EG_median; EG_median], [0.5;0.5;0], 'r', surv_EG(:,1), surv_EG(:,2), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('[E_G]/ d_V, J/g')
+saveas (gca, 'img/EG.png')
+
+figure % k_J, maturity maintenance rate coefficient
+kJ = read_allStat('k_J'); 
+kJ_median = median(kJ); 
+surv_kJ = surv(kJ); 
+plot([0; kJ_median; kJ_median], [0.5;0.5;0], 'r', surv_kJ(:,1), surv_kJ(:,2), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('k_J, 1/d')
+title('k_J at T_{ref}')
+saveas (gca, 'img/kJ.png')
+
+figure % E_Hb/z^3, scaled maturity at birth
+EHbz = read_allStat('E_Hb','z'); logEHb = log10(EHbz(:,1) ./ EHbz(:,2).^3);
+logEHb_median = median(logEHb); 
+surv_logEHb = surv(logEHb); 
+plot([-15; logEHb_median; logEHb_median], [0.5;0.5;0], 'r', surv_logEHb(:,1), surv_logEHb(:,2), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('_{10}log E_H^b/ z^3, J')
+saveas (gca, 'img/EHb.png')
+
+figure % E_Hp/z^3, scaled maturity at puberty
+EHpz = read_allStat('E_Hp','z'); logEHp = log10(EHpz(:,1) ./ EHpz(:,2).^3);
+logEHp_median = median(logEHp); 
+surv_logEHp = surv(logEHp); 
+plot([-5; logEHp_median; logEHp_median], [0.5;0.5;0], 'r', surv_logEHp(:,1), surv_logEHp(:,2), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('_{10}log E_H^p/ z^3, J')
+saveas (gca, 'img/EHp.png')
+
+figure % h_a, ageing acceleration
+ha = read_allStat('h_a'); logha = log10(ha);
+logha_median = median(logha); 
+surv_logha = surv(logha); 
+plot([-50; logha_median; logha_median], [0.5;0.5;0], 'r', surv_logha(:,1), surv_logha(:,2), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('_{10}log h_a, 1/d^2')
+saveas (gca, 'img/ha.png')
+
+figure % s_G, Gompertz stress coefficient
+sG = read_allStat('s_G'); logsG = log10(sG(sG>0));
+logsG_median = median(logsG); 
+surv_logsG = surv(logsG); 
+plot([-4; logsG_median; logsG_median], [0.5;0.5;0], 'r', surv_logsG(:,1), surv_logsG(:,2), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('_{10}log s_G, -')
+saveas (gca, 'img/sG.png')
+
+##### SOURCE END #####
+--></body></html>
