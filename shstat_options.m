@@ -25,6 +25,7 @@ function shstat_options (key, val)
   %
   %   'x_transform', default: 'log10'
   %   'y_transform', default: 'log10'
+  %   'z_transform', default: 'log10'
   %
   % Output
   %
@@ -33,7 +34,7 @@ function shstat_options (key, val)
   %% Example of use
   % shstat_options('default'); shstat_options('x_transform', 'none')
 
-    global x_transform y_transform x_label y_label
+    global x_transform y_transform z_transform x_label y_label z_label
 
     if ~exist('key', 'var')
       key = 'unkown';
@@ -44,8 +45,10 @@ function shstat_options (key, val)
       case 'default'
 	    x_transform = 'log10';
 	    y_transform = 'log10';
+	    z_transform = 'log10';
         x_label = 'off';
         y_label = 'off';
+        z_label = 'off';
 
       case 'x_transform'
 	    if ~exist('val','var')
@@ -69,6 +72,17 @@ function shstat_options (key, val)
 	      y_transform = val;
         end
 
+      case 'z_transform'
+	    if ~exist('val','var')
+	      if numel(z_transform) ~= 0
+	        fprintf(['z_transform = ', z_transform,' \n']);  
+	      else
+            fprintf('z_transform = unknown \n');
+	      end	      
+	    else
+	      z_transform = val;
+        end
+
       case 'x_label'
 	    if ~exist('val','var')
 	      if numel(x_label) ~= 0
@@ -82,13 +96,24 @@ function shstat_options (key, val)
 
       case 'y_label'
 	    if ~exist('val','var')
-	      if numel(xylabel) ~= 0
+	      if numel(y_label) ~= 0
 	        fprintf(['y_label', y_label,' \n']);  
 	      else
             fprintf('y_label = unknown \n');
 	      end	      
 	    else
 	      y_label = val;
+        end
+
+      case 'z_label'
+	    if ~exist('val','var')
+	      if numel(z_label) ~= 0
+	        fprintf(['z_label', z_label,' \n']);  
+	      else
+            fprintf('z_label = unknown \n');
+	      end	      
+	    else
+	      z_label = val;
 	    end
 
       otherwise 
