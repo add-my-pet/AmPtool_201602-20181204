@@ -64,6 +64,7 @@ surv_COMPLETE = surv(CM(:,1),0);
 plot([0; C_median; C_median], [0.5;0.5;0], 'r', surv_COMPLETE(:,1), surv_COMPLETE(:,2), 'b', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('COMPLETE')
+ylabel('survivor function')
 saveas (gca,'img/COMPLETE.png')
 close all
 
@@ -71,6 +72,7 @@ surv_MRE = surv(CM(:,2),0);
 plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('Mean Relative Error')
+ylabel('survivor function')
 saveas (gca,'img/MRE.png')
 close all
 

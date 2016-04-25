@@ -9,7 +9,7 @@
 close all % remove any existing figure
 shstat_options('default');
 
-example = 2; % edit this number
+example = 3; % edit this number
 switch example
   case 1 % close to default settings
     shstat('g', 'g_Hb', legend_RSED); 
