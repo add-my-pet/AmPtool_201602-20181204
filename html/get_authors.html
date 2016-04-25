@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>get_authors</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-24"><meta name="DC.source" content="get_authors.m"><style type="text/css">
+      --><title>get_authors</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-25"><meta name="DC.source" content="get_authors.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,14 +55,16 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>get_authors</h1><!--introduction--><p>gets all submitting authors</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/02/23 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li><li><a href="#7">subfunction</a></li></ul></div><h2>created 2016/02/23 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[authors nr entry] = <a href="../get_authors.m"><b>get_authors</b></a></p><h2>Description<a name="4"></a></h2><p>gets all submitting authors</p><p>Output:</p><div><ul><li>list: cell-array with authors, arranged alphabetically on family name</li><li>nr: vector of number of entries that they (co)authored</li><li>entry: cell-array of cell-arrays with entry names</li></ul></div><h2>Example of use<a name="5"></a></h2><p>[authors nr entry entries] = get_authors; entries{find(ismember(authors, 'Elke Zimmer'))}</p><h2>subfunction<a name="7"></a></h2><p class="footer"><br>
+  </style></head><body><div class="content"><h1>get_authors</h1><!--introduction--><p>gets all submitting authors</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/02/23 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li><li><a href="#7">subfunction</a></li></ul></div><h2>created 2016/02/23 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[authors nr entry] = <a href="../get_authors.m"><b>get_authors</b></a></p><h2>Description<a name="4"></a></h2><p>gets all submitting authors</p><p>Input:</p><div><ul><li>info: optional indicator:</li></ul></div><pre>   - 0: submitting author(s) only (default)
+   - 1: modification author(s) only
+   - 2: submitting and modification authors</pre><p>Output:</p><div><ul><li>list: cell-array with authors, arranged alphabetically on family name</li><li>nr: vector of number of entries that they (co)authored</li><li>entry: cell-array of cell-arrays with entry names</li></ul></div><h2>Example of use<a name="5"></a></h2><p>[authors nr entry] = get_authors; entry{find(ismember(authors, 'Elke Zimmer'))} printpar(authors, nr)</p><h2>subfunction<a name="7"></a></h2><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% get_authors
 % gets all submitting authors
 
 %%
-function [list nr entry] = get_authors
+function [list nr entry] = get_authors(info)
 %% created 2016/02/23 by Bas Kooijman
 
 %% Syntax
@@ -71,6 +73,14 @@ function [list nr entry] = get_authors
 %% Description
 % gets all submitting authors
 %
+% Input:
+%
+% * info: optional indicator:
+%
+%     - 0: submitting author(s) only (default)
+%     - 1: modification author(s) only
+%     - 2: submitting and modification authors
+%
 % Output: 
 % 
 % * list: cell-array with authors, arranged alphabetically on family name
@@ -78,11 +88,24 @@ function [list nr entry] = get_authors
 % * entry: cell-array of cell-arrays with entry names
 
 %% Example of use
-% [authors nr entry entries] = get_authors; entries{find(ismember(authors, 'Elke Zimmer'))}
+% [authors nr entry] = get_authors; entry{find(ismember(authors, 'Elke Zimmer'))}
+% printpar(authors, nr)
 
-  [authors entries] = read_allStat('author');
-  ne = length(entries);
-   
+  if ~exist('info','var') || info == 0 
+    [authors entries] = read_allStat('author');
+    ne = length(entries);
+  elseif info == 1
+    [authors entries] = read_allStat('author_mod');
+    ne = length(entries);
+  else
+    [authors entries] = read_allStat('author');
+    ne = length(entries);
+    author_mod = read_allStat('author_mod');
+    for i = 1:ne
+      authors{i} = [authors{i}, author_mod{i}];
+    end
+  end
+     
   % alphabetically arranged list of all authors
   list = sort_fam(unique([authors{:}]))'; 
     
@@ -95,7 +118,8 @@ function [list nr entry] = get_authors
       nae(:,i) = nae(:,i) + strcmp(list,authorsi{j});
     end
   end
-    
+  nae = (nae > 0);
+  
   nr = sum(nae,2); % number of entries by each author
     
   % entries for each author

@@ -57,6 +57,8 @@ function allStat = get_allStat(T, f)
       allStat.(entries{i}).MRE = metaPar.MRE; allStat.(entries{i}).units.MRE = '-'; allStat.(entries{i}).label.MRE = 'Mean Relative Error';
       allStat.(entries{i}).COMPLETE = metaData.COMPLETE; allStat.(entries{i}).units.COMPLETE = '-'; allStat.(entries{i}).label.COMPLETE = 'completeness';
       allStat.(entries{i}).author = metaData.author(:)'; allStat.(entries{i}).units.author = '-'; allStat.(entries{i}).label.author = 'submitting author';
+      author_mod = get_author_mod(metaData);
+      allStat.(entries{i}).author_mod = author_mod; allStat.(entries{i}).units.author_mod = '-'; allStat.(entries{i}).label.author_mod = 'modification author';
       allStat.(entries{i}).date_subm = metaData.date_subm; allStat.(entries{i}).units.date_subm = '-'; allStat.(entries{i}).label.date_subm = 'submitting date';
       allStat.(entries{i}).date_acc = metaData.date_acc; allStat.(entries{i}).units.date_acc = '-'; allStat.(entries{i}).label.date_acc = 'acceptance date';
       
@@ -91,3 +93,14 @@ function allStat = get_allStat(T, f)
   cd(WD)                   % goto original path
 end
 
+function author_mod = get_author_mod(metaData)
+  author_mod = cell(0);
+  [nm nr] = fieldnmnst_st(metaData); 
+  n = strfind(nm, 'author_'); 
+  for i = 1:nr
+    if ~isempty(n{i})
+      authors = metaData.(nm{i});
+      author_mod = [author_mod, authors(:)'];
+    end
+  end
+end

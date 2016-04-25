@@ -2,7 +2,7 @@
 % gets all submitting authors
 
 %%
-function [list nr entry] = get_authors
+function [list nr entry] = get_authors(info)
 %% created 2016/02/23 by Bas Kooijman
 
 %% Syntax
@@ -10,6 +10,14 @@ function [list nr entry] = get_authors
 
 %% Description
 % gets all submitting authors
+%
+% Input:
+%
+% * info: optional indicator:
+%
+%     - 0: submitting author(s) only (default)
+%     - 1: modification author(s) only
+%     - 2: submitting and modification authors
 %
 % Output: 
 % 
@@ -19,10 +27,23 @@ function [list nr entry] = get_authors
 
 %% Example of use
 % [authors nr entry] = get_authors; entry{find(ismember(authors, 'Elke Zimmer'))}
+% printpar(authors, nr)
 
-  [authors entries] = read_allStat('author');
-  ne = length(entries);
-   
+  if ~exist('info','var') || info == 0 
+    [authors entries] = read_allStat('author');
+    ne = length(entries);
+  elseif info == 1
+    [authors entries] = read_allStat('author_mod');
+    ne = length(entries);
+  else
+    [authors entries] = read_allStat('author');
+    ne = length(entries);
+    author_mod = read_allStat('author_mod');
+    for i = 1:ne
+      authors{i} = [authors{i}, author_mod{i}];
+    end
+  end
+     
   % alphabetically arranged list of all authors
   list = sort_fam(unique([authors{:}]))'; 
     
@@ -35,7 +56,8 @@ function [list nr entry] = get_authors
       nae(:,i) = nae(:,i) + strcmp(list,authorsi{j});
     end
   end
-    
+  nae = (nae > 0);
+  
   nr = sum(nae,2); % number of entries by each author
     
   % entries for each author
