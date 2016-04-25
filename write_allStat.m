@@ -2,11 +2,11 @@
 % writes a structure with all pars and stats for all entries
 
 %%
-function write_allStat(T, f)
+function allStat = write_allStat(T, f)
 % created 2016/04/24 by Bas Kooijman
 
 %% Syntax
-% <write_allStat *write_allStat*> (T, f)
+% allStat = <write_allStat *write_allStat*> (T, f)
 
 %% Description
 % Writes result of <get_allStat.html *get_allStat*> to file allStat.mat
@@ -15,6 +15,10 @@ function write_allStat(T, f)
 %
 % * T: optional scalar with body temperature in Kelvin (default T_typical, which is entry-specific)
 % * f: optional scalar with scaled functional response (default 1)
+%
+% Ouput:
+%
+% * allStat: stucture with all parameters ans statistics of all entries
 
 %% Remarks
 % See <read_allStat.html *read_allStat*> for extracting values from allStat.mat.

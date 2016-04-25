@@ -52,7 +52,6 @@ close all
 
 CM = read_allStat('COMPLETE', 'MRE'); n_entries = size(CM,1);
 C_median = median(CM(:,1)); M_median = median(CM(:,2));
-
 plot(CM(:,1), CM(:,2), '.b', 'MarkerSize', 20)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('COMPLETE')
