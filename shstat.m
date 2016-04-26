@@ -184,7 +184,7 @@ function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
       end
       
       %saveas (gca, [vars{1}, '_', vars{2}, '.png'])
-      h = datacursormode(fig);
+      h = datacursormode(Hfig);
       h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, xy_plot);
       datacursormode on % mouse click on plot
     
