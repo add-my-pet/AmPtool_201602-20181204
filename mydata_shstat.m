@@ -44,7 +44,7 @@ switch example
     shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
     shstat_options('z_transform', 'none');
-    shstat({'s_s', 'kap', 'ep_min'}, legend_vert);
+    [Hfig sskap entries missing] = shstat({'s_s', 'kap', 'ep_min'}, legend_vert);
     
     figure(Hfig) % add items to figure
     kap = linspace(0,1,200); ss = kap .* kap .* (1 - kap); f = (ss * 27/4).^(1/3);
