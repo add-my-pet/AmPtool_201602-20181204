@@ -10,7 +10,7 @@
 
 close all % remove any existing figure
 
-example = 4; % edit this number
+example = 7; % edit this number
 switch example
   case 1 % close to default settings
     shstat_options('default');
@@ -66,6 +66,20 @@ switch example
     plot([-3.5; v_median; v_median], [0.5;0.5;0], 'b', surv_v(:,1), surv_v(:,2), 'b', 'Linewidth', 2)
     set(gca, 'FontSize', 15, 'Box', 'on')
     xlabel('_{10} log v, cm/d')
+    ylabel('survivor function')
     title('v at T_{ref}, before and after acceleration')
+
+  case 7 % compare post-metam v, with and without acceleration
+    vsM = read_allStat('v', 's_M'); logvj = log10(prod(vsM,2));
+    sM = vsM(:,2); logv = logvj(sM == 1); logvj = logvj(sM > 1);
+    v_median = median(logv); vj_median = median(logvj);
+    surv_v = surv(logv); surv_vj = surv(logvj);
+    hold on
+    plot([-3.5; vj_median; vj_median], [0.5;0.5;0], 'r', surv_vj(:,1), surv_vj(:,2), 'r', 'Linewidth', 2)
+    plot([-3.5; v_median; v_median], [0.5;0.5;0], 'b', surv_v(:,1), surv_v(:,2), 'b', 'Linewidth', 2)
+    set(gca, 'FontSize', 15, 'Box', 'on')
+    xlabel('_{10} log v, cm/d')
+    ylabel('survivor function')
+    title('post-metam v at T_{ref}, without and with acceleration')
 
 end
