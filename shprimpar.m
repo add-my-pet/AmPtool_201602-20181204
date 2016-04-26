@@ -11,12 +11,14 @@ function shprimpar
 %% Description
 % generates survivor plots for primary parameters
 %
-% Output: no explicit output but figures are produced and png-files written
+% Output: 
 %
-% * in entries_admin/img: pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png EHb.png EHp.png ha.png sG.png
+% * png-files written in entries_admin/img: 
+%
+%    - Fm.png kapX.png pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png, EHb.png, EHp.png, ha.png, sG.png
 
 %% Remarks
-% Copy png files to 
+% For presentation on the web, copy png files to 
 % /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img
 
 close all

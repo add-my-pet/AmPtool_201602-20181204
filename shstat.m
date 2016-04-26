@@ -1,11 +1,11 @@
 %% shstat
 % plots statistics and/or parameters
 
-function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
+function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
 %% created 2016/04/23 by Bas Kooijman
 
 %% Syntax
-% [fig val entries missing] =  <../shstat.m *shstat*>(vars, legend, options, title)
+% [Hfig val entries missing] =  <../shstat.m *shstat*>(vars, legend, title, Hfig)
 
 %% Description
 % plots statistics and/or parameters using allStat.mat as source (which must exist). 
@@ -14,26 +14,28 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 %
 % * vars: cell string with name(s) of 1, 2 or 3 independent variables 
 % * legend: (m,2)-array with legend (marker, taxa)-pairs
-% * label_title: optional string for title of figure
-% * Hfig: optional figure handle
+% * title: optional string for title of figure
+% * Hfig: optional figure handle (to get the plot in a specified figure)
 %
 % Output
 %
-% * Hfig: figure handle
-% * val: (n,1 or 2 or 3)-matrix with x or (x,y) of (x,y,z)-values
+% * Hfig: figure handle (equal to input, if specified there)
+% * val: (n,1 or 2 or 3)-matrix with x or (x,y) of (x,y,z)-values (depending on the spefication of vars)
 % * entries: n-cell string with names of entries
-% * missing: cell string with names of entries that should have been plotted, but are missing 
+% * missing: cell string with names of entries that should have been plotted, but are missing (because of lack of data in allStat.mat) 
 
 %% Remarks
-% Be aware that the sequence of taxa in legend matters. A selection-of-entries matrix composed with first-to-last colum corresponding to taxa in first-to-last row of legend. 
+% Legend can be set/modified with select_legend. Be aware that the sequence of taxa in legend matters. 
+% shstat composes a selection-of-entries matrix with first-to-last colum corresponding to taxa in first-to-last row of legend. 
 % In the case that a taxon in included in another one, double plotting is suppressed from first-to-last column of selection matrix, and plotting is done for last-to-first column.
-% So, if Aves and Animalia are in the legend in this sequence, the Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding.
-% If Animalia are in the legend before Aves, no Aves-markers are shown.
+% So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding.
+% If Animalia is in legend before Aves, no Aves-markers are shown.
 %
 % Make sure that allStat has been generated at the correct temperature (for times and rates); all parameters are at T_ref.
-% Make sure that allStat is consistent with select('Animalia').
+% Make sure that allStat is consistent with select('Animalia'); can be done via write_allStat.
+%
 % Set options with shstat_options (such as logarithmic transformation of axes).
-% Symbols and units are always plotted, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
+% Symbols and units are always plotted on the axes, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
 % In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend is not used.
 % In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names).
 % In case of 3 variables: hit rotation in the toolbar of the figure.
