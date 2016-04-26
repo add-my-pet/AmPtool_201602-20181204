@@ -11,10 +11,30 @@ function about
 %% Description
 % Runs plotting routines, creates png-files and link them in an html-file
 %
-% Output: no explicit output but several files are written
+% Output: 
 %
-% * in entries_admin/img: COMPLETE.png, COMPLETE_MRE.png, MRE.png, entries.png, pie_Animal.png, pie_model.png update.txt  
-% * in entries_admin: about.html 
+%  * files are written in entries_admin/img: 
+%
+%      - entries.png, 
+%      - pie_Animal.png
+%      - pie_model.png  
+%      - COMPLETE.png
+%      - MRE.png
+%      - COMPLETE_MRE.png
+%      - Fm.png
+%      - kapX.png
+%      - pAm.png
+%      - v.png
+%      - kap.png
+%      - pM.png
+%      - EG.png
+%      - kJ.png
+%      - EHb.png
+%      - EBp.png
+%      - ha.png
+%      - sG.png
+%
+% * file is written in entries_admin: about.html 
 
 %% Remarks
 % Copy png files to 
@@ -28,7 +48,10 @@ function about
 % fprintf(fileid, datestr(date,26)); 
 % fclose(fileid);
 
-write_allStat;
+close all
+clear all
+
+write_allStat; % update Staristics structure allStat.mat
 
 pie_Animalia;
 saveas (gca, 'img/pie_Animalia.png')
@@ -38,6 +61,7 @@ pie_model;
 saveas (gca, 'img/pie_model.png')
 close all
 
+% # of entries in time
 [dates entries_new dates_new] = get_date_subm;
 surv_dates = surv(dates, 2006); 
 surv_dates([1; end - 1; end],:) = [];    
@@ -50,6 +74,7 @@ ylabel('# of add\_my\_pet entries')
 saveas (gca,'img/entries.png')
 close all
 
+% COMPLETE, MRE plots
 CM = read_allStat('COMPLETE', 'MRE'); n_entries = size(CM,1);
 C_median = median(CM(:,1)); M_median = median(CM(:,2));
 plot(CM(:,1), CM(:,2), '.b', 'MarkerSize', 20)
@@ -74,6 +99,8 @@ xlabel('Mean Relative Error')
 ylabel('survivor function')
 saveas (gca,'img/MRE.png')
 close all
+
+shprimpar % primary parameters
 
 % Write about.html
 path = 'HREF = http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/i_results_'; % path to entries
