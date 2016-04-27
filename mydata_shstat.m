@@ -33,7 +33,7 @@ switch example
     shstat_options('y_transform', 'none');
     shstat_options('x_label', 'on');
     shstat_options('y_label', 'on');
-    [Hfig sskap entries missing] = shstat({'s_s', 'kap'}, legend_fish, date);
+    [Hfig sskap entries missing] = shstat({'s_s', 'kap'}, legend_hexa, date);
 
     figure(Hfig) % add items to figure
     kap = linspace(1e-6,1,100); ss = kap.^2 .* (1 - kap); 
