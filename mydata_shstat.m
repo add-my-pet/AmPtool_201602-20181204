@@ -10,7 +10,7 @@
 
 close all % remove any existing figure
 
-example = 3; % edit this number
+example = 2; % edit this number
 switch example
   case 1 % close to default settings
     shstat_options('default');
@@ -39,16 +39,19 @@ switch example
     kap = linspace(1e-6,1,100); ss = kap.^2 .* (1 - kap); 
     plot(log10(ss), kap, 'k', 'Linewidth', 2)
 
-  case 4 % 3D plotting: hit rotation-tool in the toolbar of the figure
+  case 4 % 3D plotting: hit rotation-tool in the toolbar of the figure    
     shstat_options('default');
     shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
     shstat_options('z_transform', 'none');
-    [Hfig sskap entries missing] = shstat({'s_s', 'kap', 'ep_min'}, legend_vert);
-    
+    Hfig = shstat({'kap', 'ep_min', 's_s'}, legend_vert);
+
     figure(Hfig) % add items to figure
-    kap = linspace(0,1,200); ss = kap .* kap .* (1 - kap); f = (ss * 27/4).^(1/3);
-    plot3(ss,kap,f,'k','linewidth',2)
+    kap = linspace(0, 1, 15)'; f = kap; ss = kap.^2 .* (1 - kap) * f'.^3;
+    mesh(kap, f, ss');
+    Colmap = [0 0 0; 0 0 .5; 0 0 1; .5 0 1; 1 0 1; 1 0 .5; 1 0 0; 1 .25 .25; 1 .5 .5; 1 .75 .75];
+    colormap(Hfig, Colmap)
+
     axis square
     
   case 5 % 1D plotting: single variable 
