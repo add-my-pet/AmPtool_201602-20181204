@@ -13,7 +13,7 @@ function shprimpar
 %
 % Output: 
 %
-% * png-files written in entries_admin/img: 
+% * 12 png-files written in entries_admin/img: 
 %
 %    - Fm.png kapX.png pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png, EHb.png, EHp.png, ha.png, sG.png
 
@@ -58,7 +58,7 @@ plot([logv_min; logv_median; logv_median], [0.5;0.5;0], 'b', surv_v(:,1), surv_v
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('_{10} log v, cm/d')
 ylabel('survivor function')
-title('v at T_{ref}, before and after acceleration')
+title('v at T_{ref}, before and after acceleration at f = 1')
 saveas (gca, 'img/v.png')
 
 figure(5) % kappa, allocation fraction to soma

@@ -3,7 +3,7 @@
 
 %%
 function about
-%% created 2016/02/23 by Bas Kooijman
+%% created 2016/02/23 by Bas Kooijman; modified 2016/04/26
 
 %% Syntax
 % <../about *about*>
@@ -38,11 +38,10 @@ function about
 
 %% Remarks
 % Copy png files to 
-% /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img
+%   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img
 % and about.html file to
-% /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet
+%   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet
 % to present them on the web.
-% file update.txt is not used, since most recent entry date is sufficiently close
 
 % fileid = fopen('img/update.txt', 'w');
 % fprintf(fileid, datestr(date,26)); 
