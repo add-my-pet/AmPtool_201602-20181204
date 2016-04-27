@@ -27,7 +27,7 @@ function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
 %% Remarks
 % Legend can be set/modified with select_legend. Be aware that the sequence of taxa in legend matters. 
 % shstat composes a selection-of-entries matrix with first-to-last colum corresponding to taxa in first-to-last row of legend. 
-% In the case that a taxon in included in another one, double plotting is suppressed from first-to-last column of selection matrix, and plotting is done for last-to-first column.
+% In the case that a taxon is included in another one, double plotting is suppressed from first-to-last column of selection matrix, and plotting is done for last-to-first column.
 % So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding.
 % If Animalia is in legend before Aves, no Aves-markers are shown.
 %

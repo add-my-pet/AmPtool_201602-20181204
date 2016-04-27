@@ -10,7 +10,7 @@
 
 close all % remove any existing figure
 
-example = 7; % edit this number
+example = 3; % edit this number
 switch example
   case 1 % close to default settings
     shstat_options('default');
