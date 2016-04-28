@@ -10,9 +10,8 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 %% Description
 % plots statistics and/or parameters using allStat.mat as source (which must exist). 
 % Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty.
-% In that case, read_allStat is bypassed, output missing is empty and labels must be set by user afterwards.
-% If the number of varables as specified in vars equals 1, legend is optional and
-%   specifies the colors of the survivor function and median (default: {'b','r'}).
+% In that case, read_allStat is bypassed, output missing is empty and labels must be set by user afterwards, see mydata_shstat.
+% If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}).
 %
 % Input:
 %
@@ -39,7 +38,7 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 % Make sure that allStat is consistent with select('Animalia'); can be done via write_allStat.
 %
 % Set options with shstat_options (such as logarithmic transformation of axes).
-% Symbols and units are always plotted on the axes, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
+% Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
 % In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend specifies colors for survivor and median.
 % In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names).
 % In case of 3 variables: hit rotation in the toolbar of the figure.
@@ -52,10 +51,13 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
   % get (x,y,z)-values, units, label
   if isnumeric(vars) % numerical mode, read_allStat is bypassed
     val = vars;
-    n = size(vars,2);
+    [ne n] = size(vars); 
     units_x = []; units_y = []; units_z = [];
     label_x = []; label_y = []; label_z = [];
     entries = select;
+    if ~(ne == length(entries))
+      fprintf('Warning from shstat: number data-points is not equal to number of entries\n');
+    end
   else % read values of variables, units and labels using read_allStat
     n = length(vars);
     switch n
@@ -75,11 +77,14 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
   if n == 1
     missing = entries(isnan(val)); % determine missing entries
   else
-    m = size(legend,1); % number of taxa to be plotted
+    if isempty(legend)
+      legend = select_legend;
+    end
+    m = size(legend, 1); % number of taxa to be plotted
     [sel entries_sel] = select_01('Animalia', legend{1,2});
     if ~isequaln(entries, entries_sel)
       fprintf('Error in shstat: entries in allStat do not correspond with entries in select(''Animalia'')\n')
-      fig = []; missing = []; return
+      Hfig = []; missing = []; return
     end
     for i = 2:m
       sel = [sel, select_01('Animalia', legend{i,2})];
@@ -172,7 +177,7 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
   hold on
   switch n
     case 1
-      % set colors for function and median
+      % set colors for survivor function and median
       if ~exist('legend','var') || isempty(legend)
         colfn = 'b'; colmed = 'r';
       else
@@ -232,4 +237,3 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 
   end
 end
-

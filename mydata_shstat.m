@@ -12,7 +12,7 @@ close all % remove any existing figure
 
 example = 5; % edit this number
 switch example
-  case 1 % 2D: close to default settings
+  case 1 % 2D: use default settings
     shstat_options('default');
     shstat({'g', 'g_Hb'}, legend_RSED); 
 
