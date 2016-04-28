@@ -195,11 +195,6 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
       if strcmp(y_label, 'on')
         ylabel('survivor function')
       end
-      if exist('label_title', 'var') && ~isempty(label_title)
-        title(label_title)
-      end
-      
-      %saveas (gca, [vars{1}, '.png'])
 
     case 2
       for j = 1:m      % scan taxa
@@ -210,9 +205,6 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
       set(gca, 'FontSize', 15, 'Box', 'on')
       xlabel(label_x)  
       ylabel(label_y)
-      if exist('label_title', 'var') && ~isempty(label_title)
-        title(label_title)
-      end
       
       %saveas (gca, [vars{1}, '_', vars{2}, '.png'])
       h = datacursormode(Hfig);
@@ -231,12 +223,13 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
       xlabel(label_x)  
       ylabel(label_y)
       zlabel(label_z)
-      if exist('label_title', 'var') && ~isempty(label_title)
-        title(label_title)
-      end
       
-      %saveas (gca, [vars{1}, '_', vars{2}, '_', vars{3}, '.png'])
       shlegend(legend);
 
   end
+  
+  if exist('label_title', 'var') && ~isempty(label_title)
+     title(label_title)
+  end
+
 end
