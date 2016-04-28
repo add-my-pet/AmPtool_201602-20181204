@@ -43,11 +43,13 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 % Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
 %
 % In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend specifies colors for survivor and median.
+%
 % In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names).
+%
 % In case of 3 variables: hit rotation in the toolbar of the figure.
 
 %% Example of use
-% see <../mydata_shstat.m *mydata_shstat*>
+% see <mydata_shstat.html *mydata_shstat*>
 
   global x_transform y_transform z_transform  x_label y_label z_label
 

@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">shstat</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>shstat<a name="1"></a></h2><p>plots statistics and/or parameters</p><h2>Syntax<a name="3"></a></h2><p>[Hfig val entries missing] =  <a href="../shstat.m"><b>shstat</b></a>(vars, legend, label_title, Hfig)</p><h2>Description<a name="4"></a></h2><p>plots statistics and/or parameters using allStat.mat as source (which must exist).</p><p>Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty and output val equals input vars. In that case, read_allStat is bypassed and labels must be set by user afterwards, see mydata_shstat.</p><p>If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}).</p><p>Input:</p><div><ul><li>vars: cell string with name(s) of 1, 2 or 3 independent variables</li><li>legend: (m,2)-array with legend (marker, taxa)-pairs</li><li>label_title: optional string for title of figure</li><li>Hfig: optional figure handle (to get the plot in a specified figure)</li></ul></div><p>Output</p><div><ul><li>Hfig: figure handle (equal to input, if specified there)</li><li>val: (n,1 or 2 or 3)-matrix with untransformed x or (x,y) or (x,y,z)-values (depending on the spefication of vars)</li><li>entries: n-cell string with names of entries</li><li>missing: cell string with names of entries that should have been plotted, but are missing (because of lack of data in allStat.mat)</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Legend can be set/modified with select_legend. Be aware that the sequence of taxa in legend matters. shstat composes a selection-of-entries matrix with first-to-last colum corresponding to taxa in first-to-last row of legend. In the case that a taxon is included in another one, double plotting is suppressed from first-to-last column of selection matrix, and plotting is done for last-to-first column. So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding. If Animalia is in legend before Aves, no Aves-markers are shown.</p><p>Make sure that allStat has been generated at the correct temperature (for times and rates); all parameters are at T_ref. Make sure that allStat is consistent with select('Animalia'); can be done via write_allStat.</p><p>Set options with shstat_options (such as logarithmic transformation of axes). Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.</p><p>In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend specifies colors for survivor and median. In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names). In case of 3 variables: hit rotation in the toolbar of the figure.</p><h2>Example of use<a name="6"></a></h2><p>see <a href="../mydata_shstat.m"><b>mydata_shstat</b></a></p><p class="footer"><br>
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">shstat</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>shstat<a name="1"></a></h2><p>plots statistics and/or parameters</p><h2>Syntax<a name="3"></a></h2><p>[Hfig val entries missing] =  <a href="../shstat.m"><b>shstat</b></a>(vars, legend, label_title, Hfig)</p><h2>Description<a name="4"></a></h2><p>plots statistics and/or parameters using allStat.mat as source (which must exist).</p><p>Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty and output val equals input vars. In that case, read_allStat is bypassed and labels must be set by user afterwards, see mydata_shstat.</p><p>If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}).</p><p>Input:</p><div><ul><li>vars: cell string with name(s) of 1, 2 or 3 independent variables</li><li>legend: (m,2)-array with legend (marker, taxa)-pairs</li><li>label_title: optional string for title of figure</li><li>Hfig: optional figure handle (to get the plot in a specified figure)</li></ul></div><p>Output</p><div><ul><li>Hfig: figure handle (equal to input, if specified there)</li><li>val: (n,1 or 2 or 3)-matrix with untransformed x or (x,y) or (x,y,z)-values (depending on the spefication of vars)</li><li>entries: n-cell string with names of entries</li><li>missing: cell string with names of entries that should have been plotted, but are missing (because of lack of data in allStat.mat)</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Legend can be set/modified with select_legend. Be aware that the sequence of taxa in legend matters. shstat composes a selection-of-entries matrix with first-to-last colum corresponding to taxa in first-to-last row of legend. In the case that a taxon is included in another one, double plotting is suppressed from first-to-last column of selection matrix, and plotting is done for last-to-first column. So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding. If Animalia is in legend before Aves, no Aves-markers are shown.</p><p>Make sure that allStat has been generated at the correct temperature (for times and rates); all parameters are at T_ref. Make sure that allStat is consistent with select('Animalia'); can be done via write_allStat.</p><p>Set options with shstat_options (such as logarithmic transformation of axes). Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.</p><p>In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend specifies colors for survivor and median.</p><p>In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names).</p><p>In case of 3 variables: hit rotation in the toolbar of the figure.</p><h2>Example of use<a name="6"></a></h2><p>see <a href="mydata_shstat.html"><b>mydata_shstat</b></a></p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% shstat
@@ -103,11 +103,13 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 % Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
 %
 % In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend specifies colors for survivor and median.
+%
 % In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names).
+%
 % In case of 3 variables: hit rotation in the toolbar of the figure.
 
 %% Example of use
-% see <../mydata_shstat.m *mydata_shstat*>
+% see <mydata_shstat.html *mydata_shstat*>
 
   global x_transform y_transform z_transform  x_label y_label z_label
 
@@ -255,11 +257,6 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
       if strcmp(y_label, 'on')
         ylabel('survivor function')
       end
-      if exist('label_title', 'var') && ~isempty(label_title)
-        title(label_title)
-      end
-      
-      %saveas (gca, [vars{1}, '.png'])
 
     case 2
       for j = 1:m      % scan taxa
@@ -270,9 +267,6 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
       set(gca, 'FontSize', 15, 'Box', 'on')
       xlabel(label_x)  
       ylabel(label_y)
-      if exist('label_title', 'var') && ~isempty(label_title)
-        title(label_title)
-      end
       
       %saveas (gca, [vars{1}, '_', vars{2}, '.png'])
       h = datacursormode(Hfig);
@@ -291,14 +285,15 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
       xlabel(label_x)  
       ylabel(label_y)
       zlabel(label_z)
-      if exist('label_title', 'var') && ~isempty(label_title)
-        title(label_title)
-      end
       
-      %saveas (gca, [vars{1}, '_', vars{2}, '_', vars{3}, '.png'])
       shlegend(legend);
 
   end
+  
+  if exist('label_title', 'var') && ~isempty(label_title)
+     title(label_title)
+  end
+
 end
 
 ##### SOURCE END #####
