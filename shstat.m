@@ -9,8 +9,8 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 
 %% Description
 % plots statistics and/or parameters using allStat.mat as source (which must exist). 
-% Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty.
-% In that case, read_allStat is bypassed, output missing is empty and labels must be set by user afterwards, see mydata_shstat.
+% Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty and output val equals input vars.
+% In that case, read_allStat is bypassed and labels must be set by user afterwards, see mydata_shstat.
 % If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}).
 %
 % Input:
@@ -23,7 +23,7 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 % Output
 %
 % * Hfig: figure handle (equal to input, if specified there)
-% * val: (n,1 or 2 or 3)-matrix with x or (x,y) of (x,y,z)-values (depending on the spefication of vars)
+% * val: (n,1 or 2 or 3)-matrix with untransformed x or (x,y) or (x,y,z)-values (depending on the spefication of vars)
 % * entries: n-cell string with names of entries
 % * missing: cell string with names of entries that should have been plotted, but are missing (because of lack of data in allStat.mat) 
 

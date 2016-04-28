@@ -1,11 +1,11 @@
-%% mydata_shstat: demo for using plotting tool shstat
+%% mydata_shstat: demo script for using plotting tool shstat
 % see shprimpar for more examples of 1D plotting
 
 % generate updated allStat if necessary
 % write_allStat(C2K(20),1); % notice that default allStat is at T=T_typical and f=1
 
-% compose/modify your legend if you wish. You can also do this on-the-fly by selecting an empty legend
-% mylegend = select_legend; % replace legend_* by mylegend in the examples below, if you active this
+% compose/modify your legend if you wish. You can also do this on-the-fly by selecting an empty legend.
+% mylegend = select_legend; % replace legend_* by mylegend in the examples below, if you active this.
 % If your desired legend is close to an existing one, e.g. legend_fish, you can modify it by: mylegend = select_legend(legend_fish)
 
 close all % remove any existing figure
@@ -59,11 +59,11 @@ switch example
     shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
     essk = read_allStat('ep_min', 's_s', 's_M', 'kap'); ep_min = essk(:,1); s_s = essk(:,2); s_M = essk(:,3);  kap = essk(:,4);
-    Hfig = shstat([ep_min, (s_s ./ (kap.^2 .* (1 - kap))) .^(1/3)], legend_vert);
+    Hfig = shstat([ep_min, (s_s ./ (kap.^2 .* (1 - kap))) .^(1/3)], legend_vert); % output handle for setting labels
 
-    figure(Hfig) % add items to figure
-    xlabel('e_p^{min}, -')      % set xlabel, because this is not done by shstat in numerical mode
-    ylabel('max e_p^{min}, -')  % set ylabel, because this is not done by shstat in numerical mode
+    figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
+    xlabel('e_p^{min}, -')      
+    ylabel('max e_p^{min}, -')
    
   case 6 % 1D: single variable with default colors
     shstat_options('default');
@@ -76,7 +76,7 @@ switch example
     shstat_options('default');
     shstat_options('y_label', 'on');
     Hfig = shstat(vj, {'r', 'r'}); % output handle for adding items to same figure and set colors
-    shstat(v, {'b', 'b'}, 'post-metam v at T_{ref}, without and with acceleration', Hfig);
+    shstat(v, {'b', 'b'}, 'post-metam v at T_{ref} and f=1, without and with acceleration', Hfig);
     % setting of figure handle not required, because legend is not shown in new figure, and first figure is still active
     xlabel('_{10} log v, cm/d') 
     
