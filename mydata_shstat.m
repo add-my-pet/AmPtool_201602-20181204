@@ -4,9 +4,9 @@
 % generate updated allStat if necessary
 % write_allStat(C2K(20),1); % notice that default allStat is at T=T_typical and f=1
 
-% compose/modify your legend if you wish
+% compose/modify your legend if you wish. You can also do this on-the-fly by selecting an empty legend
 % mylegend = select_legend; % replace legend_* by mylegend in the examples below, if you active this
-% If your desired legend is close to an existing one, e.g. legend_fish, you can domify it by: mylegend = select_legend(legend_fish)
+% If your desired legend is close to an existing one, e.g. legend_fish, you can modify it by: mylegend = select_legend(legend_fish)
 
 close all % remove any existing figure
 
