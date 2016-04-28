@@ -10,79 +10,74 @@
 
 close all % remove any existing figure
 
-example = 2; % edit this number
+example = 5; % edit this number
 switch example
-  case 1 % close to default settings
+  case 1 % 2D: close to default settings
     shstat_options('default');
     shstat({'g', 'g_Hb'}, legend_RSED); 
 
-  case 2 % more tricks: no transformation (default is log10), description enabled
+  case 2 % 2D: more tricks: no transformation (default is log10), description enabled
     shstat_options('default');
     shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
     shstat_options('x_label', 'on');
     shstat_options('y_label', 'on');
-    [Hfig sskap entries missing] = shstat({'s_s', 'kap'}, legend_vert, date);
+    Hfig = shstat({'s_s', 'kap'}, legend_vert, date); % output handle for adding items, set title
 
     figure(Hfig) % add items to figure
-    kap = linspace(0,1,100); ss = kap.^2 .* (1 - kap); 
+    kap = linspace(0, 1, 100); ss = kap.^2 .* (1 - kap); 
     plot(ss, kap, 'k', 'Linewidth', 2)
 
-  case 3 % like 2, but with logarithmic transformation on independent variable only
+  case 3 % 2D: like 2, but with logarithmic transformation on independent variable only
     shstat_options('default');
     shstat_options('y_transform', 'none');
     shstat_options('x_label', 'on');
     shstat_options('y_label', 'on');
-    [Hfig sskap entries missing] = shstat({'s_s', 'kap'}, legend_hexa, date);
+    Hfig = shstat({'s_s', 'kap'}, legend_hexa, date); % output handle for adding items, set title
 
     figure(Hfig) % add items to figure
     kap = linspace(1e-6,1,100); ss = kap.^2 .* (1 - kap); 
     plot(log10(ss), kap, 'k', 'Linewidth', 2)
 
-  case 4 % 3D plotting: hit rotation-tool in the toolbar of the figure    
+  case 4 % 3D: hit rotation-tool in the toolbar of the figure    
     shstat_options('default');
     shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
     shstat_options('z_transform', 'none');
-    Hfig = shstat({'kap', 'ep_min', 's_s'}, legend_vert);
+    Hfig = shstat({'kap', 'ep_min', 's_s'}, legend_vert); % output handle for adding items
 
     figure(Hfig) % add items to figure
-    kap = linspace(0, 1, 15)'; f = kap; ss = kap.^2 .* (1 - kap) * f'.^3;
-    mesh(kap, f, ss');
+    kap = linspace(0, 1, 15)'; f = kap'; ss = kap.^2 .* (1 - kap) * f.^3; % set x,y,z values
+    mesh(kap, f, ss'); % add surface to figure
+    % define colormap for mesh: k->b->m->r->white
     Colmap = [0 0 0; 0 0 .5; 0 0 1; .5 0 1; 1 0 1; 1 0 .5; 1 0 0; 1 .25 .25; 1 .5 .5; 1 .75 .75];
-    colormap(Hfig, Colmap)
-
+    colormap(Hfig, Colmap) % set color map to add_my_pet colors 
     axis square
-    
-  case 5 % 1D plotting: single variable 
+
+  case 5 % 2D: numerical mode because of computations: setting of xlabel and ylabel required
+    shstat_options('default');
+    shstat_options('x_transform', 'none');
+    shstat_options('y_transform', 'none');
+    essk = read_allStat('ep_min', 's_s', 's_M', 'kap'); ep_min = essk(:,1); s_s = essk(:,2); s_M = essk(:,3);  kap = essk(:,4);
+    Hfig = shstat([ep_min, (s_s ./ (kap.^2 .* (1 - kap))) .^(1/3)], legend_vert);
+
+    figure(Hfig) % add items to figure
+    xlabel('e_p^{min}, -')      % set xlabel, because this is not done by shstat in numerical mode
+    ylabel('max e_p^{min}, -')  % set ylabel, because this is not done by shstat in numerical mode
+   
+  case 6 % 1D: single variable with default colors
     shstat_options('default');
     shstat_options('x_transform', 'none');
     shstat_options('y_label', 'on');
-    shstat({'kap'});
-      
-  case 6 % bypass shstat if computations are required
-    vsM = read_allStat('v', 's_M'); logv = log10(vsM(:,1)); logvj = log10(prod(vsM,2));
-    v_median = median(logv); vj_median = median(logvj);
-    surv_v = surv(logv); surv_vj = surv(logvj);
-    hold on
-    plot([-3.5; vj_median; vj_median], [0.5;0.5;0], 'r', surv_vj(:,1), surv_vj(:,2), 'r', 'Linewidth', 2)
-    plot([-3.5; v_median; v_median], [0.5;0.5;0], 'b', surv_v(:,1), surv_v(:,2), 'b', 'Linewidth', 2)
-    set(gca, 'FontSize', 15, 'Box', 'on')
-    xlabel('_{10} log v, cm/d')
-    ylabel('survivor function')
-    title('v at T_{ref}, before and after acceleration')
+    shstat({'kap'});      
 
-  case 7 % compare post-metam v, with and without acceleration
-    vsM = read_allStat('v', 's_M'); logvj = log10(prod(vsM,2));
-    sM = vsM(:,2); logv = logvj(sM == 1); logvj = logvj(sM > 1);
-    v_median = median(logv); vj_median = median(logvj);
-    surv_v = surv(logv); surv_vj = surv(logvj);
-    hold on
-    plot([-3.5; vj_median; vj_median], [0.5;0.5;0], 'r', surv_vj(:,1), surv_vj(:,2), 'r', 'Linewidth', 2)
-    plot([-3.5; v_median; v_median], [0.5;0.5;0], 'b', surv_v(:,1), surv_v(:,2), 'b', 'Linewidth', 2)
-    set(gca, 'FontSize', 15, 'Box', 'on')
-    xlabel('_{10} log v, cm/d')
-    ylabel('survivor function')
-    title('post-metam v at T_{ref}, without and with acceleration')
-
+  case 7 % 1D: numerical mode because of computations: setting of xlabel required
+    vsM = read_allStat('v', 's_M'); sM = vsM(:,2); vj = prod(vsM,2); v = vj(sM == 1); vj = vj(sM > 1);
+    shstat_options('default');
+    shstat_options('y_label', 'on');
+    Hfig = shstat(vj, {'r', 'r'}); % output handle for adding items to same figure and set colors
+    shstat(v, {'b', 'b'}, 'post-metam v at T_{ref}, without and with acceleration', Hfig);
+    % setting of figure handle not required, because legend is not shown in new figure, and first figure is still active
+    xlabel('_{10} log v, cm/d') 
+    
 end

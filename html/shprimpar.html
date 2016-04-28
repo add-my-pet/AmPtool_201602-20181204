@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>shprimpar</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-26"><meta name="DC.source" content="shprimpar.m"><style type="text/css">
+      --><title>shprimpar</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-28"><meta name="DC.source" content="shprimpar.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>shprimpar</h1><!--introduction--><p>generates survivor plots for primary parameters</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/04/25 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li></ul></div><h2>created 2016/04/25 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p><a href="../shprimpar"><b>shprimpar</b></a></p><h2>Description<a name="4"></a></h2><p>generates survivor plots for primary parameters</p><p>Output: no explicit output but figures are produced and png-files written</p><div><ul><li>in entries_admin/img: pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png EHb.png EHp.png ha.png sG.png</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Copy png files to /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>shprimpar</h1><!--introduction--><p>generates survivor plots for primary parameters</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/04/25 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li></ul></div><h2>created 2016/04/25 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p><a href="../shprimpar"><b>shprimpar</b></a></p><h2>Description<a name="4"></a></h2><p>generates survivor plots for primary parameters</p><p>Output:</p><div><ul><li>12 png-files written in entries_admin/img:</li></ul></div><pre>  - Fm.png kapX.png pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png, EHb.png, EHp.png, ha.png, sG.png</pre><h2>Remarks<a name="5"></a></h2><p>For presentation on the web, copy png files to /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% shprimpar
@@ -71,96 +71,93 @@ function shprimpar
 %% Description
 % generates survivor plots for primary parameters
 %
-% Output: no explicit output but figures are produced and png-files written
+% Output: 
 %
-% * in entries_admin/img: pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png EHb.png EHp.png ha.png sG.png
+% * 12 png-files written in entries_admin/img: 
+%
+%    - Fm.png kapX.png pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png, EHb.png, EHp.png, ha.png, sG.png
 
 %% Remarks
-% Copy png files to 
+% For presentation on the web, copy png files to 
 % /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img
 
 close all
+shstat_options('y_label', 'on');
 
-figure(1) % {p_Am}/z, scaled specific assimilation
-pAmz = read_allStat('p_Am','z','s_M'); logpAmz = log10(pAmz(:,1) ./ pAmz(:,2));
-logpAmz_median = median(logpAmz); logpAmx_min = min(logpAmz);
-surv_logpAmz = surv(logpAmz); 
-plot([logpAmx_min; logpAmz_median; logpAmz_median], [0.5;0.5;0], 'r', surv_logpAmz(:,1), surv_logpAmz(:,2), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
+figure(1) % {F_m}, max spec searching rate
+shstat_options('x_transform', 'log10');
+shstat({'F_m'}, [], '\{F_m\} at T_{ref}', 1);
+xlabel('_{10}log \{F_m\}, dm^3/d.cm^2') % overwrite for better DEB notation
+saveas (gca, 'img/Fm.png')
+
+figure(2) % kappa_X, digestion efficiency
+shstat_options('x_transform', 'none');
+shstat({'kap_X'}, [], [], 2);
+xlabel('\kappa_X, -')
+saveas (gca, 'img/kapX.png')
+
+figure(3) % {p_Am}/z, scaled specific assimilation
+shstat_options('x_transform', 'log10');
+pAmz = read_allStat('p_Am','z','s_M');
+shstat(pAmz(:,1) ./ pAmz(:,2), [], '_{10}log \{p_{Am}\}/z at T_{ref}', 3);
 xlabel('_{10}log \{p_{Am}\}/z, J/d.cm^2')
-ylabel('survivor function')
-title('_{10}log \{p_{Am}\}/z at T_{ref}')
 saveas (gca, 'img/pAm.png')
 
-figure(2) % v, energy conductance
-vsM = read_allStat('v', 's_M'); logv = log10(vsM(:,1)); logvj = log10(prod(vsM,2));
-logv_median = median(logv); logvj_median = median(logvj); logv_min = min([logv;logvj]);
-surv_v = surv(logv); surv_vj = surv(logvj);
-hold on
-plot([logv_min; logvj_median; logvj_median], [0.5;0.5;0], 'r', surv_vj(:,1), surv_vj(:,2), 'r', 'Linewidth', 2)
-plot([logv_min; logv_median; logv_median], [0.5;0.5;0], 'b', surv_v(:,1), surv_v(:,2), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
+figure(4) % v, energy conductance
+shstat_options('x_transform', 'log10');
+vsM = read_allStat('v', 's_M'); v = vsM(:,1); vj = prod(vsM,2);
+shstat(vj, {'r', 'r'}, 'v at T_{ref}, before and after acceleration', 4);
+shstat(v,  {'b', 'b'}, [], 4);
 xlabel('_{10} log v, cm/d')
-ylabel('survivor function')
-title('v at T_{ref}, before and after acceleration')
 saveas (gca, 'img/v.png')
 
-figure(3) % kappa, allocation fraction to soma
+figure(5) % kappa, allocation fraction to soma
 shstat_options('x_transform', 'none');
-shstat_options('y_label', 'on');
-[Hfig kap entries missing] = shstat({'kap'},[],[],3);
-xlabel('\kappa, -')
+shstat({'kap'}, [], [], 5);
+xlabel('\kappa, -') % overwrite for better DEB notation
 saveas (gca, 'img/kap.png')
 
-figure(4) % [p_M], specific somatic maintenance
+figure(6) % [p_M], specific somatic maintenance
 shstat_options('x_transform', 'log10');
-[Hfig p_M entries missing] = shstat({'p_M'}, [], '[p_M] at T_{ref}', 4);
-xlabel('_{10}log [p_M], J/d')
+shstat({'p_M'}, [], '[p_M] at T_{ref}', 6);
+xlabel('_{10}log [p_M], J/d') % overwrite for better DEB notation
 saveas (gca, 'img/pM.png')
 
-figure(5) % [E_G] d_V, cost for structure
-EGdV = read_allStat('E_G','d_V'); EG = (EGdV(:,1) ./ EGdV(:,2));
-EG_median = median(EG); EG_min = min(EG);
-surv_EG = surv(EG); 
-plot([EG_min; EG_median; EG_median], [0.5;0.5;0], 'r', surv_EG(:,1), surv_EG(:,2), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
+figure(7) % [E_G] d_V, cost for structure
+shstat_options('x_transform', 'none');
+EGdV = read_allStat('E_G','d_V'); 
+shstat(EGdV(:,1) ./ EGdV(:,2), [], [], 7);
 xlabel('[E_G]/ d_V, J/g')
-ylabel('survivor function')
 saveas (gca, 'img/EG.png')
 
-figure(6) % k_J, maturity maintenance rate coefficient
+figure(8) % k_J, maturity maintenance rate coefficient
 shstat_options('x_transform', 'none');
-[Hfig k_J entries missing] = shstat({'k_J'}, [], 'k_J at T_{ref}',6);
+shstat({'k_J'}, [], 'k_J at T_{ref}', 8);
 saveas (gca, 'img/kJ.png')
 
-figure(7) % E_Hb/z^3, scaled maturity at birth
-EHbz = read_allStat('E_Hb','z'); logEHb = log10(EHbz(:,1) ./ EHbz(:,2).^3);
-logEHb_median = median(logEHb); logEHb_min = min(logEHb);
-surv_logEHb = surv(logEHb); 
-plot([logEHb_min; logEHb_median; logEHb_median], [0.5;0.5;0], 'r', surv_logEHb(:,1), surv_logEHb(:,2), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
+figure(9) % E_Hb/z^3, scaled maturity at birth
+shstat_options('x_transform', 'log10');
+EHbz = read_allStat('E_Hb','z'); 
+shstat(EHbz(:,1) ./ EHbz(:,2).^3, [], [], 9);
 xlabel('_{10}log E_H^b/ z^3, J')
-ylabel('survivor function')
 saveas (gca, 'img/EHb.png')
 
-figure(8) % E_Hp/z^3, scaled maturity at puberty
-EHpz = read_allStat('E_Hp','z'); logEHp = log10(EHpz(:,1) ./ EHpz(:,2).^3);
-logEHp_median = median(logEHp); logEHp_min = min(logEHp);
-surv_logEHp = surv(logEHp); 
-plot([logEHp_min; logEHp_median; logEHp_median], [0.5;0.5;0], 'r', surv_logEHp(:,1), surv_logEHp(:,2), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('_{10}log E_H^p/ z^3, J')
-ylabel('survivor function')
+figure(10) % E_Hp/z^3, scaled maturity at puberty
+shstat_options('x_transform', 'log10');
+EHpz = read_allStat('E_Hp','z'); 
+shstat(EHpz(:,1) ./ EHpz(:,2).^3, [], [], 10);
+xlabel('_{10}log E_H^b/ z^3, J')
+saveas (gca, 'img/EHb.png')
 saveas (gca, 'img/EHp.png')
 
-figure(9) % h_a, ageing acceleration
+figure(11) % h_a, ageing acceleration
 shstat_options('x_transform', 'log10');
-[Hfig h_a entries missing] = shstat({'h_a'}, [], 'h_a at T_{ref}', 9);
+shstat({'h_a'}, [], 'h_a at T_{ref}', 11);
 saveas (gca, 'img/ha.png')
 
-figure(10) % s_G, Gompertz stress coefficient
+figure(12) % s_G, Gompertz stress coefficient
 shstat_options('x_transform', 'none');
-[Hfig s_G entries missing] = shstat({'s_G'},[],[],10);
+shstat({'s_G'}, [], [], 12);
 saveas (gca, 'img/sG.png')
 
 ##### SOURCE END #####

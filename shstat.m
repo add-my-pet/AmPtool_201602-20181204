@@ -1,20 +1,24 @@
 %% shstat
 % plots statistics and/or parameters
 
-function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
+function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 %% created 2016/04/23 by Bas Kooijman
 
 %% Syntax
-% [Hfig val entries missing] =  <../shstat.m *shstat*>(vars, legend, title, Hfig)
+% [Hfig val entries missing] =  <../shstat.m *shstat*>(vars, legend, label_title, Hfig)
 
 %% Description
 % plots statistics and/or parameters using allStat.mat as source (which must exist). 
+% Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty.
+% In that case, read_allStat is bypassed, output missing is empty and labels must be set by user afterwards.
+% If the number of varables as specified in vars equals 1, legend is optional and
+%   specifies the colors of the survivor function and median (default: {'b','r'}).
 %
 % Input:
 %
 % * vars: cell string with name(s) of 1, 2 or 3 independent variables 
 % * legend: (m,2)-array with legend (marker, taxa)-pairs
-% * title: optional string for title of figure
+% * label_title: optional string for title of figure
 % * Hfig: optional figure handle (to get the plot in a specified figure)
 %
 % Output
@@ -36,7 +40,7 @@ function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
 %
 % Set options with shstat_options (such as logarithmic transformation of axes).
 % Symbols and units are always plotted on the axes, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
-% In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend is not used.
+% In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend specifies colors for survivor and median.
 % In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names).
 % In case of 3 variables: hit rotation in the toolbar of the figure.
 
@@ -46,17 +50,25 @@ function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
   global x_transform y_transform z_transform  x_label y_label z_label
 
   % get (x,y,z)-values, units, label
-  n = length(vars);
-  switch n
-    case 1
-      [val entries units label] = read_allStat(vars{1});
-      units_x = units{1}; label_x = label{1}; 
-    case 2
-      [val entries units label] = read_allStat(vars{1},vars{2});
-      units_x = units{1}; units_y = units{2}; label_x = label{1}; label_y = label{2};
-    case 3
-      [val entries units label] = read_allStat(vars{1},vars{2},vars{3});
-      units_x = units{1}; units_y = units{2}; units_z = units{3}; label_x = label{1}; label_y = label{2}; label_z = label{3};
+  if isnumeric(vars) % numerical mode, read_allStat is bypassed
+    val = vars;
+    n = size(vars,2);
+    units_x = []; units_y = []; units_z = [];
+    label_x = []; label_y = []; label_z = [];
+    entries = select;
+  else % read values of variables, units and labels using read_allStat
+    n = length(vars);
+    switch n
+      case 1
+        [val entries units label] = read_allStat(vars{1});
+        units_x = units{1}; label_x = label{1}; 
+      case 2
+        [val entries units label] = read_allStat(vars{1},vars{2});
+        units_x = units{1}; units_y = units{2}; label_x = label{1}; label_y = label{2};
+      case 3
+        [val entries units label] = read_allStat(vars{1},vars{2},vars{3});
+        units_x = units{1}; units_y = units{2}; units_z = units{3}; label_x = label{1}; label_y = label{2}; label_z = label{3};
+    end
   end
 
   % compose selection matrix, missing entries
@@ -81,24 +93,28 @@ function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
   end
 
   % edit symbol as text on axis
-  symbol_x = vars{1};  % initiate text for symbols
-  [nm1 nm2] = strtok(symbol_x,'_');
-  if ~isempty(nm2)
-    symbol_x = [nm1, '_{', nm2(2:end), '}'];
-  end
-  if n > 1
-    symbol_y = vars{2};
-    [nm1 nm2] = strtok(symbol_y,'_');
+  if isnumeric(vars)
+    symbol_x = []; symbol_y = []; symbol_z = [];
+  else
+    symbol_x = vars{1};  % initiate text for symbols
+    [nm1 nm2] = strtok(symbol_x,'_');
     if ~isempty(nm2)
-      symbol_y = [nm1, '_{', nm2(2:end), '}'];
-    end  
-  end
-  if n > 2
-    symbol_z = vars{3};
-    [nm1 nm2] = strtok(symbol_z,'_');
-    if ~isempty(nm2)
-      symbol_z = [nm1, '_{', nm2(2:end), '}'];
-    end  
+      symbol_x = [nm1, '_{', nm2(2:end), '}'];
+    end
+    if n > 1
+      symbol_y = vars{2};
+      [nm1 nm2] = strtok(symbol_y,'_');
+      if ~isempty(nm2)
+        symbol_y = [nm1, '_{', nm2(2:end), '}'];
+      end  
+    end
+    if n > 2
+      symbol_z = vars{3};
+      [nm1 nm2] = strtok(symbol_z,'_');
+      if ~isempty(nm2)
+        symbol_z = [nm1, '_{', nm2(2:end), '}'];
+      end  
+    end
   end
   
   % transformation, xlabel, ylabel, zlabel
@@ -145,7 +161,7 @@ function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
       label_z = [symbol_z, ', ', units_z];
     end
   end
-  
+    
   % actual plotting
   if exist('Hfig', 'var')
     Hfig = figure(Hfig); 
@@ -156,15 +172,22 @@ function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
   hold on
   switch n
     case 1
+      % set colors for function and median
+      if ~exist('legend','var') || isempty(legend)
+        colfn = 'b'; colmed = 'r';
+      else
+        colfn = legend{1}; colmed = legend{2};
+      end
+
       x_median = median(val_plot); x_min = min(val_plot);
       surv_x = surv(val_plot); 
-      plot([x_min; x_median; x_median], [0.5;0.5;0], 'r', surv_x(:,1), surv_x(:,2), 'b', 'Linewidth', 2)
+      plot([x_min; x_median; x_median], [0.5;0.5;0], colmed, surv_x(:,1), surv_x(:,2), colfn, 'Linewidth', 2)
       set(gca, 'FontSize', 15, 'Box', 'on')
       xlabel(label_x)
       if strcmp(y_label, 'on')
         ylabel('survivor function')
       end
-      if exist('label_title', 'var')
+      if exist('label_title', 'var') && ~isempty(label_title)
         title(label_title)
       end
       
@@ -179,7 +202,7 @@ function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
       set(gca, 'FontSize', 15, 'Box', 'on')
       xlabel(label_x)  
       ylabel(label_y)
-      if exist('label_title', 'var')
+      if exist('label_title', 'var') && ~isempty(label_title)
         title(label_title)
       end
       
@@ -200,7 +223,7 @@ function [Hfig val entries missing] = shstat(vars, legend, title, Hfig)
       xlabel(label_x)  
       ylabel(label_y)
       zlabel(label_z)
-      if exist('label_title', 'var')
+      if exist('label_title', 'var') && ~isempty(label_title)
         title(label_title)
       end
       
