@@ -1,16 +1,16 @@
 %% mydata_shstat: demo script for using plotting tool shstat
 % see shprimpar for more examples of 1D plotting
-
+%
 % generate updated allStat if necessary
 % write_allStat(C2K(20),1); % notice that default allStat is at T=T_typical and f=1
-
+%
 % compose/modify your legend if you wish. You can also do this on-the-fly by selecting an empty legend.
-% mylegend = select_legend; % replace legend_* by mylegend in the examples below, if you active this.
+% mylegend = select_legend; replace legend_* by mylegend in the examples below, if you active this.
 % If your desired legend is close to an existing one, e.g. legend_fish, you can modify it by: mylegend = select_legend(legend_fish)
 
 close all % remove any existing figure
 
-example = 5; % edit this number
+example = 5; % edit this number to see the various examples
 switch example
   case 1 % 2D: use default settings
     shstat_options('default');
@@ -22,8 +22,8 @@ switch example
     shstat_options('y_transform', 'none');
     shstat_options('x_label', 'on');
     shstat_options('y_label', 'on');
-    Hfig = shstat({'s_s', 'kap'}, legend_vert, date); % output handle for adding items, set title
-
+    Hfig = shstat({'s_s', 'kap'}, legend_vert, date); % set title, output handle for adding items
+    
     figure(Hfig) % add items to figure
     kap = linspace(0, 1, 100); ss = kap.^2 .* (1 - kap); 
     plot(ss, kap, 'k', 'Linewidth', 2)
@@ -33,7 +33,7 @@ switch example
     shstat_options('y_transform', 'none');
     shstat_options('x_label', 'on');
     shstat_options('y_label', 'on');
-    Hfig = shstat({'s_s', 'kap'}, legend_hexa, date); % output handle for adding items, set title
+    Hfig = shstat({'s_s', 'kap'}, legend_hexa); % output handle for adding items
 
     figure(Hfig) % add items to figure
     kap = linspace(1e-6,1,100); ss = kap.^2 .* (1 - kap); 
@@ -68,16 +68,16 @@ switch example
   case 6 % 1D: single variable with default colors
     shstat_options('default');
     shstat_options('x_transform', 'none');
-    shstat_options('y_label', 'on');
+    shstat_options('y_label', 'on'); % if 'off' (default), no `survivor function' shown on yaxis
     shstat({'kap'});      
 
   case 7 % 1D: numerical mode because of computations: setting of xlabel required
     vsM = read_allStat('v', 's_M'); sM = vsM(:,2); vj = prod(vsM,2); v = vj(sM == 1); vj = vj(sM > 1);
     shstat_options('default');
-    shstat_options('y_label', 'on');
-    Hfig = shstat(vj, {'r', 'r'}); % output handle for adding items to same figure and set colors
+    shstat_options('y_label', 'on'); % if 'off' (default), no `survivor function' shown on yaxis
+    Hfig = shstat(vj, {'r', 'r'});   % output handle for adding items to same figure and set colors
     shstat(v, {'b', 'b'}, 'post-metam v at T_{ref} and f=1, without and with acceleration', Hfig);
     % setting of figure handle not required, because legend is not shown in new figure, and first figure is still active
-    xlabel('_{10} log v, cm/d') 
+    xlabel('_{10}log v, cm/d') 
     
 end

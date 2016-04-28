@@ -2,15 +2,17 @@
 % plots statistics and/or parameters
 
 function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
-%% created 2016/04/23 by Bas Kooijman
+% created 2016/04/23 by Bas Kooijman
 
 %% Syntax
 % [Hfig val entries missing] =  <../shstat.m *shstat*>(vars, legend, label_title, Hfig)
 
 %% Description
 % plots statistics and/or parameters using allStat.mat as source (which must exist). 
+%
 % Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty and output val equals input vars.
 % In that case, read_allStat is bypassed and labels must be set by user afterwards, see mydata_shstat.
+%
 % If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}).
 %
 % Input:
@@ -39,12 +41,13 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 %
 % Set options with shstat_options (such as logarithmic transformation of axes).
 % Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
+%
 % In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend specifies colors for survivor and median.
 % In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names).
 % In case of 3 variables: hit rotation in the toolbar of the figure.
 
 %% Example of use
-% see <mydata_shstat.m *mydata_shstat*>
+% see <../mydata_shstat.m *mydata_shstat*>
 
   global x_transform y_transform z_transform  x_label y_label z_label
 
