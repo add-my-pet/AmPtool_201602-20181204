@@ -87,7 +87,7 @@ function allStat = get_allStat(T, f)
     end
    
   catch 
-    disp(['Statistics of entry ', entries{i},' could not extracted'])
+    disp(['Statistics of entry ', entries{i},' could not be extracted'])
   end
    
   cd(WD)                   % goto original path
