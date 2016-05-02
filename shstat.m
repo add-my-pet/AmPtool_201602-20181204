@@ -1,7 +1,7 @@
 %% shstat
 % plots statistics and/or parameters
 
-function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
+function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfig)
 % created 2016/04/23 by Bas Kooijman
 
 %% Syntax
@@ -24,7 +24,8 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
 %
 % Output
 %
-% * Hfig: figure handle (equal to input, if specified there)
+% * Hfig: figure handle for plot (equal to input, if specified there)
+% * Hleg: figure handle for legend 
 % * val: (n,1 or 2 or 3)-matrix with untransformed x or (x,y) or (x,y,z)-values (depending on the spefication of vars)
 % * entries: n-cell string with names of entries
 % * missing: cell string with names of entries that should have been plotted, but are missing (because of lack of data in allStat.mat) 
@@ -174,9 +175,9 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
     
   % actual plotting
   if exist('Hfig', 'var')
-    Hfig = figure(Hfig); 
+    Hfig = figure(Hfig); Hleg = [];
   else
-    Hfig = figure;
+    Hfig = figure; Hleg = [];
   end
   
   hold on
@@ -213,7 +214,7 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
       h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, val_plot);
       datacursormode on % mouse click on plot
     
-      shlegend(legend);
+      Hleg = shlegend(legend);
       
     case 3
       for j = 1:m      % scan taxa
@@ -226,7 +227,7 @@ function [Hfig val entries missing] = shstat(vars, legend, label_title, Hfig)
       ylabel(label_y)
       zlabel(label_z)
       
-      shlegend(legend);
+      Hleg = shlegend(legend);
 
   end
   

@@ -10,7 +10,7 @@
 
 close all % remove any existing figure
 
-example = 5; % edit this number to see the various examples
+example = 3; % edit this number to see the various examples
 switch example
   case 1 % 2D: use default settings
     shstat_options('default');
@@ -22,29 +22,31 @@ switch example
     shstat_options('y_transform', 'none');
     shstat_options('x_label', 'on');
     shstat_options('y_label', 'on');
-    Hfig = shstat({'s_s', 'kap'}, legend_vert, date); % set title, output handle for adding items
+    [Hfig Hleg] = shstat({'s_s', 'kap'}, legend_vert, date); % set title, output handle for adding items
     
     figure(Hfig) % add items to figure
     kap = linspace(0, 1, 100); ss = kap.^2 .* (1 - kap); 
     plot(ss, kap, 'k', 'Linewidth', 2)
+    xlim([0 4/27]); ylim([0 1]);
 
   case 3 % 2D: like 2, but with logarithmic transformation on independent variable only
     shstat_options('default');
     shstat_options('y_transform', 'none');
     shstat_options('x_label', 'on');
     shstat_options('y_label', 'on');
-    Hfig = shstat({'s_s', 'kap'}, legend_hexa); % output handle for adding items
+    [Hfig Hleg] = shstat({'s_s', 'kap'}, legend_RSED); % output handle for adding items
 
     figure(Hfig) % add items to figure
     kap = linspace(1e-6,1,100); ss = kap.^2 .* (1 - kap); 
     plot(log10(ss), kap, 'k', 'Linewidth', 2)
-
+    ylim([0 1]);
+    
   case 4 % 3D: hit rotation-tool in the toolbar of the figure    
     shstat_options('default');
     shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
     shstat_options('z_transform', 'none');
-    Hfig = shstat({'kap', 'ep_min', 's_s'}, legend_vert); % output handle for adding items
+    [Hfig Hleg] = shstat({'kap', 'ep_min', 's_s'}, legend_vert); % output handle for adding items
 
     figure(Hfig) % add items to figure
     kap = linspace(0, 1, 15)'; f = kap'; ss = kap.^2 .* (1 - kap) * f.^3; % set x,y,z values
@@ -52,14 +54,14 @@ switch example
     % define colormap for mesh: k->b->m->r->white
     Colmap = [0 0 0; 0 0 .5; 0 0 1; .5 0 1; 1 0 1; 1 0 .5; 1 0 0; 1 .25 .25; 1 .5 .5; 1 .75 .75];
     colormap(Hfig, Colmap) % set color map to add_my_pet colors 
-    axis square
+    zlim([0 4/27])
 
   case 5 % 2D: numerical mode because of computations: setting of xlabel and ylabel required
     shstat_options('default');
     shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');
     essk = read_allStat('ep_min', 's_s', 's_M', 'kap'); ep_min = essk(:,1); s_s = essk(:,2); s_M = essk(:,3);  kap = essk(:,4);
-    Hfig = shstat([ep_min, (s_s ./ (kap.^2 .* (1 - kap))) .^(1/3)], legend_vert); % output handle for setting labels
+    [Hfig Hleg] = shstat([ep_min, (s_s ./ (kap.^2 .* (1 - kap))) .^(1/3)], legend_vert); % output handle for setting labels
 
     figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
     xlabel('e_p^{min}, -')      
