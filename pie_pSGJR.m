@@ -37,8 +37,8 @@ function  pSGJR = pie_pSGJR (entry)
   txt{2} = ['p_G = ', num2str(pSGJR(2,1)), ' J/d'];
   txt{3} = ['p_J = ', num2str(pSGJR(3,1)), ' J/d'];
   txt{4} = ['p_R = ', num2str(pSGJR(4,1)), ' J/d'];
-  pie3s(pSGJR(:,1)/sum(pSGJR(:,1),1), 'Bevel', 'Elliptical', 'Labels', txt);
   set(gca, 'FontSize', 15, 'Box', 'on')
+  pie3s(pSGJR(:,1)/sum(pSGJR(:,1),1), 'Bevel', 'Elliptical', 'Labels', txt);
   title('allocation at birth');
 
   figure(2)
@@ -46,8 +46,8 @@ function  pSGJR = pie_pSGJR (entry)
   txt{2} = ['p_G = ', num2str(pSGJR(2,2)), ' J/d'];
   txt{3} = ['p_J = ', num2str(pSGJR(3,2)), ' J/d'];
   txt{4} = ['p_R = ', num2str(pSGJR(4,2)), ' J/d'];
-  pie3s(pSGJR(:,2)/sum(pSGJR(:,2),1), 'Bevel', 'Elliptical', 'Labels', txt);
   set(gca, 'FontSize', 15, 'Box', 'on')
+  pie3s(pSGJR(:,2)/sum(pSGJR(:,2),1), 'Bevel', 'Elliptical', 'Labels', txt);
   title('allocation at puberty');
 
   figure(3)
@@ -55,9 +55,16 @@ function  pSGJR = pie_pSGJR (entry)
   txt{2} = '';
   txt{3} = ['p_J = ', num2str(pSGJR(3,3)), ' J/d'];
   txt{4} = ['p_R = ', num2str(pSGJR(4,3)), ' J/d'];
-  pie3s(pSGJR(:,3)/sum(pSGJR(:,3),1), 'Bevel', 'Elliptical', 'Labels', txt);
   set(gca, 'FontSize', 15, 'Box', 'on')
+  pie3s(pSGJR(:,3)/sum(pSGJR(:,3),1), 'Bevel', 'Elliptical', 'Labels', txt);
   title('allocation at ultimate');
 
+  % cumulative investment
+  par_pie = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap, allStat.(entry).kap_G];
+  if strcmp(allStat.(entry).model, 'stf') || strcmp(allStat.(entry).model, 'stx')
+    birth_pie_foetus(par_pie);
+  else
+    birth_pie(par_pie);
+  end
 end
 
