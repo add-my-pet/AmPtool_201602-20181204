@@ -1,29 +1,39 @@
-%% pie_pSGJR
+%% pie_SGJR
 % presents pies for allocation at birth, puberty, ultimate
 
 %%
-function  pSGJR = pie_pSGJR (entry)
+function  pSGJR = pie_SGJR (entry, wrt)
 %% created 2016/05/02 by Bas Kooijman
 
 %% Syntax
-% pSGJR = <../pie_PMGJR.m *pie_PMJGR*> 
+% pSGJR = <../pie_SGJR.m *pie_SGJR*> (entry, wrt)
 
 %% Description
 % Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction 
-%   are presented in a three pies for birth, puberty and ultimate
+%   for birth, puberty and ultimate and cumulative invertment at birth are presented in 4 pies.
+% Data are obtained from allStat, use load('allStat') before use and make allStat global.
+%
+% Input
+%
+% entry: string with name of entry
+% wrt: optional indicator for writing files to ../entries/entry (default: 0)
 %
 % Output (apart from figure):
 % 
 % * pSGRJ: (4,3)-matrix with powers in J/d
 
 %% Remarks
-% 
-%% Example of use
-% pie_pSGJR('Odontaster_validus');
+% <allPie_SGJR.html *allPie_SGJR*> writes all pies to all entries
 
-  close all
+%% Example of use
+% pie_SGJR('Odontaster_validus'); 
+
+  global allStat
   
-  load('allStat')
+  if ~exist('wrt','var') || isempty(wrt)
+      wrt = false;
+  end
+  
   pSGJR = [allStat.(entry).p_Sb allStat.(entry).p_Sp allStat.(entry).p_Si;
            allStat.(entry).p_Gb allStat.(entry).p_Gp allStat.(entry).p_Gi; 
            allStat.(entry).p_Jb allStat.(entry).p_Jp allStat.(entry).p_Ji; 
@@ -32,7 +42,7 @@ function  pSGJR = pie_pSGJR (entry)
   
   par = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap];
   
-  figure(1)
+  Hfig = figure(1); % divide p_* by sum, else errors occur (probably due to small numbers)
   txt{1} = ['p_S = ', num2str(pSGJR(1,1)), ' J/d'];
   txt{2} = ['p_G = ', num2str(pSGJR(2,1)), ' J/d'];
   txt{3} = ['p_J = ', num2str(pSGJR(3,1)), ' J/d'];
@@ -40,8 +50,11 @@ function  pSGJR = pie_pSGJR (entry)
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(pSGJR(:,1)/sum(pSGJR(:,1),1), 'Bevel', 'Elliptical', 'Labels', txt);
   title('allocation at birth');
+  if wrt
+    saveas(Hfig, ['../entries/',entry, '/pie_pSGJRb.png']);
+  end
 
-  figure(2)
+  Hfig = figure(2);
   txt{1} = ['p_S = ', num2str(pSGJR(1,2)), ' J/d'];
   txt{2} = ['p_G = ', num2str(pSGJR(2,2)), ' J/d'];
   txt{3} = ['p_J = ', num2str(pSGJR(3,2)), ' J/d'];
@@ -49,8 +62,11 @@ function  pSGJR = pie_pSGJR (entry)
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(pSGJR(:,2)/sum(pSGJR(:,2),1), 'Bevel', 'Elliptical', 'Labels', txt);
   title('allocation at puberty');
-
-  figure(3)
+  if wrt
+    saveas(Hfig, ['../entries/',entry, '/pie_pSGJRp.png']);
+  end
+  
+  Hfig = figure(3);
   txt{1} = ['p_S = ', num2str(pSGJR(1,3)), ' J/d'];
   txt{2} = '';
   txt{3} = ['p_J = ', num2str(pSGJR(3,3)), ' J/d'];
@@ -58,13 +74,20 @@ function  pSGJR = pie_pSGJR (entry)
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(pSGJR(:,3)/sum(pSGJR(:,3),1), 'Bevel', 'Elliptical', 'Labels', txt);
   title('allocation at ultimate');
-
-  % cumulative investment
+  if wrt
+    saveas(Hfig, ['../entries/',entry, '/pie_pSGJRi.png'])
+  end
+  
+  % cumulative investment at birth
   par_pie = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap, allStat.(entry).kap_G];
   if strcmp(allStat.(entry).model, 'stf') || strcmp(allStat.(entry).model, 'stx')
-    birth_pie_foetus(par_pie);
+    Hfig = birth_pie_foetus(par_pie);
   else
-    birth_pie(par_pie);
+    Hfig = birth_pie(par_pie);
   end
+  if wrt
+    saveas(Hfig, ['../entries/',entry, '/pie_ESGJRb.png'])
+  end
+  
 end
 
