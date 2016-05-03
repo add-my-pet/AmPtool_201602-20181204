@@ -41,6 +41,7 @@ function  pSGJR = pie_SGJR (entry, wrt)
   pSGJR = max(1e-16, pSGJR);
   
   par = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap];
+  pie_color = [1 0 0; 0 1 0; 1 0 1; 0 0 1]; % colors for S, G, J. R
   
   Hfig = figure(1); % divide p_* by sum, else errors occur (probably due to small numbers)
   txt{1} = ['p_S = ', num2str(pSGJR(1,1)), ' J/d'];
@@ -49,6 +50,7 @@ function  pSGJR = pie_SGJR (entry, wrt)
   txt{4} = ['p_R = ', num2str(pSGJR(4,1)), ' J/d'];
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(pSGJR(:,1)/sum(pSGJR(:,1),1), 'Bevel', 'Elliptical', 'Labels', txt);
+  colormap(pie_color);
   title('allocation at birth');
   if wrt
     saveas(Hfig, ['../entries/',entry, '/pie_pSGJRb.png']);
@@ -61,6 +63,7 @@ function  pSGJR = pie_SGJR (entry, wrt)
   txt{4} = ['p_R = ', num2str(pSGJR(4,2)), ' J/d'];
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(pSGJR(:,2)/sum(pSGJR(:,2),1), 'Bevel', 'Elliptical', 'Labels', txt);
+  colormap(pie_color);
   title('allocation at puberty');
   if wrt
     saveas(Hfig, ['../entries/',entry, '/pie_pSGJRp.png']);
@@ -73,6 +76,7 @@ function  pSGJR = pie_SGJR (entry, wrt)
   txt{4} = ['p_R = ', num2str(pSGJR(4,3)), ' J/d'];
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(pSGJR(:,3)/sum(pSGJR(:,3),1), 'Bevel', 'Elliptical', 'Labels', txt);
+  colormap(pie_color);
   title('allocation at ultimate');
   if wrt
     saveas(Hfig, ['../entries/',entry, '/pie_pSGJRi.png'])
