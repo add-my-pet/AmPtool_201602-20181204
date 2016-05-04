@@ -70,7 +70,13 @@ function  pSGJR = pie_SGJR (entry, wrt)
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(pSGJR(:,3)/ptot(3), 'Bevel', 'Elliptical', 'Labels', txt);
   colormap(pie_color);
-  title(['allocation at ultimate, p_{tot} = ', num2str(ptot(3)), ' J/d']);
+  if strcmp(allStat.(entry).model,'hex')
+    title(['allocation at pupation, p_{tot} = ', num2str(ptot(3)), ' J/d']);
+  elseif strcmp(allStat.(entry).model,'hep')
+    title(['allocation at metam, p_{tot} = ', num2str(ptot(3)), ' J/d']);
+  else
+    title(['allocation at ultimate, p_{tot} = ', num2str(ptot(3)), ' J/d']);
+  end
   if wrt
     saveas(Hfig3, ['../entries/',entry, '/pie_pSGJRi.png'])
   end
