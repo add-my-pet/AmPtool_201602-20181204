@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>pie_SGJR</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-05-03"><meta name="DC.source" content="pie_SGJR.m"><style type="text/css">
+      --><title>pie_SGGJR</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-05-04"><meta name="DC.source" content="pie_SGGJR.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,22 +55,28 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>pie_SGJR</h1><!--introduction--><p>presents pies for allocation at birth, puberty, ultimate</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/05/02 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>created 2016/05/02 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>pSGJR = <a href="../pie_SGJR.m"><b>pie_SGJR</b></a> (entry, wrt)</p><h2>Description<a name="4"></a></h2><p>Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction   for birth, puberty and ultimate and cumulative invertment at birth are presented in 4 pies. Data are obtained from allStat, use load('allStat') before use and make allStat global.</p><p>Input</p><p>entry: string with name of entry wrt: optional indicator for writing files to ../entries/entry (default: 0)</p><p>Output (apart from figure):</p><div><ul><li>pSGRJ: (4,3)-matrix with powers in J/d</li></ul></div><h2>Remarks<a name="5"></a></h2><p><a href="allPie_SGJR.html"><b>allPie_SGJR</b></a> writes all pies to all entries</p><h2>Example of use<a name="6"></a></h2><p>pie_SGJR('Odontaster_validus');</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>pie_SGGJR</h1><!--introduction--><p>presents pies for allocation at birth, puberty, ultimate</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>pSGGJR = <a href="../pie_SGGJR.m"><b>pie_SGGJR</b></a> (entry, wrt)</p><h2>Description<a name="4"></a></h2><p>Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction   for birth, puberty and ultimate and cumulative invertment at birth are presented in 4 pies. Dissipating fluxes explode in the pies; growth is partitioned into growth excluding overheads and growth overheads. Color coding: som maint: red, mat maint: magenta, growth: green, maturation/reproduction: blue. Data are obtained from allStat, use load('allStat') before use and make allStat global.</p><p>Input</p><p>entry: string with name of entry wrt: optional indicator for writing files to ../entries/entry (default: 0)</p><p>Output (apart from figure):</p><div><ul><li>pSGGRJ: (5,3)-matrix with powers in J/d</li></ul></div><pre>   - S: p_M + p_T: somatic maintenance
+   - G: p_G: growth, excluding overhead
+   - G: p_G: growth overhead
+   - J: p_J: maturity maintenance
+   - R: p_R: maturation or reproduction</pre><h2>Remarks<a name="5"></a></h2><p><a href="allPie_SGGJR.html"><b>allPie_SGGJR</b></a> writes all pies to all entries</p><h2>Example of use<a name="6"></a></h2><p>pie_SGJR('Odontaster_validus');</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
-%% pie_SGJR
+%% pie_SGGJR
 % presents pies for allocation at birth, puberty, ultimate
 
 %%
-function  pSGJR = pie_SGJR (entry, wrt)
-%% created 2016/05/02 by Bas Kooijman
+function  pSGGJR = pie_SGGJR (entry, wrt)
+% created 2016/05/02 by Bas Kooijman
 
 %% Syntax
-% pSGJR = <../pie_SGJR.m *pie_SGJR*> (entry, wrt)
+% pSGGJR = <../pie_SGGJR.m *pie_SGGJR*> (entry, wrt)
 
 %% Description
 % Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction 
 %   for birth, puberty and ultimate and cumulative invertment at birth are presented in 4 pies.
+% Dissipating fluxes explode in the pies; growth is partitioned into growth excluding overheads and growth overheads.
+% Color coding: som maint: red, mat maint: magenta, growth: green, maturation/reproduction: blue.
 % Data are obtained from allStat, use load('allStat') before use and make allStat global.
 %
 % Input
@@ -80,10 +86,16 @@ function  pSGJR = pie_SGJR (entry, wrt)
 %
 % Output (apart from figure):
 % 
-% * pSGRJ: (4,3)-matrix with powers in J/d
+% * pSGGRJ: (5,3)-matrix with powers in J/d
+%
+%     - S: p_M + p_T: somatic maintenance
+%     - G: p_G: growth, excluding overhead
+%     - G: p_G: growth overhead
+%     - J: p_J: maturity maintenance
+%     - R: p_R: maturation or reproduction
 
 %% Remarks
-% <allPie_SGJR.html *allPie_SGJR*> writes all pies to all entries
+% <allPie_SGGJR.html *allPie_SGGJR*> writes all pies to all entries
 
 %% Example of use
 % pie_SGJR('Odontaster_validus'); 
@@ -94,49 +106,55 @@ function  pSGJR = pie_SGJR (entry, wrt)
       wrt = false;
   end
   
-  pSGJR = [allStat.(entry).p_Sb allStat.(entry).p_Sp allStat.(entry).p_Si;
-           allStat.(entry).p_Gb allStat.(entry).p_Gp allStat.(entry).p_Gi; 
+  kap_G = allStat.(entry).kap_G;
+  pSGGJR = [allStat.(entry).p_Sb allStat.(entry).p_Sp allStat.(entry).p_Si;
+           kap_G * [allStat.(entry).p_Gb allStat.(entry).p_Gp allStat.(entry).p_Gi]; 
+           (1 - kap_G) * [allStat.(entry).p_Gb allStat.(entry).p_Gp allStat.(entry).p_Gi]; 
            allStat.(entry).p_Jb allStat.(entry).p_Jp allStat.(entry).p_Ji; 
            allStat.(entry).p_Rb allStat.(entry).p_Rp allStat.(entry).p_Ri];
-  pSGJR = max(1e-16, pSGJR);
+  pSGGJR = max(1e-16, pSGGJR); % sometimes growth is negative (but very small)
+  ptot = sum(pSGGJR,1); % total flux
   
   par = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap];
+  pie_color = [1 0 0; 0 1 0; 0 1 0; 1 0 1; 0 0 1]; % colors for S, G, J. R
   
-  Hfig = figure(1); % divide p_* by sum, else errors occur (probably due to small numbers)
-  txt{1} = ['p_S = ', num2str(pSGJR(1,1)), ' J/d'];
-  txt{2} = ['p_G = ', num2str(pSGJR(2,1)), ' J/d'];
-  txt{3} = ['p_J = ', num2str(pSGJR(3,1)), ' J/d'];
-  txt{4} = ['p_R = ', num2str(pSGJR(4,1)), ' J/d'];
+  Hfig1 = figure(1); % divide p_* by sum, else errors occur (probably due to small numbers)
+  txt = {'p_S', 'p_G', '', 'p_J', 'p_R'};
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(pSGJR(:,1)/sum(pSGJR(:,1),1), 'Bevel', 'Elliptical', 'Labels', txt);
-  title('allocation at birth');
+  pie3s(pSGGJR(:,1)/ptot(1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
+  colormap(pie_color);
+  title(['allocation at birth, p_{tot} = ', num2str(ptot(1)), ' J/d']);
   if wrt
-    saveas(Hfig, ['../entries/',entry, '/pie_pSGJRb.png']);
+    saveas(Hfig1, ['../entries/',entry, '/pie_pSGJRb.png']);
   end
+  set(Hfig1, 'Outerposition', [50 500 600 600]);
 
-  Hfig = figure(2);
-  txt{1} = ['p_S = ', num2str(pSGJR(1,2)), ' J/d'];
-  txt{2} = ['p_G = ', num2str(pSGJR(2,2)), ' J/d'];
-  txt{3} = ['p_J = ', num2str(pSGJR(3,2)), ' J/d'];
-  txt{4} = ['p_R = ', num2str(pSGJR(4,2)), ' J/d'];
+  Hfig2 = figure(2);
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(pSGJR(:,2)/sum(pSGJR(:,2),1), 'Bevel', 'Elliptical', 'Labels', txt);
-  title('allocation at puberty');
+  pie3s(pSGGJR(:,2)/ptot(2), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
+  colormap(pie_color);
+  title(['allocation at puberty, p_{tot} = ', num2str(ptot(2)), ' J/d']);
   if wrt
-    saveas(Hfig, ['../entries/',entry, '/pie_pSGJRp.png']);
+    saveas(Hfig2, ['../entries/',entry, '/pie_pSGJRp.png']);
   end
-  
-  Hfig = figure(3);
-  txt{1} = ['p_S = ', num2str(pSGJR(1,3)), ' J/d'];
+  set(Hfig2, 'Outerposition', [650 500 600 600]);
+ 
+  Hfig3 = figure(3);
   txt{2} = '';
-  txt{3} = ['p_J = ', num2str(pSGJR(3,3)), ' J/d'];
-  txt{4} = ['p_R = ', num2str(pSGJR(4,3)), ' J/d'];
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(pSGJR(:,3)/sum(pSGJR(:,3),1), 'Bevel', 'Elliptical', 'Labels', txt);
-  title('allocation at ultimate');
-  if wrt
-    saveas(Hfig, ['../entries/',entry, '/pie_pSGJRi.png'])
+  pie3s(pSGGJR(:,3)/ptot(3), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 0]);
+  colormap(pie_color);
+  if strcmp(allStat.(entry).model,'hex')
+    title(['allocation at pupation, p_{tot} = ', num2str(ptot(3)), ' J/d']);
+  elseif strcmp(allStat.(entry).model,'hep')
+    title(['allocation at metam, p_{tot} = ', num2str(ptot(3)), ' J/d']);
+  else
+    title(['allocation at ultimate, p_{tot} = ', num2str(ptot(3)), ' J/d']);
   end
+  if wrt
+    saveas(Hfig3, ['../entries/',entry, '/pie_pSGJRi.png'])
+  end
+  set(Hfig3, 'Outerposition', [650 20 600 600]);
   
   % cumulative investment at birth
   par_pie = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap, allStat.(entry).kap_G];
@@ -148,7 +166,8 @@ function  pSGJR = pie_SGJR (entry, wrt)
   if wrt
     saveas(Hfig, ['../entries/',entry, '/pie_ESGJRb.png'])
   end
-  
+  set(Hfig, 'Outerposition', [50 20 600 600]);
+
 end
 
 

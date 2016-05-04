@@ -3,7 +3,7 @@
 
 %%
 function  allPie_SGJR(wrt)
-%% created 2016/05/03 by Bas Kooijman
+% created 2016/05/03 by Bas Kooijman
 
 %% Syntax
 % <../allPie_SGJR.m *allPie_SGJR*>
@@ -33,7 +33,7 @@ function  allPie_SGJR(wrt)
   ne = length(entries);
   
   for i = 1:ne
-    pie_SGJR(entries{i}, wrt); 
+    pie_SGGJR(entries{i}, wrt); 
     if isempty(wrt) || wrt == 0
       fprintf([entries{i},'\n'])
       pause
