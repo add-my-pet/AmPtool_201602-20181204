@@ -30,11 +30,16 @@ function  allPie_SGJR(wrt)
   
   load('allStat')
   entries = fieldnames(allStat);
-  
   ne = length(entries);
+  
   for i = 1:ne
-    pie_SGJR(entries{i}, wrt)
+    pie_SGJR(entries{i}, wrt); 
+    if isempty(wrt) || wrt == 0
+      fprintf([entries{i},'\n'])
+      pause
+    end
     close all
   end
+
 end
 

@@ -38,49 +38,43 @@ function  pSGJR = pie_SGJR (entry, wrt)
            allStat.(entry).p_Gb allStat.(entry).p_Gp allStat.(entry).p_Gi; 
            allStat.(entry).p_Jb allStat.(entry).p_Jp allStat.(entry).p_Ji; 
            allStat.(entry).p_Rb allStat.(entry).p_Rp allStat.(entry).p_Ri];
-  pSGJR = max(1e-16, pSGJR);
+  pSGJR = max(1e-16, pSGJR); % sometimes growth is negative (but very small)
+  ptot = sum(pSGJR,1); % total flux
   
   par = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap];
   pie_color = [1 0 0; 0 1 0; 1 0 1; 0 0 1]; % colors for S, G, J. R
   
-  Hfig = figure(1); % divide p_* by sum, else errors occur (probably due to small numbers)
-  txt{1} = ['p_S = ', num2str(pSGJR(1,1)), ' J/d'];
-  txt{2} = ['p_G = ', num2str(pSGJR(2,1)), ' J/d'];
-  txt{3} = ['p_J = ', num2str(pSGJR(3,1)), ' J/d'];
-  txt{4} = ['p_R = ', num2str(pSGJR(4,1)), ' J/d'];
+  Hfig1 = figure(1); % divide p_* by sum, else errors occur (probably due to small numbers)
+  txt = {'p_S', 'p_G', 'p_J', 'p_R'};
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(pSGJR(:,1)/sum(pSGJR(:,1),1), 'Bevel', 'Elliptical', 'Labels', txt);
+  pie3s(pSGJR(:,1)/ptot(1), 'Bevel', 'Elliptical', 'Labels', txt);
   colormap(pie_color);
-  title('allocation at birth');
+  title(['allocation at birth, p_{tot} = ', num2str(ptot(1)), ' J/d']);
   if wrt
-    saveas(Hfig, ['../entries/',entry, '/pie_pSGJRb.png']);
+    saveas(Hfig1, ['../entries/',entry, '/pie_pSGJRb.png']);
   end
+  set(Hfig1, 'Outerposition', [50 500 600 600]);
 
-  Hfig = figure(2);
-  txt{1} = ['p_S = ', num2str(pSGJR(1,2)), ' J/d'];
-  txt{2} = ['p_G = ', num2str(pSGJR(2,2)), ' J/d'];
-  txt{3} = ['p_J = ', num2str(pSGJR(3,2)), ' J/d'];
-  txt{4} = ['p_R = ', num2str(pSGJR(4,2)), ' J/d'];
+  Hfig2 = figure(2);
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(pSGJR(:,2)/sum(pSGJR(:,2),1), 'Bevel', 'Elliptical', 'Labels', txt);
+  pie3s(pSGJR(:,2)/ptot(2), 'Bevel', 'Elliptical', 'Labels', txt);
   colormap(pie_color);
-  title('allocation at puberty');
+  title(['allocation at puberty, p_{tot} = ', num2str(ptot(2)), ' J/d']);
   if wrt
-    saveas(Hfig, ['../entries/',entry, '/pie_pSGJRp.png']);
+    saveas(Hfig2, ['../entries/',entry, '/pie_pSGJRp.png']);
   end
-  
-  Hfig = figure(3);
-  txt{1} = ['p_S = ', num2str(pSGJR(1,3)), ' J/d'];
+  set(Hfig2, 'Outerposition', [650 500 600 600]);
+ 
+  Hfig3 = figure(3);
   txt{2} = '';
-  txt{3} = ['p_J = ', num2str(pSGJR(3,3)), ' J/d'];
-  txt{4} = ['p_R = ', num2str(pSGJR(4,3)), ' J/d'];
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(pSGJR(:,3)/sum(pSGJR(:,3),1), 'Bevel', 'Elliptical', 'Labels', txt);
+  pie3s(pSGJR(:,3)/ptot(3), 'Bevel', 'Elliptical', 'Labels', txt);
   colormap(pie_color);
-  title('allocation at ultimate');
+  title(['allocation at ultimate, p_{tot} = ', num2str(ptot(3)), ' J/d']);
   if wrt
-    saveas(Hfig, ['../entries/',entry, '/pie_pSGJRi.png'])
+    saveas(Hfig3, ['../entries/',entry, '/pie_pSGJRi.png'])
   end
+  set(Hfig3, 'Outerposition', [650 20 600 600]);
   
   % cumulative investment at birth
   par_pie = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap, allStat.(entry).kap_G];
@@ -92,6 +86,7 @@ function  pSGJR = pie_SGJR (entry, wrt)
   if wrt
     saveas(Hfig, ['../entries/',entry, '/pie_ESGJRb.png'])
   end
-  
+  set(Hfig, 'Outerposition', [50 20 600 600]);
+
 end
 
