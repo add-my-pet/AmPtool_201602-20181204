@@ -31,7 +31,8 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
 %     - R: p_R: maturation or reproduction
 
 %% Remarks
-% <allPie_SGGJR.html *allPie_SGGJR*> writes all pies to all entries
+% <allPie_SGGJR.html *allPie_SGGJR*> writes all pies to all entries.
+% Notice that the sum of all these powers does not equal assimilation since reserve builds up during growth
 
 %% Example of use
 % pie_SGJR('Odontaster_validus'); 

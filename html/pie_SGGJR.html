@@ -59,7 +59,7 @@ span.syscmd { color:#B28C00 }
    - G: p_G: growth, excluding overhead
    - G: p_G: growth overhead
    - J: p_J: maturity maintenance
-   - R: p_R: maturation or reproduction</pre><h2>Remarks<a name="5"></a></h2><p><a href="allPie_SGGJR.html"><b>allPie_SGGJR</b></a> writes all pies to all entries</p><h2>Example of use<a name="6"></a></h2><p>pie_SGJR('Odontaster_validus');</p><p class="footer"><br>
+   - R: p_R: maturation or reproduction</pre><h2>Remarks<a name="5"></a></h2><p><a href="allPie_SGGJR.html"><b>allPie_SGGJR</b></a> writes all pies to all entries. Notice that the sum of all these powers does not equal assimilation since reserve builds up during growth</p><h2>Example of use<a name="6"></a></h2><p>pie_SGJR('Odontaster_validus');</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% pie_SGGJR
@@ -95,7 +95,8 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
 %     - R: p_R: maturation or reproduction
 
 %% Remarks
-% <allPie_SGGJR.html *allPie_SGGJR*> writes all pies to all entries
+% <allPie_SGGJR.html *allPie_SGGJR*> writes all pies to all entries.
+% Notice that the sum of all these powers does not equal assimilation since reserve builds up during growth
 
 %% Example of use
 % pie_SGJR('Odontaster_validus'); 
