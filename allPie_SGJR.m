@@ -17,7 +17,7 @@ function  allPie_SGJR(wrt)
 % * wrt: optional indicator for writing files to the sundirs of ../entries/ (default: 0)
 
 %% Remarks
-% macro around <pie_SGJR.html *pie_SGJR*> 
+% macro around <pie_SGGJR.html *pie_SGGJR*> 
 
 %% Example of use
 % allPie_SGJR; 
