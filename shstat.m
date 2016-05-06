@@ -83,7 +83,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
   if n == 1
     missing = entries(isnan(val)); % determine missing entries
   else
-    if isempty(legend)
+    if ~exist('legend','var') || isempty(legend)
       legend = select_legend;
     end
     m = size(legend, 1); % number of taxa to be plotted
