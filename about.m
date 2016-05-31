@@ -53,11 +53,13 @@ clear all
 write_allStat; % update Staristics structure allStat.mat
 
 pie_Animalia;
-saveas (gca, 'img/pie_Animalia.png')
+Hfig = tightfig(gca);
+saveas (Hfig, 'img/pie_Animalia.png')
 close all
 
 pie_model;
-saveas (gca, 'img/pie_model.png')
+Hfig = tightfig(gca);
+saveas (Hfig, 'img/pie_model.png')
 close all
 
 % # of entries in time
