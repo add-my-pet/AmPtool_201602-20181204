@@ -35,7 +35,7 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
 % Notice that the sum of all these powers does not equal assimilation since reserve builds up during growth
 
 %% Example of use
-% pie_SGJR('Odontaster_validus'); 
+% pie_SGGJR('Odontaster_validus'); 
 
   global allStat
   
