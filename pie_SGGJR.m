@@ -35,7 +35,7 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
 % Notice that the sum of all these powers does not equal assimilation since reserve builds up during growth
 
 %% Example of use
-% pie_SGGJR('Odontaster_validus'); 
+% pie_SGJR('Odontaster_validus'); 
 
   global allStat
   
@@ -61,22 +61,20 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
   pie3s(pSGGJR(:,1)/ptot(1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
   colormap(pie_color);
   title(['allocation at birth, p_{tot} = ', num2str(ptot(1)), ' J/d']);
-  set(Hfig1, 'Outerposition', [50 500 600 600]);
   if wrt
-    Hfig1 = tightfig(Hfig1);
     saveas(Hfig1, ['../entries_img/',entry, '/pie_pSGJRb.png']);
   end
+  set(Hfig1, 'Outerposition', [50 500 600 600]);
 
   Hfig2 = figure(2);
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(pSGGJR(:,2)/ptot(2), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
   colormap(pie_color);
   title(['allocation at puberty, p_{tot} = ', num2str(ptot(2)), ' J/d']);
-  set(Hfig2, 'Outerposition', [650 500 600 600]);
   if wrt
-    Hfig2 = tightfig(Hfig2);
     saveas(Hfig2, ['../entries_img/',entry, '/pie_pSGJRp.png']);
   end
+  set(Hfig2, 'Outerposition', [650 500 600 600]);
  
   Hfig3 = figure(3);
   txt{2} = '';
@@ -90,11 +88,10 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
   else
     title(['allocation at ultimate, p_{tot} = ', num2str(ptot(3)), ' J/d']);
   end
-  set(Hfig3, 'Outerposition', [650 20 600 600]);
   if wrt
-    Hfig3 = tightfig(Hfig3);
     saveas(Hfig3, ['../entries_img/',entry, '/pie_pSGJRi.png'])
   end
+  set(Hfig3, 'Outerposition', [650 20 600 600]);
   
   % cumulative investment at birth
   par_pie = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap, allStat.(entry).kap_G];
@@ -103,11 +100,10 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
   else
     Hfig = birth_pie(par_pie);
   end
-  set(Hfig, 'Outerposition', [50 20 600 600]);
   if wrt
-    Hfig = tightfig(Hfig);
     saveas(Hfig, ['../entries_img/',entry, '/pie_ESGJRb.png'])
   end
+  set(Hfig, 'Outerposition', [50 20 600 600]);
 
 end
 

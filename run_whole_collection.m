@@ -1,8 +1,9 @@
 %% Script: run whole collection
 % Run this to make
 %
+% * places index.cache and index.wn in the entries folder
 % * html pages for all of the different species in add_my_pet/entries
-% * place the html pages in entries_web and delete from entries
+% * place the html and bib pages in entries_web and delete from entries
 % * create zipped folder in entries_zip
 
 

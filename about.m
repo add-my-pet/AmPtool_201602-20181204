@@ -50,16 +50,14 @@ function about
 close all
 clear all
 
-write_allStat; % update Staristics structure allStat.mat
+write_allStat; % update Statistics structure allStat.mat
 
-pie_Animalia;
-Hfig = tightfig(gca);
-saveas (Hfig, 'img/pie_Animalia.png')
+pie_Animalia;tightfig;
+saveas (gca, '../img/pie_Animalia.png')
 close all
 
-pie_model;
-Hfig = tightfig(gca);
-saveas (Hfig, 'img/pie_model.png')
+pie_model;tightfig;
+saveas (gca, '../img/pie_model.png')
 close all
 
 % # of entries in time
@@ -68,37 +66,37 @@ surv_dates = surv(dates, 2006);
 surv_dates([1; end - 1; end],:) = [];    
 n = size(surv_dates, 1)/2;
     
-plot(surv_dates(:,1), n * (1 - surv_dates(:,2)), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
+plot(surv_dates(:,1), n * (1 - surv_dates(:,2)), 'b', 'Linewidth', 3)
+set(gca, 'FontSize', 20, 'FontWeight', 'bold', 'Box', 'on')
 xlabel('time, yr')
 ylabel('# of add\_my\_pet entries')
-saveas (gca,'img/entries.png')
+saveas (gca,'../img/entries.png')
 close all
 
 % COMPLETE, MRE plots
 CM = read_allStat('COMPLETE', 'MRE'); n_entries = size(CM,1);
 C_median = median(CM(:,1)); M_median = median(CM(:,2));
 plot(CM(:,1), CM(:,2), '.b', 'MarkerSize', 20)
-set(gca, 'FontSize', 15, 'Box', 'on')
+set(gca, 'FontSize', 20, 'FontWeight', 'bold', 'Box', 'on')
 xlabel('COMPLETE')
 ylabel('MRE')
-saveas (gca,'img/COMPLETE_MRE.png')
+saveas (gca,'../img/COMPLETE_MRE.png')
 close all
 
 surv_COMPLETE = surv(CM(:,1),0);
-plot([0; C_median; C_median], [0.5;0.5;0], 'r', surv_COMPLETE(:,1), surv_COMPLETE(:,2), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
+plot([0; C_median; C_median], [0.5;0.5;0], 'r', surv_COMPLETE(:,1), surv_COMPLETE(:,2), 'b', 'Linewidth', 3)
+set(gca, 'FontSize', 20, 'FontWeight', 'bold', 'Box', 'on')
 xlabel('COMPLETE')
 ylabel('survivor function')
-saveas (gca,'img/COMPLETE.png')
+saveas (gca,'../img/COMPLETE.png')
 close all
 
 surv_MRE = surv(CM(:,2),0);
-plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
+plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 3)
+set(gca, 'FontSize', 20, 'FontWeight', 'bold', 'Box', 'on')
 xlabel('Mean Relative Error')
 ylabel('survivor function')
-saveas (gca,'img/MRE.png')
+saveas (gca,'../img/MRE.png')
 close all
 
 shprimpar % primary parameters
