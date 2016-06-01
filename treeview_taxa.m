@@ -18,13 +18,13 @@ function treeview_taxa (pedigree_taxa)
 %% Example of use
 % treeview_taxa(pedigree('Animalia')); open treeview_taxa.html to see the result
 
-  WD = pwd;                      % store current path
-  taxa = which('treeview_taxa'); % locate DEBtool_M/taxa/
-  taxa = taxa(1:end - 15);       % path to DEBtool_M/taxa/
-  cd(taxa)                       % goto taxa
+  %WD = pwd;                      % store current path
+  %taxa = which('treeview_taxa'); % locate DEBtool_M/taxa/
+  %taxa = taxa(1:end - 15);       % path to DEBtool_M/taxa/
+  %cd(taxa)                       % goto taxa
 
-  try
-    fid_tv = fopen('../sys/treeview_taxa.js', 'w+'); % open file for writing, delete existing content
+  %try
+    fid_tv = fopen('treeview_taxa.js', 'w+'); % open file for writing, delete existing content
 
     % write header
     fprintf(fid_tv, '//\n');
@@ -68,8 +68,8 @@ function treeview_taxa (pedigree_taxa)
  
     fclose(fid_tv);
   
-  catch
-    disp('An error occured during writing file treeview_taxa.js')
-  end
+  %catch
+  %  disp('An error occured during writing file treeview_taxa.js')
+  %end
   
-  cd(WD)                    % goto original path
+  %cd(WD)                    % goto original path
