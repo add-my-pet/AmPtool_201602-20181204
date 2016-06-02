@@ -62,6 +62,7 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
   colormap(pie_color);
   title(['allocation at birth, p_{tot} = ', num2str(ptot(1)), ' J/d']);
   if wrt
+    Hfig1 = tightfig(Hfig1);
     saveas(Hfig1, ['../entries_img/',entry, '/pie_pSGJRb.png']);
   end
   set(Hfig1, 'Outerposition', [50 500 600 600]);
@@ -72,6 +73,7 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
   colormap(pie_color);
   title(['allocation at puberty, p_{tot} = ', num2str(ptot(2)), ' J/d']);
   if wrt
+    Hfig2 = tightfig(Hfig2);
     saveas(Hfig2, ['../entries_img/',entry, '/pie_pSGJRp.png']);
   end
   set(Hfig2, 'Outerposition', [650 500 600 600]);
@@ -89,6 +91,7 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
     title(['allocation at ultimate, p_{tot} = ', num2str(ptot(3)), ' J/d']);
   end
   if wrt
+    Hfig3 = tightfig(Hfig3);
     saveas(Hfig3, ['../entries_img/',entry, '/pie_pSGJRi.png'])
   end
   set(Hfig3, 'Outerposition', [650 20 600 600]);
@@ -101,6 +104,7 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
     Hfig = birth_pie(par_pie);
   end
   if wrt
+    Hfig = tightfig(Hfig);
     saveas(Hfig, ['../entries_img/',entry, '/pie_ESGJRb.png'])
   end
   set(Hfig, 'Outerposition', [50 20 600 600]);
