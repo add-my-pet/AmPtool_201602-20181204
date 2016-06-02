@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>treeview_taxa</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-22"><meta name="DC.source" content="treeview_taxa.m"><style type="text/css">
+      --><title>prt_species_tree_js</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-06-02"><meta name="DC.source" content="prt_species_tree_js.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,36 +55,37 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>treeview_taxa</h1><!--introduction--><p>write treeview_taxa.js that is called by treeview_taxa.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../treeview_taxa.m"><b>treeview_taxa</b></a> (pedigree_taxa)</p><h2>Description<a name="4"></a></h2><p>Clears and creates file treeview_taxa.js in DEBtool_M/taxa and writes java code to it</p><p>Input:</p><div><ul><li>pedigree_taxa: character string with pedigree of a taxon</li></ul></div><h2>Example of use<a name="5"></a></h2><p>treeview_taxa(pedigree('Animalia')); open treeview_taxa.html to see the result</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>prt_species_tree_js</h1><!--introduction--><p>writes prt_species_tree_js that is called by species_tree.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_species_tree_js.m"><b>prt_species_tree_js</b></a> (pedigree_taxa)</p><h2>Description<a name="4"></a></h2><p>Clears and creates file ../sys/prt_species_tree.js and writes java code to it</p><p>Input:</p><div><ul><li>pedigree_taxa: character string with pedigree of a taxon</li></ul></div><h2>Remarks<a name="5"></a></h2><p>file ../species_tree.html calls  - java-scripts ../sys/ftiens4.js, ua.js and species_tree.js  - gif's ../img/nm.gif  - jpg's ../img/tree/nm.jpg</p><h2>Example of use<a name="6"></a></h2><p>prt_species_tree_js(pedigree('Animalia')); open ../species_tree.html to see the result</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
-%% treeview_taxa
-% write treeview_taxa.js that is called by treeview_taxa.html
+%% prt_species_tree_js
+% writes prt_species_tree_js that is called by species_tree.html
 
 %%
-function treeview_taxa (pedigree_taxa)
-% created 2016/03/06 by Bas Kooijman
+function prt_species_tree_js(pedigree_taxa)
+% created 2016/03/06 by Bas Kooijman, 
+% modified 2016/06/01 Starrlight Augustine, 2016/06/02 Bas Kooijman
 
 %% Syntax
-% <../treeview_taxa.m *treeview_taxa*> (pedigree_taxa) 
+% <../prt_species_tree_js.m *prt_species_tree_js*> (pedigree_taxa) 
 
 %% Description
-% Clears and creates file treeview_taxa.js in DEBtool_M/taxa and writes java code to it
+% Clears and creates file ../sys/prt_species_tree.js and writes java code to it
 %
 % Input:
 %
 % * pedigree_taxa: character string with pedigree of a taxon
-%
+
+%% Remarks
+% file ../species_tree.html calls 
+%  - java-scripts ../sys/ftiens4.js, ua.js and species_tree.js
+%  - gif's ../img/nm.gif
+%  - jpg's ../img/tree/nm.jpg
+
 %% Example of use
-% treeview_taxa(pedigree('Animalia')); open treeview_taxa.html to see the result
+% prt_species_tree_js(pedigree('Animalia')); open ../species_tree.html to see the result
 
-  WD = pwd;                      % store current path
-  taxa = which('treeview_taxa'); % locate DEBtool_M/taxa/
-  taxa = taxa(1:end - 15);       % path to DEBtool_M/taxa/
-  cd(taxa)                       % goto taxa
-
-  try
-    fid_tv = fopen('treeview_taxa.js', 'w+'); % open file for writing, delete existing content
+    fid_tv = fopen('../sys/species_tree.js', 'w+'); % open file for writing, delete existing content
 
     % write header
     fprintf(fid_tv, '//\n');
@@ -106,33 +107,29 @@ function treeview_taxa (pedigree_taxa)
     fprintf(fid_tv, 'USEICONS = 0\n');     % 0: Do not display the icons; 1: Display the icons
     fprintf(fid_tv, 'WRAPTEXT = 1\n');     % 0: The text portion of a node will appear on one line only; 1: The text portion of a node will wrap to always be visible 
     fprintf(fid_tv, 'PRESERVESTATE = 1\n');% 0: Do not store the state of the tree across page loads; 1: Store the state of the tree in cookies, and use that state on next visit
-    fprintf(fid_tv, 'HIGHLIGHT = 1\n\n');  % 0: Do not highlight the selected node; 1: Highlight the selected node
+    fprintf(fid_tv, 'HIGHLIGHT = 1\n');    % 0: Do not highlight the selected node; 1: Highlight the selected node
+    fprintf(fid_tv, 'ICONPATH = ''img/''\n\n'); % path to icons for tree
   
     % build tree
     nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
-    fprintf(fid_tv, ['foldersTree = gFld("<b>', node, '</b>", "treeview_taxa.html")\n']);
+    fprintf(fid_tv, ['foldersTree = gFld("<b>', node, '</b>", "species_tree.html")\n']);
 
     while length(pedigree_taxa) > 3
       nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
       level = max(strfind(node, char(9))); node(1:level) = []; L = ['L', num2str(level)]; Lnew = ['L', num2str(1 + level)];
       if level == 1
-        fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", "treeview_taxa.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
+        fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", "species_tree.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
         %fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", ""))\n']);
       elseif isempty(strfind(node, '_')) && isempty(strfind(node, ' ')) 
-        fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "treeview_taxa.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
+        fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "species_tree.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
         %fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", ""))\n']);
       else
-        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/i_results_', node, '.html"))\n']); 
+        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '.html"))\n']); 
       end
     end
  
     fclose(fid_tv);
   
-  catch
-    disp('An error occured during writing file treeview_taxa.js')
-  end
-  
-  cd(WD)                    % goto original path
 
 ##### SOURCE END #####
 --></body></html>

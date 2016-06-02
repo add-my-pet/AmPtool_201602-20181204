@@ -1,30 +1,31 @@
-%% treeview_taxa
-% write treeview_taxa.js that is called by treeview_taxa.html
+%% prt_species_tree_js
+% writes prt_species_tree_js that is called by species_tree.html
 
 %%
-function treeview_taxa (pedigree_taxa)
-% created 2016/03/06 by Bas Kooijman, modified 2016/06/01 starrlight
+function prt_species_tree_js(pedigree_taxa)
+% created 2016/03/06 by Bas Kooijman, 
+% modified 2016/06/01 Starrlight Augustine, 2016/06/02 Bas Kooijman
 
 %% Syntax
-% <../treeview_taxa.m *treeview_taxa*> (pedigree_taxa) 
+% <../prt_species_tree_js.m *prt_species_tree_js*> (pedigree_taxa) 
 
 %% Description
-% Clears and creates file treeview_taxa.js in add_my_pet/sys and writes java code to it
+% Clears and creates file ../sys/prt_species_tree.js and writes java code to it
 %
 % Input:
 %
 % * pedigree_taxa: character string with pedigree of a taxon
-%
+
+%% Remarks
+% file ../species_tree.html calls 
+%  - java-scripts ../sys/ftiens4.js, ua.js and species_tree.js
+%  - gif's ../img/nm.gif
+%  - jpg's ../img/tree/nm.jpg
+
 %% Example of use
-% treeview_taxa(pedigree('Animalia')); open treeview_taxa.html to see the result
+% prt_species_tree_js(pedigree('Animalia')); open ../species_tree.html to see the result
 
-  %WD = pwd;                      % store current path
-  %taxa = which('treeview_taxa'); % locate DEBtool_M/taxa/
-  %taxa = taxa(1:end - 15);       % path to DEBtool_M/taxa/
-  %cd(taxa)                       % goto taxa
-
-  %try
-    fid_tv = fopen('treeview_taxa.js', 'w+'); % open file for writing, delete existing content
+    fid_tv = fopen('../sys/species_tree.js', 'w+'); % open file for writing, delete existing content
 
     % write header
     fprintf(fid_tv, '//\n');
@@ -46,20 +47,21 @@ function treeview_taxa (pedigree_taxa)
     fprintf(fid_tv, 'USEICONS = 0\n');     % 0: Do not display the icons; 1: Display the icons
     fprintf(fid_tv, 'WRAPTEXT = 1\n');     % 0: The text portion of a node will appear on one line only; 1: The text portion of a node will wrap to always be visible 
     fprintf(fid_tv, 'PRESERVESTATE = 1\n');% 0: Do not store the state of the tree across page loads; 1: Store the state of the tree in cookies, and use that state on next visit
-    fprintf(fid_tv, 'HIGHLIGHT = 1\n\n');  % 0: Do not highlight the selected node; 1: Highlight the selected node
+    fprintf(fid_tv, 'HIGHLIGHT = 1\n');    % 0: Do not highlight the selected node; 1: Highlight the selected node
+    fprintf(fid_tv, 'ICONPATH = ''img/''\n\n'); % path to icons for tree
   
     % build tree
     nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
-    fprintf(fid_tv, ['foldersTree = gFld("<b>', node, '</b>", "treeview_taxa.html")\n']);
+    fprintf(fid_tv, ['foldersTree = gFld("<b>', node, '</b>", "species_tree.html")\n']);
 
     while length(pedigree_taxa) > 3
       nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
       level = max(strfind(node, char(9))); node(1:level) = []; L = ['L', num2str(level)]; Lnew = ['L', num2str(1 + level)];
       if level == 1
-        fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", "treeview_taxa.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
+        fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", "species_tree.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
         %fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", ""))\n']);
       elseif isempty(strfind(node, '_')) && isempty(strfind(node, ' ')) 
-        fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "treeview_taxa.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
+        fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "species_tree.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
         %fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", ""))\n']);
       else
         fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '.html"))\n']); 
@@ -68,8 +70,3 @@ function treeview_taxa (pedigree_taxa)
  
     fclose(fid_tv);
   
-  %catch
-  %  disp('An error occured during writing file treeview_taxa.js')
-  %end
-  
-  %cd(WD)                    % goto original path
