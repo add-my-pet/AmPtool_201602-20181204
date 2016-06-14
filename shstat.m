@@ -193,11 +193,12 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
       x_median = median(val_plot); x_min = min(val_plot);
       surv_x = surv(val_plot); 
       plot([x_min; x_median; x_median], [0.5;0.5;0], colmed, surv_x(:,1), surv_x(:,2), colfn, 'Linewidth', 2)
-      set(gca, 'FontSize', 15, 'Box', 'on')
       xlabel(label_x)
+      ylim([0 1]);
       if strcmp(y_label, 'on')
         ylabel('survivor function')
       end
+      set(gca, 'FontSize', 15, 'Box', 'on', 'YTick', 0:0.2:1)
 
     case 2
       for j = 1:m      % scan taxa

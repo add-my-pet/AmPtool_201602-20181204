@@ -1,12 +1,12 @@
-%% allPie_SGJR
+%% allPie_SGGJR
 % writes all pies for allocation at birth, puberty, ultimate to all entries
 
 %%
-function  allPie_SGJR(wrt)
+function  allPie_SGGJR(wrt)
 % created 2016/05/03 by Bas Kooijman
 
 %% Syntax
-% <../allPie_SGJR.m *allPie_SGJR*>
+% <../allPie_SGGJR.m *allPie_SGGJR*>
 
 %% Description
 % Writes all allocation pies to all entries (4 pies per entry) if wrt = 1.
@@ -20,7 +20,7 @@ function  allPie_SGJR(wrt)
 % macro around <pie_SGGJR.html *pie_SGGJR*> 
 
 %% Example of use
-% allPie_SGJR; 
+% allPie_SGGJR; 
 
   global allStat
   
