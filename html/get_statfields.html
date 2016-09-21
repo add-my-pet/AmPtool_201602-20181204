@@ -1,0 +1,178 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>get_statfields</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-09-21"><meta name="DC.source" content="get_statfields.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>get_statfields</h1><!--introduction--><p>returns cell array of strings with names of statistics (and a stucture with color fields which are needed for the web for a given DEB model</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>[webStatFields, webColStat] = <a href="../get_statfields.m"><b>get_statfields</b></a> (model)</p><h2>Description<a name="4"></a></h2><p>Provides the list of fields in statistics in the order that they should be printed to the wb</p><p>Input</p><div><ul><li>model: string with name of model: 'std', 'stf', 'stx', 'ssj', 'sbp', 'abj', 'asj', 'abp', 'hep', 'hex'.</li></ul></div><p>Output</p><div><ul><li>webStatFields: cell string with field names</li><li>webColStat: structure with associated colors for each field name</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Only applies to generating webpages - change here if we could like to see other things on the web and/ or wish to change the order they appear in on the web</p><h2>Example of use<a name="6"></a></h2><p>[webStatFields, webColStat] = get_parfields(metaPar.model)</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% get_statfields
+% returns cell array of strings with names of statistics (and a stucture
+% with color fields which are needed for the web for a given DEB model
+
+%%
+function [webStatFields, webColStat]= get_statfields(model)
+% created 2016/09/21 by Starrlight Augustine
+ 
+  %% Syntax 
+  % [webStatFields, webColStat] = <../get_statfields.m *get_statfields*> (model)
+
+  %% Description
+  % Provides the list of fields in statistics in the order that they should
+  % be printed to the wb
+  %
+  % Input
+  %
+  % * model: string with name of model: 'std', 'stf', 'stx', 'ssj', 'sbp', 'abj', 'asj', 'abp', 'hep', 'hex'. 
+  %
+  % Output
+  %
+  % * webStatFields: cell string with field names
+  % * webColStat: structure with associated colors for each field name
+  
+  %% Remarks
+  % Only applies to generating webpages - change here if we could like to
+  % see other things on the web and/ or wish to change the order they
+  % appear in on the web
+
+  %% Example of use
+  % [webStatFields, webColStat] = get_parfields(metaPar.model)
+  
+  switch model
+      
+  case {'std', 'stf', 'abp', 'sbp'}
+      
+    webStatFields =  {...
+     'c_T'; ...
+    's_H'; 's_s'; ...
+    'E_0'; 'Wd_0';'del_Ub'; ...
+    'a_b'; 'a_p'; 'a_99'; ...
+    'Wd_b'; 'Wd_p'; 'Wd_i'; 'L_b';'L_p'; 'L_i'; 'R_i';  ...
+    'del_Wb'; 'del_Wp'; 'del_V'; 'r_B'; ...
+    'E_m'; 't_starve'; 't_E'; 'xi_WE'; ...
+    'eb_min_G'; 'eb_min_R'; ... 'ep_min'; ...
+    'J_Ob'; 'J_Op'; 'J_Oi'};
+    
+  case 'stx'
+    webStatFields =  {'z', 'F_m', 'kap_X', 'kap_P', 'v', 'kap', 'kap_R', 'p_M', 'p_T', 'k_J', 'E_G', 'E_Hb', 'E_Hx', 'E_Hp', 'h_a', 's_G', 't_0'};
+    
+  case 'ssj'
+    webStatFields =  {'z', 'F_m', 'kap_X', 'kap_P', 'v', 'kap', 'kap_R', 'p_M', 'p_T', 'k_J', 'E_G', 'E_Hb', 'E_Hs', 't_sj', 'E_Hp', 'k_E', 'h_a', 's_G'};     
+    
+  case 'abj'
+    webStatFields =  {...
+    'c_T'; ...
+    's_H'; 's_s'; ...
+    'E_0'; 'Wd_0';'del_Ub'; ...
+    'a_b'; 'a_p'; 'a_99'; ...
+    'Wd_b'; 'Wd_p'; 'Wd_i'; 'L_b';'L_p'; 'L_i'; 'R_i';  ...
+    'del_Wb'; 'del_Wp'; 'del_V'; 'r_B'; ...
+    'E_m'; 't_starve'; 't_E'; 'xi_WE'; ...
+    'eb_min_G'; 'eb_min_R'; ... 'ep_min'; ...
+    'J_Ob'; 'J_Op'; 'J_Oi'};
+    
+  case 'asj'
+    webStatFields =  {'z', 'F_m', 'kap_X', 'kap_P', 'v', 'kap', 'kap_R', 'p_M', 'p_T', 'k_J', 'E_G', 'E_Hb', 'E_Hs', 'E_Hj', 'E_Hp', 'h_a', 's_G'};
+
+  case 'hep'
+    webStatFields =  {'z', 'F_m', 'kap_X', 'kap_P', 'v', 'kap', 'kap_R', 'p_M', 'p_T', 'k_J', 'E_G', 'E_Hb', 'E_Hp', 'E_Rj', 'h_a', 's_G'};
+
+  case 'hex'
+    webStatFields =  {'z', 'F_m', 'kap_X', 'kap_P', 'v', 'kap', 'kap_R', 'kap_V', 'p_M', 'p_T', 'k_J', 'E_G', 'E_Hb', 's_j', 'E_He', 'h_a', 's_G'};
+    
+  otherwise
+    webStatFields  = {};     
+          
+  end
+  
+webColStat.s_H = '#F7BDDE'; webColStat.s_s = '#F7BDDE';
+webColStat.c_T = '#FFC6A5';
+webColStat.E_0 = '#FFFFFF'; webColStat.Wd_0 = '#FFFFFF'; webColStat.del_Ub = '#FFFFFF'; 
+webColStat.a_b = '#C6E7DE'; webColStat.a_p = '#C6E7DE'; webColStat.a_99 = '#C6E7DE';
+webColStat.Wd_b = '#CEEFBD'; webColStat.Wd_p = '#CEEFBD'; webColStat.Wd_i = '#CEEFBD';
+webColStat.L_b = '#DEF3BD'; webColStat.L_p = '#DEF3BD'; webColStat.L_i = '#DEF3BD';
+webColStat.R_i = '#FFFFC6'; 
+webColStat.del_Wb = '#FFFF9C';  webColStat.del_Wp = '#FFFF9C';  webColStat.del_V = '#FFFF9C'; webColStat.r_B = '#FFFF9C'; 
+webColStat.E_m = '#FFC6A5';  webColStat.t_starve = '#FFC6A5';  webColStat.t_E = '#FFC6A5';  webColStat.xi_WE = '#FFC6A5'; 
+webColStat.eb_min_G = '#94D6E7'; webColStat.eb_min_R = '#94D6E7'; % webColStat.ep_min = '#94D6E7';
+webColStat.J_Ob = '#FFFFFF'; webColStat.J_Op = '#FFFFFF'; webColStat.J_Oi = '#FFFFFF';
+
+if strcmp(model,'abj')
+    webColStat.s_M = '#F7BDDE'; 
+    webColStat.a_j = webColStat.a_b;  webColStat.L_j = webColStat.L_b;  webColStat.Wd_j = webColStat.Wd_b; 
+    webColStat.J_Oj = webColStat.J_Ob;  %webColStat.p_t_j = webColStat.p_t_b; webColStat.RQ_j = webColStat.RQ_b;
+end  
+  
+% colours for statistics
+%     '#FFC6A5'; '#FFFFFF'; '#C6E7DE'; '#CEEFBD'; '#CEEFBD';
+%     '#DEF3BD'; '#FFFFC6'; '#BDC6DE'; '#C6B5DE'; '#DEBDDE';
+%     '#F7BDDE'; '#C6E7DE'; '#FFFFC6'; '#FFC6A5'; '#FFFFC6'; 
+%     '#F7BDDE'; '#BDC6DE'; '#FFFFC6'; '#FFFFFF'  
+  
+end
+  
+  
+##### SOURCE END #####
+--></body></html>
