@@ -13,7 +13,7 @@ function about
 %
 % Output: 
 %
-%  * files are written in entries_admin/img: 
+%  * files are written in ../img: 
 %
 %      - entries.png, 
 %      - pie_Animal.png
@@ -70,6 +70,7 @@ plot(surv_dates(:,1), n * (1 - surv_dates(:,2)), 'b', 'Linewidth', 3)
 set(gca, 'FontSize', 20, 'FontWeight', 'bold', 'Box', 'on')
 xlabel('time, yr')
 ylabel('# of add\_my\_pet entries')
+xlim([2005; max(dates)])
 saveas (gca,'../img/entries.png')
 close all
 
