@@ -18,4 +18,4 @@ for i = 1:n
 end
 close_species_html(fid_Spec); % close species.html
 
-copyfile('species.html','../.')
+copyfile('species_list.html','../.')

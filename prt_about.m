@@ -43,74 +43,135 @@ function prt_about
 %   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet
 % to present them on the web.
 
-close all
-clear all
-
-write_allStat; % update Staristics structure allStat.mat
-
-pie_Animalia;
-tightfig;
-saveas (gca, '../img/pie_Animalia.png')
-close all
-
-pie_model;
-tightfig;
-saveas (gca, '../img/pie_model.png')
-close all
-
-% # of entries in time
+% close all
+% clear all
+% 
+% % write_allStat; % update Staristics structure allStat.mat
+% 
+% pie_Animalia;
+% tightfig;
+% saveas (gca, '../img/pie_Animalia.png')
+% close all
+% 
+% pie_model;
+% tightfig;
+% saveas (gca, '../img/pie_model.png')
+% close all
+% 
+% % # of entries in time
 [dates entries_new dates_new] = get_date_subm;
-surv_dates = surv(dates, 2006); 
-surv_dates([1; end - 1; end],:) = [];    
-n = size(surv_dates, 1)/2;
-    
-plot(surv_dates(:,1), n * (1 - surv_dates(:,2)), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('time, yr')
-ylabel('# of add\_my\_pet entries')
-saveas (gca,'../img/entries.png')
-close all
-
-% COMPLETE, MRE plots
+% surv_dates = surv(dates, 2006); 
+% surv_dates([1; end - 1; end],:) = [];    
+% n = size(surv_dates, 1)/2;
+%     
+% plot(surv_dates(:,1), n * (1 - surv_dates(:,2)), 'b', 'Linewidth', 2)
+% set(gca, 'FontSize', 15, 'Box', 'on')
+% xlabel('time, yr')
+% ylabel('# of add\_my\_pet entries')
+% saveas (gca,'../img/entries.png')
+% close all
+% 
+% % COMPLETE, MRE plots
 CM = read_allStat('COMPLETE', 'MRE'); n_entries = size(CM,1);
-C_median = median(CM(:,1)); M_median = median(CM(:,2));
-plot(CM(:,1), CM(:,2), '.b', 'MarkerSize', 20)
-set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('COMPLETE')
-ylabel('MRE')
-saveas (gca,'../img/COMPLETE_MRE.png')
-close all
-
-surv_COMPLETE = surv(CM(:,1),0);
-plot([0; C_median; C_median], [0.5;0.5;0], 'r', surv_COMPLETE(:,1), surv_COMPLETE(:,2), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('COMPLETE')
-ylabel('survivor function')
-saveas (gca,'../img/COMPLETE.png')
-close all
-
-surv_MRE = surv(CM(:,2),0);
-plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
-set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('Mean Relative Error')
-ylabel('survivor function')
-saveas (gca,'../img/MRE.png')
-close all
-
-shprimpar % primary parameters
-
-% Write about.html
-path = 'HREF = http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/i_results_'; % path to entries
+% C_median = median(CM(:,1)); M_median = median(CM(:,2));
+% plot(CM(:,1), CM(:,2), '.b', 'MarkerSize', 20)
+% set(gca, 'FontSize', 15, 'Box', 'on')
+% xlabel('COMPLETE')
+% ylabel('MRE')
+% saveas (gca,'../img/COMPLETE_MRE.png')
+% close all
+% 
+% surv_COMPLETE = surv(CM(:,1),0);
+% plot([0; C_median; C_median], [0.5;0.5;0], 'r', surv_COMPLETE(:,1), surv_COMPLETE(:,2), 'b', 'Linewidth', 2)
+% set(gca, 'FontSize', 15, 'Box', 'on')
+% xlabel('COMPLETE')
+% ylabel('survivor function')
+% saveas (gca,'../img/COMPLETE.png')
+% close all
+% 
+% surv_MRE = surv(CM(:,2),0);
+% plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
+% set(gca, 'FontSize', 15, 'Box', 'on')
+% xlabel('Mean Relative Error')
+% ylabel('survivor function')
+% saveas (gca,'../img/MRE.png')
+% close all
+% 
+% shprimpar % primary parameters
+% 
+% % Write about.html
+% path = 'HREF = http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/i_results_'; % path to entries
 fid_about = fopen('../about.html', 'w+'); % open file for writing, delete existing content
-fprintf(fid_about, '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">\n\n');
+
+% fprintf(fid_about, '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">\n\n');
+% fprintf(fid_about, '<HTML>\n');
+% fprintf(fid_about, '<HEAD>\n\n');
+% fprintf(fid_about, '  <TITLE>\n');
+% fprintf(fid_about, '    About Add-my-pet\n');
+% fprintf(fid_about, '  </TITLE>\n');
+% fprintf(fid_about, '  <link rel="stylesheet" type="text/css" href="css/manualstyle.css"> \n');
+% fprintf(fid_about, '</HEAD>\n\n');
+% fprintf(fid_about, '<BODY>\n');
+
+fprintf(fid_about, '<!DOCTYPE html>\n');
 fprintf(fid_about, '<HTML>\n');
-fprintf(fid_about, '<HEAD>\n\n');
-fprintf(fid_about, '  <TITLE>\n');
-fprintf(fid_about, '    About Add-my-pet\n');
-fprintf(fid_about, '  </TITLE>\n');
-fprintf(fid_about, '  <link rel="stylesheet" type="text/css" href="css/manualstyle.css"> \n');
-fprintf(fid_about, '</HEAD>\n\n');
+fprintf(fid_about, '<HEAD>\n');
+fprintf(fid_about, '<TITLE>Species List</TITLE>\n');
+fprintf(fid_about, '<link rel="stylesheet" type="text/css" href="sys/style.css"> \n');
+fprintf(fid_about, '<script src="sys/dropdown.js"></script>\n');
+fprintf(fid_about, '</HEAD>\n');
 fprintf(fid_about, '<BODY>\n');
+fprintf(fid_about, '<!-- image with stays fixed in the background  -->\n');
+fprintf(fid_about, '<div id="h1_container">\n');
+fprintf(fid_about, '<h1>\n');
+fprintf(fid_about, '<!--  Add-my-pet -->\n');
+fprintf(fid_about, '<img alt="add-my-pet" src = "img/addmypet.png"  width = "400px"> \n'); 
+fprintf(fid_about, '</h1>\n');
+fprintf(fid_about, '</div>\n');
+fprintf(fid_about, '<!-- image with stays fixed in the background  -->\n');
+fprintf(fid_about, '<div id="h2_container">\n');
+fprintf(fid_about, '<h1>\n');
+fprintf(fid_about, '<img alt="add-my-pet" src = "img/bannercycle.png"  > \n');
+fprintf(fid_about, '</h1>\n');
+fprintf(fid_about, '</div>\n');
+fprintf(fid_about, '<!--------------------------------------------------------------->\n');
+fprintf(fid_about, '<!--   PART 1                                                  -->\n');
+fprintf(fid_about, '<!--   TOP PART OF WEBPAGE IS FIXED                            -->\n');
+fprintf(fid_about, '<!--   It has the logo and the menu with Javascript            -->\n');
+fprintf(fid_about, '<!--  dropdown menus                                           -->\n');
+fprintf(fid_about, '<!--  Please put in bold and in fancy the right links          -->\n');
+fprintf(fid_about, '<!--------------------------------------------------------------->\n');
+fprintf(fid_about, '	<div id="top"> \n');
+fprintf(fid_about, '		<div class="logo">		\n');
+fprintf(fid_about, '		   <a href="http://www.bio.vu.nl/thb/deb/deblab/"><img src="img/bannercycle.png"  height = "60px"></a>\n');
+fprintf(fid_about, '		</div>\n');
+fprintf(fid_about, '		<div id="navwrapper">\n');
+fprintf(fid_about, '			<div class = "dropdown"><button onclick="context()" class="dropbtn">CONTEXT</button>\n');
+fprintf(fid_about, '				<div id="contextDropdown" class="dropdown-content">\n');
+fprintf(fid_about, '					<a href="index.html" >Pet Portal</a>\n');
+fprintf(fid_about, '					<a href="http://www.debtheory.org/" target="_blank">DEB Portal</a>\n');
+fprintf(fid_about, '					<a href="http://www.bio.vu.nl/thb/deb/" target="_blank">DEB info</a>\n');
+fprintf(fid_about, '					<a href="http://www.bio.vu.nl/thb/deb/deblab/" target="_blank">DEBlab</a>\n');
+fprintf(fid_about, '				</div>\n');
+fprintf(fid_about, '			</div>	\n');
+fprintf(fid_about, '			<div class = "dropdown"><button onclick="collection()" class="dropbtn"><b>COLLECTION</b></button> <!--   notice that collection should be bold because we are in species  -->\n');
+fprintf(fid_about, '				<div id="collectionDropdown" class="dropdown-content">\n');
+fprintf(fid_about, '					<a class = "menu" href="species_list.html">Species List</a> <!--   notice that class should be "menu" because we are in species  -->\n');
+fprintf(fid_about, '					<a href="species_tree.html">Species Tree</a>\n');
+fprintf(fid_about, '					<a href="about.html">About</a>\n');
+fprintf(fid_about, '				</div>\n');
+fprintf(fid_about, '			</div>	\n');
+fprintf(fid_about, '			<div class = "dropdown"><button onclick= "window.open("http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction", "_blank")" class="dropbtn"> WIKI</a></button>\n');
+fprintf(fid_about, '			</div>	\n');
+fprintf(fid_about, '		</div>\n');
+fprintf(fid_about, '	</div>\n');
+	
+fprintf(fid_about, '	<div id = "main">\n');
+fprintf(fid_about, '		<div id = "main-wrapper-species">    \n');
+fprintf(fid_about, '			<div id="contentFull">\n');
+fprintf(fid_about, '			<H1 id = "portaltop">About Add-my-pet</H1>	\n');	
+fprintf(fid_about, '			<BR>\n');
+
 fprintf(fid_about, '  <H2 ALIGN = "left">Entries in time</H2>\n');
 fprintf(fid_about, '  <div class="about">\n');
 fprintf(fid_about, '    <IMG SRC="img/entries.png" WIDTH=300px>\n');
@@ -203,8 +264,28 @@ fprintf(fid_about, '    <HR>\n');
 fprintf(fid_about, '    <p>\n');
 fprintf(fid_about, '    Go to the <A HREF="http://www.debtheory.org" TARGET="_top"> DEB portal</A>\n');
 fprintf(fid_about, '  </div>\n');
-fprintf(fid_about, '</BODY>\n');
-fprintf(fid_about, '</HTML>\n');
+
+fprintf(fidSpec,   '</div> <!-- end of content -->\n');
+			
+			
+		
+fprintf(fidSpec,   '			<div id="footer">\n');
+fprintf(fidSpec,   '				<div class="aligncenter" style="padding:20px">\n');
+fprintf(fidSpec,   '				&#169; 2016 Add-my-pet\n');
+fprintf(fidSpec,   '				</div>\n');
+fprintf(fidSpec,   '			</div>\n');
+fprintf(fidSpec,   '		</div> <!-- main wrapper -->\n');
+fprintf(fidSpec,   '	</div> <!-- main -->\n');
+
+
+
+fprintf(fidSpec,   '</BODY>\n');
+fprintf(fidSpec,   '</HTML>\n');
+
+
+
+% fprintf(fid_about, '</BODY>\n');
+% fprintf(fid_about, '</HTML>\n');
 fclose(fid_about);
 
 

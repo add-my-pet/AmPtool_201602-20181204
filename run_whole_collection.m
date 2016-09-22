@@ -41,14 +41,14 @@ print_stat_my_pet_html(metaData, metaPar, par) % make html with implied properti
 print_results_my_pet_html(data, prdData, auxData, metaData, txtData, metaPar) % make html with results
 print_pet_frames_html(metaData) % make the top and left frames for the html files
 
-pathnm = '../entries_web' ; % path to directory with all of the generated html files
-copyfile('*.html',pathnm) % copy all of the .html files from entries to entries_web
-copyfile('*.bib',pathnm) % copy the bib file to entries_web
-delete('*.html', '*bib') % delete html and bib files  
-
-cd('../entries_zip' ); % goto directory with all of the zipped entries
-zip_my_pet(entries{i}, '../entries'); % zip the entry
-cd(WD)  % goto original path    
+% pathnm = '../entries_web' ; % path to directory with all of the generated html files
+% copyfile('*.html',pathnm) % copy all of the .html files from entries to entries_web
+% copyfile('*.bib',pathnm) % copy the bib file to entries_web
+% delete('*.html', '*bib') % delete html and bib files  
+% 
+% cd('../entries_zip' ); % goto directory with all of the zipped entries
+% zip_my_pet(entries{i}, '../entries'); % zip the entry
+% cd(WD)  % goto original path    
 
 end
     

@@ -1,5 +1,5 @@
 %% print_species_html
-% places a line in species.html which has previously been opened for
+% places a line in species_list.html which has previously been opened for
 % reading and writing
 
 %%
@@ -31,6 +31,10 @@ end
 
 n_data_0 = length(data_0); n_data_1 = length(data_1); 
   
+
+
+
+
   fprintf(fidSpec, '      <TR>\n');
   fprintf(fidSpec,['        <TD>', phylum, '</TD>  <TD>', metaData.class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD> ']);
   fprintf(fidSpec,['<TD><A TARGET="_top" HREF="entries_web/i_results_', species, '.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD> ']);
