@@ -129,7 +129,7 @@ fprintf(oid,['				<div id="codeDropdown" class="dropdown-content">']);
 fprintf(oid,['					<a href="../entries/',metaData.species,'/mydata_my_pet.m" target="_blank">mydata</a>']);
 fprintf(oid,['					<a href="../entries/',metaData.species,'/pars_init_my_pet.m" target="_blank">pars_init</a>']);
 fprintf(oid,['					<a href="../entries/',metaData.species,'/predict_my_pet.m" target="_blank">predict</a>']);
-fprintf(oid,['					<A HREF="../entries_zip/my_pet_zip.zip" TARGET="_top" onMouseOver="window.status=Close submenu; return true;">  <IMG SRC="../img/folder.png" WIDTH="110px"  BORDER="0" > </A>']);
+fprintf(oid,['					<A HREF="../entries_zip/',metaData.species,'_zip.zip" TARGET="_top" onMouseOver="window.status=Close submenu; return true;">  <IMG SRC="../img/folder.png" WIDTH="110px"  BORDER="0" > </A>']);
 fprintf(oid,['				</div>']);
 fprintf(oid,['			</div>	']);
 fprintf(oid,['		</div>']);
@@ -247,10 +247,6 @@ fprintf(oid, '	</div> <!-- main -->\n');
 
 fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
-
-% Close the file
-% fprintf(oid, '  </BODY>\n');
-% fprintf(oid, '  </HTML>\n');
 fclose(oid);
 
 

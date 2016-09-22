@@ -37,7 +37,7 @@ n_data_0 = length(data_0); n_data_1 = length(data_1);
 
   fprintf(fidSpec, '      <TR>\n');
   fprintf(fidSpec,['        <TD>', phylum, '</TD>  <TD>', metaData.class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD> ']);
-  fprintf(fidSpec,['<TD><A TARGET="_top" HREF="entries_web/i_results_', species, '.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD> ']);
+  fprintf(fidSpec,['<TD><A TARGET="_top" HREF="entries_web/results_', species, '.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD> ']);
   fprintf(fidSpec, '<TD style="text-align:center"  BGCOLOR = "#FFC6A5">%s</TD> ', model);
   fprintf(fidSpec, '<TD style="text-align:center"  BGCOLOR = "#FFE7C6">%8.3f</TD> ', MRE);
   fprintf(fidSpec, '<TD style="text-align:center"  BGCOLOR = "#FFCE9C">%g</TD>\n', COMPLETE);
