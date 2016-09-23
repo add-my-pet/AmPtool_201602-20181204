@@ -158,7 +158,7 @@ fprintf(fid_about, '					<a href="species_tree.html">Species Tree</a>\n');
 fprintf(fid_about, '					<a class="menu" href="about.html">About</a>\n');
 fprintf(fid_about, '				</div>\n');
 fprintf(fid_about, '			</div>	\n');
-fprintf(fid_about, '			<div class = "dropdown"><button onclick= "window.open("http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction", "_blank")" class="dropbtn"> WIKI</a></button>\n');
+fprintf(fid_about, '			<div class = "dropdown"><button onclick= "window.open(''http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction'', ''_blank'')" class="dropbtn"> WIKI</a></button>\n');
 fprintf(fid_about, '			</div>	\n');
 fprintf(fid_about, '		</div>\n');
 fprintf(fid_about, '	</div>\n');
