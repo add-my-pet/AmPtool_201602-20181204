@@ -18,7 +18,7 @@ function prt_species_tree_js(pedigree_taxa)
 
 %% Remarks
 % file ../species_tree.html calls 
-%  - java-scripts ../sys/ftiens4.js, ua.js and species_tree.js
+%  - java-scripts ../sys/ftiens4.js, ua.js
 %  - gif's ../img/nm.gif
 %  - jpg's ../img/tree/nm.jpg
 
