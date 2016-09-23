@@ -30,7 +30,6 @@ fid_Spec = fopen('species_list.html', 'w+'); % open file for writing, delete exi
   
 
 % make the header for species_list.html :
-
 fprintf(fid_Spec, '<!DOCTYPE html>\n');
 fprintf(fid_Spec, '<HTML>\n');
 fprintf(fid_Spec, '<HEAD>\n');
@@ -79,7 +78,7 @@ fprintf(fid_Spec, '					<a href="species_tree.html">Species Tree</a>\n');
 fprintf(fid_Spec, '					<a href="about.html">About</a>\n');
 fprintf(fid_Spec, '				</div>\n');
 fprintf(fid_Spec, '			</div>	\n');
-fprintf(fid_Spec, '			<div class = "dropdown"><button onclick= "window.open("http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction", "_blank")" class="dropbtn"> WIKI</a></button>\n');
+fprintf(fid_Spec, '			<div class = "dropdown"><button onclick= "window.open(''http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction'',''_blank'')" class="dropbtn"> WIKI</a></button>\n');
 fprintf(fid_Spec, '			</div>	\n');
 fprintf(fid_Spec, '		</div>\n');
 fprintf(fid_Spec, '	</div>\n');
