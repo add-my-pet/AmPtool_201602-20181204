@@ -182,27 +182,26 @@ fprintf(fid_about, '			<H2 id = "aims">Overview of the collection</H2>\n');
  fprintf(fid_about, ['				<img src="img/pie_','Animalia','.png" width="350px">\n']);
  fprintf(fid_about, '					<div class = "caption">   \n');
  fprintf(fid_about, '					The collection is complete for large phyla (perhaps excluding the sponges). \n');
- fprintf(fid_about, '					Fish, mammals and protostomata are the best represented groups.\n');
- fprintf(fid_about, '					Chordates are complete at order level.\n');
+ fprintf(fid_about, '					Chordates are complete at order level, primates at family level.\n');
  fprintf(fid_about, '					</div>\n');
  fprintf(fid_about, '			</div>				 \n');
  fprintf(fid_about, '			<div class="sidelement2">\n');
  fprintf(fid_about, [' <img src="img/pie_','model.png" width="350px"> \n']);
  fprintf(fid_about, '					<div class = "caption">   \n');
- fprintf(fid_about, '					A variety of related models captures animal life-cycle diversity. Goto the description of the various models \n');
+ fprintf(fid_about, '					A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_top">variety of related models</a> captures animal life-cycle diversity.\n');
  fprintf(fid_about, '					</div>\n');
  fprintf(fid_about, '			</div>				\n');
  fprintf(fid_about, '				<H2 class="clear"> Data completeness and mean relative errors </H2>	\n');		
  fprintf(fid_about, '				<div class="sidelement2">\n');
  fprintf(fid_about, ['				<img src="img/COMPLETE.png" width','="350px">\n']);
  fprintf(fid_about, '					<div class = "caption">   \n');
- fprintf(fid_about, '					Survivor function of data completness.\n');
+ fprintf(fid_about, '					Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_top">data completness</a>.\n');
  fprintf(fid_about, '					</div>\n');
  fprintf(fid_about, '				</div>	\n');
  fprintf(fid_about, '				<div class="sidelement2">\n');
  fprintf(fid_about, ['				<img src="img','/MRE.png" width="350px">\n']);
  fprintf(fid_about, '					<div class = "caption">   \n');
- fprintf(fid_about, '					Survivor function of the Mean Relative Error (MRE).\n');
+ fprintf(fid_about, '					Survivor function of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_top">Mean Relative Error (MRE)</a>.\n');
  fprintf(fid_about, '					</div>\n');
  fprintf(fid_about, '				</div>	\n');
  fprintf(fid_about, '				<div class="sidelement2">\n');
@@ -246,9 +245,9 @@ fprintf(fid_about, '			<H2 id = "aims">Overview of the collection</H2>\n');
  fprintf(fid_about, '				<div class="sidelement">\n');
  fprintf(fid_about, ['				<img src="img/','entries.png" width="350px">\n']);
  fprintf(fid_about, '					<div class = "caption">   \n');
- fprintf(fid_about, '					The add-my-pet collection started on the 12<sup>th</sup> of Feb. 2009 as part of the\n');
+ fprintf(fid_about, '					The add-my-pet collection started on 2009/02/12 as part of the\n');
  fprintf(fid_about, '					<A HREF ="http://www.bio.vu.nl/thb/deb/course/" target="_blank"> DEB tele course</A>. \n');
- fprintf(fid_about, '					The numbers of entries have been steadily increasing ever since.\n');
+ fprintf(fid_about, ['                  It has ', num2str(n_entries), ' entries at ', datestr(date,26), '\n']);
  fprintf(fid_about, '					</div>\n');
  fprintf(fid_about, '				</div>\n');
 				
@@ -282,10 +281,10 @@ fprintf(fid_about, '			<H2 id = "aims">Overview of the collection</H2>\n');
  fprintf(fid_about, '	<H2 class="clear"> Background documentation </H2>\n');
 				
  fprintf(fid_about, '				<p>\n');
- fprintf(fid_about, '				An increasing number of papers has been published on the add-my-pet collection, both on the methodology and ecological and evolutionary patterns in parameter values among species.\n');
+ fprintf(fid_about, '				<a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Add-my-pet_papers" TARGET="_top">An increasing number of papers has been published on the add-my-pet collection, both on the methodology and ecological and evolutionary patterns in parameter values among species.</a>\n');
                 
  fprintf(fid_about, '               <p>	\n');			
- fprintf(fid_about, '               Many papers have been written on specific entries, which have been cited at entry-pages. \n');
+ fprintf(fid_about, '               <a href="http://www.bio.vu.nl/thb/deb/DEB_papers.pdf" TARGET="_top">Many papers have been written on specific entries</a>, which have been cited at entry-pages. \n');
 
 
  fprintf(fid_about, '<!-- ------------------------------------------------          -->\n');
