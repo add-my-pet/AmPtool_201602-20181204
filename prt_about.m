@@ -218,7 +218,7 @@ fprintf(fid_about, '			<H2 id = "aims">Overview of the collection</H2>\n');
  fprintf(fid_about, '			Files, references, and code are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content		\n');
  fprintf(fid_about, '			<p>\n');
  fprintf(fid_about, '			The entries continue to change as the collection grows for several reasons: \n');
- fprintf(fid_about, '			Errors are spotted and corrected; More data is included; Assumptions about data quality change; Entries are split up by population.\n');
+ fprintf(fid_about, '			Errors are spotted and corrected; More data is included; Assumptions about data quality change; Entries are split up by population; \n');
  fprintf(fid_about, '			Our understanding of what are the best priors to use for particular taxa increases; Algorithms for estimation are improved. The model changed. \n');
  fprintf(fid_about, '			<p>\n');
  fprintf(fid_about, '			Add-my-pet makes explicit a number of wide spread scientific problems such as: data quality, differences between experiments etc. \n');
