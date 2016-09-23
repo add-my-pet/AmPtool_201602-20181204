@@ -32,9 +32,6 @@ end
 n_data_0 = length(data_0); n_data_1 = length(data_1); 
   
 
-
-
-
   fprintf(fidSpec, '      <TR>\n');
   fprintf(fidSpec,['        <TD>', phylum, '</TD>  <TD>', metaData.class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD> ']);
   fprintf(fidSpec,['<TD><A TARGET="_top" HREF="entries_web/results_', species, '.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD> ']);
