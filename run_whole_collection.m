@@ -36,10 +36,10 @@ load(['results_',entries{i},'.mat']) % load results_my_pet.mat
 prdData = feval(['predict_',metaData.species], par, data, auxData);
 prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:
 cd(WD)  % goto original path 
-print_bib_my_pet(metaData.species,metaData.biblist) % print bib file
-print_my_pet_html(metaData, metaPar, par, txtPar) % make html with parameters
-print_stat_my_pet_html(metaData, metaPar, par) % make html with implied properties
-print_results_my_pet_html(data, prdData, auxData, metaData, txtData, metaPar) % make html with results
+prt_bib_my_pet(metaData.species,metaData.biblist) % print bib file
+prt_my_pet(metaData, metaPar, par, txtPar) % make html with parameters
+prt_stat_my_pet(metaData, metaPar, par) % make html with implied properties
+prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar) % make html with results
 pathnm = '../entries_web' ; % path to directory with all of the generated html files
 copyfile('*.html',pathnm) % copy all of the .html files from entries to entries_web
 copyfile('*.bib',pathnm) % copy the bib file to entries_web
