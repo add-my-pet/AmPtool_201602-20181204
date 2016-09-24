@@ -181,7 +181,7 @@ fprintf(fid_about, '			<H2 id = "aims">Overview of the collection</H2>\n');
  fprintf(fid_about, '			 <div class="sidelement2">\n');
  fprintf(fid_about, ['				<img src="img/pie_','Animalia','.png" width="350px">\n']);
  fprintf(fid_about, '					<div class = "caption">   \n');
- fprintf(fid_about, '					The collection is complete for large phyla (perhaps excluding the sponges). \n');
+ fprintf(fid_about, '					The collection is complete for large <a href="http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/phyla.html" target="_blank">phyla</a> (perhaps excluding the sponges). \n');
  fprintf(fid_about, '					Chordates are complete at order level, primates at family level.\n');
  fprintf(fid_about, '					</div>\n');
  fprintf(fid_about, '			</div>				 \n');
