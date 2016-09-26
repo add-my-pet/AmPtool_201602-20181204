@@ -53,7 +53,7 @@ switch n_author
     txt_author = [metaData.author{1}, ', ', metaData.author{2}];
     
     case 3
-    txt_author = [metaData.author{1}, ', ', metaData.author{2}, ' & metaData.author{3}'];
+    txt_author = [metaData.author{1}, ', ', metaData.author{2}, ' &', metaData.author{3}];
  
     otherwise    
     txt_author = [metaData.author{1}, ', et al.'];
@@ -325,7 +325,7 @@ ID = (1:n_uniData)';   % fig number = index of uniData
         if ID(j) < 10
         fig   = ['see <A href = "../entries/',metaData.species,'/results_',metaData.species,'_0',num2str(ID(j)),'.png"> Fig. ',num2str(ID(j)),'</A>'];
         else
-        fig   = ['see <A href = "../entries/',metaData.species,'results_',metaData.species,'_',num2str(ID(j)),'.png"> Fig. ',num2str(ID(j)),'</A>'];
+        fig   = ['see <A href = "../entries/',metaData.species,'/results_',metaData.species,'_',num2str(ID(j)),'.png"> Fig. ',num2str(ID(j)),'</A>'];
         end        
       n = iscell(txtData.bibkey.(nm{uniData(j)}));
       if n
