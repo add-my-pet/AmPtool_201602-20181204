@@ -102,7 +102,7 @@ close all
 shprimpar % primary parameters
 
 % Write about.html
-path = 'HREF = ../entries_web/results_'; % path to entries
+path = 'entries_web/results_'; % path to entries
 fid_about = fopen('../about.html', 'w+'); % open file for writing, delete existing content
 
 fprintf(fid_about, '<!DOCTYPE html>\n');
@@ -144,7 +144,7 @@ fprintf(fid_about, '  <div id="navwrapper">\n');
 fprintf(fid_about, '    <div class = "dropdown"><button onclick="context()" class="dropbtn">CONTEXT</button>\n');
 fprintf(fid_about, '      <div id="contextDropdown" class="dropdown-content">\n');
 fprintf(fid_about, '        <a href="index.html" >Pet Portal</a>\n');
-fprintf(fid_about, '        <a href="http://www.debtheory.org/" target="_blank">DEB Portal</a>\n');
+fprintf(fid_about, '        <a href="http://http://www.debtheory.org/wiki/index.php?title=Main_Page/" target="_blank">DEB Portal</a>\n');
 fprintf(fid_about, '        <a href="http://www.bio.vu.nl/thb/deb/" target="_blank">DEB info</a>\n');
 fprintf(fid_about, '        <a href="http://www.bio.vu.nl/thb/deb/deblab/" target="_blank">DEBlab</a>\n');
 fprintf(fid_about, '      </div>\n');
@@ -186,20 +186,20 @@ fprintf(fid_about, '    </div>\n\n');
 fprintf(fid_about, '    <div class="sidelement2">\n');
 fprintf(fid_about,['      <img src="img/pie_','model.png" width="350px"> \n']);
 fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_top">variety of related models</a> captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.\n');
+fprintf(fid_about, '          A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_blank">variety of related models</a> captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <H2 class="clear"> Data completeness and mean relative errors</H2>\n\n');  
 fprintf(fid_about, '      <div class="sidelement2">\n');
 fprintf(fid_about,['        <img src="img/COMPLETE.png" width','="350px">\n']);
 fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_top">data completness</a>.\n');
+fprintf(fid_about, '          Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_blank">data completness</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
 fprintf(fid_about,['        <img src="img','/MRE.png" width="350px">\n']);
 fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          Survivor function of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_top">Mean Relative Error (MRE)</a>.\n');
+fprintf(fid_about, '          Survivor function of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE)</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
@@ -241,7 +241,7 @@ fprintf(fid_about, '      <div class="sidelement">\n');
 fprintf(fid_about,['        <img src="img/','entries.png" width="350px">\n']);
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          The add-my-pet collection started at 2009/02/12 as part of the \n');
-fprintf(fid_about, '          <A HREF ="http://www.bio.vu.nl/thb/deb/course/" target="_blank">DEB tele course</A>.\n');
+fprintf(fid_about, '          <A HREF ="http://deb.akvaplan.com/teledescription.html" target="_blank">DEB tele course</A>.\n');
 fprintf(fid_about,['          It has ', num2str(n_entries), ' entries at ', datestr(date,26), '\n']);
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
@@ -252,23 +252,23 @@ fprintf(fid_about, '      <!----------------------------------------------------
 fprintf(fid_about, '      <TABLE id="t02">\n');
 fprintf(fid_about, '        <TR><TH colspan="2"><b>Latest additions to the collection:</b></TH></TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a ', path, entries_new{1}, '.html TARGET="_top"><I>', entries_new{1}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{1}, '.html "><I>', entries_new{1}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(1,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a ', path, entries_new{2}, '.html TARGET="_top"><I>', entries_new{2}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{2}, '.html "><I>', entries_new{2}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(2,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a ', path, entries_new{3}, '.html TARGET="_top"><I>', entries_new{3}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{3}, '.html"><I>', entries_new{3}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(3,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a ', path, entries_new{4}, '.html TARGET="_top"><I>', entries_new{4}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{4}, '.html "><I>', entries_new{4}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(4,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a ', path, entries_new{5}, '.html TARGET="_top"><I>', entries_new{5}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{5}, '.html "><I>', entries_new{5}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(5,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '      </TABLE>\n\n');
@@ -276,11 +276,10 @@ fprintf(fid_about, '      </TABLE>\n\n');
 fprintf(fid_about, '      <H2 class="clear"> Background documentation </H2>\n\n');
     
 fprintf(fid_about, '      <p>\n');
-fprintf(fid_about, '      <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Add-my-pet_papers" TARGET="_top">An increasing number of papers has been published on the add-my-pet collection, both on the methodology and ecological and evolutionary patterns in parameter values among species.</a>\n');
+fprintf(fid_about, '      <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Add-my-pet_papers" TARGET="_blank">An increasing number of papers has been published on the add-my-pet collection, both on the methodology and ecological and evolutionary patterns in parameter values among species.</a>\n');
                 
 fprintf(fid_about, '      <p>\n');   
-fprintf(fid_about, '      <a href="http://www.bio.vu.nl/thb/deb/DEB_papers.pdf" TARGET="_top">Many papers have been written on specific entries</a>, which have been cited at entry-pages. \n');
-
+fprintf(fid_about, '      <a href="http://www.bio.vu.nl/thb/deb/DEB_papers.pdf" TARGET="_blank">Many papers have been written on specific entries</a>, which have been cited at entry-pages. \n');
 fprintf(fid_about, '    </div> <!-- end of sidebar -->\n\n');
    
 fprintf(fid_about, '    <!--------------------------------------------------------------->\n');
