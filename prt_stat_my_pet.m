@@ -63,7 +63,7 @@ fprintf(oid,['		<div id="navwrapper">']);
 fprintf(oid,['			<div class = "dropdown"><button onclick="context()" class="dropbtn">CONTEXT</button>']);
 fprintf(oid,['				<div id="contextDropdown" class="dropdown-content">']);
 fprintf(oid,['					<a href="../index.html" >Pet Portal</a>']);
-fprintf(oid,['					<a href="http://www.debtheory.org/" target="_blank">DEB Portal</a>']);
+fprintf(oid,['					<a href="http://http://www.debtheory.org/wiki/index.php?title=Main_Page/" target="_blank">DEB Portal</a>']);
 fprintf(oid,['					<a href="http://www.bio.vu.nl/thb/deb/" target="_blank">DEB info</a>']);
 fprintf(oid,['					<a href="http://www.bio.vu.nl/thb/deb/deblab/" target="_blank">DEBlab</a>']);
 fprintf(oid,['				</div>']);

@@ -57,30 +57,14 @@ otherParFields = setdiff(otherParFields, tempParFields);
 
 % start printing the html file
 oid = fopen([species, '.html'], 'w+'); % % open file for writing, delete existing content
-
-
-% fprintf(oid, '%s\n' ,'<!DOCTYPE html>');
-% fprintf(oid, '%s\n' ,'<HTML>');
-% fprintf(oid, '%s\n' ,'  <HEAD>');
-% fprintf(oid,['    <TITLE>add-my-pet:', species, '</TITLE>\n']);
-% fprintf(oid, '%s'   ,'    <META NAME = "keywords" ');
-% fprintf(oid, '%s\n' ,'     CONTENT="add-my-pet, Dynamic Energy Budget theory, DEBtool">');
-%   
-% % ------ calls the cascading style sheet (found in subfolder css):
-% fprintf(oid, '%s\n' ,'<link rel="stylesheet" type="text/css" href="../css/collectionstyle.css">'); 
-% fprintf(oid, '%s\n' , ' </HEAD>');
-% 
-% % open up the body of the html :
-% fprintf(oid, '%s\n\n','  <BODY>');
-
-fprintf(oid,['<!DOCTYPE html>']);
-fprintf(oid,['<HTML>']);
-fprintf(oid,['<HEAD>']);
+fprintf(oid,'<!DOCTYPE html>');
+fprintf(oid,'<HTML>');
+fprintf(oid,'<HEAD>');
 fprintf(oid,['<TITLE>',metaData.species,'</TITLE>']);
-fprintf(oid,['<link rel="stylesheet" type="text/css" href="../sys/style.css">']); 
-fprintf(oid,['<script src="../sys/dropdown.js"></script>']);
-fprintf(oid,['</HEAD>']);
-fprintf(oid,['<BODY>']);
+fprintf(oid,'<link rel="stylesheet" type="text/css" href="../sys/style.css">'); 
+fprintf(oid,'<script src="../sys/dropdown.js"></script>');
+fprintf(oid,'</HEAD>');
+fprintf(oid,'<BODY>');
 fprintf(oid,['<!--------------------------------------------------------------->']);
 fprintf(oid,['<!--   PART 1                                                  -->']);
 fprintf(oid,['<!--   TOP PART OF WEBPAGE IS FIXED                            -->']);
