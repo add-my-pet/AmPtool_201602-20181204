@@ -121,7 +121,7 @@ fprintf(oid,['					<a href="../about.html">About</a>']);
 fprintf(oid,['				</div>']);
 fprintf(oid,['			</div>	']);
 fprintf(oid,['			<div class = "dropdown">']);
-fprintf(oid,['			<button onclick= "window.open("http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction", "_blank")" class="dropbtn"> WIKI</a></button>']);
+fprintf(oid,['			<button onclick= "window.open(''http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction'', ''_blank'')" class="dropbtn"> WIKI</a></button>']);
 fprintf(oid,['			</div>	']);
 fprintf(oid,['		</div>']);
 fprintf(oid,['	</div>']);
