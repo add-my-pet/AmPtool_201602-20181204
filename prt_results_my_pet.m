@@ -85,30 +85,30 @@ end
 oid = fopen(['results_', metaData.species, '.html'], 'w+'); % open file for reading and writing, delete existing content
 
 
-fprintf(oid,['<!DOCTYPE html>']);
-fprintf(oid,['<HTML>']);
-fprintf(oid,['<HEAD>']);
+fprintf(oid,'<!DOCTYPE html>');
+fprintf(oid,'<HTML>');
+fprintf(oid,'<HEAD>');
 fprintf(oid,['<TITLE>',metaData.species,'</TITLE>']);
-fprintf(oid,['<link rel="stylesheet" type="text/css" href="../sys/style.css">']); 
-fprintf(oid,['<script src="../sys/dropdown.js"></script>']);
-fprintf(oid,['</HEAD>']);
-fprintf(oid,['<BODY>']);
-fprintf(oid,['<!--------------------------------------------------------------->']);
-fprintf(oid,['<!--   PART 1                                                  -->']);
-fprintf(oid,['<!--   TOP PART OF WEBPAGE IS FIXED                            -->']);
-fprintf(oid,['<!--   It has the logo and the menu with Javascript            -->']);
-fprintf(oid,['<!--  dropdown menus                                           -->']);
-fprintf(oid,['<!--  Please put in bold and in fancy the right links          -->']);
-fprintf(oid,['<!--------------------------------------------------------------->']);
-fprintf(oid,['	<div id="top"> ']);
-fprintf(oid,['		<div class="logo">		']);
-fprintf(oid,['		   <a href="http://www.bio.vu.nl/thb/deb/deblab/"><img src="../img/bannercycle.png"  height = "60px"></a>']);
+fprintf(oid,'<link rel="stylesheet" type="text/css" href="../sys/style.css">'); 
+fprintf(oid,'<script src="../sys/dropdown.js"></script>');
+fprintf(oid,'</HEAD>');
+fprintf(oid,'<BODY>');
+fprintf(oid,'<!--------------------------------------------------------------->');
+fprintf(oid,'<!--   PART 1                                                  -->');
+fprintf(oid,'<!--   TOP PART OF WEBPAGE IS FIXED                            -->');
+fprintf(oid,'<!--   It has the logo and the menu with Javascript            -->');
+fprintf(oid,'<!--  dropdown menus                                           -->');
+fprintf(oid,'<!--  Please put in bold and in fancy the right links          -->');
+fprintf(oid,'<!--------------------------------------------------------------->');
+fprintf(oid,'	<div id="top"> ');
+fprintf(oid,'		<div class="logo">		');
+fprintf(oid,'		   <a href="http://www.bio.vu.nl/thb/deb/deblab/"><img src="../img/bannercycle.png"  height = "60px"></a>');
 fprintf(oid,['		</div>']);
 fprintf(oid,['		<div id="navwrapper">']);
 fprintf(oid,['			<div class = "dropdown"><button onclick="context()" class="dropbtn">CONTEXT</button>']);
 fprintf(oid,['				<div id="contextDropdown" class="dropdown-content">']);
 fprintf(oid,['					<a href="../index.html" >Pet Portal</a>']);
-fprintf(oid,['					<a href="http://www.debtheory.org/" target="_blank">DEB Portal</a>']);
+fprintf(oid,['					<a href="http:/http://www.debtheory.org/wiki/index.php?title=Main_Page/" target="_blank">DEB Portal</a>']);
 fprintf(oid,['					<a href="http://www.bio.vu.nl/thb/deb/" target="_blank">DEB info</a>']);
 fprintf(oid,['					<a href="http://www.bio.vu.nl/thb/deb/deblab/" target="_blank">DEBlab</a>']);
 fprintf(oid,['				</div>']);
@@ -412,7 +412,6 @@ fprintf(oid,'</ul> \n');     % open the unordered list
 end
 % ----------------------------------------------------------
 
-% ----------------------------------------------------------
 % Acknowledgment:
 if isfield(metaData, 'acknowledgment') == 1
     fprintf(oid, '<H3 style="clear:both" class="pet">Acknowledgment</H3>\n');
@@ -427,7 +426,6 @@ if isfield(metaData, 'acknowledgment') == 1
 end
 % ----------------------------------------------------------
 
-% ----------------------------------------------------------
 % Bibliography:
 fprintf(oid, '<H3 style="clear:both" class="pet">Bibliography</H3>\n');
 [nm, nst] = fieldnmnst_st(metaData.biblist);
