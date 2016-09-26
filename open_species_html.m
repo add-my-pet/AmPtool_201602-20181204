@@ -66,7 +66,7 @@ fprintf(fid_Spec, '		<div id="navwrapper">\n');
 fprintf(fid_Spec, '			<div class = "dropdown"><button onclick="context()" class="dropbtn">CONTEXT</button>\n');
 fprintf(fid_Spec, '				<div id="contextDropdown" class="dropdown-content">\n');
 fprintf(fid_Spec, '					<a href="index.html" >Pet Portal</a>\n');
-fprintf(fid_Spec, '					<a href="http://www.debtheory.org/" target="_blank">DEB Portal</a>\n');
+fprintf(fid_Spec, '					<a href="http://http://www.debtheory.org/wiki/index.php?title=Main_Page/" target="_blank">DEB Portal</a>\n');
 fprintf(fid_Spec, '					<a href="http://www.bio.vu.nl/thb/deb/" target="_blank">DEB info</a>\n');
 fprintf(fid_Spec, '					<a href="http://www.bio.vu.nl/thb/deb/deblab/" target="_blank">DEBlab</a>\n');
 fprintf(fid_Spec, '				</div>\n');
