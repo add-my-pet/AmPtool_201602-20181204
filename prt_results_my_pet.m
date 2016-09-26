@@ -51,10 +51,13 @@ switch n_author
 
     case 2
     txt_author = [metaData.author{1}, ', ', metaData.author{2}];
-
+    
+    case 3
+    txt_author = [metaData.author{1}, ', ', metaData.author{2}, ' & metaData.author{3}'];
+ 
     otherwise    
     txt_author = [metaData.author{1}, ', et al.'];
-
+  
 end
 
 txt_date = [num2str(metaData.date_acc(1)), '/', num2str(metaData.date_acc(2)), '/', num2str(metaData.date_acc(3))]; 
