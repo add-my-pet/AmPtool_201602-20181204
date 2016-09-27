@@ -206,9 +206,9 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
         marker = legend{i,1}; T = marker{1}; MS = marker{2}; LW = marker{3}; MEC = marker{4}; MFC = marker{5};  
         plot(val_plot(sel(:,i),1), val_plot(sel(:,i),2), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
       end
-      set(gca, 'FontSize', 15, 'Box', 'on')
       xlabel(label_x)  
       ylabel(label_y)
+      set(gca, 'FontSize', 15, 'Box', 'on')
       
       h = datacursormode(Hfig);
       h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, val_plot);
@@ -222,10 +222,10 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
         marker = legend{i,1}; T = marker{1}; MS = marker{2}; LW = marker{3}; MEC = marker{4}; MFC = marker{5};  
         plot3(val_plot(sel(:,i),1), val_plot(sel(:,i),2), val_plot(sel(:,i),3), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
       end
-      set(gca, 'FontSize', 15, 'Box', 'on')
       xlabel(label_x)  
       ylabel(label_y)
       zlabel(label_z)
+      set(gca, 'FontSize', 15, 'Box', 'on')
       
       Hleg = shlegend(legend);
 

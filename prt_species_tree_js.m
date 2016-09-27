@@ -14,7 +14,11 @@ function prt_species_tree_js(pedigree_taxa)
 %
 % Input:
 %
-% * pedigree_taxa: character string with pedigree of a taxon
+% * pedigree_taxa: optional character string with pedigree of a taxon, default: 'Animalia' 
+%
+% Output:
+% 
+% * writes file ../sys/prt_species_tree.js
 
 %% Remarks
 % file ../species_tree.html calls 
@@ -24,7 +28,11 @@ function prt_species_tree_js(pedigree_taxa)
 
 %% Example of use
 % prt_species_tree_js(pedigree('Animalia')); open ../species_tree.html to see the result
-
+    
+    if ~exist('pedigree_taxa','var')
+      pedigree_taxa = pedigree;
+    end
+    
     fid_tv = fopen('../sys/species_tree.js', 'w+'); % open file for writing, delete existing content
 
     % write header
