@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>read_allStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-04-24"><meta name="DC.source" content="read_allStat.m"><style type="text/css">
+      --><title>read_allStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-10-21"><meta name="DC.source" content="read_allStat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">read_allStat</a></li><li><a href="#2">created 2016/04/24 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>read_allStat<a name="1"></a></h2><p>read statistics and/or parameters in allStat.mat</p><h2>created 2016/04/24 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[var entries units label] = <a href="../read_allStat.m"><b>read_allStat</b></a>(vararg)</p><h2>Description<a name="4"></a></h2><p>read statistics and/or parameters in allStat.mat.</p><p>Input:</p><div><ul><li>vararg: names of variables</li></ul></div><p>Output</p><div><ul><li>var: (n,x)-matrix with values of variables or cell-array if some variable is not numerical</li><li>entries: n-cell string with names of entries</li><li>units: cell string with units of variables</li><li>label: cell string with description of variables</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Make sure that allStat has been generated at the correct temperature; All parameters are at T_ref, the statistics at T or T_typical, see <a href="write_allStat.html"><b>write_allStat</b></a>.</p><h2>Example of use<a name="6"></a></h2><p>complete_mre = read_allStat('COMPLETE', 'MRE');</p><p class="footer"><br>
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">read_allStat</a></li><li><a href="#2">created 2016/04/24 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>read_allStat<a name="1"></a></h2><p>read statistics and/or parameters in allStat.mat</p><h2>created 2016/04/24 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[var entries units label] = <a href="../read_allStat.m"><b>read_allStat</b></a>(vararg)</p><h2>Description<a name="4"></a></h2><p>read statistics and/or parameters in allStat.mat.</p><p>Input:</p><div><ul><li>vararg: names of variables</li></ul></div><p>Output</p><div><ul><li>var: (n,x)-matrix with values of variables or cell-array if some variable is not numerical</li><li>entries: n-cell string with names of entries</li><li>units: cell string with units of variables</li><li>label: cell string with description of variables</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Make sure that allStat has been generated at the correct temperature; All parameters are at T_ref, the statistics at T or T_typical, see <a href="write_allStat.html"><b>write_allStat</b></a>. Print all to screen: printpar(select, read_allStat('Ww_i')) Print selection to screen: tax = select; tax(read_allStat('N_i')&lt;10) Put core parameters in a structure with <a href="read_pars.html"><b>read_pars</b></a></p><h2>Example of use<a name="6"></a></h2><p>complete_mre = read_allStat('COMPLETE', 'MRE');</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% read_allStat
@@ -84,6 +84,9 @@ function [var entries units label] = read_allStat(varargin)
 %% Remarks
 % Make sure that allStat has been generated at the correct temperature; 
 % All parameters are at T_ref, the statistics at T or T_typical, see <write_allStat.html *write_allStat*>.
+% Print all to screen: printpar(select, read_allStat('Ww_i'))
+% Print selection to screen: tax = select; tax(read_allStat('N_i')<10)
+% Put core parameters in a structure with <read_pars.html *read_pars*>
 
 %% Example of use
 % complete_mre = read_allStat('COMPLETE', 'MRE'); 
@@ -99,7 +102,7 @@ function [var entries units label] = read_allStat(varargin)
         units{j} = allStat.(entries{i}).units.(varargin{j});
         label{j} = allStat.(entries{i}).label.(varargin{j});
       else
-        var(i,j) = NaN; 
+        var{i,j} = NaN; 
       end
     end
   end
