@@ -3,7 +3,7 @@
 
 %%
 function prt_about
-%% created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02
+%% created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02, 2016/10/24
 
 %% Syntax
 % <../prt_about *prt_about*>
