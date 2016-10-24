@@ -89,16 +89,16 @@ function [par model] = read_pars(nm)
       
       par.T_ref = allStat.(nm).T_ref;
       par.T_A   = allStat.(nm).T_A;
-      if exist(allStat.(nm).T_L, 'var')
+      if exist('allStat.(nm).T_L', 'var')
         par.T_L = allStat.(nm).T_L;
       end
-      if exist(allStat.(nm).T_AL, 'var')
+      if exist('allStat.(nm).T_AL', 'var')
         par.T_AL = allStat.(nm).T_AL;
       end
-      if exist(allStat.(nm).T_H, 'var')
+      if exist('allStat.(nm).T_H', 'var')
         par.T_H = allStat.(nm).T_H;
       end
-      if exist(allStat.(nm).T_AH, 'var')
+      if exist('allStat.(nm).T_AH', 'var')
         par.T_AH = allStat.(nm).T_AH;
       end
       
