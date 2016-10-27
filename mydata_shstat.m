@@ -10,7 +10,7 @@
 
 close all % remove any existing figure
 
-example = 4; % edit this number to see the various examples
+example = 2; % edit this number to see the various examples
 switch example
   case 1 % 2D: use default settings
     shstat_options('default');
@@ -81,5 +81,12 @@ switch example
     shstat(v, {'b', 'b'}, 'post-metam v at T_{ref} and f=1, without and with acceleration', Hfig);
     % setting of figure handle not required, because legend is not shown in new figure, and first figure is still active
     xlabel('_{10}log v, cm/d') 
-    
+ 
+  case 8 % 2D
+    shstat_options('default');
+    shstat_options('x_transform', 'none');
+    %shstat_options('y_transform', 'none');
+    [Hfig Hleg] = shstat({'kap','g'}, legend_RSED); % output handle for setting labels
+
+
 end
