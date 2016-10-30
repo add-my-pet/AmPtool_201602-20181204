@@ -193,12 +193,12 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
       x_median = median(val_plot); x_min = min(val_plot);
       surv_x = surv(val_plot); 
       plot([x_min; x_median; x_median], [0.5;0.5;0], colmed, surv_x(:,1), surv_x(:,2), colfn, 'Linewidth', 2)
+      set(gca, 'FontSize', 15, 'Box', 'on', 'YTick', 0:0.2:1)
       xlabel(label_x)
       ylim([0 1]);
       if strcmp(y_label, 'on')
         ylabel('survivor function')
       end
-      set(gca, 'FontSize', 15, 'Box', 'on', 'YTick', 0:0.2:1)
 
     case 2
       for j = 1:m      % scan taxa
@@ -206,9 +206,9 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
         marker = legend{i,1}; T = marker{1}; MS = marker{2}; LW = marker{3}; MEC = marker{4}; MFC = marker{5};  
         plot(val_plot(sel(:,i),1), val_plot(sel(:,i),2), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
       end
+      set(gca, 'FontSize', 15, 'Box', 'on')
       xlabel(label_x)  
       ylabel(label_y)
-      set(gca, 'FontSize', 15, 'Box', 'on')
       
       h = datacursormode(Hfig);
       h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, val_plot);

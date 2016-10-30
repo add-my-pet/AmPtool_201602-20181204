@@ -3,7 +3,7 @@
 
 %%
 function prt_about
-%% created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02
+%% created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02, 2016/10/24
 
 %% Syntax
 % <../prt_about *prt_about*>
@@ -13,7 +13,7 @@ function prt_about
 %
 % Output: 
 %
-%  * files are written in ../img: 
+%  * files are written in ../img/about: 
 %
 %      - entries.png, 
 %      - pie_Animal.png
@@ -21,6 +21,9 @@ function prt_about
 %      - COMPLETE.png
 %      - MRE.png
 %      - COMPLETE_MRE.png
+%
+% * files are written in ../img/pars: 
+%
 %      - Fm.png
 %      - kapX.png
 %      - pAm.png
@@ -37,6 +40,7 @@ function prt_about
 % * file is written in ../about.html 
 
 %% Remarks
+% First run write_allStat
 % Copy png files to 
 %   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img
 % and about.html file to
@@ -51,12 +55,12 @@ clear all
 
 pie_Animalia;
 tightfig;
-saveas (gca, '../img/pie_Animalia.png')
+saveas (gca, '../img/about/pie_Animalia.png')
 close all
 
 pie_model;
 tightfig;
-saveas (gca, '../img/pie_model.png')
+saveas (gca, '../img/about/pie_model.png')
 close all
 
 % # of entries in time
@@ -70,7 +74,7 @@ set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('time, yr')
 ylabel('# of add\_my\_pet entries')
 xlim([2009; max(dates)])
-saveas (gca,'../img/entries.png')
+saveas (gca,'../img/about/entries.png')
 close all
 
 % COMPLETE, MRE plots
@@ -80,7 +84,7 @@ plot(CM(:,1), CM(:,2), '.b', 'MarkerSize', 20)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('COMPLETE')
 ylabel('MRE')
-saveas (gca,'../img/COMPLETE_MRE.png')
+saveas (gca,'../img/about/COMPLETE_MRE.png')
 close all
 
 surv_COMPLETE = surv(CM(:,1),0);
@@ -88,7 +92,7 @@ plot([0; C_median; C_median], [0.5;0.5;0], 'r', surv_COMPLETE(:,1), surv_COMPLET
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('COMPLETE')
 ylabel('survivor function')
-saveas (gca,'../img/COMPLETE.png')
+saveas (gca,'../img/about/COMPLETE.png')
 close all
 
 surv_MRE = surv(CM(:,2),0);
@@ -96,7 +100,7 @@ plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('Mean Relative Error')
 ylabel('survivor function')
-saveas (gca,'../img/MRE.png')
+saveas (gca,'../img/about/MRE.png')
 close all
 
 shprimpar % primary parameters
@@ -177,33 +181,33 @@ fprintf(fid_about, '    <H2 id = "aims">Overview of the collection</H2>\n\n');
 
 
 fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about,['      <img src="img/pie_','Animalia','.png" width="350px">\n']);
+fprintf(fid_about,['      <img src="img/about/pie_','Animalia','.png" width="350px">\n']);
 fprintf(fid_about, '      <div class = "caption">   \n');
 fprintf(fid_about, '        The collection is complete for large <a href="phyla.html" target="_blank">phyla</a> (perhaps excluding the sponges). \n');
 fprintf(fid_about, '        Chordates are complete at order level, primates at family level.\n');
 fprintf(fid_about, '      </div>\n');
 fprintf(fid_about, '    </div>\n\n');
 fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about,['      <img src="img/pie_','model.png" width="350px"> \n']);
+fprintf(fid_about,['      <img src="img/about/pie_','model.png" width="350px"> \n']);
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_blank">variety of related models</a> captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <H2 class="clear"> Data completeness and mean relative errors</H2>\n\n');  
 fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about,['        <img src="img/COMPLETE.png" width','="350px">\n']);
+fprintf(fid_about,['        <img src="img/about/COMPLETE.png" width','="350px">\n']);
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_blank">data completness</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about,['        <img src="img','/MRE.png" width="350px">\n']);
+fprintf(fid_about,['        <img src="img','/about/MRE.png" width="350px">\n']);
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Survivor function of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE)</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about,['        <img src="img/COMPLETE','_MRE.png" width="350px">\n']);
+fprintf(fid_about,['        <img src="img/about/COMPLETE','_MRE.png" width="350px">\n']);
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          The relationship between the mean relative error and data completeness. \n');
 fprintf(fid_about, '        </div>\n');
@@ -238,7 +242,7 @@ fprintf(fid_about, '      <H1 id = "portaltop"> &nbsp;</H1> <!--   Notice that I
 fprintf(fid_about, '      <H2 class="clear"> Entries in time </H2>\n\n');
 
 fprintf(fid_about, '      <div class="sidelement">\n');
-fprintf(fid_about,['        <img src="img/','entries.png" width="350px">\n']);
+fprintf(fid_about, '        <img src="img/about/entries.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          The add-my-pet collection started at 2009/02/12 as part of the \n');
 fprintf(fid_about, '          <A HREF ="http://deb.akvaplan.com/teledescription.html" target="_blank">DEB tele course</A>.\n');
