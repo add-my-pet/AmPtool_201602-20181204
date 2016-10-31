@@ -153,7 +153,7 @@ fprintf(oid, '    <TR BGCOLOR = "#FFE7C6"><TH>symbol</TH><TH> value</TH><TH> uni
     fprintf(oid, '    <TR BGCOLOR = "%s"> <TD>%s</TD> <TD>%g</TD> <TD>%s</TD><TD>%s</TD></TR>\n',...
           webColStat.(webStatFields{i}), webStatFields{i}, stat.(webStatFields{i}), ...
        txtStat.units.(webStatFields{i}), txtStat.label.(webStatFields{i}));
-  end
+  end 
 fprintf(oid, '    </TABLE>\n'); 
 % end
 fprintf(oid, '</div> <!-- end of content -->\n');

@@ -23,13 +23,12 @@ n = length(entries);
 WD = pwd; % store current path
 %
 
-for i = 1:n 
+for i = 283:n 
     
-    if strcmp(entries{i},'Crinia_nimbus')==0 && strcmp(entries{i},'Geocrinia_vitellina')==0
+%     if strcmp(entries{i},'Crinia_nimbus')==0 && strcmp(entries{i},'Geocrinia_vitellina')==0
 fprintf('%g/ %g : %s \n',i,n, entries{i} ) 
 copyfile('index.cache',['../entries/',entries{i}])
 copyfile('index.wn',['../entries/',entries{i}])
-
 cd(['../entries/',entries{i}]) % goto entries 
 load(['results_',entries{i},'.mat']) % load results_my_pet.mat
 [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); 
@@ -48,6 +47,6 @@ delete('*.html', '*bib') % delete html and bib files
 cd('../entries_zip' ); % goto directory with all of the zipped entries
 zip_my_pet(entries{i}, '../entries'); % zip the entry
 cd(WD)  % goto original path    
-    end
+
 end
     
