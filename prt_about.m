@@ -89,7 +89,7 @@ close all
 plot(CMS(:,2), CMS(:,3), '.b', 'MarkerSize', 20)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('MRE'); ylabel('SMSE')
-xlim([0 0.6]); ylim([0 0.6])
+xlim([0 0.55]); ylim([0 0.55])
 saveas (gca,'../img/about/MRE_SMSE.png')
 close all
 
@@ -220,7 +220,7 @@ fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
 fprintf(fid_about, '        <img src="img/about/MRE_SMSE.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          The relationship between symmetric mean squared error (SMSE) and mean relative error. \n');
+fprintf(fid_about, '          The relationship between <a href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" TARGET="_blanck">symmetric mean squared error (SMSE)</a> and mean relative error. \n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
         
