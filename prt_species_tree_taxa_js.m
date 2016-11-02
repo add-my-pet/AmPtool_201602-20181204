@@ -81,6 +81,7 @@ function prt_species_tree_taxa_js(taxa)
         fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '.html"))\n']); 
       end
     end
- 
+    
+    fprintf(fid_tv, ['foldersTree.treeID = "', taxa{i}, '"\n']);
     fclose(fid_tv);
   end 
