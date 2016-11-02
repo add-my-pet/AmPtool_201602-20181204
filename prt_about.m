@@ -78,24 +78,29 @@ saveas (gca,'../img/about/entries.png')
 close all
 
 % COMPLETE, MRE plots
-CM = read_allStat('COMPLETE', 'MRE'); n_entries = size(CM,1);
-C_median = median(CM(:,1)); M_median = median(CM(:,2));
-plot(CM(:,1), CM(:,2), '.b', 'MarkerSize', 20)
+CMS = read_allStat('COMPLETE', 'MRE', 'SMSE'); n_entries = size(CMS,1);
+C_median = median(CMS(:,1)); M_median = median(CMS(:,2));
+plot(CMS(:,1), CMS(:,2), '.b', 'MarkerSize', 20)
 set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('COMPLETE')
-ylabel('MRE')
+xlabel('COMPLETE'); ylabel('MRE')
 saveas (gca,'../img/about/COMPLETE_MRE.png')
 close all
 
-surv_COMPLETE = surv(CM(:,1),0);
+plot(CMS(:,2), CMS(:,3), '.b', 'MarkerSize', 20)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('MRE'); ylabel('SMSE')
+xlim([0 0.6]); ylim([0 0.6])
+saveas (gca,'../img/about/MRE_SMSE.png')
+close all
+
+surv_COMPLETE = surv(CMS(:,1),0);
 plot([0; C_median; C_median], [0.5;0.5;0], 'r', surv_COMPLETE(:,1), surv_COMPLETE(:,2), 'b', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('COMPLETE')
-ylabel('survivor function')
+xlabel('COMPLETE'); ylabel('survivor function')
 saveas (gca,'../img/about/COMPLETE.png')
 close all
 
-surv_MRE = surv(CM(:,2),0);
+surv_MRE = surv(CMS(:,2),0);
 plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('Mean Relative Error')
@@ -181,35 +186,41 @@ fprintf(fid_about, '    <H2 id = "aims">Overview of the collection</H2>\n\n');
 
 
 fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about,['      <img src="img/about/pie_','Animalia','.png" width="350px">\n']);
+fprintf(fid_about, '      <img src="img/about/pie_Animalia.png" width="350px">\n');
 fprintf(fid_about, '      <div class = "caption">   \n');
 fprintf(fid_about, '        The collection is complete for large <a href="phyla.html" target="_blank">phyla</a> (perhaps excluding the sponges). \n');
 fprintf(fid_about, '        Chordates are complete at order level, primates at family level.\n');
 fprintf(fid_about, '      </div>\n');
 fprintf(fid_about, '    </div>\n\n');
 fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about,['      <img src="img/about/pie_','model.png" width="350px"> \n']);
+fprintf(fid_about, '      <img src="img/about/pie_model.png" width="350px"> \n');
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_blank">variety of related models</a> captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <H2 class="clear"> Data completeness and mean relative errors</H2>\n\n');  
 fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about,['        <img src="img/about/COMPLETE.png" width','="350px">\n']);
+fprintf(fid_about, '        <img src="img/about/COMPLETE.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_blank">data completness</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about,['        <img src="img','/about/MRE.png" width="350px">\n']);
+fprintf(fid_about, '        <img src="img/about/MRE.png" width="350px">\n' );
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Survivor function of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE)</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about,['        <img src="img/about/COMPLETE','_MRE.png" width="350px">\n']);
+fprintf(fid_about, '        <img src="img/about/COMPLETE_MRE.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          The relationship between the mean relative error and data completeness. \n');
+fprintf(fid_about, '          The relationship between mean relative error and data completeness. \n');
+fprintf(fid_about, '        </div>\n');
+fprintf(fid_about, '      </div>\n\n');
+fprintf(fid_about, '      <div class="sidelement2">\n');
+fprintf(fid_about, '        <img src="img/about/MRE_SMSE.png" width="350px">\n');
+fprintf(fid_about, '        <div class = "caption">   \n');
+fprintf(fid_about, '          The relationship between symmetric mean squared error (SMSE) and mean relative error. \n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
         
