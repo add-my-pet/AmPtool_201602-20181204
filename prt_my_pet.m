@@ -56,7 +56,8 @@ otherParFields = setdiff(parFields, chemParFields);
 otherParFields = setdiff(otherParFields, tempParFields);
 
 % start printing the html file
-oid = fopen([species, '.html'], 'w+'); % % open file for writing, delete existing content
+fileName = [species, '.html'];
+oid = fopen(fileName, 'w+'); % % open file for writing, delete existing content
 fprintf(oid,'<!DOCTYPE html>');
 fprintf(oid,'<HTML>');
 fprintf(oid,'<HEAD>');
@@ -126,23 +127,11 @@ if     isfield(metaData.biblist,'Wiki') ==0
 end
 % ----------------------------------------------------------------------
 fprintf(oid,['	</h1>']);
-fprintf(oid,['		<div id="navwrapper">']);
-fprintf(oid,['			<div class = "dropdown"><button onclick="species()" class="dropbtn"><b>Results</b></button>']);
-fprintf(oid,['				<div id="speciesDropdown" class="dropdown-content">']);
-fprintf(oid,['					<a class= "menu"  href="',metaData.species,'.html">Parameters</a>']);
-fprintf(oid,['					<a href="',metaData.species,'_stat.html">Implied properties</a>']);
-fprintf(oid,['					<a href="results_',metaData.species,'.html">Predictions & Data</a>']);
-fprintf(oid,['				</div>']);
-fprintf(oid,['			</div>	']);
-fprintf(oid,['			<div class = "dropdown"><button onclick="code()" class="dropbtn">Code</button>']);
-fprintf(oid,['				<div id="codeDropdown" class="dropdown-content">']);
-fprintf(oid,['					<a href="../entries/',metaData.species,'/mydata_my_pet.m" target="_blank">mydata</a>']);
-fprintf(oid,['					<a href="../entries/',metaData.species,'/pars_init_my_pet.m" target="_blank">pars_init</a>']);
-fprintf(oid,['					<a href="../entries/',metaData.species,'/predict_my_pet.m" target="_blank">predict</a>']);
-fprintf(oid,['					<A HREF="../entries_zip/',metaData.species,'_zip.zip" TARGET="_top" onMouseOver="window.status=Close submenu; return true;">  <IMG SRC="../img/folder.png" WIDTH="110px"  BORDER="0" > </A>']);
-fprintf(oid,['				</div>']);
-fprintf(oid,['			</div>	']);
-fprintf(oid,['		</div>']);
+
+fprintf(oid,'		<div id="navwrapper">');
+prt_menuBar_species(oid, metaData.species, fileName)
+fprintf(oid,'		</div>');
+
 fprintf(oid,['	</div>']);
 fprintf(oid,['<!-- -------------------------------------------------         -->']);
 fprintf(oid,['<!--------------------------------------------------------------->']);

@@ -8,7 +8,6 @@
 % * create zipped folder in entries_zip
 
 
-
 entries = select('Animalia');
 n = length(entries);
 
@@ -23,13 +22,14 @@ n = length(entries);
 WD = pwd; % store current path
 %
 
-for i = 283:n 
+for i = 1:n 
     
 %     if strcmp(entries{i},'Crinia_nimbus')==0 && strcmp(entries{i},'Geocrinia_vitellina')==0
 fprintf('%g/ %g : %s \n',i,n, entries{i} ) 
 copyfile('index.cache',['../entries/',entries{i}])
 copyfile('index.wn',['../entries/',entries{i}])
 cd(['../entries/',entries{i}]) % goto entries 
+delete('*.html', '*bib') % delete html and bib files  
 load(['results_',entries{i},'.mat']) % load results_my_pet.mat
 [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); 
 prdData = feval(['predict_',metaData.species], par, data, auxData);
@@ -43,7 +43,6 @@ pathnm = '../entries_web' ; % path to directory with all of the generated html f
 copyfile('*.html',pathnm) % copy all of the .html files from entries to entries_web
 copyfile('*.bib',pathnm) % copy the bib file to entries_web
 delete('*.html', '*bib') % delete html and bib files  
-
 cd('../entries_zip' ); % goto directory with all of the zipped entries
 zip_my_pet(entries{i}, '../entries'); % zip the entry
 cd(WD)  % goto original path    
