@@ -87,25 +87,24 @@ end
 fileName = ['results_', metaData.species, '.html'];
 oid = fopen(fileName, 'w+'); % open file for reading and writing, delete existing content
 
-
-fprintf(oid,'<!DOCTYPE html>');
-fprintf(oid,'<HTML>');
-fprintf(oid,'<HEAD>');
-fprintf(oid,['<TITLE>',metaData.species,'</TITLE>']);
-fprintf(oid,'<link rel="stylesheet" type="text/css" href="../sys/style.css">'); 
-fprintf(oid,'<script src="../sys/dropdown.js"></script>');
-fprintf(oid,'</HEAD>');
-fprintf(oid,'<BODY>');
-fprintf(oid,'<!--------------------------------------------------------------->');
-fprintf(oid,'<!--   PART 1                                                  -->');
-fprintf(oid,'<!--   TOP PART OF WEBPAGE IS FIXED                            -->');
-fprintf(oid,'<!--   It has the logo and the menu with Javascript            -->');
-fprintf(oid,'<!--  dropdown menus                                           -->');
-fprintf(oid,'<!--  Please put in bold and in fancy the right links          -->');
-fprintf(oid,'<!--------------------------------------------------------------->');
-fprintf(oid,'	<div id="top"> ');
-fprintf(oid,'		<div class="logo">		');
-fprintf(oid,'		   <a href="http://www.bio.vu.nl/thb/deb/deblab/"><img src="../img/bannercycle.png"  height = "60px"></a>');
+fprintf(oid, '<!DOCTYPE html>');
+fprintf(oid, '<HTML>');
+fprintf(oid, '<HEAD>');
+fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>']);
+fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../sys/style.css">'); 
+fprintf(oid, '  <script src="../sys/dropdown.js"></script>');
+fprintf(oid, '</HEAD>');
+fprintf(oid, '<BODY>');
+fprintf(oid, '<!--------------------------------------------------------------->');
+fprintf(oid, '<!--   PART 1                                                  -->');
+fprintf(oid, '<!--   TOP PART OF WEBPAGE IS FIXED                            -->');
+fprintf(oid, '<!--   It has the logo and the menu with Javascript            -->');
+fprintf(oid, '<!--  dropdown menus                                           -->');
+fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->');
+fprintf(oid, '<!--------------------------------------------------------------->');
+fprintf(oid, '	<div id="top"> ');
+fprintf(oid, '		<div class="logo">		');
+fprintf(oid, '		   <a href="http://www.bio.vu.nl/thb/deb/deblab/"><img src="../img/bannercycle.png"  height = "60px"></a>');
 fprintf(oid,['		</div>']);
 fprintf(oid,['		<div id="navwrapper">']);
 fprintf(oid,['			<div class = "dropdown"><button onclick="context()" class="dropbtn">CONTEXT</button>']);

@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_about</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-10-24"><meta name="DC.source" content="prt_about.m"><style type="text/css">
+      --><title>prt_about</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-02"><meta name="DC.source" content="prt_about.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -60,7 +60,8 @@ span.syscmd { color:#B28C00 }
     - pie_model.png
     - COMPLETE.png
     - MRE.png
-    - COMPLETE_MRE.png</pre><div><ul><li>files are written in ../img/pars:</li></ul></div><pre>    - Fm.png
+    - COMPLETE_MRE.png
+    - MRE_SMSE.png</pre><div><ul><li>files are written in ../img/pars:</li></ul></div><pre>    - Fm.png
     - kapX.png
     - pAm.png
     - v.png
@@ -97,6 +98,7 @@ function prt_about
 %      - COMPLETE.png
 %      - MRE.png
 %      - COMPLETE_MRE.png
+%      - MRE_SMSE.png
 %
 % * files are written in ../img/pars: 
 %
@@ -154,24 +156,29 @@ saveas (gca,'../img/about/entries.png')
 close all
 
 % COMPLETE, MRE plots
-CM = read_allStat('COMPLETE', 'MRE'); n_entries = size(CM,1);
-C_median = median(CM(:,1)); M_median = median(CM(:,2));
-plot(CM(:,1), CM(:,2), '.b', 'MarkerSize', 20)
+CMS = read_allStat('COMPLETE', 'MRE', 'SMSE'); n_entries = size(CMS,1);
+C_median = median(CMS(:,1)); M_median = median(CMS(:,2));
+plot(CMS(:,1), CMS(:,2), '.b', 'MarkerSize', 20)
 set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('COMPLETE')
-ylabel('MRE')
+xlabel('COMPLETE'); ylabel('MRE')
 saveas (gca,'../img/about/COMPLETE_MRE.png')
 close all
 
-surv_COMPLETE = surv(CM(:,1),0);
+plot(CMS(:,2), CMS(:,3), '.b', 'MarkerSize', 20)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('MRE'); ylabel('SMSE')
+xlim([0 0.55]); ylim([0 0.55])
+saveas (gca,'../img/about/MRE_SMSE.png')
+close all
+
+surv_COMPLETE = surv(CMS(:,1),0);
 plot([0; C_median; C_median], [0.5;0.5;0], 'r', surv_COMPLETE(:,1), surv_COMPLETE(:,2), 'b', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('COMPLETE')
-ylabel('survivor function')
+xlabel('COMPLETE'); ylabel('survivor function')
 saveas (gca,'../img/about/COMPLETE.png')
 close all
 
-surv_MRE = surv(CM(:,2),0);
+surv_MRE = surv(CMS(:,2),0);
 plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('Mean Relative Error')
@@ -191,55 +198,15 @@ fprintf(fid_about, '<HEAD>\n');
 fprintf(fid_about, '  <TITLE>About AmP</TITLE>\n');
 fprintf(fid_about, '  <link rel="stylesheet" type="text/css" href="sys/style.css"> \n');
 fprintf(fid_about, '  <script src="sys/dropdown.js"></script>\n');
+fprintf(fid_about, '  <script src="sys/w3data.js"></script>\n');
 fprintf(fid_about, '</HEAD>\n');
 fprintf(fid_about, '<BODY>\n\n');
 
-fprintf(fid_about, '<!REPLACE_WITH_DASH_DASH image with stays fixed in the background  REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '<div id="h1_container">\n');
-fprintf(fid_about, '  <h1>\n');
-fprintf(fid_about, '    <!REPLACE_WITH_DASH_DASH  Add-my-pet REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '    <img alt="add-my-pet" src = "img/addmypet.png"  width = "400px"> \n'); 
-fprintf(fid_about, '  </h1>\n');
-fprintf(fid_about, '</div>\n\n');
+fprintf(fid_about, '<div w3-include-html="wallpaper_amp.html"></div>\n');
+fprintf(fid_about, '<script>w3IncludeHTML();</script>\n\n');
 
-fprintf(fid_about, '<!REPLACE_WITH_DASH_DASH image with stays fixed in the background  REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '<div id="h2_container">\n');
-fprintf(fid_about, '  <h1>\n');
-fprintf(fid_about, '    <img alt="add-my-pet" src = "img/bannercycle.png"  > \n');
-fprintf(fid_about, '  </h1>\n');
-fprintf(fid_about, '</div>\n\n');
-
-fprintf(fid_about, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n');
-fprintf(fid_about, '<!REPLACE_WITH_DASH_DASH   PART 1                                                  REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '<!REPLACE_WITH_DASH_DASH   TOP PART OF WEBPAGE IS FIXED                            REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '<!REPLACE_WITH_DASH_DASH   It has the logo and the menu with Javascript            REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '<!REPLACE_WITH_DASH_DASH  dropdown menus                                           REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '<!REPLACE_WITH_DASH_DASH  Please put in bold and in fancy the right links          REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n');
-fprintf(fid_about, '<div id="top"> \n');
-fprintf(fid_about, '  <div class="logo">\n');  
-fprintf(fid_about, '    <a href="http://www.bio.vu.nl/thb/deb/deblab/"><img src="img/bannercycle.png"  height = "60px"></a>\n');
-fprintf(fid_about, '  </div>\n\n');
-fprintf(fid_about, '  <div id="navwrapper">\n');
-fprintf(fid_about, '    <div class = "dropdown"><button onclick="context()" class="dropbtn">CONTEXT</button>\n');
-fprintf(fid_about, '      <div id="contextDropdown" class="dropdown-content">\n');
-fprintf(fid_about, '        <a href="index.html" >Pet Portal</a>\n');
-fprintf(fid_about, '        <a href="http://http://www.debtheory.org/wiki/index.php?title=Main_Page/" target="_blank">DEB Portal</a>\n');
-fprintf(fid_about, '        <a href="http://www.bio.vu.nl/thb/deb/" target="_blank">DEB info</a>\n');
-fprintf(fid_about, '        <a href="http://www.bio.vu.nl/thb/deb/deblab/" target="_blank">DEBlab</a>\n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n\n');
-fprintf(fid_about, '    <div class = "dropdown"><button onclick="collection()" class="dropbtn"><b>COLLECTION</b></button> <!REPLACE_WITH_DASH_DASH   notice that collection should be bold because we are in about  REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '      <div id="collectionDropdown" class="dropdown-content">\n');
-fprintf(fid_about, '        <a href="species_list.html">Species List</a>\n');
-fprintf(fid_about, '        <a href="species_tree.html">Species Tree</a>\n');
-fprintf(fid_about, '        <a class="menu" href="about.html">About</a>\n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n\n');
-fprintf(fid_about, '    <div class = "dropdown"><button onclick= "window.open(''http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction'', ''_blank'')" class="dropbtn"> WIKI</a></button>\n');
-fprintf(fid_about, '    </div>\n');
-fprintf(fid_about, '  </div> <!REPLACE_WITH_DASH_DASH end navwrapper REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '</div> <!REPLACE_WITH_DASH_DASH end top REPLACE_WITH_DASH_DASH>\n\n');
+fprintf(fid_about, '<div w3-include-html="toolbar_amp.html"></div>\n');
+fprintf(fid_about, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(fid_about, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n');
 fprintf(fid_about, '<!REPLACE_WITH_DASH_DASH   PART 2                                                  REPLACE_WITH_DASH_DASH>\n');
@@ -257,35 +224,41 @@ fprintf(fid_about, '    <H2 id = "aims">Overview of the collection</H2>\n\n');
 
 
 fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about,['      <img src="img/about/pie_','Animalia','.png" width="350px">\n']);
+fprintf(fid_about, '      <img src="img/about/pie_Animalia.png" width="350px">\n');
 fprintf(fid_about, '      <div class = "caption">   \n');
 fprintf(fid_about, '        The collection is complete for large <a href="phyla.html" target="_blank">phyla</a> (perhaps excluding the sponges). \n');
 fprintf(fid_about, '        Chordates are complete at order level, primates at family level.\n');
 fprintf(fid_about, '      </div>\n');
 fprintf(fid_about, '    </div>\n\n');
 fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about,['      <img src="img/about/pie_','model.png" width="350px"> \n']);
+fprintf(fid_about, '      <img src="img/about/pie_model.png" width="350px"> \n');
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_blank">variety of related models</a> captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <H2 class="clear"> Data completeness and mean relative errors</H2>\n\n');  
 fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about,['        <img src="img/about/COMPLETE.png" width','="350px">\n']);
+fprintf(fid_about, '        <img src="img/about/COMPLETE.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_blank">data completness</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about,['        <img src="img','/about/MRE.png" width="350px">\n']);
+fprintf(fid_about, '        <img src="img/about/MRE.png" width="350px">\n' );
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Survivor function of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE)</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about,['        <img src="img/about/COMPLETE','_MRE.png" width="350px">\n']);
+fprintf(fid_about, '        <img src="img/about/COMPLETE_MRE.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          The relationship between the mean relative error and data completeness. \n');
+fprintf(fid_about, '          The relationship between mean relative error and data completeness. \n');
+fprintf(fid_about, '        </div>\n');
+fprintf(fid_about, '      </div>\n\n');
+fprintf(fid_about, '      <div class="sidelement2">\n');
+fprintf(fid_about, '        <img src="img/about/MRE_SMSE.png" width="350px">\n');
+fprintf(fid_about, '        <div class = "caption">   \n');
+fprintf(fid_about, '          The relationship between <a href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" TARGET="_blanck">symmetric mean squared error (SMSE)</a> and mean relative error. \n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
         
@@ -300,7 +273,7 @@ fprintf(fid_about, '      errors are spotted and corrected; more data is include
 fprintf(fid_about, '      our understanding of what are the best priors to use for particular taxa increases; algorithms for estimation are improved; the model changed. \n');
 fprintf(fid_about, '      <p>\n');
 fprintf(fid_about, '      Add-my-pet makes explicit a number of wide spread scientific problems such as: data quality, differences between experiments etc. \n');
-fprintf(fid_about, '      The resulting parameter estimates depends on a lot of assumptions concerning which data we choose to include and exclude as well as how the data is interpreted\n');
+fprintf(fid_about, '      The resulting parameter estimates depend on a lot of assumptions concerning which data we choose to include and exclude as well as how the data is interpreted\n');
 fprintf(fid_about, '      (e.g. what we are willing to assume about the initial conditions of the organism.)\n\n');
 fprintf(fid_about, '    <!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n');
 fprintf(fid_about, '    <!REPLACE_WITH_DASH_DASH   This div closes the content box                         REPLACE_WITH_DASH_DASH>\n');

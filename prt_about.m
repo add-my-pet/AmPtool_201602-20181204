@@ -21,6 +21,7 @@ function prt_about
 %      - COMPLETE.png
 %      - MRE.png
 %      - COMPLETE_MRE.png
+%      - MRE_SMSE.png
 %
 % * files are written in ../img/pars: 
 %
@@ -120,55 +121,15 @@ fprintf(fid_about, '<HEAD>\n');
 fprintf(fid_about, '  <TITLE>About AmP</TITLE>\n');
 fprintf(fid_about, '  <link rel="stylesheet" type="text/css" href="sys/style.css"> \n');
 fprintf(fid_about, '  <script src="sys/dropdown.js"></script>\n');
+fprintf(fid_about, '  <script src="sys/w3data.js"></script>\n');
 fprintf(fid_about, '</HEAD>\n');
 fprintf(fid_about, '<BODY>\n\n');
 
-fprintf(fid_about, '<!-- image with stays fixed in the background  -->\n');
-fprintf(fid_about, '<div id="h1_container">\n');
-fprintf(fid_about, '  <h1>\n');
-fprintf(fid_about, '    <!--  Add-my-pet -->\n');
-fprintf(fid_about, '    <img alt="add-my-pet" src = "img/addmypet.png"  width = "400px"> \n'); 
-fprintf(fid_about, '  </h1>\n');
-fprintf(fid_about, '</div>\n\n');
+fprintf(fid_about, '<div w3-include-html="wallpaper_amp.html"></div>\n');
+fprintf(fid_about, '<script>w3IncludeHTML();</script>\n\n');
 
-fprintf(fid_about, '<!-- image with stays fixed in the background  -->\n');
-fprintf(fid_about, '<div id="h2_container">\n');
-fprintf(fid_about, '  <h1>\n');
-fprintf(fid_about, '    <img alt="add-my-pet" src = "img/bannercycle.png"  > \n');
-fprintf(fid_about, '  </h1>\n');
-fprintf(fid_about, '</div>\n\n');
-
-fprintf(fid_about, '<!--------------------------------------------------------------->\n');
-fprintf(fid_about, '<!--   PART 1                                                  -->\n');
-fprintf(fid_about, '<!--   TOP PART OF WEBPAGE IS FIXED                            -->\n');
-fprintf(fid_about, '<!--   It has the logo and the menu with Javascript            -->\n');
-fprintf(fid_about, '<!--  dropdown menus                                           -->\n');
-fprintf(fid_about, '<!--  Please put in bold and in fancy the right links          -->\n');
-fprintf(fid_about, '<!--------------------------------------------------------------->\n');
-fprintf(fid_about, '<div id="top"> \n');
-fprintf(fid_about, '  <div class="logo">\n');  
-fprintf(fid_about, '    <a href="http://www.bio.vu.nl/thb/deb/deblab/"><img src="img/bannercycle.png"  height = "60px"></a>\n');
-fprintf(fid_about, '  </div>\n\n');
-fprintf(fid_about, '  <div id="navwrapper">\n');
-fprintf(fid_about, '    <div class = "dropdown"><button onclick="context()" class="dropbtn">CONTEXT</button>\n');
-fprintf(fid_about, '      <div id="contextDropdown" class="dropdown-content">\n');
-fprintf(fid_about, '        <a href="index.html" >Pet Portal</a>\n');
-fprintf(fid_about, '        <a href="http://http://www.debtheory.org/wiki/index.php?title=Main_Page/" target="_blank">DEB Portal</a>\n');
-fprintf(fid_about, '        <a href="http://www.bio.vu.nl/thb/deb/" target="_blank">DEB info</a>\n');
-fprintf(fid_about, '        <a href="http://www.bio.vu.nl/thb/deb/deblab/" target="_blank">DEBlab</a>\n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n\n');
-fprintf(fid_about, '    <div class = "dropdown"><button onclick="collection()" class="dropbtn"><b>COLLECTION</b></button> <!--   notice that collection should be bold because we are in about  -->\n');
-fprintf(fid_about, '      <div id="collectionDropdown" class="dropdown-content">\n');
-fprintf(fid_about, '        <a href="species_list.html">Species List</a>\n');
-fprintf(fid_about, '        <a href="species_tree.html">Species Tree</a>\n');
-fprintf(fid_about, '        <a class="menu" href="about.html">About</a>\n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n\n');
-fprintf(fid_about, '    <div class = "dropdown"><button onclick= "window.open(''http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction'', ''_blank'')" class="dropbtn"> WIKI</a></button>\n');
-fprintf(fid_about, '    </div>\n');
-fprintf(fid_about, '  </div> <!-- end navwrapper -->\n');
-fprintf(fid_about, '</div> <!-- end top -->\n\n');
+fprintf(fid_about, '<div w3-include-html="toolbar_amp.html"></div>\n');
+fprintf(fid_about, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(fid_about, '<!--------------------------------------------------------------->\n');
 fprintf(fid_about, '<!--   PART 2                                                  -->\n');
@@ -235,7 +196,7 @@ fprintf(fid_about, '      errors are spotted and corrected; more data is include
 fprintf(fid_about, '      our understanding of what are the best priors to use for particular taxa increases; algorithms for estimation are improved; the model changed. \n');
 fprintf(fid_about, '      <p>\n');
 fprintf(fid_about, '      Add-my-pet makes explicit a number of wide spread scientific problems such as: data quality, differences between experiments etc. \n');
-fprintf(fid_about, '      The resulting parameter estimates depends on a lot of assumptions concerning which data we choose to include and exclude as well as how the data is interpreted\n');
+fprintf(fid_about, '      The resulting parameter estimates depend on a lot of assumptions concerning which data we choose to include and exclude as well as how the data is interpreted\n');
 fprintf(fid_about, '      (e.g. what we are willing to assume about the initial conditions of the organism.)\n\n');
 fprintf(fid_about, '    <!--------------------------------------------------------------->\n');
 fprintf(fid_about, '    <!--   This div closes the content box                         -->\n');
