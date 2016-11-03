@@ -1,12 +1,12 @@
-%% print_bib_my_pet
+%% prt_bib_my_pet
 % read and write bib_my_pet.bib
 
 %%
 function prt_bib_my_pet(species,biblist)
-% created 2015/07/17 by Starrlight 
+% created 2015/07/17 by Starrlight ; modified 2016/11/03
 
 %% Syntax
-% <../print_bib_my_pet.m *print_bib_my_pet*> (species,biblist) 
+% <../prt_bib_my_pet.m *prt_bib_my_pet*> (species,biblist) 
 
 %% Description
 % Prints a .bib file with the bibliography of a give entry
@@ -18,12 +18,12 @@ function prt_bib_my_pet(species,biblist)
 % the key corresponds to the bibtex key. 
 
 %% Remarks
-% if you load results_my_pet.mat then species is found in metadata.species
-% and biblist is biblist biblist.metadata
+% if you load results_my_pet.mat then species is found in metaData.species
+% and biblist is biblist biblist.metaData
 
 %% Example of use
 % load('results_my_pet.mat');
-% print_bib_my_pet(metadata.species,metadata.biblist)
+% prt_bib_my_pet(metaData.species,metaData.biblist)
 
 oid = fopen(['bib_', species, '.bib'], 'w+'); % open file for reading and writing and deletes old content
 
