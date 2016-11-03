@@ -216,7 +216,6 @@ fprintf(oid, '		</div>\n');
 fprintf(oid, '	  </div> <!-- main wrapper -->\n');
 fprintf(oid, '	</div> <!-- main -->\n');
 
-
 fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 fclose(oid);
