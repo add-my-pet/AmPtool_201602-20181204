@@ -64,14 +64,14 @@ fprintf(oid, '<HEAD>\n');
 fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
 fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../sys/style.css">\n'); 
 fprintf(oid, '  <script src="../sys/dropdown.js"></script>\n');
-fprintf(oid, '  <script src="sys/w3data.js"></script>\n');
+fprintf(oid, '  <script src="../sys/w3data.js"></script>\n');
 fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
-fprintf(oid, '<div w3-include-html="sys/wallpaper_amp.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../sys/wallpaper_amp.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
-fprintf(oid, '<div w3-include-html="sys/toolbar_list.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../sys/toolbar_amp.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
@@ -81,6 +81,7 @@ fprintf(oid, '<!--   It has the logo and the menu with Javascript            -->
 fprintf(oid, '<!--  dropdown menus                                           -->\n');
 fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->\n');
 fprintf(oid, '<!--------------------------------------------------------------->\n');
+
 fprintf(oid, '	<div id="top2">\n');
 fprintf(oid, '	<h1 class="alignleft2"> &nbsp; &nbsp;\n');
 % --------------------------------------------------------------------

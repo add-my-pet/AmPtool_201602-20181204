@@ -97,10 +97,10 @@ fprintf(oid, '  <script src="../sys/w3data.js"></script>\n');
 fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
-fprintf(oid, '<div w3-include-html="sys/wallpaper_amp.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../sys/wallpaper_amp.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
-fprintf(oid, '<div w3-include-html="sys/toolbar_list.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../sys/toolbar_amp.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
