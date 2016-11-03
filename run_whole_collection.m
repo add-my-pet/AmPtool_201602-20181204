@@ -22,7 +22,7 @@ n = length(entries);
 WD = pwd; % store current path
 %
 
-for i = 1:n 
+for i = 1 %:n 
     
 %     if strcmp(entries{i},'Crinia_nimbus')==0 && strcmp(entries{i},'Geocrinia_vitellina')==0
 fprintf('%g/ %g : %s \n',i,n, entries{i} ) 
