@@ -142,10 +142,10 @@ fprintf(oid, '<!--   Where all of the text is placed                         -->
 fprintf(oid, '<!--   use "contentFull" for 1 column                          -->\n');
 fprintf(oid, '<!--   use "content" if you want two columns"                  -->\n');
 fprintf(oid, '<!--------------------------------------------------------------->\n');	
-fprintf(oid, '		<div id = "main">\n']);
-fprintf(oid, '		<div id = "main-wrapper">\n']);
-fprintf(oid, '			<div id="contentFull">\n']);
-fprintf(oid, '			<H1 id = "portaltop">Predictions & Data </H1>\n']);	
+fprintf(oid, '		<div id = "main">\n');
+fprintf(oid, '		<div id = "main-wrapper">\n');
+fprintf(oid, '			<div id="contentFull">\n');
+fprintf(oid, '			<H1 id = "portaltop">Predictions & Data </H1>\n');	
 			
 fprintf(oid, '<!--------------------------------------------------------------->\n');
 
