@@ -19,7 +19,7 @@ function prt_bib_my_pet(species,biblist)
 
 %% Remarks
 % if you load results_my_pet.mat then species is found in metaData.species
-% and biblist is biblist biblist.metaData
+% and biblist is biblist.metaData
 
 %% Example of use
 % load('results_my_pet.mat');

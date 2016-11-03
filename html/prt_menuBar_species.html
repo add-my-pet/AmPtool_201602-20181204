@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>print_bib_pets</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-09-21"><meta name="DC.source" content="print_bib_pets.m"><style type="text/css">
+      --><title>prt_menuBar_species</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-03"><meta name="DC.source" content="prt_menuBar_species.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,44 +66,64 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>print_bib_pets</h1><!--introduction--><p>open, read and write bib_pets.bib - data is appended nothing is deleted from file.</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../print_bib_pets.m"><b>print_bib_pets</b></a> (species,biblist)</p><h2>Description<a name="4"></a></h2><p>Prints a .bib file with the bibliography of the whole collection</p><p>Input:</p><div><ul><li>biblist:  structure with each field containing a reference in bibtext format. The name of the key corresponds to the bibtex key.</li></ul></div><h2>Remarks<a name="5"></a></h2><p>if you load results_my_pet.mat then you access the biblist in biblist.metadata</p><h2>Example of use<a name="6"></a></h2><p>load('results_my_pet.mat'); print_bib_pets(metaData.biblist)</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>prt_menuBar_species</h1><!--introduction--><p>prints the menu bar which is used for the pages which are specific for a given species</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_menuBar_species.m"><b>prt_menuBar_species</b></a> (oid, species, fileName)</p><h2>Description<a name="4"></a></h2><p>Prints the menu bar to a given html file</p><p>Input:</p><div><ul><li>oid: string, id of file that the function writes to</li><li>species: string, name of the species (Genera_species)</li><li>fileName: string, name of html file we are writing to</li></ul></div><h2>Example of use<a name="5"></a></h2><p>prt_menuBar_species(oid, metaData.species)</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-%% print_bib_pets
-% open, read and write bib_pets.bib - data is appended nothing is deleted
-% from file.
+%% prt_menuBar_species
+% prints the menu bar which is used for the pages which are specific for a
+% given species
 
 %%
-function print_bib_pets(biblist)
-% created 2015/07/17 by Starrlight 
+function  prt_menuBar_species(oid, species, fileName)
+% created 2016/11/02 by Starrlight 
 
 %% Syntax
-% <../print_bib_pets.m *print_bib_pets*> (species,biblist) 
+% <../prt_menuBar_species.m *prt_menuBar_species*> (oid, species, fileName)
 
 %% Description
-% Prints a .bib file with the bibliography of the whole collection
+% Prints the menu bar to a given html file
 %
 % Input:
 %
-% * biblist:  structure with each field containing a reference in bibtext format. The name of
-% the key corresponds to the bibtex key. 
+% * oid: string, id of file that the function writes to
+% * species: string, name of the species (Genera_species)
+% * fileName: string, name of html file we are writing to
 
-%% Remarks
-% if you load results_my_pet.mat then you access the biblist in biblist.metadata
+
 
 %% Example of use
-% load('results_my_pet.mat');
-% print_bib_pets(metaData.biblist)
+% prt_menuBar_species(oid, metaData.species)
 
-oid = fopen('bib_pets.bib', 'a'); % open file for reading and writing and appends new information without erasing
+fprintf(oid,'			<div class = "dropdown"><button onclick="species()" class="dropbtn"><b>Results</b></button>');
+fprintf(oid,'				<div id="speciesDropdown" class="dropdown-content">');
+    if strcmp(fileName,[species,'.html'])
+    fprintf(oid,['					<a class= "menu"  href="',species,'.html">Parameters</a>']);
+    else
+    fprintf(oid,['					<a  href="',species,'.html">Parameters</a>']);
+    end 
+    if strcmp(fileName,[species,'_stat.html'])
+    fprintf(oid,['					<a class= "menu" href="',species,'_stat.html">Implied properties</a>']);
+    else
+    fprintf(oid,['					<a href="',species,'_stat.html">Implied properties</a>']);    
+    end
+    if strcmp(fileName,['results_',species,'.html'])
+    fprintf(oid,['					<a class= "menu" href="results_',species,'.html">Predictions & Data</a>']);
+    else
+    fprintf(oid,['					<a href="results_',species,'.html">Predictions & Data</a>']);
+    end
+fprintf(oid,'				</div>');
+fprintf(oid,'			</div>	');
 
-[nm, nst] = fieldnmnst_st(biblist);
+fprintf(oid,'			<div class = "dropdown"><button onclick="code()" class="dropbtn">Code</button>');
+fprintf(oid,'				<div id="codeDropdown" class="dropdown-content">');
+fprintf(oid,['					<a href="../entries/',species,'/mydata_',species,'.m" target="_blank">mydata</a>']);
+fprintf(oid,['					<a href="../entries/',species,'/pars_init_',species,'.m" target="_blank">pars_init</a>']);
+fprintf(oid,['					<a href="../entries/',species,'/predict_',species,'.m" target="_blank">predict</a>']);
+fprintf(oid,['					<A HREF="../entries_zip/',species,'_zip.zip" TARGET="_top" onMouseOver="window.status=Close submenu; return true;">  <IMG SRC="../img/folder.png" WIDTH="110px"  BORDER="0" > </A>']);
+fprintf(oid,'				</div>');
+fprintf(oid,'			</div>	');
 
-for j = 1:nst 
-    str = eval(['biblist.',nm{j}]);
-fprintf(oid, '%s \n\n', str);
 end
-    
-% close bib_my_pet.bib  
-fclose(oid);
+
+
 ##### SOURCE END #####
 --></body></html>
