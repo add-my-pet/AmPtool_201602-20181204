@@ -93,7 +93,7 @@ fprintf(oid, '<HEAD>\n');
 fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
 fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../sys/style.css">\n'); 
 fprintf(oid, '  <script src="../sys/dropdown.js"></script>\n');
-fprintf(oid, '  <script src="sys/w3data.js"></script>\n');
+fprintf(oid, '  <script src="../sys/w3data.js"></script>\n');
 fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
