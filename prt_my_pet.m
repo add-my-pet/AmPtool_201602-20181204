@@ -1,4 +1,4 @@
-%% print_my_pet
+%% prt_my_pet
 % Creates my_pet.html 
 
 %%
@@ -9,7 +9,7 @@ function prt_my_pet(metaData, metaPar, par, txtPar)
 % modified 2016/03/30 by Starrlight
 
 %% Syntax
-% <../print_my_pet.m *print_my_pet*> (metaData, metaPar, par, txtPar) 
+% <../prt_my_pet.m *prt_my_pet*> (metaData, metaPar, par, txtPar) 
 
 %% Description
 % Read and writes my_pet.html. This pages contains a list of all of the parameter values of my_pet.
@@ -58,57 +58,31 @@ otherParFields = setdiff(otherParFields, tempParFields);
 % start printing the html file
 fileName = [species, '.html'];
 oid = fopen(fileName, 'w+'); % % open file for writing, delete existing content
-fprintf(oid,'<!DOCTYPE html>');
-fprintf(oid,'<HTML>');
-fprintf(oid,'<HEAD>');
-fprintf(oid,['<TITLE>',metaData.species,'</TITLE>']);
-fprintf(oid,'<link rel="stylesheet" type="text/css" href="../sys/style.css">'); 
-fprintf(oid,'<script src="../sys/dropdown.js"></script>');
-fprintf(oid,'</HEAD>');
-fprintf(oid,'<BODY>');
+fprintf(oid, '<!DOCTYPE html>\n');
+fprintf(oid, '<HTML>\n');
+fprintf(oid, '<HEAD>\n');
+fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
+fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../sys/style.css">\n'); 
+fprintf(oid, '  <script src="../sys/dropdown.js"></script>\n');
+fprintf(oid, '  <script src="sys/w3data.js"></script>\n');
+fprintf(oid, '</HEAD>\n\n');
+fprintf(oid, '<BODY>\n\n');
 
+fprintf(oid, '<div w3-include-html="sys/wallpaper_amp.html"></div>\n');
+fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
-fprintf(oid,['<!--------------------------------------------------------------->']);
-fprintf(oid,['<!--   PART 1                                                  -->']);
-fprintf(oid,['<!--   TOP PART OF WEBPAGE IS FIXED                            -->']);
-fprintf(oid,['<!--   It has the logo and the menu with Javascript            -->']);
-fprintf(oid,['<!--  dropdown menus                                           -->']);
-fprintf(oid,['<!--  Please put in bold and in fancy the right links          -->']);
-fprintf(oid,['<!--------------------------------------------------------------->']);
-fprintf(oid,['	<div id="top"> ']);
-fprintf(oid,['		<div class="logo">		']);
-fprintf(oid,['		   <a href="http://www.bio.vu.nl/thb/deb/deblab/"><img src="../img/bannercycle.png"  height = "60px"></a>']);
-fprintf(oid,['		</div>']);
-fprintf(oid,['		<div id="navwrapper">']);
-fprintf(oid,['			<div class = "dropdown"><button onclick="context()" class="dropbtn">CONTEXT</button>']);
-fprintf(oid,['				<div id="contextDropdown" class="dropdown-content">']);
-fprintf(oid,['					<a href="../index.html" >Pet Portal</a>']);
-fprintf(oid,['					<a href="http://www.debtheory.org/" target="_blank">DEB Portal</a>']);
-fprintf(oid,['					<a href="http://www.bio.vu.nl/thb/deb/" target="_blank">DEB info</a>']);
-fprintf(oid,['					<a href="http://www.bio.vu.nl/thb/deb/deblab/" target="_blank">DEBlab</a>']);
-fprintf(oid,['				</div>']);
-fprintf(oid,['			</div>	']);
-fprintf(oid,['			<div class = "dropdown"><button onclick="collection()" class="dropbtn">COLLECTION</button>']);
-fprintf(oid,['				<div id="collectionDropdown" class="dropdown-content">']);
-fprintf(oid,['					<a href="../species_list.html">Species List</a>']);
-fprintf(oid,['					<a href="../species_tree.html">Species Tree</a>']);
-fprintf(oid,['					<a href="../about.html">About</a>']);
-fprintf(oid,['				</div>']);
-fprintf(oid,['			</div>	']);
-fprintf(oid,['			<div class = "dropdown">']);
-fprintf(oid,['			<button onclick= "window.open(''http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction'', ''_blank'')" class="dropbtn"> WIKI</a></button>']);
-fprintf(oid,['			</div>	']);
-fprintf(oid,['		</div>']);
-fprintf(oid,['	</div>']);
-fprintf(oid,['<!--------------------------------------------------------------->']);
-fprintf(oid,['<!--   PART 2                                                  -->']);
-fprintf(oid,['<!--   TOP PART OF WEBPAGE IS FIXED                            -->']);
-fprintf(oid,['<!--   It has the logo and the menu with Javascript            -->']);
-fprintf(oid,['<!--  dropdown menus                                           -->']);
-fprintf(oid,['<!--  Please put in bold and in fancy the right links          -->']);
-fprintf(oid,['<!--------------------------------------------------------------->']);
-fprintf(oid,['	<div id="top2"> ']);
-fprintf(oid,['	<h1 class="alignleft2"> &nbsp; &nbsp;']);
+fprintf(oid, '<div w3-include-html="sys/toolbar_list.html"></div>\n');
+fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
+
+fprintf(oid, '<!--------------------------------------------------------------->\n');
+fprintf(oid, '<!--   PART 2                                                  -->\n');
+fprintf(oid, '<!--   TOP PART OF WEBPAGE IS FIXED                            -->\n');
+fprintf(oid, '<!--   It has the logo and the menu with Javascript            -->\n');
+fprintf(oid, '<!--  dropdown menus                                           -->\n');
+fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->\n');
+fprintf(oid, '<!--------------------------------------------------------------->\n');
+fprintf(oid, '	<div id="top2">\n');
+fprintf(oid, '	<h1 class="alignleft2"> &nbsp; &nbsp;\n');
 % --------------------------------------------------------------------
 % ---------- makes links to the wikipedia page if it exists
 if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
@@ -126,30 +100,29 @@ if     isfield(metaData.biblist,'Wiki') ==0
     fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
 end
 % ----------------------------------------------------------------------
-fprintf(oid,['	</h1>']);
+fprintf(oid, '	</h1>\n');
 
-fprintf(oid,'		<div id="navwrapper">');
+fprintf(oid, '		<div id="navwrapper">\n');
 prt_menuBar_species(oid, metaData.species, fileName)
-fprintf(oid,'		</div>');
+fprintf(oid, '		</div>\n');
 
-fprintf(oid,['	</div>']);
-fprintf(oid,['<!-- -------------------------------------------------         -->']);
-fprintf(oid,['<!--------------------------------------------------------------->']);
-fprintf(oid,['<!--   PART 2                                                  -->']);
-fprintf(oid,['<!--   Where all of the text is placed                         -->']);
-fprintf(oid,['<!--   use "contentFull" for 1 column                          -->']);
-fprintf(oid,['<!--   use "content" if you want two columns"                  -->']);
-fprintf(oid,['<!--------------------------------------------------------------->	']);	
-fprintf(oid,['		<div id = "main">']);
-fprintf(oid,['		<div id = "main-wrapper">    ']);
-fprintf(oid,['			<div id="contentFull">']);
-fprintf(oid,['			<H1 id = "portaltop">Parameter values for this entry </H1>	']);	
+fprintf(oid, '	</div>\n');
+fprintf(oid, '<!--------------------------------------------------------------->\n');
+fprintf(oid, '<!--   PART main                                               -->\n');
+fprintf(oid, '<!--   Where all of the text is placed                         -->\n');
+fprintf(oid, '<!--   use "contentFull" for 1 column                          -->\n');
+fprintf(oid, '<!--   use "content" if you want two columns"                  -->\n');
+fprintf(oid, '<!--------------------------------------------------------------->\n');	
+fprintf(oid, '	  <div id = "main">\n');
+fprintf(oid, '		<div id = "main-wrapper">\n');
+fprintf(oid, '		  <div id="contentFull">\n');
+fprintf(oid, '			<H1 id = "portaltop">Parameter values for this entry </H1>\n');	
 			
-fprintf(oid,['<!--------------------------------------------------------------->']);
+fprintf(oid, '<!--------------------------------------------------------------->\n');
 
 % Print out text before the tables:
 % fprintf(oid, '<H2>Parameter values for this entry</H2>');
-fprintf(oid, ['<H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>']);
+fprintf(oid, ['<H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n']);
 % ----------------------------------------  
 
 % Print table with primary parameters:
@@ -233,22 +206,20 @@ fprintf(oid, '    <TR BGCOLOR = "%s"><TD BGCOLOR = "#FFE7C6">%s</TD> <TD>%g</TD>
 fprintf(oid, '    </TABLE>\n');
 % ----------------------------------------
 
-fprintf(oid, '</div> <!-- end of content -->\n');
+fprintf(oid, '      </div> <!-- end of content -->\n');
 	
-fprintf(oid, '			<div id="footer">\n');
-fprintf(oid, '				<div class="aligncenter" style="padding:20px">\n');
-fprintf(oid, '				&#169; 2016 Add-my-pet\n');
-fprintf(oid, '				</div>\n');
-fprintf(oid, '			</div>\n');
-fprintf(oid, '		</div> <!-- main wrapper -->\n');
+fprintf(oid, '		<div id="footer">\n');
+fprintf(oid, '		  <div class="aligncenter" style="padding:20px">\n');
+fprintf(oid, '			&#169; 2016 Add-my-pet\n');
+fprintf(oid, '		  </div>\n');
+fprintf(oid, '		</div>\n');
+fprintf(oid, '	  </div> <!-- main wrapper -->\n');
 fprintf(oid, '	</div> <!-- main -->\n');
 
 
 fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 fclose(oid);
-
-
 
 % options.showCode = false; publish('print_my_pet', options);
 

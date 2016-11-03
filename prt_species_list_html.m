@@ -1,14 +1,14 @@
-%% print_species_html
+%% prt_species_list_html
 % places a line in species_list.html which has previously been opened for
 % reading and writing
 
 %%
-function print_species_html(metaData, metaPar, fidSpec)
+function prt_species_list_html(metaData, metaPar, fidSpec)
 % originally created by Bas Kooijman; modified 2015/04/14 Starrlight &
 % Goncalo Marques; modified 2015/07/21 Starrlight; modified 2015/08/28 Starrlight
 
 %% Syntax
-% <../print_species_html.m *print_species_html*> (metaData, metaPar, fidSpec) 
+% <../prt_species_list_html.m *prt_species_list_html*> (metaData, metaPar, fidSpec) 
 
 %% Description
 % Print the line in species.html for a pet

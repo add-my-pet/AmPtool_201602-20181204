@@ -122,17 +122,17 @@ fprintf(fid_about, '  <TITLE>About AmP</TITLE>\n');
 fprintf(fid_about, '  <link rel="stylesheet" type="text/css" href="sys/style.css"> \n');
 fprintf(fid_about, '  <script src="sys/dropdown.js"></script>\n');
 fprintf(fid_about, '  <script src="sys/w3data.js"></script>\n');
-fprintf(fid_about, '</HEAD>\n');
+fprintf(fid_about, '</HEAD>\n\n');
 fprintf(fid_about, '<BODY>\n\n');
 
-fprintf(fid_about, '<div w3-include-html="wallpaper_amp.html"></div>\n');
+fprintf(fid_about, '<div w3-include-html="sys/wallpaper_amp.html"></div>\n');
 fprintf(fid_about, '<script>w3IncludeHTML();</script>\n\n');
 
-fprintf(fid_about, '<div w3-include-html="toolbar_amp.html"></div>\n');
+fprintf(fid_about, '<div w3-include-html="sys/toolbar_list.html"></div>\n');
 fprintf(fid_about, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(fid_about, '<!--------------------------------------------------------------->\n');
-fprintf(fid_about, '<!--   PART 2                                                  -->\n');
+fprintf(fid_about, '<!--   PART main                                               -->\n');
 fprintf(fid_about, '<!--   Where all of the text is placed                         -->\n');
 fprintf(fid_about, '<!--   use "contentFull" for 1 column                          -->\n');
 fprintf(fid_about, '<!--   use "content" if you want two columns"                  -->\n');
