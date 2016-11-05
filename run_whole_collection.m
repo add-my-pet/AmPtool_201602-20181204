@@ -21,7 +21,7 @@ n = length(entries);
 WD = pwd; % store current path
 %
 
-for i = 1 %:n     
+for i = 1:n     
   fprintf('%g/ %g : %s \n',i,n, entries{i} ) 
   copyfile('index.cache',['../entries/',entries{i}])
   copyfile('index.wn',['../entries/',entries{i}])
