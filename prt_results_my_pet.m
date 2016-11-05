@@ -3,9 +3,8 @@
 
 %%
 function prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar)
-% created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23
-% Starrlight; modified 2016/03/09 Bas Kooijman
-% modified 2016/09/21 Starrlight
+% created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
+% modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine; 2016/11/05 Bas Kooijman
 
 %% Syntax
 % <../prt_results_my_pet.m *prt_results_my_pet*> (data, prdData, auxData, metaData, txtData, metaPar)
@@ -100,7 +99,7 @@ fprintf(oid, '  <script src="../sys/w3data.js"></script>\n');
 fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
-fprintf(oid, '<div w3-include-html="../sys/wallpaper_amp.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../sys/wallpaper_entry.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');

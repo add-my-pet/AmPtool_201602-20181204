@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_species_list_html</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-03"><meta name="DC.source" content="prt_species_list_html.m"><style type="text/css">
+      --><title>prt_species_list_html</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-05"><meta name="DC.source" content="prt_species_list_html.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,57 +55,52 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>prt_species_list_html</h1><!--introduction--><p>places a line in species_list.html which has previously been opened for reading and writing</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_species_list_html.m"><b>prt_species_list_html</b></a> (metaData, metaPar, fidSpec)</p><h2>Description<a name="4"></a></h2><p>Print the line in species.html for a pet</p><p>Input:</p><div><ul><li>metaData: structure</li><li>metaPar: structure</li><li>fidSpec: scalar</li></ul></div><p class="footer"><br>
+  </style></head><body><div class="content"><h1>prt_species_list_html</h1><!--introduction--><pre>deletes and writes ../species_list.html</pre><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_species_list_html.m"><b>prt_species_list_html</b></a> (metaData, metaPar, fidSpec)</p><h2>Description<a name="4"></a></h2><p>deletes and writes ../species_list.html</p><h2>Remarks<a name="5"></a></h2><p>uses open_species_list_html, prt_species_row and close_species_list_html expects to find /entries</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_species_list_html
-% places a line in species_list.html which has previously been opened for
-% reading and writing
+%  deletes and writes ../species_list.html 
 
 %%
-function prt_species_list_html(metaData, metaPar, fidSpec)
-% originally created by Bas Kooijman; modified 2015/04/14 Starrlight &
-% Goncalo Marques; modified 2015/07/21 Starrlight; modified 2015/08/28 Starrlight
+function prt_species_list_html
+% created by Bas Kooijman; modified 2015/04/14 Starrlight Augustine & Goncalo Marques; 
+%   modified 2015/07/21 Starrlight Augustine; 2015/08/28 Starrlight Augustine; 2016/11/05 Bas Kooijman
 
 %% Syntax
 % <../prt_species_list_html.m *prt_species_list_html*> (metaData, metaPar, fidSpec) 
 
 %% Description
-% Print the line in species.html for a pet
-%
-% Input:
-%
-% * metaData: structure 
-% * metaPar: structure
-% * fidSpec: scalar
+% deletes and writes ../species_list.html
 
-v2struct(metaData); v2struct(metaPar);
+%% Remarks
+% uses open_species_list_html, prt_species_row and close_species_list_html
+% expects to find /entries
 
-% Remove underscores 
-% Puts first letter of english name in capital:
-speciesprintnm = strrep(metaData.species, '_', ' ');
-speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
-if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
-  speciesprintnm_en(1)=char(speciesprintnm_en(1)-32);
+WD = pwd; % store current path
+
+entries = select('Animalia');
+
+cd('../.') % goto entries
+allFiles = dir('entries');
+allNames = {allFiles.name};
+
+cd(WD) % return to current path
+n = length(entries);
+
+% make species_list.html
+
+fid_Spec = open_species_list_html; % open up species_list.html for writing and delete the old file
+for i = 1:n
+  %fprintf('%g/ %g : %s \n',i,n, entries{i}) 
+  cd(['../entries/',entries{i}]) % goto entries 
+  load(['results_',entries{i},'.mat']) % load results_my_pet.mat 
+  cd(WD)
+  prt_species_row(metaData, metaPar, fid_Spec)
 end
+close_species_list_html(fid_Spec); % close species_list.html
 
-n_data_0 = length(data_0); n_data_1 = length(data_1); 
-  
+copyfile('species_list.html','../.')
+delete('species_list.html') % delete the file that is in entries_admin
 
-  fprintf(fidSpec, '      <TR>\n');
-  fprintf(fidSpec,['        <TD>', phylum, '</TD>  <TD>', metaData.class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD> ']);
-  fprintf(fidSpec,['<TD><A TARGET="_top" HREF="entries_web/results_', species, '.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD> ']);
-  fprintf(fidSpec, '<TD style="text-align:center"  BGCOLOR = "#FFC6A5">%s</TD> ', model);
-  fprintf(fidSpec, '<TD style="text-align:center"  BGCOLOR = "#FFE7C6">%8.3f</TD> ', MRE);
-  fprintf(fidSpec, '<TD style="text-align:center"  BGCOLOR = "#FFCE9C">%g</TD>\n', COMPLETE);
-  for i = 1:n_data_0
-    fprintf(fidSpec, '<TD BGCOLOR = "#FFFFC6">%s</TD> ', data_0{i});      
-  end
-  for i = 1:n_data_1
-    fprintf(fidSpec, '<TD BGCOLOR = "#FFFF9C">%s</TD>', data_1{i});  
-  end
-  fprintf(fidSpec, '\n      </TR>\n');
-  
-  
 ##### SOURCE END #####
 --></body></html>

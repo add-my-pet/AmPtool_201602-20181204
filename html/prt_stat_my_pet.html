@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_stat_my_pet</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-03"><meta name="DC.source" content="prt_stat_my_pet.m"><style type="text/css">
+      --><title>prt_stat_my_pet</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-05"><meta name="DC.source" content="prt_stat_my_pet.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -63,8 +63,7 @@ span.syscmd { color:#B28C00 }
 
 %%
 function prt_stat_my_pet(metaData, metaPar, par)
-% created 2016/03/30 Starrlight
-% modified 2016/09/23 Starrlight
+% created 2016/03/30 Starrlight; modified 2016/09/23 Starrlight Augustine; 2016/11/05 Bas Kooijman
 
 %% Syntax
 % <../prt_stat_my_pet.m *prt_stat_my_pet*> (metaData, metaPar, par) 
@@ -101,119 +100,91 @@ fileName = [metaData.species,'_stat', '.html'];
 oid = fopen(fileName, 'w+'); % % open file for writing, delete existing content
 
 
-fprintf(oid,['<!DOCTYPE html>']);
-fprintf(oid,['<HTML>']);
-fprintf(oid,['<HEAD>']);
-fprintf(oid,['<TITLE>',metaData.species,'</TITLE>']);
-fprintf(oid,['<link rel="stylesheet" type="text/css" href="../sys/style.css">']); 
-fprintf(oid,['<script src="../sys/dropdown.js"></script>']);
-fprintf(oid,['</HEAD>']);
-fprintf(oid,['<BODY>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH   PART 1                                                  REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH   TOP PART OF WEBPAGE IS FIXED                            REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH   It has the logo and the menu with Javascript            REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH  dropdown menus                                           REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH  Please put in bold and in fancy the right links          REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->']);
-fprintf(oid,['	<div id="top"> ']);
-fprintf(oid,['		<div class="logo">		']);
-fprintf(oid,['		   <a href="http://www.bio.vu.nl/thb/deb/deblab/"><img src="../img/bannercycle.png"  height = "60px"></a>']);
-fprintf(oid,['		</div>']);
-fprintf(oid,['		<div id="navwrapper">']);
-fprintf(oid,['			<div class = "dropdown"><button onclick="context()" class="dropbtn">CONTEXT</button>']);
-fprintf(oid,['				<div id="contextDropdown" class="dropdown-content">']);
-fprintf(oid,['					<a href="../index.html" >Pet Portal</a>']);
-fprintf(oid,['					<a href="http://http://www.debtheory.org/wiki/index.php?title=Main_Page/" target="_blank">DEB Portal</a>']);
-fprintf(oid,['					<a href="http://www.bio.vu.nl/thb/deb/" target="_blank">DEB info</a>']);
-fprintf(oid,['					<a href="http://www.bio.vu.nl/thb/deb/deblab/" target="_blank">DEBlab</a>']);
-fprintf(oid,['				</div>']);
-fprintf(oid,['			</div>	']);
-fprintf(oid,['			<div class = "dropdown"><button onclick="collection()" class="dropbtn">COLLECTION</button>']);
-fprintf(oid,['				<div id="collectionDropdown" class="dropdown-content">']);
-fprintf(oid,['					<a href="../species_list.html">Species List</a>']);
-fprintf(oid,['					<a href="../species_tree.html">Species Tree</a>']);
-fprintf(oid,['					<a href="../about.html">About</a>']);
-fprintf(oid,['				</div>']);
-fprintf(oid,['			</div>	']);
-fprintf(oid,['			<div class = "dropdown">']);
-fprintf(oid,['			<button onclick= "window.open(''http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction'', ''_blank'')" class="dropbtn"> WIKI</a></button>']);
-fprintf(oid,['			</div>	']);
-fprintf(oid,['		</div>']);
-fprintf(oid,['	</div>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH   PART 2                                                  REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH   TOP PART OF WEBPAGE IS FIXED                            REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH   It has the logo and the menu with Javascript            REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH  dropdown menus                                           REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH  Please put in bold and in fancy the right links          REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->']);
-fprintf(oid,['	<div id="top2"> ']);
-fprintf(oid,['	<h1 class="alignleft2"> &nbsp; &nbsp;']);
-% REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
+fprintf(oid, '<!DOCTYPE html>\n');
+fprintf(oid, '<HTML>\n');
+fprintf(oid, '<HEAD>\n');
+fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
+fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../sys/style.css">\n'); 
+fprintf(oid, '  <script src="../sys/dropdown.js"></script>\n');
+fprintf(oid, '  <script src="../sys/w3data.js"></script>\n');
+fprintf(oid, '</HEAD>\n\n');
+fprintf(oid, '<BODY>\n\n');
+
+fprintf(oid, '<div w3-include-html="../sys/wallpaper_entry.html"></div>\n');
+fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
+
+fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');
+fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
+
+fprintf(oid, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASH PART menuBar                                              REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASH TOP PART OF WEBPAGE IS FIXED                              REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASH It has the logo and the menu with Javascript              REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASH   dropdown menus                                          REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASH Please put in bold and in fancy the right links           REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n\n');
+
+fprintf(oid, '<div id="top2">\n');
+fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH makes links to the wikipedia page if it exists
 if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
-    url = eval(['metaData.biblist.', 'Wiki']);
-    url(1: strfind(url, 'http') - 1) = [];
-    url = url(1: strfind(url, '}') - 1);
-   fprintf(oid, ['<A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A> (',speciesprintnm_en,'): &nbsp;\n']);
+  url = eval(['metaData.biblist.', 'Wiki']);
+  url(1: strfind(url, 'http') - 1) = [];
+  url = url(1: strfind(url, '}') - 1);
+  fprintf(oid,['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A> (',speciesprintnm_en,'): &nbsp;\n']);
 elseif isfield(metaData.biblist,'wiki') %|| isfield(metaData.biblist,'wiki')
-      url = eval(['metaData.biblist.', 'wiki']);
-      url(1: strfind(url, 'http') - 1) = [];
-      url = url(1: strfind(url, '}') - 1);
-      fprintf(oid, ['<A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A>(',speciesprintnm_en,'): &nbsp;\n']);
+  url = eval(['metaData.biblist.', 'wiki']);
+  url(1: strfind(url, 'http') - 1) = [];
+  url = url(1: strfind(url, '}') - 1);
+  fprintf(oid,['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A>(',speciesprintnm_en,'): &nbsp;\n']);
 end
-if     isfield(metaData.biblist,'Wiki') ==0
-    fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
+if isfield(metaData.biblist,'Wiki') ==0
+  fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
 end
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
-fprintf(oid,['	</h1>']);
+fprintf(oid, '  </h1>\n\n');
 
-fprintf(oid,'		<div id="navwrapper">');
+fprintf(oid, '  <div id="navwrapper">\n');
 prt_menuBar_species(oid, metaData.species, fileName)
-fprintf(oid,'		</div>');
+fprintf(oid, '  </div><!REPLACE_WITH_DASH_DASH end of navwrapper REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '</div><!REPLACE_WITH_DASH_DASH end of top2 REPLACE_WITH_DASH_DASH>\n\n');
 
-fprintf(oid,['	</div>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH-         REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH   PART 2                                                  REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH   Where all of the text is placed                         REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH   use "contentFull" for 1 column                          REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASH   use "content" if you want two columns"                  REPLACE_WITH_DASH_DASH>']);
-fprintf(oid,['<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->	']);	
-fprintf(oid,['		<div id = "main">']);
-fprintf(oid,['		<div id = "main-wrapper">    ']);
-fprintf(oid,['			<div id="contentFull">']);
-fprintf(oid,['			<H1 id = "portaltop">Implied properties for this entry </H1>	']);	
+fprintf(oid, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASH   PART main                                               REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASH   Where all of the text is placed                         REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASH   use "contentFull" for 1 column                          REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASH   use "content" if you want two columns"                  REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n\n');
+
+fprintf(oid, '<div id = "main">\n');
+fprintf(oid, '  <div id = "main-wrapper">\n');
+fprintf(oid, '    <div id="contentFull">\n');
+fprintf(oid, '      <H1 id = "portaltop">Implied properties for this entry </H1>\n');	
 			
-fprintf(oid,['<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->']);
-
-
-% % print out text before the tables
+% print out text before the tables
 % fprintf(oid, '<H2>Implied properties for this entry</H2>');
-fprintf(oid, ['<H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>']);
+fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n\n']);
 
-    
 % print the table with the properties :    
-fprintf(oid, '    <TABLE id = "t01">\n');
-fprintf(oid, '    <TR BGCOLOR = "#FFE7C6"><TH colspan="4">Implied properties at typical temperature (%g deg. C)</TH></TR>\n', K2C(metaData.T_typical));
-fprintf(oid, '    <TR BGCOLOR = "#FFE7C6"><TH>symbol</TH><TH> value</TH><TH> units</TH><TH> description</TH></TR>\n');
-  for i = 1:length(webStatFields)
-    fprintf(oid, '    <TR BGCOLOR = "%s"> <TD>%s</TD> <TD>%g</TD> <TD>%s</TD><TD>%s</TD></TR>\n',...
-          webColStat.(webStatFields{i}), webStatFields{i}, stat.(webStatFields{i}), ...
-       txtStat.units.(webStatFields{i}), txtStat.label.(webStatFields{i}));
-  end 
-fprintf(oid, '    </TABLE>\n'); 
-% end
-fprintf(oid, '</div> <!REPLACE_WITH_DASH_DASH end of content REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '      <TABLE id = "t01">\n');
+fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="4">Implied properties at typical temperature (%g deg. C)</TH></TR>\n', K2C(metaData.T_typical));
+fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH>symbol</TH><TH> value</TH><TH> units</TH><TH> description</TH></TR>\n');
+for i = 1:length(webStatFields)
+  fprintf(oid, '        <TR BGCOLOR = "%s"> <TD>%s</TD> <TD>%g</TD> <TD>%s</TD><TD>%s</TD></TR>\n',...
+    webColStat.(webStatFields{i}), webStatFields{i}, stat.(webStatFields{i}), ...
+    txtStat.units.(webStatFields{i}), txtStat.label.(webStatFields{i}));
+end 
+fprintf(oid, '      </TABLE>\n\n');
+
+fprintf(oid, '    </div> <!REPLACE_WITH_DASH_DASH end of content REPLACE_WITH_DASH_DASH>\n\n');
 	
-fprintf(oid, '			<div id="footer">\n');
-fprintf(oid, '				<div class="aligncenter" style="padding:20px">\n');
-fprintf(oid, '				&#169; 2016 Add-my-pet\n');
-fprintf(oid, '				</div>\n');
-fprintf(oid, '			</div>\n');
-fprintf(oid, '		</div> <!REPLACE_WITH_DASH_DASH main wrapper REPLACE_WITH_DASH_DASH>\n');
-fprintf(oid, '	</div> <!REPLACE_WITH_DASH_DASH main REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '    <div id="footer">\n');
+fprintf(oid, '      <div class="aligncenter" style="padding:20px">\n');
+fprintf(oid, '        &#169; 2016 Add-my-pet\n');
+fprintf(oid, '      </div>\n');
+fprintf(oid, '    </div>\n');
+fprintf(oid, '  </div> <!REPLACE_WITH_DASH_DASH main wrapper REPLACE_WITH_DASH_DASH>\n');
+fprintf(oid, '</div> <!REPLACE_WITH_DASH_DASH main REPLACE_WITH_DASH_DASH>\n');
 
 
 fprintf(oid, '</BODY>\n');

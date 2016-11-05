@@ -3,7 +3,7 @@
 
 %%
 function close_species_list_html(fidSpec)
-% originally created by Bas Kooiman; modified 2015/08/28 Starrlight, 2016/11/03 Bas Kooijman
+% created by Bas Kooijman; modified 2015/08/28 Starrlight Augustine, 2016/11/03 Bas Kooijman
 
 %% Syntax
 % <../close_species_list_html.m *close_species_list_html*> (fid_Spec) 
@@ -15,19 +15,19 @@ function close_species_list_html(fidSpec)
 %
 % * fidSpec : scalar
 
-fprintf(fidSpec, '      </table>\n');
-fprintf(fidSpec, '    </div> <!-- end of content -->\n');
+fprintf(fidSpec, '      </table>\n\n');
+fprintf(fidSpec, '    </div> <!-- end of content -->\n\n');
 		
-fprintf(fidSpec, '	  <div id="footer">\n');
-fprintf(fidSpec, '		<div class="aligncenter" style="padding:20px">\n');
-fprintf(fidSpec, '		  &#169; 2016 Add-my-pet\n');
-fprintf(fidSpec, '		</div>\n');
-fprintf(fidSpec, '	  </div>\n');
-fprintf(fidSpec, '	</div> <!-- main wrapper -->\n');
+fprintf(fidSpec, '    <div id="footer">\n');
+fprintf(fidSpec, '      <div class="aligncenter" style="padding:20px">\n');
+fprintf(fidSpec, '        &#169; 2016 Add-my-pet\n');
+fprintf(fidSpec, '      </div>\n');
+fprintf(fidSpec, '    </div>\n\n');
+fprintf(fidSpec, '  </div> <!-- main wrapper -->\n');
 fprintf(fidSpec, '</div> <!-- main -->\n');
 
-fprintf(fidSpec,   '</BODY>\n');
-fprintf(fidSpec,   '</HTML>\n');
+fprintf(fidSpec, '</BODY>\n');
+fprintf(fidSpec, '</HTML>\n');
 
 
 % fprintf(fidSpec,   '%s\n' , '    </TABLE>');

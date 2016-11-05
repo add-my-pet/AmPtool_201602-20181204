@@ -1,11 +1,14 @@
 
-%% Script: run whole collection
+%% Script: run_whole_collection
 % Run this to make
 %
 % * places index.cache and index.wn in the entries folder
 % * html pages for all of the different species in add_my_pet/entries
 % * place the html and bib pages in entries_web and delete from entries
 % * create zipped folder in entries_zip
+% 
+% run prt_species_list_html to create ../species_list.html
+% run prt_species_tree_taxa to create ../sys/species_tree_taxa.js files
 
 entries = select('Animalia');
 n = length(entries);

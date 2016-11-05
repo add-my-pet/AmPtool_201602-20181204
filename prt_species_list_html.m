@@ -1,49 +1,43 @@
 %% prt_species_list_html
-% places a line in species_list.html which has previously been opened for
-% reading and writing
+%  deletes and writes ../species_list.html 
 
 %%
-function prt_species_list_html(metaData, metaPar, fidSpec)
-% originally created by Bas Kooijman; modified 2015/04/14 Starrlight &
-% Goncalo Marques; modified 2015/07/21 Starrlight; modified 2015/08/28 Starrlight
+function prt_species_list_html
+% created by Bas Kooijman; modified 2015/04/14 Starrlight Augustine & Goncalo Marques; 
+%   modified 2015/07/21 Starrlight Augustine; 2015/08/28 Starrlight Augustine; 2016/11/05 Bas Kooijman
 
 %% Syntax
 % <../prt_species_list_html.m *prt_species_list_html*> (metaData, metaPar, fidSpec) 
 
 %% Description
-% Print the line in species.html for a pet
-%
-% Input:
-%
-% * metaData: structure 
-% * metaPar: structure
-% * fidSpec: scalar
+% deletes and writes ../species_list.html
 
-v2struct(metaData); v2struct(metaPar);
+%% Remarks
+% uses open_species_list_html, prt_species_row and close_species_list_html
+% expects to find /entries
 
-% Remove underscores 
-% Puts first letter of english name in capital:
-speciesprintnm = strrep(metaData.species, '_', ' ');
-speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
-if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
-  speciesprintnm_en(1)=char(speciesprintnm_en(1)-32);
+WD = pwd; % store current path
+
+entries = select('Animalia');
+
+cd('../.') % goto entries
+allFiles = dir('entries');
+allNames = {allFiles.name};
+
+cd(WD) % return to current path
+n = length(entries);
+
+% make species_list.html
+
+fid_Spec = open_species_list_html; % open up species_list.html for writing and delete the old file
+for i = 1:n
+  %fprintf('%g/ %g : %s \n',i,n, entries{i}) 
+  cd(['../entries/',entries{i}]) % goto entries 
+  load(['results_',entries{i},'.mat']) % load results_my_pet.mat 
+  cd(WD)
+  prt_species_row(metaData, metaPar, fid_Spec)
 end
+close_species_list_html(fid_Spec); % close species_list.html
 
-n_data_0 = length(data_0); n_data_1 = length(data_1); 
-  
-
-  fprintf(fidSpec, '      <TR>\n');
-  fprintf(fidSpec,['        <TD>', phylum, '</TD>  <TD>', metaData.class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD> ']);
-  fprintf(fidSpec,['<TD><A TARGET="_top" HREF="entries_web/results_', species, '.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD> ']);
-  fprintf(fidSpec, '<TD style="text-align:center"  BGCOLOR = "#FFC6A5">%s</TD> ', model);
-  fprintf(fidSpec, '<TD style="text-align:center"  BGCOLOR = "#FFE7C6">%8.3f</TD> ', MRE);
-  fprintf(fidSpec, '<TD style="text-align:center"  BGCOLOR = "#FFCE9C">%g</TD>\n', COMPLETE);
-  for i = 1:n_data_0
-    fprintf(fidSpec, '<TD BGCOLOR = "#FFFFC6">%s</TD> ', data_0{i});      
-  end
-  for i = 1:n_data_1
-    fprintf(fidSpec, '<TD BGCOLOR = "#FFFF9C">%s</TD>', data_1{i});  
-  end
-  fprintf(fidSpec, '\n      </TR>\n');
-  
-  
+copyfile('species_list.html','../.')
+delete('species_list.html') % delete the file that is in entries_admin

@@ -3,10 +3,9 @@
 
 %%
 function prt_my_pet(metaData, metaPar, par, txtPar)
-% created 2015/04/11 by Starrlight
-% modified 2015/07/27 by starrlight
-% modified 2015/08/06 by Dina
-% modified 2016/03/30 by Starrlight
+% created 2015/04/11 by Starrlight Augustine
+% modified 2015/07/27 Starrlight; 2015/08/06 Dina; 2016/03/30 Starrlight; 2016/11/05 Bas
+
 
 %% Syntax
 % <../prt_my_pet.m *prt_my_pet*> (metaData, metaPar, par, txtPar) 
@@ -68,7 +67,7 @@ fprintf(oid, '  <script src="../sys/w3data.js"></script>\n');
 fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
-fprintf(oid, '<div w3-include-html="../sys/wallpaper_amp.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../sys/wallpaper_entry.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');
