@@ -100,7 +100,7 @@ fprintf(oid, '<BODY>\n\n');
 fprintf(oid, '<div w3-include-html="../sys/wallpaper_amp.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
-fprintf(oid, '<div w3-include-html="../sys/toolbar_amp.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
@@ -110,7 +110,7 @@ fprintf(oid, '<!--   It has the logo and the menu with Javascript            -->
 fprintf(oid, '<!--  dropdown menus                                           -->\n');
 fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->\n');
 fprintf(oid, '<!--------------------------------------------------------------->\n');
-fprintf(oid, '	<div id="top2">\n');
+fprintf(oid, '<div id="top2">\n');
 fprintf(oid, '	<h1 class="alignleft2"> &nbsp; &nbsp;\n');
 % --------------------------------------------------------------------
 % ---------- makes links to the wikipedia page if it exists
@@ -131,9 +131,9 @@ end
 % ----------------------------------------------------------------------
 fprintf(oid, '	</h1>\n');
 
-fprintf(oid,'		<div id="navwrapper">\n');
+fprintf(oid, '  <div id="navwrapper">\n');
 prt_menuBar_species(oid, metaData.species, fileName)
-fprintf(oid,'		</div>\n');
+fprintf(oid, '  </div>\n');
 
 fprintf(oid, '	</div>\n');
 fprintf(oid, '<!--------------------------------------------------------------->\n');
@@ -152,10 +152,10 @@ fprintf(oid, '<!--------------------------------------------------------------->
    
 % Print results_my_pet
 fprintf(oid, ['<H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n']);
-fprintf(oid,'<p> \n');    
+fprintf(oid,'<p>\n');    
 fprintf(oid,['<a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Completeness" >COMPLETE</a>',' = %3.1f <BR>\n'],metaData.COMPLETE);
 fprintf(oid,['<a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Goodness_of_fit_criterion" >MRE</a>',' = %8.3f \n'],metaPar.MRE);   
-fprintf(oid,'</p> \n');     % close the paragraph
+fprintf(oid,'</p>\n');     % close the paragraph
 
 % % get predictions to compare with data: 
 % [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); 
@@ -180,7 +180,7 @@ txtData    = rmfield_wtxt(txtData, 'psd');
 
 
 %  make table for zero-variate data set:
-fprintf(oid, '      <TABLE id="t01">\n');
+fprintf(oid, '  <TABLE id="t01">\n');
 fprintf(oid, '    <TR BGCOLOR = "#FFE7C6"><TH colspan="7"><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" >Zero-variate</a> data</TH></TR>\n');
 fprintf(oid, '    <TR BGCOLOR = "#FFE7C6"><TD><b>Data</b></TD><TD><b>Observed</b></TD><TD><b>Predicted</b></TD><TD><b>(RE)</b></TD><TD><b>Unit</b></TD><TD><b>Description</b></TD><TD><b>Reference</b></TD></TR>\n');
 [nm, nst] = fieldnmnst_st(data); % cell array of string with fieldnames of data
@@ -214,14 +214,14 @@ fprintf(oid, '    <TR BGCOLOR = "#FFE7C6"><TD><b>Data</b></TD><TD><b>Observed</b
     end
  end
 fprintf(oid, '    <TR><TD></TD><TD></TD><TD></TD><TD></TD><TD></TD><TD></TF></TR>\n');
-fprintf(oid, '    </TABLE>\n');  
+fprintf(oid, '  </TABLE>\n');  
 
 % ------------------------------------------------------------------------
 
 
 % print table with uni-variate data :
 if isempty(metaData.data_1) == 0
-fprintf(oid, '      <TABLE id="t01">\n');
+fprintf(oid, '  <TABLE id="t01">\n');
 fprintf(oid, '    <TR BGCOLOR = "#FFE7C6"><TH colspan="6"><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Univariate_data" >Uni-variate</a> data </TH></TR>\n');
 fprintf(oid, '    <TR BGCOLOR = "#FFE7C6"><TD><b>Dataset</b></TD><TD><b>Figure</b></TD><TD><b>(RE)</b></TD><TD><b>Independent variable</b></TD><TD><b>Dependent variable</b></TD><TD><b>Reference</b></TD></TR>\n');  
  
@@ -338,70 +338,70 @@ fprintf(oid, ['    <TR BGCOLOR = "#FFE7C6"><TD><B>Data</B></TD><TD><B>Generalise
 % ----------------------------------------------------------
 % Facts:
 if isfield(metaData, 'facts') 
-fprintf(oid, '<H3 style="clear:both" class="pet">Facts</H3>\n');
-fprintf(oid,'<ul> \n');     % open the unordered list
-[nm, nst] = fieldnmnst_st(metaData.facts);
+  fprintf(oid, '<H3 style="clear:both" class="pet">Facts</H3>\n');
+  fprintf(oid, '<ul> \n');     % open the unordered list
+  [nm, nst] = fieldnmnst_st(metaData.facts);
   for i = 1:nst
-  fprintf(oid, '<li>\n'); % open bullet point
-  str1 = metaData.facts.(nm{i});
+    fprintf(oid, '<li>\n'); % open bullet point
+    str1 = metaData.facts.(nm{i});
     if isfield(txtData.bibkey,nm{i})
-    str2 = metaData.bibkey.(nm{i});
-    fprintf(oid, [str1,' (',str2,') \n']);
+      str2 = metaData.bibkey.(nm{i});
+      fprintf(oid, [str1,' (',str2, ')\n']);
     else
-    fprintf(oid, [str1,'\n']);  
+      fprintf(oid, [str1, '\n']);  
     end
-  fprintf(oid, '</li>\n' ); % close bullet point
+    fprintf(oid, '</li>\n' ); % close bullet point
   end
-fprintf(oid,'</ul> \n');     % open the unordered list    
+  fprintf(oid,'</ul>\n');     % close the unordered list    
 end
 % ----------------------------------------------------------
 
 % ----------------------------------------------------------
 % Discussion:
 if isfield(metaData, 'discussion') == 1
-fprintf(oid, '<H3 style="clear:both" class="pet">Discussion</H3>\n');
-fprintf(oid,'<ul> \n');     % open the unordered list
-[nm, nst] = fieldnmnst_st(metaData.discussion);
-    for i = 1:nst
+  fprintf(oid, '<H3 style="clear:both" class="pet">Discussion</H3>\n');
+  fprintf(oid,'<ul> \n');     % open the unordered list
+  [nm, nst] = fieldnmnst_st(metaData.discussion);
+  for i = 1:nst
     fprintf(oid, '<li>\n'); % open bullet point
     str = metaData.discussion.(nm{i});
-      if isfield(txtData.bibkey,nm{i})
+    if isfield(txtData.bibkey,nm{i})
       str2 = metaData.bibkey.(nm{i});
       fprintf(oid, [str,' (',str2,') \n']);
-      else
+    else
       fprintf(oid, [str, '\n']);
-      end
-    fprintf(oid, '</li>\n' ); % close bullet point
     end
-fprintf(oid,'</ul> \n');     % open the unordered list      
+    fprintf(oid, '</li>\n' ); % close bullet point
+  end
+  fprintf(oid,'</ul> \n');     % open the unordered list      
 end
 % ----------------------------------------------------------
 
 % Acknowledgment:
 if isfield(metaData, 'acknowledgment') == 1
-    fprintf(oid, '<H3 style="clear:both" class="pet">Acknowledgment</H3>\n');
-    fprintf(oid,'<ul> \n');     % open the unordered list
+  fprintf(oid, '<H3 style="clear:both" class="pet">Acknowledgment</H3>\n');
+  fprintf(oid,'<ul> \n');     % open the unordered list
     
-        fprintf(oid, '<li>\n'); % open bullet point
-        str = metaData.acknowledgment;
-        fprintf(oid, [str, '\n']);
-        fprintf(oid, '</li>\n' ); % close bullet point
+  fprintf(oid, '<li>\n'); % open bullet point
+  str = metaData.acknowledgment;
+  fprintf(oid, [str, '\n']);
+  fprintf(oid, '</li>\n' ); % close bullet point
    
-    fprintf(oid,'</ul> \n');     % open the unordered list      
+  fprintf(oid,'</ul> \n');     % open the unordered list      
 end
 % ----------------------------------------------------------
 
 % Bibliography:
 fprintf(oid, '<H3 style="clear:both" class="pet">Bibliography</H3>\n');
 [nm, nst] = fieldnmnst_st(metaData.biblist);
-    for i = 1:nst
-    fprintf(oid, '<li>\n'); % open bullet point
-    fprintf(oid, [nm{i}, '\n']);
-    fprintf(oid, '</li>\n' ); % close bullet point
-    end
-fprintf(oid,'</ul> \n');     % open the unordered list   
+for i = 1:nst
+  fprintf(oid, '<li>\n'); % open bullet point
+  fprintf(oid, [nm{i}, '\n']);
+  fprintf(oid, '</li>\n' ); % close bullet point
+end
+fprintf(oid, '</ul>\n');     % open the unordered list   
 fprintf(oid, '<p>\n');
-fprintf(oid, ['<A class="link" href = "bib_',metaData.species,'.bib" target = "_blank">Bibtex files with references for this entry </A> <BR> \n']);
+fprintf(oid,['<A class="link" href = "bib_',metaData.species,'.bib" target = "_blank">Bibtex files with references for this entry </A> <BR>\n']);
 fprintf(oid, '</p>\n' );
 % ----------------------------------------------------------
   
@@ -412,21 +412,16 @@ fprintf(oid,['    <H3 ALIGN="CENTER">', txt_author, ', ', txt_date, ...
         ' (last modified by ', txt_author_mod_1, '\n', txt_date_mod_1,')','</H3>\n']);
 
 % ----------------------------------------------------------
-fprintf(oid, '</div> <!-- end of content -->\n');
-fprintf(oid, '			<div id="footer">\n');
-fprintf(oid, '				<div class="aligncenter" style="padding:20px">\n');
-fprintf(oid, '				&#169; 2016 Add-my-pet\n');
-fprintf(oid, '				</div>\n');
-fprintf(oid, '			</div>\n');
-fprintf(oid, '		</div> <!-- main wrapper -->\n');
+fprintf(oid, '      </div> <!-- end of content -->\n');
+fprintf(oid, '		<div id="footer">\n');
+fprintf(oid, '		  <div class="aligncenter" style="padding:20px">\n');
+fprintf(oid, '			&#169; 2016 Add-my-pet\n');
+fprintf(oid, '		  </div>\n');
+fprintf(oid, '		</div>\n');
+fprintf(oid, '	  </div> <!-- main wrapper -->\n');
 fprintf(oid, '	</div> <!-- main -->\n');
 fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 % close results_my_pet.html  
 fclose(oid);
 % ----------------------------------------------------------
-
-
-
-
-

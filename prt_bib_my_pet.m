@@ -30,8 +30,8 @@ oid = fopen(['bib_', species, '.bib'], 'w+'); % open file for reading and writin
 [nm, nst] = fieldnmnst_st(biblist);
 
 for j = 1:nst 
-str = eval(['biblist.',nm{j}]);
-fprintf(oid, '%s \n\n', str);
+  str = eval(['biblist.',nm{j}]);
+  fprintf(oid, '%s \n\n', str);
 end
     
 % close bib_my_pet.bib  
