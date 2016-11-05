@@ -104,32 +104,33 @@ fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
-fprintf(oid, '<!--   PART 2                                                  -->\n');
-fprintf(oid, '<!--   TOP PART OF WEBPAGE IS FIXED                            -->\n');
+fprintf(oid, '<!--  PART menuBar_species                                     -->\n');
+fprintf(oid, '<!--  TOP PART OF WEBPAGE IS FIXED                             -->\n');
 fprintf(oid, '<!--   It has the logo and the menu with Javascript            -->\n');
 fprintf(oid, '<!--  dropdown menus                                           -->\n');
 fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->\n');
-fprintf(oid, '<!--------------------------------------------------------------->\n');
+fprintf(oid, '<!--------------------------------------------------------------->\n\n');
+
 fprintf(oid, '<div id="top2">\n');
-fprintf(oid, '	<h1 class="alignleft2"> &nbsp; &nbsp;\n');
+fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
 % --------------------------------------------------------------------
 % ---------- makes links to the wikipedia page if it exists
 if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
-    url = eval(['metaData.biblist.', 'Wiki']);
-    url(1: strfind(url, 'http') - 1) = [];
-    url = url(1: strfind(url, '}') - 1);
-   fprintf(oid, ['<A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A> (',speciesprintnm_en,'): &nbsp;\n']);
+  url = eval(['metaData.biblist.', 'Wiki']);
+  url(1: strfind(url, 'http') - 1) = [];
+  url = url(1: strfind(url, '}') - 1);
+  fprintf(oid, ['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A> (',speciesprintnm_en,'): &nbsp;\n']);
 elseif isfield(metaData.biblist,'wiki') %|| isfield(metaData.biblist,'wiki')
-      url = eval(['metaData.biblist.', 'wiki']);
-      url(1: strfind(url, 'http') - 1) = [];
-      url = url(1: strfind(url, '}') - 1);
-      fprintf(oid, ['<A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A>(',speciesprintnm_en,'): &nbsp;\n']);
+  url = eval(['metaData.biblist.', 'wiki']);
+  url(1: strfind(url, 'http') - 1) = [];
+  url = url(1: strfind(url, '}') - 1);
+  fprintf(oid, ['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A>(',speciesprintnm_en,'): &nbsp;\n']);
 end
-if     isfield(metaData.biblist,'Wiki') ==0
-    fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
+if isfield(metaData.biblist,'Wiki') ==0
+  fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
 end
 % ----------------------------------------------------------------------
-fprintf(oid, '	</h1>\n');
+fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
 prt_menuBar_species(oid, metaData.species, fileName)

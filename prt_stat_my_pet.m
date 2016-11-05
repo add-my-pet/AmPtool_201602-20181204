@@ -58,15 +58,15 @@ fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
-fprintf(oid, '<!--   PART 2                                                  -->\n');
-fprintf(oid, '<!--   TOP PART OF WEBPAGE IS FIXED                            -->\n');
-fprintf(oid, '<!--   It has the logo and the menu with Javascript            -->\n');
-fprintf(oid, '<!--  dropdown menus                                           -->\n');
-fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->\n');
-fprintf(oid, '<!--------------------------------------------------------------->\n');
+fprintf(oid, '<!-- PART menuBar                                              -->\n');
+fprintf(oid, '<!-- TOP PART OF WEBPAGE IS FIXED                              -->\n');
+fprintf(oid, '<!-- It has the logo and the menu with Javascript              -->\n');
+fprintf(oid, '<!--   dropdown menus                                          -->\n');
+fprintf(oid, '<!-- Please put in bold and in fancy the right links           -->\n');
+fprintf(oid, '<!--------------------------------------------------------------->\n\n');
+
 fprintf(oid, '<div id="top2">\n');
-fprintf(oid, '	<h1 class="alignleft2"> &nbsp; &nbsp;\n');
-% --------------------------------------------------------------------
+fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
 % ---------- makes links to the wikipedia page if it exists
 if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
   url = eval(['metaData.biblist.', 'Wiki']);
@@ -83,52 +83,48 @@ if isfield(metaData.biblist,'Wiki') ==0
   fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
 end
 % ----------------------------------------------------------------------
-fprintf(oid, '	</h1>\n');
+fprintf(oid, '  </h1>\n\n');
 
-fprintf(oid, '	<div id="navwrapper">\n');
+fprintf(oid, '  <div id="navwrapper">\n');
 prt_menuBar_species(oid, metaData.species, fileName)
-fprintf(oid, '  </div>\n');
+fprintf(oid, '  </div><!-- end of navwrapper -->\n');
+fprintf(oid, '</div><!-- end of top2 -->\n\n');
 
-fprintf(oid, '</div>\n');
-fprintf(oid, '<!-- -------------------------------------------------         -->\n');
 fprintf(oid, '<!--------------------------------------------------------------->\n');
-fprintf(oid, '<!--   PART 2                                                  -->\n');
+fprintf(oid, '<!--   PART main                                               -->\n');
 fprintf(oid, '<!--   Where all of the text is placed                         -->\n');
 fprintf(oid, '<!--   use "contentFull" for 1 column                          -->\n');
 fprintf(oid, '<!--   use "content" if you want two columns"                  -->\n');
-fprintf(oid, '<!--------------------------------------------------------------->\n');	
+fprintf(oid, '<!--------------------------------------------------------------->\n\n');
+
 fprintf(oid, '<div id = "main">\n');
-fprintf(oid, '	<div id = "main-wrapper">\n');
-fprintf(oid, '	  <div id="contentFull">\n');
-fprintf(oid, '		<H1 id = "portaltop">Implied properties for this entry </H1>\n');	
+fprintf(oid, '  <div id = "main-wrapper">\n');
+fprintf(oid, '    <div id="contentFull">\n');
+fprintf(oid, '      <H1 id = "portaltop">Implied properties for this entry </H1>\n');	
 			
-fprintf(oid, '<!--------------------------------------------------------------->\n');
-
-
 % print out text before the tables
 % fprintf(oid, '<H2>Implied properties for this entry</H2>');
-fprintf(oid, ['     <H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n']);
+fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n\n']);
 
-    
 % print the table with the properties :    
 fprintf(oid, '      <TABLE id = "t01">\n');
 fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="4">Implied properties at typical temperature (%g deg. C)</TH></TR>\n', K2C(metaData.T_typical));
 fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH>symbol</TH><TH> value</TH><TH> units</TH><TH> description</TH></TR>\n');
-  for i = 1:length(webStatFields)
-    fprintf(oid, '    <TR BGCOLOR = "%s"> <TD>%s</TD> <TD>%g</TD> <TD>%s</TD><TD>%s</TD></TR>\n',...
-          webColStat.(webStatFields{i}), webStatFields{i}, stat.(webStatFields{i}), ...
-       txtStat.units.(webStatFields{i}), txtStat.label.(webStatFields{i}));
-  end 
-fprintf(oid, '      </TABLE>\n'); 
-% end
-fprintf(oid, '    </div> <!-- end of content -->\n');
+for i = 1:length(webStatFields)
+  fprintf(oid, '        <TR BGCOLOR = "%s"> <TD>%s</TD> <TD>%g</TD> <TD>%s</TD><TD>%s</TD></TR>\n',...
+    webColStat.(webStatFields{i}), webStatFields{i}, stat.(webStatFields{i}), ...
+    txtStat.units.(webStatFields{i}), txtStat.label.(webStatFields{i}));
+end 
+fprintf(oid, '      </TABLE>\n\n');
+
+fprintf(oid, '    </div> <!-- end of content -->\n\n');
 	
-fprintf(oid, '	  <div id="footer">\n');
-fprintf(oid, '		<div class="aligncenter" style="padding:20px">\n');
-fprintf(oid, '		  &#169; 2016 Add-my-pet\n');
-fprintf(oid, '		</div>\n');
-fprintf(oid, '	  </div>\n');
-fprintf(oid, '	</div> <!-- main wrapper -->\n');
+fprintf(oid, '    <div id="footer">\n');
+fprintf(oid, '      <div class="aligncenter" style="padding:20px">\n');
+fprintf(oid, '        &#169; 2016 Add-my-pet\n');
+fprintf(oid, '      </div>\n');
+fprintf(oid, '    </div>\n');
+fprintf(oid, '  </div> <!-- main wrapper -->\n');
 fprintf(oid, '</div> <!-- main -->\n');
 
 
