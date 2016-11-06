@@ -127,7 +127,7 @@ end
 n_data_0 = length(data_0); n_data_1 = length(data_1); 
   
 
-  fprintf(fid_Spec,['        <TR name = "', species, '">\n']);
+  fprintf(fid_Spec,['        <TR id = "', species, '">\n']);
   fprintf(fid_Spec,['          <TD>', phylum, '</TD>  <TD>', metaData.class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD>\n']);
   fprintf(fid_Spec,['          <TD><A TARGET="_top" HREF="entries_web/results_', species, '.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD>\n']);
   fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFC6A5">%s</TD>\n', model);
