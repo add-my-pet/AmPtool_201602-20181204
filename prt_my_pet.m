@@ -1,5 +1,5 @@
 %% prt_my_pet
-% Creates my_pet.html 
+% Creates ../../entries_web/my_pet.html 
 
 %%
 function prt_my_pet(metaData, metaPar, par, txtPar)
@@ -11,7 +11,7 @@ function prt_my_pet(metaData, metaPar, par, txtPar)
 % <../prt_my_pet.m *prt_my_pet*> (metaData, metaPar, par, txtPar) 
 
 %% Description
-% Read and writes my_pet.html. This pages contains a list of all of the parameter values of my_pet.
+% Read and writes ../../entries_web/my_pet.html. This pages contains a list of all of the parameter values of my_pet.
 %
 % Input:
 %
@@ -54,7 +54,7 @@ otherParFields = setdiff(parFields, chemParFields);
 otherParFields = setdiff(otherParFields, tempParFields);
 
 % start printing the html file
-fileName = [species, '.html'];
+fileName = ['../../entries_web/species', '.html'];
 oid = fopen(fileName, 'w+'); % % open file for writing, delete existing content
 fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');

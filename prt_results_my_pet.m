@@ -1,5 +1,5 @@
 %% prt_results_my_pet
-% read and write results_my_pet.html
+% read and write ../../entries_web/results_my_pet.html
 
 %%
 function prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar)
@@ -10,7 +10,7 @@ function prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar)
 % <../prt_results_my_pet.m *prt_results_my_pet*> (data, prdData, auxData, metaData, txtData, metaPar)
 
 %% Description
-% Prints an html file which compares metapar.model predictions with data
+% Prints an ../../entries_web/results_my_pet.html file which compares metapar.model predictions with data
 %
 % Input:
 %
@@ -86,7 +86,7 @@ else
 end  
 
 % remove the underscore in the species name
-fileName = ['results_', metaData.species, '.html'];
+fileName = ['../../entries_web/results_', metaData.species, '.html'];
 oid = fopen(fileName, 'w+'); % open file for reading and writing, delete existing content
 
 fprintf(oid, '<!DOCTYPE html>\n');

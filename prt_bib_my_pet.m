@@ -1,5 +1,5 @@
 %% prt_bib_my_pet
-% read and write bib_my_pet.bib
+% read and write ../../entries_web/bib_my_pet.bib
 
 %%
 function prt_bib_my_pet(species,biblist)
@@ -9,7 +9,7 @@ function prt_bib_my_pet(species,biblist)
 % <../prt_bib_my_pet.m *prt_bib_my_pet*> (species,biblist) 
 
 %% Description
-% Prints a .bib file with the bibliography of a give entry
+% Prints a ../../entries_web/bib_my_pet.bib file with the bibliography of a give entry
 %
 % Input:
 %
@@ -25,7 +25,7 @@ function prt_bib_my_pet(species,biblist)
 % load('results_my_pet.mat');
 % prt_bib_my_pet(metaData.species,metaData.biblist)
 
-oid = fopen(['bib_', species, '.bib'], 'w+'); % open file for reading and writing and deletes old content
+oid = fopen(['../../entries_web/bib_', species, '.bib'], 'w+'); % open file for reading and writing and deletes old content
 
 [nm, nst] = fieldnmnst_st(biblist);
 

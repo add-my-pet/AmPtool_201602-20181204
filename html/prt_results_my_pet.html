@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_results_my_pet</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-05"><meta name="DC.source" content="prt_results_my_pet.m"><style type="text/css">
+      --><title>prt_results_my_pet</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-06"><meta name="DC.source" content="prt_results_my_pet.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,11 +55,11 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>prt_results_my_pet</h1><!--introduction--><p>read and write results_my_pet.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_results_my_pet.m"><b>prt_results_my_pet</b></a> (data, prdData, auxData, metaData, txtData, metaPar)</p><h2>Description<a name="4"></a></h2><p>Prints an html file which compares metapar.model predictions with data</p><p>Input:</p><div><ul><li>data: structure</li><li>prdData: structure</li><li>auxData: structure</li><li>metaData: structure</li><li>txtData:  structure</li><li>metaPar: structure</li></ul></div><h2>Example of use<a name="5"></a></h2><p>[data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]);</p><p>prdData = feval(['predict_',metaData.species], par, data, auxData);</p><p>prdData = predict_pseudodata(par, data, prdData);</p><p>load(['results_',entries{i},'.mat']) % load results_my_pet.mat</p><p>prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar)</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>prt_results_my_pet</h1><!--introduction--><p>read and write ../../entries_web/results_my_pet.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_results_my_pet.m"><b>prt_results_my_pet</b></a> (data, prdData, auxData, metaData, txtData, metaPar)</p><h2>Description<a name="4"></a></h2><p>Prints an ../../entries_web/results_my_pet.html file which compares metapar.model predictions with data</p><p>Input:</p><div><ul><li>data: structure</li><li>prdData: structure</li><li>auxData: structure</li><li>metaData: structure</li><li>txtData:  structure</li><li>metaPar: structure</li></ul></div><h2>Example of use<a name="5"></a></h2><p>[data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]);</p><p>prdData = feval(['predict_',metaData.species], par, data, auxData);</p><p>prdData = predict_pseudodata(par, data, prdData);</p><p>load(['results_',entries{i},'.mat']) % load results_my_pet.mat</p><p>prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar)</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_results_my_pet
-% read and write results_my_pet.html
+% read and write ../../entries_web/results_my_pet.html
 
 %%
 function prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar)
@@ -70,7 +70,7 @@ function prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar)
 % <../prt_results_my_pet.m *prt_results_my_pet*> (data, prdData, auxData, metaData, txtData, metaPar)
 
 %% Description
-% Prints an html file which compares metapar.model predictions with data
+% Prints an ../../entries_web/results_my_pet.html file which compares metapar.model predictions with data
 %
 % Input:
 %
@@ -146,7 +146,7 @@ else
 end  
 
 % remove the underscore in the species name
-fileName = ['results_', metaData.species, '.html'];
+fileName = ['../../entries_web/results_', metaData.species, '.html'];
 oid = fopen(fileName, 'w+'); % open file for reading and writing, delete existing content
 
 fprintf(oid, '<!DOCTYPE html>\n');
@@ -471,18 +471,16 @@ end
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
 
 fprintf(oid, '    </div> <!REPLACE_WITH_DASH_DASH end of content REPLACE_WITH_DASH_DASH>\n\n');
-fprintf(oid, '    <div id="footer">\n');
-fprintf(oid, '      <div class="aligncenter" style="padding:20px">\n');
-fprintf(oid, '        &#169; 2016 Add-my-pet\n');
-fprintf(oid, '      </div>\n');
-fprintf(oid, '    </div>\n');
+
+fprintf(oid, '    <div w3-include-html="../sys/footer_amp.html"></div>\n');
+fprintf(oid, '    <script>w3IncludeHTML();</script>\n\n');
+
 fprintf(oid, '  </div> <!REPLACE_WITH_DASH_DASH main wrapper REPLACE_WITH_DASH_DASH>\n');
 fprintf(oid, '</div> <!REPLACE_WITH_DASH_DASH main REPLACE_WITH_DASH_DASH>\n');
 fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
-% close results_my_pet.html  
 fclose(oid);
-% REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
+
 
 ##### SOURCE END #####
 --></body></html>

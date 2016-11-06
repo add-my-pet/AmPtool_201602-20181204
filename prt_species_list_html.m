@@ -14,33 +14,26 @@ function prt_species_list_html
 
 %% Remarks
 % uses subfunctions open_species_list_html, prt_species_row and close_species_list_html
-% expects to find /entries with all entries given by DEBtool_M/taxa/select
+% expects to find ../entries/ with all entries given by DEBtool_M/taxa/select
 % each row in the table has a name
-% first writes species_list.html in entries_admin, then moves it to ../entries_admin
-
-WD = pwd; % store current path
 
 entries = select('Animalia');
-
-cd('../.') % goto entries
-allFiles = dir('entries');
-allNames = {allFiles.name};
-
-cd(WD) % return to current path
 n = length(entries);
 
 fid_Spec = open_species_list_html; % open up species_list.html for writing and delete the old file
+
+WD = pwd; % store current path
+cd('../entries/Homo_sapiens') % goto random entry to prepare for hopping
+
 for i = 1:n
   %fprintf('%g/ %g : %s \n',i,n, entries{i}) 
-  cd(['../entries/',entries{i}]) % goto entries 
+  cd(['../',entries{i}]) % goto entries 
   load(['results_',entries{i},'.mat']) % load results_my_pet.mat 
-  cd(WD)
   prt_species_row(metaData, metaPar, fid_Spec)
 end
-close_species_list_html(fid_Spec); % close species_list.html
 
-copyfile('species_list.html','../.')
-delete('species_list.html') % delete the file that is in entries_admin
+close_species_list_html(fid_Spec); % close species_list.html
+cd(WD) % return to current dir
 
 end
 
@@ -68,7 +61,7 @@ function fid_Spec = open_species_list_html
 % if exist('n_spec','var')==0
 %   n_spec = 1;  % initiate species numbers
 
-fid_Spec = fopen('species_list.html', 'w+'); % open file for writing, delete existing content
+fid_Spec = fopen('../species_list.html', 'w+'); % open file for writing, delete existing content
   
 % make the header for species_list.html :
 fprintf(fid_Spec, '<!DOCTYPE html>\n');

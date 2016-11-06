@@ -22,32 +22,29 @@ n = length(entries);
 % end
 
 WD = pwd; % store current path
-%
+cd ('../entries/Homo_sapiens'); % go to random entry to prepare for hopping
 
 for i = 1:n     
-  fprintf('%g/ %g : %s \n',i,n, entries{i} ) 
-  copyfile('index.cache',['../entries/',entries{i}])
-  copyfile('index.wn',['../entries/',entries{i}])
+  fprintf('%g/ %g : %s \n',i,n, entries{i}) % report progress to screen 
+  %copyfile('../../index.cache',['../entries/',entries{i}])
+  %copyfile('../../index.wn',['../entries/',entries{i}])
   
-  cd(['../entries/',entries{i}]) % goto entries 
-  delete('*.html', '*bib') % delete html and bib files  
+  cd(['../',entries{i}]) % goto entry i 
+  %delete('*.html', '*bib') % delete html and bib files  
   load(['results_',entries{i},'.mat']) % load results_my_pet.mat
   [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); 
   prdData = feval(['predict_',metaData.species], par, data, auxData);
   prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:
-  cd(WD)  % goto original path 
   
   prt_bib_my_pet(metaData.species,metaData.biblist) % print bib file
   prt_my_pet(metaData, metaPar, par, txtPar) % make html with parameters
   prt_stat_my_pet(metaData, metaPar, par) % make html with implied properties
   prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar) % make html with results
-  pathnm = '../entries_web' ; % path to directory with all of the generated html files
-  copyfile('*.html',pathnm) % copy all of the .html files from entries to entries_web
-  copyfile('*.bib',pathnm) % copy the bib file to entries_web
-  delete('*.html', '*bib') % delete html and bib files 
   
-  cd('../entries_zip' ); % goto directory with all of the zipped entries
+  WD_loc = pwd;
+  cd('../../entries_zip' ); % goto directory with all of the zipped entries
   zip_my_pet(entries{i}, '../entries'); % zip the entry
-  cd(WD)  % goto original path    
+  cd(WD_loc)  % goto original path    
 end
     
+cd(WD)

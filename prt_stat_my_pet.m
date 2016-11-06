@@ -1,5 +1,5 @@
 %% prt_stat_my_pet
-% Creates my_pet_stat.html 
+% Creates ../../entries_web/my_pet_stat.html 
 
 %%
 function prt_stat_my_pet(metaData, metaPar, par)
@@ -9,7 +9,7 @@ function prt_stat_my_pet(metaData, metaPar, par)
 % <../prt_stat_my_pet.m *prt_stat_my_pet*> (metaData, metaPar, par) 
 
 %% Description
-% Read and writes my_pet_stat.html. This pages contains a list of implied model
+% Read and writes ../../entries_web/my_pet_stat.html. This pages contains a list of implied model
 % properties of my_pet. It calls admin_pets/get_statfields to see what statistics are
 % printed in which order on the web.
 %
@@ -36,9 +36,8 @@ f = 1; % ad libitum feeding
 flds = fieldnmnst_st(stat); % fieldnames of all statistics
 [webStatFields, webColStat] = get_statfields(metaPar.model); % which statistics in what order should be printed in the table
 
-fileName = [metaData.species,'_stat', '.html'];
+fileName = ['../../entries_web/', metaData.species,'_stat', '.html'];
 oid = fopen(fileName, 'w+'); % % open file for writing, delete existing content
-
 
 fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');
