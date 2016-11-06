@@ -26,8 +26,7 @@ function prt_my_pet(metaData, metaPar, par, txtPar)
 
 vars_pull(metaData); 
 
-% Removes underscores and makes first letter of english name be
-% in capital:
+% Removes underscores and makes first letter of english name be in capital:
 speciesprintnm = strrep(metaData.species, '_', ' ');
 speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
 if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
@@ -163,6 +162,7 @@ fprintf(oid, '      </TABLE>\n\n');
 % please keep in mind that these are only T_A and T_ref, other parameters
 % related to temperature correction will appear in the 'other parameters'
 % table unless code further up is changed.
+
 fprintf(oid, '      <TABLE id = "t01">\n');
 fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="4">Temperature parameters</TH></TR>\n');
 fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH>symbol</TH><TH> value</TH><TH> units</TH><TH> description</TH></TR>\n');
@@ -212,12 +212,10 @@ fprintf(oid, '      </TABLE>\n\n');
 % ----------------------------------------
 
 fprintf(oid, '    </div> <!-- end of content -->\n\n');
-	
-fprintf(oid, '    <div id="footer">\n');
-fprintf(oid, '      <div class="aligncenter" style="padding:20px">\n');
-fprintf(oid, '        &#169; 2016 Add-my-pet\n');
-fprintf(oid, '      </div>\n');
-fprintf(oid, '    </div>\n\n');
+
+fprintf(oid, '    <div w3-include-html="../sys/footer_amp.html"></div>\n');
+fprintf(oid, '    <script>w3IncludeHTML();</script>\n\n');
+
 fprintf(oid, '  </div> <!-- end of main wrapper -->\n');
 fprintf(oid, '</div> <!-- end of main -->\n');
 
@@ -225,5 +223,5 @@ fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 fclose(oid);
 
-% options.showCode = false; publish('print_my_pet', options);
+% options.showCode = false; publish('prt_my_pet', options);
 

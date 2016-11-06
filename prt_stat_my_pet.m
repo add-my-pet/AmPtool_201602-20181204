@@ -117,23 +117,15 @@ end
 fprintf(oid, '      </TABLE>\n\n');
 
 fprintf(oid, '    </div> <!-- end of content -->\n\n');
-	
-fprintf(oid, '    <div id="footer">\n');
-fprintf(oid, '      <div class="aligncenter" style="padding:20px">\n');
-fprintf(oid, '        &#169; 2016 Add-my-pet\n');
-fprintf(oid, '      </div>\n');
-fprintf(oid, '    </div>\n');
+
+fprintf(oid, '    <div w3-include-html="../sys/footer_amp.html"></div>\n');
+fprintf(oid, '    <script>w3IncludeHTML();</script>\n\n');
+
 fprintf(oid, '  </div> <!-- main wrapper -->\n');
 fprintf(oid, '</div> <!-- main -->\n');
-
 
 fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 
-
 fclose(oid);
-
-
-
-
 

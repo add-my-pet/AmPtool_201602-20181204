@@ -257,15 +257,10 @@ fprintf(fid_about, '      <a href="http://www.debtheory.org/wiki/index.php?title
 fprintf(fid_about, '      <p>\n');   
 fprintf(fid_about, '      <a href="http://www.bio.vu.nl/thb/deb/DEB_papers.pdf" TARGET="_blank">Many papers have been written on specific entries</a>, which have been cited at entry-pages. \n');
 fprintf(fid_about, '    </div> <!-- end of sidebar -->\n\n');
-   
-fprintf(fid_about, '    <!--------------------------------------------------------------->\n');
-fprintf(fid_about, '    <!--   FOOTER                                                  -->\n');
-fprintf(fid_about, '    <!---------------------------------------------------------------> \n');  
-fprintf(fid_about, '    <div id="footer">\n');
-fprintf(fid_about, '      <div class="aligncenter" style="padding:20px">\n');
-fprintf(fid_about, '        &#169; 2016 Add-my-pet\n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n');
+
+fprintf(fid_about, '    <div w3-include-html="sys/footer_amp.html"></div>\n');
+fprintf(fid_about, '    <script>w3IncludeHTML();</script>\n\n');
+
 fprintf(fid_about, '  </div> <!-- main wrapper -->\n');
 fprintf(fid_about, '</div> <!-- main -->\n');
 % ----------------------------------------------------------

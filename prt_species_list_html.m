@@ -105,7 +105,7 @@ end
 %% subfunction prt_species_row
 % places a line in species_list.html which has previously been opened for reading and writing
 
-function prt_species_row(metaData, metaPar, fidSpec)
+function prt_species_row(metaData, metaPar, fid_Spec)
 % created by Bas Kooijman; modified 2015/04/14 Starrlight Augustine & Goncalo Marques; 
 %   modified 2015/07/21 Starrlight Augustine; 2015/08/28 Starrlight Augustine; 2016/11/05 Bas Kooijman
 
@@ -134,26 +134,26 @@ end
 n_data_0 = length(data_0); n_data_1 = length(data_1); 
   
 
-  fprintf(fidSpec,['        <TR name = "', species, '">\n']);
-  fprintf(fidSpec,['          <TD>', phylum, '</TD>  <TD>', metaData.class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD>\n']);
-  fprintf(fidSpec,['          <TD><A TARGET="_top" HREF="entries_web/results_', species, '.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD>\n']);
-  fprintf(fidSpec, '          <TD style="text-align:center"  BGCOLOR = "#FFC6A5">%s</TD>\n', model);
-  fprintf(fidSpec, '          <TD style="text-align:center"  BGCOLOR = "#FFE7C6">%8.3f</TD>\n', MRE);
-  fprintf(fidSpec, '          <TD style="text-align:center"  BGCOLOR = "#FFCE9C">%g</TD>\n', COMPLETE);
+  fprintf(fid_Spec,['        <TR name = "', species, '">\n']);
+  fprintf(fid_Spec,['          <TD>', phylum, '</TD>  <TD>', metaData.class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD>\n']);
+  fprintf(fid_Spec,['          <TD><A TARGET="_top" HREF="entries_web/results_', species, '.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD>\n']);
+  fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFC6A5">%s</TD>\n', model);
+  fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFE7C6">%8.3f</TD>\n', MRE);
+  fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFCE9C">%g</TD>\n', COMPLETE);
   for i = 1:n_data_0
-    fprintf(fidSpec, '          <TD BGCOLOR = "#FFFFC6">%s</TD>\n', data_0{i});      
+    fprintf(fid_Spec, '          <TD BGCOLOR = "#FFFFC6">%s</TD>\n', data_0{i});      
   end
   for i = 1:n_data_1
-    fprintf(fidSpec, '          <TD BGCOLOR = "#FFFF9C">%s</TD>\n', data_1{i});  
+    fprintf(fid_Spec, '          <TD BGCOLOR = "#FFFF9C">%s</TD>\n', data_1{i});  
   end
-  fprintf(fidSpec, '        </TR>\n\n');
+  fprintf(fid_Spec, '        </TR>\n\n');
   
 end
 
 %% subfunction close_species_html(fid_Spec)
 % closes species_list.html
 
-function close_species_list_html(fidSpec)
+function close_species_list_html(fid_Spec)
 % created by Bas Kooijman; modified 2015/08/28 Starrlight Augustine, 2016/11/03 Bas Kooijman
 
 % Syntax
@@ -166,19 +166,17 @@ function close_species_list_html(fidSpec)
 %
 % * fidSpec : scalar
 
-fprintf(fidSpec, '      </table>\n\n');
-fprintf(fidSpec, '    </div> <!-- end of content -->\n\n');
-		
-fprintf(fidSpec, '    <div id="footer">\n');
-fprintf(fidSpec, '      <div class="aligncenter" style="padding:20px">\n');
-fprintf(fidSpec, '        &#169; 2016 Add-my-pet\n');
-fprintf(fidSpec, '      </div>\n');
-fprintf(fidSpec, '    </div>\n\n');
-fprintf(fidSpec, '  </div> <!-- main wrapper -->\n');
-fprintf(fidSpec, '</div> <!-- main -->\n');
+fprintf(fid_Spec, '      </table>\n\n');
+fprintf(fid_Spec, '    </div> <!-- end of content -->\n\n');
 
-fprintf(fidSpec, '</BODY>\n');
-fprintf(fidSpec, '</HTML>\n');
-fclose(fidSpec);
+fprintf(fid_Spec, '    <div w3-include-html="sys/footer_amp.html"></div>\n');
+fprintf(fid_Spec, '    <script>w3IncludeHTML();</script>\n\n');
+
+fprintf(fid_Spec, '  </div> <!-- main wrapper -->\n');
+fprintf(fid_Spec, '</div> <!-- main -->\n');
+
+fprintf(fid_Spec, '</BODY>\n');
+fprintf(fid_Spec, '</HTML>\n');
+fclose(fid_Spec);
 
 end
