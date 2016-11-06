@@ -93,10 +93,10 @@ elseif isfield(metaData.biblist,'wiki') %|| isfield(metaData.biblist,'wiki')
   url = eval(['metaData.biblist.', 'wiki']);
   url(1: strfind(url, 'http') - 1) = [];
   url = url(1: strfind(url, '}') - 1);
-  fprintf(oid, ['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A>(',speciesprintnm_en,'): &nbsp;\n']);
+  fprintf(oid,['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A>(',speciesprintnm_en,'): &nbsp;\n']);
 end
 if isfield(metaData.biblist,'Wiki') ==0
-  fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
+  fprintf(oid,[speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
 end
 % ----------------------------------------------------------------------
 fprintf(oid, '  </h1>\n');
