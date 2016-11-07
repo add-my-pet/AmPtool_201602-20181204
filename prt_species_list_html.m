@@ -82,7 +82,8 @@ fprintf(fid_Spec, '<script>w3IncludeHTML();</script>\n\n');
 	
 fprintf(fid_Spec, '<div id = "main">\n');
 fprintf(fid_Spec, '  <div id = "main-wrapper-species">    \n');
-fprintf(fid_Spec, '    <div id="contentFull">\n');
+fprintf(fid_Spec, '    <div id="contentFull">\n\n');
+fprintf(fid_Spec, '      <H2>Species list: taxonomic view</H2>\n\n');
 fprintf(fid_Spec, '      <TABLE>\n');
 fprintf(fid_Spec, '        <TR HEIGHT=60 BGCOLOR = "#FFE7C6">\n');
 fprintf(fid_Spec, '          <TH><a class="link" href="#" onclick="BoxArt_phylum();">phylum</a></TH>\n');
