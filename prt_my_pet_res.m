@@ -111,7 +111,7 @@ fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->
 fprintf(oid, '<!--------------------------------------------------------------->\n\n');
 
 fprintf(oid, '<div id="top2">\n');
-fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
+fprintf(oid, '  <h2 class="alignleft2"> &nbsp; &nbsp;\n');
 % --------------------------------------------------------------------
 % ---------- makes links to the wikipedia page if it exists
 if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
@@ -129,10 +129,10 @@ if isfield(metaData.biblist,'Wiki') ==0
   fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
 end
 % ----------------------------------------------------------------------
-fprintf(oid, '  </h1>\n\n');
+fprintf(oid, '  </h2>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
-prt_menuBar_species(oid, metaData.species, fileName)
+prt_toolbar_species(oid, metaData.species)
 fprintf(oid, '  </div> <!-- end of navwrapper -->\n');
 fprintf(oid, '</div> <!-- end of top2 -->\n\n');
 
@@ -392,7 +392,7 @@ for i = 1:nst
 end
 fprintf(oid, '      </ul>\n\n');     % close unordered list   
 fprintf(oid, '      <p>\n');
-fprintf(oid,['        <A class="link" href = "bib_',metaData.species,'.bib" target = "_blank">Bibtex files with references for this entry </A> <BR>\n']);
+fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex files with references for this entry </A> <BR>\n']);
 fprintf(oid, '      </p>\n\n' );
   
 % ----------------------------------------------------------

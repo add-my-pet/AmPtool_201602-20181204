@@ -24,7 +24,7 @@ n = length(entries);
 WD = pwd; % store current path
 cd ('../entries/Homo_sapiens'); % go to random entry to prepare for hopping
 
-for i = 1:n     
+for i = 1 %:n     
   fprintf('%g/ %g : %s \n',i,n, entries{i}) % report progress to screen 
   %copyfile('../../index.cache',['../entries/',entries{i}])
   %copyfile('../../index.wn',['../entries/',entries{i}])
@@ -36,10 +36,10 @@ for i = 1:n
   prdData = feval(['predict_',metaData.species], par, data, auxData);
   prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:
   
-  prt_bib_my_pet(metaData.species,metaData.biblist) % print bib file
-  prt_my_pet(metaData, metaPar, par, txtPar) % make html with parameters
-  prt_stat_my_pet(metaData, metaPar, par) % make html with implied properties
-  prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar) % make html with results
+  prt_my_pet_bib(metaData.species,metaData.biblist) % print bib file
+  prt_my_pet_par(metaData, metaPar, par, txtPar) % make html with parameters
+  prt_my_pet_stat(metaData, metaPar, par) % make html with implied properties
+  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar) % make html with results
   
   WD_loc = pwd;
   cd('../../entries_zip' ); % goto directory with all of the zipped entries
