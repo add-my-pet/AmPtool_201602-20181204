@@ -77,7 +77,7 @@ fprintf(fid_Spec, '<BODY>\n\n');
 fprintf(fid_Spec, '<div w3-include-html="sys/wallpaper_amp.html"></div>\n');
 fprintf(fid_Spec, '<script>w3IncludeHTML();</script>\n\n');
 
-fprintf(fid_Spec, '<div w3-include-html="sys/toolbar_list.html"></div>\n');
+fprintf(fid_Spec, '<div w3-include-html="sys/toolbar_amp.html"></div>\n');
 fprintf(fid_Spec, '<script>w3IncludeHTML();</script>\n\n');
 	
 fprintf(fid_Spec, '<div id = "main">\n');
