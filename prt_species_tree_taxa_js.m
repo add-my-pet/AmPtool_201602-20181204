@@ -78,7 +78,7 @@ function prt_species_tree_taxa_js(taxa)
         fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "species_tree_',taxa{i},'.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
         %fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", ""))\n']);
       else
-        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '.html"))\n']); 
+        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '_res.html"))\n']); 
       end
     end
     
