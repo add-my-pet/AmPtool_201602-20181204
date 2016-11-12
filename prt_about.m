@@ -126,7 +126,7 @@ fprintf(fid_about, '</HEAD>\n\n');
 fprintf(fid_about, '<BODY>\n\n');
 
 fprintf(fid_about, '<div w3-include-html="sys/wallpaper_amp.html"></div>\n');
-fprintf(fid_about, '<div w3-include-html="sys/toolbar_list.html"></div>\n');
+fprintf(fid_about, '<div w3-include-html="sys/toolbar_amp.html"></div>\n');
 fprintf(fid_about, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(fid_about, '<!--------------------------------------------------------------->\n');

@@ -24,7 +24,7 @@ n = length(entries);
 WD = pwd; % store current path
 cd ('../entries/Homo_sapiens'); % go to random entry to prepare for hopping
 
-for i = 1 %:n     
+for i = 1:n     
   fprintf('%g/ %g : %s \n',i,n, entries{i}) % report progress to screen 
   %copyfile('../../index.cache',['../entries/',entries{i}])
   %copyfile('../../index.wn',['../entries/',entries{i}])
