@@ -111,3 +111,9 @@ shstat_options('x_transform', 'none');
 Hfig = shstat({'s_G'}, [], [], 12);
 set(gca, 'FontSize', 15, 'Box', 'on')
 saveas(gca, '../img/pars/sG.png')
+
+figure(13) % T_A, Arrhenius temperature
+shstat_options('x_transform', 'log10');
+Hfig = shstat({'T_A'}, [], [], 13);
+set(gca, 'FontSize', 15, 'Box', 'on')
+saveas(gca, '../img/pars/TA.png')
