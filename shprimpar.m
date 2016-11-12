@@ -13,9 +13,9 @@ function shprimpar
 %
 % Output: 
 %
-% * 12 png-files written in ../img: 
+% * 13 png-files written in ../img: 
 %
-%    - Fm.png kapX.png pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png, EHb.png, EHp.png, ha.png, sG.png
+%    - Fm.png kapX.png pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png, EHb.png, EHp.png, ha.png, sG.png, TA.png
 
 %% Remarks
 % For presentation on the web, copy png files to 
