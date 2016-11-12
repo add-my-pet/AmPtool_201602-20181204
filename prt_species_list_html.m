@@ -75,8 +75,6 @@ fprintf(fid_Spec, '</HEAD>\n\n');
 fprintf(fid_Spec, '<BODY>\n\n');
 
 fprintf(fid_Spec, '<div w3-include-html="sys/wallpaper_amp.html"></div>\n');
-fprintf(fid_Spec, '<script>w3IncludeHTML();</script>\n\n');
-
 fprintf(fid_Spec, '<div w3-include-html="sys/toolbar_amp.html"></div>\n');
 fprintf(fid_Spec, '<script>w3IncludeHTML();</script>\n\n');
 	
@@ -130,7 +128,7 @@ n_data_0 = length(data_0); n_data_1 = length(data_1);
 
   fprintf(fid_Spec,['        <TR id = "', species, '">\n']);
   fprintf(fid_Spec,['          <TD>', phylum, '</TD>  <TD>', metaData.class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD>\n']);
-  fprintf(fid_Spec,['          <TD><A TARGET="_top" HREF="entries_web/results_', species, '.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD>\n']);
+  fprintf(fid_Spec,['          <TD><A TARGET="_top" HREF="entries_web/', species, '_res.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD>\n']);
   fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFC6A5">%s</TD>\n', model);
   fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFE7C6">%8.3f</TD>\n', MRE);
   fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFCE9C">%g</TD>\n', COMPLETE);
