@@ -1,17 +1,17 @@
-%% prt_my_pet
-% Creates ../../entries_web/my_pet.html 
+%% prt_my_pet_par
+% Creates ../../entries_web/my_pet_par.html 
 
 %%
-function prt_my_pet(metaData, metaPar, par, txtPar)
+function prt_my_pet_par(metaData, metaPar, par, txtPar)
 % created 2015/04/11 by Starrlight Augustine
 % modified 2015/07/27 Starrlight; 2015/08/06 Dina; 2016/03/30 Starrlight; 2016/11/05 Bas
 
 
 %% Syntax
-% <../prt_my_pet.m *prt_my_pet*> (metaData, metaPar, par, txtPar) 
+% <../prt_my_pet_par.m *prt_my_pet_par*> (metaData, metaPar, par, txtPar) 
 
 %% Description
-% Read and writes ../../entries_web/my_pet.html. This pages contains a list of all of the parameter values of my_pet.
+% Read and writes ../../entries_web/my_pet_par.html. This pages contains a list of all of the parameter values of my_pet.
 %
 % Input:
 %
@@ -22,7 +22,7 @@ function prt_my_pet(metaData, metaPar, par, txtPar)
 
 %% Example of use
 % load('results_my_pet.mat');
-% print_my_pet(metaData, metaPar, par, txtPar)
+% print_my_pet_par(metaData, metaPar, par, txtPar)
 
 vars_pull(metaData); 
 
@@ -54,7 +54,7 @@ otherParFields = setdiff(parFields, chemParFields);
 otherParFields = setdiff(otherParFields, tempParFields);
 
 % start printing the html file
-fileName = ['../../entries_web/species', '.html'];
+fileName = ['../../entries_web/', metaData.species, '_par.html'];
 oid = fopen(fileName, 'w+'); % % open file for writing, delete existing content
 fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');
@@ -67,8 +67,6 @@ fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
 fprintf(oid, '<div w3-include-html="../sys/wallpaper_entry.html"></div>\n');
-fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
-
 fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
@@ -133,7 +131,7 @@ for i = 1:length(coreParFields)
   if strcmp(coreParFields{i},'z')
     fprintf(oid, '        <TR BGCOLOR = "%s"> <TD>%s</TD> <TD>%g</TD> <TD>%s</TD><TD>%s</TD></TR>\n',...
       '#FFFFFF', 'p_Am', par.z * par.p_M/ par.kap, ...
-      'J/d.cm^2', 'max surface-area specific assim. rate');
+      'J/d.cm^2', '{p_Am}, spec assimilation flux');
   else
     fprintf(oid, '        <TR BGCOLOR = "%s"> <TD>%s</TD> <TD>%g</TD> <TD>%s</TD><TD>%s</TD></TR>\n',...
       '#FFFFFF', coreParFields{i}, par.(coreParFields{i}), ...
@@ -223,5 +221,5 @@ fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 fclose(oid);
 
-% options.showCode = false; publish('prt_my_pet', options);
+% options.showCode = false; publish('prt_my_pet_par', options);
 

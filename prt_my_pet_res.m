@@ -1,16 +1,16 @@
-%% prt_results_my_pet
-% read and write ../../entries_web/results_my_pet.html
+%% prt_my_pet_res
+% read and write ../../entries_web/my_pet_res.html
 
 %%
-function prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar)
+function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine; 2016/11/05 Bas Kooijman
 
 %% Syntax
-% <../prt_results_my_pet.m *prt_results_my_pet*> (data, prdData, auxData, metaData, txtData, metaPar)
+% <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar)
 
 %% Description
-% Prints an ../../entries_web/results_my_pet.html file which compares metapar.model predictions with data
+% Prints an ../../entries_web/my_pet_res.html file which compares metapar.model predictions with data
 %
 % Input:
 %
@@ -31,10 +31,9 @@ function prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar)
 %
 % load(['results_',entries{i},'.mat']) % load results_my_pet.mat
 %
-% prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar)
+% prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar)
 
-% Removes underscores and makes first letter of english name be
-% in capital:
+% Remove underscore and capitalize first letter of english :
 speciesprintnm = strrep(metaData.species, '_', ' ');
 speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
 if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
@@ -86,7 +85,7 @@ else
 end  
 
 % remove the underscore in the species name
-fileName = ['../../entries_web/results_', metaData.species, '.html'];
+fileName = ['../../entries_web/', metaData.species, '_res.html'];
 oid = fopen(fileName, 'w+'); % open file for reading and writing, delete existing content
 
 fprintf(oid, '<!DOCTYPE html>\n');
@@ -100,8 +99,6 @@ fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
 fprintf(oid, '<div w3-include-html="../sys/wallpaper_entry.html"></div>\n');
-fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
-
 fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
@@ -421,3 +418,4 @@ fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 fclose(oid);
 
+% options.showCode = false; publish('prt_my_pet_res', options);
