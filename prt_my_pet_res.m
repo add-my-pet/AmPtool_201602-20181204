@@ -1,25 +1,27 @@
 %% prt_my_pet_res
-% read and write ../../entries_web/my_pet_res.html
+% read and write my_pet_res.html
 
 %%
-function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar)
+function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine; 2016/11/05 Bas Kooijman
 
 %% Syntax
-% <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar)
+% <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 
 %% Description
-% Prints an ../../entries_web/my_pet_res.html file which compares metapar.model predictions with data
+% Prints my_pet_res.html file which compares metapar.model predictions with data
 %
 % Input:
 %
-% * data: structure
-% * prdData: structure
-% * auxData: structure
-% * metaData: structure
-% * txtData:  structure
-% * metaPar: structure
+% * data: structure (output of <http://www.debtheory.org/wiki/index.php?title=Mydata_file *mydata_my_pet_par*> file)
+% * prdData: structure (output of <http://www.debtheory.org/wiki/index.php?title=Predict_file *predict_my_pet_par*> file)
+% * auxData: structure  (output of <http://www.debtheory.org/wiki/index.php?title=Mydata_file *mydata_my_pet_par*> file)
+% * metaData: structure (output of <http://www.debtheory.org/wiki/index.php?title=Mydata_file *mydata_my_pet_par*> file)
+% * txtData:  structure (output of <http://www.debtheory.org/wiki/index.php?title=Mydata_file *mydata_my_pet_par*> file)
+% * metaPar: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
+% * destinationFolder : optional string with destination folder the files
+% are printed to (default: current folder)
 
 
 %% Example of use
@@ -31,7 +33,7 @@ function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar)
 %
 % load(['results_',entries{i},'.mat']) % load results_my_pet.mat
 %
-% prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar)
+% prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 
 % Remove underscore and capitalize first letter of english :
 speciesprintnm = strrep(metaData.species, '_', ' ');
@@ -85,7 +87,11 @@ else
 end  
 
 % remove the underscore in the species name
-fileName = ['../../entries_web/', metaData.species, '_res.html'];
+if exist('destinationFolder','var')
+fileName = [destinationFolder, metaData.species, '_res.html'];
+else
+fileName = [metaData.species, '_res.html'];    
+end
 oid = fopen(fileName, 'w+'); % open file for reading and writing, delete existing content
 
 fprintf(oid, '<!DOCTYPE html>\n');

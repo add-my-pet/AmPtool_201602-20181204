@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_my_pet_par</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-12"><meta name="DC.source" content="prt_my_pet_par.m"><style type="text/css">
+      --><title>prt_my_pet_par</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-13"><meta name="DC.source" content="prt_my_pet_par.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,33 +66,38 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>prt_my_pet_par</h1><!--introduction--><p>Creates ../../entries_web/my_pet_par.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_my_pet_par.m"><b>prt_my_pet_par</b></a> (metaData, metaPar, par, txtPar)</p><h2>Description<a name="4"></a></h2><p>Read and writes ../../entries_web/my_pet_par.html. This pages contains a list of all of the parameter values of my_pet.</p><p>Input:</p><div><ul><li>metaData: structure</li><li>metaPar: structure</li><li>par: structure</li><li>txtPar: structure</li></ul></div><h2>Example of use<a name="5"></a></h2><p>load('results_my_pet.mat'); print_my_pet_par(metaData, metaPar, par, txtPar)</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>prt_my_pet_par</h1><!--introduction--><p>Creates my_pet_par.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_my_pet_par.m"><b>prt_my_pet_par</b></a> (metaData, metaPar, par, txtPar, destinationFolder)</p><h2>Description<a name="4"></a></h2><p>Read and writes my_pet_par.html to current folder(default) or else to destinationFolder. This pages contains a list of all of the parameter values of my_pet.</p><p>Input:</p><div><ul><li>metaData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaPar: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>par: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>txtPar: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>destinationFolder : optional string with destination folder the files are printed to (default: current folder)</li></ul></div><h2>Example of use<a name="5"></a></h2><p>load('results_my_pet.mat'); prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder)</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_my_pet_par
-% Creates ../../entries_web/my_pet_par.html 
+% Creates my_pet_par.html 
 
 %%
-function prt_my_pet_par(metaData, metaPar, par, txtPar)
+function prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder)
 % created 2015/04/11 by Starrlight Augustine
 % modified 2015/07/27 Starrlight; 2015/08/06 Dina; 2016/03/30 Starrlight; 2016/11/05 Bas
 
 
 %% Syntax
-% <../prt_my_pet_par.m *prt_my_pet_par*> (metaData, metaPar, par, txtPar) 
+% <../prt_my_pet_par.m *prt_my_pet_par*> (metaData, metaPar, par, txtPar, destinationFolder) 
 
 %% Description
-% Read and writes ../../entries_web/my_pet_par.html. This pages contains a list of all of the parameter values of my_pet.
+% Read and writes my_pet_par.html to current folder(default) or else to
+% destinationFolder. This pages contains a list of all of the parameter
+% values of my_pet.
 %
 % Input:
 %
-% * metaData: structure
-% * metaPar: structure
-% * par: structure
-% * txtPar: structure
+% * metaData: structure (output of <http://www.debtheory.org/wiki/index.php?title=Mydata_file *mydata_my_pet_par*> file)
+% * metaPar: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
+% * par: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
+% * txtPar: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
+% * destinationFolder : optional string with destination folder the files
+% are printed to (default: current folder)
+
 
 %% Example of use
 % load('results_my_pet.mat');
-% print_my_pet_par(metaData, metaPar, par, txtPar)
+% prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder)
 
 vars_pull(metaData); 
 
@@ -124,7 +129,12 @@ otherParFields = setdiff(parFields, chemParFields);
 otherParFields = setdiff(otherParFields, tempParFields);
 
 % start printing the html file
-fileName = ['../../entries_web/', metaData.species, '_par.html'];
+
+if exist('destinationFolder','var')
+fileName = [destinationFolder, metaData.species, '_par.html'];
+else
+fileName = [metaData.species, '_par.html'];    
+end
 oid = fopen(fileName, 'w+'); % % open file for writing, delete existing content
 fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');
@@ -149,7 +159,7 @@ fprintf(oid, '<!REPLACE_WITH_DASH_DASH  Please put in bold and in fancy the righ
 fprintf(oid, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n\n');
 
 fprintf(oid, '<div id="top2">\n');
-fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
+fprintf(oid, '  <h2 class="alignleft2"> &nbsp; &nbsp;\n');
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH makes links to the wikipedia page if it exists
 if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
@@ -167,10 +177,10 @@ if isfield(metaData.biblist,'Wiki') ==0
   fprintf(oid,[speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
 end
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
-fprintf(oid, '  </h1>\n');
+fprintf(oid, '  </h2>\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
-prt_menuBar_species(oid, metaData.species, fileName)
+prt_toolbar_species(oid, metaData.species)
 fprintf(oid, '  </div><!REPLACE_WITH_DASH_DASH end navwrapper REPLACE_WITH_DASH_DASH>\n');
 fprintf(oid, '</div><!REPLACE_WITH_DASH_DASH end top2 REPLACE_WITH_DASH_DASH>\n\n');
 

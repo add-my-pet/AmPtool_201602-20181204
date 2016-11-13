@@ -1,28 +1,33 @@
 %% prt_my_pet_par
-% Creates ../../entries_web/my_pet_par.html 
+% Creates my_pet_par.html 
 
 %%
-function prt_my_pet_par(metaData, metaPar, par, txtPar)
+function prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder)
 % created 2015/04/11 by Starrlight Augustine
 % modified 2015/07/27 Starrlight; 2015/08/06 Dina; 2016/03/30 Starrlight; 2016/11/05 Bas
 
 
 %% Syntax
-% <../prt_my_pet_par.m *prt_my_pet_par*> (metaData, metaPar, par, txtPar) 
+% <../prt_my_pet_par.m *prt_my_pet_par*> (metaData, metaPar, par, txtPar, destinationFolder) 
 
 %% Description
-% Read and writes ../../entries_web/my_pet_par.html. This pages contains a list of all of the parameter values of my_pet.
+% Read and writes my_pet_par.html to current folder(default) or else to
+% destinationFolder. This pages contains a list of all of the parameter
+% values of my_pet.
 %
 % Input:
 %
-% * metaData: structure
-% * metaPar: structure
-% * par: structure
-% * txtPar: structure
+% * metaData: structure (output of <http://www.debtheory.org/wiki/index.php?title=Mydata_file *mydata_my_pet_par*> file)
+% * metaPar: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
+% * par: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
+% * txtPar: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
+% * destinationFolder : optional string with destination folder the files
+% are printed to (default: current folder)
+
 
 %% Example of use
 % load('results_my_pet.mat');
-% print_my_pet_par(metaData, metaPar, par, txtPar)
+% prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder)
 
 vars_pull(metaData); 
 
@@ -54,7 +59,12 @@ otherParFields = setdiff(parFields, chemParFields);
 otherParFields = setdiff(otherParFields, tempParFields);
 
 % start printing the html file
-fileName = ['../../entries_web/', metaData.species, '_par.html'];
+
+if exist('destinationFolder','var')
+fileName = [destinationFolder, metaData.species, '_par.html'];
+else
+fileName = [metaData.species, '_par.html'];    
+end
 oid = fopen(fileName, 'w+'); % % open file for writing, delete existing content
 fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');

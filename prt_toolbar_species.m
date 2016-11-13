@@ -19,6 +19,7 @@ function  prt_toolbar_species(oid, species)
 
 %% Remarks
 % Indent of 4 spaces used for printing to html page
+
 %% Example of use
 % prt_menuBar_species(oid, metaData.species)
 

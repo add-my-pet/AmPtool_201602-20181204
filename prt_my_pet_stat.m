@@ -1,27 +1,29 @@
 %% prt_my_pet_stat
-% Creates ../../entries_web/my_pet_stat.html 
+% Creates my_pet_stat.html 
 
 %%
-function prt_my_pet_stat(metaData, metaPar, par)
+function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
 % created 2016/03/30 Starrlight; modified 2016/09/23 Starrlight Augustine; 2016/11/05 Bas Kooijman
 
 %% Syntax
-% <../prt_my_pet_stat.m *prt_my_pet_stat*> (metaData, metaPar, par) 
+% <../prt_my_pet_stat.m *prt_my_pet_stat*> (metaData, metaPar, par, destinationFolder) 
 
 %% Description
-% Read and writes ../../entries_web/my_pet_stat.html. This pages contains a list of implied model
+% Read and writes my_pet_stat.html. This pages contains a list of implied model
 % properties of my_pet. It calls admin_pets/get_statfields to see what statistics are
 % printed in which order on the web.
 %
 % Input:
 %
-% * metaData: structure
-% * metaPar: structure
-% * par: structure
+% * metaData: structure (output of <http://www.debtheory.org/wiki/index.php?title=Mydata_file *mydata_my_pet_par*> file)
+% * metaPar: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
+% * par: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
+% * destinationFolder : optional string with destination folder the files
+% are printed to (default: current folder)
 
 %% Example of use
 % load('results_my_pet.mat');
-% prt_my_pet_stat(metaData, metaPar, par)
+% prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
 
 % Removes underscores and makes first letter of english name be
 % in capital:
@@ -36,7 +38,11 @@ f = 1; % ad libitum feeding
 flds = fieldnmnst_st(stat); % fieldnames of all statistics
 [webStatFields, webColStat] = get_statfields(metaPar.model); % which statistics in what order should be printed in the table
 
-fileName = ['../../entries_web/', metaData.species,'_stat', '.html'];
+if exist('destinationFolder','var')
+fileName = [destinationFolder, metaData.species, '_stat.html'];
+else
+fileName = [metaData.species, '_stat.html'];    
+end
 oid = fopen(fileName, 'w+'); % % open file for writing, delete existing content
 
 fprintf(oid, '<!DOCTYPE html>\n');

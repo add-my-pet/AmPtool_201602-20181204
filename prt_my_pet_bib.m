@@ -2,7 +2,7 @@
 % read and write ../../entries_web/my_pet_bib.bib
 
 %%
-function prt_my_pet_bib(species,biblist)
+function prt_my_pet_bib(species,biblist, destinationFolder)
 % created 2015/07/17 by Starrlight ; modified 2016/11/03
 
 %% Syntax
@@ -15,7 +15,10 @@ function prt_my_pet_bib(species,biblist)
 %
 % * species: string with latin name of species 
 % * biblist:  structure with each field containing a reference in bibtext format. The name of
-% the key corresponds to the bibtex key. 
+% the key corresponds to the bibtex key. The structure metaData.biblist is
+% output from mydata_my_pet file
+% * destinationFolder : optional string with destination folder the files
+% are printed to (default: current folder)
 
 %% Remarks
 % if you load results_my_pet.mat then species is found in metaData.species
@@ -23,9 +26,15 @@ function prt_my_pet_bib(species,biblist)
 
 %% Example of use
 % load('results_my_pet.mat');
-% prt_my_pet_bib(metaData.species,metaData.biblist)
+% prt_my_pet_bib(metaData.species,metaData.biblist) if you wish to print in
+% the current folder
+% else prt_my_pet_bib(metaData.species,metaData.biblist, '../myFolder/') 
 
-oid = fopen(['../../entries_web/', species, '_bib.bib'], 'w+'); % open file for reading and writing and deletes old content
+if exist('destinationFolder','var')
+oid = fopen([destinationFolder, species, '_bib.bib'], 'w+'); % open file for reading and writing and deletes old content
+else
+oid = fopen([species, '_bib.bib'], 'w+'); % open file for reading and writing and deletes old content   
+end
 
 [nm, nst] = fieldnmnst_st(biblist);
 
