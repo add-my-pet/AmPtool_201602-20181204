@@ -32,10 +32,10 @@ entries = select('Animalia');
 
 if exist('speciesList','var')
     n = zeros(1,length(speciesList));
-    for i = 1:length(speciesList);
-    n(i) =  find(strcmp(entries,speciesList) ==1);
+    for i = 1:length(speciesList)
+    n(i) =  find(strcmp(entries,speciesList{i}) ==1);
     end
-else
+else 
     n = 1:length(entries);
 end
     
@@ -45,7 +45,7 @@ WD = pwd; % store current path
 destinationFolder = '../entries_web/';
 
 for i = n  
-  fprintf('%g/ %g : %s \n',i,n(i), entries{i}) % report progress to screen 
+  fprintf('%s \n',entries{i}) % report progress to screen 
   cd(['../entries/',entries{i}]) % goto entry i 
   delete('*.cache', '*.wn') % delete html and bib files  
   load(['results_',entries{i},'.mat']) % load results_my_pet.mat
