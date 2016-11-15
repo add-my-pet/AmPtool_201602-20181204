@@ -39,7 +39,6 @@ function allStat = get_allStat(T, f)
     f = 1;
   end
 
-
   entries = select('Animalia');
   ne = length(entries);
    
@@ -62,6 +61,8 @@ function allStat = get_allStat(T, f)
       allStat.(entries{i}).author_mod = author_mod; allStat.(entries{i}).units.author_mod = '-'; allStat.(entries{i}).label.author_mod = 'modification author';
       allStat.(entries{i}).date_subm = metaData.date_subm; allStat.(entries{i}).units.date_subm = '-'; allStat.(entries{i}).label.date_subm = 'submitting date';
       allStat.(entries{i}).date_acc = metaData.date_acc; allStat.(entries{i}).units.date_acc = '-'; allStat.(entries{i}).label.date_acc = 'acceptance date';
+      allStat.(entries{i}).T_typical = metaData.T_typical;
+      
       
       % parameters
       par = rmfield_wtxt(par, 'free');   % remove substructure free from par
@@ -93,6 +94,9 @@ function allStat = get_allStat(T, f)
    
   cd(WD)                   % goto original path
 end
+
+
+
 
 function author_mod = get_author_mod(metaData)
   author_mod = cell(0);

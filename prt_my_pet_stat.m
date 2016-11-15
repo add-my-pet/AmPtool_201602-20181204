@@ -34,8 +34,9 @@ if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
 end
 
 f = 1; % ad libitum feeding
-[stat, txtStat] = statistics_st(metaPar.model, par, metaData.T_typical, f); 
-flds = fieldnmnst_st(stat); % fieldnames of all statistics
+[stat, txtStat] = statistics_st(metaPar.model, par, metaData.T_typical, f);
+stat.z = par.z; txtStat.label.z = 'zoom factor'; txtStat.units.z = '-'; % add zoom factor to statistics which are to be printed 
+% flds = fieldnmnst_st(stat); % fieldnames of all statistics
 [webStatFields, webColStat] = get_statfields(metaPar.model); % which statistics in what order should be printed in the table
 
 if exist('destinationFolder','var')
@@ -68,7 +69,7 @@ fprintf(oid, '<!-- Please put in bold and in fancy the right links           -->
 fprintf(oid, '<!--------------------------------------------------------------->\n\n');
 
 fprintf(oid, '<div id="top2">\n');
-fprintf(oid, '  <h2 class="alignleft2"> &nbsp; &nbsp;\n');
+fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
 % ---------- makes links to the wikipedia page if it exists
 if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
   url = eval(['metaData.biblist.', 'Wiki']);
@@ -85,7 +86,7 @@ if isfield(metaData.biblist,'Wiki') ==0
   fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
 end
 % ----------------------------------------------------------------------
-fprintf(oid, '  </h2>\n\n');
+fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
 prt_toolbar_species(oid, metaData.species)
@@ -132,4 +133,4 @@ fprintf(oid, '</HTML>\n');
 
 fclose(oid);
 
-% options.showCode = false; publish('prt_my_pet_stat', options);
+

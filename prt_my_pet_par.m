@@ -89,7 +89,7 @@ fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->
 fprintf(oid, '<!--------------------------------------------------------------->\n\n');
 
 fprintf(oid, '<div id="top2">\n');
-fprintf(oid, '  <h2 class="alignleft2"> &nbsp; &nbsp;\n');
+fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
 % --------------------------------------------------------------------
 % ---------- makes links to the wikipedia page if it exists
 if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
@@ -107,7 +107,7 @@ if isfield(metaData.biblist,'Wiki') ==0
   fprintf(oid,[speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
 end
 % ----------------------------------------------------------------------
-fprintf(oid, '  </h2>\n');
+fprintf(oid, '  </h1>\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
 prt_toolbar_species(oid, metaData.species)
@@ -231,5 +231,5 @@ fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 fclose(oid);
 
-% options.showCode = false; publish('prt_my_pet_par', options);
+
 

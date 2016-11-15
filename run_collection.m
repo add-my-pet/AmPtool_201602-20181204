@@ -45,9 +45,10 @@ WD = pwd; % store current path
 destinationFolder = '../entries_web/';
 
 for i = n  
-  fprintf('%s \n',entries{i}) % report progress to screen 
+  fprintf(' %g : %s \n',n(i), entries{i}) % report progress to screen 
   cd(['../entries/',entries{i}]) % goto entry i 
-  delete('*.cache', '*.wn') % delete html and bib files  
+%   delete('*.cache', '*.wn','*.asv') % delete html and bib files 
+%   mat2pars_init(entries{i})
   load(['results_',entries{i},'.mat']) % load results_my_pet.mat
   [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); 
   prdData = feval(['predict_',metaData.species], par, data, auxData);

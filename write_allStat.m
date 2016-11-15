@@ -38,4 +38,5 @@ function allStat = write_allStat(T, f)
     allStat = get_allStat(T, f);
   end
 
+  allStat.date_current = datestr(date, 'yyyy mm dd'); 
   save('allStat')

@@ -117,7 +117,7 @@ fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->
 fprintf(oid, '<!--------------------------------------------------------------->\n\n');
 
 fprintf(oid, '<div id="top2">\n');
-fprintf(oid, '  <h2 class="alignleft2"> &nbsp; &nbsp;\n');
+fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
 % --------------------------------------------------------------------
 % ---------- makes links to the wikipedia page if it exists
 if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
@@ -135,7 +135,7 @@ if isfield(metaData.biblist,'Wiki') ==0
   fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
 end
 % ----------------------------------------------------------------------
-fprintf(oid, '  </h2>\n\n');
+fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
 prt_toolbar_species(oid, metaData.species)
@@ -343,12 +343,12 @@ if isfield(metaData, 'facts')
   for i = 1:nst
     fprintf(oid, '        <li>\n'); % open bullet point
     str1 = metaData.facts.(nm{i});
-    if isfield(txtData.bibkey,nm{i})
-      str2 = metaData.bibkey.(nm{i});
-      fprintf(oid, ['          ', str1,' (',str2, ')\n']);
-    else
+%     if isfield(metaData.bibkey,nm{i})
+%       str2 = metaData.bibkey.(nm{i});
+%       fprintf(oid, ['          ', str1,' (ref: ',str2, ')\n']);
+%     else
       fprintf(oid, ['          ', str1, '\n']);  
-    end
+%     end
     fprintf(oid, '        </li>\n' ); % close bullet point
   end
   fprintf(oid,'      </ul>\n');     % close the unordered list    
@@ -424,4 +424,4 @@ fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 fclose(oid);
 
-% options.showCode = false; publish('prt_my_pet_res', options);
+
