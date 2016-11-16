@@ -29,23 +29,13 @@ function [par model] = read_pars(nm)
   global allStat
   
       model     = allStat.(nm).model;
+      fld = get_parfields(model);
+      n = length(fld);
       
-      par.z     = allStat.(nm).z;      
-      par.F_m   = allStat.(nm).F_m;
-      par.kap_X = allStat.(nm).kap_X;
-      par.kap_P = allStat.(nm).kap_P;
-      par.v     = allStat.(nm).v;
-      par.kap   = allStat.(nm).kap;
-      par.kap_R = allStat.(nm).kap_R;
-      par.p_M   = allStat.(nm).p_M;
-      par.p_T   = allStat.(nm).p_T;
-      par.k_J   = allStat.(nm).k_J;
-      par.E_G   = allStat.(nm).E_G;
-      par.E_Hb  = allStat.(nm).E_Hb;
-      par.E_Hp  = allStat.(nm).E_Hp;
-      par.h_a   = allStat.(nm).h_a;
-      par.s_G   = allStat.(nm).s_G;
-      
+      for i = 1:n
+        par.(fld{i}) = allStat.(nm).(fld{i});
+      end
+            
       par.n_CX  = allStat.(nm).n_CX;
       par.n_CV  = allStat.(nm).n_CV;
       par.n_CE  = allStat.(nm).n_CE;
@@ -102,26 +92,6 @@ function [par model] = read_pars(nm)
         par.T_AH = allStat.(nm).T_AH;
       end
       
-      switch model
-        case 'stx'
-          par.E_Hx = allStat.(nm).E_Hx;
-          par.t_0  = allStat.(nm).t_0;
-        case 'ssj'
-          par.E_Hs = allStat.(nm).E_Hs;
-          par.t_sj = allStat.(nm).t_sj;
-          par.k_E  = allStat.(nm).k_E;
-        case 'abj' 
-          par.E_Hj = allStat.(nm).E_Hj;
-        case 'asj'
-          par.E_Hs = allStat.(nm).E_Hs;
-          par.E_Hj = allStat.(nm).E_Hj;
-        case 'hep'
-          par.E_Rj = allStat.(nm).E_Rj;
-        case 'hex'
-          par.s_j  = allStat.(nm).s_j;
-          par.E_He = allStat.(nm).E_He;
-      end
-  
  
 end
   
