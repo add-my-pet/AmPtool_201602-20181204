@@ -32,6 +32,7 @@ function [var entries units label] = read_allStat(varargin)
 % complete_mre = read_allStat('COMPLETE', 'MRE'); 
   
   load('allStat')    % get all parameters and statistics in structure allStat
+  allStat = rmfield( allStat , 'date_current');
   entries = fieldnames(allStat); n = length(entries); var = cell(n,nargin);
   units = cell(nargin,1); label = cell(nargin,1);
   

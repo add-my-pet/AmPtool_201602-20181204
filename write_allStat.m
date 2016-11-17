@@ -18,7 +18,7 @@ function allStat = write_allStat(T, f)
 %
 % Ouput:
 %
-% * allStat: stucture with all parameters ans statistics of all entries
+% * allStat: stucture with all parameters and statistics of all entries
 
 %% Remarks
 % See <read_allStat.html *read_allStat*> for extracting values from allStat.mat.
