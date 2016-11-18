@@ -21,12 +21,12 @@ function allStat = write_allStat(T, f)
 % * allStat: stucture with all parameters and statistics of all entries
 
 %% Remarks
+% See <write_addStat.html *write_addStat*> for appending a few entries to allStat.
+% For 411 entries, the allStat.mat file is 2.6 Mb. and write_allState takes 8 minutes to generate.
 % See <read_allStat.html *read_allStat*> for extracting values from allStat.mat.
-% For 411 entries, the allStat.mat file is 2.6 Mb. and takes 8 minutes to
-% generate.
 
 %% Example of use
-% write_allStat
+% write_allStat;
 
   if ~exist('f', 'var') 
     if ~exist('T', 'var')
@@ -38,5 +38,4 @@ function allStat = write_allStat(T, f)
     allStat = get_allStat(T, f);
   end
 
-  allStat.date_current = datestr(date, 'yyyy mm dd'); 
   save('allStat')

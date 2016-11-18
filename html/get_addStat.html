@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>get_allStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-18"><meta name="DC.source" content="get_allStat.m"><style type="text/css">
+      --><title>get_addStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-18"><meta name="DC.source" content="get_addStat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,25 +55,26 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>get_allStat</h1><!--introduction--><p>obtain a structure with all pars and stats for all entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>allStat = <a href="get_allStat"><b>get_allStat</b></a> (T, f)</p><h2>Description<a name="4"></a></h2><p>gets model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of all entries. Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.</p><p>Input:</p><div><ul><li>T: optional scalar with body temperature in Kelvin for ststistics (default T_typical, which is entry-specific)</li><li>f: optional scalar with scaled functional response (default 1)</li></ul></div><p>Output:</p><div><ul><li>allStat: structure with all parameters and statistics values, including their units and labels</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Statistics are given at T_typical or T. Meant to be used in combination with <a href="write_allStat.html"><b>write_allStat</b></a> and <a href="read_allStat.html"><b>read_allStat</b></a>. Since running this function takes some time, progress is written to screen.</p><h2>Example of use<a name="6"></a></h2><p>allStat = get_allStat; see mydata_shstat</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>get_addStat</h1><!--introduction--><p>adds all pars and stats to allStat.mat for specified entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>allStat = <a href="get_addStat"><b>get_addStat</b></a> (taxa, T, f)</p><h2>Description<a name="4"></a></h2><p>gets model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of specified entries. Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.</p><p>Input:</p><div><ul><li>taxa: cell string with taxa to be added</li><li>T: optional scalar with body temperature in Kelvin for ststistics (default T_typical, which is entry-specific)</li><li>f: optional scalar with scaled functional response (default 1)</li></ul></div><p>Output:</p><div><ul><li>allStat: structure with all parameters and statistics values, including their units and labels</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Statistics are given at T_typical or T. Meant to be used in combination with <a href="write_addStat.html"><b>write_addStat</b></a>, which checks presence in sister-directory entries. See <a href="get_addStat.html"><b>get_addStat</b></a> for all entries of select.</p><h2>Example of use<a name="6"></a></h2><p>see write_addStat</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
-%% get_allStat
-% obtain a structure with all pars and stats for all entries
+%% get_addStat
+% adds all pars and stats to allStat.mat for specified entries
 
 %%
-function allStat = get_allStat(T, f)
+function allStat = get_addStat(taxa, T, f)
 % created 2016/04/22 by Bas Kooijman
 
 %% Syntax
-% allStat = <get_allStat *get_allStat*> (T, f)
+% allStat = <get_addStat *get_addStat*> (taxa, T, f)
 
 %% Description
-% gets model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of all entries.
+% gets model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of specified entries.
 % Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.
 %
 % Input:
 %
+% * taxa: cell string with taxa to be added
 % * T: optional scalar with body temperature in Kelvin for ststistics (default T_typical, which is entry-specific)
 % * f: optional scalar with scaled functional response (default 1)
 %
@@ -83,11 +84,11 @@ function allStat = get_allStat(T, f)
 
 %% Remarks
 % Statistics are given at T_typical or T. 
-% Meant to be used in combination with <write_allStat.html *write_allStat*> and <read_allStat.html *read_allStat*>.
-% Since running this function takes some time, progress is written to screen.
+% Meant to be used in combination with <write_addStat.html *write_addStat*>, which checks presence in sister-directory entries.
+% See <get_addStat.html *get_addStat*> for all entries of select.
 
 %% Example of use
-% allStat = get_allStat; see mydata_shstat
+% see write_addStat
 
   if ~exist('T', 'var') || isempty(T)
     set_T = 0; % identyfier for temperature setting
@@ -99,16 +100,15 @@ function allStat = get_allStat(T, f)
     f = 1;
   end
 
-  entries = select('Animalia');
-  ne = length(entries);
-   
+  load allStat.mat
+  
+  ne = length(taxa);
   WD = pwd;                % store current path
-  cd(['../entries/',entries{1}]) % goto entries
+  cd(['../entries/',taxa{1}]) % goto entries
 
   try
     for i = 1:ne
-      cd (['../', entries{i}])
-      fprintf([entries{i}, '\n']); % show progress on screen (takes some time)
+      cd (['../', taxa{i}])
       load (['results_', entries{i}])
       
       % initiation
@@ -122,8 +122,7 @@ function allStat = get_allStat(T, f)
       allStat.(entries{i}).date_subm = metaData.date_subm; allStat.(entries{i}).units.date_subm = '-'; allStat.(entries{i}).label.date_subm = 'submitting date';
       allStat.(entries{i}).date_acc = metaData.date_acc; allStat.(entries{i}).units.date_acc = '-'; allStat.(entries{i}).label.date_acc = 'acceptance date';
       allStat.(entries{i}).T_typical = metaData.T_typical;
-      
-      
+            
       % parameters
       par = rmfield_wtxt(par, 'free');   % remove substructure free from par
       [nm nst] = fieldnmnst_st(par);     % get number of parameter fields
@@ -154,9 +153,6 @@ function allStat = get_allStat(T, f)
    
   cd(WD)                   % goto original path
 end
-
-
-
 
 function author_mod = get_author_mod(metaData)
   author_mod = cell(0);
