@@ -49,31 +49,32 @@ function allStat = get_addStat(taxa, T, f)
   try
     for i = 1:ne
       cd (['../', taxa{i}])
-      load (['results_', entries{i}])
+      fprintf([taxa{i}, '\n']); % show progress on screen (takes some time)
+      load (['results_', taxa{i}])
       
-      % initiation
-      allStat.(entries{i}).model = metaPar.model; allStat.(entries{i}).units.model = '-'; allStat.(entries{i}).label.model = 'DEB model';
-      allStat.(entries{i}).MRE = metaPar.MRE; allStat.(entries{i}).units.MRE = '-'; allStat.(entries{i}).label.MRE = 'Mean Relative Error';
-      allStat.(entries{i}).SMSE = metaPar.SMSE; allStat.(entries{i}).units.SMSE = '-'; allStat.(entries{i}).label.SMSE = 'Symmetric Mean Squared Error';
-      allStat.(entries{i}).COMPLETE = metaData.COMPLETE; allStat.(entries{i}).units.COMPLETE = '-'; allStat.(entries{i}).label.COMPLETE = 'completeness';
-      allStat.(entries{i}).author = metaData.author(:)'; allStat.(entries{i}).units.author = '-'; allStat.(entries{i}).label.author = 'submitting author';
+      % metaData
+      allStat.(taxa{i}).model = metaPar.model; allStat.(taxa{i}).units.model = '-'; allStat.(taxa{i}).label.model = 'DEB model';
+      allStat.(taxa{i}).MRE = metaPar.MRE; allStat.(taxa{i}).units.MRE = '-'; allStat.(taxa{i}).label.MRE = 'Mean Relative Error';
+      allStat.(taxa{i}).SMSE = metaPar.SMSE; allStat.(taxa{i}).units.SMSE = '-'; allStat.(taxa{i}).label.SMSE = 'Symmetric Mean Squared Error';
+      allStat.(taxa{i}).COMPLETE = metaData.COMPLETE; allStat.(taxa{i}).units.COMPLETE = '-'; allStat.(taxa{i}).label.COMPLETE = 'completeness';
+      allStat.(taxa{i}).author = metaData.author(:)'; allStat.(taxa{i}).units.author = '-'; allStat.(taxa{i}).label.author = 'submitting author';
       author_mod = get_author_mod(metaData);
-      allStat.(entries{i}).author_mod = author_mod; allStat.(entries{i}).units.author_mod = '-'; allStat.(entries{i}).label.author_mod = 'modification author';
-      allStat.(entries{i}).date_subm = metaData.date_subm; allStat.(entries{i}).units.date_subm = '-'; allStat.(entries{i}).label.date_subm = 'submitting date';
-      allStat.(entries{i}).date_acc = metaData.date_acc; allStat.(entries{i}).units.date_acc = '-'; allStat.(entries{i}).label.date_acc = 'acceptance date';
-      allStat.(entries{i}).T_typical = metaData.T_typical;
+      allStat.(taxa{i}).author_mod = author_mod; allStat.(taxa{i}).units.author_mod = '-'; allStat.(taxa{i}).label.author_mod = 'modification author';
+      allStat.(taxa{i}).date_subm = metaData.date_subm; allStat.(taxa{i}).units.date_subm = '-'; allStat.(taxa{i}).label.date_subm = 'submitting date';
+      allStat.(taxa{i}).date_acc = metaData.date_acc; allStat.(taxa{i}).units.date_acc = '-'; allStat.(taxa{i}).label.date_acc = 'acceptance date';
+      allStat.(taxa{i}).T_typical = metaData.T_typical;
             
       % parameters
       par = rmfield_wtxt(par, 'free');   % remove substructure free from par
       [nm nst] = fieldnmnst_st(par);     % get number of parameter fields
       for j = 1:nst % add all parameters at T_ref
-        allStat.(entries{i}).(nm{j}) = par.(nm{j});
-        allStat.(entries{i}).units.(nm{j}) = txtPar.units.(nm{j});
-        allStat.(entries{i}).label.(nm{j}) = txtPar.label.(nm{j});
+        allStat.(taxa{i}).(nm{j}) = par.(nm{j});
+        allStat.(taxa{i}).units.(nm{j}) = txtPar.units.(nm{j});
+        allStat.(taxa{i}).label.(nm{j}) = txtPar.label.(nm{j});
       end
       
       % statistics
-      allStat.(entries{i}).f = f; % overwrite scaled function response
+      allStat.(taxa{i}).f = f; % overwrite scaled function response
       if set_T == 0
         [stat, txtStat] = statistics_st(metaPar.model, par, metaData.T_typical, f);
       else
@@ -81,14 +82,14 @@ function allStat = get_addStat(taxa, T, f)
       end
       [nm nst] = fieldnmnst_st(stat);    % get number of parameter fields
       for j = 1:nst % add all statistis at T or T_typical
-        allStat.(entries{i}).(nm{j}) = stat.(nm{j});
-        allStat.(entries{i}).units.(nm{j}) = txtStat.units.(nm{j});
-        allStat.(entries{i}).label.(nm{j}) = txtStat.label.(nm{j});
+        allStat.(taxa{i}).(nm{j}) = stat.(nm{j});
+        allStat.(taxa{i}).units.(nm{j}) = txtStat.units.(nm{j});
+        allStat.(taxa{i}).label.(nm{j}) = txtStat.label.(nm{j});
       end
     end
    
   catch 
-    disp(['Statistics of entry ', entries{i},' could not be extracted'])
+    disp(['Statistics of entry ', taxa{i},' could not be extracted'])
   end
    
   cd(WD)                   % goto original path

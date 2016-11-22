@@ -44,10 +44,10 @@ function allStat = write_addStat(taxa, T, f)
   
   % check if some members of taxa are already in allStat
   load allStat.mat
-  absent = ~isfield(allStat, taxa);
-  if sum(absent) > 0
-    fprintf('Not all members of taxa are present in allStat.mat\n');
-    taxa{absent}
+  present = isfield(allStat, taxa);
+  if sum(present) > 0
+    fprintf('Not all members of taxa are absent in existing allStat.mat\n');
+    taxa = taxa{present}
     return
   end
   
@@ -72,10 +72,10 @@ function allStat = write_addStat(taxa, T, f)
     if ~exist('T', 'var')
       allStat = get_addStat(taxa);
     else
-      allStat = get_allStat(taxa, T);
+      allStat = get_addStat(taxa, T);
     end
   else
-    allStat = get_allStat(taxa, T, f);
+    allStat = get_addStat(taxa, T, f);
   end
 
   save('allStat') % overwrite allStat.mat
