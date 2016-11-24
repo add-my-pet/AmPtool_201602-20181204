@@ -158,7 +158,8 @@ fprintf(oid, '      <H1 id = "portaltop">Predictions & Data </H1>\n\n');
 fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n']);
 fprintf(oid, '      <p>\n');    
 fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Completeness" >COMPLETE</a>',' = %3.1f <BR>\n'],metaData.COMPLETE);
-fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Goodness_of_fit_criterion" >MRE</a>',' = %8.3f \n'],metaPar.MRE);   
+fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Mean_relative_error" >MRE</a>',' = %8.3f <BR>\n'],metaPar.MRE);   
+fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" >SMSE</a>',' = %8.3f \n'],metaPar.SMSE);   
 fprintf(oid, '      </p>\n\n');     % close the paragraph
 
 % % get predictions to compare with data: 
