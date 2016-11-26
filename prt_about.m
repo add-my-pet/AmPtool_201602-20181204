@@ -80,7 +80,7 @@ close all
 
 % COMPLETE, MRE plots
 CMS = read_allStat('COMPLETE', 'MRE', 'SMSE'); n_entries = size(CMS,1);
-C_median = median(CMS(:,1)); M_median = median(CMS(:,2));
+C_median = median(CMS(:,1)); M_median = median(CMS(:,2)); S_median = median(CMS(:,3));
 plot(CMS(:,1), CMS(:,2), '.b', 'MarkerSize', 20)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('COMPLETE'); ylabel('MRE')
@@ -102,14 +102,18 @@ saveas (gca,'../img/about/COMPLETE.png')
 close all
 
 surv_MRE = surv(CMS(:,2),0);
-plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
+plot([0; M_median; M_median], [0.5;0.5;0], 'b', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
+surv_SMSE = surv(CMS(:,3),0); hold on
+plot([0; S_median; S_median], [0.5;0.5;0], 'r', surv_SMSE(:,1), surv_SMSE(:,2), 'r', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('Mean Relative Error')
+xlabel('(Symmetic) Mean (Squared) Relative Error')
 ylabel('survivor function')
+xlim([0 0.55])
 saveas (gca,'../img/about/MRE.png')
 close all
 
 shprimpar % primary parameters
+close all
 
 % Write about.html
 path = 'entries_web/'; % path to entries
@@ -166,7 +170,7 @@ fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
 fprintf(fid_about, '        <img src="img/about/MRE.png" width="350px">\n' );
 fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          Survivor function of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE)</a>.\n');
+fprintf(fid_about, '          Survivor functions of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE) and Symmetric Mean Squared Error (SMSE)</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');

@@ -14,7 +14,7 @@ function prt_species_tree_taxa_js(taxa)
 %
 % Input:
 %
-% * taxa: optional cell string with taxa of the roots of the trees, default: {'Animalia','Actinopterygii','Tetrapoda'} 
+% * taxa: optional cell string with taxa of the roots of the trees, default: {'Animalia','Actinopterygii','Tetrapoda','Aves'} 
 %
 % Output:
 % 
@@ -32,7 +32,7 @@ function prt_species_tree_taxa_js(taxa)
 % prt_species_tree_taxa_js({'Tetrapoda'}); open ../species_tree_Tetrapoda.html to see the result
     
   if ~exist('taxa','var')
-    taxa = {'Animalia','Actinopterygii','Tetrapoda'};
+    taxa = {'Animalia','Actinopterygii','Tetrapoda','Aves'};
   end
     
   n = length(taxa);
