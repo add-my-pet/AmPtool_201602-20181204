@@ -180,6 +180,10 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
     Hfig = figure; Hleg = [];
   end
   
+  if exist('label_title', 'var') && ~isempty(label_title)
+    title(label_title)
+  end
+
   hold on
   switch n
     case 1
@@ -231,8 +235,4 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 
   end
   
-  if exist('label_title', 'var') && ~isempty(label_title)
-    title(label_title)
-  end
-
 end
