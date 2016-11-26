@@ -10,7 +10,7 @@
 
 close all % remove any existing figure
 
-example = 2; % edit this number to see the various examples
+example = 9; % edit this number to see the various examples
 switch example
   case 1 % 2D: use default settings
     shstat_options('default');
@@ -87,6 +87,22 @@ switch example
     shstat_options('x_transform', 'none');
     %shstat_options('y_transform', 'none');
     [Hfig Hleg] = shstat({'kap','g'}, legend_RSED); % output handle for setting labels
+
+  case 9 % 2D
+    shstat_options('default');
+    cWd = read_allStat('c_T', 'W_dWm', 'dWm'); cT = cWd(:,1); W = cWd(:,2); dW = cWd(:,3);
+
+    [Hfig, Hleg] = shstat([W, dW], legend_sauria, 'Data at T_{typical}'); 
+    figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
+    xlabel('_{10} log wet weight at max growth, g')      
+    ylabel('_{10} log max growth in wet weight, g/d')
+
+    figure(Hfig) % add items to figure
+
+    [Hfig Hleg] = shstat([W, dW./cT], legend_sauria, 'Data at T_{ref}'); 
+    figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
+    xlabel('_{10} log wet weight at max growth, g')      
+    ylabel('_{10} log max growth in wet weight, g/d')
 
 
 end
