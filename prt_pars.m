@@ -1,15 +1,16 @@
-%% shprimpar
-% generates survivor plots for primary parameters
+%% prt_pars
+% generates survivor plots for primary parameters for display on pars.html
 
 %%
-function shprimpar
-%% created 2016/04/25 by Bas Kooijman
+function prt_pars
+%% created 2016/04/25 by Bas Kooijman. modified 2016/12/24
 
 %% Syntax
-% <../shprimpar *shprimpar*>
+% <../prt_pars *prt_pars*>
 
 %% Description
-% generates survivor plots for primary parameters
+% generates survivor plots for primary parameters for display on pars.html
+
 %
 % Output: 
 %
@@ -117,3 +118,5 @@ shstat_options('x_transform', 'log10');
 Hfig = shstat({'T_A'}, [], [], 13);
 set(gca, 'FontSize', 15, 'Box', 'on')
 saveas(gca, '../img/pars/TA.png')
+
+close all

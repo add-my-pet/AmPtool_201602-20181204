@@ -112,9 +112,6 @@ xlim([0 0.55])
 saveas (gca,'../img/about/MRE.png')
 close all
 
-shprimpar % primary parameters
-close all
-
 % Write about.html
 path = 'entries_web/'; % path to entries
 fid_about = fopen('../about.html', 'w+'); % open file for writing, delete existing content
@@ -126,6 +123,11 @@ fprintf(fid_about, '  <TITLE>About AmP</TITLE>\n');
 fprintf(fid_about, '  <link rel="stylesheet" type="text/css" href="sys/style.css"> \n');
 fprintf(fid_about, '  <script src="sys/dropdown.js"></script>\n');
 fprintf(fid_about, '  <script src="sys/w3data.js"></script>\n');
+fprintf(fid_about, '  <script type="text/javascript" language="javascript">\n');
+fprintf(fid_about, '    function changeImage(img){\n');
+fprintf(fid_about, '      document.getElementById(''daphnia'').src=img;\n');
+fprintf(fid_about, '    }\n');
+fprintf(fid_about, '  </script>\n');
 fprintf(fid_about, '</HEAD>\n\n');
 fprintf(fid_about, '<BODY>\n\n');
 
@@ -211,7 +213,7 @@ fprintf(fid_about, '    <!--   remove if we use contentFull (see above)         
 fprintf(fid_about, '    <!--------------------------------------------------------------->\n');
 
 fprintf(fid_about, '    <div id = "sidebar">\n\n');  
-fprintf(fid_about, '      <H1 id = "portaltop"> &nbsp;</H1> <!--   Notice that I put this here to make heading across both columns even  -->\n');   
+fprintf(fid_about, '      <H1 id = "portaltop"> &nbsp;</H1> <!--   This is here to make heading across both columns even  -->\n');   
 fprintf(fid_about, '      <H2 class="clear"> Entries in time </H2>\n\n');
 
 fprintf(fid_about, '      <div class="sidelement">\n');
@@ -249,6 +251,19 @@ fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{5}, 
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(5,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '      </TABLE>\n\n');
+
+fprintf(fid_about, '      <H2 class="clear"> DEB research & DEBtool</H2>\n\n');
+
+fprintf(fid_about, '      <div>\n');
+fprintf(fid_about, '        <img src="img/about/daphnia1a.gif" alt="" width="180" height="" id="daphnia" onmouseover="changeImage(''img/about/daphnia1b.gif'')"/>\n');
+fprintf(fid_about, '      </div>\n');
+fprintf(fid_about, '      <div class = "caption" onmouseover="changeImage(''img/about/daphnia1a.gif'')">\n');
+fprintf(fid_about, '        DEB research started in the spring of 1979 \n');
+fprintf(fid_about, '        with a study on how toxicants affect reproduction in the waterflea <i>Dapnia magna</i>,\n');
+fprintf(fid_about, '        including its consequences at the population level.\n'); 
+fprintf(fid_about, '        Software package <a href="/thb/deb/deblab/DEBtool_M/manual/" target="_top">DEBtool</a> was developed\n');
+fprintf(fid_about, '        since 2000 to support applications of DEB theory, such as Add-my-Pet.\n');
+fprintf(fid_about, '      </div>\n');
 
 fprintf(fid_about, '      <H2 class="clear"> Background documentation </H2>\n\n');
     

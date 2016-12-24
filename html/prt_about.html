@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_about</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-03"><meta name="DC.source" content="prt_about.m"><style type="text/css">
+      --><title>prt_about</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-12-24"><meta name="DC.source" content="prt_about.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -157,7 +157,7 @@ close all
 
 % COMPLETE, MRE plots
 CMS = read_allStat('COMPLETE', 'MRE', 'SMSE'); n_entries = size(CMS,1);
-C_median = median(CMS(:,1)); M_median = median(CMS(:,2));
+C_median = median(CMS(:,1)); M_median = median(CMS(:,2)); S_median = median(CMS(:,3));
 plot(CMS(:,1), CMS(:,2), '.b', 'MarkerSize', 20)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('COMPLETE'); ylabel('MRE')
@@ -179,17 +179,18 @@ saveas (gca,'../img/about/COMPLETE.png')
 close all
 
 surv_MRE = surv(CMS(:,2),0);
-plot([0; M_median; M_median], [0.5;0.5;0], 'r', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
+plot([0; M_median; M_median], [0.5;0.5;0], 'b', surv_MRE(:,1), surv_MRE(:,2), 'b', 'Linewidth', 2)
+surv_SMSE = surv(CMS(:,3),0); hold on
+plot([0; S_median; S_median], [0.5;0.5;0], 'r', surv_SMSE(:,1), surv_SMSE(:,2), 'r', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('Mean Relative Error')
+xlabel('(Symmetic) Mean (Squared) Relative Error')
 ylabel('survivor function')
+xlim([0 0.55])
 saveas (gca,'../img/about/MRE.png')
 close all
 
-shprimpar % primary parameters
-
 % Write about.html
-path = 'entries_web/results_'; % path to entries
+path = 'entries_web/'; % path to entries
 fid_about = fopen('../about.html', 'w+'); % open file for writing, delete existing content
 
 fprintf(fid_about, '<!DOCTYPE html>\n');
@@ -199,13 +200,16 @@ fprintf(fid_about, '  <TITLE>About AmP</TITLE>\n');
 fprintf(fid_about, '  <link rel="stylesheet" type="text/css" href="sys/style.css"> \n');
 fprintf(fid_about, '  <script src="sys/dropdown.js"></script>\n');
 fprintf(fid_about, '  <script src="sys/w3data.js"></script>\n');
+fprintf(fid_about, '  <script type="text/javascript" language="javascript">\n');
+fprintf(fid_about, '    function changeImage(img){\n');
+fprintf(fid_about, '      document.getElementById(''daphnia'').src=img;\n');
+fprintf(fid_about, '    }\n');
+fprintf(fid_about, '  </script>\n');
 fprintf(fid_about, '</HEAD>\n\n');
 fprintf(fid_about, '<BODY>\n\n');
 
 fprintf(fid_about, '<div w3-include-html="sys/wallpaper_amp.html"></div>\n');
-fprintf(fid_about, '<script>w3IncludeHTML();</script>\n\n');
-
-fprintf(fid_about, '<div w3-include-html="sys/toolbar_list.html"></div>\n');
+fprintf(fid_about, '<div w3-include-html="sys/toolbar_amp.html"></div>\n');
 fprintf(fid_about, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(fid_about, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n');
@@ -221,7 +225,6 @@ fprintf(fid_about, '    <div id="content">\n');
 %%
 fprintf(fid_about, '    <H1 id = "portaltop">About Add-my-pet</H1>\n'); 
 fprintf(fid_about, '    <H2 id = "aims">Overview of the collection</H2>\n\n');
-
 
 fprintf(fid_about, '    <div class="sidelement2">\n');
 fprintf(fid_about, '      <img src="img/about/pie_Animalia.png" width="350px">\n');
@@ -246,7 +249,7 @@ fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
 fprintf(fid_about, '        <img src="img/about/MRE.png" width="350px">\n' );
 fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          Survivor function of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE)</a>.\n');
+fprintf(fid_about, '          Survivor functions of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE) and Symmetric Mean Squared Error (SMSE)</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
@@ -287,7 +290,7 @@ fprintf(fid_about, '    <!REPLACE_WITH_DASH_DASH   remove if we use contentFull 
 fprintf(fid_about, '    <!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n');
 
 fprintf(fid_about, '    <div id = "sidebar">\n\n');  
-fprintf(fid_about, '      <H1 id = "portaltop"> &nbsp;</H1> <!REPLACE_WITH_DASH_DASH   Notice that I put this here to make heading across both columns even  REPLACE_WITH_DASH_DASH>\n');   
+fprintf(fid_about, '      <H1 id = "portaltop"> &nbsp;</H1> <!REPLACE_WITH_DASH_DASH   This is here to make heading across both columns even  REPLACE_WITH_DASH_DASH>\n');   
 fprintf(fid_about, '      <H2 class="clear"> Entries in time </H2>\n\n');
 
 fprintf(fid_about, '      <div class="sidelement">\n');
@@ -305,26 +308,39 @@ fprintf(fid_about, '      <!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_
 fprintf(fid_about, '      <TABLE id="t02">\n');
 fprintf(fid_about, '        <TR><TH colspan="2"><b>Latest additions to the collection:</b></TH></TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{1}, '.html "><I>', entries_new{1}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{1}, '_res.html "><I>', entries_new{1}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(1,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{2}, '.html "><I>', entries_new{2}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{2}, '_res.html "><I>', entries_new{2}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(2,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{3}, '.html"><I>', entries_new{3}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{3}, '_res.html"><I>', entries_new{3}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(3,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{4}, '.html "><I>', entries_new{4}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{4}, '_res.html "><I>', entries_new{4}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(4,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{5}, '.html "><I>', entries_new{5}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{5}, '_res.html "><I>', entries_new{5}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(5,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '      </TABLE>\n\n');
+
+fprintf(fid_about, '      <H2 class="clear"> DEB research & DEBtool</H2>\n\n');
+
+fprintf(fid_about, '      <div>\n');
+fprintf(fid_about, '        <img src="img/about/daphnia1a.gif" alt="" width="180" height="" id="daphnia" onmouseover="changeImage(''img/about/daphnia1b.gif'')"/>\n');
+fprintf(fid_about, '      </div>\n');
+fprintf(fid_about, '      <div class = "caption" onmouseover="changeImage(''img/about/daphnia1a.gif'')">\n');
+fprintf(fid_about, '        DEB research started in the spring of 1979 \n');
+fprintf(fid_about, '        with a study on how toxicants affect reproduction in the waterflea <i>Dapnia magna</i>,\n');
+fprintf(fid_about, '        including its consequences at the population level.\n'); 
+fprintf(fid_about, '        Software package <a href="/thb/deb/deblab/DEBtool_M/manual/" target="_top">DEBtool</a> was developed\n');
+fprintf(fid_about, '        since 2000 to support applications of DEB theory, such as Add-my-Pet.\n');
+fprintf(fid_about, '      </div>\n');
 
 fprintf(fid_about, '      <H2 class="clear"> Background documentation </H2>\n\n');
     
@@ -334,15 +350,10 @@ fprintf(fid_about, '      <a href="http://www.debtheory.org/wiki/index.php?title
 fprintf(fid_about, '      <p>\n');   
 fprintf(fid_about, '      <a href="http://www.bio.vu.nl/thb/deb/DEB_papers.pdf" TARGET="_blank">Many papers have been written on specific entries</a>, which have been cited at entry-pages. \n');
 fprintf(fid_about, '    </div> <!REPLACE_WITH_DASH_DASH end of sidebar REPLACE_WITH_DASH_DASH>\n\n');
-   
-fprintf(fid_about, '    <!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n');
-fprintf(fid_about, '    <!REPLACE_WITH_DASH_DASH   FOOTER                                                  REPLACE_WITH_DASH_DASH>\n');
-fprintf(fid_about, '    <!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH-> \n');  
-fprintf(fid_about, '    <div id="footer">\n');
-fprintf(fid_about, '      <div class="aligncenter" style="padding:20px">\n');
-fprintf(fid_about, '        &#169; 2016 Add-my-pet\n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n');
+
+fprintf(fid_about, '    <div w3-include-html="sys/footer_amp.html"></div>\n');
+fprintf(fid_about, '    <script>w3IncludeHTML();</script>\n\n');
+
 fprintf(fid_about, '  </div> <!REPLACE_WITH_DASH_DASH main wrapper REPLACE_WITH_DASH_DASH>\n');
 fprintf(fid_about, '</div> <!REPLACE_WITH_DASH_DASH main REPLACE_WITH_DASH_DASH>\n');
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
