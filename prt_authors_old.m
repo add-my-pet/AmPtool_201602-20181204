@@ -54,6 +54,20 @@ fprintf(fid_authors, '<!DOCTYPE html>\n');
 fprintf(fid_authors, '<HTML>\n');
 fprintf(fid_authors, '<HEAD>\n');
 fprintf(fid_authors, '  <TITLE>AmP authors</TITLE>\n');
+fprintf(fid_authors, '  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">\n');
+fprintf(fid_authors, '  <meta name="viewport" content="width=device-width, initial-scale=1">\n');
+fprintf(fid_authors, '  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>\n');
+fprintf(fid_authors, '  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>\n');
+fprintf(fid_authors, '  <style>\n');
+fprintf(fid_authors, '    .dropdown-submenu {\n');
+fprintf(fid_authors, '      position: relative;\n');
+fprintf(fid_authors, '    }\n\n');
+fprintf(fid_authors, '    .dropdown-submenu .dropdown-menu {\n');
+fprintf(fid_authors, '      top: 0;\n');
+fprintf(fid_authors, '      left: 100%%;\n');
+fprintf(fid_authors, '      margin-top: -1px;\n');
+fprintf(fid_authors, '    }\n');
+fprintf(fid_authors, '  </style>\n');
 fprintf(fid_authors, '  <link rel="stylesheet" type="text/css" href="sys/style.css">\n');
 fprintf(fid_authors, '  <script src="sys/dropdown.js"></script>\n');
 fprintf(fid_authors, '  <script src="sys/w3data.js"></script>\n');
@@ -81,15 +95,13 @@ fprintf(fid_authors, '         <td BGCOLOR = "#FFE7C6">\n');
     else
 fprintf(fid_authors, '         <td>\n');
     end
-fprintf(fid_authors, '           <div>\n');
-fprintf(fid_authors, '             <ul class="main-navigayion">\n');
-fprintf(fid_authors,['               <li><a href="#">', author{index}, '</a>\n']);
-fprintf(fid_authors, '               <ul>\n');
+fprintf(fid_authors, '           <div class = "dropdown">\n');
+fprintf(fid_authors,['             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">', author{index}, '<span class="caret"></span></button>\n']);
+fprintf(fid_authors, '             <ul class="dropdown-menu">\n');
     txt_entry = entry{index}; txt_date = date{index};
     for k = 1:nr(index)
-fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
+fprintf(fid_authors,['               <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
     end
-fprintf(fid_authors, '               </ul>\n');
 fprintf(fid_authors, '             </ul>\n');
 fprintf(fid_authors, '           </div>\n');
     if j == 1 || j == 3
