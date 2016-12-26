@@ -23,21 +23,6 @@ function prt_about
 %      - COMPLETE_MRE.png
 %      - MRE_SMSE.png
 %
-% * files are written in ../img/pars: 
-%
-%      - Fm.png
-%      - kapX.png
-%      - pAm.png
-%      - v.png
-%      - kap.png
-%      - pM.png
-%      - EG.png
-%      - kJ.png
-%      - EHb.png
-%      - EBp.png
-%      - ha.png
-%      - sG.png
-%
 % * file is written in ../about.html 
 
 %% Remarks

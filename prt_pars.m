@@ -14,9 +14,9 @@ function prt_pars
 %
 % Output: 
 %
-% * 13 png-files written in ../img: 
+% * 14 png-files written in ../img: 
 %
-%    - Fm.png kapX.png pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png, EHb.png, EHp.png, ha.png, sG.png, TA.png
+%    - Fm.png kapX.png pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png, kapR.png, EHb.png, EHp.png, ha.png, sG.png, TA.png
 
 %% Remarks
 % For presentation on the web, copy png files to 
@@ -85,37 +85,43 @@ Hfig = shstat({'k_J'}, [], 'k_J at T_{ref}', 8);
 set(gca, 'FontSize', 15, 'Box', 'on')
 saveas(gca, '../img/pars/kJ.png')
 
-figure(9) % E_Hb/z^3, scaled maturity at birth
+figure(9) % kappa_R, reproduction efficiency
+shstat_options('x_transform', 'none');
+Hfig = shstat({'kap_R'}, [], [], 9);
+set(gca, 'FontSize', 15, 'Box', 'on')
+saveas(gca, '../img/pars/kapR.png')
+
+figure(10) % E_Hb/z^3, scaled maturity at birth
 shstat_options('x_transform', 'log10');
 EHbz = read_allStat('E_Hb','z'); 
-Hfig = shstat(EHbz(:,1) ./ EHbz(:,2).^3, [], [], 9);
+Hfig = shstat(EHbz(:,1) ./ EHbz(:,2).^3, [], [], 10);
 xlabel('_{10}log E_H^b/ z^3, J')
 set(gca, 'FontSize', 15, 'Box', 'on')
 saveas(gca, '../img/pars/EHb.png')
 
-figure(10) % E_Hp/z^3, scaled maturity at puberty
+figure(11) % E_Hp/z^3, scaled maturity at puberty
 shstat_options('x_transform', 'log10');
 EHpz = read_allStat('E_Hp','z'); 
-Hfig = shstat(EHpz(:,1) ./ EHpz(:,2).^3, [], [], 10);
+Hfig = shstat(EHpz(:,1) ./ EHpz(:,2).^3, [], [], 11);
 xlabel('_{10}log E_H^p/ z^3, J')
 set(gca, 'FontSize', 15, 'Box', 'on')
 saveas(gca, '../img/pars/EHp.png')
 
-figure(11) % h_a, ageing acceleration
+figure(12) % h_a, ageing acceleration
 shstat_options('x_transform', 'log10');
-Hfig = shstat({'h_a'}, [], 'h_a at T_{ref}', 11);
+Hfig = shstat({'h_a'}, [], 'h_a at T_{ref}', 12);
 set(gca, 'FontSize', 15, 'Box', 'on')
 saveas(gca, '../img/pars/ha.png')
 
-figure(12) % s_G, Gompertz stress coefficient
+figure(13) % s_G, Gompertz stress coefficient
 shstat_options('x_transform', 'none');
-Hfig = shstat({'s_G'}, [], [], 12);
+Hfig = shstat({'s_G'}, [], [], 13);
 set(gca, 'FontSize', 15, 'Box', 'on')
 saveas(gca, '../img/pars/sG.png')
 
-figure(13) % T_A, Arrhenius temperature
+figure(14) % T_A, Arrhenius temperature
 shstat_options('x_transform', 'log10');
-Hfig = shstat({'T_A'}, [], [], 13);
+Hfig = shstat({'T_A'}, [], [], 14);
 set(gca, 'FontSize', 15, 'Box', 'on')
 saveas(gca, '../img/pars/TA.png')
 
