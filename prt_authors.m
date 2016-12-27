@@ -77,27 +77,23 @@ fprintf(fid_authors, '       <tr>\n');
       break
     end
     if j == 1 || j == 3
+fprintf(fid_authors,['         <td BGCOLOR = "#FFE7C6" WIDTH="250">', author{index}, '</td>\n']);
 fprintf(fid_authors, '         <td BGCOLOR = "#FFE7C6">\n');
     else
+fprintf(fid_authors,['         <td WIDTH="250">', author{index}, '</td>\n']);
 fprintf(fid_authors, '         <td>\n');
     end
-fprintf(fid_authors, '           <div>\n');
 fprintf(fid_authors, '             <ul class="main-navigayion">\n');
-fprintf(fid_authors,['               <li><a href="#">', author{index}, '</a>\n']);
+fprintf(fid_authors,['               <li><a href="#">', num2str(nr(index)), '</a>\n']);
 fprintf(fid_authors, '               <ul>\n');
     txt_entry = entry{index}; txt_date = date{index};
     for k = 1:nr(index)
-fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
+fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">   ', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
     end
 fprintf(fid_authors, '               </ul>\n');
 fprintf(fid_authors, '             </ul>\n');
-fprintf(fid_authors, '           </div>\n');
-    if j == 1 || j == 3
-fprintf(fid_authors,['         </td><td  BGCOLOR = "#FFE7C6">', num2str(nr(index)), '</td>\n']);
-    else
-fprintf(fid_authors,['         </td><td>', num2str(nr(index)), '</td>\n']);
-    end
   end
+fprintf(fid_authors, '         </td>\n');
 fprintf(fid_authors, '       </tr>\n');
 end
 fprintf(fid_authors, '      </table>\n\n');
