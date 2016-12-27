@@ -67,7 +67,8 @@ fprintf(fid_authors, '<script>w3IncludeHTML();</script>\n\n');
 fprintf(fid_authors, '<div id = "main">\n');
 fprintf(fid_authors, '  <div id = "main-wrapper-species">    \n');
 fprintf(fid_authors, '    <div id="contentFull">\n\n');
-fprintf(fid_authors, '      <H2>Authors and their submitted entries</H2>\n\n');
+fprintf(fid_authors, '      <H2><a href="" title="Locate entries via authors and submission dates by clicking on numbers of entries.\n');
+fprintf(fid_authors, '           Click on entry names to goto entries.">Authors and their submitted entries</a></H2>\n\n');
 fprintf(fid_authors, '      <table>\n');
 for i = 1:nrow
 fprintf(fid_authors, '       <tr>\n');
@@ -88,7 +89,7 @@ fprintf(fid_authors,['               <li><a href="#">', num2str(nr(index)), '</a
 fprintf(fid_authors, '               <ul>\n');
     txt_entry = entry{index}; txt_date = date{index};
     for k = 1:nr(index)
-fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">   ', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
+fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
     end
 fprintf(fid_authors, '               </ul>\n');
 fprintf(fid_authors, '             </ul>\n');
