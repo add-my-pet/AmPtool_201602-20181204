@@ -245,7 +245,7 @@ fprintf(fid_about, '      </div>\n');
 fprintf(fid_about, '      <div class = "caption" onmouseover="changeImage(''img/about/daphnia1a.gif'')">\n');
 fprintf(fid_about, '        DEB research started in the spring of 1979 \n');
 fprintf(fid_about, '        with a study on how toxicants affect reproduction in the waterflea <i>Dapnia magna</i>,\n');
-fprintf(fid_about, '        including its consequences at the population level.\n'); 
+fprintf(fid_about, '        including the consequences at the population level.\n'); 
 fprintf(fid_about, '        Software package <a href="/thb/deb/deblab/DEBtool_M/manual/" target="_top">DEBtool</a> was developed\n');
 fprintf(fid_about, '        since 2000 to support applications of DEB theory, such as Add-my-Pet.\n');
 fprintf(fid_about, '      </div>\n');

@@ -7,7 +7,7 @@ function  prt_toolbar_species(oid, species)
 % created 2016/11/02 by Starrlight 
 
 %% Syntax
-% <../prt_menuBar_species.m *prt_menuBar_species*> (oid, species, fileName)
+% <../prt_toolbar_species.m *prt_toolbar_species*> (oid, species, fileName)
 
 %% Description
 % Prints the menu bar to a given html file
