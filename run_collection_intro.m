@@ -17,7 +17,7 @@ prt_about
 % ../pars.html
 % ../about.html
 
-% ../sys/species_list_*.js
+% ../sys/species_tree_*.js
 % ../img/pars/*.png
 % ../img/about/*.png 
 % ../img/tree/*.jpg and *.jpg.txt

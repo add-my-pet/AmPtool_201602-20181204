@@ -16,17 +16,19 @@ function run_collection(speciesList)
 % Input:
 %
 % * entries: optional cell array with species names to run
-% * if no input the it run for the whole colelction
+% * if no input the whole collection runs
+%
+% Output:
+%
+% 4 files per entry are written in ../entries_web
 
 %% Remarks
-% if you only have one species make sure that you input it as a cell array
-% e.g. {'Danio_rerio'}
+% If you only have one species make sure that you input it as a cell array, e.g. {'Danio_rerio'}
+% run_collection_intro to generate about and access files for the collection
 
 %% Example of use
 % run_collection
-% run prt_about to create ../about.html
-% run prt_species_list_html to create ../species_list.html
-% run prt_species_tree_taxa to create ../sys/species_tree_taxa.js files
+% run collection_intro 
 
 entries = select('Animalia');
 
