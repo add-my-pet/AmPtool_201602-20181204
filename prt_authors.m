@@ -69,7 +69,7 @@ fprintf(fid_authors, '  <div id = "main-wrapper-species">    \n');
 fprintf(fid_authors, '    <div id="contentFull">\n\n');
 fprintf(fid_authors, '      <H2><a href="" title="Locate entries via authors and submission dates by clicking on numbers of entries.\n');
 fprintf(fid_authors, '           Click on entry names to goto entries.">Authors and their submitted entries</a></H2>\n\n');
-fprintf(fid_authors, '      <table>\n');
+fprintf(fid_authors, '      <div ID = "tab_authors"><table>\n');
 for i = 1:nrow
 fprintf(fid_authors, '       <tr>\n');
   for j = 1:4
@@ -84,7 +84,7 @@ fprintf(fid_authors, '         <td BGCOLOR = "#FFE7C6">\n');
 fprintf(fid_authors,['         <td WIDTH="250">', author{index}, '</td>\n']);
 fprintf(fid_authors, '         <td>\n');
     end
-fprintf(fid_authors, '             <ul class="main-navigayion">\n');
+fprintf(fid_authors, '             <ul class="main-navigation">\n');
 fprintf(fid_authors,['               <li><a href="#">', num2str(nr(index)), '</a>\n']);
 fprintf(fid_authors, '               <ul>\n');
     txt_entry = entry{index}; txt_date = date{index};
@@ -97,7 +97,7 @@ fprintf(fid_authors, '             </ul>\n');
 fprintf(fid_authors, '         </td>\n');
 fprintf(fid_authors, '       </tr>\n');
 end
-fprintf(fid_authors, '      </table>\n\n');
+fprintf(fid_authors, '      </table></div>\n\n');
 fprintf(fid_authors, '    </div> <!-- end of content -->\n\n');
 
 fprintf(fid_authors, '    <div w3-include-html="sys/footer_amp.html"></div>\n');
