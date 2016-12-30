@@ -46,11 +46,11 @@ WD = pwd; % store current path
 
 destinationFolder = '../entries_web/';
 
-for i = n  
+for i = n 
   if length(n) > 1
-  fprintf(' %g : %s \n',n(i), entries{i}) % report progress to screen 
+    fprintf(' %g : %s \n', i, entries{i}) % report progress to screen 
   else
-  fprintf(' %s \n', entries{i}) % report progress to screen 
+    fprintf(' %s \n', entries{i}) % report progress to screen 
   end
   cd(['../entries/',entries{i}]) % goto entry i 
   delete('*.cache', '*.wn','*.asv','*.bib') % delete html and bib files 

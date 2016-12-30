@@ -53,6 +53,8 @@ function allStat = get_addStat(taxa, T, f)
       load (['results_', taxa{i}])
       
       % metaData
+      allStat.(taxa{i}).species = metaData.species; allStat.(taxa{i}).units.species = '-'; allStat.(taxa{i}).label.species = 'scientific name';
+      allStat.(taxa{i}).species_en = metaData.species_en; allStat.(taxa{i}).units.species_en = '-'; allStat.(taxa{i}).label.species_en = 'common name';
       allStat.(taxa{i}).model = metaPar.model; allStat.(taxa{i}).units.model = '-'; allStat.(taxa{i}).label.model = 'DEB model';
       allStat.(taxa{i}).MRE = metaPar.MRE; allStat.(taxa{i}).units.MRE = '-'; allStat.(taxa{i}).label.MRE = 'Mean Relative Error';
       allStat.(taxa{i}).SMSE = metaPar.SMSE; allStat.(taxa{i}).units.SMSE = '-'; allStat.(taxa{i}).label.SMSE = 'Symmetric Mean Squared Error';

@@ -5,6 +5,7 @@
 % make sure that ../img/tree is updated
 % write_allStat;
 
+prt_species_names
 prt_species_list
 prt_species_tree_taxa_js
 prt_authors
@@ -13,6 +14,7 @@ prt_about
 
 %% cp to web
 
+% ../species_names.html 
 % ../species_list.html 
 % ../pars.html
 % ../about.html
