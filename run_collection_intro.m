@@ -10,6 +10,7 @@ prt_species_list
 prt_species_tree_taxa_js
 prt_authors
 prt_pars
+prt_patterns
 prt_about
 
 %% cp to web
@@ -21,5 +22,6 @@ prt_about
 
 % ../sys/species_tree_*.js
 % ../img/pars/*.png
+% ../img/patterns/*.png
 % ../img/about/*.png 
 % ../img/tree/*.jpg and *.jpg.txt

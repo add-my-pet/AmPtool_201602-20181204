@@ -14,13 +14,13 @@ function prt_pars
 %
 % Output: 
 %
-% * 14 png-files written in ../img: 
+% * 14 png-files written in ../img/pars: 
 %
 %    - Fm.png kapX.png pAm.png, v.png, kap.png, pM.png, EG.png, kJ.png, kapR.png, EHb.png, EHp.png, ha.png, sG.png, TA.png
 
 %% Remarks
 % For presentation on the web, copy png files to 
-% /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img
+% /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img/pars
 
 close all
 shstat_options('y_label', 'on');
