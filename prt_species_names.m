@@ -12,7 +12,9 @@ function prt_species_names
 % deletes and writes ../species_names.html with scientific and common names on alphabeth
 
 [nms entries] = read_allStat('species','species_en');
-n = length(entries); snm = sort(nms(:,1)); snm_prt = snm; cnm = nms(:,2); 
+n = length(entries); 
+[x index] = sort(nms(:,1)); nms = nms(index,:); 
+snm = nms(:,1); cnm = nms(:,2); snm_prt = snm; 
 for i = 1:n
   snm_prt{i} = strrep(snm{i}, '_', ' '); % replace "_" by space
   cnm_prt = cnm{i};
@@ -21,7 +23,7 @@ for i = 1:n
     cnm{i} = cnm_prt;
   end
 end
-[cnm index] = sort(cnm);
+nms(:,2) = cnm; [cnm index] = sort(cnm);
 
 fid_Spec = fopen('../species_names.html', 'w+'); % open file for writing, delete existing content
   
@@ -57,7 +59,7 @@ fprintf(fid_Spec, '        Click here for common names">Scientific names</a></H2
 fprintf(fid_Spec, '      <div class = "newspaper">\n'); 
 
 for i = 1:n
-fprintf(fid_Spec,['        <a target="_top" href="entries_web/', snm{i}, '_res.html">', snm_prt{i}, '</a><br>\n']);
+fprintf(fid_Spec,['        <a target="_top" href="entries_web/', snm{i}, '_res.html" title="', nms{i,2}, '">', snm_prt{i}, '</a><br>\n']);
 end
 fprintf(fid_Spec, '      </div>\n\n');  
 fprintf(fid_Spec, '      <H2 id="common_name"><a href="#scientific_name" title="Locate entries by common name.\n');
@@ -65,7 +67,7 @@ fprintf(fid_Spec, '        Goto entries by clicking on entry names\n');
 fprintf(fid_Spec, '        Click here for scientific names">Common names</a></H2>\n\n');
 fprintf(fid_Spec, '      <div class = "newspaper">\n');  
 for i = 1:n
-fprintf(fid_Spec,['        <a target="_top" href="entries_web/', entries{index(i)}, '_res.html">', cnm{i}, '</a><br>\n']);
+fprintf(fid_Spec,['        <a target="_top" href="entries_web/', entries{index(i)}, '_res.html" title="', snm_prt{index(i)}, '">', cnm{i}, '</a><br>\n']);
 end
 fprintf(fid_Spec, '      </div>\n\n');  
 fprintf(fid_Spec, '    </div> <!-- end of content -->\n\n');

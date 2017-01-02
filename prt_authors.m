@@ -55,6 +55,71 @@ fprintf(fid_authors, '<HTML>\n');
 fprintf(fid_authors, '<HEAD>\n');
 fprintf(fid_authors, '  <TITLE>AmP authors</TITLE>\n');
 fprintf(fid_authors, '  <link rel="stylesheet" type="text/css" href="sys/style.css">\n');
+fprintf(fid_authors, '  <style>\n');
+fprintf(fid_authors, '    /*-- Multilevel DropDown menus --*/\n');
+fprintf(fid_authors, '    /*-- http://www.cssscript.com/create-a-multi-level-drop-down-menu-with-pure-css/ --*/\n\n');
+
+fprintf(fid_authors, '    /*-- Set the parent <li> CSS position property to relative --*/\n\n');
+
+fprintf(fid_authors, '    ul {\n');
+fprintf(fid_authors, '      list-style: none;\n');
+fprintf(fid_authors, '      padding: 0;\n');
+fprintf(fid_authors, '      margin: 0;\n');
+fprintf(fid_authors, '    }\n\n');
+	 
+fprintf(fid_authors, '    ul li {\n');
+fprintf(fid_authors, '      display: block;\n');
+fprintf(fid_authors, '      position: relative;\n');
+fprintf(fid_authors, '      float: left;\n');
+fprintf(fid_authors, '    }\n\n');
+
+fprintf(fid_authors, '    /*-- The CSS to hide the sub menus --*/\n\n');
+
+fprintf(fid_authors, '    li ul { display: none; }\n\n');
+	 
+fprintf(fid_authors, '    ul li a {\n');
+fprintf(fid_authors, '      display: block;\n');
+fprintf(fid_authors, '      padding: 1em;\n');
+fprintf(fid_authors, '      text-decoration: none;\n');
+fprintf(fid_authors, '      white-space: nowrap;\n');
+fprintf(fid_authors, '      color: #fb5c3a;\n');
+fprintf(fid_authors, '    }\n\n');
+	 
+fprintf(fid_authors, '    ul li a:hover { background: #2c3e50; }\n\n');
+
+fprintf(fid_authors, '    /*-- Displays the dropdown menu on hover --*/\n\n');
+
+fprintf(fid_authors, '    li:hover > ul {\n');
+fprintf(fid_authors, '      display: block;\n');
+fprintf(fid_authors, '      position: absolute;\n');
+fprintf(fid_authors, '    }\n\n');
+	 
+fprintf(fid_authors, '    li:hover li { float: none; }\n\n');
+	 
+fprintf(fid_authors, '    li:hover a { background: #fb5c3a; color: #000000 }\n\n');
+	 
+fprintf(fid_authors, '    li:hover li a:hover { background: #2c3e50; }\n\n');
+	 
+fprintf(fid_authors, '    .main-navigation li ul li { border-top: 0; }\n\n');
+
+fprintf(fid_authors, '    /*-- Displays second level dropdown menus to the right of the first level dropdown menu --*/\n\n');
+
+fprintf(fid_authors, '    ul ul ul {\n');
+fprintf(fid_authors, '      left: 100%%;\n');
+fprintf(fid_authors, '      top: 0;\n');
+fprintf(fid_authors, '    }\n\n');
+
+fprintf(fid_authors, '    /*-- Simple clearfix --*/\n\n');
+
+fprintf(fid_authors, '    ul:before,\n');
+fprintf(fid_authors, '    ul:after {\n');
+fprintf(fid_authors, '      content: " "; /* 1 */\n');
+fprintf(fid_authors, '      display: table; /* 2 */\n');
+fprintf(fid_authors, '    }\n\n');
+	 
+fprintf(fid_authors, '    ul:after { clear: both; }\n');
+
+fprintf(fid_authors, '  </style>\n');
 fprintf(fid_authors, '  <script src="sys/dropdown.js"></script>\n');
 fprintf(fid_authors, '  <script src="sys/w3data.js"></script>\n');
 fprintf(fid_authors, '</HEAD>\n\n');
