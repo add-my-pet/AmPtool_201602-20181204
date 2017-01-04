@@ -109,6 +109,19 @@ fprintf(oid, '      <H1 id = "portaltop">Implied properties for this entry </H1>
 % fprintf(oid, '<H2>Implied properties for this entry</H2>');
 fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n\n']);
 
+% print SGJR pies
+fprintf(oid, '      <H2>Energy allocation during ontogeny</H2>\n');
+fprintf(oid, '      <div>\n');
+fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_SGJRb.png"  width="260px">\n']);
+fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRb.png" width="260px">\n']);
+fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRp.png" width="260px">\n']);
+fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRi.png" width="260px">\n']);
+fprintf(oid, '      </div>\n\n');
+fprintf(oid, '      <div class = "caption">   \n');
+fprintf(oid, '          Investment, cumulated over the embryo period (left), and allocation at birth, puberty, ultimate.\n');
+fprintf(oid, '      </div>\n\n');
+fprintf(oid, '      <p><p>\n');
+
 % print the table with the properties :    
 fprintf(oid, '      <TABLE id = "t01">\n');
 fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="4">Implied properties at typical temperature (%g deg. C)</TH></TR>\n', K2C(metaData.T_typical));

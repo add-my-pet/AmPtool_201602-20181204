@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>allPie_SGJR</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-05-04"><meta name="DC.source" content="allPie_SGJR.m"><style type="text/css">
+      --><title>prt_pies_SGJR</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-01-04"><meta name="DC.source" content="prt_pies_SGJR.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,49 +55,45 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>allPie_SGJR</h1><!--introduction--><p>writes all pies for allocation at birth, puberty, ultimate to all entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../allPie_SGJR.m"><b>allPie_SGJR</b></a></p><h2>Description<a name="4"></a></h2><p>Writes all allocation pies to all entries (4 pies per entry) if wrt = 1. Otherwise you will seea very large number of pies passing by on your screen.</p><p>Input</p><div><ul><li>wrt: optional indicator for writing files to the sundirs of ../entries/ (default: 0)</li></ul></div><h2>Remarks<a name="5"></a></h2><p>macro around <a href="pie_SGGJR.html"><b>pie_SGGJR</b></a></p><h2>Example of use<a name="6"></a></h2><p>allPie_SGJR;</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>prt_pies_SGJR</h1><!--introduction--><p>writes all pies for allocation at birth, puberty, ultimate  and for investment at birth to all entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_pies_SGJR.m"><b>prt_pies_SGJR</b></a>(entries)</p><h2>Description<a name="4"></a></h2><p>Writes allocation pies at birth, puberty, ultimate and  investment pie at birth to all specified entries (4 pies per entry).</p><p>Input</p><div><ul><li>taxa: cell-string with entry name; if absent all entries</li></ul></div><h2>Remarks<a name="5"></a></h2><p>macro around <a href="pie_SGGJR.html"><b>pie_SGGJR</b></a> write files ../entries/my_pet/my_pet_pie_SGJRb.png, my_pet_pie_pSGJRb.png, my_pet_pie_SGJRp.png, my_pet_pie_SGJRi.png gets data from allStat.mat</p><h2>Example of use<a name="6"></a></h2><p>prt_pie_SGJR;</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
-%% allPie_SGJR
-% writes all pies for allocation at birth, puberty, ultimate to all entries
+%% prt_pies_SGJR
+% writes all pies for allocation at birth, puberty, ultimate  and for investment at birth to all entries
 
 %%
-function  allPie_SGJR(wrt)
-% created 2016/05/03 by Bas Kooijman
+function  prt_pies_SGJR(entries)
+% created 2016/05/03 by Bas Kooijman, modified 2017/01/04
 
 %% Syntax
-% <../allPie_SGJR.m *allPie_SGJR*>
+% <../prt_pies_SGJR.m *prt_pies_SGJR*>(entries)
 
 %% Description
-% Writes all allocation pies to all entries (4 pies per entry) if wrt = 1.
-% Otherwise you will seea very large number of pies passing by on your screen.
+% Writes allocation pies at birth, puberty, ultimate and 
+%  investment pie at birth to all specified entries (4 pies per entry).
 %
 % Input
 %
-% * wrt: optional indicator for writing files to the sundirs of ../entries/ (default: 0)
+% * taxa: cell-string with entry name; if absent all entries 
 
 %% Remarks
-% macro around <pie_SGGJR.html *pie_SGGJR*> 
+% macro around <pie_SGGJR.html *pie_SGGJR*>
+% write files ../entries/my_pet/my_pet_pie_SGJRb.png, my_pet_pie_pSGJRb.png, my_pet_pie_SGJRp.png, my_pet_pie_SGJRi.png
+% gets data from allStat.mat
 
 %% Example of use
-% allPie_SGJR; 
-
-  global allStat
+% prt_pie_SGJR; 
   
-  if ~exist('wrt','var')
-    wrt = [];
+  if ~exist('entries','var')
+    entries = select;
   end
   
   load('allStat')
-  entries = fieldnames(allStat);
   ne = length(entries);
   
   for i = 1:ne
-    pie_SGGJR(entries{i}, wrt); 
-    if isempty(wrt) || wrt == 0
-      fprintf([entries{i},'\n'])
-      pause
-    end
+    pie_SGGJR(entries{i}, 1); 
+    fprintf([entries{i},'\n'])
     close all
   end
 
