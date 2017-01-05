@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>pie_SGGJR</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-05-04"><meta name="DC.source" content="pie_SGGJR.m"><style type="text/css">
+      --><title>pie_SGGJR</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-01-05"><meta name="DC.source" content="pie_SGGJR.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,34 +55,37 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>pie_SGGJR</h1><!--introduction--><p>presents pies for allocation at birth, puberty, ultimate</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>pSGGJR = <a href="../pie_SGGJR.m"><b>pie_SGGJR</b></a> (entry, wrt)</p><h2>Description<a name="4"></a></h2><p>Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction   for birth, puberty and ultimate and cumulative invertment at birth are presented in 4 pies. Dissipating fluxes explode in the pies; growth is partitioned into growth excluding overheads and growth overheads. Color coding: som maint: red, mat maint: magenta, growth: green, maturation/reproduction: blue. Data are obtained from allStat, use load('allStat') before use and make allStat global.</p><p>Input</p><p>entry: string with name of entry wrt: optional indicator for writing files to ../entries/entry (default: 0)</p><p>Output (apart from figure):</p><div><ul><li>pSGGRJ: (5,3)-matrix with powers in J/d</li></ul></div><pre>   - S: p_M + p_T: somatic maintenance
+  </style></head><body><div class="content"><h1>pie_SGGJR</h1><!--introduction--><p>presents pies for allocation at birth, puberty, ultimate</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>pSGGJR = <a href="../pie_SGGJR.m"><b>pie_SGGJR</b></a> (stat, wrt)</p><h2>Description<a name="4"></a></h2><p>Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction   for birth, puberty and ultimate and cumulative invertment at birth are presented in 4 pies. Dissipating fluxes explode in the pies; growth is partitioned into growth excluding overheads and growth overheads. Color coding: som maint: red, mat maint: magenta, growth: green, maturation/reproduction: blue. Writ 4 png-files to current folder if wrt == 1</p><p>Input</p><div><ul><li>species: string with name of entry</li><li>model: string with name of typified model</li><li>par: structure with parameters</li><li>stat: structure with result of statistics_st</li><li>wrt: indicator for writing, which only occurs if wrt == 1</li></ul></div><p>Output (apart from figure):</p><div><ul><li>pSGGRJ: (5,3)-matrix with powers in J/d</li></ul></div><pre>   - S: p_M + p_T: somatic maintenance
    - G: p_G: growth, excluding overhead
    - G: p_G: growth overhead
    - J: p_J: maturity maintenance
-   - R: p_R: maturation or reproduction</pre><h2>Remarks<a name="5"></a></h2><p><a href="allPie_SGGJR.html"><b>allPie_SGGJR</b></a> writes all pies to all entries. Notice that the sum of all these powers does not equal assimilation since reserve builds up during growth</p><h2>Example of use<a name="6"></a></h2><p>pie_SGJR('Odontaster_validus');</p><p class="footer"><br>
+   - R: p_R: maturation or reproduction</pre><h2>Remarks<a name="5"></a></h2><p>Function is called by entries_admin/prt_my_pet</p><h2>Example of use<a name="6"></a></h2><p>load results_my_pet.mat; pie_SGGJR(statistics_st(metaPar.model, par, T_typical, f));</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% pie_SGGJR
 % presents pies for allocation at birth, puberty, ultimate
 
 %%
-function  pSGGJR = pie_SGGJR (entry, wrt)
-% created 2016/05/02 by Bas Kooijman
+function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
+% created 2016/05/02 by Bas Kooijman, modified 2017/01/04
 
 %% Syntax
-% pSGGJR = <../pie_SGGJR.m *pie_SGGJR*> (entry, wrt)
+% pSGGJR = <../pie_SGGJR.m *pie_SGGJR*> (stat, wrt)
 
 %% Description
 % Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction 
 %   for birth, puberty and ultimate and cumulative invertment at birth are presented in 4 pies.
 % Dissipating fluxes explode in the pies; growth is partitioned into growth excluding overheads and growth overheads.
 % Color coding: som maint: red, mat maint: magenta, growth: green, maturation/reproduction: blue.
-% Data are obtained from allStat, use load('allStat') before use and make allStat global.
+% Writ 4 png-files to current folder if wrt == 1
 %
 % Input
 %
-% entry: string with name of entry
-% wrt: optional indicator for writing files to ../entries/entry (default: 0)
+% * species: string with name of entry
+% * model: string with name of typified model
+% * par: structure with parameters
+% * stat: structure with result of statistics_st
+% * wrt: indicator for writing, which only occurs if wrt == 1
 %
 % Output (apart from figure):
 % 
@@ -95,82 +98,117 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
 %     - R: p_R: maturation or reproduction
 
 %% Remarks
-% <allPie_SGGJR.html *allPie_SGGJR*> writes all pies to all entries.
-% Notice that the sum of all these powers does not equal assimilation since reserve builds up during growth
+% Function is called by entries_admin/prt_my_pet
 
 %% Example of use
-% pie_SGJR('Odontaster_validus'); 
-
-  global allStat
+% load results_my_pet.mat; pie_SGGJR(statistics_st(metaPar.model, par, T_typical, f)); 
   
-  if ~exist('wrt','var') || isempty(wrt)
-      wrt = false;
-  end
-  
-  kap_G = allStat.(entry).kap_G;
-  pSGGJR = [allStat.(entry).p_Sb allStat.(entry).p_Sp allStat.(entry).p_Si;
-           kap_G * [allStat.(entry).p_Gb allStat.(entry).p_Gp allStat.(entry).p_Gi]; 
-           (1 - kap_G) * [allStat.(entry).p_Gb allStat.(entry).p_Gp allStat.(entry).p_Gi]; 
-           allStat.(entry).p_Jb allStat.(entry).p_Jp allStat.(entry).p_Ji; 
-           allStat.(entry).p_Rb allStat.(entry).p_Rp allStat.(entry).p_Ri];
+  kap_G = stat.kap_G; E_0 = stat.E_0; T_txt = [num2str(K2C(stat.T), '% 3.1f'), ' ^oC']; 
+  pSGGJR = [stat.p_Sb stat.p_Sp stat.p_Si;
+           kap_G * [stat.p_Gb stat.p_Gp stat.p_Gi]; 
+           (1 - kap_G) * [stat.p_Gb stat.p_Gp stat.p_Gi]; 
+           stat.p_Jb stat.p_Jp stat.p_Ji; 
+           stat.p_Rb stat.p_Rp stat.p_Ri];
   pSGGJR = max(1e-16, pSGGJR); % sometimes growth is negative (but very small)
-  ptot = sum(pSGGJR,1); % total flux
+  pC = sum(pSGGJR,1); % mobilisation flux
+  pA = [stat.p_Ab; stat.p_Ap; stat.p_Ai]; % assimilation flux
   
-  par = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap];
   pie_color = [1 0 0; 0 1 0; 0 1 0; 1 0 1; 0 0 1]; % colors for S, G, J. R
   
-  Hfig1 = figure(1); % divide p_* by sum, else errors occur (probably due to small numbers)
-  txt = {'p_S', 'p_G', '', 'p_J', 'p_R'};
+  Hfig1 = figure(1); % allocation at birth
+  p = pSGGJR(:,1)/pC(1); % divide p_* by sum, else errors occur (probably due to small numbers)
+  txt = {...
+    ['p_S ', num2str(p(1), '% 3.2f')], ['p_G ', num2str(p(2), '% 3.2f')], ['p_G ', num2str(p(3), '% 3.2f')], ...
+    ['p_J ', num2str(p(4), '% 3.2f')], ['p_R ', num2str(p(5), '% 3.2f')]};
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(pSGGJR(:,1)/ptot(1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
+  pie3s(p(:,1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
   colormap(pie_color);
-  title(['allocation at birth, p_{tot} = ', num2str(ptot(1)), ' J/d']);
+  title({['Birth at ', T_txt, ', f = 1'], ...
+      ['p_A = ', num2str(pA(1), '% 1.3e'), ' J/d, p_C = ', num2str(pC(1), '% 1.3e'), ' J/d'], ...
+      ['E_W^b = ', num2str(stat.E_Wb, '% 1.2e'), ' J, W_w^b = ', num2str(stat.Ww_b, '% 1.2e'), ' g']});
   if wrt
-    saveas(Hfig1, ['../entries/',entry, '/pie_pSGJRb.png']);
+    Hfig1 = tightfig(Hfig1);
+    saveas(Hfig1, [species, '_pie_pSGJRb.png']);
   end
   set(Hfig1, 'Outerposition', [50 500 600 600]);
 
-  Hfig2 = figure(2);
+  Hfig2 = figure(2); % allocation at puberty
+  p= pSGGJR(:,2)/pC(2); % divide p_* by sum, else errors occur (probably due to small numbers)
+  txt = {...
+    ['p_S ', num2str(p(1), '% 3.2f')], ['p_G ', num2str(p(2), '% 3.2f')], ['p_G ', num2str(p(3), '% 3.2f')], ...
+    ['p_J ', num2str(p(4), '% 3.2f')], ['p_R ', num2str(p(5), '% 3.2f')]};
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(pSGGJR(:,2)/ptot(2), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
+  pie3s(p(:,1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
   colormap(pie_color);
-  title(['allocation at puberty, p_{tot} = ', num2str(ptot(2)), ' J/d']);
+  title({['Puberty at ', T_txt, ', f = 1'], ...
+      ['p_A = ', num2str(pA(2), '% 1.3e'), ' J/d,  p_C = ', num2str(pC(2), '% 1.3e'), ' J/d'], ...
+      ['E_W^p = ', num2str(stat.E_Wp, '% 1.2e'), ' J, W_w^p = ', num2str(stat.Ww_p, '% 1.2e'), ' g']});
   if wrt
-    saveas(Hfig2, ['../entries/',entry, '/pie_pSGJRp.png']);
+    Hfig2 = tightfig(Hfig2);
+    saveas(Hfig2, [species, '_pie_pSGJRp.png']);
   end
   set(Hfig2, 'Outerposition', [650 500 600 600]);
  
-  Hfig3 = figure(3);
+  Hfig3 = figure(3); % allocation at ultimate
+  p=pSGGJR(:,3)/pC(3);
+  txt = {...
+    ['p_S ', num2str(p(1), '% 3.2f')], ['p_G ', num2str(p(2), '% 3.2f')], ['p_G ', num2str(p(3), '% 3.2f')], ...
+    ['p_J ', num2str(p(4), '% 3.2f')], ['p_R ', num2str(p(5), '% 3.2f')]};
   txt{2} = '';
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(pSGGJR(:,3)/ptot(3), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 0]);
+  pie3s(p, 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 0]);
   colormap(pie_color);
-  if strcmp(allStat.(entry).model,'hex')
-    title(['allocation at pupation, p_{tot} = ', num2str(ptot(3)), ' J/d']);
-  elseif strcmp(allStat.(entry).model,'hep')
-    title(['allocation at metam, p_{tot} = ', num2str(ptot(3)), ' J/d']);
+  if strcmp(model,'hex')
+    title({['Pupation at ', T_txt], ...
+        ['p_A = ', num2str(pA(3), '% 1.3e'), ' J/d, p_C = ', num2str(pC(3), '% 1.3e'), ' J/d'], ...
+        ['E_W^j = ', num2str(stat.E_Wj, '% 1.2e'), ' J, W_w^j = ', num2str(stat.Ww_j, '% 1.2e'), ' g']});
+  elseif strcmp(model,'hep')
+    title({['Metam at ', T_txt], ...
+        ['p_A = ', num2str(pA(3), '% 1.3e'), ' J/d, p_C = ', num2str(pC(3), '% 1.3e'), ' J/d'], ...
+        ['E_W^j = ', num2str(stat.E_Wj, '% 1.2e'), ' J, W_w^j = ', num2str(stat.Ww_j, '% 1.2e'), ' g']});
   else
-    title(['allocation at ultimate, p_{tot} = ', num2str(ptot(3)), ' J/d']);
+    title({['Ultimate at ', T_txt, ', f = 1'], ...
+        ['p_A = ', num2str(pA(3), '% 1.3e'), ' J/d, p_C = ', num2str(pC(3), '% 1.3e'), ' J/d'], ...
+        ['E_W^i = ', num2str(stat.E_Wi, '% 1.2e'), ' J, W_w^i = ', num2str(stat.Ww_i, '% 1.2e'), ' g']});
   end
   if wrt
-    saveas(Hfig3, ['../entries/',entry, '/pie_pSGJRi.png'])
+    Hfig3 = tightfig(Hfig3);
+    saveas(Hfig3, [species, '_pie_pSGJRi.png'])
   end
   set(Hfig3, 'Outerposition', [650 20 600 600]);
-  
-  % cumulative investment at birth
-  par_pie = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap, allStat.(entry).kap_G];
-  if strcmp(allStat.(entry).model, 'stf') || strcmp(allStat.(entry).model, 'stx')
-    Hfig = birth_pie_foetus(par_pie);
+    
+  Hfig4 = figure(4); % cumulative investment at birth
+  par_pie = [stat.g, stat.k, stat.v_Hb, par.kap, stat.kap_G];
+  if strcmp(model, 'stf') || strcmp(model, 'stx')
+    EMJHG = get_EMJHG_foetus(par_pie, 1);
+    pie_txt = { ...
+      ['reserve ', num2str(EMJHG(1), '% 3.2f')], ['som maint ', num2str(EMJHG(2), '% 3.2f')], ['mat maint ', num2str(EMJHG(3), '% 3.2f')], ...
+      ['maturity ',  num2str(EMJHG(4), '% 3.2f')], ['growth overhead ', num2str(EMJHG(5), '% 3.2f')], ['structure ', num2str(EMJHG(6), '% 3.2f')]};
+    pie_color = [1 1 .8; 1 0 0; 1 0 1; 0 0 1; 0 1 0; .8 1 .8];
+    colormap(pie_color);
+    set(gca, 'FontSize', 15, 'Box', 'on')
+    pie3s(EMJHG, 'Explode', [0 1 1 1 1 0], 'Labels', pie_txt, 'Bevel', 'Elliptical');
+    title({'cum. investment in foetus, e_b = 1', ...
+        ['E_0 = ', num2str(E_0,'% 1.2e'), ' J']})
   else
-    Hfig = birth_pie(par_pie);
+    EMJHG = get_EMJHG(par_pie, 1);
+    pie_txt = { ...
+        ['reserve ', num2str(EMJHG(1), '% 3.2f')], ['som maint ', num2str(EMJHG(2), '% 3.2f')], ['mat maint ', num2str(EMJHG(3), '% 3.2f')], ...
+        ['maturity ', num2str(EMJHG(4), '% 3.2f')],['growth overhead ', num2str(EMJHG(5), '% 3.2f')], ['structure ', num2str(EMJHG(6), '% 3.2f')]};
+    pie_color = [1 1 .8; 1 0 0; 1 0 1; 0 0 1; 0 1 0; .8 1 .8];
+    colormap(pie_color);
+    set(gca, 'FontSize', 15, 'Box', 'on')
+    pie3s(EMJHG, 'Explode', [0 1 1 1 1 0], 'Labels', pie_txt, 'Bevel', 'Elliptical');
+    title({'Cum. investment at birth, e_b = 1', ...
+        ['E_0 = ', num2str(E_0,'% 1.2e'), ' J']})      
   end
   if wrt
-    saveas(Hfig, ['../entries/',entry, '/pie_ESGJRb.png'])
+    Hfig4 = tightfig(Hfig4);
+    saveas(Hfig4, [species, '_pie_SGJRb.png'])
   end
-  set(Hfig, 'Outerposition', [50 20 600 600]);
+  set(Hfig4, 'Outerposition', [50 20 600 600]);
 
 end
-
 
 ##### SOURCE END #####
 --></body></html>

@@ -9,8 +9,9 @@ function run_collection(speciesList)
 % <../run_collection.m *run_collection*> (entries)
 
 %% Description
+% * writes energy allocation pies in add_my_pet/entries
 % * creates html pages for all of the different species in add_my_pet/entries
-% * place the html and bib pages in entries_web and delete from entries
+% * places the html and bib pages in entries_web and delete from entries
 % * create zipped folder in entries_zip
 %
 % Input:
@@ -29,6 +30,8 @@ function run_collection(speciesList)
 %% Example of use
 % run_collection
 % run collection_intro 
+
+%prt_pies_SGGJR(speciesList)
 
 entries = select('Animalia');
 

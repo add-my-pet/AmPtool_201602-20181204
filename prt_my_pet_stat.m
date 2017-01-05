@@ -9,17 +9,16 @@ function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
 % <../prt_my_pet_stat.m *prt_my_pet_stat*> (metaData, metaPar, par, destinationFolder) 
 
 %% Description
-% Read and writes my_pet_stat.html. This pages contains a list of implied model
-% properties of my_pet. It calls admin_pets/get_statfields to see what statistics are
-% printed in which order on the web.
+% Read and writes my_pet_stat.html and write png files in current folder (irrespective of destinationFolder). 
+% This pages contains a list of implied model properties of my_pet. 
+% It calls entries_admin/get_statfields to see what statistics are printed in which order on the web.
 %
 % Input:
 %
 % * metaData: structure (output of <http://www.debtheory.org/wiki/index.php?title=Mydata_file *mydata_my_pet_par*> file)
 % * metaPar: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
 % * par: structure (output of <http://www.debtheory.org/wiki/index.php?title=Pars_init_file *pars_init_my_pet_par*> file)
-% * destinationFolder : optional string with destination folder the files
-% are printed to (default: current folder)
+% * destinationFolder: optional string with destination folder to which my_pet_stat.html is printed (default: current folder)
 
 %% Example of use
 % load('results_my_pet.mat');
@@ -36,6 +35,9 @@ end
 f = 1; % ad libitum feeding
 [stat, txtStat] = statistics_st(metaPar.model, par, metaData.T_typical, f);
 stat.z = par.z; txtStat.label.z = 'zoom factor'; txtStat.units.z = '-'; % add zoom factor to statistics which are to be printed 
+
+pie_SGGJR(metaData.species, metaPar.model, par, stat, 1); % print 4 png-files for energy allocation to current folder
+
 % flds = fieldnmnst_st(stat); % fieldnames of all statistics
 [webStatFields, webColStat] = get_statfields(metaPar.model); % which statistics in what order should be printed in the table
 
@@ -110,7 +112,7 @@ fprintf(oid, '      <H1 id = "portaltop">Implied properties for this entry </H1>
 fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n\n']);
 
 % print SGJR pies
-fprintf(oid, '      <H2>Energy allocation during ontogeny</H2>\n');
+fprintf(oid, '      <H3>Energy investment, cumulated over the embryo period (left), and allocation during ontogeny</H3>\n');
 fprintf(oid, '      <div>\n');
 fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_SGJRb.png"  width="260px">\n']);
 fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRb.png" width="260px">\n']);
@@ -118,7 +120,9 @@ fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.sp
 fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRi.png" width="260px">\n']);
 fprintf(oid, '      </div>\n\n');
 fprintf(oid, '      <div class = "caption">   \n');
-fprintf(oid, '          Investment, cumulated over the embryo period (left), and allocation at birth, puberty, ultimate.\n');
+fprintf(oid, '        Exploding sectors mean dissipation; numbers denote fractions of mobilized reserve. \n');
+fprintf(oid, '        Endpoints are somatic maintenance S, growth G, maturity maintenance J, maturity or reproduction R.\n'); 
+fprintf(oid, '        The difference between assimilation p_A and mobilization p_C is used to increase reserve.\n');
 fprintf(oid, '      </div>\n\n');
 fprintf(oid, '      <p><p>\n');
 

@@ -2,23 +2,26 @@
 % presents pies for allocation at birth, puberty, ultimate
 
 %%
-function  pSGGJR = pie_SGGJR (entry, wrt)
+function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
 % created 2016/05/02 by Bas Kooijman, modified 2017/01/04
 
 %% Syntax
-% pSGGJR = <../pie_SGGJR.m *pie_SGGJR*> (entry, wrt)
+% pSGGJR = <../pie_SGGJR.m *pie_SGGJR*> (stat, wrt)
 
 %% Description
 % Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction 
 %   for birth, puberty and ultimate and cumulative invertment at birth are presented in 4 pies.
 % Dissipating fluxes explode in the pies; growth is partitioned into growth excluding overheads and growth overheads.
 % Color coding: som maint: red, mat maint: magenta, growth: green, maturation/reproduction: blue.
-% Data are obtained from allStat, use load('allStat') before use and make allStat global.
+% Writ 4 png-files to current folder if wrt == 1
 %
 % Input
 %
-% entry: string with name of entry
-% wrt: optional indicator for writing files to ../entries/entry (default: 0)
+% * species: string with name of entry
+% * model: string with name of typified model
+% * par: structure with parameters
+% * stat: structure with result of statistics_st
+% * wrt: indicator for writing, which only occurs if wrt == 1
 %
 % Output (apart from figure):
 % 
@@ -31,33 +34,24 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
 %     - R: p_R: maturation or reproduction
 
 %% Remarks
-% <allPie_SGGJR.html *allPie_SGGJR*> writes all pies to all entries.
-% Notice that the sum of all these powers does not equal assimilation since reserve builds up during growth
-% Gets input data from allStat.mat, which must be up-to-date
+% Function is called by entries_admin/prt_my_pet
 
 %% Example of use
-% pie_SGGJR('Odontaster_validus'); 
-
-  load allStat
+% load results_my_pet.mat; pie_SGGJR(statistics_st(metaPar.model, par, T_typical, f)); 
   
-  if ~exist('wrt','var') || isempty(wrt)
-      wrt = false;
-  end
-  
-  kap_G = allStat.(entry).kap_G; E_0 = allStat.(entry).E_0;
-  pSGGJR = [allStat.(entry).p_Sb allStat.(entry).p_Sp allStat.(entry).p_Si;
-           kap_G * [allStat.(entry).p_Gb allStat.(entry).p_Gp allStat.(entry).p_Gi]; 
-           (1 - kap_G) * [allStat.(entry).p_Gb allStat.(entry).p_Gp allStat.(entry).p_Gi]; 
-           allStat.(entry).p_Jb allStat.(entry).p_Jp allStat.(entry).p_Ji; 
-           allStat.(entry).p_Rb allStat.(entry).p_Rp allStat.(entry).p_Ri];
+  kap_G = stat.kap_G; E_0 = stat.E_0; T_txt = [num2str(K2C(stat.T), '% 3.1f'), ' ^oC']; 
+  pSGGJR = [stat.p_Sb stat.p_Sp stat.p_Si;
+           kap_G * [stat.p_Gb stat.p_Gp stat.p_Gi]; 
+           (1 - kap_G) * [stat.p_Gb stat.p_Gp stat.p_Gi]; 
+           stat.p_Jb stat.p_Jp stat.p_Ji; 
+           stat.p_Rb stat.p_Rp stat.p_Ri];
   pSGGJR = max(1e-16, pSGGJR); % sometimes growth is negative (but very small)
-  pC = sum(pSGGJR,1); % total mobilisation flux
-  pA = [allStat.(entry).p_Ab; allStat.(entry).p_Ap; allStat.(entry).p_Ai]; % assimilation flux
+  pC = sum(pSGGJR,1); % mobilisation flux
+  pA = [stat.p_Ab; stat.p_Ap; stat.p_Ai]; % assimilation flux
   
-  par = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap];
   pie_color = [1 0 0; 0 1 0; 0 1 0; 1 0 1; 0 0 1]; % colors for S, G, J. R
   
-  Hfig1 = figure(1); 
+  Hfig1 = figure(1); % allocation at birth
   p = pSGGJR(:,1)/pC(1); % divide p_* by sum, else errors occur (probably due to small numbers)
   txt = {...
     ['p_S ', num2str(p(1), '% 3.2f')], ['p_G ', num2str(p(2), '% 3.2f')], ['p_G ', num2str(p(3), '% 3.2f')], ...
@@ -65,14 +59,16 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(p(:,1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
   colormap(pie_color);
-  title({'Birth at T_{typical}, f = 1', ['p_A = ', num2str(pA(1), '% 1.3e'), ' J/d, p_C = ', num2str(pC(1), '% 1.3e'), ' J/d']});
+  title({['Birth at ', T_txt, ', f = 1'], ...
+      ['p_A = ', num2str(pA(1), '% 1.3e'), ' J/d, p_C = ', num2str(pC(1), '% 1.3e'), ' J/d'], ...
+      ['E_W^b = ', num2str(stat.E_Wb, '% 1.2e'), ' J, W_w^b = ', num2str(stat.Ww_b, '% 1.2e'), ' g']});
   if wrt
     Hfig1 = tightfig(Hfig1);
-    saveas(Hfig1, ['../entries/', entry, '/', entry, '_pie_pSGJRb.png']);
+    saveas(Hfig1, ['../entries/', species, '/', species, '_pie_pSGJRb.png']);
   end
   set(Hfig1, 'Outerposition', [50 500 600 600]);
 
-  Hfig2 = figure(2);
+  Hfig2 = figure(2); % allocation at puberty
   p= pSGGJR(:,2)/pC(2); % divide p_* by sum, else errors occur (probably due to small numbers)
   txt = {...
     ['p_S ', num2str(p(1), '% 3.2f')], ['p_G ', num2str(p(2), '% 3.2f')], ['p_G ', num2str(p(3), '% 3.2f')], ...
@@ -80,14 +76,16 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(p(:,1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
   colormap(pie_color);
-  title({'Puberty at T_{typical}, f = 1', ['p_A = ', num2str(pA(2), '% 1.3e'), ' J/d,  p_C = ', num2str(pC(2), '% 1.3e'), ' J/d']});
+  title({['Puberty at ', T_txt, ', f = 1'], ...
+      ['p_A = ', num2str(pA(2), '% 1.3e'), ' J/d,  p_C = ', num2str(pC(2), '% 1.3e'), ' J/d'], ...
+      ['E_W^p = ', num2str(stat.E_Wp, '% 1.2e'), ' J, W_w^p = ', num2str(stat.Ww_p, '% 1.2e'), ' g']});
   if wrt
     Hfig2 = tightfig(Hfig2);
-    saveas(Hfig2, ['../entries/', entry, '/', entry, '_pie_pSGJRp.png']);
+    saveas(Hfig2, ['../entries/', species, '/', species, '_pie_pSGJRp.png']);
   end
   set(Hfig2, 'Outerposition', [650 500 600 600]);
  
-  Hfig3 = figure(3);
+  Hfig3 = figure(3); % allocation at ultimate
   p=pSGGJR(:,3)/pC(3);
   txt = {...
     ['p_S ', num2str(p(1), '% 3.2f')], ['p_G ', num2str(p(2), '% 3.2f')], ['p_G ', num2str(p(3), '% 3.2f')], ...
@@ -96,23 +94,28 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
   set(gca, 'FontSize', 15, 'Box', 'on')
   pie3s(p, 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 0]);
   colormap(pie_color);
-  if strcmp(allStat.(entry).model,'hex')
-    title({'Pupation at T_{typical}', ['p_A = ', num2str(pA(3), '% 1.3e'), ' J/d, p_C = ', num2str(pC(3), '% 1.3e'), ' J/d']});
-  elseif strcmp(allStat.(entry).model,'hep')
-    title({'Metam at T_{typical}', ['p_A = ', num2str(pA(3), '% 1.3e'), ' J/d, p_C = ', num2str(pC(3), '% 1.3e'), ' J/d']});
+  if strcmp(model,'hex')
+    title({['Pupation at ', T_txt], ...
+        ['p_A = ', num2str(pA(3), '% 1.3e'), ' J/d, p_C = ', num2str(pC(3), '% 1.3e'), ' J/d'], ...
+        ['E_W^j = ', num2str(stat.E_Wj, '% 1.2e'), ' J, W_w^j = ', num2str(stat.Ww_j, '% 1.2e'), ' g']});
+  elseif strcmp(model,'hep')
+    title({['Metam at ', T_txt], ...
+        ['p_A = ', num2str(pA(3), '% 1.3e'), ' J/d, p_C = ', num2str(pC(3), '% 1.3e'), ' J/d'], ...
+        ['E_W^j = ', num2str(stat.E_Wj, '% 1.2e'), ' J, W_w^j = ', num2str(stat.Ww_j, '% 1.2e'), ' g']});
   else
-    title({'Ultimate at T_{typical}, f = 1', ['p_A = ', num2str(pA(3), '% 1.3e'), ' J/d, p_C = ', num2str(pC(3), '% 1.3e'), ' J/d']});
+    title({['Ultimate at ', T_txt, ', f = 1'], ...
+        ['p_A = ', num2str(pA(3), '% 1.3e'), ' J/d, p_C = ', num2str(pC(3), '% 1.3e'), ' J/d'], ...
+        ['E_W^i = ', num2str(stat.E_Wi, '% 1.2e'), ' J, W_w^i = ', num2str(stat.Ww_i, '% 1.2e'), ' g']});
   end
   if wrt
     Hfig3 = tightfig(Hfig3);
-    saveas(Hfig3, ['../entries/', entry, '/', entry, '_pie_pSGJRi.png'])
+    saveas(Hfig3, ['../entries/', species, '/', species, '_pie_pSGJRi.png'])
   end
   set(Hfig3, 'Outerposition', [650 20 600 600]);
-  
-  % cumulative investment at birth
-  Hfig = figure;
-  par_pie = [allStat.(entry).g, allStat.(entry).k, allStat.(entry).v_Hb, allStat.(entry).kap, allStat.(entry).kap_G];
-  if strcmp(allStat.(entry).model, 'stf') || strcmp(allStat.(entry).model, 'stx')
+    
+  Hfig4 = figure(4); % cumulative investment at birth
+  par_pie = [stat.g, stat.k, stat.v_Hb, par.kap, stat.kap_G];
+  if strcmp(model, 'stf') || strcmp(model, 'stx')
     EMJHG = get_EMJHG_foetus(par_pie, 1);
     pie_txt = { ...
       ['reserve ', num2str(EMJHG(1), '% 3.2f')], ['som maint ', num2str(EMJHG(2), '% 3.2f')], ['mat maint ', num2str(EMJHG(3), '% 3.2f')], ...
@@ -121,7 +124,8 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
     colormap(pie_color);
     set(gca, 'FontSize', 15, 'Box', 'on')
     pie3s(EMJHG, 'Explode', [0 1 1 1 1 0], 'Labels', pie_txt, 'Bevel', 'Elliptical');
-    title({'cum. investment in foetus, e_b = 1', ['E_{tot} = ', num2str(E_0,'% 1.3e'), ' J']})
+    title({'cum. investment in foetus, e_b = 1', ...
+        ['E_0 = ', num2str(E_0,'% 1.2e'), ' J']})
   else
     EMJHG = get_EMJHG(par_pie, 1);
     pie_txt = { ...
@@ -131,12 +135,13 @@ function  pSGGJR = pie_SGGJR (entry, wrt)
     colormap(pie_color);
     set(gca, 'FontSize', 15, 'Box', 'on')
     pie3s(EMJHG, 'Explode', [0 1 1 1 1 0], 'Labels', pie_txt, 'Bevel', 'Elliptical');
-    title({'cum. investment at birth, e_b = 1', ['E_0 = ', num2str(E_0,'% 1.3e'), ' J'] })      
+    title({'Cum. investment at birth, e_b = 1', ...
+        ['E_0 = ', num2str(E_0,'% 1.2e'), ' J']})      
   end
   if wrt
-    Hfig = tightfig(Hfig);
-    saveas(Hfig, ['../entries/', entry, '/', entry, '_pie_SGJRb.png'])
+    Hfig4 = tightfig(Hfig4);
+    saveas(Hfig4, ['../entries/', species, '/', species, '_pie_SGJRb.png'])
   end
-  set(Hfig, 'Outerposition', [50 20 600 600]);
+  set(Hfig4, 'Outerposition', [50 20 600 600]);
 
 end
