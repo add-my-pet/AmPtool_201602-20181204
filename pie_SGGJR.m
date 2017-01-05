@@ -39,7 +39,7 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
 %% Example of use
 % load results_my_pet.mat; pie_SGGJR(statistics_st(metaPar.model, par, T_typical, f)); 
   
-  kap_G = stat.kap_G; E_0 = stat.E_0; T_txt = [num2str(K2C(stat.T), '% 3.1f'), ' ^oC']; 
+  kap_G = stat.kap_G; E_0 = stat.E_0; T_txt = [num2str(stat.T, '% 3.1f'), ' ^oC']; 
   pSGGJR = [stat.p_Sb stat.p_Sp stat.p_Si;
            kap_G * [stat.p_Gb stat.p_Gp stat.p_Gi]; 
            (1 - kap_G) * [stat.p_Gb stat.p_Gp stat.p_Gi]; 
