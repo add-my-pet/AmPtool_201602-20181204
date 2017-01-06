@@ -56,7 +56,8 @@ for i = n
     fprintf(' %s \n', entries{i}) % report progress to screen 
   end
   cd(['../entries/',entries{i}]) % goto entry i 
-  delete('*.cache', '*.wn','*.asv','*.bib') % delete html and bib files 
+  delete('*.cache', '*.wn','*.asv','*.bib') % delete html and bib files
+  delete('*_pie_SGJRb.png', '*_pie_pSGJRb.png', '*_pie_pSGJRp.png', '*_pie_pSGJRi.png')
   %mat2pars_init(entries{i})
   load(['results_',entries{i},'.mat']) % load results_my_pet.mat
   [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); 

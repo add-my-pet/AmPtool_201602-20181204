@@ -114,15 +114,16 @@ fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://ww
 % print SGJR pies
 fprintf(oid, '      <H3>Energy investment, cumulated over the embryo period (left), and allocation during ontogeny</H3>\n');
 fprintf(oid, '      <div>\n');
-fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_SGJRb.png"  width="260px">\n']);
-fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRb.png" width="260px">\n']);
-fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRp.png" width="260px">\n']);
-fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRi.png" width="260px">\n']);
+fprintf(oid,['        <img src="../entries_web/', metaData.species, '_pie_SGJRb.png"  width="260px">\n']);
+fprintf(oid,['        <img src="../entries_web/', metaData.species, '_pie_pSGJRb.png" width="260px">\n']);
+fprintf(oid,['        <img src="../entries_web/', metaData.species, '_pie_pSGJRp.png" width="260px">\n']);
+fprintf(oid,['        <img src="../entries_web/', metaData.species, '_pie_pSGJRi.png" width="260px">\n']);
 fprintf(oid, '      </div>\n\n');
 fprintf(oid, '      <div class = "caption">   \n');
-fprintf(oid, '        Exploding sectors mean dissipation; numbers denote fractions of mobilized reserve. \n');
+fprintf(oid, '        Exploding sectors mean dissipation; numbers denote fractions of mobilized reserve.\n');
 fprintf(oid, '        Endpoints are somatic maintenance S, growth G, maturity maintenance J, maturity or reproduction R.\n'); 
-fprintf(oid, '        The difference between assimilation p_A and mobilization p_C is used to increase reserve.\n');
+fprintf(oid, '        The change in reserve equals assimilation p_A minus mobilization p_C.\n');
+fprintf(oid, '        Wet weight W_w and total energy E_W exclude the reproduction buffer in adults.\n');
 fprintf(oid, '      </div>\n\n');
 fprintf(oid, '      <p><p>\n');
 
