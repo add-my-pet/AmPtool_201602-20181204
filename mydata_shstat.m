@@ -3,6 +3,7 @@
 %
 % generate updated allStat if necessary
 % write_allStat(C2K(20),1); % notice that default allStat is at T=T_typical and f=1
+% allStat has fields for the tmep-correction c_T, so divide rates by c_T to go from T_typical to T_ref
 %
 % compose/modify your legend if you wish. You can also do this on-the-fly by selecting an empty legend.
 % mylegend = select_legend; replace legend_* by mylegend in the examples below, if you active this.
@@ -10,7 +11,7 @@
 
 close all % remove any existing figure
 
-example = 2; % edit this number to see the various examples
+example = 8; % edit this number to see the various examples
 switch example
   case 1 % 2D: use default settings
     shstat_options('default');
@@ -86,23 +87,34 @@ switch example
     shstat_options('default');
     shstat_options('x_transform', 'none');
     %shstat_options('y_transform', 'none');
-    [Hfig Hleg] = shstat({'kap','g'}, legend_RSED); % output handle for setting labels
+    [Hfig Hleg] = shstat({'kap','v'}, legend_RSED); % output handle for setting labels
 
   case 9 % 2D
     shstat_options('default');
-    cWd = read_allStat('c_T', 'W_dWm', 'dWm'); cT = cWd(:,1); W = cWd(:,2); dW = cWd(:,3);
+    LmEm = read_allStat('L_m', 'E_m'); L_m = LmEm(:,1); E_m = LmEm(:,2);
 
-    [Hfig, Hleg] = shstat([W, dW], legend_sauria, 'Data at T_{typical}'); 
+    [Hfig, Hleg] = shstat([L_m.^3, E_m], legend_fish, 'Data at T_{typical}'); 
     figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
-    xlabel('_{10} log wet weight at max growth, g')      
-    ylabel('_{10} log max growth in wet weight, g/d')
+    xlabel('_{10} log max structural volume, cm^3')      
+    ylabel('_{10} log max reserve capacity, J/cm^3')
 
-    figure(Hfig) % add items to figure
+  case 10 % 2D
+    shstat_options('default');
+    LmpM = read_allStat('L_m', 'p_M'); L_m = LmpM(:,1); p_M = LmpM(:,2);
 
-    [Hfig Hleg] = shstat([W, dW./cT], legend_sauria, 'Data at T_{ref}'); 
+    [Hfig, Hleg] = shstat([L_m.^3, p_M], legend_RSED, 'Data at T_{typical}'); 
     figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
-    xlabel('_{10} log wet weight at max growth, g')      
-    ylabel('_{10} log max growth in wet weight, g/d')
+    xlabel('_{10} log max structural volume, cm^3')      
+    ylabel('_{10} log spec som maintenance, J/d.cm^3')
 
+  case 11 % 2D
+    shstat_options('default');
+    shstat_options('x_transform', 'none');
+    kEmdV = read_allStat('kap', 'E_m', 'd_V'); kap = kEmdV(:,1); E_m = kEmdV(:,2); d_V = kEmdV(:,3);
+
+    [Hfig, Hleg] = shstat([kap, E_m./d_V], legend_fish); 
+    figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
+    xlabel('kappa, -')      
+    ylabel('_{10}log [E_m]/d_V , J/g')
 
 end
