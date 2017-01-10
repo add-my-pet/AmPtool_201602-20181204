@@ -141,4 +141,3 @@ saveas(Hfig, '../img/patterns/ss-kap.png')
 saveas(Hleg, '../img/patterns/legends_ss-kap.png')
 
 close all
-
