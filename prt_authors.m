@@ -92,7 +92,7 @@ fprintf(fid_authors, '    /*-- Displays the dropdown menu on hover --*/\n\n');
 fprintf(fid_authors, '    ul ul {\n');
 fprintf(fid_authors, '      left: 100%%;\n');
 fprintf(fid_authors, '      top: 0;\n');
-fprintf(fid_authors, '    }\n\ns');
+fprintf(fid_authors, '    }\n\n');
 
 fprintf(fid_authors, '    li:hover > ul {\n');
 fprintf(fid_authors, '      display: block;\n');
