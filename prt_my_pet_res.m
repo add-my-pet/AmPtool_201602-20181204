@@ -60,7 +60,7 @@ switch n_author
   
 end
 
-txt_date = [num2str(metaData.date_acc(1)), '/', num2str(metaData.date_acc(2)), '/', num2str(metaData.date_acc(3))]; 
+txt_date = datestr(datenum(metaData.date_subm), 'yyyy/mm/dd'); 
 
 % modifications
 mod = 0; % latest modification version
@@ -81,7 +81,7 @@ if mod > 0
       txt_author_mod = [metaData.(author_mod){1}, ', et al.'];
   end
   date_mod = ['date_mod_', num2str(mod)]; date_mod = metaData.(date_mod);
-  txt_date_mod = [num2str(date_mod(1)), '/', num2str(date_mod(2)), '/', num2str(date_mod(3))]; 
+  txt_date_mod = datestr(datenum(date_mod),'yyyy/mm/dd'); 
 else    
 
 end  
