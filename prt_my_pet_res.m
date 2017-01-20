@@ -62,7 +62,7 @@ end
 
 txt_date = datestr(datenum(metaData.date_subm), 'yyyy/mm/dd'); 
 
-% modifications
+% modifications/acceptance
 mod = 0; % latest modification version
 for i = 1:10 % identify latest modification
   if isfield(metaData,['author_mod_', num2str(i)])
@@ -82,9 +82,8 @@ if mod > 0
   end
   date_mod = ['date_mod_', num2str(mod)]; date_mod = metaData.(date_mod);
   txt_date_mod = datestr(datenum(date_mod),'yyyy/mm/dd'); 
-else    
-
-end  
+end    
+txt_date_acc = datestr(datenum(metaData.date_acc),'yyyy/mm/dd'); 
 
 % remove the underscore in the species name
 if exist('destinationFolder','var')
@@ -344,12 +343,21 @@ if isfield(metaData, 'facts')
   for i = 1:nst
     fprintf(oid, '        <li>\n'); % open bullet point
     str1 = metaData.facts.(nm{i});
-%     if isfield(metaData.bibkey,nm{i})
-%       str2 = metaData.bibkey.(nm{i});
-%       fprintf(oid, ['          ', str1,' (ref: ',str2, ')\n']);
-%     else
+    if isfield(metaData.bibkey,(nm{i}))
+      bib = metaData.bibkey.(nm{i}); 
+      if ~iscell(bib)
+        str2 = bib;
+      else
+        n_bib = length(bib);
+        str2 = bib{1};
+        for j = 2:n_bib
+          str2 = [str2, ', ', bib{j}];
+        end            
+      end
+      fprintf(oid, ['          ', str1,' (ref: ',str2, ')\n']);
+    else
       fprintf(oid, ['          ', str1, '\n']);  
-%     end
+    end
     fprintf(oid, '        </li>\n' ); % close bullet point
   end
   fprintf(oid,'      </ul>\n');     % close the unordered list    
@@ -412,6 +420,8 @@ else % modifications do exist
   fprintf(oid,['      <H3 ALIGN="CENTER">', txt_author, ', ', txt_date, ...
     ' (last modified by ', txt_author_mod, '\n', txt_date_mod,')','</H3>\n\n']);
 end
+  fprintf(oid,['      <H3 ALIGN="CENTER"> accepted: ', txt_date_acc,'</H3>\n\n']);
+
 % ----------------------------------------------------------
 
 fprintf(oid, '    </div> <!-- end of content -->\n\n');
