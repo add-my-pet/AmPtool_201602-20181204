@@ -61,8 +61,9 @@ switch n_author
 end
 
 txt_date = datestr(datenum(metaData.date_subm), 'yyyy/mm/dd'); 
+txt_date_acc = datestr(datenum(metaData.date_acc), 'yyyy/mm/dd'); 
 
-% modifications/acceptance
+% modifications
 mod = 0; % latest modification version
 for i = 1:10 % identify latest modification
   if isfield(metaData,['author_mod_', num2str(i)])
@@ -83,13 +84,12 @@ if mod > 0
   date_mod = ['date_mod_', num2str(mod)]; date_mod = metaData.(date_mod);
   txt_date_mod = datestr(datenum(date_mod),'yyyy/mm/dd'); 
 end    
-txt_date_acc = datestr(datenum(metaData.date_acc),'yyyy/mm/dd'); 
 
 % remove the underscore in the species name
 if exist('destinationFolder','var')
-fileName = [destinationFolder, metaData.species, '_res.html'];
+  fileName = [destinationFolder, metaData.species, '_res.html'];
 else
-fileName = [metaData.species, '_res.html'];    
+  fileName = [metaData.species, '_res.html'];    
 end
 oid = fopen(fileName, 'w+'); % open file for reading and writing, delete existing content
 
@@ -330,9 +330,8 @@ fprintf(oid,['        <TR BGCOLOR = "#FFE7C6"><TD><B>Data</B></TD><TD><B>General
 %  work in progress : (it is to make a link to html page with all of the
 %  figure on it)
 %  if isempty(metaData.data_1) == 0
-%  print_unidata_my_pet_html(metaData, metaPar)
-%  end
-%  
+%    prt_unidata_my_pet_html(metaData, metaPar)
+%  end  
 
 % ----------------------------------------------------------
 % Facts:
