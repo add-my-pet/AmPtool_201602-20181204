@@ -37,7 +37,6 @@ f = 1; % ad libitum feeding
 stat.z = par.z; txtStat.label.z = 'zoom factor'; txtStat.units.z = '-'; % add zoom factor to statistics which are to be printed 
 
 pie_SGGJR(metaData.species, metaPar.model, par, stat, 1); % print 4 png-files for energy allocation to current folder
-close all
 
 % flds = fieldnmnst_st(stat); % fieldnames of all statistics
 [webStatFields, webColStat] = get_statfields(metaPar.model); % which statistics in what order should be printed in the table

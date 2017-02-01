@@ -73,4 +73,6 @@ for i = n
   cd(WD)  % goto original path    
 end
     
+close all
+
 % cd(WD)
