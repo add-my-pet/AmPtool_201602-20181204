@@ -1,4 +1,2 @@
-Veneroida
-Ostreoida
-Myoida
-Mytiloida
+Heterodonta
+Pteriomorphia
