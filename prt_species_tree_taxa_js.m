@@ -32,7 +32,7 @@ function prt_species_tree_taxa_js(taxa)
 % prt_species_tree_taxa_js({'Tetrapoda'}); open ../species_tree_Tetrapoda.html to see the result
     
   if ~exist('taxa','var')
-    taxa = {'Animalia','Actinopterygii','Tetrapoda','Aves'};
+    taxa = {'Animalia','Mollusca','Actinopterygii','Tetrapoda','Aves'};
   end
     
   n = length(taxa);
