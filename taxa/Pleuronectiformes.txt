@@ -1,4 +1,5 @@
 Scophthalmidae
-Soleidae
 Pleuronectidae
 Paralichthyidae
+Bothidae
+Soleidae
