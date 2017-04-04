@@ -1,7 +1,4 @@
 Clupeiformes
 Alepocephaliformes
 Gonorynchiformes
-Cypriniformes
-Characiformes
-Gymnotiformes
-Siluriformes
+Otophysa
