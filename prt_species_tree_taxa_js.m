@@ -31,6 +31,8 @@ function prt_species_tree_taxa_js(taxa)
 % prt_species_tree_taxa_js; open ../species_tree_Animalia.html and ../species_tree_Tetrapoda.html to see the results
 % prt_species_tree_taxa_js({'Tetrapoda'}); open ../species_tree_Tetrapoda.html to see the result
     
+  check_entries; % test presence of entries in tree against local and server
+  
   if ~exist('taxa','var')
     taxa = {'Animalia','Mollusca','Actinopterygii','Tetrapoda','Aves'};
   end
