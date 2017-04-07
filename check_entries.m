@@ -48,15 +48,3 @@ if ~isempty(diff)
   diff
 end
 
-diff = setdiff(server, local);
-if ~isempty(diff)
-  fprintf('warning from check_entries: present in server, but not in local\n');
-  diff
-end
-
-diff = setdiff(local, server);
-if ~isempty(diff)
-  fprintf('warning from check_entries: present in local, but not in server\n');
-  diff
-end
-
