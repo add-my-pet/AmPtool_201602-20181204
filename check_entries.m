@@ -26,6 +26,7 @@ function [tree local server] = check_entries
 
 tree = select; n_tree = length(tree);                                          % cell string with entry names of tree
 local = cellstr(ls('../entries')); local([1 2]) = []; n_local = length(local); % cell string with local entry names 
+stat = read_allStat('species');
 
 % cell string with server entries stored in server
 txt = urlread('http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/');
@@ -34,6 +35,18 @@ n_server = length(strfind(txt,'href="')); server = cell(n_server,1);
 for i = 1:n_server
   kill = strfind(txt,'href="'); txt(1:kill(1) + 5)= [];
   server{i} = txt(1:strfind(txt,'/"') - 1);
+end
+
+diff = setdiff(stat, local);
+if ~isempty(diff)
+  fprintf('warning from check_entries: present in allstat, but not in local\n');
+  diff
+end
+
+diff = setdiff(local, stat);
+if ~isempty(diff)
+  fprintf('warning from check_entries: present in local, but not in allstat\n');
+  diff
 end
 
 diff = setdiff(tree, local);
@@ -48,3 +61,14 @@ if ~isempty(diff)
   diff
 end
 
+diff = setdiff(local, server);
+if ~isempty(diff)
+  fprintf('warning from check_entries: present in local, but not in server\n');
+  diff
+end
+
+diff = setdiff(server, local);
+if ~isempty(diff)
+  fprintf('warning from check_entries: present in server, but not in local\n');
+  diff
+end
