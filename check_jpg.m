@@ -86,9 +86,16 @@ if info > 0
   end
 
   % check presence of txt file for each jpg in server
-  diff = setdiff(local_txt, local_jpg);
+  diff = setdiff(server_txt, server_jpg);
   if ~isempty(diff)
-    fprintf('warning from check_jpg: present in local_txt, but not in local_jpg\n');
+    fprintf('warning from check_jpg: present in server_txt, but not in server_jpg\n');
+    diff
+  end
+  
+  % check presence of txt file for each jpg in server
+  diff = setdiff(server_jpg, server_txt);
+  if ~isempty(diff)
+    fprintf('warning from check_jpg: present in server_jpg, but not in server_txt\n');
     diff
   end
 end
@@ -96,14 +103,14 @@ end
 if ~(info == 1)
   diff = setdiff(local_jpg, tree);
   if ~isempty(diff)
-    fprintf('warning from check_jpg: present in local_jpg, but not in local_txt\n');
+    fprintf('warning from check_jpg: present in local_jpg, but not in tree\n');
     diff
   end
 
   % check tree against local
   diff = setdiff(tree, local_jpg);
   if ~isempty(diff)
-    fprintf('warning from check_entries: present in tree, but not in local\n');
+    fprintf('warning from check_entries: present in tree, but not in local_jpg\n');
     diff
   end
 end
@@ -112,13 +119,13 @@ if info > 0
   % check local against server
   diff = setdiff(server_jpg, local_jpg);
   if ~isempty(diff)
-    fprintf('warning from check_entries: present in server, but not in local\n');
+    fprintf('warning from check_entries: present in server_jpg, but not in local_jpg\n');
     diff
   end
 
   diff = setdiff(local_jpg, server_jpg);
   if ~isempty(diff)
-    fprintf('warning from check_entries: present in local, but not in server\n');
+    fprintf('warning from check_entries: present in local_jpg, but not in server_jpg\n');
     diff
   end
 end
