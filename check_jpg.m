@@ -36,7 +36,7 @@ if ~exist('info','var')
 end
 
 if ~(info == 1)
-  tree = list_taxa; tree = tree(cellfun('isempty',strfind(tree, '_'))); n_tree = length(tree);   % cell string with node names of tree, excluding entries
+  tree = list_taxa; tree = tree(cellfun('isempty',strfind(tree, '_'))); tree = tree(cellfun('isempty',strfind(tree, 'Animalia'))); n_tree = length(tree);   % cell string with node names of tree, excluding entries
 end
 
 local = cellstr(ls('../img/tree')); local([1 2]) = [];  % cell string with local node names 
