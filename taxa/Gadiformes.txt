@@ -1,5 +1,5 @@
-Gadidae
 Merlucciidae
-Lotidae
 Ranicipitidae
 Macrouridae
+Lotidae
+Gadidae

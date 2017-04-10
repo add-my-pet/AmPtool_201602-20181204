@@ -46,8 +46,10 @@ function species = select(taxon)
   
   cd(WD)                   % goto original path
   
-  if ~0 == sum(cellfun(@isempty, strfind(species,'_')))
+  wrong = species(cellfun(@isempty, strfind(species,'_')));
+  if ~isempty(wrong)
     fprintf('Warning from select: not all cells are entry names\n')
+    wrong
   end
 end
 

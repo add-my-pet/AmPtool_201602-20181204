@@ -1,5 +1,5 @@
-Scophthalmidae
-Pleuronectidae
-Paralichthyidae
-Bothidae
 Soleidae
+Scophthalmidae
+Bothidae
+Paralichthyidae
+Pleuronectidae
