@@ -16,12 +16,12 @@ function run_collection(speciesList)
 %
 % Input:
 %
-% * entries: optional cell array with species names to run
+% * entries: optional cell array with species names, or character string with species name
 % * if no input the whole collection runs
 %
 % Output:
 %
-% 4 files per entry are written in ../entries_web
+% * 4 files per entry are written in ../entries_web
 
 %% Remarks
 % If you only have one species make sure that you input it as a cell array, e.g. {'Danio_rerio'}
@@ -36,12 +36,16 @@ function run_collection(speciesList)
 entries = select('Animalia');
 
 if exist('speciesList','var')
+  if iscell('speciesList')
     n = zeros(1,length(speciesList));
     for i = 1:length(speciesList)
-    n(i) =  find(strcmp(entries,speciesList{i}) ==1);
+      n(i) =  find(strcmp(entries,speciesList{i}) == 1);
     end
+  else
+    n = find(strcmp(entries,speciesList) == 1);
+  end
 else 
-    n = 1:length(entries);
+  n = 1:length(entries);
 end
     
 WD = pwd; % store current path
