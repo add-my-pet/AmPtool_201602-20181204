@@ -36,7 +36,7 @@ function run_collection(speciesList)
 entries = select('Animalia');
 
 if exist('speciesList','var')
-  if iscell('speciesList')
+  if iscell(speciesList)
     n = zeros(1,length(speciesList));
     for i = 1:length(speciesList)
       n(i) =  find(strcmp(entries,speciesList{i}) == 1);
