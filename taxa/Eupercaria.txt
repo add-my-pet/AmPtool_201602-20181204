@@ -5,6 +5,7 @@ Moroniformes
 Ephippiformes
 Chaetodontiformes
 Sciaeniformes
+Acanthuriformes
 Spariformes
 Caproiformes
 Lophiiformes
