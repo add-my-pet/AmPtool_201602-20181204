@@ -1,8 +1,9 @@
 Cichliformes
+Beloniformes
+Cyprinodontiformes
 Atheriniformes
 Pomacentriformes
-Cyprinodontiformes
-Beloniformes
 Mugiliformes
-Blenniiformes
+Pseudochromiformes
 Gobiesociformes
+Blenniiformes
