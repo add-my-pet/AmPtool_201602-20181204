@@ -11,7 +11,7 @@
 
 close all % remove any existing figure
 
-example = 8; % edit this number to see the various examples
+example = 4; % edit this number to see the various examples
 switch example
   case 1 % 2D: use default settings
     shstat_options('default');
@@ -83,13 +83,19 @@ switch example
     % setting of figure handle not required, because legend is not shown in new figure, and first figure is still active
     xlabel('_{10}log v, cm/d') 
  
-  case 8 % 2D
+  case 8 % 1D: single variable for several taxa with line specs specified by llegend_ACP
+    shstat_options('default');
+    shstat_options('x_transform', 'none');
+    shstat_options('y_label', 'on'); % if 'off' (default), no `survivor function' shown on yaxis
+    shstat({'kap'}, llegend_ACP);      
+        
+  case 9 % 2D
     shstat_options('default');
     shstat_options('x_transform', 'none');
     %shstat_options('y_transform', 'none');
     [Hfig Hleg] = shstat({'kap','v'}, legend_RSED); % output handle for setting labels
 
-  case 9 % 2D
+  case 10 % 2D
     shstat_options('default');
     LmEm = read_allStat('L_m', 'E_m'); L_m = LmEm(:,1); E_m = LmEm(:,2);
 
@@ -98,7 +104,7 @@ switch example
     xlabel('_{10} log max structural volume, cm^3')      
     ylabel('_{10} log max reserve capacity, J/cm^3')
 
-  case 10 % 2D
+  case 11 % 2D
     shstat_options('default');
     LmpM = read_allStat('L_m', 'p_M'); L_m = LmpM(:,1); p_M = LmpM(:,2);
 
@@ -107,7 +113,7 @@ switch example
     xlabel('_{10} log max structural volume, cm^3')      
     ylabel('_{10} log spec som maintenance, J/d.cm^3')
 
-  case 11 % 2D
+  case 12 % 2D
     shstat_options('default');
     shstat_options('x_transform', 'none');
     kEmdV = read_allStat('kap', 'E_m', 'd_V'); kap = kEmdV(:,1); E_m = kEmdV(:,2); d_V = kEmdV(:,3);

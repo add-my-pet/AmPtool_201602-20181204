@@ -2,7 +2,7 @@
 % plots statistics and/or parameters
 
 function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfig)
-% created 2016/04/23 by Bas Kooijman
+% created 2016/04/23 by Bas Kooijman; modified 2017/04/20
 
 %% Syntax
 % [Hfig val entries missing] =  <../shstat.m *shstat*>(vars, legend, label_title, Hfig)
@@ -44,6 +44,8 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 % Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
 %
 % In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend specifies colors for survivor and median.
+%  If legend is specified as a 2-cell string, the cells represent color specs for survivor function and median. 
+%  If legend is specified as a line-legend (composed with select_llegend), several survivor functions are  plotted, with median values in the same colors.
 %
 % In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names).
 %
@@ -57,43 +59,62 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
   % get (x,y,z)-values, units, label
   if isnumeric(vars) % numerical mode, read_allStat is bypassed
     val = vars;
-    [ne n] = size(vars); 
+    [n_entries n_vars] = size(vars); 
     units_x = []; units_y = []; units_z = [];
     label_x = []; label_y = []; label_z = [];
     entries = select;
-    if ~(ne == length(entries))
+    if ~(n_entries == length(entries))
       fprintf('Warning from shstat: number data-points is not equal to number of entries\n');
     end
   else % read values of variables, units and labels using read_allStat
-    n = length(vars);
-    switch n
+    n_vars = length(vars);
+    switch n_vars
       case 1
         [val entries units label] = read_allStat(vars{1});
         units_x = units{1}; label_x = label{1}; 
+        n_entries = length(entries); 
       case 2
         [val entries units label] = read_allStat(vars{1},vars{2});
         units_x = units{1}; units_y = units{2}; label_x = label{1}; label_y = label{2};
+        n_entries = length(entries); 
       case 3
         [val entries units label] = read_allStat(vars{1},vars{2},vars{3});
         units_x = units{1}; units_y = units{2}; units_z = units{3}; label_x = label{1}; label_y = label{2}; label_z = label{3};
+        n_entries = length(entries); 
     end
   end
 
   % compose selection matrix, missing entries
-  if n == 1
+  if n_vars == 1 % only one variable to plot
     missing = entries(isnan(val)); % determine missing entries
-  else
+    if exist('legend','var') 
+      n_taxa = size(legend, 1); % number of taxa to be plotted  
+      if n_taxa > 1 % for m == 1, legend means color survivor funfunction, color median
+        sel = zeros(n_entries, n_taxa);
+        [sel(:,1) entries_sel] = select_01('Animalia', legend{1,2});
+        if ~isequaln(entries, entries_sel)
+          fprintf('Error in shstat: entries in allStat do not correspond with entries in select(''Animalia'')\n')
+          Hfig = []; missing = []; return
+        end
+        for i = 2:n_taxa
+          sel(:,i) = select_01('Animalia', legend{i,2});
+        end
+      end     
+    end
+
+  else % n_vars > 1
     if ~exist('legend','var') || isempty(legend)
       legend = select_legend;
     end
-    m = size(legend, 1); % number of taxa to be plotted
-    [sel entries_sel] = select_01('Animalia', legend{1,2});
+    n_taxa = size(legend, 1); % number of taxa to be plotted
+    sel = zeros(n_entries, n_taxa);
+    [sel(:,1) entries_sel] = select_01('Animalia', legend{1,2});
     if ~isequaln(entries, entries_sel)
       fprintf('Error in shstat: entries in allStat do not correspond with entries in select(''Animalia'')\n')
       Hfig = []; missing = []; return
     end
-    for i = 2:m
-      sel = [sel, select_01('Animalia', legend{i,2})];
+    for i = 2:n_taxa
+      sel(:,i) =  select_01('Animalia', legend{i,2});
     end
     sel = once(sel);    % remove double selections  
     missing = entries(isnan(sum(val(sum(sel,2) == 1,:),2))); % determine missing entries
@@ -112,14 +133,14 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
     if ~isempty(nm2)
       symbol_x = [nm1, '_{', nm2(2:end), '}'];
     end
-    if n > 1
+    if n_vars > 1
       symbol_y = vars{2};
       [nm1 nm2] = strtok(symbol_y,'_');
       if ~isempty(nm2)
         symbol_y = [nm1, '_{', nm2(2:end), '}'];
       end  
     end
-    if n > 2
+    if n_vars > 2
       symbol_z = vars{3};
       [nm1 nm2] = strtok(symbol_z,'_');
       if ~isempty(nm2)
@@ -144,28 +165,28 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
       label_x = [symbol_x, ', ', units_x];
     end
   end
-  if n > 1 && strcmp (y_transform, 'log10')
+  if n_vars > 1 && strcmp (y_transform, 'log10')
     val_plot(:,2) = log10(val_plot(:,2));
     if strcmp(y_label, 'on')
       label_y = [label_y, ', _{10}log ', symbol_y, ', ', units_y];
     else
       label_y = ['_{10}log ', symbol_y, ', ', units_y];
     end
-  elseif n > 1
+  elseif n_vars > 1
     if strcmp(y_label, 'on')
       label_y = [label_y, ', ', symbol_y, ', ', units_y];
     else
       label_y = [symbol_y, ', ', units_y];
     end
   end
-  if n > 2 && strcmp (z_transform, 'log10')
+  if n_vars > 2 && strcmp (z_transform, 'log10')
     val_plot(:,3) = log10(val_plot(:,3));
     if strcmp(z_label, 'on')
       label_z = [label_z, ', _{10}log ', symbol_z, ', ', units_z];
     else
       label_z = ['_{10}log ', symbol_z, ', ', units_z];
     end
-  elseif n > 2
+  elseif n_vars > 2
     if strcmp(z_label, 'on')
       label_z = [label_z, ', ', symbol_z, ', ', units_z];
     else
@@ -185,18 +206,31 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
   end
 
   hold on
-  switch n
+  switch n_vars
     case 1
-      % set colors for survivor function and median
-      if ~exist('legend','var') || isempty(legend)
-        colfn = 'b'; colmed = 'r';
-      else
-        colfn = legend{1}; colmed = legend{2};
-      end
 
-      x_median = median(val_plot); x_min = min(val_plot);
-      surv_x = surv(val_plot); 
-      plot([x_min; x_median; x_median], [0.5;0.5;0], colmed, surv_x(:,1), surv_x(:,2), colfn, 'Linewidth', 2)
+      if n_taxa == 1
+        % set colors for survivor function and median
+        if ~exist('legend','var') || isempty(legend)
+          colfn = 'b'; colmed = 'r';
+        else
+          colfn = legend{1}; colmed = legend{2};
+        end
+        x_median = median(val_plot); x_min = min(val_plot);
+        surv_x = surv(val_plot); 
+        plot([x_min; x_median; x_median], [0.5;0.5;0], colmed, surv_x(:,1), surv_x(:,2), colfn, 'Linewidth', 2)
+        
+      else % n_taxa > 1
+        for i = 1:n_taxa
+          line = legend{i,1}; LT = line{1}; LW = line{2}; LC = line{3};  
+          x_median = median(val_plot(sel(:,i)==1,1)); x_min = min(val_plot(sel(:,i)==1,1));
+          surv_x = surv(val_plot(sel(:,i)==1, 1)); 
+          plot([x_min; x_median; x_median], [0.5;0.5;0], '-', 'Color', LC, 'Linewidth', LW)
+          plot(surv_x(:,1), surv_x(:,2), LT, 'Color', LC, 'Linewidth', LW)
+        end
+        Hleg = shllegend(legend); % show line-legend
+      end
+      
       set(gca, 'FontSize', 15, 'Box', 'on', 'YTick', 0:0.2:1)
       xlabel(label_x)
       ylim([0 1]);
@@ -205,10 +239,10 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
       end
 
     case 2
-      for j = 1:m      % scan taxa
-        i = m - j + 1; % reverse sequence of plotting in case markers overlap
+      for j = 1:n_taxa % scan taxa
+        i = n_taxa - j + 1; % reverse sequence of plotting in case markers overlap
         marker = legend{i,1}; T = marker{1}; MS = marker{2}; LW = marker{3}; MEC = marker{4}; MFC = marker{5};  
-        plot(val_plot(sel(:,i),1), val_plot(sel(:,i),2), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
+        plot(val_plot(sel(:,i)==1,1), val_plot(sel(:,i)==1,2), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
       end
       set(gca, 'FontSize', 15, 'Box', 'on')
       xlabel(label_x)  
@@ -221,10 +255,10 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
       Hleg = shlegend(legend);
       
     case 3
-      for j = 1:m      % scan taxa
-        i = m - j + 1; % reverse sequence of plotting in case markers overlap
+      for j = 1:n_taxa % scan taxa
+        i = n_taxa - j + 1; % reverse sequence of plotting in case markers overlap
         marker = legend{i,1}; T = marker{1}; MS = marker{2}; LW = marker{3}; MEC = marker{4}; MFC = marker{5};  
-        plot3(val_plot(sel(:,i),1), val_plot(sel(:,i),2), val_plot(sel(:,i),3), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
+        plot3(val_plot(sel(:,i)==1,1), val_plot(sel(:,i)==1,2), val_plot(sel(:,i)==1,3), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
       end
       xlabel(label_x)  
       ylabel(label_y)
