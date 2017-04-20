@@ -28,7 +28,7 @@ tree = select; n_tree = length(tree);                                          %
 local = cellstr(ls('../entries')); local([1 2]) = []; n_local = length(local); % cell string with local entry names 
 stat = read_allStat('species');
 
-% cell string with server entries stored in server
+% cell string with server entries stored on server
 txt = urlread('http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/');
 head = strfind(txt,'folder.gif'); txt(1:head(1)) = []; 
 n_server = length(strfind(txt,'href="')); server = cell(n_server,1);
@@ -63,7 +63,7 @@ end
 
 diff = setdiff(local, server);
 if ~isempty(diff)
-  fprintf('warning from check_entries: present in local, but not in server\n');
+  fprintf('warning from check_entries: present in local, but not on server\n');
   diff
 end
 
