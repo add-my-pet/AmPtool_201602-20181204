@@ -68,7 +68,7 @@ fprintf(fid_Spec, '        Goto entries by clicking on entry names.\n');
 fprintf(fid_Spec, '        Click here for scientific names">Common names</a></H2>\n\n');
 fprintf(fid_Spec, '      <div class = "newspaper">\n');  
 for i = 1:n
-fprintf(fid_Spec,['        <a target="_top" href="entries_web/', entries{index(i)}, '_res.html" title="', snm_prt{index(i)}, '">', cnm{i}, '</a><br>\n']);
+fprintf(fid_Spec,['        <a target="_top" href="entries_web/', snm{index(i)}, '_res.html" title="', snm_prt{index(i)}, '">', cnm{i}, '</a><br>\n']);
 end
 fprintf(fid_Spec, '      </div>\n\n');  
 fprintf(fid_Spec, '    </div> <!-- end of content -->\n\n');
