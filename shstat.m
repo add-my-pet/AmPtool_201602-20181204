@@ -208,6 +208,12 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
   hold on
   switch n_vars
     case 1
+        
+      xlabel(label_x)
+      ylim([0 1]);
+      if strcmp(y_label, 'on')
+        ylabel('survivor function')
+      end
 
       if n_taxa == 1
         % set colors for survivor function and median
@@ -232,11 +238,6 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
       end
       
       set(gca, 'FontSize', 15, 'Box', 'on', 'YTick', 0:0.2:1)
-      xlabel(label_x)
-      ylim([0 1]);
-      if strcmp(y_label, 'on')
-        ylabel('survivor function')
-      end
 
     case 2
       for j = 1:n_taxa % scan taxa

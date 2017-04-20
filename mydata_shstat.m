@@ -11,7 +11,7 @@
 
 close all % remove any existing figure
 
-example = 4; % edit this number to see the various examples
+example = 8; % edit this number to see the various examples
 switch example
   case 1 % 2D: use default settings
     shstat_options('default');
