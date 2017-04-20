@@ -215,7 +215,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
         ylabel('survivor function')
       end
 
-      if n_taxa == 1
+      if n_taxa <= 1
         % set colors for survivor function and median
         if ~exist('legend','var') || isempty(legend)
           colfn = 'b'; colmed = 'r';
@@ -226,7 +226,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
         surv_x = surv(val_plot); 
         plot([x_min; x_median; x_median], [0.5;0.5;0], colmed, surv_x(:,1), surv_x(:,2), colfn, 'Linewidth', 2)
         
-      else % n_taxa > 1
+      elseif n_taxa > 1 
         for i = 1:n_taxa
           line = legend{i,1}; LT = line{1}; LW = line{2}; LC = line{3};  
           x_median = median(val_plot(sel(:,i)==1,1)); x_min = min(val_plot(sel(:,i)==1,1));
