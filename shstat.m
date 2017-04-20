@@ -214,6 +214,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
       if strcmp(y_label, 'on')
         ylabel('survivor function')
       end
+      set(gca, 'FontSize', 15, 'Box', 'on', 'YTick', 0:0.2:1)
 
       if n_taxa <= 1
         % set colors for survivor function and median
@@ -237,7 +238,6 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
         Hleg = shllegend(legend); % show line-legend
       end
       
-      set(gca, 'FontSize', 15, 'Box', 'on', 'YTick', 0:0.2:1)
 
     case 2
       for j = 1:n_taxa % scan taxa
