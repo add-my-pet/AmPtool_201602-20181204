@@ -12,7 +12,7 @@ function [var entries units label] = read_allStat(varargin)
 %
 % Input:
 %
-% * vararg: names of variables
+% * vararg: names of variables or cell-string with names of variables
 %
 % Output
 %
@@ -31,8 +31,13 @@ function [var entries units label] = read_allStat(varargin)
 %% Example of use
 % complete_mre = read_allStat('COMPLETE', 'MRE'); 
   
-  load('allStat')    % get all parameters and statistics in structure allStat
-  entries = fieldnames(allStat); n = length(entries); var = cell(n,nargin);
+  load('allStat')        % get all parameters and statistics in structure allStat
+  entries = fieldnames(allStat); n = length(entries); 
+  if iscell(varargin{1})    
+    varargin = varargin{:}; % unpack cell string
+  end
+  nargin = length(varargin);    
+  var = cell(n,nargin);
   units = cell(nargin,1); label = cell(nargin,1);
   
   for i = 1:n
