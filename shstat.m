@@ -13,7 +13,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 % Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty and output val equals input vars.
 % In that case, read_allStat is bypassed and labels must be set by user afterwards, see mydata_shstat.
 %
-% If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}).
+% If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}), or, if ledend is an (n,2)-cell array, n survival curves are plotted.
 %
 % Input:
 %
