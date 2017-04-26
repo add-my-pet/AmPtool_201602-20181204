@@ -5,7 +5,7 @@ function [var entries units label] = read_allStat(varargin)
 %% created 2016/04/24 by Bas Kooijman
 
 %% Syntax
-% [var entries units label] = <../read_allStat.m *read_allStat*>(vararg)
+% [var entries units label] = <../read_allStat.m *read_allStat*>(varargin)
 
 %% Description
 % read statistics and/or parameters in allStat.mat. 

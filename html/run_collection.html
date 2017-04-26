@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>run_collection</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-04-10"><meta name="DC.source" content="run_collection.m"><style type="text/css">
+      --><title>run_collection</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-04-26"><meta name="DC.source" content="run_collection.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,90 +55,74 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>run_collection</h1><!--introduction--><p>generates files for AmP website</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../run_collection.m"><b>run_collection</b></a> (entries)</p><h2>Description<a name="4"></a></h2><div><ul><li>writes energy allocation pies in add_my_pet/entries</li><li>creates html pages for all of the different species in add_my_pet/entries</li><li>places the html and bib pages in entries_web and delete from entries</li><li>create zipped folder in entries_zip</li></ul></div><p>Input:</p><div><ul><li>entries: optional cell array with species names, or character string with species name</li><li>if no input the whole collection runs</li></ul></div><p>Output:</p><div><ul><li>4 files per entry are written in ../entries_web</li></ul></div><h2>Remarks<a name="5"></a></h2><p>If you only have one species make sure that you input it as a cell array, e.g. {'Danio_rerio'} run_collection_intro to generate about and access files for the collection</p><h2>Example of use<a name="6"></a></h2><p>run_collection run collection_intro</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>run_collection</h1><!--introduction--><p>generates files for AmP website</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../run_collection.m"><b>run_collection</b></a> (varargin)</p><h2>Description<a name="4"></a></h2><div><ul><li>writes html and bib pages in entries_web and zip file in entries_zip</li><li>deletes .cache, .wn, .asv, .bib files from entries</li></ul></div><p>Input:</p><div><ul><li>entries: optional cell array with entry names, or character string with entry names (default all entries)</li></ul></div><p>Output:</p><div><ul><li>1 bib-file, 3 html-files and 4 png-files per entry are written in ../entries_web</li><li>1 zip-file is written in ../entries_zip</li></ul></div><h2>Remarks<a name="5"></a></h2><p>run_collection_intro to generate about and access files for the collection</p><h2>Example of use<a name="6"></a></h2><p>run_collection or run_collection('Mola_mola') or run_collection('Mola_mola', 'Molva_molva') or run_collection({'Mola_mola', 'Molva_molva'})</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% run_collection
 % generates files for AmP website 
 
 %%
-function run_collection(speciesList)
-% created 2016/11/13 Bas Kooijman and Starrlight Augustine
+function run_collection(varargin)
+% created 2016/11/13 Bas Kooijman and Starrlight Augustine; modified 2017/04/26 Bas Kooijman
 
 %% Syntax
-% <../run_collection.m *run_collection*> (entries)
+% <../run_collection.m *run_collection*> (varargin)
 
 %% Description
-% * writes energy allocation pies in add_my_pet/entries
-% * creates html pages for all of the different species in add_my_pet/entries
-% * places the html and bib pages in entries_web and delete from entries
-% * create zipped folder in entries_zip
+% * writes html and bib pages in entries_web and zip file in entries_zip
+% * deletes .cache, .wn, .asv, .bib files from entries
 %
 % Input:
 %
-% * entries: optional cell array with species names, or character string with species name
-% * if no input the whole collection runs
+% * entries: optional cell array with entry names, or character string with entry names (default all entries)
 %
 % Output:
 %
-% * 4 files per entry are written in ../entries_web
+% * 1 bib-file, 3 html-files and 4 png-files per entry are written in ../entries_web 
+% * 1 zip-file is written in ../entries_zip
 
 %% Remarks
-% If you only have one species make sure that you input it as a cell array, e.g. {'Danio_rerio'}
 % run_collection_intro to generate about and access files for the collection
 
 %% Example of use
-% run_collection
-% run collection_intro 
+% run_collection or run_collection('Mola_mola') or run_collection('Mola_mola', 'Molva_molva') or run_collection({'Mola_mola', 'Molva_molva'})
 
-%prt_pies_SGGJR(speciesList)
-
-entries = select('Animalia');
-
-if exist('speciesList','var')
-  if iscell('speciesList')
-    n = zeros(1,length(speciesList));
-    for i = 1:length(speciesList)
-      n(i) =  find(strcmp(entries,speciesList{i}) == 1);
-    end
-  else
-    n = find(strcmp(entries,speciesList) == 1);
+if exist('varargin', 'var') || ~isempty('varargin')
+  if iscell(varargin{1})    
+    varargin = varargin{:}; % unpack cell string
   end
-else 
-  n = 1:length(entries);
+else
+  varargin = select('Animalia');
 end
-    
+nargin = length(varargin); % number of entries to scan    
 WD = pwd; % store current path
-% 
 
-destinationFolder = '../entries_web/';
+destinationFolder = '../entries_web/'; % target for html and png files
 
-for i = n 
-  if length(n) > 1
-    fprintf(' %g : %s \n', i, entries{i}) % report progress to screen 
-  else
-    fprintf(' %s \n', entries{i}) % report progress to screen 
-  end
-  cd(['../entries/',entries{i}]) % goto entry i 
-  delete('*.cache', '*.wn','*.asv','*.bib') % delete html and bib files
-  delete('*_pie_SGJRb.png', '*_pie_pSGJRb.png', '*_pie_pSGJRp.png', '*_pie_pSGJRi.png')
-  %mat2pars_init(entries{i})
-  load(['results_',entries{i},'.mat']) % load results_my_pet.mat
-  [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); 
-  prdData = feval(['predict_',metaData.species], par, data, auxData);
+for i = 1:nargin 
+  fprintf(' %g : %s \n', i, varargin{i}) % report progress to screen 
+  
+  cd(['../entries/', varargin{i}]) % goto entry i in dir entries
+  delete('*.cache', '*.wn','*.asv','*.bib') % delete unwanted and bib files
+  %mat2pars_init(varargin{i})
+  load(['results_', varargin{i}, '.mat']) % load results_my_pet.mat
+  [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); % run mydata_* to create data files
+  prdData = feval(['predict_',metaData.species], par, data, auxData); % run predict_* to compute predictions
   prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:
-  cd(WD)
+  
+  cd(WD) % goto orginal path, but print to destinationFolder
   prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder) % print bib file
-  prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % make html with parameters
-  prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % make html with implied properties
-  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder) % make html with results
-  cd('../entries_zip' ); % goto directory with all of the zipped entries
-  zip_my_pet(entries{i}, '../entries'); % zip the entry
+  prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % print html with parameters
+  prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
+  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder) % print html with results
+  
+  cd('../entries_zip' );
+  zip_my_pet(varargin{i}, '../entries'); % zip the entry
+  
   cd(WD)  % goto original path    
 end
     
 close all
 
-% cd(WD)
 ##### SOURCE END #####
 --></body></html>
