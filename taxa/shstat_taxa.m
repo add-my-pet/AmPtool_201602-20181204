@@ -34,7 +34,7 @@ function [Hfig Hleg val entries missing] = shstat_taxa(vars, legend, Hfig)
 % So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding.
 % If Animalia is in legend before Aves, no Aves-markers are shown.
 %
-% No tranformation is done in this function, so, if required, do it outside and use numerical mode.
+% No transformation is done in this function, so, if required, do it outside and use numerical mode.
 %
 % Make sure that allStat has been generated at the correct temperature (for times and rates); all parameters are at T_ref.
 % Make sure that allStat is consistent with select('Animalia'); can be done via <write_allStat.html *write_allStat*>.
