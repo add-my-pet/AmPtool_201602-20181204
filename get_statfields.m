@@ -37,7 +37,7 @@ function [webStatFields, webColStat]= get_statfields(model)
   webColStat.a_b      = '#C6E7DE'; webColStat.t_g   = '#C6E7DE';
   webColStat.a_p      = '#C6E7DE'; webColStat.a_99  = '#C6E7DE';
   webColStat.Wd_b     = '#CEEFBD'; webColStat.Wd_p  = '#CEEFBD'; webColStat.Wd_i = '#CEEFBD';
-  webColStat.L_b      = '#DEF3BD'; webColStat.L_p   = '#DEF3BD'; webColStat.L_i = '#DEF3BD';
+  webColStat.L_b      = '#DEF3BD'; webColStat.L_p   = '#DEF3BD'; webColStat.L_e = '#DEF3BD';
   
   webColStat.W_dWm    = '#FFFFFF'; webColStat.dWm   = '#FFFFFF';
   
