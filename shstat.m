@@ -18,7 +18,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 % Input:
 %
 % * vars: cell string with name(s) of 1, 2 or 3 independent variables 
-% * legend: (m,2)-array with legend: (marker, taxon)-pairs
+% * legend: (m,2)-array with legend: (marker, taxon)-pairs; optional for 1 independent variable
 % * label_title: optional string for title of figure
 % * Hfig: optional figure handle (to get the plot in a specified figure)
 %
@@ -37,19 +37,20 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 % So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding.
 % If Animalia is in legend before Aves, no Aves-markers are shown.
 %
-% Make sure that allStat has been generated at the correct temperature (for times and rates); all parameters are at T_ref.
-% Make sure that allStat is consistent with select('Animalia'); can be done via <write_allStat.html *write_allStat*>.
+% If legend is specified as a line-legend (composed with select_llegend), the variables are plotted as several survivor functions, with median values in the same colors.
 %
 % Set options with <shstat_options,.html *shstat_options*> (such as logarithmic transformation of axes).
 % Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
 %
-% In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend specifies colors for survivor and median.
-%  If legend is specified as a 2-cell string, the cells represent color specs for survivor function and median. 
-%  If legend is specified as a line-legend (composed with select_llegend), several survivor functions are  plotted, with median values in the same colors.
+% In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend is then optional.
+%  Legend should then be specified as a 2-cell string, the cells represent color specs for survivor function and median. 
 %
 % In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names).
 %
 % In case of 3 variables: hit rotation in the toolbar of the figure.
+%
+% Make sure that allStat has been generated at the correct temperature (for times and rates); all parameters are at T_ref.
+% Make sure that allStat is consistent with select('Animalia'); can be done via <write_allStat.html *write_allStat*>.
 
 %% Example of use
 % see <mydata_shstat.html *mydata_shstat*>
@@ -99,7 +100,9 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
         for i = 2:n_taxa
           sel(:,i) = select_01('Animalia', legend{i,2});
         end
-      end     
+      end 
+    else
+      n_taxa = 1;
     end
 
   else % n_vars > 1
