@@ -37,13 +37,13 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 % So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding.
 % If Animalia is in legend before Aves, no Aves-markers are shown.
 %
-% If legend is specified as a line-legend (composed with select_llegend), the variables are plotted as several survivor functions, with median values in the same colors.
-%
 % Set options with <shstat_options,.html *shstat_options*> (such as logarithmic transformation of axes).
 % Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
 %
 % In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend is then optional.
-%  Legend should then be specified as a 2-cell string, the cells represent color specs for survivor function and median. 
+%  Legend should alternatively be specified as:
+%    = a 2-cell string, the cells represent color specs for survivor function and median. 
+%    = a line-legend (composed with select_llegend), the variable are plotted as several survivor functions, with median values in the same colors.
 %
 % In case of 2 variables: xy-labels are linked to markers (click on them to see entry-names).
 %
