@@ -10,7 +10,7 @@ function [TD species] = dist_taxa (taxon)
   
   %% Description
   % Computes a normalized cumulative taxonomic distance between subsequent pairs in an ordered list of all species that belong to a taxon.
-  % The distances equal the number of nodes that clade for that pair carries. The node-count excludes the leaves.
+  % The distances equal the number of nodes that the clade for that pair carries. The node-count excludes the leaves.
   % 
   % Input
   %
