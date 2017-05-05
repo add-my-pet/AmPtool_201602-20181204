@@ -125,4 +125,10 @@ Hfig = shstat({'T_A'}, [], [], 14);
 set(gca, 'FontSize', 15, 'Box', 'on')
 saveas(gca, '../img/pars/TA.png')
 
+figure(15) % z, zoom factor
+shstat_options('x_transform', 'log10');
+Hfig = shstat({'z'}, [], [], 15);
+set(gca, 'FontSize', 15, 'Box', 'on')
+saveas(gca, '../img/pars/z.png')
+
 close all
