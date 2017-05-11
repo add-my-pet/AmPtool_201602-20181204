@@ -13,7 +13,7 @@ function [sel taxa_src] = select_01(taxon_src, taxon)
 %
 % Input
 %
-% * taxon_src: character string with name of source taxon
+% * taxon_src: optional character string with name of source taxon (default 'Animalia')
 % * taxon: character string with name of taxon that belongs to source taxon
 %
 % Output
@@ -27,6 +27,10 @@ function [sel taxa_src] = select_01(taxon_src, taxon)
 
 %% Example of use
 % sel = select_01('Animalia', 'Aves')
+
+if ~exist('taxon', 'var')
+  taxon = taxon_src; taxon_src = 'Animalia';
+end
 
 taxa_src = select(taxon_src); taxa = select(taxon);
 m = size(taxa_src,1); n = size(taxa,1); sel = false(m,1);
