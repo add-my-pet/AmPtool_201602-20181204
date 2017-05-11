@@ -1,5 +1,5 @@
 %% pie_SGGJR
-% presents pies for allocation at birth, puberty, ultimate
+% presents pies for allocation at birth, puberty, ultimate & cumulative investment at birth
 
 %%
 function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
@@ -10,10 +10,10 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
 
 %% Description
 % Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction 
-%   for birth, puberty and ultimate and cumulative invertment at birth are presented in 4 pies.
+%   for birth, puberty and ultimate and cumulative investment at birth are presented in 4 pies.
 % Dissipating fluxes explode in the pies; growth is partitioned into growth excluding overheads and growth overheads.
 % Color coding: som maint: red, mat maint: magenta, growth: green, maturation/reproduction: blue.
-% Write 4 png-files to ../entries_web if wrt == 1
+% Writes 4 png-files to ../entries_web if wrt == 1
 %
 % Input
 %
