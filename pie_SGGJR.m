@@ -6,7 +6,7 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
 % created 2016/05/02 by Bas Kooijman, modified 2017/01/04
 
 %% Syntax
-% pSGGJR = <../pie_SGGJR.m *pie_SGGJR*> (stat, wrt)
+% pSGGJR = <../pie_SGGJR.m *pie_SGGJR*> (species, model, par, stat, wrt)
 
 %% Description
 % Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction 
@@ -37,7 +37,10 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
 % Function is called by entries_admin/prt_my_pet
 
 %% Example of use
-% load results_my_pet.mat; pie_SGGJR(statistics_st(metaPar.model, par, T_typical, f)); 
+% load results_my_pet.mat; 
+% stat = statistics_st(metaPar.model, par, metaData.T_typical, par.f);
+% pie_SGGJR(metaData.species, metaPar.model, par, stat, 0); 
+
   
   kap_G = stat.kap_G; E_0 = stat.E_0; T_txt = [num2str(stat.T, '% 3.1f'), ' ^oC']; 
   pSGGJR = [stat.p_Sb stat.p_Sp stat.p_Si;

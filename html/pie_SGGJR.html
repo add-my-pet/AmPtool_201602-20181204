@@ -55,11 +55,11 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>pie_SGGJR</h1><!--introduction--><p>presents pies for allocation at birth, puberty, ultimate &amp; cumulative investment at birth</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>pSGGJR = <a href="../pie_SGGJR.m"><b>pie_SGGJR</b></a> (stat, wrt)</p><h2>Description<a name="4"></a></h2><p>Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction   for birth, puberty and ultimate and cumulative investment at birth are presented in 4 pies. Dissipating fluxes explode in the pies; growth is partitioned into growth excluding overheads and growth overheads. Color coding: som maint: red, mat maint: magenta, growth: green, maturation/reproduction: blue. Writes 4 png-files to ../entries_web if wrt == 1</p><p>Input</p><div><ul><li>species: string with name of entry</li><li>model: string with name of typified model</li><li>par: structure with parameters</li><li>stat: structure with result of statistics_st</li><li>wrt: indicator for writing, which only occurs if wrt == 1</li></ul></div><p>Output (apart from figure):</p><div><ul><li>pSGGRJ: (5,3)-matrix with powers in J/d</li></ul></div><pre>   - S: p_M + p_T: somatic maintenance
+  </style></head><body><div class="content"><h1>pie_SGGJR</h1><!--introduction--><p>presents pies for allocation at birth, puberty, ultimate &amp; cumulative investment at birth</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>pSGGJR = <a href="../pie_SGGJR.m"><b>pie_SGGJR</b></a> (species, model, par, stat, wrt)</p><h2>Description<a name="4"></a></h2><p>Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction   for birth, puberty and ultimate and cumulative investment at birth are presented in 4 pies. Dissipating fluxes explode in the pies; growth is partitioned into growth excluding overheads and growth overheads. Color coding: som maint: red, mat maint: magenta, growth: green, maturation/reproduction: blue. Writes 4 png-files to ../entries_web if wrt == 1</p><p>Input</p><div><ul><li>species: string with name of entry</li><li>model: string with name of typified model</li><li>par: structure with parameters</li><li>stat: structure with result of statistics_st</li><li>wrt: indicator for writing, which only occurs if wrt == 1</li></ul></div><p>Output (apart from figure):</p><div><ul><li>pSGGRJ: (5,3)-matrix with powers in J/d</li></ul></div><pre>   - S: p_M + p_T: somatic maintenance
    - G: p_G: growth, excluding overhead
    - G: p_G: growth overhead
    - J: p_J: maturity maintenance
-   - R: p_R: maturation or reproduction</pre><h2>Remarks<a name="5"></a></h2><p>Function is called by entries_admin/prt_my_pet</p><h2>Example of use<a name="6"></a></h2><p>load results_my_pet.mat; pie_SGGJR(statistics_st(metaPar.model, par, T_typical, f));</p><p class="footer"><br>
+   - R: p_R: maturation or reproduction</pre><h2>Remarks<a name="5"></a></h2><p>Function is called by entries_admin/prt_my_pet</p><h2>Example of use<a name="6"></a></h2><p>load results_my_pet.mat; stat = statistics_st(metaPar.model, par, metaData.T_typical, par.f); pie_SGGJR(metaData.species, metaPar.model, par, stat, 0);</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% pie_SGGJR
@@ -70,7 +70,7 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
 % created 2016/05/02 by Bas Kooijman, modified 2017/01/04
 
 %% Syntax
-% pSGGJR = <../pie_SGGJR.m *pie_SGGJR*> (stat, wrt)
+% pSGGJR = <../pie_SGGJR.m *pie_SGGJR*> (species, model, par, stat, wrt)
 
 %% Description
 % Allocation to somatic maintenance, growth, maturity maintenance and maturation/reproduction 
@@ -101,7 +101,10 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
 % Function is called by entries_admin/prt_my_pet
 
 %% Example of use
-% load results_my_pet.mat; pie_SGGJR(statistics_st(metaPar.model, par, T_typical, f)); 
+% load results_my_pet.mat; 
+% stat = statistics_st(metaPar.model, par, metaData.T_typical, par.f);
+% pie_SGGJR(metaData.species, metaPar.model, par, stat, 0); 
+
   
   kap_G = stat.kap_G; E_0 = stat.E_0; T_txt = [num2str(stat.T, '% 3.1f'), ' ^oC']; 
   pSGGJR = [stat.p_Sb stat.p_Sp stat.p_Si;
