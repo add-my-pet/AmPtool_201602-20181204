@@ -1,9 +1,11 @@
 %% run_collection_intro
-% functions that runs collection overhead
+% runs functions for collection overhead
 
+%% before running this script
 % make sure that debtool_M/taxa/ is updated
 % make sure that ../img/tree is updated
-% write_allStat;
+% run write_allStat
+% run_collection(taxa-names) to generate files in entries_zip and entries_web
 
 prt_species_names
 prt_species_list
@@ -11,17 +13,24 @@ prt_species_tree_taxa_js
 prt_authors
 prt_pars
 prt_patterns
+prt_pie_SGGJR
 prt_about
 
-%% cp to web
+%% cp files to server after running this script
 
-% ../species_names.html 
-% ../species_list.html 
-% ../pars.html
 % ../about.html
+% ../authors.html
+% ../pars.html
+% ../pie_*.html
+% ../species_list.html 
+% ../species_names.html 
 
 % ../sys/species_tree_*.js
+
+% ../img/about/*.png 
 % ../img/pars/*.png
 % ../img/patterns/*.png
-% ../img/about/*.png 
 % ../img/tree/*.jpg and *.jpg.txt
+
+% ../entries_web/*
+% ../entries_zip/*

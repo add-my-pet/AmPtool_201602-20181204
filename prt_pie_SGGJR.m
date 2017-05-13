@@ -19,7 +19,7 @@ function prt_pie_SGGJR
   
   [nms_en entries] = read_allStat('species_en'); n_entries = length(entries);
   pie = {'pie_pSGJRb', 'pie_pSGJRp', 'pie_pSGJRi', 'pie_SGJRb'}; n_pie = length(pie);
-  header = {'Allocation at birth','Allocation at puberty','Allocation at ultimate','Cumulated allocation at birth'};
+  header = {'Energy budget at birth','Energy budget at puberty','Energy budget at ultimate','Cumulated energy budget over embryo period'};
   header_txt = {...
       ['Exploding sectors mean dissipation; numbers denote fractions of mobilized reserve.\n', ...
        'Endpoints are somatic maintenance S, growth G, maturity maintenance J, maturity R.\n', ...
@@ -70,7 +70,7 @@ fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
 fprintf(oid, '<div w3-include-html="sys/wallpaper_amp.html"></div>\n');
-fprintf(oid, '<div w3-include-html="sys/toolbar_alloc.html"></div>\n');
+fprintf(oid, '<div w3-include-html="sys/toolbar_budget.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
