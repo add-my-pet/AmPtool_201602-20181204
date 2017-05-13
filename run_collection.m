@@ -27,13 +27,12 @@ function run_collection(varargin)
 %% Example of use
 % run_collection or run_collection('Mola_mola') or run_collection('Mola_mola', 'Molva_molva') or run_collection({'Mola_mola', 'Molva_molva'})
 
-if exist('varargin', 'var') || ~isempty('varargin')
-  if iscell(varargin{1})    
-    varargin = varargin{:}; % unpack cell string
-  end
-else
+if isempty(varargin)
   varargin = select('Animalia');
+elseif iscell(varargin{1})    
+  varargin = varargin{:}; % unpack cell string  
 end
+
 nargin = length(varargin); % number of entries to scan    
 WD = pwd; % store current path
 
