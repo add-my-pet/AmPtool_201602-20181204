@@ -11,7 +11,7 @@
 
 close all % remove any existing figure
 
-example = 8; % edit this number to see the various examples
+example = 9; % edit this number to see the various examples
 switch example
   case 1 % 2D: use default settings
     shstat_options('default');
@@ -89,11 +89,47 @@ switch example
     shstat_options('y_label', 'on'); % if 'off' (default), no `survivor function' shown on yaxis
     shstat({'kap'}, llegend_ACP);      
         
-  case 9 % 2D
-    shstat_options('default');
-    shstat_options('x_transform', 'none');
-    %shstat_options('y_transform', 'none');
-    [Hfig Hleg] = shstat({'kap','v'}, legend_RSED); % output handle for setting labels
+  case 9 % 2D: selection of different model types, rather than taxa; bypass shstat
+      
+    % type, size, linewidth, edge color and face color of a marker, model
+    legend = {...
+      {'o', 8, 3, [0 0 0], [0 0 0]}, 'hep'; ...
+      {'o', 8, 3, [0 0 1], [0 0 1]}, 'hex'; ...
+      {'o', 8, 3, [0 0 1], [0 0 0]}, 'abj'; ...
+      {'o', 8, 3, [0 0 1], [1 0 1]}, 'asj'; ....
+      {'o', 8, 3, [0 0 1], [1 0 0]}, 'sbp'; ....
+      {'o', 8, 3, [1 0 1], [1 0 1]}, 'abp'; ....
+      {'o', 8, 3, [1 0 1], [1 0 0]}, 'ssj'; ....
+      {'o', 8, 3, [1 0 0], [0 0 0]}, 'stx'; ....
+      {'o', 8, 3, [1 0 0], [0 0 1]}, 'stf'; ....
+      {'.', 8, 3, [0 0 0], [0 0 0]}, 'std'; ....
+    };  
+    n_model = size(legend,1);
+    
+    vars = read_allStat('kap','v','c_T'); val_plot = [vars(:,1), log10(vars(:,2)./vars(:,3))];
+    model = read_allStat('model'); % don't combine num and str in 1 call to read_allStat
+    entries = select; % assign entry names for clicking in plot
+    
+    Hfig = 1; % set figure handle
+    figure(Hfig)
+    hold on
+
+    for j=1:n_model
+      i = n_model - j + 1; % reverse sequence of plotting in case markers overlap
+      marker = legend{i,1}; T = marker{1}; MS = marker{2}; LW = marker{3}; MEC = marker{4}; MFC = marker{5};  
+      sel = strcmp(model, legend{i,2}); % select model type
+      plot(val_plot(sel,1), val_plot(sel,2), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
+    end
+        
+    set(gca, 'FontSize', 15, 'Box', 'on')
+    xlabel('\kappa, -')  
+    ylabel('_{10}log v at T_{ref}, cm/d')
+
+    h = datacursormode(Hfig); % write entry names under plot coordinates
+    h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, val_plot);
+    datacursormode on % mouse click on plot
+
+    Hleg = shlegend(legend);
 
   case 10 % 2D
     shstat_options('default');
