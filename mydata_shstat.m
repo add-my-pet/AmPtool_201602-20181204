@@ -106,7 +106,7 @@ switch example
     };  
     n_model = size(legend,1);
     
-    vars = read_allStat('kap','v','c_T'); val_plot = [vars(:,1), log10(vars(:,2)./vars(:,3))];
+    vars = read_allStat('kap','v','s_M'); val_plot = [vars(:,1), log10(vars(:,2) .* vars(:,3))];
     model = read_allStat('model'); % don't combine num and str in 1 call to read_allStat
     entries = select; % assign entry names for clicking in plot
     
@@ -123,7 +123,7 @@ switch example
         
     set(gca, 'FontSize', 15, 'Box', 'on')
     xlabel('\kappa, -')  
-    ylabel('_{10}log v at T_{ref}, cm/d')
+    ylabel('_{10}log v at T_{ref} post metam, cm/d')
 
     h = datacursormode(Hfig); % write entry names under plot coordinates
     h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, val_plot);
