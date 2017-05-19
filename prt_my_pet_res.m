@@ -151,7 +151,7 @@ fprintf(oid, '<!--------------------------------------------------------------->
 fprintf(oid, '<div id = "main">\n');
 fprintf(oid, '  <div id = "main-wrapper">\n');
 fprintf(oid, '    <div id="contentFull">\n');
-fprintf(oid, '      <H1 id = "portaltop">Predictions & Data </H1>\n\n');	
+fprintf(oid,['      <H1 id = "portaltop">Predictions & Data for <a href = "../species_list.html#', metaData.species,'">this entry</a></H1>\n\n']);	
    
 % Print results_my_pet
 fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n']);

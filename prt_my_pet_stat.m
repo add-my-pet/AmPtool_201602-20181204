@@ -3,7 +3,7 @@
 
 %%
 function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
-% created 2016/03/30 Starrlight; modified 2016/09/23 Starrlight Augustine; 2016/11/05 Bas Kooijman
+% created 2016/03/30 Starrlight; modified 2016/09/23 Starrlight Augustine; 2016/11/05 Bas Kooijman; 2017/05/18 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_stat.m *prt_my_pet_stat*> (metaData, metaPar, par, destinationFolder) 
@@ -105,7 +105,7 @@ fprintf(oid, '<!--------------------------------------------------------------->
 fprintf(oid, '<div id = "main">\n');
 fprintf(oid, '  <div id = "main-wrapper">\n');
 fprintf(oid, '    <div id="contentFull">\n');
-fprintf(oid, '      <H1 id = "portaltop">Implied properties for this entry </H1>\n');	
+fprintf(oid,['      <H1 id = "portaltop">Implied properties for <a href = "../species_list.html#', metaData.species,'">this entry</a></H1>\n']);	
 			
 % print out text before the tables
 % fprintf(oid, '<H2>Implied properties for this entry</H2>');
@@ -118,7 +118,7 @@ fprintf(oid,['        <a href = "../pie_SGJRb.html#', metaData.species, '" >\n']
 fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_SGJRb.png"  width="260px"></a>\n']);
 fprintf(oid,['        <a href = "../pie_pSGJRb.html#', metaData.species, '" >\n']);
 fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_pSGJRb.png" width="260px"></a>\n']);
-fprintf(oid,['        <a href = "../entries_web/pie_pSGJRp.html#', metaData.species, '" >\n']);
+fprintf(oid,['        <a href = "../pie_pSGJRp.html#', metaData.species, '" >\n']);
 fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_pSGJRp.png" width="260px"></a>\n']);
 fprintf(oid,['        <a href = "../pie_pSGJRi.html#', metaData.species, '" >\n']);
 fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_pSGJRi.png" width="260px"></a>\n']);
@@ -126,6 +126,8 @@ fprintf(oid, '      </div>\n\n');
 fprintf(oid, '      <div class = "caption">   \n');
 fprintf(oid, '        Exploding sectors mean dissipation; numbers denote fractions of mobilized reserve.\n');
 fprintf(oid, '        Endpoints are somatic maintenance S, growth G, maturity maintenance J, maturity or reproduction R.\n'); 
+fprintf(oid, '        Growth is splitted into overhead and flux fixed in tissue.\n'); 
+fprintf(oid, '        Reproduction overhead is not idicated, since it is pays at conversion of buffer to eggs/foetuses.\n'); 
 fprintf(oid, '        The change in reserve equals assimilation p_A minus mobilization p_C.\n');
 fprintf(oid, '        Wet weight W_w and total energy E_W exclude the reproduction buffer in adults.\n');
 fprintf(oid, '        Pies link to budget pages.\n');

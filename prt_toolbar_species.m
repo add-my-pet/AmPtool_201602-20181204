@@ -27,9 +27,10 @@ fprintf(oid, '    <div class = "dropdown"><button onclick="species()" class="dro
 fprintf(oid, '      <div id="speciesDropdown" class="dropdown-content">\n');
 
 
-  fprintf(oid,['        <a  href="',species,'_par.html">Parameters</a>\n']);
-  fprintf(oid,['        <a href="',species,'_stat.html">Implied properties</a>\n']);    
-  fprintf(oid,['        <a href="',species,'_res.html">Predictions & Data</a>\n']);
+fprintf(oid,['        <a href="',species,'_par.html">Parameters</a>\n']);
+fprintf(oid,['        <a href="',species,'_stat.html">Implied properties</a>\n']);    
+fprintf(oid,['        <a href="',species,'_res.html">Predictions & Data</a>\n']);
+fprintf(oid,['        <a href="',species,'_bib.bib">Bibliography</a>\n']);
 
 
 fprintf(oid, '      </div>\n');
