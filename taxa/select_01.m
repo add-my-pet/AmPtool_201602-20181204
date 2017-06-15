@@ -2,11 +2,11 @@
 % finds booleans for occurences of members of taxon among members of taxon_src
 
 %
-function [sel taxa_src] = select_01(taxon_src, taxon)
-% created 2016/04/12 by Bas Kooijman
+function [sel taxa_src] = select_01(taxon_src, taxon_sel)
+% created 2016/04/12 by Bas Kooijman, modified 2017/06/14
 
 %% Syntax
-% [sel taxa_src] = <select_01.m *select_01*>(taxon_src, taxon)
+% [sel taxa_src] = <select_01.m *select_01*>(taxon_src, taxon_sel)
 
 %% Description
 % Finds booleans for occurences of members of taxon among members of taxon_src
@@ -14,7 +14,7 @@ function [sel taxa_src] = select_01(taxon_src, taxon)
 % Input
 %
 % * taxon_src: optional character string with name of source taxon (default 'Animalia')
-% * taxon: character string with name of taxon that belongs to source taxon
+% * taxon_sel: character or cell string with names of taxa that belong to source taxon
 %
 % Output
 %
@@ -26,16 +26,26 @@ function [sel taxa_src] = select_01(taxon_src, taxon)
 % [sel nm] = select_01(taxon_src, taxon); nm(sel)
 
 %% Example of use
-% sel = select_01('Animalia', 'Aves')
+% sel = select_01('Aves') or sel = select_01({'Aves','Mammalia') or sel = select_01('Animalia',{'Aves','Mammalia')
 
-if ~exist('taxon', 'var')
-  taxon = taxon_src; taxon_src = 'Animalia';
+if ~exist('taxon_sel', 'var')
+  taxon_sel = taxon_src; taxon_src = 'Animalia';
 end
 
-taxa_src = select(taxon_src); taxa = select(taxon);
-m = size(taxa_src,1); n = size(taxa,1); sel = false(m,1);
+taxa_src = select(taxon_src); n_taxa_src = size(taxa_src,1);
+sel = false(n_taxa_src,1);
 
-for i = 1:n
-  sel(strcmp(taxa_src, taxa{i})) = true;
+if ~iscell(taxon_sel)
+  taxa = select(taxon_sel); n_taxa = size(taxa,1); 
+  for i = 1:n_taxa
+    sel(strcmp(taxa_src, taxa{i})) = true;
+  end
+else
+  for j = 1:length(taxon_sel)
+    taxa = select(taxon_sel{j}); n_taxa = size(taxa,1); 
+    for i = 1:n_taxa
+      sel(strcmp(taxa_src, taxa{i})) = true;
+    end
+  end
 end
 
