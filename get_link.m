@@ -61,10 +61,12 @@ function links = get_link(taxon)
       id_CoL = '266955574f36a9262c06633951a8c034';
       id_WoRMS = '265201';
       id_Taxo = '86084';
+      id_Wiki = 'Bolinopsis_infundibulum';
     case 'Callianira_antarctica'
       id_CoL = '303f7a8417f250f9b9d1cbc77fc060cf';
       id_WoRMS = '265170';
       id_Taxo = '290691';
+      id_Wiki = 'Callianira_(ctenophore)';
     case 'Pleurobrachia_pileus'
       id_CoL = '3ddfb02d1f60caec8189823cc007b893';
       id_WoRMS = '106386';
@@ -77,6 +79,7 @@ function links = get_link(taxon)
       id_CoL = 'd2a147385e1eacebb447e4f9e1558f1e';
       id_WoRMS = '106361';
       id_Taxo = '167446';
+      id_Wiki = 'Beroe_(ctenophore)';
     case 'Beroe_ovata'
       id_CoL = 'c70014071bb5de21dca3ec0d826bb274';
       id_WoRMS = '106362';
@@ -85,14 +88,17 @@ function links = get_link(taxon)
       id_CoL = '5fa5c1982af0297dfe25875928c2570c';
       id_WoRMS = '105454'; % unaccepted, to Ferosagitta hispida (Conant, 1895)
       id_Taxo = '40644';   % unaccepted, to Sagitta bipunctata    
+      id_Wiki = 'Chaetognatha';
     case 'Moniliformis_dubius'
       id_CoL = '2db31682f5ec69386b23ea4212b709b1';
       id_WoRMS = ''; % not present 2017/06/15 
-      id_Taxo = '14700';        
+      id_Taxo = '14700';
+      id_Wiki = 'Moniliformis_moniliformis';
     case 'Asplanchna_girodi'
       id_CoL = '7ef4175c71766debbf941dc6e2476c02';
       id_WoRMS = ''; % not present 2017/06/15 
-      id_Taxo = '114748';        
+      id_Taxo = '114748';  
+      id_Wiki = 'Rotifera';
     case 'Brachionus_plicatilis'
       id_CoL = 'c1847141382c50836d8cf6c9cea31e71';
       id_WoRMS = '134982';
@@ -100,7 +106,8 @@ function links = get_link(taxon)
     case 'Aspidiophorus_polystictos'
       id_CoL = '88edfcced5860e504db0c2d25d801715';
       id_WoRMS = '114471';
-      id_Taxo = '';  % not present 2017/06/15        
+      id_Taxo = '';  % not present 2017/06/15 
+      id_Wiki = 'Gastrotricha';
     case 'Schmidtea_polychroa'
       id_CoL = '032a02867df5f7a953bd3c02edd02523';
       id_WoRMS = ''; % not present 2017/06/15 
@@ -109,10 +116,12 @@ function links = get_link(taxon)
       id_CoL = '397256b281a713c08dd827ce925a4418';
       id_WoRMS = '235668';
       id_Taxo = '991609'; % unaccepeted, to Aerothyris fragilis
+      id_Wiki = 'Brachiopoda';
     case 'Phoronis_pallida'
       id_CoL = '3d20b39a5cdcd6ae450a423e58efe977';
       id_WoRMS = '128551';
-      id_Taxo = '40609';        
+      id_Taxo = '40609'; 
+      id_Wiki = 'Phoronidea';
     case 'Flustra_foliacea'
       id_CoL = 'fd374d545f72678ced74b5f86d54deba';
       id_WoRMS = '111367';
@@ -128,7 +137,8 @@ function links = get_link(taxon)
     case 'Dendrobaena_octaedra'
       id_CoL = '';   % not present 2017/06/15 
       id_WoRMS = ''; % not present 2017/06/15 
-      id_Taxo = '2907467';        
+      id_Taxo = '2907467';   
+      id_Wiki = 'Annelida';
     case 'Lumbricus_terrestris'
       id_CoL = '';   % not present 2017/06/15 
       id_WoRMS = ''; % not present 2017/06/15 
@@ -137,10 +147,12 @@ function links = get_link(taxon)
       id_CoL = 'c39d48b8d317b85403b3500a610f0be7';
       id_WoRMS = ''; % not present 2017/06/15 
       id_Taxo = '140609';        
+      id_Wiki = 'Annelida';
     case 'Aporrectodea_longa'
       id_CoL = '6ba7cb1f971e29fa5b0489de565d4109';
       id_WoRMS = ''; % not present 2017/06/15 
       id_Taxo = '';  % not present 2017/06/15        
+      id_Wiki = 'Annelida';
     case 'Eisenia_fetida'
       id_CoL = '';   % not present 2017/06/15 
       id_WoRMS = ''; % not present 2017/06/15 
@@ -240,7 +252,8 @@ function links = get_link(taxon)
     case 'Septifer_virgatus'
       id_CoL = '755768b01e8324c1c8e620dd1153a5ed'; % unaccepted, to Mytilisepta virgata (Wiegmann, 1837)
       id_WoRMS = '367774'; % unaccepted, to Mytilisepta virgata (Wiegmann, 1837)
-      id_Taxo = ''; % not present 2017/06/15           
+      id_Taxo = ''; % not present 2017/06/15
+      id_Wiki = 'Mytilidae';
     case 'Patella_vulgata'
       id_CoL = 'b6d47c01f8b1aac2e8d612029dec8807';
       id_WoRMS = '140685';
@@ -344,7 +357,8 @@ function links = get_link(taxon)
     case 'Sepietta_obscura'
       id_CoL = 'ff971eddd33e29318b793c02a46fe304';
       id_WoRMS = '141451';
-      id_Taxo = ''; % not present 2017/06/15         
+      id_Taxo = ''; % not present 2017/06/15 
+      id_Wiki = 'Sepietta_petersi'; % unaccepted, to Sepiola petersi Steenstrup, 1887
     case 'Euprymna_hyllebergi'
       id_CoL = '3fb01720b80e6677d2c8ff92d9908d60';
       id_WoRMS = '410361';
@@ -360,7 +374,8 @@ function links = get_link(taxon)
     case 'Octopus_maya'
       id_CoL = '01fe079c62706c970beb455711158713';
       id_WoRMS = '341996';
-      id_Taxo = '158249';        
+      id_Taxo = '158249';
+      id_Wiki = 'Octopus';
     case 'Octopus_vulgaris'
       id_CoL = '68dbab9ebc28639002befc34e2ffe516';
       id_WoRMS = '140605';
@@ -373,14 +388,17 @@ function links = get_link(taxon)
       id_CoL = 'cdf5e8f2aaf144fd5170f295c272c445'; % unaccepted, to Macrobiotus_hufelandi
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '15789'; % unaccepted, to Macrobiotus_hufelandi       
+      id_Wiki = 'Tardigrada'; 
     case 'Hypsibius_convergens'
       id_CoL = '779e48ba14edf4787cd08b7e7401e63b';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '421894';        
+      id_Wiki = 'Tardigrada'; 
     case 'Hypsibius_oberhaeuseri'
       id_CoL = '1bd832ac6d7bb295abbd24520dbf0798';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '104402'; % unaccepted, to Ramazzottius oberhaeuseri       
+      id_Wiki = 'Tardigrada'; 
     case 'Milnesium_tardigradum'
       id_CoL = '063fd91ca8ab9f5dd77628fc62aa3df3';
       id_WoRMS = ''; % not present 2017/06/15
@@ -392,23 +410,28 @@ function links = get_link(taxon)
     case 'Pycnogonum_litorale'
       id_CoL = '14c3dd8cde8bf89b963bc7436dc0ec59'; % present as Pycnogonum_littorale
       id_WoRMS = '239867';
-      id_Taxo = '17077'; % present as Pycnogonum_littorale       
+      id_Taxo = '17077'; % present as Pycnogonum_littorale
+      id_Wiki = 'Pycnogonum';
     case 'Smeringurus_mesaensis'
       id_CoL = '5ac22e6a79875de9dd358275269bf959';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '87088';  % only as genus 2017/06/15      
+      id_Wiki = 'Vaejovidae';
     case 'Rhizoglyphus_robini'
       id_CoL = 'a08d34f3fc91edcfd634888b64706f28';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '143153';        
+      id_Taxo = '143153'; 
+      id_Wiki = 'Rhizoglyphus';
     case 'Aglaoctenus_lagotis'
       id_CoL = '4f7f7da06de383e86a5bfe76f10bb859';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '727868';        
+      id_Taxo = '727868';   
+      id_Wiki = 'Aglaoctenus';
     case 'Cyprideis_torosa'
       id_CoL = 'fd7d758262a28756831f7f8614655d73';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '33329';        
+      id_Taxo = '33329';  
+      id_Wiki = 'Podocopida';
     case 'Triops_longicaudatus'
       id_CoL = 'cd00dfd705355d80c95c024877f73428';
       id_WoRMS = ''; % not present 2017/06/15
@@ -421,22 +444,27 @@ function links = get_link(taxon)
       id_CoL = 'dfa6a62de551465c295c3a3279b152b6'; % present as Bosmina_coregoni
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '33115'; % present as Bosmina_coregoni       
+      id_Wiki = 'Bosmina';
     case 'Chydorus_sphaericus'
       id_CoL = 'bf9a53b5d704a17c593c845f6e8d08cb';
       id_WoRMS = '148406';
-      id_Taxo = '33122';        
+      id_Taxo = '33122'; 
+      id_Wiki = 'Cladocera';
     case 'Pleuroxus_aduncus'
       id_CoL = '4ab9e9fd2808c0e605b8e794b9199627';
       id_WoRMS = '148397';
       id_Taxo = '156250';        
+      id_Wiki = 'Cladocera';
     case 'Pleuroxus_striatus'
       id_CoL = '871ff4ce4fa9b1d8376330527902db45'; % present as Pleuroxus_striatoides, but the same?
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '';  % not present 2017/06/15
+      id_Wiki = 'Cladocera';
     case 'Ceriodaphnia_pulchella'
       id_CoL = '8c950c5099d7368e2c5d026dc079a5e9';
       id_WoRMS = '148395';
       id_Taxo = '156175';        
+      id_Wiki = 'Cladocera';
     case 'Ceriodaphnia_dubia'
       id_CoL = 'b7129a03be4a413d639f0bf4ade8d684';
       id_WoRMS = ''; % not present 2017/06/15
@@ -445,10 +473,12 @@ function links = get_link(taxon)
       id_CoL = '3eb62cdbb1d096da9cfcabc1b19e18aa';
       id_WoRMS = '148371';
       id_Taxo = '';        
+      id_Wiki = 'Daphnia_(subgenus)';
     case 'Daphnia_hyalina'
       id_CoL = '29d9d22b0b26cf7307af8c0faaa8cf06';
       id_WoRMS = '148374';
       id_Taxo = '33101';        
+      id_Wiki = 'Daphnia_(subgenus)';
     case 'Daphnia_magna'
       id_CoL = 'e44e0a35c2cdb085859074a9fe73abdf';
       id_WoRMS = '148372';
@@ -461,14 +491,17 @@ function links = get_link(taxon)
       id_CoL = '986bcd982c77ba4c25548ad2906f3f49';
       id_WoRMS = '148398';
       id_Taxo = '33110';        
+      id_Wiki = 'Cladocera';
     case 'Simocephalus_serrulatus'
       id_CoL = 'c80b9c7571c8f66720bdd1978b6df130';
       id_WoRMS = '412852';
       id_Taxo = '156184';        
+      id_Wiki = 'Cladocera';
     case 'Diaphanosoma_brachyurum'
       id_CoL = 'dd213856b4a492a6f01afd65e70991d4';
       id_WoRMS = '234063';
       id_Taxo = '33086';        
+      id_Wiki = 'Cladocera';
     case 'Leptodora_kindtii'
       id_CoL = 'd8f23f51d85cb363bede2f3632517e87'; % present as Leptodora_kindti
       id_WoRMS = '247980';
@@ -477,22 +510,27 @@ function links = get_link(taxon)
       id_CoL = 'd63a685097756b1c2cf45229db57cac0';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '';  % not present 2017/06/15    
+      id_Wiki = 'Acanthocyclops';
     case 'Cyclops_vicinus'
       id_CoL = '3665f193e29e67b5f91a61c8f72b79e8';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '125392';        
+      id_Wiki = 'Cyclops_(genus)';
     case 'Mesocyclops_leukarti'
       id_CoL = 'eb76a8aa998d1b3614cbeef939cbe8a5';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '124982';        
+      id_Wiki = 'Mesocyclops';
     case 'Calanus_sinicus'
       id_CoL = '522187c194196c1a2931e0e054be2ebe';
       id_WoRMS = '346214';
       id_Taxo = ''; % not present 2017/06/15       
+      id_Wiki = 'Calanus';
     case 'Eurytemora_affinis'
       id_CoL = 'b3cd8223fe63cbb356fab69438d3a23d';
       id_WoRMS = '104872';
       id_Taxo = ''; % not present 2017/06/15          
+      id_Wiki = 'Temoridae';
     case 'Asellus_aquaticus'
       id_CoL = '4acab09868db831471b70493b88c5cc0';
       id_WoRMS = '148667';
@@ -508,11 +546,13 @@ function links = get_link(taxon)
     case 'Gammarus_fossarum'
       id_CoL = '';   % not present 2017/06/15
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '';  % not present 2017/06/15        
+      id_Taxo = '';  % not present 2017/06/15
+      id_Wiki = 'Gammarus';
     case 'Gammarus_pseudolimnaeus'
       id_CoL = '46665c47e08b50e65aa372a80c3e2436';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '';  % not present 2017/06/15    
+      id_Wiki = 'Gammarus';
     case 'Gammarus_pulex'
       id_CoL = '7b6908ae7563c0d764397d8f1cbe6e04';
       id_WoRMS = '819836';
@@ -525,6 +565,7 @@ function links = get_link(taxon)
       id_CoL = '75d47759bf7d4d79eaa4107c2c0423c0';
       id_WoRMS = '120113';
       id_Taxo = '';  % not present 2017/06/15            
+      id_Wiki = 'Mysis';
     case 'Euphausia_superba'
       id_CoL = '9b5816e13fe1783d6d65f7075aba514f';
       id_WoRMS = '236217';
@@ -548,7 +589,8 @@ function links = get_link(taxon)
     case 'Charybdis_bimaculata'
       id_CoL = '6c1210383c25336b3951f1dec88beeb5';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '125153';        
+      id_Taxo = '125153';
+      id_Wiki = 'Charybdis_(genus)';
     case 'Crangon_crangon'
       id_CoL = '58d00d89008c1ec63431fabcc112c6bb';
       id_WoRMS = '107552';
@@ -564,15 +606,18 @@ function links = get_link(taxon)
     case 'Ecdyonurus_dispar'
       id_CoL = 'fd78ae082fb4e998ad66790ed51fc2b2';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '';        
+      id_Taxo = ''; 
+      id_Wiki = 'Heptageniidae';
     case 'Rhithrogena_semicolorata'
       id_CoL = '64430dafc52e724cf544be3fdd703f5a';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '17355';        
+      id_Wiki = 'Heptageniidae';
     case 'Oligoneuriella_rhenana'
       id_CoL = '98265cc9272cbad448432d8f8db5f757';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '17334';        
+      id_Wiki = 'Ephemeroptera';
     case 'Cloeon_dipterum'
       id_CoL = 'cb3fd2c1a361461205d2d68285a00177';
       id_WoRMS = ''; % not present 2017/06/15
@@ -596,7 +641,8 @@ function links = get_link(taxon)
     case 'Chaoborus_americanus'
       id_CoL = '5dbeb214237206446fda16aaf06120cb';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '';  % not present 2017/06/15      
+      id_Taxo = '';  % not present 2017/06/15
+      id_Wiki = 'Chaoborus';
     case 'Plodia_interpunctella'
       id_CoL = '6b0d3d4ddb2f7b52424f8da510c91e10';
       id_WoRMS = ''; % not present 2017/06/15
@@ -612,7 +658,8 @@ function links = get_link(taxon)
     case 'Venturia_canescens'
       id_CoL = '25a05f2c5c8f5146d4b515c36d06e089';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '27808';        
+      id_Taxo = '27808';
+      id_Wiki = 'Ichneumonoidea';
     case 'Asterias_rubens'
       id_CoL = '6d91fa5c1a435bc2c9e5394e5b2478e1';
       id_WoRMS = '123776';
@@ -632,7 +679,8 @@ function links = get_link(taxon)
     case 'Echinus_affinis'
       id_CoL = 'e7cf9012297aa33bdaa907a4e2545d53'; % unaccepeted, to Gracilechinus affinis (Mortensen, 1903)
       id_WoRMS = '124279'; % unaccepted, to Gracilechinus affinis (Mortensen, 1903)
-      id_Taxo = ''; % not present 2017/06/15       
+      id_Taxo = ''; % not present 2017/06/15
+      id_Wiki = 'Echinus_(sea_urchin)';
     case 'Sterechinus_neumayeri'
       id_CoL = 'd8fb71b73e11d1cdecfac8419e98fb50';
       id_WoRMS = '160831';
@@ -656,11 +704,13 @@ function links = get_link(taxon)
     case 'Oikopleura_longicauda'
       id_CoL = '96345fc075fb3f226692bc86808fced3';
       id_WoRMS = '103414';
-      id_Taxo = ''; % not present 2017/06/15       
+      id_Taxo = ''; % not present 2017/06/15 
+      id_Wiki = 'Oikopleura';
     case 'Thalia_democratica'
       id_CoL = 'f4ca44e873a0b0c5881b0a1645582cda';
       id_WoRMS = '137279';
-      id_Taxo = '959814';        
+      id_Taxo = '959814';   
+      id_Wiki = 'Salpidae';
     case 'Ciona_intestinalis'
       id_CoL = 'eca285a07d80dda8bda2c2e91aa687f8';
       id_WoRMS = '103732';
@@ -684,7 +734,8 @@ function links = get_link(taxon)
     case 'Raja_brachyura'
       id_CoL = 'f1f36da016e9d4c15ed5f68aa88216ff';
       id_WoRMS = '367297';
-      id_Taxo = '108278';        
+      id_Taxo = '108278'; 
+      id_Wiki = 'Raja_(genus)';
     case 'Raja_clavata'
       id_CoL = '8b941a6455f0abdb69f393eb6621a74d';
       id_WoRMS = '105883';
@@ -840,7 +891,7 @@ function links = get_link(taxon)
     case 'Clupea_harengus'
       id_CoL = '7adc35bdac2019989efa025ca00ccd5c';
       id_WoRMS = '126417';
-      id_Taxo = 'Clupea_harengus';        
+      id_Taxo = '42634';        
     case 'Alosa_sapidissima'
       id_CoL = '540d73069202e6462f72e6981a5d1e4c';
       id_WoRMS = '158670';
@@ -856,7 +907,8 @@ function links = get_link(taxon)
     case 'Alepocephalus_bairdii'
       id_CoL = '216578ffdce872d0743b7ec726e4179b';
       id_WoRMS = '126682';
-      id_Taxo = '160348';        
+      id_Taxo = '160348';   
+      id_Wiki = 'Alepocephalus';     
     case 'Chanos_chanos'
       id_CoL = '4d9c6e7dced48df2f32ab635d64864ea';
       id_WoRMS = '217625';
@@ -984,15 +1036,18 @@ function links = get_link(taxon)
     case 'Coryphaenoides_acrolepis'
       id_CoL = '6016bf6098518f7e8e1948a86bf68866';
       id_WoRMS = '272313';
-      id_Taxo = '171920';        
+      id_Taxo = '171920';  
+      id_Wiki = 'Coryphaenoides';
     case 'Trachyrincus_scabrus'
       id_CoL = 'd00f2ecf91149861613bf860026db2f5';
       id_WoRMS = '126482';
       id_Taxo = '189278';        
+      id_Wiki = 'Trachyrincus';
     case 'Gaidropsarus_guttatus'
       id_CoL = 'ee90fb4c4e49bf9664559762da7b707e';
       id_WoRMS = '126455';
       id_Taxo = '174631';        
+      id_Wiki = 'Gaidropsarus';
     case 'Lota_lota'
       id_CoL = 'f2994eaf34e74ea6bd789bfdb4684b89';
       id_WoRMS = '154388';
@@ -1056,7 +1111,8 @@ function links = get_link(taxon)
     case 'Carapus_bermudensis'
       id_CoL = '2dd6e3f10c0d08bcb17089579df4c5d0';
       id_WoRMS = '158995';
-      id_Taxo = '165436';        
+      id_Taxo = '165436';
+      id_Wiki = 'Carapus';
     case 'Genypterus_blacodes'
       id_CoL = '660b829aafcd7d46e774e3638a8d7a29';
       id_WoRMS = '278702';
@@ -1104,11 +1160,12 @@ function links = get_link(taxon)
     case 'Trichiurus_nanhaiensis'
       id_CoL = '555222cee2c6984ba598f0c688c28475';
       id_WoRMS = '274024';
-      id_Taxo = '';        
+      id_Taxo = '189326';  
+      id_Wiki = 'Trichiurus';
     case 'Mastacembelus_erythrotaenia'
       id_CoL = '9f4397e88523d3980ca643eb8822e6fc';
       id_WoRMS = ''; % not present 2017/06/16
-      id_Taxo = '';        
+      id_Taxo = '46876';        
     case 'Channa_punctata'
       id_CoL = '19bb192b10caf3ea97ac557fd3b99edb';
       id_WoRMS = '280129';
@@ -1208,7 +1265,8 @@ function links = get_link(taxon)
     case 'Hirundichthys_affinis'
       id_CoL = 'dcc59c1ff44e5086c007ead8f39618f7';
       id_WoRMS = '159265';
-      id_Taxo = '176743';        
+      id_Taxo = '176743';   
+      id_Wiki = 'Hirundichthys';
     case 'Kryptolebias_marmoratus'
       id_CoL = '8c24a2a18bf61d804420086edc99c306';
       id_WoRMS = '314719';
@@ -1332,7 +1390,8 @@ function links = get_link(taxon)
     case 'Lutjanus_guttatus'
       id_CoL = '6d5cc9613dc89d594af6927ac562202c';
       id_WoRMS = '276539';
-      id_Taxo = '179225';        
+      id_Taxo = '179225'; 
+      id_Wiki = 'Lutjanus';
     case 'Lobotes_surinamensis'
       id_CoL = '4d5106709e150cd3aa658259a8fd12b6';
       id_WoRMS = '126973';
@@ -1352,7 +1411,8 @@ function links = get_link(taxon)
     case 'Diplodus_puntazzo'
       id_CoL = '7be95da2081d27bd05a0d13a5a9ba2f2';
       id_WoRMS = '127052';
-      id_Taxo = '173233';        
+      id_Taxo = '173233';  
+      id_Wiki = 'Diplodus';
     case 'Boops_boops'
       id_CoL = 'fb99b92f46db65d7f8a22d33ee501f04';
       id_WoRMS = '127047';
@@ -1364,7 +1424,8 @@ function links = get_link(taxon)
     case 'Siganus_sutor'
       id_CoL = 'b95005208d28f9fbdc4c90a74e502fae';
       id_WoRMS = '219688';
-      id_Taxo = '187610';        
+      id_Taxo = '187610';   
+      id_Wiki = 'Siganus';
     case 'Scatophagus_argus'
       id_CoL = 'ff1b84d7b315c0069609d5e1b7d2b37c';
       id_WoRMS = '276970';
@@ -1372,7 +1433,8 @@ function links = get_link(taxon)
     case 'Priacanthus_macracanthus'
       id_CoL = '464de607d945097ad6b06e525e70a826';
       id_WoRMS = '273765';
-      id_Taxo = '45154';        
+      id_Taxo = '45154'; 
+      id_Wiki = 'Priacanthus';
     case 'Capros_aper'
       id_CoL = '2b3383c0bc271b4255f444abc942ded1';
       id_WoRMS = '127419';
@@ -1392,11 +1454,13 @@ function links = get_link(taxon)
     case 'Pempheris_adusta'
       id_CoL = 'c50e0567968f7bba0e705a8a7b5a6cc5'; % unaccepted, to Pempheris malabarica
       id_WoRMS = '218704';
-      id_Taxo = '183399';        
+      id_Taxo = '183399';
+      id_Wiki = 'Pempheris';
     case 'Pempheris_schwenkii'
       id_CoL = 'c0a9eb122361f992e57b9d586d79a8f7';
       id_WoRMS = '218699';
       id_Taxo = '183415';        
+      id_Wiki = 'Pempheris';
     case 'Lepomis_cyanellus'
       id_CoL = 'cc83144368365e74204374b9f7db5de9';
       id_WoRMS = ''; % not present 2017/06/16
@@ -1412,7 +1476,8 @@ function links = get_link(taxon)
     case 'Notothenia_coriiceps'
       id_CoL = '0d2d14ff0bfeed9cef3cd477df4e2afd';
       id_WoRMS = '234679';
-      id_Taxo = '181460';        
+      id_Taxo = '181460'; 
+      id_Wiki = 'Notothenia';
     case 'Chaenocephalus_aceratus'
       id_CoL = '3fec63b8bf6a49d4f179180b00a183bc';
       id_WoRMS = '234725';
@@ -1514,13 +1579,16 @@ function links = get_link(taxon)
       id_Taxo = '91117';        
     case 'Egernia_striolata'
       id_CoL = 'db22a3ef5da7fd52f483b3ee884a0351';
-      id_Taxo = '91138';        
+      id_Taxo = '91138';
+      id_Wiki = 'Egernia';
     case 'Liopholis_striata'
       id_CoL = '3b1f6e151cff0f8f6971c525f21a1c11';
-      id_Taxo = '1685441';        
+      id_Taxo = '1685441';
+      id_Wiki = 'Liopholis';
     case 'Liopholis_inornata'
       id_CoL = '080dc164b56f544895192ee52cb97f02';
       id_Taxo = '1685439';        
+      id_Wiki = 'Liopholis';
     case 'Amphisbaena_alba'
       id_CoL = 'e9c5fca6f18472b4bdb1059cc9b179d0';
       id_Taxo = '50424';        
@@ -1529,7 +1597,8 @@ function links = get_link(taxon)
       id_Taxo = '642580';        
     case 'Lacerta_strigata'
       id_CoL = '13b6f7649bd9cb39390aa38518fca717';
-      id_Taxo = '49578';        
+      id_Taxo = '49578';    
+      id_Wiki = 'Lacerta_(genus)';
     case 'Varanus_komodoensis'
       id_CoL = '9734ef854130b3011fb9ec9be37afed1';
       id_Taxo = '170215';        
@@ -1606,12 +1675,15 @@ function links = get_link(taxon)
     case 'Camerasaurus_spec'
       id_CoL = 'f507a35be496f4aa1295ce637ec4d07c'; % C. supremus
       id_Taxo = ''; % not present at 2017/06/16       
+      id_Wiki = 'Camerasaurus';
     case 'Apatosaurus_spec'
       id_CoL = '901ec65eb9b9c783b00e6a2b21cde5d3'; % A. ajax
-      id_Taxo = '50887'; % present as genus               
+      id_Taxo = '50887'; % present as genus
+      id_Wiki = 'Apatosaurus';
     case 'Mamenchisaurus_spec'
       id_CoL = 'e65e3cac15fd4c7da196864957452e52'; % M. anyuensis
-      id_Taxo = '50894'; % present as genus            
+      id_Taxo = '50894'; % present as genus
+      id_Wiki = 'Mamenchisaurus';
     case 'Psittacosaurus_mongoliensis'
       id_CoL = '53bc6644c4a20fc8606d32a8104206c0';
       id_Taxo = '51062'; % present as genus           
@@ -1955,6 +2027,7 @@ function links = get_link(taxon)
       id_Taxo = '51842';        
     case 'Pelecanus_onocrotalus'
       id_CoL = '93042a2bf3d8f48f27fe9b410ac0d62a';
+      id_WoRMS = '137176';
       id_Taxo = '51649';        
     case 'Aquila_chrysaetos'
       id_CoL = '5b68758c108a10b7c6be9f990d3ad0a3';
