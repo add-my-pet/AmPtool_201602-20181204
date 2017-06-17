@@ -1631,263 +1631,263 @@ function links = get_link(taxon)
       id_CoL = 'b9239f5c1ac241577326804d5d856bf6';
       id_Taxo = '51227';        
     case 'Apteryx_mantelli'
-      id_CoL = '';
+      id_CoL = 'a2d2e28e381809c970138675ba310656';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Dromaius_novaehollandiae'
-      id_CoL = '';
+      id_CoL = 'e211d1636655d7a1b1f48fdb2c584dae';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Struthio_camelus'
-      id_CoL = '';
+      id_CoL = 'e763abecc4e6a356b9764fe1904c045a';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Rhea_americana'
-      id_CoL = '';
+      id_CoL = 'e97ede28aa4346a1972c1fd2e7d24740';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Rhynchotus_rufescens'
-      id_CoL = '';
+      id_CoL = 'f4c7658ba36fc777a545f8cdc47d11f9';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Alectura_lathami'
-      id_CoL = '';
+      id_CoL = '0af00c8374b5551a726a6d761528a5a8';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Tetrastes_bonasia'
-      id_CoL = '';
+      id_CoL = '48797b9cd84c84166eca6c1bc4a3b01f';
       id_WoRMS = '';
       id_Taxo = '';        
     case {'Gallus_gallus','Gallus_gallus_IR','Gallus_gallus_WL'}
-      id_CoL = '';
+      id_CoL = 'e9bd1de9ad04b90064cf96a24cf98310';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Anas_platyrhynchos'
-      id_CoL = '';
+      id_CoL = 'd5d9d6e502eb4c9f10b094dfdd935e65';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Mergus_merganser'
-      id_CoL = '';
+      id_CoL = 'dd005d87ee7a39a731b69942401091df';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Mergus_serrator'
-      id_CoL = '';
+      id_CoL = 'cbe66f861f86562456b2d7e1ef5de373';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Melanitta_perspicillata'
-      id_CoL = '';
+      id_CoL = 'f9894443879efbdfd2b1b84dddc7b32a';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Somateria_mollissima'
-      id_CoL = '';
+      id_CoL = 'e999b4ec3f0ee05bcd43a62b67baaf64';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Podilymbus_podiceps'
-      id_CoL = '';
+      id_CoL = 'efd1147e3604cc229f2e7dcafb95ca0b';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Phoeniconaias_minor'
-      id_CoL = '';
+      id_CoL = '8b96caa363071f1641f8a492c77d2cb8';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Columba_oenas'
-      id_CoL = '';
+      id_CoL = 'ed30f61f67a50dfc7efd082e23ec61b9';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Columba_livia'
-      id_CoL = '';
+      id_CoL = '625498c7f0f49724cd81aae39db4e1e5';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Mesitornis_variegatus'
-      id_CoL = '';
+      id_CoL = 'a990bffed92b9b55d3f6cfb8572597e8';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Pterocles_alchata'
-      id_CoL = '';
+      id_CoL = '470ed15824f0e16f12532abcfa8feb54';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Apus_apus'
-      id_CoL = '';
+      id_CoL = '9623ca15e5c36c273a9e571b97ba8107';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Aegotheles_cristatus'
-      id_CoL = '';
+      id_CoL = 'e77dc5c18f2a229366e15a70c599332f';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Podargus_strigoides'
-      id_CoL = '';
+      id_CoL = '77210dd21b917f4baf425d753ad78f02';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Cuculus_canorus'
-      id_CoL = '';
+      id_CoL = '01a48abb4f3aba76b904ac4c7a32f20a';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Clamator_glandarius'
-      id_CoL = '';
+      id_CoL = '02135d597ace84d87208d04918b1beba';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Tauraco_erythrolophus'
-      id_CoL = '';
+      id_CoL = '4044ed76e392318b4727c7de43ddb7a5';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Ardeotis_kori'
-      id_CoL = '';
+      id_CoL = '185f3057c97c4f10fd7a1c483282d5a1';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Opisthocomus_hoazin'
-      id_CoL = '';
+      id_CoL = 'ad3bcef887f4c268792c37f0d373faff';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Calidris_ferruginea'
-      id_CoL = '';
+      id_CoL = '9b0c2d95deffed6fa89cdb208c187026';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Calidris_alpina'
-      id_CoL = '';
+      id_CoL = '3573e87083ded2fb1ffc96183f7def79';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Calidris_bairdii'
-      id_CoL = '';
+      id_CoL = 'b332bce93951f2c8b34f237074c8b5bc';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Calidris_minuta'
-      id_CoL = '';
+      id_CoL = '9690a93b47b604e28ac765c2345ba29c';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Calidris_minutilla'
-      id_CoL = '';
+      id_CoL = '81a637f1ff6e3f1fda7a976824ba5adc';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Calidris_maritima'
-      id_CoL = '';
+      id_CoL = 'a35342e9335b7725fa58bc1da7787203';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Philomachus_pugnax'
-      id_CoL = '';
+      id_CoL = '7b48212a290510deccad5344b1d61986';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Tringa_flavipes'
-      id_CoL = '';
+      id_CoL = 'dfc3b9462212b04edcb721a3db10791e';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Limnodromus_griseus'
-      id_CoL = '';
+      id_CoL = 'e45c6cab6f6609688ad3f1f3fcd1ff3f';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Limosa_haemastica'
-      id_CoL = '';
+      id_CoL = '33c1fb3078fbaabe8a5b2112bece7d67';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Numenius_phaeopus'
-      id_CoL = '';
+      id_CoL = '19bd674744e8fd0eda79a3b09a47568d';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Fratercula_arctica'
-      id_CoL = '';
+      id_CoL = '80c12642c3ab7cc036ee3749463ca606';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Ptychoramphus_aleuticus'
-      id_CoL = '';
+      id_CoL = '1b8b9f4a86353758c7ff85c17a850ab4';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Aethia_pusilla'
-      id_CoL = '';
+      id_CoL = 'eedd1a360668ef531a40b98d4493618e';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Aethia_cristatella'
-      id_CoL = '';
+      id_CoL = '7048c7929886b0410e3501585b00d8a9';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Cepphus_grylle'
-      id_CoL = '';
+      id_CoL = 'f56cecae9c9629f9bcc610161d9b483e';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Uria_aalge'
-      id_CoL = '';
+      id_CoL = '1f21d6d69cb8c09be9a27485d68bc4d1';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Uria_lomvia'
-      id_CoL = '';
+      id_CoL = '4a4b216694d920384c31bd8854e0f1d8';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Alle_alle'
-      id_CoL = '';
+      id_CoL = 'd04ac5333679e22045b58982006bcc2d';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Pinguinus_impennis'
-      id_CoL = '';
+      id_CoL = 'caf3fab41ba54462fe586a8bcdcdb54b';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Alca_torda'
-      id_CoL = '';
+      id_CoL = '7524d7f8f9a7aff80ccb4cbb4d31501b';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Chlidonias_leucopterus'
-      id_CoL = '';
+      id_CoL = 'a666e4b62baba1a7edf044f52f7eefd5';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Sterna_paradisaea'
-      id_CoL = '';
+      id_CoL = 'b20a894252b52f4c191ef168d1a7aaad';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Sterna_hirundo'
-      id_CoL = '';
+      id_CoL = 'c83b9db3064841202e4e59eb103b5847';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Thalasseus_sandvicensis'
-      id_CoL = '';
+      id_CoL = 'fd712ba9ea195d3cc049c283c6ba3caa';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Chroicocephalus_ridibundus'
-      id_CoL = '';
+      id_CoL = '619c28ecb10081c76f0926710fdc982a';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Larus_argentatus'
-      id_CoL = '';
+      id_CoL = '6d0b384ca6c3c1ec2eb97706da11eae8';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Rissa_tridactyla'
-      id_CoL = '';
+      id_CoL = 'bab5d031b01e7f12e85e1bdcf9726828';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Rissa_brevirostris'
-      id_CoL = '';
+      id_CoL = 'bab5d031b01e7f12e85e1bdcf9726828';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Stercorarius_longicaudus'
-      id_CoL = '';
+      id_CoL = '7463b0f804c2d9ab6acd1e21194c690a';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Stercorarius_skua'
-      id_CoL = '';
+      id_CoL = '0a044c4812738721275215f803d29c25';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Stercorarius_maccormicki'
-      id_CoL = '';
+      id_CoL = '15e1f2d9818ba3046dff1e228d1587b6';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Himantopus_mexicanus'
-      id_CoL = '';
+      id_CoL = '1f5847657f78653cd8be6e4f828a1c0d';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Haematopus_moquini'
-      id_CoL = '';
+      id_CoL = '35a448e347c4bb7b28695e9fcb3c744b';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Vanellus_armatus'
-      id_CoL = '';
+      id_CoL = '6034cc9bf59a797ca53b2e50c0241a25';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Vanellus_coronatus'
-      id_CoL = '';
+      id_CoL = '6b2bf7e07f766050de717c4a411774c2';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Charadrius_pecuarius'
-      id_CoL = '';
+      id_CoL = '7649077c28e6d6a042e8f6a197b55be5';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Pluvialis_dominica'
-      id_CoL = '';
+      id_CoL = 'aa24423d09987a0d571d2e28180b1960';
       id_WoRMS = '';
       id_Taxo = '';        
     case 'Gallinula_chloropus'
