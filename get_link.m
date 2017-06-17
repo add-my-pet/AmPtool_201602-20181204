@@ -1725,7 +1725,8 @@ function links = get_link(taxon)
       id_Taxo = '52966';        
     case {'Gallus_gallus','Gallus_gallus_IR','Gallus_gallus_WL'}
       id_CoL = 'e9bd1de9ad04b90064cf96a24cf98310';
-      id_Taxo = '53136';        
+      id_Taxo = '53136';    
+      id_Wiki = 'Gallus_gallus';
     case 'Anas_platyrhynchos'
       id_CoL = 'd5d9d6e502eb4c9f10b094dfdd935e65';
       id_WoRMS = '148791';
@@ -2374,6 +2375,7 @@ function links = get_link(taxon)
     case {'Bos_primigenius_Angus','Bos_primigenius_Holstein','Bos_primigenius_Brahman'}
       id_CoL = '40e81482006c210a43ef64609163278e';
       id_Taxo = '167484'; % unaccpeted, to Bos taurus primigenius Bojanus, 1827        
+      id_Wiki = 'Bos_primigenius';
     case 'Rupicapra_rupicapra'
       id_CoL = 'd25ccfd780ea763f039935faa9b1f3c7';
       id_Taxo = '68532';        
