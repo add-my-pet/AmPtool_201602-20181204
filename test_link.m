@@ -38,7 +38,7 @@ for i=1:nargin
     links = get_link(varargin{i});
     try 
       false{i} = 0;
-      url = links{strcmp('Ency of Life',links(:,2)),1};
+      url = links{strcmp('fishbase',links(:,2)),1};
       txt = urlread(url);
       fprintf([varargin{i}, ' ', num2str(i), ': ', num2str(size(txt,2)),'\n']);
     catch
