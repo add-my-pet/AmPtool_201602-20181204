@@ -22,11 +22,13 @@ function [links info] = get_link(taxon)
 % * info: (n,1)-matrix with true of false for existence of web pages
 
 %% Remarks
-% empty ID links are removed from output; 
+% empty ID links are removed from output; ID links are all empty if entry is not listed
 % EoL (most complete) sometimes allows species names, but basically works with ID numbers
-% Where Wiki has not the entry name, a higher taxon is selected
-% WoMS has marine species only, such as the icebear, but no other bears
-% AnAge only works for endotherms; fishbase only for fish; ADW is too incomplete at 2017/06/18
+% If Wiki has not the entry name, a higher taxon is selected
+% WoMS has marine species only, such as the icebear, but no other bears; inconsistent presence for freshwater plankton
+% AnAge only works for Tetropoda; ulread for AnAge is always successful, but <20000 long if entry does not exist)
+% fishbase only for fish; so never combines with AnAge 
+% ADW is too incomplete at 2017/06/18
 
 %% Example of use
 % links = get_link('Daphnia_magna')
@@ -1634,18 +1636,22 @@ function [links info] = get_link(taxon)
       id_CoL = '7653067dbfb18458578b1e698667cacc';
       id_Taxo = '781013';        
       id_EoL = '332826';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Crinia_georgiana'
       id_CoL = '66b8883b16bfdf95aad4fa2a2d29f8d8';
       id_Taxo = '79098';        
       id_EoL = '330825';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Geocrinia_vitellina'
       id_CoL = '12f5c1d4ba0f3475b80be1a3f53d8269';
       id_Taxo = '78940';        
       id_EoL = '1019811';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Pseudophryne_bibronii'
       id_CoL = '30e9b7c92c5bc6dc80518b2c9ec2d126';
       id_Taxo = '88189';        
       id_EoL = '1025125';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Bufo_bufo'
       id_CoL = 'e53ae9ac85ef2c141a509f6405bc98f7';
       id_Taxo = '47784';        
@@ -1663,10 +1669,12 @@ function [links info] = get_link(taxon)
       id_CoL = 'b7368b27759d92dfd69b19ba70fe7f0e';
       id_Taxo = '91157';        
       id_EoL = '794708';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Tiliqua_rugosa'
       id_CoL = '03bd821efb1cfb6c36d9b5037df77a69';
       id_Taxo = '49387';        
       id_EoL = '790460';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Egernia_cunninghami'
       id_CoL = '91fe397b8044dd1066106e58c5e37c52';
       id_Taxo = '91117';        
@@ -1676,16 +1684,19 @@ function [links info] = get_link(taxon)
       id_Taxo = '91138';
       id_Wiki = 'Egernia';
       id_EoL = '794945';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Liopholis_striata'
       id_CoL = '3b1f6e151cff0f8f6971c525f21a1c11';
       id_Taxo = '1685441';
       id_Wiki = 'Liopholis';
       id_EoL = '794944'; % unaccepted, to Egernia striata
+      id_AnAge = ''; % not present 2017/06/18
     case 'Liopholis_inornata'
       id_CoL = '080dc164b56f544895192ee52cb97f02';
       id_Taxo = '1685439';        
       id_Wiki = 'Liopholis';
       id_EoL = '794963'; % unaccepted, to Egernia inornata
+      id_AnAge = ''; % not present 2017/06/18
     case 'Amphisbaena_alba'
       id_CoL = 'e9c5fca6f18472b4bdb1059cc9b179d0';
       id_Taxo = '50424';        
@@ -1694,11 +1705,13 @@ function [links info] = get_link(taxon)
       id_CoL = '7e1a059719ca73323daa52f23a19a64d';
       id_Taxo = '642580';        
       id_EoL = '791768';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Lacerta_strigata'
       id_CoL = '13b6f7649bd9cb39390aa38518fca717';
       id_Taxo = '49578';    
       id_Wiki = 'Lacerta_(genus)';
       id_EoL = '792774';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Varanus_komodoensis'
       id_CoL = '9734ef854130b3011fb9ec9be37afed1';
       id_Taxo = '170215';        
@@ -1715,6 +1728,7 @@ function [links info] = get_link(taxon)
       id_CoL = '1784a51b08f5dec6219f9eb686c036f8';
       id_Taxo = '90658';        
       id_EoL = '795255';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Sceloporus_undulatus'
       id_CoL = '9152ab6db407dca4866fc5bb234b62a6';
       id_Taxo = '49023';        
@@ -1739,6 +1753,7 @@ function [links info] = get_link(taxon)
       id_CoL = '7449215b10f0b0e3d3b66b04beff2d3d';
       id_Taxo = '49966';        
       id_EoL = '1287053';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Natrix_natrix'
       id_CoL = '27ec70b00734b68213ff0972f7360650';
       id_Taxo = '50029';        
@@ -1748,6 +1763,7 @@ function [links info] = get_link(taxon)
       id_WoRMS = ''; % not present 2010/06/16
       id_Taxo = '48233';
       id_EoL = '793828';
+      id_AnAge = ''; % not present 2017/06/18
     case {'Caretta_caretta','Caretta_caretta_MED'}
       id_CoL = '5667c31e110f65b6f24658fa8d7f650f';
       id_WoRMS = '137205';
@@ -1765,6 +1781,7 @@ function [links info] = get_link(taxon)
       id_CoL = ''; % not present 2010/06/16
       id_Taxo = '50639'; % present as genus 2010/06/16      
       id_EoL = '4472734';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Alligator_mississippiensis'
       id_CoL = '258a54f64c1a663997eb9cca0549f840';
       id_Taxo = '50616';        
@@ -1781,6 +1798,7 @@ function [links info] = get_link(taxon)
       id_CoL = 'fcfe74af99e90cc51fee08e046d3aef2';
       id_Taxo = '50631'; 
       id_EoL = '795282';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Crocodylus_niloticus'
       id_CoL = '1a3211cb8764f54db424f9a4646c0075';
       id_Taxo = '50633';        
@@ -1789,49 +1807,60 @@ function [links info] = get_link(taxon)
       id_CoL = '7241febd761e916d77b5d64f223534f0';
       id_Taxo = '50713'; % present as genus        
       id_EoL = '4532321';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Plateosaurus_engelhardti'
       id_CoL = 'ae30514b08e4a9102ed0953d4e849809';
       id_Taxo = '50866'; % present as genus         
       id_EoL = '4531220';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Camerasaurus_spec'
       id_CoL = 'f507a35be496f4aa1295ce637ec4d07c'; % C. supremus
       id_Taxo = ''; % not present at 2017/06/16       
       id_Wiki = 'Camerasaurus';
       id_EoL = ''; % not present at 2017/06/18 
+      id_AnAge = ''; % not present 2017/06/18
     case 'Apatosaurus_spec'
       id_CoL = '901ec65eb9b9c783b00e6a2b21cde5d3'; % A. ajax
       id_Taxo = '50887'; % present as genus
       id_Wiki = 'Apatosaurus';
       id_EoL = '46370379';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Mamenchisaurus_spec'
       id_CoL = 'e65e3cac15fd4c7da196864957452e52'; % M. anyuensis
       id_Taxo = '50894'; % present as genus
       id_Wiki = 'Mamenchisaurus';
       id_EoL = '46370693';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Psittacosaurus_mongoliensis'
       id_CoL = '53bc6644c4a20fc8606d32a8104206c0';
       id_Taxo = '51062'; % present as genus           
       id_EoL = '4532055';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Maiasaura_peeblesorum'
       id_CoL = 'a8a49429384c6e0baa7d523cfa760e16';
       id_Taxo = '50959'; % present as genus              
       id_EoL = '4530718';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Daspletosaurus_torosus'
       id_CoL = 'd220ef2c6ad58b7d730719f5ad838bf8';
       id_Taxo = '50838'; % present as genus       
       id_EoL = '4433652';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Gorgosaurus_libratus'
       id_CoL = '54cd15bf2e0366e56b694ffd4318a821';
       id_Taxo = '1674440';        
       id_EoL = '13386365';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Tyrannosaurus_rex'
       id_CoL = '5b355e6aa28cdfd9bed3c5ed8f4a828d';
       id_Taxo = '50842';        
       id_EoL = '4433638';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Archaeopteryx_lithographica'
       id_CoL = 'b9239f5c1ac241577326804d5d856bf6';
       id_Taxo = '51227';        
       id_EoL = '42332498';
+      id_AnAge = ''; % not present 2017/06/18
     case 'Apteryx_mantelli'
       id_CoL = 'a2d2e28e381809c970138675ba310656';
       id_Taxo = '51310'; % unaccepted, to  Apteryx australis mantelli Bartlett, 1852      
@@ -3016,6 +3045,8 @@ function [links info] = get_link(taxon)
       id_Taxo = '66295';        
       id_EoL = '327955';
     otherwise
+      id_EoL = '';
+      id_Wiki = '';
       id_CoL = '';
       id_WoRMS = '';
       id_Taxo = '';        
