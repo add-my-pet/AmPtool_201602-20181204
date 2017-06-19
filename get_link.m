@@ -33,15 +33,10 @@ function [links info] = get_link(taxon)
 %% Example of use
 % links = get_link('Daphnia_magna')
 
+  taxon_txt = [strrep(taxon,'_','-'), '.html'];
+  
   % default identifiers
-  id_EoL = taxon; id_Wiki = taxon; id_WoRMS = ''; 
-  if ismember(taxon, select('Tetrapoda'))
-    id_AnAge = taxon; id_fishbase = '';
-  elseif ismember(taxon, select('Craniata'))
-    id_AnAge = ''; id_fishbase = [strrep(taxon,'_','-'), '.html'];
-  else
-    id_AnAge = ''; id_fishbase = ''; % no tetrapod or fish
-  end
+  id_EoL = taxon; id_Wiki = taxon; id_WoRMS = ''; id_fishbase = ''; id_AnAge = '';
 
   switch taxon % overwrite id's if necessary, assign empty to delete (at bottom)
     case 'Haliclona_oculata'
@@ -782,856 +777,1061 @@ function [links info] = get_link(taxon)
     case 'Myxine_glutinosa'
       id_CoL = '69d2953e9389f6ea17228c0d1331173d';
       id_WoRMS = '101170';
-      id_Taxo = '41664';        
+      id_Taxo = '41664';     
+      id_fishbase = taxon_txt;
     case 'Eptatretus_stoutii'
       id_CoL = '8c8fa2e6d0664f3f877f783a64beb1c6';
       id_WoRMS = '279298';
       id_Taxo = '174002';        
+      id_fishbase = taxon_txt;
     case 'Lampetra_planeri'
       id_CoL = '7849536da20a2a4d44365ac33b8c8b98';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '41687';      
       id_EoL = '206412';
+      id_fishbase = taxon_txt;
     case 'Callorhinchus_capensis'
       id_CoL = '2b8e437a12e0cc1b19683fd7de7c7206';
       id_WoRMS = '221460';
       id_Taxo = '42191';        
+      id_fishbase = taxon_txt;
     case 'Raja_brachyura'
       id_CoL = 'f1f36da016e9d4c15ed5f68aa88216ff';
       id_WoRMS = '367297';
       id_Taxo = '108278'; 
       id_Wiki = 'Raja_(genus)';
+      id_fishbase = taxon_txt;
     case 'Raja_clavata'
       id_CoL = '8b941a6455f0abdb69f393eb6621a74d';
       id_WoRMS = '105883';
       id_Taxo = '108279';        
+      id_fishbase = taxon_txt;
     case 'Leucoraja_erinacea'
       id_CoL = '2b6c3cc7234a53cc6229a9883c9075af';
       id_WoRMS = '158551';
       id_Taxo = '178802';        
+      id_fishbase = taxon_txt;
     case 'Rhinobatos_productus'
       id_CoL = '8691a825ec34f8adcda1539f3d0babc0';
       id_WoRMS = '271608';
       id_Taxo = '42033';        
+      id_fishbase = taxon_txt;
     case 'Trygonoptera_personata'
       id_CoL = '739fdc4060e8c6a65d8025878bac5d8b';
       id_WoRMS = '283062';
       id_Taxo = '189636';        
+      id_fishbase = taxon_txt;
     case 'Manta_birostris'
       id_CoL = 'a8df6db60161ecbce7691570e5ce3b33';
       id_WoRMS = '105857';
       id_Taxo = '42170';        
+      id_fishbase = taxon_txt;
     case 'Torpedo_marmorata'
       id_CoL = '522a408cbb5e8f63207652bb703c9abb';
       id_WoRMS = '271684';
       id_Taxo = '42040';        
+      id_fishbase = taxon_txt;
     case 'Pristis_pectinata'
       id_CoL = '25c479c1cdb81333995c06b8fdc78d6d';
       id_WoRMS = '105848';
       id_Taxo = '42016';        
+      id_fishbase = taxon_txt;
     case 'Squatina_californica'
       id_CoL = '68e9753aed082e09ac4d4b4c348e920b';
       id_WoRMS = '271667';
       id_Taxo = '106304';        
+      id_fishbase = taxon_txt;
     case 'Pristiophorus_cirratus'
       id_CoL = '791c66b1d7d17796ec389eefcf0e7cdb';
       id_WoRMS = '282352';
       id_Taxo = '106297';        
+      id_fishbase = taxon_txt;
     case 'Squalus_acanthias'
       id_CoL = 'b141071e3edeab5432a46ce9d8dac40c';
       id_WoRMS = '105923';
       id_Taxo = '41840';        
+      id_fishbase = taxon_txt;
     case 'Somniosus_microcephalus'
       id_CoL = '31935504b8da5b895f90bcf5c73f221c';
       id_WoRMS = '105919';
       id_Taxo = '41837';        
+      id_fishbase = taxon_txt;
     case 'Etmopterus_perryi'
       id_CoL = '36a22def38a1931b3c9f9cb244396c01';
       id_WoRMS = '271637';
       id_Taxo = '';        
+      id_fishbase = taxon_txt;
     case 'Chlamydoselachus_anguineus'
       id_CoL = '3f01614da0c8edb62c6afbb190cfc9d7';
       id_WoRMS = '105831';
       id_Taxo = '106487';        
+      id_fishbase = taxon_txt;
     case 'Heptranchias_perlo'
       id_CoL = '5bbba314cd44233980889b7db2091025';
       id_WoRMS = '105832';
       id_Taxo = '41773';        
+      id_fishbase = taxon_txt;
     case 'Heterodontus_portusjacksoni'
       id_CoL = 'ea78d30dbfede623a294ebd70f2efd83';
       id_WoRMS = '276699';
       id_Taxo = '106314';        
+      id_fishbase = taxon_txt;
     case 'Chiloscyllium_plagiosum'
       id_CoL = '52239f24c95c370cbca53d5404f355a8';
       id_WoRMS = '277832';
       id_Taxo = '94273';        
+      id_fishbase = taxon_txt;
     case 'Rhincodon_typus'
       id_CoL = 'b757ec97469df0ee764547b0911c66e6';
       id_WoRMS = '105847';
       id_Taxo = '41872';        
+      id_fishbase = taxon_txt;
     case 'Sphyrna_lewini'
       id_CoL = '350243ccc762d3c4ac03d1b35bd6ff9d';
       id_WoRMS = '105816';
       id_Taxo = '42008';        
+      id_fishbase = taxon_txt;
     case 'Scyliorhinus_canicula'
       id_CoL = '384ae8eb01a30b7118797dd65f7e4915';
       id_WoRMS = '105814';
       id_Taxo = '106399';        
+      id_fishbase = taxon_txt;
     case 'Carcharhinus_leucas'
       id_CoL = '08712ee451c6216fdc23bf2ed1b8eb24';
       id_WoRMS = '105792';
       id_Taxo = '41977';        
+      id_fishbase = taxon_txt;
     case 'Rhizoprionodon_acutus'
       id_CoL = 'd7c076bc204bb11aa7e5d4e49ba7ffe9';
       id_WoRMS = '105802';
       id_Taxo = '41999';        
+      id_fishbase = taxon_txt;
     case 'Carcharodon_carcharias'
       id_CoL = 'c5465928ea46eb759bbbf4d623c56bad';
       id_WoRMS = '105838';
       id_Taxo = '41903';        
+      id_fishbase = taxon_txt;
     case 'Erpetoichthys_calabaricus'
       id_CoL = 'c89d648572722980801c621e154ae462';
       id_WoRMS = '280711';
       id_Taxo = '174040';        
+      id_fishbase = taxon_txt;
     case 'Acipenser_ruthenus'
       id_CoL = '0b96730a682802ff925457b4832bce69';
       id_WoRMS = '233941';
       id_Taxo = '42441';        
+      id_fishbase = taxon_txt;
     case 'Acipenser_sturio'
       id_CoL = '91d2d822ff7160abb9b9e57817711028';
       id_WoRMS = '126279';
       id_Taxo = '42445';        
+      id_fishbase = taxon_txt;
     case 'Amia_calva'
       id_CoL = 'd526fe4bb2cd5cf0d8edcbee9b0a07c4';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '42482';   
       id_EoL = '223782';
+      id_fishbase = taxon_txt;
     case 'Atractosteus_spatula'
       id_CoL = 'd3a4b7c1f41f1e5cc48d060d5ec1e28f';
       id_WoRMS = '279822';
       id_Taxo = '42476';        
+      id_fishbase = taxon_txt;
     case 'Megalops_atlanticus'
       id_CoL = '17dc53c92491078c7b4c95be788a6908';
       id_WoRMS = '126430';
       id_Taxo = '92883';        
+      id_fishbase = taxon_txt;
     case 'Albula_vulpes'
       id_CoL = '954d4564780d4574570377f3efae7a5f';
       id_WoRMS = '212256';
       id_Taxo = '42516';        
+      id_fishbase = taxon_txt;
     case 'Notacanthus_chemnitzii'
       id_CoL = '105a60ea1ee0ae9c444deb9ca6eb6ea6';
       id_WoRMS = '126643';
       id_Taxo = '181370';        
+      id_fishbase = taxon_txt;
     case 'Anguilla_anguilla'
       id_CoL = 'b81dfd849eb83bca1705a2f0c0e671dd';
       id_WoRMS = '126281';
       id_Taxo = '42526';        
+      id_fishbase = taxon_txt;
     case 'Hiodon_tergisus'
       id_CoL = '9847fa5ddb60890788abf8bc9ce686a5';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '42725'; 
       id_EoL = '207393';
+      id_fishbase = taxon_txt;
     case 'Osteoglossum_bicirrhosum'
       id_CoL = '72895daedd532e7e22d3cefc27328304';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '42708';      
       id_EoL = '223395';
+      id_fishbase = taxon_txt;
     case 'Notopterus_notopterus'
       id_CoL = '4fcb49f6bfd5870b3cfababf5e802016';
       id_WoRMS = '281795';
       id_Taxo = '42730';        
+      id_fishbase = taxon_txt;
     case 'Arapaima_gigas'
       id_CoL = 'a8f83fea3aa2f1d343cc2b193eacfdcc';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '42701'; 
       id_EoL = '204868';
+      id_fishbase = taxon_txt;
     case 'Sardina_pilchardus'
       id_CoL = 'Sardina_pilchardus';
       id_WoRMS = '126421';
       id_Taxo = '42663';        
+      id_fishbase = taxon_txt;
     case 'Sardinella_aurita'
       id_CoL = 'dbb523a3a5dd945fa9f9217e754a65db';
       id_WoRMS = '126422';
       id_Taxo = '42665';        
+      id_fishbase = taxon_txt;
     case 'Sprattus_sprattus'
       id_CoL = '8b704c8dd27132590681045b7a305644';
       id_WoRMS = '126425';
       id_Taxo = '42676';        
+      id_fishbase = taxon_txt;
     case 'Clupea_harengus'
       id_CoL = '7adc35bdac2019989efa025ca00ccd5c';
       id_WoRMS = '126417';
       id_Taxo = '42634';        
+      id_fishbase = taxon_txt;
     case 'Alosa_sapidissima'
       id_CoL = '540d73069202e6462f72e6981a5d1e4c';
       id_WoRMS = '158670';
       id_Taxo = '42629';        
+      id_fishbase = taxon_txt;
     case 'Engraulis_encrasicolus'
       id_CoL = '2abe41c8ee39bb550534f328bf4717a3';
       id_WoRMS = '126426';
       id_Taxo = '173703';        
+      id_fishbase = taxon_txt;
     case 'Chirocentrus_dorab'
       id_CoL = 'e6e028c4da3f6801e1e7b01fa7098bf8';
       id_WoRMS = '212257';
       id_Taxo = '42695';        
+      id_fishbase = taxon_txt;
     case 'Alepocephalus_bairdii'
       id_CoL = '216578ffdce872d0743b7ec726e4179b';
       id_WoRMS = '126682';
       id_Taxo = '160348';   
       id_Wiki = 'Alepocephalus';     
+      id_fishbase = taxon_txt;
     case 'Chanos_chanos'
       id_CoL = '4d9c6e7dced48df2f32ab635d64864ea';
       id_WoRMS = '217625';
       id_Taxo = '43032';        
+      id_fishbase = taxon_txt;
     case 'Danio_rerio'
       id_CoL = 'ae6d1ad09071086da0498b39630b01f8';
       id_WoRMS = '172875';  % not present 2017/06/16
       id_Taxo = '172875';        
+      id_fishbase = taxon_txt;
     case 'Pimephales_promelas'
       id_CoL = '63c01b172492dc6862ba657e613edec0';
       id_WoRMS = '';  % not present 2017/06/16
       id_Taxo = '43662';   
       id_EoL = '28754994';
+      id_fishbase = taxon_txt;
     case 'Rhodeus_amarus'
       id_CoL = '383389bc215371c6bf7b0cf460aff92e';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '92917';
       id_EoL = '217578';
+      id_fishbase = taxon_txt;
     case 'Hydrocynus_vittatus'
       id_CoL = 'ed61d5b61ce91a6d34fbca8211ce5a9c';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '176952';  
       id_EoL = '206410';
+      id_fishbase = taxon_txt;
     case 'Electrophorus_electricus'
       id_CoL = '3cef65beebb836d276014fb79322b074';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '43452';
       id_EoL = '206595';
+      id_fishbase = taxon_txt;
     case 'Silurus_glanis'
       id_CoL = '0fca3a9e29d6704c3a68823c84b98198';
       id_WoRMS = '154677';
       id_Taxo = '44028';        
+      id_fishbase = taxon_txt;
     case 'Pangasianodon_hypophthalmus'
       id_CoL = '53d4229bacedae1311051e7cddd073d4';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '182534'; % present as Pangasius_hypophthalmus        
       id_EoL = '570181';
+      id_fishbase = taxon_txt;
     case 'Corydoras_aeneus'
       id_CoL = '905ee3c3036f0147c9e3465986196a49';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '44138';
       id_EoL = '216685';
+      id_fishbase = taxon_txt;
     case 'Lepidogalaxias_salamandroides'
       id_CoL = 'b975ffe011c7f6ea8044587c5b496b26';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '107055';
       id_EoL = '211145';
+      id_fishbase = taxon_txt;
     case 'Argentina_silus'
       id_CoL = '3e22bc9aa5c827a1a28e27a30ebbce10';
       id_WoRMS = '126715';
       id_Taxo = '161604';        
+      id_fishbase = taxon_txt;
     case 'Galaxias_paucispondylus'
       id_CoL = '97ac829e366aa23775953a31b00ae1e5';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '174652'; 
       id_EoL = '211834';
+      id_fishbase = taxon_txt;
     case 'Galaxias_prognathus'
       id_CoL = 'da95676ab15b54eb5e4f65b620c80490';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '174655';        
       id_EoL = '224520';
+      id_fishbase = taxon_txt;
     case 'Galaxias_maculatus'
       id_CoL = 'c2582550dc2965e0747776dea22d1aa4';
       id_WoRMS = '280811';
       id_Taxo = '42879';        
+      id_fishbase = taxon_txt;
     case 'Thymallus_thymallus'
       id_CoL = '70711497ab2addf810f979817f82f1e5';
       id_WoRMS = '154375';
       id_Taxo = '42856';        
+      id_fishbase = taxon_txt;
     case 'Oncorhynchus_tshawytscha'
       id_CoL = '566c1a149d7757a7b5ba252a5186fbbf';
       id_WoRMS = '158075';
       id_Taxo = '125253';        
+      id_fishbase = taxon_txt;
     case 'Oncorhynchus_mykiss'
       id_CoL = 'd11b35db644cc45d76ccd8ad31452045';
       id_WoRMS = '127185';
       id_Taxo = '42808';        
+      id_fishbase = taxon_txt;
     case 'Salmo_trutta'
       id_CoL = '0909d84d2750016742284669abf8341f';
       id_WoRMS = '223866';
       id_Taxo = '42823';        
+      id_fishbase = taxon_txt;
     case 'Salvelinus_alpinus'
       id_CoL = '2b256e111056ab998c15402950cf0b1b';
       id_WoRMS = '293724';
       id_Taxo = '42831';        
+      id_fishbase = taxon_txt;
     case 'Esox_lucius'
       id_CoL = 'c828ed0d18644bc9e3cfe4b9507f3247';
       id_WoRMS = '154210';
       id_Taxo = '42891';        
+      id_fishbase = taxon_txt;
     case 'Osmerus_mordax'
       id_CoL = 'a3b21f18440ced89a25d39ddfedd990a';
       id_WoRMS = '293649';
       id_Taxo = '502213';        
+      id_fishbase = taxon_txt;
     case 'Mallotus_villosus'
       id_CoL = '6de343f6ed58029def4a6735f32b7771';
       id_WoRMS = '126735';
       id_Taxo = '42863';        
+      id_fishbase = taxon_txt;
     case 'Maurolicus_muelleri'
       id_CoL = '287f6d8d5cad38947c4747789ae7694d';
       id_WoRMS = '127312';
       id_Taxo = '42941';        
+      id_fishbase = taxon_txt;
     case 'Harpadon_nehereus'
       id_CoL = '20bdc080c3d6f6e9ec19d35a7a538828';
       id_WoRMS = '217661';
       id_Taxo = '42986';        
+      id_fishbase = taxon_txt;
     case 'Saurida_undosquamis'
       id_CoL = '4325632d3f0d7f509ff89ff24c0995c4';
       id_WoRMS = '126371';
       id_Taxo = '154128';        
+      id_fishbase = taxon_txt;
     case 'Lampanyctodes_hectoris'
       id_CoL = '1663743e8aa7e56da885a90acae52c58';
       id_WoRMS = '217704';
       id_Taxo = '153098';        
+      id_fishbase = taxon_txt;
     case 'Percopsis_omiscomaycus'
       id_CoL = '9fb8728f4e0fc8a9cf1ddbfc6fd232d5';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '44208';     
       id_EoL = '212344';
+      id_fishbase = taxon_txt;
     case 'Zeus_faber'
       id_CoL = 'bf90fcde968c06d7a7f8cfca8d697a6f';
       id_WoRMS = '127427';
       id_Taxo = '44763';        
+      id_fishbase = taxon_txt;
     case 'Merluccius_merluccius'
       id_CoL = '39aec9c7ac734cd01b88dc2b5b09c28c';
       id_WoRMS = '126484';
       id_Taxo = '44371';        
+      id_fishbase = taxon_txt;
     case 'Raniceps_raninus'
       id_CoL = 'bde2dc26759b5a5d568a3b000a7d0ed6';
       id_WoRMS = '126442';
       id_Taxo = '44353';        
+      id_fishbase = taxon_txt;
     case 'Coryphaenoides_rupestris'
       id_CoL = '5c129aaf328e6c2c681bbdd241f31865';
       id_WoRMS = '158960';
       id_Taxo = '44412';        
+      id_fishbase = taxon_txt;
     case 'Coryphaenoides_acrolepis'
       id_CoL = '6016bf6098518f7e8e1948a86bf68866';
       id_WoRMS = '272313';
       id_Taxo = '171920';  
       id_Wiki = 'Coryphaenoides';
+      id_fishbase = taxon_txt;
     case 'Trachyrincus_scabrus'
       id_CoL = 'd00f2ecf91149861613bf860026db2f5';
       id_WoRMS = '126482';
       id_Taxo = '189278';        
       id_Wiki = 'Trachyrincus';
+      id_fishbase = taxon_txt;
     case 'Gaidropsarus_guttatus'
       id_CoL = 'ee90fb4c4e49bf9664559762da7b707e';
       id_WoRMS = '126455';
       id_Taxo = '174631';        
       id_Wiki = 'Gaidropsarus';
+      id_fishbase = taxon_txt;
     case 'Lota_lota'
       id_CoL = 'f2994eaf34e74ea6bd789bfdb4684b89';
       id_WoRMS = '154388';
       id_Taxo = '44325';        
+      id_fishbase = taxon_txt;
     case 'Brosme_brosme'
       id_CoL = '10373959a98b1e40a905b724dad4a42c';
       id_WoRMS = '126447';
       id_Taxo = '44299';        
+      id_fishbase = taxon_txt;
     case 'Molva_molva'
       id_CoL = '3fee41097816c75ec9b5a5ef34cb99dd';
       id_WoRMS = '126461';
       id_Taxo = '44342';        
+      id_fishbase = taxon_txt;
     case 'Molva_dypterygia'
       id_CoL = '269c0de4e92dcc0e57972a40b5e4e002';
       id_WoRMS = '154806';
       id_Taxo = '180273';        
+      id_fishbase = taxon_txt;
     case 'Trisopterus_luscus'
       id_CoL = 'cd5e7b2693846a253c3422d6fe98ae1a';
       id_WoRMS = '126445';
       id_Taxo = '44358';        
+      id_fishbase = taxon_txt;
     case 'Trisopterus_minutus'
       id_CoL = '98b19a0e8841f79eb026a4ffb91a2bc5';
       id_WoRMS = '126446'; 
       id_Taxo = '44359';        
+      id_fishbase = taxon_txt;
     case 'Gadiculus_argenteus'
       id_CoL = 'a78ad69172f3ea581adb41e10070cc7c';
       id_WoRMS = '126435';
       id_Taxo = '44309';        
+      id_fishbase = taxon_txt;
     case 'Micromesistius_poutassou'
       id_CoL = 'ba1a5fff001217fb7146d999d35734f3';
       id_WoRMS = '126439';
       id_Taxo = '44338';        
+      id_fishbase = taxon_txt;
     case 'Pollachius_virens'
       id_CoL = '60c99285fb5a4e824031a17adb22b495';
       id_WoRMS = '126441';
       id_Taxo = '92961';        
+      id_fishbase = taxon_txt;
     case 'Melanogrammus_aeglefinus'
       id_CoL = '69087f937e2e4b18916f8bd300a4ca41';
       id_WoRMS = '126437';
       id_Taxo = '92958';        
+      id_fishbase = taxon_txt;
     case 'Merlangius_merlangus'
       id_CoL = 'ab575c19c518950c34e2773154585474';
       id_WoRMS = '126438';
       id_Taxo = '92959';        
+      id_fishbase = taxon_txt;
     case 'Gadus_morhua'
       id_CoL = '472b9bc88fb647e974a0f06caed3dd44';
       id_WoRMS = '126436';
       id_Taxo = '92960';        
+      id_fishbase = taxon_txt;
     case 'Polymixia_nobilis'
       id_CoL = '70e2266b2d2a3c0706512274d0d36766';
       id_WoRMS = '127163';
       id_Taxo = '184375';        
+      id_fishbase = taxon_txt;
     case 'Hoplostethus_atlanticus'
       id_CoL = '1e050a7b0ef409254f1412f5eda0c21f';
       id_WoRMS = '126402';
       id_Taxo = '153363';        
+      id_fishbase = taxon_txt;
     case 'Holocentrus_adscensionis'
       id_CoL = '09be05d2d25f1e7254c0380f441b7fa3';
       id_WoRMS = '159378';
       id_Taxo = '176795';        
+      id_fishbase = taxon_txt;
     case 'Carapus_bermudensis'
       id_CoL = '2dd6e3f10c0d08bcb17089579df4c5d0';
       id_WoRMS = '158995';
       id_Taxo = '165436';
       id_Wiki = 'Carapus';
+      id_fishbase = taxon_txt;
     case 'Genypterus_blacodes'
       id_CoL = '660b829aafcd7d46e774e3638a8d7a29';
       id_WoRMS = '278702';
       id_Taxo = '174838';        
+      id_fishbase = taxon_txt;
     case 'Opsanus_tau'
       id_CoL = 'eabf208a108044b4e9b995e267e3cbed';
       id_WoRMS = '158782';
       id_Taxo = '44212';        
+      id_fishbase = taxon_txt;
     case 'Halobatrachus_didactylus'
       id_CoL = '179d2ac7f27322ede597a170364b80a9';
       id_WoRMS = '126374';
       id_Taxo = '175875';        
+      id_fishbase = taxon_txt;
     case 'Kurtus_gulliveri'
       id_CoL = '38cb814c35df32492fc8a30488ce5b03';
       id_WoRMS = '281236';
       id_Taxo = '46650';        
+      id_fishbase = taxon_txt;
     case 'Pomatoschistus_minutus'
       id_CoL = '04913a0b4d8937a43ce71ec46207ba90';
       id_WoRMS = '126928';
       id_Taxo = '46609';        
+      id_fishbase = taxon_txt;
     case 'Hippocampus_whitei'
       id_CoL = '34e00e147e87daed81ad04fe6747aa6f';
       id_WoRMS = '212235';
       id_Taxo = '176713';        
+      id_fishbase = taxon_txt;
     case 'Macroramphosus_scolopax'
       id_CoL = '770932aafd5b74016b79ed7295764b9b';
       id_WoRMS = '127378';
       id_Taxo = '179479';        
+      id_fishbase = taxon_txt;
     case 'Macroramphosus_gracilis'
       id_CoL = '437607dcae3e3f6957d73c4d031e8d38';
       id_WoRMS = '275181';
       id_Taxo = '179478';        
+      id_fishbase = taxon_txt;
     case 'Thunnus_orientalis'
       id_CoL = '243ba5718af1ebd2306782107e21e150';
       id_WoRMS = '273823';
       id_Taxo = '189037';        
+      id_fishbase = taxon_txt;
     case 'Thunnus_thynnus'
       id_CoL = 'cd171d7f8b99d3cfddfe023e5f82480c';
       id_WoRMS = '127029';
       id_Taxo = '46703';        
+      id_fishbase = taxon_txt;
     case 'Scomber_scombrus'
       id_CoL = 'f656631fc42068100e2330c40c8fda18';
       id_WoRMS = '127023';
       id_Taxo = '46695';        
+      id_fishbase = taxon_txt;
     case 'Trichiurus_nanhaiensis'
       id_CoL = '555222cee2c6984ba598f0c688c28475';
       id_WoRMS = '274024';
       id_Taxo = '189326';  
       id_Wiki = 'Trichiurus';
+      id_fishbase = taxon_txt;
     case 'Mastacembelus_erythrotaenia'
       id_CoL = '9f4397e88523d3980ca643eb8822e6fc';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '46876';   
       id_EoL = '224257';
+      id_fishbase = taxon_txt;
     case 'Channa_punctata'
       id_CoL = '19bb192b10caf3ea97ac557fd3b99edb';
       id_WoRMS = '280129';
       id_Taxo = '189326';        
+      id_fishbase = taxon_txt;
     case 'Leptomelanosoma_indicum'
       id_CoL = '004a64a588dad591b93043d7e1ba587e';
       id_WoRMS = '281323';
       id_Taxo = '691213';        
+      id_fishbase = taxon_txt;
     case 'Coryphaena_hippurus'
       id_CoL = 'c1a7f3fb0a8ad67293953bcc7595b9b1';
       id_WoRMS = '126846';
       id_Taxo = '45259';        
+      id_fishbase = taxon_txt;
     case 'Trachurus_trachurus'
       id_CoL = '02ba3ac0351955e01ae15aada30ecaf3';
       id_WoRMS = '126822';
       id_Taxo = '45255';        
+      id_fishbase = taxon_txt;
     case 'Seriola_dumerili'
       id_CoL = 'c41257061380fbac21c3ece5c9f31c25';
       id_WoRMS = '126816';
       id_Taxo = '45249';        
+      id_fishbase = taxon_txt;
     case 'Sphyraena_barracuda'
       id_CoL = '15ca7deef951e4af6ad43248c2ba9525';
       id_WoRMS = '345843';
       id_Taxo = '46311';        
+      id_fishbase = taxon_txt;
     case 'Xiphias_gladius'
       id_CoL = '099117b58af9f608aac8375fee1b49f9';
       id_WoRMS = '127094';
       id_Taxo = '46706';        
+      id_fishbase = taxon_txt;
     case 'Makaira_nigricans'
       id_CoL = '088c42e166682f624c0dcf29b3eb37b1';
       id_WoRMS = '126950';
       id_Taxo = '179502';        
+      id_fishbase = taxon_txt;
     case 'Centropomus_undecimalis'
       id_CoL = '3301ce508f4609a51e8f9e149960e264';
       id_WoRMS = '280068';
       id_Taxo = '45046';        
+      id_fishbase = taxon_txt;
     case 'Solea_solea'
       id_CoL = 'deff55d108d1dce0aa4a4f4b9838e198';
       id_WoRMS = '127160';
       id_Taxo = '46991';        
+      id_fishbase = taxon_txt;
     case 'Psetta_maxima'
       id_CoL = '614b30fcca5c61b82a3d7b6cbad26210';
       id_WoRMS = '154473'; % unaccepted, to Scophthalmus maximus (Linnaeus, 1758)
       id_Taxo = '549389';        
+      id_fishbase = taxon_txt;
     case 'Bothus_podas'
       id_CoL = 'bdfad96d05a57e67153ca800c8dcbbb2';
       id_WoRMS = '127129';
       id_Taxo = '46911';        
+      id_fishbase = taxon_txt;
     case 'Paralichthys_californicus'
       id_CoL = '792306f69c45f40c290b03b5508d0145';
       id_WoRMS = '275809';
       id_Taxo = '46919';        
+      id_fishbase = taxon_txt;
     case 'Platichthys_stellatus'
       id_CoL = '053a76755a17dcb950ac3c94f3b8ea0c';
       id_WoRMS = '154781';
       id_Taxo = '46959';        
+      id_fishbase = taxon_txt;
     case 'Pleuronectes_platessa'
       id_CoL = '27a6782add287c044111388cc4996f04';
       id_WoRMS = '127143';
       id_Taxo = '46963';        
+      id_fishbase = taxon_txt;
     case 'Limanda_limanda'
       id_CoL = '56f0252000b66dd5b8afb1db11ea325e';
       id_WoRMS = '127139';
       id_Taxo = '46950';        
+      id_fishbase = taxon_txt;
     case 'Limanda_ferruginea'
       id_CoL = '04db571e4e47c5e9caa0a788e21cb419';
       id_WoRMS = '158879';
       id_Taxo = '178824';        
+      id_fishbase = taxon_txt;
     case 'Hippoglossus_hippoglossus'
       id_CoL = 'dc36286e5ce7fb2b3f8ea20980cf01a7';
       id_WoRMS = '127138';
       id_Taxo = '46945';        
+      id_fishbase = taxon_txt;
     case 'Hippoglossus_stenolepis'
       id_CoL = '91569817d395ea9dfbc24b5cb9c1ea2d';
       id_WoRMS = '274290';
       id_Taxo = '46948';        
+      id_fishbase = taxon_txt;
     case 'Reinhardtius_hippoglossoides'
       id_CoL = 'c4292d462182240f592370e0ef60a08f';
       id_WoRMS = '127144';
       id_Taxo = '46967';        
+      id_fishbase = taxon_txt;
     case 'Glyptocephalus_cynoglossus'
       id_CoL = 'bdb069c61c221a0f307446fb7b95af91';
       id_WoRMS = '127136';
       id_Taxo = '46938';        
+      id_fishbase = taxon_txt;
     case 'Microstomus_kitt'
       id_CoL = '7203eb81dc39b374d6e2833224b87bab';
       id_WoRMS = '127140';
       id_Taxo = '46954';        
+      id_fishbase = taxon_txt;
     case 'Oreochromis_niloticus'
       id_CoL = '9ddda31044c5b5e86eca800592b8473f';
       id_WoRMS = '293639';
       id_Taxo = '46085';        
+      id_fishbase = taxon_txt;
     case 'Belone_belone'
       id_CoL = '6b4ff497ef77437ec9fad307c08c99a6';
       id_WoRMS = '126375';
       id_Taxo = '44420';        
+      id_fishbase = taxon_txt;
     case 'Hirundichthys_affinis'
       id_CoL = 'dcc59c1ff44e5086c007ead8f39618f7';
       id_WoRMS = '159265';
       id_Taxo = '176743';   
       id_Wiki = 'Hirundichthys';
+      id_fishbase = taxon_txt;
     case 'Kryptolebias_marmoratus'
       id_CoL = '8c24a2a18bf61d804420086edc99c306';
       id_WoRMS = '314719';
       id_Taxo = '691145';        
+      id_fishbase = taxon_txt;
     case 'Poecilia_reticulata'
       id_CoL = '1a2112979142994cc7c0ac7710256715';
       id_WoRMS = '154400';
       id_Taxo = '44613';        
+      id_fishbase = taxon_txt;
     case 'Aphanius_fasciatus'
       id_CoL = 'ca3b317c12ad025398bec05b234d8a98';
       id_WoRMS = '126428';
       id_Taxo = '44467';        
+      id_fishbase = taxon_txt;
     case 'Atherina_presbyter'
       id_CoL = '8aa69a96e25e63f574382883df9016f5';
       id_WoRMS = '272030';
       id_Taxo = '44697';        
+      id_fishbase = taxon_txt;
     case 'Chromis_chromis'
       id_CoL = '3ea36d06fa4400de11f0f6fbaf5c7bde';
       id_WoRMS = '127000';
       id_Taxo = '46264';        
+      id_fishbase = taxon_txt;
     case 'Chelon_labrosus'
       id_CoL = '78be26413dd8d85e73278dd3188eab9f';
       id_WoRMS = '126977';
       id_Taxo = '46293';        
+      id_fishbase = taxon_txt;
     case 'Pseudochromis_flavivertex'
       id_CoL = 'b697a0538b3401dbaae2a64b561eb983';
       id_WoRMS = '218331';
       id_Taxo = '105954';        
+      id_fishbase = taxon_txt;
     case 'Lepadogaster_lepadogaster'
       id_CoL = 'e51f4ae6bb47355df4b30132303ea92b';
       id_WoRMS = '126518';
       id_Taxo = '435688';        
+      id_fishbase = taxon_txt;
     case 'Parablennius_ruber'
       id_CoL = '9386eb92555dee139dce61caa84022e8';
       id_WoRMS = '126774';
       id_Taxo = '182612';        
+      id_fishbase = taxon_txt;
     case 'Gerres_equulus'
       id_CoL = '23cd92cc305ff9a3bf3649785c8e464b';
       id_WoRMS = '276956';
       id_Taxo = '174882';        
+      id_fishbase = taxon_txt;
     case 'Uranoscopus_scaber'
       id_CoL = '441e78c3a3b763923fda47d897dae3f2';
       id_WoRMS = '127093';
       id_Taxo = '46399';        
+      id_fishbase = taxon_txt;
     case 'Achoerodus_viridis'
       id_CoL = '1004ac3c0d8d6bd825bbe8058bc5c012';
       id_WoRMS = '279498';
       id_Taxo = '160085';        
+      id_fishbase = taxon_txt;
     case 'Semicossyphus_pulcher'
       id_CoL = '69686c930aaba39a3bdb90083af535ad';
       id_WoRMS = '282753';
       id_Taxo = '187392';        
+      id_fishbase = taxon_txt;
     case 'Dicentrarchus_labrax'
       id_CoL = '9d082a4d12bd05ee5b2050d56a4d052d';
       id_WoRMS = '126975';
       id_Taxo = '173131';        
+      id_fishbase = taxon_txt;
     case 'Platax_orbicularis'
       id_CoL = 'f28ff72a2191ac0ee807ce87547e057b';
       id_WoRMS = '218711';
       id_Taxo = '45379';        
+      id_fishbase = taxon_txt;
     case 'Chaetodon_larvatus'
       id_CoL = '6f795a109a33b29662c4c42498b46600';
       id_WoRMS = '218716';
       id_Taxo = '45422';        
+      id_fishbase = taxon_txt;
     case 'Sciaena_umbra'
       id_CoL = '27622ae481976a389f0364896073477f';
       id_WoRMS = '127010';
       id_Taxo = '187003';        
+      id_fishbase = taxon_txt;
     case 'Argyrosomus_regius'
       id_CoL = '27622ae481976a389f0364896073477f';
       id_WoRMS = '127007';
       id_Taxo = '161639';        
+      id_fishbase = taxon_txt;
     case 'Acanthurus_lineatus'
       id_CoL = '72076057c0ddd13f26566ef47ca0f806';
       id_WoRMS = '159582';
       id_Taxo = '159956';        
+      id_fishbase = taxon_txt;
     case 'Acanthurus_olivaceus'
       id_CoL = '184220753935633dfd76a44124f9eb9f';
       id_WoRMS = '219625';
       id_Taxo = '159966';        
+      id_fishbase = taxon_txt;
     case 'Ctenochaetus_striatus'
       id_CoL = 'd0a5c174287d9a41401d44fd76ea47a9';
       id_WoRMS = '219659';
       id_Taxo = '172382';        
+      id_fishbase = taxon_txt;
     case 'Zebrasoma_scopas'
       id_CoL = '4120d1be7736b044565798994f885c30';
       id_WoRMS = '219679';
       id_Taxo = '190229';        
+      id_fishbase = taxon_txt;
     case 'Naso_brevirostris'
       id_CoL = '14f067280f37ccc47cfca4d4c77d78e9';
       id_WoRMS = '219671';
       id_Taxo = '180806';        
+      id_fishbase = taxon_txt;
     case 'Naso_hexacanthus'
       id_CoL = '0c44bef6df412078dc9d79bf4aea957c';
       id_WoRMS = '219667';
       id_Taxo = '180811';        
+      id_fishbase = taxon_txt;
     case 'Naso_tuberosus'
       id_CoL = 'f9f4b124898fab8fa2a035aa2c88606c';
       id_WoRMS = '219675';
       id_Taxo = '180820';        
+      id_fishbase = taxon_txt;
     case 'Naso_unicornis'
       id_CoL = 'b0550abec0ef9ad62702f1b462928cf3';
       id_WoRMS = '219668';
       id_Taxo = '46736';        
+      id_fishbase = taxon_txt;
     case 'Naso_vlamingii'
       id_CoL = '93cc53b4d96f8af60aaaf9b672c98b6f';
       id_WoRMS = '219672';
       id_Taxo = '180821';        
+      id_fishbase = taxon_txt;
     case 'Prionurus_maculatus'
       id_CoL = '8e93ea02a76329aafcf142608f63878c';
       id_WoRMS = '282347';
       id_Taxo = '184744';        
+      id_fishbase = taxon_txt;
     case 'Pomacanthus_imperator'
       id_CoL = 'a6e16382a753b4b86e9662ada4e78f14';
       id_WoRMS = '220001';
       id_Taxo = '45410';        
+      id_fishbase = taxon_txt;
     case 'Lutjanus_fulviflamma'
       id_CoL = '4014e54315e91f4329bbdd5601dd1b9f';
       id_WoRMS = '218490';
       id_Taxo = '106193';        
+      id_fishbase = taxon_txt;
     case 'Lutjanus_guttatus'
       id_CoL = '6d5cc9613dc89d594af6927ac562202c';
       id_WoRMS = '276539';
       id_Taxo = '179225'; 
       id_Wiki = 'Lutjanus';
+      id_fishbase = taxon_txt;
     case 'Lobotes_surinamensis'
       id_CoL = '4d5106709e150cd3aa658259a8fd12b6';
       id_WoRMS = '126973';
       id_Taxo = '45277';        
+      id_fishbase = taxon_txt;
     case 'Dentex_dentex'
       id_CoL = '470a9807241f414f99aaed0d85d65ec6';
       id_WoRMS = '273962';
       id_Taxo = '172982';        
+      id_fishbase = taxon_txt;
     case 'Pagellus_erythrinus'
       id_CoL = 'cf65e6afffa559b72e5b5b8afebdae91';
       id_WoRMS = '127060';
       id_Taxo = '45317';        
+      id_fishbase = taxon_txt;
     case 'Sparus_aurata'
       id_CoL = '0ef59679adc50c75a369c2b291f7e32f';
       id_WoRMS = '151523';
       id_Taxo = '159658';        
+      id_fishbase = taxon_txt;
     case 'Diplodus_puntazzo'
       id_CoL = '7be95da2081d27bd05a0d13a5a9ba2f2';
       id_WoRMS = '127052';
       id_Taxo = '173233';  
       id_Wiki = 'Diplodus';
+      id_fishbase = taxon_txt;
     case 'Boops_boops'
       id_CoL = 'fb99b92f46db65d7f8a22d33ee501f04';
       id_WoRMS = '127047';
       id_Taxo = '164378';        
+      id_fishbase = taxon_txt;
     case 'Acanthopagrus_berda'
       id_CoL = '743fc93b06d76f028c95835e6bd733e0';
       id_WoRMS = '218588';
       id_Taxo = '159910';        
+      id_fishbase = taxon_txt;
     case 'Siganus_sutor'
       id_CoL = 'b95005208d28f9fbdc4c90a74e502fae';
       id_WoRMS = '219688';
       id_Taxo = '187610';   
       id_Wiki = 'Siganus';
+      id_fishbase = taxon_txt;
     case 'Scatophagus_argus'
       id_CoL = 'ff1b84d7b315c0069609d5e1b7d2b37c';
       id_WoRMS = '276970';
       id_Taxo = '45387';        
+      id_fishbase = taxon_txt;
     case 'Priacanthus_macracanthus'
       id_CoL = '464de607d945097ad6b06e525e70a826';
       id_WoRMS = '273765';
       id_Taxo = '45154'; 
       id_Wiki = 'Priacanthus';
+      id_fishbase = taxon_txt;
     case 'Capros_aper'
       id_CoL = '2b3383c0bc271b4255f444abc942ded1';
       id_WoRMS = '127419';
       id_Taxo = '44767';        
+      id_fishbase = taxon_txt;
     case 'Lophius_piscatorius'
       id_CoL = 'df7f154bea778d0e8d2947f93d849f53';
       id_WoRMS = '126555';
       id_Taxo = '44235';        
+      id_fishbase = taxon_txt;
     case 'Balistes_vetula'
       id_CoL = '1887ebe145aef2774c5d77da4fd412ee';
       id_WoRMS = '127397';
       id_Taxo = '47004';        
+      id_fishbase = taxon_txt;
     case 'Mola_mola'
       id_CoL = 'ad52cc37a5ce66e98b9ba0195b9d8cb7';
       id_WoRMS = '127405';
       id_Taxo = '47097';        
+      id_fishbase = taxon_txt;
     case 'Pempheris_adusta'
       id_CoL = 'c50e0567968f7bba0e705a8a7b5a6cc5'; % unaccepted, to Pempheris malabarica
       id_WoRMS = '218704';
       id_Taxo = '183399';
       id_Wiki = 'Pempheris';
+      id_fishbase = taxon_txt;
     case 'Pempheris_schwenkii'
       id_CoL = 'c0a9eb122361f992e57b9d586d79a8f7';
       id_WoRMS = '218699';
       id_Taxo = '183415';        
       id_Wiki = 'Pempheris';
+      id_fishbase = taxon_txt;
     case 'Lepomis_cyanellus'
       id_CoL = 'cc83144368365e74204374b9f7db5de9';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '45132';   
       id_EoL = '207660';
+      id_fishbase = taxon_txt;
     case 'Epinephelus_marginatus'
       id_CoL = 'b19367bf6c4b12ca0ea001ea9953c9c9';
       id_WoRMS = '127036';
       id_Taxo = '173912';        
+      id_fishbase = taxon_txt;
     case 'Perca_fluviatilis'
       id_CoL = '593aaa7c79677b093fe94582a14d3f94';
       id_WoRMS = '151353';
       id_Taxo = '45191';        
+      id_fishbase = taxon_txt;
     case 'Notothenia_coriiceps'
       id_CoL = '0d2d14ff0bfeed9cef3cd477df4e2afd';
       id_WoRMS = '234679';
       id_Taxo = '181460'; 
       id_Wiki = 'Notothenia';
+      id_fishbase = taxon_txt;
     case 'Chaenocephalus_aceratus'
       id_CoL = '3fec63b8bf6a49d4f179180b00a183bc';
       id_WoRMS = '234725';
       id_Taxo = '170312';        
+      id_fishbase = taxon_txt;
     case 'Platycephalus_fuscus'
       id_CoL = '4c534963503ef6fcc744f3b7e012ee86';
       id_WoRMS = '274658';
       id_Taxo = '183991';        
+      id_fishbase = taxon_txt;
     case 'Chelidonichthys_lucerna'
       id_CoL = '092eeb046b250e0e6525afb90ea84c57';
       id_WoRMS = '127262';
       id_Taxo = '170737'; % unaccepted, to Chelidonichthys lucernus (C. Linnaeus, 1758)       
+      id_fishbase = taxon_txt;
     case 'Eutrigla_gurnardus'
       id_CoL = 'b5170e5381219be1eddc144a73d3ac91';
       id_WoRMS = '150637';
       id_Taxo = '380822';        
+      id_fishbase = taxon_txt;
     case 'Helicolenus_dactylopterus'
       id_CoL = '803335b098e8e3e44e3878928804ab16';
       id_WoRMS = '127251';
       id_Taxo = '192869';        
+      id_fishbase = taxon_txt;
     case 'Anarhichas_denticulatus'
       id_CoL = '82231bb18c0352f531625d3a170c6d25';
       id_WoRMS = '126757';
       id_Taxo = '160816';        
+      id_fishbase = taxon_txt;
     case 'Anarhichas_lupus'
       id_CoL = '1b5a06078230b478e2aac29ce38c6cea';
       id_WoRMS = '126758';
       id_Taxo = '46468';        
+      id_fishbase = taxon_txt;
     case 'Zoarces_viviparus'
       id_CoL = 'b17c8f2af4a90b649ca031af1d8ae0fa';
       id_WoRMS = '127123';
       id_Taxo = '44406';        
+      id_fishbase = taxon_txt;
     case 'Gasterosteus_aculeatus'
       id_CoL = 'fd99ac97713444a54871ba5ae6555109';
       id_WoRMS = '126505';
       id_Taxo = '44801';        
+      id_fishbase = taxon_txt;
     case 'Pungitius_pungitius'
       id_CoL = '43d5e58d4d2708e8963ec274963f607d';
       id_WoRMS = '126507';
       id_Taxo = '44805';        
+      id_fishbase = taxon_txt;
     case 'Cyclopterus_lumpus'
       id_CoL = '4445e08822e2ce4fad71ae776c543830';
       id_WoRMS = '127214';
       id_Taxo = '45013';        
+      id_fishbase = taxon_txt;
     case 'Scorpaenichthys_marmoratus'
       id_CoL = '397958a0d9074889461f137e4f7e7afc';
       id_WoRMS = '282726';
       id_Taxo = '153452';        
+      id_fishbase = taxon_txt;
     case 'Myoxocephalus_scorpius'
       id_CoL = 'ea0a01317e2536d0439b2698488001d6';
       id_WoRMS = '127203';
       id_Taxo = '44979';        
+      id_fishbase = taxon_txt;
     case 'Latimeria_chalumnae'
       id_CoL = '46ffe2e071c4d553d33e36794a179846';
       id_WoRMS = '217438';
       id_Taxo = '42378';        
+      id_fishbase = taxon_txt;
     case 'Neoceratodus_forsteri'
       id_CoL = 'f3f583180b1b6979f36e97c7c6a5a23c';
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '42340';    
       id_EoL = '339109';
+      id_fishbase = taxon_txt;
     case 'Ichthyophis_kohtaoensis'
       id_CoL = '897f721335748e93117c84bae4a39427';
       id_Taxo = '48031';        
       id_EoL = '330408';
+      id_AnAge = taxon;
     case 'Lissotriton_vulgaris'
       id_CoL = '8eb8ecd651629c0276ce18bb308d38e8';
       id_Taxo = '985978';        
       id_EoL = '10194926';
+      id_AnAge = taxon;
     case 'Andrias_japonicus'
       id_CoL = '41349267f4b608eff2affa9111ed15de';
       id_Taxo = '47247';        
       id_EoL = '319982';
+      id_AnAge = taxon;
     case 'Crinia_nimbus'
       id_CoL = '7653067dbfb18458578b1e698667cacc';
       id_Taxo = '781013';        
@@ -1656,15 +1856,18 @@ function [links info] = get_link(taxon)
       id_CoL = 'e53ae9ac85ef2c141a509f6405bc98f7';
       id_Taxo = '47784';        
       id_EoL = '333310';
+      id_AnAge = taxon;
     case 'Sphenodon_punctatus'
       id_CoL = '25b1757fa601bfa9d01e3e9460c93b06';
       id_Taxo = '48794';        
       id_EoL = '460890';
+      id_AnAge = taxon;
     case {'Heteronotia_binoei','Heteronotia_binoei_3N1A','Heteronotia_binoei_3N1B','Heteronotia_binoei_EA6','Heteronotia_binoei_SM6'}
       id_CoL = '9d3714402a1d195c7d861c0b1f840bd8';
       id_Taxo = '90870';
       id_Wiki = 'Heteronotia_binoei';
       id_EoL = '456690';
+      id_AnAge = 'Heteronotia_binoei';
     case 'Eulamprus_quoyii'
       id_CoL = 'b7368b27759d92dfd69b19ba70fe7f0e';
       id_Taxo = '91157';        
@@ -1679,6 +1882,7 @@ function [links info] = get_link(taxon)
       id_CoL = '91fe397b8044dd1066106e58c5e37c52';
       id_Taxo = '91117';        
       id_EoL = '794968';
+      id_AnAge = taxon;
     case 'Egernia_striolata'
       id_CoL = 'db22a3ef5da7fd52f483b3ee884a0351';
       id_Taxo = '91138';
@@ -1701,6 +1905,7 @@ function [links info] = get_link(taxon)
       id_CoL = 'e9c5fca6f18472b4bdb1059cc9b179d0';
       id_Taxo = '50424';        
       id_EoL = '1055991';
+      id_AnAge = taxon;
     case 'Lacerta_agilis'
       id_CoL = '7e1a059719ca73323daa52f23a19a64d';
       id_Taxo = '642580';        
@@ -1716,14 +1921,17 @@ function [links info] = get_link(taxon)
       id_CoL = '9734ef854130b3011fb9ec9be37afed1';
       id_Taxo = '170215';        
       id_EoL = '790179';
+      id_AnAge = taxon;
     case 'Anguis_fragilis'
       id_CoL = '9d72c2c8f700a5af8c9c3265f68859c7';
       id_Taxo = '49698';        
       id_EoL = '453239';
+      id_AnAge = taxon;
     case 'Furcifer_labordi'
       id_CoL = '2d8fe0c4795645592bb8c62369df1cd0';
       id_Taxo = '641166';        
       id_EoL = '1056897';
+      id_AnAge = taxon;
     case 'Ctenophorus_ornatus'
       id_CoL = '1784a51b08f5dec6219f9eb686c036f8';
       id_Taxo = '90658';        
@@ -1733,22 +1941,27 @@ function [links info] = get_link(taxon)
       id_CoL = '9152ab6db407dca4866fc5bb234b62a6';
       id_Taxo = '49023';        
       id_EoL = '793971';
+      id_AnAge = taxon;
     case 'Python_regius'
       id_CoL = '6d0035229236a4c7583a934a4b310b15';
       id_Taxo = '49851';        
       id_EoL = '1055460';
+      id_AnAge = taxon;
     case 'Eunectes_murinus'
       id_CoL = 'a97cd0d051262be8ea1c9b162f28b25f';
       id_Taxo = '49883';        
       id_EoL = '794661';
+      id_AnAge = taxon;
     case 'Boa_constrictor'
       id_CoL = '253bb4ac5026b77a3adf9b78516913b9';
       id_Taxo = '49860';        
       id_EoL = '795595';
+      id_AnAge = taxon;
     case 'Vipera_berus'
       id_CoL = '2c91a42f205ad78e94e75be5dc844684';
       id_Taxo = '50340';        
       id_EoL = '289378';
+      id_AnAge = taxon;
     case 'Coronella_austriaca'
       id_CoL = '7449215b10f0b0e3d3b66b04beff2d3d';
       id_Taxo = '49966';        
@@ -1758,6 +1971,7 @@ function [links info] = get_link(taxon)
       id_CoL = '27ec70b00734b68213ff0972f7360650';
       id_Taxo = '50029';        
       id_EoL = '791395';
+      id_AnAge = taxon;
     case 'Pseudemydura_umbrina'
       id_CoL = '02201b34a72c0285ab6719ce051efc2f';
       id_WoRMS = ''; % not present 2010/06/16
@@ -1769,14 +1983,17 @@ function [links info] = get_link(taxon)
       id_WoRMS = '137205';
       id_Taxo = '48469';
       id_EoL = '1275929';
+      id_AnAge = taxon;
     case 'Lepidochelys_kempii'
       id_CoL = '54e9e281f6d060b3f03a3d1295107826';
       id_WoRMS = '137208';
       id_Taxo = '48486';        
+      id_AnAge = taxon;
     case 'Dermochelys_coriacea'
       id_CoL = 'dd8153b49c7daf4582b11583525bc26c';
       id_WoRMS = '137209';
       id_Taxo = '48459';        
+      id_AnAge = taxon;
     case 'Deinosuchus_rugosus'
       id_CoL = ''; % not present 2010/06/16
       id_Taxo = '50639'; % present as genus 2010/06/16      
@@ -1786,14 +2003,17 @@ function [links info] = get_link(taxon)
       id_CoL = '258a54f64c1a663997eb9cca0549f840';
       id_Taxo = '50616';        
       id_EoL = '796029';
+      id_AnAge = taxon;
     case 'Caiman_crocodilus'
       id_CoL = '2169464fbc24236e32ec1d7b81a59a45';
       id_Taxo = '50619';        
       id_EoL = '46325161';
+      id_AnAge = taxon;
     case 'Gavialis_gangeticus'
       id_CoL = '6bef8e5a76defdae652840a7b3416c9b';
       id_Taxo = '50652';        
       id_EoL = '794627';
+      id_AnAge = taxon;
     case 'Crocodylus_johnsoni'
       id_CoL = 'fcfe74af99e90cc51fee08e046d3aef2';
       id_Taxo = '50631'; 
@@ -1803,6 +2023,7 @@ function [links info] = get_link(taxon)
       id_CoL = '1a3211cb8764f54db424f9a4646c0075';
       id_Taxo = '50633';        
       id_EoL = '1280661';
+      id_AnAge = taxon;
     case 'Pterodaustro_guinazui'
       id_CoL = '7241febd761e916d77b5d64f223534f0';
       id_Taxo = '50713'; % present as genus        
@@ -1870,14 +2091,17 @@ function [links info] = get_link(taxon)
       id_CoL = 'e211d1636655d7a1b1f48fdb2c584dae';
       id_Taxo = '51279';        
       id_EoL = '1178369';
+      id_AnAge = taxon;
     case 'Struthio_camelus'
       id_CoL = 'e763abecc4e6a356b9764fe1904c045a';
       id_Taxo = '51245';        
       id_EoL = '1178371';
+      id_AnAge = taxon;
     case 'Rhea_americana'
       id_CoL = 'e97ede28aa4346a1972c1fd2e7d24740';
       id_Taxo = '51258';        
       id_EoL = '1178370';
+      id_AnAge = taxon;
     case 'Rhynchotus_rufescens'
       id_CoL = 'f4c7658ba36fc777a545f8cdc47d11f9';
       id_Taxo = '51378';        
@@ -1887,51 +2111,63 @@ function [links info] = get_link(taxon)
       id_CoL = '0af00c8374b5551a726a6d761528a5a8';
       id_Taxo = '52879';        
       id_EoL = '1050123';
+      id_AnAge = taxon;
     case 'Tetrastes_bonasia'
       id_CoL = '48797b9cd84c84166eca6c1bc4a3b01f';
       id_Taxo = '52966';        
       id_EoL = '892334';
+      id_AnAge = taxon;
     case {'Gallus_gallus','Gallus_gallus_IR','Gallus_gallus_WL'}
       id_CoL = 'e9bd1de9ad04b90064cf96a24cf98310';
       id_Taxo = '53136';    
       id_Wiki = 'Gallus_gallus';
       id_EoL = '1049263';
+      id_AnAge = taxon;
     case 'Anas_platyrhynchos'
       id_CoL = 'd5d9d6e502eb4c9f10b094dfdd935e65';
       id_WoRMS = '148791';
       id_Taxo = '52161';        
+      id_AnAge = taxon;
     case 'Mergus_merganser'
       id_CoL = 'dd005d87ee7a39a731b69942401091df';
       id_WoRMS = '159097';
       id_Taxo = '52280';        
+      id_AnAge = taxon;
     case 'Mergus_serrator'
       id_CoL = 'cbe66f861f86562456b2d7e1ef5de373';
       id_WoRMS = '159098';
       id_Taxo = '52282';        
+      id_AnAge = taxon;
     case 'Melanitta_perspicillata'
       id_CoL = 'f9894443879efbdfd2b1b84dddc7b32a';
       id_WoRMS = '159095';
       id_Taxo = '52275';        
+      id_AnAge = taxon;
     case 'Somateria_mollissima'
       id_CoL = 'e999b4ec3f0ee05bcd43a62b67baaf64';
       id_WoRMS = '137074';
       id_Taxo = '52255';        
+      id_AnAge = taxon;
     case 'Podilymbus_podiceps'
       id_CoL = 'efd1147e3604cc229f2e7dcafb95ca0b';
       id_WoRMS = '159062';
       id_Taxo = '51455';        
+      id_AnAge = taxon;
     case 'Phoeniconaias_minor'
       id_CoL = '8b96caa363071f1641f8a492c77d2cb8';
       id_WoRMS = '212710';
       id_Taxo = '169341';        
+      id_AnAge = taxon;
     case 'Columba_oenas'
       id_CoL = 'ed30f61f67a50dfc7efd082e23ec61b9';
       id_Taxo = '53977'; 
       id_EoL = '1049690';
+      id_AnAge = taxon;
     case 'Columba_livia'
       id_CoL = '625498c7f0f49724cd81aae39db4e1e5';
       id_Taxo = '53973';        
       id_EoL = '1276446';
+      id_AnAge = taxon;
     case 'Mesitornis_variegatus'
       id_CoL = 'a990bffed92b9b55d3f6cfb8572597e8';
       id_Taxo = '1122776';        
@@ -1946,6 +2182,7 @@ function [links info] = get_link(taxon)
       id_CoL = '9623ca15e5c36c273a9e571b97ba8107';
       id_Taxo = '54867';        
       id_EoL = '1046068';
+      id_AnAge = taxon;
     case 'Aegotheles_cristatus'
       id_CoL = 'e77dc5c18f2a229366e15a70c599332f';
       id_Taxo = '54805';        
@@ -1960,6 +2197,7 @@ function [links info] = get_link(taxon)
       id_CoL = '01a48abb4f3aba76b904ac4c7a32f20a';
       id_Taxo = '54514';        
       id_EoL = '913266';
+      id_AnAge = taxon;
     case 'Clamator_glandarius'
       id_CoL = '02135d597ace84d87208d04918b1beba';
       id_Taxo = '54509';        
@@ -1984,10 +2222,12 @@ function [links info] = get_link(taxon)
       id_CoL = '9b0c2d95deffed6fa89cdb208c187026';
       id_WoRMS = '159049';
       id_Taxo = '53737';        
+      id_AnAge = taxon;
     case 'Calidris_alpina'
       id_CoL = '3573e87083ded2fb1ffc96183f7def79';
       id_WoRMS = '159047';
       id_Taxo = '53732';        
+      id_AnAge = taxon;
     case 'Calidris_bairdii'
       id_CoL = 'b332bce93951f2c8b34f237074c8b5bc';
       id_WoRMS = '159048';
@@ -1997,26 +2237,32 @@ function [links info] = get_link(taxon)
       id_CoL = '9690a93b47b604e28ac765c2345ba29c';
       id_WoRMS = '212600';
       id_Taxo = '53742';        
+      id_AnAge = taxon;
     case 'Calidris_minutilla'
       id_CoL = '81a637f1ff6e3f1fda7a976824ba5adc';
       id_WoRMS = '159054';
       id_Taxo = '53743';        
+      id_AnAge = taxon;
     case 'Calidris_maritima'
       id_CoL = 'a35342e9335b7725fa58bc1da7787203';
       id_WoRMS = '159052';
       id_Taxo = '53739';        
+      id_AnAge = taxon;
     case 'Philomachus_pugnax'
       id_CoL = '7b48212a290510deccad5344b1d61986';
       id_WoRMS = '159046';
       id_Taxo = '53753';        
+      id_AnAge = taxon;
     case 'Tringa_flavipes'
       id_CoL = 'dfc3b9462212b04edcb721a3db10791e';
       id_WoRMS = '159030';
       id_Taxo = '53669';        
+      id_AnAge = taxon;
     case 'Limnodromus_griseus'
       id_CoL = 'e45c6cab6f6609688ad3f1f3fcd1ff3f';
       id_WoRMS = '158955';
       id_Taxo = '53721';        
+      id_AnAge = taxon;
     case 'Limosa_haemastica'
       id_CoL = '33c1fb3078fbaabe8a5b2112bece7d67';
       id_WoRMS = '159033';
@@ -2026,38 +2272,47 @@ function [links info] = get_link(taxon)
       id_CoL = '19bd674744e8fd0eda79a3b09a47568d';
       id_WoRMS = '159040';
       id_Taxo = '53662';        
+      id_AnAge = taxon;
     case 'Fratercula_arctica'
       id_CoL = '80c12642c3ab7cc036ee3749463ca606';
       id_WoRMS = '137131';
       id_Taxo = '53907';        
+      id_AnAge = taxon;
     case 'Ptychoramphus_aleuticus'
       id_CoL = '1b8b9f4a86353758c7ff85c17a850ab4';
       id_WoRMS = '344115';
       id_Taxo = '53917';        
+      id_AnAge = taxon;
     case 'Aethia_pusilla'
       id_CoL = 'eedd1a360668ef531a40b98d4493618e';
       id_WoRMS = '344016';
       id_Taxo = '53928';        
+      id_AnAge = taxon;
     case 'Aethia_cristatella'
       id_CoL = '7048c7929886b0410e3501585b00d8a9';
       id_WoRMS = '344015';
       id_Taxo = '53927';        
+      id_AnAge = taxon;
     case 'Cepphus_grylle'
       id_CoL = 'f56cecae9c9629f9bcc610161d9b483e';
       id_WoRMS = '137130';
       id_Taxo = '53898';        
+      id_AnAge = taxon;
     case 'Uria_aalge'
       id_CoL = '1f21d6d69cb8c09be9a27485d68bc4d1';
       id_WoRMS = '137133';
       id_Taxo = '53922';        
+      id_AnAge = taxon;
     case 'Uria_lomvia'
       id_CoL = '4a4b216694d920384c31bd8854e0f1d8';
       id_WoRMS = '137134';
       id_Taxo = '53924';        
+      id_AnAge = taxon;
     case 'Alle_alle'
       id_CoL = 'd04ac5333679e22045b58982006bcc2d';
       id_WoRMS = '137129';
       id_Taxo = '53890';        
+      id_AnAge = taxon;
     case 'Pinguinus_impennis'
       id_CoL = 'caf3fab41ba54462fe586a8bcdcdb54b';
       id_WoRMS = '137132';
@@ -2067,6 +2322,7 @@ function [links info] = get_link(taxon)
       id_CoL = '7524d7f8f9a7aff80ccb4cbb4d31501b';
       id_WoRMS = '137128';
       id_Taxo = '53888';        
+      id_AnAge = taxon;
     case 'Chlidonias_leucopterus'
       id_CoL = 'a666e4b62baba1a7edf044f52f7eefd5';
       id_WoRMS = '137136';
@@ -2076,46 +2332,57 @@ function [links info] = get_link(taxon)
       id_CoL = 'b20a894252b52f4c191ef168d1a7aaad';
       id_WoRMS = '137165';
       id_Taxo = '53874';        
+      id_AnAge = taxon;
     case 'Sterna_hirundo'
       id_CoL = 'c83b9db3064841202e4e59eb103b5847';
       id_WoRMS = '137162';
       id_Taxo = '53869';        
+      id_AnAge = taxon;
     case 'Thalasseus_sandvicensis'
       id_CoL = 'fd712ba9ea195d3cc049c283c6ba3caa';
       id_WoRMS = '413044'; % unaccepted, to Sterna sandvicensis Latham, 1787
       id_Taxo = '610055';        
+      id_AnAge = taxon;
     case 'Chroicocephalus_ridibundus'
       id_CoL = '619c28ecb10081c76f0926710fdc982a';
       id_WoRMS = '465358';
       id_Taxo = '53823'; % present as Larus ridibundus Linnaeus, 1766       
+      id_AnAge = taxon;
     case 'Larus_argentatus'
       id_CoL = '6d0b384ca6c3c1ec2eb97706da11eae8';
       id_WoRMS = '137138';
       id_Taxo = '53781';        
+      id_AnAge = taxon;
     case 'Rissa_tridactyla'
       id_CoL = 'bab5d031b01e7f12e85e1bdcf9726828';
       id_WoRMS = '137156';
       id_Taxo = '53831';        
+      id_AnAge = taxon;
     case 'Rissa_brevirostris'
       id_CoL = 'bab5d031b01e7f12e85e1bdcf9726828';
       id_WoRMS = '343923';
       id_Taxo = '53830';        
+      id_AnAge = taxon;
     case 'Stercorarius_longicaudus'
       id_CoL = '7463b0f804c2d9ab6acd1e21194c690a';
       id_WoRMS = '137171';
       id_Taxo = '53772';        
+      id_AnAge = taxon;
     case 'Stercorarius_skua'
       id_CoL = '0a044c4812738721275215f803d29c25';
       id_WoRMS = '137174';
       id_Taxo = '53775';        
+      id_AnAge = taxon;
     case 'Stercorarius_maccormicki'
       id_CoL = '15e1f2d9818ba3046dff1e228d1587b6';
       id_WoRMS = '422607';
       id_Taxo = '947074';        
+      id_AnAge = taxon;
     case 'Himantopus_mexicanus'
       id_CoL = '1f5847657f78653cd8be6e4f828a1c0d';
       id_WoRMS = '159131';
       id_Taxo = '1122806'; % present as Himantopus himantopus mexicanus (Statius Müller, 1776)        
+      id_AnAge = taxon;
     case 'Haematopus_moquini'
       id_CoL = '35a448e347c4bb7b28695e9fcb3c744b';
       id_WoRMS = '212720';
@@ -2126,6 +2393,7 @@ function [links info] = get_link(taxon)
       id_WoRMS = ''; % not present 2017/06/17
       id_Taxo = '70262';     
       id_EoL = '1049061';
+      id_AnAge = taxon;
     case 'Vanellus_coronatus'
       id_CoL = '6b2bf7e07f766050de717c4a411774c2';
       id_WoRMS = '366837';
@@ -2140,38 +2408,47 @@ function [links info] = get_link(taxon)
       id_CoL = 'aa24423d09987a0d571d2e28180b1960';
       id_WoRMS = '159136';
       id_Taxo = '53625';        
+      id_AnAge = taxon;
     case 'Gallinula_chloropus'
       id_CoL = '8c1a4e2718730f2ad6171f96fb6c6fa3';
       id_Taxo = '53395';      
       id_EoL = '1049299';
+      id_AnAge = taxon;
     case 'Grus_canadensis'
       id_CoL = 'b5fb32b609572d52ede7b7748943dc51';
       id_Taxo = '53265';        
       id_EoL = '1049272';
+      id_AnAge = taxon;
     case 'Grus_japonensis'
       id_CoL = '6fde6b82ab0ac42b5d8bbd69e9433010';
       id_Taxo = '53270';        
       id_EoL = '915325';
+      id_AnAge = taxon;
     case 'Grus_monacha'
       id_CoL = '0e419445ddc878e375c38fa9d9515969';
       id_Taxo = '53272';        
       id_EoL = '915329';
+      id_AnAge = taxon;
     case 'Grus_americana'
       id_CoL = '1a22f8fb4ebe8e382b8685b187aafa18';
       id_Taxo = '53263';        
       id_EoL = '1049271';
+      id_AnAge = taxon;
     case 'Grus_antigone'
       id_CoL = '2f827f37dafa3abedcb078144d0cd10f';
       id_Taxo = '53264';        
       id_EoL = '915318';
+      id_AnAge = taxon;
     case 'Grus_rubicunda'
       id_CoL = '91e043fbcde2082b7347fce518462e0e';
       id_Taxo = '83116';        
       id_EoL = '915331';
+      id_AnAge = taxon;
     case 'Grus_vipio'
       id_CoL = '28717f30fbb5ef2ba20f85bb587a54d5';
       id_Taxo = '53275';        
       id_EoL = '915332';
+      id_AnAge = taxon;
     case 'Grus_virgo'
       id_CoL = '987b70eac098e65fbf96b62c25c06f86';  % unaccpeted, to Anthropoides virgo (Linnaeus, 1758)       
       id_Taxo = '167356'; % unaccpeted, to Anthropoides virgo (Linnaeus, 1758)       
@@ -2181,6 +2458,7 @@ function [links info] = get_link(taxon)
       id_CoL = '0ae95f5329e0e7fe075c002169e60746';
       id_Taxo = '53271';        
       id_EoL = '915328';
+      id_AnAge = taxon;
     case 'Phaethon_lepturus'
       id_CoL = '9c0e9cb143508bda222bd0adec5383db';
       id_WoRMS = '212594';
@@ -2190,6 +2468,7 @@ function [links info] = get_link(taxon)
       id_CoL = 'a2644bbf86d31681747084a3cf98311e';
       id_WoRMS = '212595';
       id_Taxo = '51639';        
+      id_AnAge = taxon;
     case 'Rhynochetos_jubatus'
       id_CoL = '7a9792a8c9f4eb22d6d286d64456516c';
       id_Taxo = '53431';        
@@ -2199,10 +2478,12 @@ function [links info] = get_link(taxon)
       id_CoL = '82657d3390f0a0d5bc1349a48394f8d0';
       id_WoRMS = '137188';
       id_Taxo = '51433';        
+      id_AnAge = taxon;
     case 'Gavia_immer'
       id_CoL = '30f86b5fc760b8d8023db2b2c4e7a20f';
       id_WoRMS = '137187';
       id_Taxo = '51431';        
+      id_AnAge = taxon;
     case 'Pygoscelis_adeliae'
       id_CoL = '1b57a7bf98db087e0a1a8d9757cbf688';
       id_WoRMS = '225757';
@@ -2212,10 +2493,12 @@ function [links info] = get_link(taxon)
       id_CoL = 'a6e247adc3755e7607c4862ae639f9c3';
       id_WoRMS = '137195';
       id_Taxo = '51494';        
+      id_AnAge = taxon;
     case 'Diomedea_exulans'
       id_CoL = '9cf46c5413e6bef61c029d6cef69ff57';
       id_WoRMS = '212583';
       id_Taxo = '167927';        
+      id_AnAge = taxon;
     case 'Thalassarche_melanophrys'
       id_CoL = '9fad68b95fb3aebcce48f0d9fae66787';
       id_WoRMS = '225756'; % unaccepted, to Thalassarche melanophris (Temminck, 1828)
@@ -2225,10 +2508,12 @@ function [links info] = get_link(taxon)
       id_CoL = '1f8d320bdebfb912da9ef2433da92a85';
       id_Taxo = '51849'; 
       id_EoL = '1228800';
+      id_AnAge = taxon;
     case 'Phalacrocorax_auritus'
       id_CoL = '0db1d944fd592b2e7d18ed5aec730aca';
       id_WoRMS = '159059';
       id_Taxo = '51681';        
+      id_AnAge = taxon;
     case 'Sula_bassana'
       id_CoL = '4dc3e535a6a6253e4adceb72157431fe'; % unaccepted, to Morus bassanus (Linnaeus, 1758)
       id_WoRMS = '137180';  % unaccepted, to Morus bassanus (Linnaeus, 1758)
@@ -2238,38 +2523,47 @@ function [links info] = get_link(taxon)
       id_CoL = 'ea3be33231335317a364427a5bcc38f3';
       id_WoRMS = '343959';
       id_Taxo = '51663';        
+      id_AnAge = taxon;
     case 'Balaeniceps_rex'
       id_CoL = '16bde12b82a99c26cf61f1229cd3f41a';
       id_Taxo = '51842';  
       id_EoL = '1049385';
+      id_AnAge = taxon;
     case 'Pelecanus_onocrotalus'
       id_CoL = '93042a2bf3d8f48f27fe9b410ac0d62a';
       id_WoRMS = '137176';
       id_Taxo = '51649';        
+      id_AnAge = taxon;
     case 'Aquila_chrysaetos'
       id_CoL = '5b68758c108a10b7c6be9f990d3ad0a3';
       id_Taxo = '52605'; 
       id_EoL = '1049119';
+      id_AnAge = taxon;
     case 'Circus_aeruginosus'
       id_CoL = '86e884dce0543b20ad3f399fc9ce5198';
       id_Taxo = '52508';        
       id_EoL = '1047915';
+      id_AnAge = taxon;
     case 'Vultur_gryphus'
       id_CoL = 'e012d92f1ab45b81706d72e36c5512e0';
       id_Taxo = '52316';        
       id_EoL = '1049160';
+      id_AnAge = taxon;
     case 'Tyto_alba'
       id_CoL = '6fcd23e9a266d2ec77f69e02b75fbead';
       id_Taxo = '54626';        
       id_EoL = '914939';
+      id_AnAge = taxon;
     case 'Bubo_scandiacus'
       id_CoL = '1347e0b2597b16465cd5674f305fafd4';
       id_Taxo = '54708'; % present as Nyctea scandiaca (C. Linnaeus, 1758)       
       id_EoL = '1036388';
+      id_AnAge = taxon;
     case 'Bubo_virginianus'
       id_CoL = '657c70b3ce45f54079dabb6949fb5ac2';
       id_Taxo = '54659';        
       id_EoL = '914958';
+      id_AnAge = taxon;
     case 'Urocolius_macrourus'
       id_CoL = 'e563e083718e4eb3a35fbcbde6fcaadd';
       id_Taxo = '55152';        
@@ -2289,6 +2583,7 @@ function [links info] = get_link(taxon)
       id_CoL = 'c37431d15839c9b467569ad3045869be';
       id_Taxo = '105636';        
       id_EoL = '1048004';
+      id_AnAge = taxon;
     case 'Todiramphus_cinnamominus'
       id_CoL = '1c50b024147aadb63f1f128e5afa7e79';
       id_Taxo = '1125446';        
@@ -2298,10 +2593,12 @@ function [links info] = get_link(taxon)
       id_CoL = '5cf6207f05c77e03bcbcd85733db072f';
       id_Taxo = '55573';        
       id_EoL = '1177788';
+      id_AnAge = taxon;
     case 'Jynx_torquilla'
       id_CoL = '3a38254e7d541ce65f7befae820a116a';
       id_Taxo = '55583';        
       id_EoL = '917141';
+      id_AnAge = taxon;
     case 'Cariama_cristata'
       id_CoL = '51010aa3e16c9d55c093b195102bac97';
       id_Taxo = '53437';        
@@ -2311,22 +2608,27 @@ function [links info] = get_link(taxon)
       id_CoL = 'bc99d387d3a7b447bf1d951ef8111cc2';
       id_Taxo = '52830';        
       id_EoL = '1049201';
+      id_AnAge = taxon;
     case 'Falco_tinnunculus'
       id_CoL = 'f30a471764fb219cde0a6bdaed72dca7';
       id_Taxo = '52853';        
       id_EoL = '1049167';
+      id_AnAge = taxon;
     case 'Melopsittacus_undulatus'
       id_CoL = 'f683faf1a057f5da3a1c30c0bbaf51fd';
       id_Taxo = '54299';        
       id_EoL = '914969';
+      id_AnAge = taxon;
     case 'Forpus_passerinus'
       id_CoL = '9dde78344c3ce809f5af4d35947c6ae0';
       id_Taxo = '54427';        
       id_EoL = '1178014';
+      id_AnAge = taxon;
     case 'Myiopsitta_monachus'
       id_CoL = '66379bf2092e6d5ed3e6728d671bc89f';
       id_Taxo = '54433';        
       id_EoL = '915945';
+      id_AnAge = taxon;
     case 'Aphrastura_spinicauda'
       id_CoL = 'fc5861eec01a70a052c61fd549cbe59c';
       id_Taxo = '74811';        
@@ -2336,18 +2638,22 @@ function [links info] = get_link(taxon)
       id_CoL = 'e2f3ff2fc877b9322dbd4fbe6a87f5f7';
       id_Taxo = '56162';        
       id_EoL = '917490';
+      id_AnAge = taxon;
     case 'Sayornis_phoebe'
       id_CoL = 'a15591a5779bfc04754d9082dbfc27dd';
       id_Taxo = '56141';        
       id_EoL = '1046715';
+      id_AnAge = taxon;
     case 'Lanius_senator'
       id_CoL = '2f89fd5f925b02ec2152336e3e270879';
       id_Taxo = '56645';        
       id_EoL = '1050932';
+      id_AnAge = taxon;
     case 'Pica_pica'
       id_CoL = '15edda20e5f20f4e97c324d80eb1cf6f';
       id_Taxo = '59494';        
       id_EoL = '1177362';
+      id_AnAge = taxon;
     case 'Corvus_monedula'
       id_CoL = '8b1d7741c6b8ad881d4f28e0bbe0bdeb';
       id_Taxo = '59548';        
@@ -2357,10 +2663,12 @@ function [links info] = get_link(taxon)
       id_CoL = '3970051da664fb71a70190918d8739e8';
       id_Taxo = '57690';        
       id_EoL = '1051179';
+      id_AnAge = taxon;
     case 'Lophophanes_cristatus'
       id_CoL = 'cd1512991114f0bcfd9c50282ed817d7';
       id_Taxo = '57703'; % present as Parus cristatus Linnaeus, 1758     
       id_EoL = '1052002';
+      id_AnAge = taxon;
     case 'Parus_atricapillus'
       id_CoL = 'aed95c6ec867d5d04bbab05d19687d73';
       id_Taxo = '57697';        
@@ -2370,22 +2678,27 @@ function [links info] = get_link(taxon)
       id_CoL = '9a3033c7cf62b8a01f58d9a946e06126';
       id_Taxo = '57713';        
       id_EoL = '1051974';
+      id_AnAge = taxon;
     case 'Periparus_ater'
       id_CoL = 'a1536cbd36af848c4cfb9234fad2e1e0';
       id_Taxo = '57696'; % present as Parus ater Linnaeus, 1758       
       id_EoL = '1052006';
+      id_AnAge = taxon;
     case 'Sylvia_atricapilla'
       id_CoL = '4134d00c993b71067bfeb807a0d09c4b';
       id_Taxo = '57368';        
       id_EoL = '1052362';
+      id_AnAge = taxon;
     case 'Phylloscopus_trochilus'
       id_CoL = '9f7d79f2f0a042ef0e8368239dfb1cb3';
       id_Taxo = '57343';        
       id_EoL = '1052636';
+      id_AnAge = taxon;
     case 'Regulus_regulus'
       id_CoL = '39de64eea659b04cfd67c5d4ff5633f4';
       id_Taxo = '57355';        
       id_EoL = '1051232';
+      id_AnAge = taxon;
     case 'Regulus_ignicapillus'
       id_CoL = '8480c26fe2dde898a777686976e2e1e4';
       id_Taxo = '1126234'; % unaccepted, to Regulus ignicapilla (Temminck, 1820)       
@@ -2400,30 +2713,37 @@ function [links info] = get_link(taxon)
       id_CoL = '844d88011fccf9fc3ebd08155e87483b';
       id_Taxo = '56758';        
       id_EoL = '1050659';
+      id_AnAge = taxon;
     case 'Sitta_europaea'
       id_CoL = '9ba4a95ae5651cb91dbeca2e404f662d';
       id_Taxo = '57744';        
       id_EoL = '1051081';
+      id_AnAge = taxon;
     case 'Cinclus_cinclus'
       id_CoL = 'fcb3f9f786fe924fe49d1c502504a864';
       id_Taxo = '56716';        
       id_EoL = '916125';
+      id_AnAge = taxon;
     case 'Turdus_merula'
       id_CoL = '8539f68b2f729827c29dc81a2b30763a';
       id_Taxo = '57002';        
       id_EoL = '1177498';
+      id_AnAge = taxon;
     case 'Turdus_philomelos'
       id_CoL = '9015bb30c0dcb8d6b26e8fd46c70d8ac';
       id_Taxo = '57011';        
       id_EoL = '1052742';
+      id_AnAge = taxon;
     case 'Sturnus_vulgaris'
       id_CoL = 'cbb6ad24ade1b086f9f6ad89fe92ac3d';
       id_Taxo = '59258';        
       id_EoL = '922253';
+      id_AnAge = taxon;
     case 'Toxostoma_curvirostre'
       id_CoL = '004ebe47b553114eda7f8ccc707f1348';
       id_Taxo = '83018';        
       id_EoL = '1050711';
+      id_AnAge = taxon;
     case 'Cinnyris_jugularis'
       id_CoL = 'd7ff4b36e31373ca9a0d3b401e370436';
       id_Taxo = '1126557';        
@@ -2433,162 +2753,202 @@ function [links info] = get_link(taxon)
       id_CoL = '9cd9581803902beb26aee9ddcc6e4575';
       id_Taxo = '59109';        
       id_EoL = '922241';
+      id_AnAge = taxon;
     case 'Anthus_pratensis'
       id_CoL = 'eb78a0bc492c93711d4c1ca8426d71d9';
       id_Taxo = '56453';        
       id_EoL = '1051319';
+      id_AnAge = taxon;
     case 'Motacilla_flava'
       id_CoL = 'eca91fcd14896fe760fc1c8eef9774bf';
       id_Taxo = '56477';        
       id_EoL = '4405334';
+      id_AnAge = taxon;
     case 'Passerculus_sandwichensis'
       id_CoL = 'a40e57e0efe04426fca93156aee1edf4';
       id_Taxo = '58100';        
       id_EoL = '1052592';
+      id_AnAge = taxon;
     case 'Carduelis_carduelis'
       id_CoL = '8388549b54689013a002e39459658043';
       id_Taxo = '58514';        
       id_EoL = '1051079';
+      id_AnAge = taxon;
     case 'Ornithorhynchus_anatinus'
       id_CoL = '3bc186304963c8d2e15564c630a7021e';
       id_Taxo = '59646';        
       id_EoL = '323858';
+      id_AnAge = taxon;
     case 'Tachyglossus_aculeatus'
       id_CoL = 'db1edc1588907fc51323d4829f25036a';
       id_Taxo = '59632';        
       id_EoL = '323859';
+      id_AnAge = taxon;
     case 'Caluromys_philander'
       id_CoL = '25a051d8684830574aa21163f5c0217c';
       id_Taxo = '59811';        
       id_EoL = '133312';
+      id_AnAge = taxon;
     case 'Didelphis_virginiana'
       id_CoL = '5e9ae59ab0006f520ea05758db530df8';
       id_Taxo = '59824';        
       id_EoL = '328501';
+      id_AnAge = taxon;
     case 'Sarcophilus_harrisii'
       id_CoL = '5ce2db014e2fa02fef465ca6c68f66b3';
       id_Taxo = '60018';        
       id_EoL = '311781';
+      id_AnAge = taxon;
     case 'Dasyurus_viverrinus'
       id_CoL = '8ff9da85871d400b6a4cc78e9c208645';
       id_Taxo = '60002';        
       id_EoL = '323728';
+      id_AnAge = taxon;
     case 'Perameles_nasuta'
       id_CoL = '42469df66a2b4861d91637f73b420616';
       id_Taxo = '60062';        
       id_EoL = '323870';
+      id_AnAge = taxon;
     case 'Phascolarctos_cinereus'
       id_CoL = '4d7e8acef0e44fe001cc83caff8712ae';
       id_Taxo = '60425';        
       id_EoL = '128425';
+      id_AnAge = taxon;
     case 'Tarsipes_rostratus'
       id_CoL = '6aca15b06107dd17949dd6cfdb40d63b';
       id_Taxo = '60483';        
       id_EoL = '323836';
+      id_AnAge = taxon;
     case 'Lagostrophus_fasciatus'
       id_CoL = '37ca2270c6d654da367c38945787f398';
       id_Taxo = '60319';        
       id_EoL = '1038585';
+      id_AnAge = taxon;
     case 'Lagorchestes_conspicillatus'
       id_CoL = '68f725633c4212acffbfa1a59952cdd4';
       id_Taxo = '60310';        
       id_EoL = '127000';
+      id_AnAge = taxon;
     case 'Lagorchestes_hirsutus'
       id_CoL = 'e886ae8ef2084c39d3da70956b52cf31';
       id_Taxo = '60313';        
       id_EoL = '127004';
+      id_AnAge = taxon;
     case 'Macropus_agilis'
       id_CoL = '836cb084ad966ce1b076f68c8ee96cde';
       id_Taxo = '168613';        
       id_EoL = '133201';
+      id_AnAge = taxon;
     case 'Macropus_antilopinus'
       id_CoL = 'a3ad146035807271d4c927c78c191a41';
       id_Taxo = '168614';        
       id_EoL = '133167';
+      id_AnAge = taxon;
     case 'Macropus_eugenii'
       id_CoL = '3122737d84947ba114ffb6f396b21872';
       id_Taxo = '168617';        
       id_EoL = '46322993';
+      id_AnAge = taxon;
     case 'Macropus_fuliginosus'
       id_CoL = 'c71786cbfbff0f76624c73efcca4cdf1';
       id_Taxo = '168618';        
       id_EoL = '351020';
+      id_AnAge = taxon;
     case 'Macropus_giganteus'
       id_CoL = '9e81e89d48f74c749a1895f37ed33f1b';
       id_Taxo = '168619';        
       id_EoL = '777872';
+      id_AnAge = taxon;
     case 'Macropus_parma'
       id_CoL = '562a352c8d1a274b7d6167186f2afc49';
       id_Taxo = '168624';        
       id_EoL = '122570';
+      id_AnAge = taxon;
     case 'Macropus_rufogriseus'
       id_CoL = '6adcb8c69536b16f12dbd411354abec2';
       id_Taxo = '168627';        
       id_EoL = '133321';
+      id_AnAge = taxon;
     case 'Macropus_rufus'
       id_CoL = '3029b1dda9dc6bbc86de28d511e30b9c';
       id_Taxo = '168628';        
       id_EoL = '122672';
+      id_AnAge = taxon;
     case 'Onychogalea_fraenata'
       id_CoL = '38206e3877fe578667a6fa6a3996e930';
       id_Taxo = '60360';        
       id_EoL = '999120';
+      id_AnAge = taxon;
     case 'Petrogale_xanthopus'
       id_CoL = 'd82664b4636348f01da6058c4ab2aa04';
       id_Taxo = '60376';        
       id_EoL = '325810';
+      id_AnAge = taxon;
     case 'Setonix_brachyurus'
       id_CoL = '5566abe065e293ca9524aa2d42679bbb';
       id_Taxo = '60383';        
       id_EoL = '127458';
+      id_AnAge = taxon;
     case 'Wallabia_bicolor'
       id_CoL = '933f2699e0a7dd8d84cefe693500fc89';
       id_Taxo = '60392';        
       id_EoL = '310755';
+      id_AnAge = taxon;
     case 'Myrmecophaga_tridactyla'
       id_CoL = '99e9905aadb48ff76d1717ea7020ecb7';
       id_Taxo = '60511';        
       id_EoL = '328523';
+      id_AnAge = taxon;
     case 'Dasypus_novemcinctus'
       id_CoL = 'f4765b154fabeda6821bb372a27914fa';
       id_Taxo = '60596';        
       id_EoL = '328482';
+      id_AnAge = taxon;
     case 'Orycteropus_afer'
       id_CoL = 'fa01640674c52e1bc9664c729beebce7';
       id_Taxo = '69227';        
       id_EoL = '327830';
+      id_AnAge = taxon;
     case 'Macroscelides_proboscideus'
       id_CoL = 'a7c9d1f954a2b7ad2ab9a93e86028ced';
       id_Taxo = '61602';        
       id_EoL = '326395';
+      id_AnAge = taxon;
     case 'Hemicentetes_semispinosus'
       id_CoL = '2a69b74156efdf595db62090e21e94f5';
       id_Taxo = '60681';        
       id_EoL = '1178674';
+      id_AnAge = taxon;
     case 'Loxodonta_africana'
       id_CoL = '7b498777d8b86d615d26fb2555362a5d';
       id_Taxo = '69361';        
       id_EoL = '289808';
+      id_AnAge = taxon;
     case 'Elephas_maximus'
       id_CoL = '6fb47237753f0901b5bb779c6e9e1369';
       id_Taxo = '69348';        
       id_EoL = '997407';
+      id_AnAge = taxon;
     case 'Trichechus_inunguis'
       id_CoL = '42e827c36ce872e11d6f6b1db7aee2fa';
       id_Taxo = '69439';        
       id_EoL = '328646';
+      id_AnAge = taxon;
     case 'Procavia_capensis'
       id_CoL = '2385d7456a495dac2061e5db25291a9a';
       id_Taxo = '69207';        
       id_EoL = '326384';
+      id_AnAge = taxon;
     case 'Sorex_araneus'
       id_CoL = '246f61356ae2711049eb21ec5abafa02';
       id_Taxo = '169834';        
       id_EoL = '124497';
+      id_AnAge = taxon;
     case 'Talpa_europaea'
       id_CoL = '3f6d0f42542751148164e4e7a2a67132';
       id_Taxo = '61343';        
       id_EoL = '1241324';
+      id_AnAge = taxon;
     case 'Talpa_occidentalis'
       id_CoL = '792cc7348dec4c6b13c672504d67fbfc';
       id_Taxo = '61356';        
@@ -2598,86 +2958,107 @@ function [links info] = get_link(taxon)
       id_CoL = 'cdc488ce6cf0ecb5a02221ef40111c12';
       id_Taxo = '60805';        
       id_EoL = '1178684';
+      id_AnAge = taxon;
     case 'Camelus_dromedarius'
       id_CoL = '2ce3845d28d43f30229bf4bcad752a19';
       id_Taxo = '67767';        
       id_EoL = '309019';
+      id_AnAge = taxon;
     case 'Sus_scrofa'
       id_CoL = '7f9608b34955e65ca451e980dec66dba';
       id_Taxo = '67678';        
       id_EoL = '328663';
+      id_AnAge = taxon;
     case 'Monodon_monoceros'
       id_CoL = 'ac12a283ac3c3ecb7c86d02da8dfaacc';
       id_WoRMS = '137116';
       id_Taxo = '68813';        
+      id_AnAge = taxon;
     case 'Delphinapterus_leucas'
       id_CoL = 'd9b93553f1483a53529684b92f3e0872';
       id_WoRMS = '137115';
       id_Taxo = '68811';        
+      id_AnAge = taxon;
     case 'Phocoena_phocoena'
       id_CoL = '5a744a2d5381acb09097283fddd6095a';
       id_WoRMS = '137117';
       id_Taxo = '68799';        
+      id_AnAge = taxon;
     case 'Delphinus_delphis'
       id_CoL = '53f82736e0e55a75583156a10dc0770e';
       id_WoRMS = '137094';
       id_Taxo = '68711';        
+      id_AnAge = taxon;
     case 'Tursiops_truncatus'
       id_CoL = '5a97cc1e1ac71d45d276e12d8cdfd97d';
       id_WoRMS = '137111';
       id_Taxo = '68750';        
+      id_AnAge = taxon;
     case 'Pseudorca_crassidens'
       id_CoL = '4d6423dbe228ecfca77db98f22b38979';
       id_WoRMS = '137104';
       id_Taxo = '68779';        
+      id_AnAge = taxon;
     case 'Orcinus_orca'
       id_CoL = '0d0c95b9ba62095a56695f520e3a09ce';
       id_WoRMS = '137102';
       id_Taxo = '68777';        
+      id_AnAge = taxon;
     case 'Pontoporia_blainvillei'
       id_CoL = '09ab20bd544602a13231f4895df42ae3';
       id_WoRMS = '254964';
       id_Taxo = '68677';        
+      id_AnAge = taxon;
     case 'Physeter_macrocephalus'
       id_CoL = 'b3ea740b176c587935272fe4f127db73';
       id_WoRMS = '137119';
       id_Taxo = '68820'; % unaccepted, to Physeter catodon Linnaeus, 1758       
+      id_AnAge = taxon;
     case 'Hyperoodon_ampullatus'
       id_CoL = '1f318418ad1c5ff2abf8d3376f196f45';
       id_WoRMS = '343899';
       id_Taxo = '68827';        
+      id_AnAge = taxon;
     case 'Balaenoptera_acutorostrata'
       id_CoL = '03989edf0baedd8ab5478fca2ad3b410';
       id_WoRMS = '137087';
       id_Taxo = '68885';        
+      id_AnAge = taxon;
     case 'Balaenoptera_musculus'
       id_CoL = '64d8253f41d376fdd1f902527ed187c7';
       id_WoRMS = '137090';
       id_Taxo = '68889';        
+      id_AnAge = taxon;
     case 'Eschrichtius_robustus'
       id_CoL = 'b4385cf8dc677811a74fa6ae3cb43adc';
       id_WoRMS = '137112';
       id_Taxo = '68881';        
+      id_AnAge = taxon;
     case 'Eubalaena_glacialis'
       id_CoL = 'e45c4cf3665144ef83bb225e971a91e6';
       id_WoRMS = '159023';
       id_Taxo = '68901'; % unaccpeted, to Balaena glacialis Müller, 1776       
+      id_AnAge = taxon;
     case 'Balaena_mysticetus'
       id_CoL = '3ea1bf0273d2013ad96eb6afa9ceb890';
       id_WoRMS = '137086';
       id_Taxo = '68905';        
+      id_AnAge = taxon;
     case 'Hippopotamus_amphibius'
       id_CoL = 'd122689ccde0015d1426a4f7af9fa1be';
       id_Taxo = '67738';   
       id_EoL = '311532';
+      id_AnAge = taxon;
     case 'Giraffa_camelopardalis'
       id_CoL = '36ea034537a75e8ac153b4089c6d5646';
       id_Taxo = '68119';        
       id_EoL = '308378';
+      id_AnAge = taxon;
     case 'Odocoileus_virginianus'
       id_CoL = '49c19661f2a48ff49d60d571f9f827ca';
       id_Taxo = '68077';        
       id_EoL = '328652';
+      id_AnAge = taxon;
     case 'Cervus_canadensis'
       id_CoL = 'd116839109ff1e816c69b6ab69deb181';
       id_Taxo = '67943'; % unaccepeted, to Cervus elaphus canadensis Erxleben, 1777        
@@ -2687,14 +3068,17 @@ function [links info] = get_link(taxon)
       id_CoL = '26f5c11255f895a632fd2c2df42e0f60';
       id_Taxo = '68031';        
       id_EoL = '328653';
+      id_AnAge = taxon;
     case 'Alces_alces'
       id_CoL = 'Alces_alces';
       id_Taxo = '68020';        
       id_EoL = '328654';
+      id_AnAge = taxon;
     case 'Aepyceros_melampus'
       id_CoL = '0747c465edaff4d5301bd9f9baab8e52';
       id_Taxo = '68440';        
       id_EoL = '308540';
+      id_AnAge = taxon;
     case {'Bos_primigenius_Angus','Bos_primigenius_Holstein','Bos_primigenius_Brahman'}
       id_CoL = '40e81482006c210a43ef64609163278e';
       id_Taxo = '167484'; % unaccpeted, to Bos taurus primigenius Bojanus, 1827        
@@ -2705,182 +3089,223 @@ function [links info] = get_link(taxon)
       id_CoL = 'd25ccfd780ea763f039935faa9b1f3c7';
       id_Taxo = '68532';        
       id_EoL = '331073';
+      id_AnAge = taxon;
     case 'Ovibos_moschatus'
       id_CoL = 'e4475739e4b72bc21e5596c1e24de11e';
       id_Taxo = '68543';        
       id_EoL = '328656';
+      id_AnAge = taxon;
     case 'Pipistrellus_pipistrellus'
       id_CoL = 'cb943ad6e446a67c750a5ad39aa8e911';
       id_Taxo = '169449';        
       id_EoL = '127390';
+      id_AnAge = taxon;
     case 'Desmodus_rotundus'
       id_CoL = '5ed68b3442894a2a01c67ec56d5bc32a';
       id_Taxo = '64537';        
       id_EoL = '289588';
+      id_AnAge = taxon;
     case 'Carollia_perspicillata'
       id_CoL = 'b3658b2f62ac063825c67f88f1b3db18';
       id_Taxo = '64417';        
       id_EoL = '327438';
+      id_AnAge = taxon;
     case 'Manis_crassicaudata'
       id_CoL = '736a2ea04e95eb28f95226cc77b01c98';
       id_Taxo = '168633';        
       id_EoL = '982442';
+      id_AnAge = taxon;
     case 'Crocuta_crocuta'
       id_CoL = '93b93fda51bb5cdc6f82fe48dadab8b6';
       id_Taxo = '67062';        
       id_EoL = '311569';
+      id_AnAge = taxon;
     case 'Panthera_leo'
       id_CoL = 'c67c449dc0cc8bf14732d7fabf8f2b10';
       id_Taxo = '67265';        
       id_EoL = '328672';
+      id_AnAge = taxon;
     case 'Vulpes_lagopus'
       id_CoL = '74f649c50206103b78005228c898e177';
       id_WoRMS = '404130';
       id_Taxo = '112284';        
       id_EoL = '1053894';
+      id_AnAge = taxon;
     case 'Vulpes_vulpes'
       id_CoL = 'f76554e91aa357dd527f70ed534fa52c';
       id_Taxo = '66456';        
       id_EoL = '328609';
+      id_AnAge = taxon;
     case 'Canis_lupus'
       id_CoL = 'bcd6035778291a7feaad52cb7ac167cb';
       id_Taxo = '66415';        
       id_EoL = '328607';
+      id_AnAge = taxon;
     case 'Meles_meles'
       id_CoL = '423f1dbd6d3e388a3382399597913189';
       id_Taxo = '66751';        
       id_EoL = '328046';
+      id_AnAge = taxon;
     case 'Enhydra_lutris'
       id_CoL = 'f16ca52d25de7fb367832b86dac2e970';
       id_WoRMS = '242598';
       id_Taxo = '66804';        
       id_EoL = '328583';
+      id_AnAge = taxon;
     case 'Lutra_lutra'
       id_CoL = 'bb5ed0ac46e6bd2037497c639615f07e';
       id_WoRMS = '137076';
       id_Taxo = '66811';        
       id_EoL = '328044';
+      id_AnAge = taxon;
     case 'Ursus_arctos'
       id_CoL = '3620a6afc683c9cb9e66e3bc9d143133';
       id_Taxo = '170192';        
       id_EoL = '328581';
+      id_AnAge = taxon;
     case 'Ursus_maritimus'
       id_CoL = 'ecf9a73302aa9be16e68c89fb524feb8';
       id_WoRMS = '137085';
       id_Taxo = '170194';        
       id_EoL = '328580';
+      id_AnAge = taxon;
     case 'Ailuropoda_melanoleuca'
       id_CoL = 'e2e3653c631047a2e41328c4dc46151e';
       id_Taxo = '66575';        
       id_EoL = '328070';
+      id_AnAge = taxon;
     case 'Callorhinus_ursinus'
       id_CoL = '4a75190e7f56b556cca2e56212dc703f';
       id_WoRMS = '254997';
       id_Taxo = '67400';        
       id_EoL = '328618';
+      id_AnAge = taxon;
     case 'Zalophus_californianus'
       id_CoL = 'd91b293e80e050a2fb51c2a464d52fc3';
       id_WoRMS = '255003';
       id_Taxo = '67414';        
       id_EoL = '328615';
+      id_AnAge = taxon;
     case 'Arctocephalus_australis'
       id_CoL = '5199b20a3dd0d2c55fd089253d5c1e08';
       id_WoRMS = '231435';
       id_Taxo = '67382';        
       id_EoL = '328623';
+      id_AnAge = taxon;
     case 'Otaria_flavescens'
       id_CoL = 'f2a4b03712694cd124d8fd6b81c0da0e';
       id_WoRMS = '231425';
       id_Taxo = '67409';        
       id_EoL = '328614';
+      id_AnAge = taxon;
     case 'Phoca_vitulina'
       id_CoL = 'ec87dba768bbab3b0900ff52a327031d';
       id_WoRMS = '137084';
       id_Taxo = '67459';        
       id_EoL = '328629';
+      id_AnAge = taxon;
     case 'Pusa_hispida'
       id_CoL = 'ce85c9680b8cfb790125278785a9fe70';
       id_WoRMS = '159021';
       id_Taxo = '67467';        
       id_EoL = '1052724';
+      id_AnAge = taxon;
     case 'Halichoerus_grypus'
       id_CoL = '571ff3eefa181344bc8dd6e8a54886ce';
       id_WoRMS = '137080';
       id_Taxo = '67432';        
       id_EoL = '328630';
+      id_AnAge = taxon;
     case 'Pagophilus_groenlandicus'
       id_CoL = 'ed5280adb77539a0b58955aa822a70e7';
       id_WoRMS = '159019';
       id_Taxo = '67439';        
       id_EoL = '1052720';
+      id_AnAge = taxon;
     case 'Erignathus_barbatus'
       id_CoL = '52717fb428839ec4ea46640eaad6ac88';
       id_WoRMS = '137079';
       id_Taxo = '67428';        
       id_EoL = '328631';
+      id_AnAge = taxon;
     case 'Cystophora_cristata'
       id_CoL = 'a83dce734f5caa4b3ec5cf33b7263b2d';
       id_WoRMS = '137078';
       id_Taxo = '67494';        
       id_EoL = '328632';
+      id_AnAge = taxon;
     case 'Mirounga_leonina'
       id_CoL = '7a1805d7e2224550b70452e4ab73e14a';
       id_WoRMS = '231413';
       id_Taxo = '67497';        
       id_EoL = '328639';
+      id_AnAge = taxon;
     case 'Odobenus_rosmarus_rosmarus'
       id_CoL = 'e0b6f3f450ac4d0393778f97dbccdb75';
       id_WoRMS = '255010';
       id_Taxo = '67371';        
       id_EoL = '1265950';
+      id_AnAge = taxon;
     case 'Equus_quagga'
       id_CoL = 'a544b4b97773df703818fb547a3c05bc';
       id_Taxo = '168056';        
       id_EoL = '311502';
+      id_AnAge = taxon;
     case 'Tapirus_terrestris'
       id_CoL = 'b887fe306ff897fd7ced2a4199ab2c30';
       id_Taxo = '69106';        
       id_EoL = '328009';
+      id_AnAge = taxon;
     case 'Rhinoceros_unicornis'
       id_CoL = '2a40e3919813c0f16e7083e4301d72bb';
       id_Taxo = '69154';        
       id_EoL = '129475';
+      id_AnAge = taxon;
     case 'Dicerorhinus_sumatrensis'
       id_CoL = '43f507935a136e2a4c6221db63021549';
       id_Taxo = '69137';        
       id_EoL = '311504';
+      id_AnAge = taxon;
     case 'Ceratotherium_simum'
       id_CoL = '6179a66ee04b226c191579679d6afeed';
       id_Taxo = '69123';        
       id_EoL = '311503';
+      id_AnAge = taxon;
     case 'Castor_fiber'
       id_CoL = '3b8681fe6477ed5a3762fcdef4d00eb2';
       id_Taxo = '62130';        
       id_EoL = '1036116';
+      id_AnAge = taxon;
     case 'Heterocephalus_glaber'
       id_CoL = '578ce28e305022faa88b77f2b880502f';
       id_Taxo = '63627';        
       id_EoL = '326232';
+      id_AnAge = taxon;
     case 'Hystrix_africaeaustralis'
       id_CoL = '2acff5dbbbdae886a56163692f0c86bb';
       id_Taxo = '63383';        
       id_EoL = '326520';
+      id_AnAge = taxon;
     case 'Cavia_tschudii'
       id_CoL = 'f83a21896fe575a2978cfd1222434dca';
       id_Taxo = '89491';        
       id_EoL = '326925';
+      id_AnAge = taxon;
     case 'Hydrochoerus_hydrochaeris'
       id_CoL = 'cdece5c9f966826ad8a4f0b6b1c70d4c';
       id_Taxo = '647819';        
       id_EoL = '326517';
+      id_AnAge = taxon;
     case 'Chinchilla_lanigera'
       id_CoL = '4cebac0788bb127166d0646c9ab23a33';
       id_Taxo = '63498';        
       id_EoL = '326926';
+      id_AnAge = taxon;
     case 'Microtus_arvalis'
       id_CoL = 'c316d43b9cbe48bea99f1d1a1f0c3f3d';
       id_Taxo = '62673';        
       id_EoL = '1179634';
+      id_AnAge = taxon;
     case 'Microtus_cabrerae'
       id_CoL = 'f79ac11999508ad757439910090b87b0';
       id_Taxo = '62682';        
@@ -2895,10 +3320,12 @@ function [links info] = get_link(taxon)
       id_CoL = '8fb9683c27c3f939a62710d716994ad3';
       id_Taxo = '63058';        
       id_EoL = '328450';
+      id_AnAge = taxon;
     case 'Rattus_norvegicus'
       id_CoL = '58d474ec035208b2194df25dde8f9259';
       id_Taxo = '63135';        
       id_EoL = '328448';
+      id_AnAge = taxon;
     case 'Lemmus_trimucronatus'
       id_CoL = '6d229d483afce29dae4bee95e6d4cca0';
       id_Taxo = '62591'; % unaccepted, to Lemmus sibiricus (Kerr, 1792)        
@@ -2913,18 +3340,22 @@ function [links info] = get_link(taxon)
       id_CoL = '5032fb08abb378e862f86ede07e0bd88';
       id_Taxo = '61896';        
       id_EoL = '327985';
+      id_AnAge = taxon;
     case 'Oryctolagus_cuniculus'
       id_CoL = '0488cb00ad3e3545c4c28f8feaf747e0';
       id_Taxo = '61547';        
       id_EoL = '327977';
+      id_AnAge = taxon;
     case 'Lepus_europaeus'
       id_CoL = '2c10e1e11456722cf2f9741fec368a71';
       id_Taxo = '61511';        
       id_EoL = '118009';
+      id_AnAge = taxon;
     case 'Tupaia_glis'
       id_CoL = '597342aa9ef1ce5b5f9208b80f34e2ec';
       id_Taxo = '61384';        
       id_EoL = '327851';
+      id_AnAge = taxon;
     case 'Galeopterus_variegatus'
       id_CoL = '4dcbb7c6e643932361541981ae29374b';
       id_Taxo = '1003254';        
@@ -2934,34 +3365,42 @@ function [links info] = get_link(taxon)
       id_CoL = '429cae10b932f86ee7eed6bb5e0f5c07';
       id_Taxo = '65533';        
       id_EoL = '324407';
+      id_AnAge = taxon;
     case 'Propithecus_diadema'
       id_CoL = 'b47ac2b3bb8803cc4e9873df0daf620e';
       id_Taxo = '65520';        
       id_EoL = '326457';
+      id_AnAge = taxon;
     case 'Microcebus_murinus'
       id_CoL = 'fed2451960a842ce940ad5d48d81d81c';
       id_Taxo = '65426';        
       id_EoL = '324404';
+      id_AnAge = taxon;
     case 'Lepilemur_mustelinus'
       id_CoL = 'e8bfdcc70cea2d77b9b54a143392afc8';
       id_Taxo = '65477';        
       id_EoL = '326545';
+      id_AnAge = taxon;
     case 'Varecia_variegata'
       id_CoL = 'c8883cad4f1b3301686bf6ad91663991';
       id_Taxo = '65502';        
       id_EoL = '326534';
+      id_AnAge = taxon;
     case 'Nycticebus_coucang'
       id_CoL = '3cbe6f36284dc50c72e4dd60e01eade9';
       id_Taxo = '65545';        
       id_EoL = '326538';
+      id_AnAge = taxon;
     case 'Loris_tardigradus'
       id_CoL = 'ef762a80ccc68823da1b199ae0301698';
       id_Taxo = '65539';        
       id_EoL = '326537';
+      id_AnAge = taxon;
     case 'Galago_senegalensis'
       id_CoL = '189e447f4b853cd7858295feb0c3f7b2';
       id_Taxo = '65569';        
       id_EoL = '311208';
+      id_AnAge = taxon;
     case 'Tarsius_tarsier'
       id_CoL = '363ad8f84b1e80546fe32ad936b16e48';
       id_Taxo = '1003327';        
@@ -2971,58 +3410,72 @@ function [links info] = get_link(taxon)
       id_CoL = 'd19f292374779e32b7ebc28a2c57d829';
       id_Taxo = '167532';        
       id_EoL = '323892';
+      id_AnAge = taxon;
     case 'Callithrix_jacchus'
       id_CoL = '62c40d93ae8fa0246b8a98d2e750ecd6';
       id_Taxo = '65645';        
       id_EoL = '323890';
+      id_AnAge = taxon;
     case 'Leontopithecus_rosalia'
       id_CoL = '34fc90bc0247a67e5691c7c947624599';
       id_Taxo = '65681';        
       id_EoL = '323897';
+      id_AnAge = taxon;
     case 'Aotus_trivirgatus'
       id_CoL = '1dd3fb0f05b62d171f7075d02a6f0478';
       id_Taxo = '65786';        
       id_EoL = '323931';
+      id_AnAge = taxon;
     case 'Pithecia_pithecia'
       id_CoL = 'ce9ff31788b98d22457a487c405ef871';
       id_Taxo = '65836';        
       id_EoL = '1010797';
+      id_AnAge = taxon;
     case 'Cebus_capucinus'
       id_CoL = '0b4728552da36e92bba7b084a347127a';
       id_Taxo = '65749';        
       id_EoL = '323944';
+      id_AnAge = taxon;
     case 'Saimiri_sciureus'
       id_CoL = '8d7ee32920698d3911260b9a6a3ee269';
       id_Taxo = '65765';        
       id_EoL = '327956';
+      id_AnAge = taxon;
     case 'Alouatta_palliata'
       id_CoL = '06bc9289566826026b931f3c8667a0c2';
       id_Taxo = '65846';        
       id_EoL = '323919';
+      id_AnAge = taxon;
     case 'Chlorocebus_aethiops'
       id_CoL = '76233bc1b7b6845442a6b98f93ac8124';
       id_Taxo = '167692';        
       id_EoL = '1037707';
+      id_AnAge = taxon;
     case 'Papio_hamadryas'
       id_CoL = 'e54f36089676e764bb7e9f7481e21548';
       id_Taxo = '65973';        
       id_EoL = '128436';
+      id_AnAge = taxon;
     case 'Nasalis_larvatus'
       id_CoL = '627feeca55633fa8364d77479cf765a8';
       id_Taxo = '66088';        
       id_EoL = '310436';
+      id_AnAge = taxon;
     case 'Macaca_fascicularis'
       id_CoL = 'e892cc0e528de9a28fa926f75f5f3eeb';
       id_Taxo = '168592';        
       id_EoL = '46326393'; % cripple entry
+      id_AnAge = taxon;
     case 'Macaca_mulatta'
       id_CoL = '8302d6488dd331326b175296ccfbab12';
       id_Taxo = '168596';        
       id_EoL = '327960';
+      id_AnAge = taxon;
     case 'Hylobates_lar'
       id_CoL = 'b567774eedd1fd38ce9a26e2fddfc628';
       id_Taxo = '66187';        
       id_EoL = '127643';
+      id_AnAge = taxon;
     case 'Symphalangus_syndactylus'
       id_CoL = 'df178ac7151d370e79a86ffac7daed45';
       id_Taxo = '66199';        
@@ -3032,18 +3485,22 @@ function [links info] = get_link(taxon)
       id_CoL = 'e2a643310fdb74fc698ec526f5852f93';
       id_Taxo = '66224';        
       id_EoL = '326450';
+      id_AnAge = taxon;
     case 'Gorilla_gorilla'
       id_CoL = '3525cf79aa420809edb33c4b6dd8601a';
       id_Taxo = '66213';        
       id_EoL = '326447';
+      id_AnAge = taxon;
     case 'Pan_troglodytes'
       id_CoL = '86b444a39d077c4e99f876aa5e8481df';
       id_Taxo = '66219';        
       id_EoL = '326449';
+      id_AnAge = taxon;
     case 'Homo_sapiens'
       id_CoL = 'e3b90576561f93a8ac8b59e185b01511';
       id_Taxo = '66295';        
       id_EoL = '327955';
+      id_AnAge = taxon;
     otherwise
       id_EoL = '';
       id_Wiki = '';
