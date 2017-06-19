@@ -19,20 +19,17 @@ function  prt_toolbar_species(oid, species)
 
 %% Remarks
 % Indent of 4 spaces used for printing to html page
+% Edit drowdown.js for adding dropdwn's
 
 %% Example of use
 % prt_menuBar_species(oid, metaData.species)
 
 fprintf(oid, '    <div class = "dropdown"><button onclick="species()" class="dropbtn"><b>Results</b></button>\n');
 fprintf(oid, '      <div id="speciesDropdown" class="dropdown-content">\n');
-
-
 fprintf(oid,['        <a href="',species,'_par.html">Parameters</a>\n']);
 fprintf(oid,['        <a href="',species,'_stat.html">Implied properties</a>\n']);    
 fprintf(oid,['        <a href="',species,'_res.html">Predictions & Data</a>\n']);
 fprintf(oid,['        <a href="',species,'_bib.bib">Bibliography</a>\n']);
-
-
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 
@@ -45,5 +42,15 @@ fprintf(oid,['        <a HREF="../entries_zip/',species,'_zip.zip" TARGET="_top"
 fprintf(oid, '          <IMG SRC="../img/folder.png" WIDTH="110px"  BORDER="0" ></a>\n');
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
+
+links = get_link(species); n_link = size(links,1);
+fprintf(oid, '    <div class = "dropdown"><button onclick="link()" class="dropbtn">Links</button>\n');
+fprintf(oid, '      <div id="linkDropdown" class="dropdown-content">\n');
+for i = 1:n_link
+fprintf(oid,['        <a href="', links{i,1}, '" target="_blank">', links{i,2}, '</a>\n']);
+end
+fprintf(oid, '      </div>\n');
+fprintf(oid, '    </div>\n\n');
+
 
 end

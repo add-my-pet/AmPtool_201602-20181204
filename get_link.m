@@ -1817,7 +1817,7 @@ function [links info] = get_link(taxon)
       id_CoL = 'f507a35be496f4aa1295ce637ec4d07c'; % C. supremus
       id_Taxo = ''; % not present at 2017/06/16       
       id_Wiki = 'Camerasaurus';
-      id_EoL = ''; % not present at 2017/06/18 
+      id_EoL = '4531400';
       id_AnAge = ''; % not present 2017/06/18
     case 'Apatosaurus_spec'
       id_CoL = '901ec65eb9b9c783b00e6a2b21cde5d3'; % A. ajax
@@ -3055,7 +3055,7 @@ function [links info] = get_link(taxon)
   links = { ...
   ['http://catalogueoflife.org/annual-checklist/2017/details/species/id/', id_CoL], 'Cat of Life';  
   ['http://eol.org/pages/', id_EoL], 'Ency of Life';
-  ['https://en.wikipedia.org/wiki/', id_Wiki], 'Wikipedia';
+  ['http://en.wikipedia.org/wiki/', id_Wiki], 'Wikipedia';
   ['http://taxonomicon.taxonomy.nl/TaxonTree.aspx?id=', id_Taxo], 'Taxonomicon';
   ['http://marinespecies.org/aphia.php?p=taxdetails&id=', id_WoRMS], 'WoRMS';
   ['http://www.fishbase.org/summary/', id_fishbase], 'fishbase';
@@ -3067,12 +3067,10 @@ function [links info] = get_link(taxon)
   
   % test links
   for i= 1:n_links 
-    if ~strcmp(links{i,2}, 'Wikipedia') % Wikipedia url cannot be read this way
-      try 
-        urlread(links{i,1});
-      catch
-        fprintf(['warning from get_link: ', links{i,2}, ' for ', links{i,1}, 'does not exist\n']);
-        info(i) = 0;
-      end
+    try 
+      urlread(links{i,1});
+    catch
+      fprintf(['warning from get_link: ', links{i,2}, ' for ', links{i,1}, 'does not exist\n']);
+      info(i) = 0;
     end
   end

@@ -72,22 +72,7 @@ fprintf(oid, '<!--------------------------------------------------------------->
 
 fprintf(oid, '<div id="top2">\n');
 fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
-% ---------- makes links to the wikipedia page if it exists
-if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
-  url = eval(['metaData.biblist.', 'Wiki']);
-  url(1: strfind(url, 'http') - 1) = [];
-  url = url(1: strfind(url, '}') - 1);
-  fprintf(oid,['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A> (',speciesprintnm_en,'): &nbsp;\n']);
-elseif isfield(metaData.biblist,'wiki') %|| isfield(metaData.biblist,'wiki')
-  url = eval(['metaData.biblist.', 'wiki']);
-  url(1: strfind(url, 'http') - 1) = [];
-  url = url(1: strfind(url, '}') - 1);
-  fprintf(oid,['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A>(',speciesprintnm_en,'): &nbsp;\n']);
-end
-if isfield(metaData.biblist,'Wiki') ==0
-  fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
-end
-% ----------------------------------------------------------------------
+fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
@@ -105,7 +90,7 @@ fprintf(oid, '<!--------------------------------------------------------------->
 fprintf(oid, '<div id = "main">\n');
 fprintf(oid, '  <div id = "main-wrapper">\n');
 fprintf(oid, '    <div id="contentFull">\n');
-fprintf(oid,['      <H1 id = "portaltop">Implied properties for <a href = "../species_list.html#', metaData.species,'">this entry</a></H1>\n']);	
+fprintf(oid,['      <H1 id = "portaltop">Implied properties for this entry</H1>\n']);	
 			
 % print out text before the tables
 % fprintf(oid, '<H2>Implied properties for this entry</H2>');
