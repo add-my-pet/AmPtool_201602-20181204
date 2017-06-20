@@ -90,7 +90,7 @@ fprintf(oid, '<!--------------------------------------------------------------->
 fprintf(oid, '<div id = "main">\n');
 fprintf(oid, '  <div id = "main-wrapper">\n');
 fprintf(oid, '    <div id="contentFull">\n');
-fprintf(oid,['      <H1 id = "portaltop">Implied properties for this entry</H1>\n']);	
+fprintf(oid, '      <H1 id = "portaltop">Implied properties for this entry</H1>\n');	
 			
 % print out text before the tables
 % fprintf(oid, '<H2>Implied properties for this entry</H2>');

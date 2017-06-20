@@ -28,9 +28,9 @@ function prt_my_pet_bib(species, biblist, destinationFolder)
 % else prt_my_pet_bib(metaData.species,metaData.biblist, '../myFolder/') 
 
 if exist('destinationFolder','var')
-oid = fopen([destinationFolder, species, '_bib.bib'], 'w+'); % open file for reading and writing and deletes old content
+  oid = fopen([destinationFolder, species, '_bib.bib'], 'w+'); % open file for reading and writing and deletes old content
 else
-oid = fopen([species, '_bib.bib'], 'w+'); % open file for reading and writing and deletes old content   
+  oid = fopen([species, '_bib.bib'], 'w+'); % open file for reading and writing and deletes old content   
 end
 
 [nm, nst] = fieldnmnst_st(biblist);
@@ -51,5 +51,3 @@ end
     
 % close my_pet_bib.bib  
 fclose(oid);
-
-% options.showCode = false; publish('prt_my_pet_bib', options);
