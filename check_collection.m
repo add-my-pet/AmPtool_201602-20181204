@@ -1,4 +1,4 @@
-%% complete_mre
+%% check_collection
 % gives COMPLETE, and MRE 
 
 %%
@@ -9,8 +9,7 @@ function [missingFromCollection, missingFromList] = check_collection
 % [info, missingSpecies] = <../check_collection.m *check_collection*>
 
 %% Description
-% checks that all members of the list returned by select('Animalia') are
-% in the collection and vice-versa - 
+% checks that all members of the list returned by select('Animalia') are in dir ../entries and vice-versa
 %
 %
 % Output: 
@@ -42,7 +41,7 @@ missingFromCollection = setdiff(entries,allNames)'; % returns entries which are 
 missingFromList = setdiff(allNames,entries)'; % returns entries whcih are included in the collection but have not been put in the lists
 
 cd(WD)  % goto original path
-%%
+
 
 end
 
