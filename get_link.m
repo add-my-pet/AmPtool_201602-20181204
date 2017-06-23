@@ -10,7 +10,7 @@ function [links info] = get_link(taxon)
 
 %% Description
 % gets cell strings with links and descriptions for an entry
-% potential web sites: CoL, EoL, Wiki, Taxo, WoRMS, ADW, fishbase, AnAge
+% potential web sites: CoL, EoL, Wiki, Taxo, WoRMS, fishbase, AnAge
 %
 % Input:
 %
@@ -25,10 +25,9 @@ function [links info] = get_link(taxon)
 % empty ID links are removed from output; ID links are all empty if entry is not listed
 % EoL is most complete 
 % If Wiki has not the entry name, a higher taxon is selected
-% WoMS has marine species only, such as the icebear, but no other bears; inconsistent presence for freshwater plankton
-% AnAge only works for Tetropoda; ulread for AnAge is always successful, but <20000 long if entry does not exist)
-% fishbase only for fish; so never combines with AnAge 
-% ADW is too incomplete at 2017/06/18
+% WoMS has marine species only, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
+% AnAge only works for Tetropoda; ulread for AnAge is always successful, but <20000 long if entry does not exist
+% ADW is too incomplete at 2017/06/18 (less than half of the entries)
 
 %% Example of use
 % links = get_link('Daphnia_magna')
@@ -36,7 +35,7 @@ function [links info] = get_link(taxon)
   taxon_txt = [strrep(taxon,'_','-'), '.html'];
   
   % default identifiers
-  id_EoL = taxon; id_Wiki = taxon; id_WoRMS = ''; id_fishbase = ''; id_AnAge = '';
+  id_EoL = taxon; id_CoL = ''; id_Taxo = ''; id_Wiki = taxon; id_WoRMS = ''; id_fishbase = ''; id_AnAge = '';
 
   switch taxon % overwrite id's if necessary, assign empty to delete (at bottom)
     case 'Haliclona_oculata'
@@ -806,6 +805,11 @@ function [links info] = get_link(taxon)
       id_Taxo = '27808';
       id_Wiki = 'Ichneumonoidea';
       id_EoL = '3780488';
+    case 'Onthophagus_taurus'
+      id_CoL = 'a315e9096c5de1872377824cee709d24';
+      id_WoRMS = ''; % not present 2017/06/21
+      id_Taxo = '26390';
+      id_EoL = '46325834';
     case 'Asterias_rubens'
       id_CoL = '6d91fa5c1a435bc2c9e5394e5b2478e1';
       id_WoRMS = '123776';
@@ -1997,6 +2001,12 @@ function [links info] = get_link(taxon)
       id_WoRMS = '127036';
       id_Taxo = '173912';        
       id_EoL = '206618';
+      id_fishbase = taxon_txt;
+    case 'Serranus_scriba'
+      id_CoL = '477173bdd7c8e27ad4631a347f8fd45b';
+      id_WoRMS = '127043';
+      id_Taxo = '187467';        
+      id_EoL = '215470';
       id_fishbase = taxon_txt;
     case 'Perca_fluviatilis'
       id_CoL = '593aaa7c79677b093fe94582a14d3f94';
@@ -3888,3 +3898,6 @@ function [links info] = get_link(taxon)
       info(i) = 0;
     end
   end
+  
+  % Taxonomicon: Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
+  
