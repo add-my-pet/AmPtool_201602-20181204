@@ -2,3 +2,4 @@ Arcoida
 Pectinoida
 Ostreoida
 Mytiloida
+Pterioida

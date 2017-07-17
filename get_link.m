@@ -2,8 +2,8 @@
 % gets links to web-pages for AmP entries
 
 %%
-function [links info] = get_link(taxon)
-% created 2017/06/14 by Bas Kooijman
+function [links info] = get_link(taxon, test)
+% created 2017/06/14 by Bas Kooijman, modified 2017/07/11
 
 %% Syntax
 % [links info] = <get_link *get_link*>(taxon)
@@ -15,11 +15,12 @@ function [links info] = get_link(taxon)
 % Input:
 %
 % * taxon: character string with name of an entry
+% * test: optional boolean for testing existence of web sites (default 0)
 %
 % Output:
 %
 % * links: (n,2)-cell array with links and names for links
-% * info: (n,1)-matrix with true of false for existence of web pages
+% * info: (n,1)-matrix with true of false for existence of web pages (1's if test = 0)
 
 %% Remarks
 % empty ID links are removed from output; ID links are all empty if entry is not listed
@@ -28,6 +29,7 @@ function [links info] = get_link(taxon)
 % WoMS has marine species only, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
 % AnAge only works for Tetropoda; ulread for AnAge is always successful, but <20000 long if entry does not exist
 % ADW is too incomplete at 2017/06/18 (less than half of the entries)
+% testing might take long time (therefore default 0)
 
 %% Example of use
 % links = get_link('Daphnia_magna')
@@ -58,6 +60,11 @@ function [links info] = get_link(taxon)
       id_WoRMS = '135305';
       id_Taxo = '11851';
       id_EoL = '203481';
+    case 'Mastigias_papua'
+      id_CoL = 'dbf8c27746d6ab5b080fe529c023a253';
+      id_WoRMS = '220485';
+      id_Taxo = '458143';
+      id_EoL = '203445';
     case 'Mnemiopsis_leidyi'
       id_CoL = '1c0c292c0300677f3bce686e31495b3e';
       id_WoRMS = '106401';
@@ -220,6 +227,11 @@ function [links info] = get_link(taxon)
       id_WoRMS = '231750';
       id_Taxo = '39617';        
       id_EoL = '395921';
+    case 'Ruditapes_decussatus'
+      id_CoL = 'd288b9f0f3748a3f1555be799829a11f';
+      id_WoRMS = '231749';
+      id_Taxo = '139552';        
+      id_EoL = '3060328';
     case 'Echyridella_menziesii'
       id_CoL = '1467382d3ab24e1ca4e76417fc858224';
       id_WoRMS = ''; % not present 2017/06/15 
@@ -306,6 +318,11 @@ function [links info] = get_link(taxon)
       id_Taxo = ''; % not present 2017/06/15
       id_Wiki = 'Mytilidae';
       id_EoL = '3110167';
+    case 'Pinctada_margaritifera'
+      id_CoL = '4c8d85c6f008d3ce9c479af1a0f99e4f'; 
+      id_WoRMS = '207899'; 
+      id_Taxo = '39257';
+      id_EoL = '468594';
     case 'Patella_vulgata'
       id_CoL = 'b6d47c01f8b1aac2e8d612029dec8807';
       id_WoRMS = '140685';
@@ -616,6 +633,11 @@ function [links info] = get_link(taxon)
       id_WoRMS = '247980';
       id_Taxo = '33097';        
       id_EoL = '327210';
+    case 'Nitokra_spinipes'
+      id_CoL = '0747856e47615f0c02503a3612915bd8';
+      id_WoRMS = '745852';
+      id_Taxo = '203273';  % present at genus level 2017/07/10    
+      id_EoL = '1020994';
     case 'Acanthocyclops_robustus'
       id_CoL = 'd63a685097756b1c2cf45229db57cac0';
       id_WoRMS = ''; % not present 2017/06/15
@@ -784,6 +806,12 @@ function [links info] = get_link(taxon)
       id_Taxo = '';  % not present 2017/06/15
       id_Wiki = 'Chaoborus';
       id_EoL = '741193';
+    case 'Chaoborus_crystallinus'
+      id_CoL = 'a8f2630a5f47ba1deca45e8d986dbcf7';
+      id_WoRMS = ''; % not present 2017/07/11
+      id_Taxo = '28524';
+      id_Wiki = 'Chaoborus';
+      id_EoL = '746432';
     case 'Plodia_interpunctella'
       id_CoL = '6b0d3d4ddb2f7b52424f8da510c91e10';
       id_WoRMS = ''; % not present 2017/06/15
@@ -830,6 +858,11 @@ function [links info] = get_link(taxon)
       id_WoRMS = '172775';
       id_Taxo = '40845';        
       id_EoL = '4704670';
+    case 'Amphiura_filiformis'
+      id_CoL = '03fbc60f382ddfd275761a2c906123c5';
+      id_WoRMS = '125080';
+      id_Taxo = '40989';        
+      id_EoL = '607601';
     case 'Echinus_affinis'
       id_CoL = 'e7cf9012297aa33bdaa907a4e2545d53'; % unaccepeted, to Gracilechinus affinis (Mortensen, 1903)
       id_WoRMS = '124279'; % unaccepted, to Gracilechinus affinis (Mortensen, 1903)
@@ -1215,6 +1248,12 @@ function [links info] = get_link(taxon)
       id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '182534'; % present as Pangasius_hypophthalmus        
       id_EoL = '570181';
+      id_fishbase = taxon_txt;
+    case 'Ictalurus_punctatus'
+      id_CoL = 'ec98ff956d24bbb1b4e243ad7e8abb12';
+      id_WoRMS = ''; % not present 2017/07/10
+      id_Taxo = '44004'; 
+      id_EoL = '204762';
       id_fishbase = taxon_txt;
     case 'Corydoras_aeneus'
       id_CoL = '905ee3c3036f0147c9e3465986196a49';
@@ -2211,6 +2250,12 @@ function [links info] = get_link(taxon)
       id_Wiki = 'Lacerta_(genus)';
       id_EoL = '792774';
       id_AnAge = ''; % not present 2017/06/18
+    case 'Takydromus_hsuehshanensis'
+      id_CoL = '0a29f929f99e543ced935005d9f39302';
+      id_Taxo = '642687';    
+      id_Wiki = 'Takydromus';
+      id_EoL = '290159';
+      id_AnAge = ''; % not present 2017/07/17
     case 'Varanus_komodoensis'
       id_CoL = '9734ef854130b3011fb9ec9be37afed1';
       id_Taxo = '170215';        
@@ -2278,6 +2323,12 @@ function [links info] = get_link(taxon)
       id_Taxo = '48469';
       id_EoL = '1275929';
       id_AnAge = taxon;
+    case 'Chelonia_mydas'
+      id_CoL = 'bd036a3edaf9c6342bc3984210d1ae5f';
+      id_WoRMS = '137206';
+      id_Taxo = '48475'; 
+      id_EoL = '454546';
+      id_AnAge = taxon;
     case 'Lepidochelys_kempii'
       id_CoL = '54e9e281f6d060b3f03a3d1295107826';
       id_WoRMS = '137208';
@@ -2290,6 +2341,12 @@ function [links info] = get_link(taxon)
       id_Taxo = '48459';        
       id_EoL = '815711';
       id_AnAge = taxon;
+    case 'Natator_depressus'
+      id_CoL = '912bfcb48046a727508637ce96085aa7';
+      id_WoRMS = ''; % not present at 2017/06/14
+      id_Taxo = '93064';        
+      id_EoL = '791397';
+      id_AnAge = ''; % not present at 2017/06/14
     case 'Deinosuchus_rugosus'
       id_CoL = ''; % not present 2010/06/16
       id_Taxo = '50639'; % present as genus 2010/06/16      
@@ -2486,6 +2543,11 @@ function [links info] = get_link(taxon)
       id_Taxo = '54867';        
       id_EoL = '1046068';
       id_AnAge = taxon;
+    case 'Archilochus_alexandri'
+      id_CoL = '6b01e05030a20cc0e9fb9e44afb24ea0';
+      id_Taxo = '72515';        
+      id_EoL = '916375';
+      id_AnAge = taxon;
     case 'Aegotheles_cristatus'
       id_CoL = 'e77dc5c18f2a229366e15a70c599332f';
       id_Taxo = '54805';        
@@ -2569,6 +2631,12 @@ function [links info] = get_link(taxon)
       id_Taxo = '53669';        
       id_EoL = '1049439';
       id_AnAge = taxon;
+    case 'Tringa_totanus'
+      id_CoL = '962fa82c8b0d12d96bfcc94a9fe3fe01';
+      id_WoRMS = '158970';
+      id_Taxo = '53680';        
+      id_EoL = '1049441';
+      id_AnAge = taxon;
     case 'Limnodromus_griseus'
       id_CoL = 'e45c6cab6f6609688ad3f1f3fcd1ff3f';
       id_WoRMS = '158955';
@@ -2581,6 +2649,12 @@ function [links info] = get_link(taxon)
       id_Taxo = '53654';        
       id_EoL = '1049549';
       id_AnAge = ''; % not present at 2017/06/18 
+    case 'Limosa_limosa'
+      id_CoL = '762df0cf6ff275514b2c06b5e5c8bf98';
+      id_WoRMS = ''; % not present at 2017/07/16
+      id_Taxo = '53656';        
+      id_EoL = '1049550';
+      id_AnAge = taxon; 
     case 'Numenius_phaeopus'
       id_CoL = '19bd674744e8fd0eda79a3b09a47568d';
       id_WoRMS = '159040';
@@ -3884,18 +3958,20 @@ function [links info] = get_link(taxon)
   ['http://marinespecies.org/aphia.php?p=taxdetails&id=', id_WoRMS], 'WoRMS';
   ['http://www.fishbase.org/summary/', id_fishbase], 'fishbase';
   ['http://genomics.senescence.info/species/entry.php?species=', id_AnAge], 'AnAge'};
+  % remove empty links
   links = links(~cellfun(@isempty, {id_CoL, id_EoL, id_Wiki, id_Taxo, id_WoRMS, id_fishbase, id_AnAge}),:);
   n_links = size(links,1); info = ones(n_links,1);
   
-  return % skip test to gain speed
-  
-  % test links
-  for i= 1:n_links 
-    try 
-      urlread(links{i,1});
-    catch
-      fprintf(['warning from get_link: ', links{i,2}, ' for ', links{i,1}, 'does not exist\n']);
-      info(i) = 0;
+  if n_links == 0
+    fprintf(['warning from get_link for ', taxon, ': no links specified\n']);
+  elseif exist('test', 'var') && test == true % test links 
+    for i= 1:n_links 
+      try 
+        urlread(links{i,1});
+      catch
+        fprintf(['warning from get_link for ', taxon, ': ', links{i,2}, ' for ', links{i,1}, 'does not exist\n']);
+        info(i) = 0;
+      end
     end
   end
   
