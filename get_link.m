@@ -23,20 +23,19 @@ function [links info] = get_link(taxon, test)
 % * info: (n,1)-matrix with true of false for existence of web pages (1's if test = 0)
 
 %% Remarks
-% empty ID links are removed from output; ID links are all empty if entry is not listed
+% empty ID links are removed from output; ID links are all empty if entry is not listed, but warning is given
 % EoL is most complete 
 % If Wiki has not the entry name, a higher taxon is selected
-% WoMS has marine species only, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
+% WoRMS has marine species only, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
 % AnAge only works for Tetropoda; ulread for AnAge is always successful, but <20000 long if entry does not exist
 % ADW is too incomplete at 2017/06/18 (less than half of the entries)
 % testing might take long time (therefore default 0)
 
 %% Example of use
 % links = get_link('Daphnia_magna')
-
-  taxon_txt = [strrep(taxon,'_','-'), '.html'];
   
   % default identifiers
+  taxon_txt = [strrep(taxon,'_','-'), '.html']; % used in fishbase
   id_EoL = taxon; id_CoL = ''; id_Taxo = ''; id_Wiki = taxon; id_WoRMS = ''; id_fishbase = ''; id_AnAge = '';
 
   switch taxon % overwrite id's if necessary, assign empty to delete (at bottom)
@@ -232,6 +231,11 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '231749';
       id_Taxo = '139552';        
       id_EoL = '3060328';
+    case 'Mytilopsis_sallei'
+      id_CoL = '5e451e2ac36ade42130a9909b0979122';
+      id_WoRMS = '397147';
+      id_Taxo = '135649'; % only genus level 2017/07/21       
+      id_EoL = '493167';
     case 'Echyridella_menziesii'
       id_CoL = '1467382d3ab24e1ca4e76417fc858224';
       id_WoRMS = ''; % not present 2017/06/15 
@@ -742,6 +746,11 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '125153';
       id_Wiki = 'Charybdis_(genus)';
       id_EoL = '4267035';
+    case 'Eriphia_verrucosa'
+      id_CoL = '528fd84a4773fb98b14863274a229cd7';
+      id_WoRMS = '107409';
+      id_Taxo = '228769'; % present as genus only 2017/07/18      
+      id_EoL = '344746';
     case 'Crangon_crangon'
       id_CoL = '58d00d89008c1ec63431fabcc112c6bb';
       id_WoRMS = '107552';
@@ -775,6 +784,12 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '17334';        
       id_Wiki = 'Ephemeroptera';
       id_EoL = '3684447';
+    case 'Baetis_rhodani'
+      id_CoL = '27a250f72d86b0edd3d3ea324a9130f4';
+      id_WoRMS = ''; % not present 2017/07/20
+      id_Taxo = '17370';   
+      id_EoL = '3683090';
+      id_Wiki = 'Baetis';
     case 'Cloeon_dipterum'
       id_CoL = 'cb3fd2c1a361461205d2d68285a00177';
       id_WoRMS = ''; % not present 2017/06/15
@@ -948,11 +963,39 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '108279';        
       id_EoL = '209174';
       id_fishbase = taxon_txt;
+    case 'Raja_montagui'
+      id_CoL = '0090fc80b381e800d07f72514dad1e22';
+      id_WoRMS = '105887';
+      id_Taxo = '108283';
+      id_EoL = '211505';
+      id_fishbase = taxon_txt;
+      id_AnAge = 'taxon';
+    case 'Raja_rhina'
+      id_CoL = 'faa318af8e345d99ea7b6018126a2d6f';
+      id_WoRMS = '271581';
+      id_Taxo = '185729';
+      id_EoL = '215132';
+      id_fishbase = taxon_txt;
+      id_AnAge = 'taxon';
+      id_Wiki = 'Beringraja_rhina';
+    case 'Beringraja_binoculata'
+      id_CoL = 'acdb21137c63073015d27adcf86953db';
+      id_WoRMS = '1021330';
+      id_Taxo = '1802408';       
+      id_EoL = '46410079';
+      id_fishbase = taxon_txt;
+      id_AnAge = 'taxon';
     case 'Leucoraja_erinacea'
       id_CoL = '2b6c3cc7234a53cc6229a9883c9075af';
       id_WoRMS = '158551';
       id_Taxo = '178802';        
       id_EoL = '217228';
+      id_fishbase = taxon_txt;
+    case 'Leucoraja_naevus'
+      id_CoL = 'a21b9ab9f84a192de65800fdc5964dac';
+      id_WoRMS = '105876';
+      id_Taxo = '108270';        
+      id_EoL = '345058';
       id_fishbase = taxon_txt;
     case 'Rhinobatos_productus'
       id_CoL = '8691a825ec34f8adcda1539f3d0babc0';
@@ -1067,6 +1110,12 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '105802';
       id_Taxo = '41999';        
       id_EoL = '205713';
+      id_fishbase = taxon_txt;
+    case 'Prionace_glauca'
+      id_CoL = '33d52a5325a633260d922de266c0ad0f';
+      id_WoRMS = '105801';
+      id_Taxo = '41997';        
+      id_EoL = '206724';
       id_fishbase = taxon_txt;
     case 'Carcharodon_carcharias'
       id_CoL = 'c5465928ea46eb759bbbf4d623c56bad';
@@ -2476,11 +2525,28 @@ function [links info] = get_link(taxon, test)
       id_Wiki = 'Gallus_gallus';
       id_EoL = '1049263';
       id_AnAge = taxon;
+    case {'Coturnix_japonica'}
+      id_CoL = 'f3b9c1a1a8e00ce2b6750a8db1424b32';
+      id_Taxo = '70044';    
+      id_EoL = '1049255';
+      id_AnAge = taxon;
     case 'Anas_platyrhynchos'
       id_CoL = 'd5d9d6e502eb4c9f10b094dfdd935e65';
       id_WoRMS = '148791';
       id_Taxo = '52161';
       id_EoL = '1047918';
+      id_AnAge = taxon;
+    case 'Aythya_fuligula'
+      id_CoL = '7d788c57f99de05c3d37b04ee6dd1918';
+      id_WoRMS = '159164';
+      id_Taxo = '52214';
+      id_EoL = '1048974';
+      id_AnAge = taxon;
+    case 'Aythya_americana'
+      id_CoL = '5dc5a9e15a584ee7a4459f572546bd32';
+      id_WoRMS = '159162';
+      id_Taxo = '52209';
+      id_EoL = '1048964';
       id_AnAge = taxon;
     case 'Mergus_merganser'
       id_CoL = 'dd005d87ee7a39a731b69942401091df';
@@ -2799,7 +2865,13 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '70245';        
       id_EoL = '1049058';
       id_AnAge = ''; % not present at 2017/06/18 
-    case 'Vanellus_armatus'
+    case 'Vanellus_vanellus'
+      id_CoL = 'a72664542a6c3a33c679530309994536';
+      id_WoRMS = '159142'; 
+      id_Taxo = '53579';     
+      id_EoL = '1049340';
+      id_AnAge = taxon;
+     case 'Vanellus_armatus'
       id_CoL = '6034cc9bf59a797ca53b2e50c0241a25';
       id_WoRMS = ''; % not present 2017/06/17
       id_Taxo = '70262';     
