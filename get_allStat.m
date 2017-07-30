@@ -54,18 +54,23 @@ function allStat = get_allStat(T, f)
       % metaData
       allStat.(entries{i}).species = metaData.species; allStat.(entries{i}).units.species = '-'; allStat.(entries{i}).label.species = 'scientific name';
       allStat.(entries{i}).species_en = metaData.species_en; allStat.(entries{i}).units.species_en = '-'; allStat.(entries{i}).label.species_en = 'common name';
+      % model
       allStat.(entries{i}).model = metaPar.model; allStat.(entries{i}).units.model = '-'; allStat.(entries{i}).label.model = 'DEB model';
       allStat.(entries{i}).MRE = metaPar.MRE; allStat.(entries{i}).units.MRE = '-'; allStat.(entries{i}).label.MRE = 'Mean Relative Error';
       allStat.(entries{i}).SMSE = metaPar.SMSE; allStat.(entries{i}).units.SMSE = '-'; allStat.(entries{i}).label.SMSE = 'Symmetric Mean Squared Error';
       allStat.(entries{i}).COMPLETE = metaData.COMPLETE; allStat.(entries{i}).units.COMPLETE = '-'; allStat.(entries{i}).label.COMPLETE = 'completeness';
+      % submission
       allStat.(entries{i}).author = metaData.author(:)'; allStat.(entries{i}).units.author = '-'; allStat.(entries{i}).label.author = 'submitting author';
-      author_mod = get_author_mod(metaData);
-      allStat.(entries{i}).author_mod = author_mod; allStat.(entries{i}).units.author_mod = '-'; allStat.(entries{i}).label.author_mod = 'modification author';
       allStat.(entries{i}).date_subm = metaData.date_subm; allStat.(entries{i}).units.date_subm = '-'; allStat.(entries{i}).label.date_subm = 'submitting date';
+      % modification
+      author_date_mod = get_author_date_mod(metaData);
+      allStat.(entries{i}).author_mod = author_date_mod(:,1); allStat.(entries{i}).units.author_mod = '-'; allStat.(entries{i}).label.author_mod = 'modification author';
+      allStat.(entries{i}).date_mod = author_date_mod(:,2); allStat.(entries{i}).units.date_mod = '-'; allStat.(entries{i}).label.date_mod = 'modification date';
+      % acceptance
       allStat.(entries{i}).date_acc = metaData.date_acc; allStat.(entries{i}).units.date_acc = '-'; allStat.(entries{i}).label.date_acc = 'acceptance date';
+      % typical body temp
       allStat.(entries{i}).T_typical = metaData.T_typical;
-      
-      
+            
       % parameters
       par = rmfield_wtxt(par, 'free');   % remove substructure free from par
       [nm nst] = fieldnmnst_st(par);     % get number of parameter fields
@@ -98,16 +103,18 @@ function allStat = get_allStat(T, f)
 end
 
 
+%% subfunction
+function author_date_mod = get_author_date_mod(metaData)
+% gets (n,2)-cell array with authors and dates of modifications.
 
-
-function author_mod = get_author_mod(metaData)
-  author_mod = cell(0);
+  author_date_mod = cell(0,2); % initiate (n,2) array with modication author(s), date(s)
   [nm nr] = fieldnmnst_st(metaData); 
-  n = strfind(nm, 'author_'); 
+  n = strfind(nm, 'author_mod');
   for i = 1:nr
     if ~isempty(n{i})
-      authors = metaData.(nm{i});
-      author_mod = [author_mod, authors(:)'];
+      author = metaData.(nm{i});
+      date = {metaData.(strrep(nm{i}, 'author', 'date'))};
+      author_date_mod = [author_date_mod; {author(:)', date}];
     end
   end
 end

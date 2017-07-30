@@ -14,42 +14,26 @@ function prt_authors
 %% Example of use
 % prt_authors
 
-  [ad entries] = read_allStat('author','date_subm');
-  ne = length(entries); authors = ad(:,1); dates = ad(:,2); datenr = zeros(ne,1); ymd = cell(ne);
-  
+  % get basic data
+  [adad entries] = read_allStat('author', 'date_subm', 'author_mod', 'date_mod'); 
+  ne = length(entries);   
+  % authors
+  authors = adad(:,[1 3]); 
+  author = cell(0, 1); % convert (2*ne,1)-cell array, to (n,1)-cell array by vertcat all cell-arrays 
   for i=1:ne
-    datenr(i) = datenum(dates{i});
-    ymd{i} = datestr(datenr(i), 'yyyy/mm/dd');
+    author1 = authors{i,1}; author2 = authors{i,2};
+    author = [author; author1(:); author2(:)];
   end
-  
-  % alphabetically arranged list of all authors
-  author = sort_fam(unique([authors{:}]))'; 
+  author = sort_fam(unique([author{:}])); % alphabetically arranged list of all authors
+  na = length(author);   
+  % dates
+  dates = adad(:,[2 4]);                  % (ne,>0)-cell array with all dates
     
-  % binary matrix of authors x entries
-  na = length(author); nae = zeros(na,ne);
-  for i = 1:ne
-    authorsi = authors{i};
-    nai = length(authorsi);
-    for j = 1:nai
-      nae(:,i) = nae(:,i) + strcmp(author,authorsi{j});
-    end
-  end
-  nae = (nae > 0);
-  
-  nr = sum(nae,2); % number of entries by each author
-    
-  % sorted entries for each author
-  entry = cell(na); date = cell(na); 
-  for i = 1:na
-    [nm index] = sort(datenr(nae(i,:)==1),'descend');
-    E = entries(nae(i,:)==1); entry{i} = E(index);
-    D = ymd(nae(i,:)==1);     date{i} = D(index);
-  end
-    
+  % prepare for writing authors.html
   nrow = ceil(na/4); % # of rows in author table, to be filled in cols
   fid_authors = fopen('../authors.html', 'w+'); % open file for writing, delete existing content
   
-% make the header for authors.html :
+% write header for authors.html :
 fprintf(fid_authors, '<!DOCTYPE html>\n');
 fprintf(fid_authors, '<HTML>\n');
 fprintf(fid_authors, '<HEAD>\n');
@@ -137,10 +121,10 @@ fprintf(fid_authors, '<script>w3IncludeHTML();</script>\n\n');
 fprintf(fid_authors, '<div id = "main">\n');
 fprintf(fid_authors, '  <div id = "main-wrapper-species">    \n');
 fprintf(fid_authors, '    <div id="contentFull">\n\n');
-fprintf(fid_authors, '      <H2><a href="" title="Locate entries via authors and submission dates by clicking on numbers of entries.\n');
+fprintf(fid_authors, '      <H2><a href="" title="Locate entries via authors and submission/modification dates by clicking on numbers of entries.\n');
 fprintf(fid_authors, '           Click on entry names to goto entries.">Authors and their submitted entries</a></H2>\n\n');
 fprintf(fid_authors, '      <div ID = "tab_authors"><table>\n');
-for i = 1:nrow
+for i = 1:nrow % scan all authors
 fprintf(fid_authors, '       <tr>\n');
   for j = 1:4
     index = (j - 1) * nrow + i; % index of author
@@ -155,10 +139,35 @@ fprintf(fid_authors,['         <td WIDTH="250">', author{index}, '</td>\n']);
 fprintf(fid_authors, '         <td>\n');
     end
 fprintf(fid_authors, '             <ul class="main-navigation">\n');
-fprintf(fid_authors,['               <li><a href="#">', num2str(nr(index)), '</a>\n']);
+
+    % get lists of entries and dates for each author
+    txt_entry = cell(0); txt_date = cell(0); date_num = [];
+    for k = 1:ne % scan all entries
+      if sum(strcmp(author{index}, authors{k,1})) 
+        txt_entry = [txt_entry; entries{k}];
+        date_num = [date_num; datenum(dates{k,1})];
+        txt_date = [txt_date; datestr(date_num(end), 'yyyy/mm/dd')];
+      end
+      
+      authors_mod = authors{k,2}; n_mod = length(authors_mod);
+      for l = 1:n_mod
+        date_mod = dates{k,2};
+        if sum(strcmp(author{index}, authors_mod{l})) 
+          txt_entry = [txt_entry; entries{k}];
+          date = date_mod{l}; date_num = [date_num; datenum(date{1})];
+          txt_date = [txt_date; datestr(date_num(end), 'yyyy/mm/dd')];
+        end
+      end
+    end
+    nr = length(date_num);
+    
+    % sort entries on dates
+    [nm ind] = sort(date_num,'descend');
+    txt_entry = txt_entry(ind); txt_date = txt_date(ind);
+    
+fprintf(fid_authors,['               <li><a href="#">', num2str(nr), '</a>\n']);
 fprintf(fid_authors, '               <ul>\n');
-    txt_entry = entry{index}; txt_date = date{index};
-    for k = 1:nr(index)
+    for k = 1:nr
 fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
     end
 fprintf(fid_authors, '               </ul>\n');
