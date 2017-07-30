@@ -1,19 +1,19 @@
 %% prt_authors
-% prints authors.html with submitting authors and their entries
+% prints authors.html with submitting/modification authors and their entries
 
 %%
 function prt_authors
 %% created 2016/02/23 by Bas Kooijman, modified 2016/12/24, 2017/07/30
 
 %% Syntax
-% <../prt_authors.m *prt_authors*>(info)
+% <../prt_authors.m *prt_authors*>
 
 %% Description
-% Writes ../authors.html with all authors and their submitted entries
+% Writes ../authors.html with all authors and their submitted/modified entries
 
 %% Remarks
-% allStat.mat always has a field author for each entry, but not always field(s) author_mod_*.
-% If author_mod_* exists, date_mod_* must exist.
+% allStat.mat always has fields author and date_subm for each entry, but not always field(s) author_mod_*.
+% If author_mod_* exists, date_mod_* must exist as well with a valid date-specification.
 % Each author_mod_* field can have one or more authors
 
 %% Example of use
