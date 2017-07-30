@@ -3,13 +3,18 @@
 
 %%
 function prt_authors
-%% created 2016/02/23 by Bas Kooijman, modified 2016/12/24
+%% created 2016/02/23 by Bas Kooijman, modified 2016/12/24, 2017/07/30
 
 %% Syntax
 % <../prt_authors.m *prt_authors*>(info)
 
 %% Description
 % Writes ../authors.html with all authors and their submitted entries
+
+%% Remarks
+% allStat.mat always has a field author for each entry, but not always field(s) author_mod_*.
+% If author_mod_* exists, date_mod_* must exist.
+% Each author_mod_* field can have one or more authors
 
 %% Example of use
 % prt_authors
@@ -18,10 +23,10 @@ function prt_authors
   [adad entries] = read_allStat('author', 'date_subm', 'author_mod', 'date_mod'); 
   ne = length(entries);   
   % authors
-  authors = adad(:,[1 3]); 
+  authors = adad(:,[1 3]);                % (ne,>0)-cell array with all authors
   author = cell(0, 1); % convert (2*ne,1)-cell array, to (n,1)-cell array by vertcat all cell-arrays 
-  for i=1:ne
-    author1 = authors{i,1}; author2 = authors{i,2};
+  for i=1:ne % scan entries
+    author1 = authors{i,1}; author2 = authors{i,2}; % submit-, mod-authors
     author = [author; author1(:); author2(:)];
   end
   author = sort_fam(unique([author{:}])); % alphabetically arranged list of all authors
@@ -140,7 +145,7 @@ fprintf(fid_authors, '         <td>\n');
     end
 fprintf(fid_authors, '             <ul class="main-navigation">\n');
 
-    % get lists of entries and dates for each author
+    % get lists of entries and dates for current author
     txt_entry = cell(0); txt_date = cell(0); date_num = [];
     for k = 1:ne % scan all entries
       if sum(strcmp(author{index}, authors{k,1})) 
@@ -161,13 +166,13 @@ fprintf(fid_authors, '             <ul class="main-navigation">\n');
     end
     nr = length(date_num);
     
-    % sort entries on dates
+    % sort entries on dates for current author
     [nm ind] = sort(date_num,'descend');
     txt_entry = txt_entry(ind); txt_date = txt_date(ind);
     
 fprintf(fid_authors,['               <li><a href="#">', num2str(nr), '</a>\n']);
 fprintf(fid_authors, '               <ul>\n');
-    for k = 1:nr
+    for k = 1:nr % scan all dates/entries for current author
 fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
     end
 fprintf(fid_authors, '               </ul>\n');
