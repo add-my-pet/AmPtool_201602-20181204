@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_authors</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-12-26"><meta name="DC.source" content="prt_authors.m"><style type="text/css">
+      --><title>prt_authors</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-07-30"><meta name="DC.source" content="prt_authors.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -74,63 +74,103 @@ function prt_authors
 %% Example of use
 % prt_authors
 
-  [ad entries] = read_allStat('author','date_subm');
-  ne = length(entries); authors = ad(:,1); dates = ad(:,2); datenr = zeros(ne,1); ymd = cell(ne);
-  
+  % get basic data
+  [adad entries] = read_allStat('author', 'date_subm', 'author_mod', 'date_mod'); 
+  ne = length(entries);   
+  % authors
+  authors = adad(:,[1 3]); 
+  author = cell(0, 1); % convert (2*ne,1)-cell array, to (n,1)-cell array by vertcat all cell-arrays 
   for i=1:ne
-    datenr(i) = datenum(dates{i});
-    ymd{i} = datestr(datenr(i), 'yyyy/mm/dd');
+    author1 = authors{i,1}; author2 = authors{i,2};
+    author = [author; author1(:); author2(:)];
   end
-  
-  % alphabetically arranged list of all authors
-  author = sort_fam(unique([authors{:}]))'; 
+  author = sort_fam(unique([author{:}])); % alphabetically arranged list of all authors
+  na = length(author);   
+  % dates
+  dates = adad(:,[2 4]);                  % (ne,>0)-cell array with all dates
     
-  % binary matrix of authors x entries
-  na = length(author); nae = zeros(na,ne);
-  for i = 1:ne
-    authorsi = authors{i};
-    nai = length(authorsi);
-    for j = 1:nai
-      nae(:,i) = nae(:,i) + strcmp(author,authorsi{j});
-    end
-  end
-  nae = (nae > 0);
-  
-  nr = sum(nae,2); % number of entries by each author
-    
-  % sorted entries for each author
-  entry = cell(na); date = cell(na); 
-  for i = 1:na
-    [nm index] = sort(datenr(nae(i,:)==1),'descend');
-    E = entries(nae(i,:)==1); entry{i} = E(index);
-    D = ymd(nae(i,:)==1);     date{i} = D(index);
-  end
-    
+  % prepare for writing authors.html
   nrow = ceil(na/4); % # of rows in author table, to be filled in cols
   fid_authors = fopen('../authors.html', 'w+'); % open file for writing, delete existing content
   
-% make the header for authors.html :
+% write header for authors.html :
 fprintf(fid_authors, '<!DOCTYPE html>\n');
 fprintf(fid_authors, '<HTML>\n');
 fprintf(fid_authors, '<HEAD>\n');
 fprintf(fid_authors, '  <TITLE>AmP authors</TITLE>\n');
-fprintf(fid_authors, '  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">\n');
 fprintf(fid_authors, '  <link rel="stylesheet" type="text/css" href="sys/style.css">\n');
+fprintf(fid_authors, '  <style>\n');
+fprintf(fid_authors, '    /*REPLACE_WITH_DASH_DASH Multilevel DropDown menus REPLACE_WITH_DASH_DASH*/\n');
+fprintf(fid_authors, '    /*REPLACE_WITH_DASH_DASH http://www.cssscript.com/create-a-multi-level-drop-down-menu-with-pure-css/ REPLACE_WITH_DASH_DASH*/\n\n');
+
+fprintf(fid_authors, '    /*REPLACE_WITH_DASH_DASH Set the parent <li> CSS position property to relative REPLACE_WITH_DASH_DASH*/\n\n');
+
+fprintf(fid_authors, '    ul {\n');
+fprintf(fid_authors, '      list-style: none;\n');
+fprintf(fid_authors, '      padding: 0;\n');
+fprintf(fid_authors, '      margin: 0;\n');
+fprintf(fid_authors, '    }\n\n');
+	 
+fprintf(fid_authors, '    ul li {\n');
+fprintf(fid_authors, '      display: block;\n');
+fprintf(fid_authors, '      position: relative;\n');
+fprintf(fid_authors, '      float: left;\n');
+fprintf(fid_authors, '    }\n\n');
+
+fprintf(fid_authors, '    /*REPLACE_WITH_DASH_DASH The CSS to hide the sub menus REPLACE_WITH_DASH_DASH*/\n\n');
+
+fprintf(fid_authors, '    li ul { display: none; }\n\n');
+	 
+fprintf(fid_authors, '    ul li a {\n');
+fprintf(fid_authors, '      display: block;\n');
+fprintf(fid_authors, '      padding: 1em;\n');
+fprintf(fid_authors, '      text-decoration: none;\n');
+fprintf(fid_authors, '      white-space: nowrap;\n');
+fprintf(fid_authors, '      color: #fb5c3a;\n');
+fprintf(fid_authors, '    }\n\n');
+	 
+fprintf(fid_authors, '    ul li a:hover { background: #2c3e50; }\n\n');
+
+fprintf(fid_authors, '    /*REPLACE_WITH_DASH_DASH Displays the dropdown menu on hover REPLACE_WITH_DASH_DASH*/\n\n');
+
+fprintf(fid_authors, '    ul ul {\n');
+fprintf(fid_authors, '      left: 100%%;\n');
+fprintf(fid_authors, '      top: 0;\n');
+fprintf(fid_authors, '    }\n\n');
+
+fprintf(fid_authors, '    li:hover > ul {\n');
+fprintf(fid_authors, '      display: block;\n');
+fprintf(fid_authors, '      position: absolute;\n');
+fprintf(fid_authors, '    }\n\n');
+	 
+fprintf(fid_authors, '    li:hover li { float: none; }\n\n');
+	 
+fprintf(fid_authors, '    li:hover a { background: #fb5c3a; color: #000000 }\n\n');
+	 
+fprintf(fid_authors, '    li:hover li a:hover { background: #2c3e50; }\n\n');
+	 
+fprintf(fid_authors, '    .main-navigation li ul li { border-top: 0; }\n\n');
+
+fprintf(fid_authors, '    /*REPLACE_WITH_DASH_DASH Displays second level dropdown menus to the right of the first level dropdown menu REPLACE_WITH_DASH_DASH*/\n\n');
+
+fprintf(fid_authors, '    ul ul ul {\n');
+fprintf(fid_authors, '      left: 100%%;\n');
+fprintf(fid_authors, '      top: 0;\n');
+fprintf(fid_authors, '    }\n\n');
+
+fprintf(fid_authors, '    /*REPLACE_WITH_DASH_DASH Simple clearfix REPLACE_WITH_DASH_DASH*/\n\n');
+
+fprintf(fid_authors, '    ul:before,\n');
+fprintf(fid_authors, '    ul:after {\n');
+fprintf(fid_authors, '      content: " "; /* 1 */\n');
+fprintf(fid_authors, '      display: table; /* 2 */\n');
+fprintf(fid_authors, '    }\n\n');
+	 
+fprintf(fid_authors, '    ul:after { clear: both; }\n');
+
+fprintf(fid_authors, '  </style>\n');
 fprintf(fid_authors, '  <script src="sys/dropdown.js"></script>\n');
 fprintf(fid_authors, '  <script src="sys/w3data.js"></script>\n');
-fprintf(fid_authors, '  <meta name="viewport" content="width=device-width, initial-scale=1">\n');
-fprintf(fid_authors, '  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>\n');
-fprintf(fid_authors, '  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>\n');
-fprintf(fid_authors, '  <style>\n');
-fprintf(fid_authors, '    .dropdown-submenu {\n');
-fprintf(fid_authors, '      position: relative;\n');
-fprintf(fid_authors, '    }\n\n');
-fprintf(fid_authors, '    .dropdown-submenu .dropdown-menu {\n');
-fprintf(fid_authors, '      top: 0;\n');
-fprintf(fid_authors, '      left: 100%%;\n');
-fprintf(fid_authors, '      margin-top: -1px;\n');
-fprintf(fid_authors, '    }\n');
-fprintf(fid_authors, '  </style>\n');
 fprintf(fid_authors, '</HEAD>\n\n');
 fprintf(fid_authors, '<BODY>\n\n');
 
@@ -141,9 +181,10 @@ fprintf(fid_authors, '<script>w3IncludeHTML();</script>\n\n');
 fprintf(fid_authors, '<div id = "main">\n');
 fprintf(fid_authors, '  <div id = "main-wrapper-species">    \n');
 fprintf(fid_authors, '    <div id="contentFull">\n\n');
-fprintf(fid_authors, '      <H2>Authors and their submitted entries</H2>\n\n');
-fprintf(fid_authors, '      <table>\n');
-for i = 1:nrow
+fprintf(fid_authors, '      <H2><a href="" title="Locate entries via authors and submission/modification dates by clicking on numbers of entries.\n');
+fprintf(fid_authors, '           Click on entry names to goto entries.">Authors and their submitted entries</a></H2>\n\n');
+fprintf(fid_authors, '      <div ID = "tab_authors"><table>\n');
+for i = 1:nrow % scan all authors
 fprintf(fid_authors, '       <tr>\n');
   for j = 1:4
     index = (j - 1) * nrow + i; % index of author
@@ -151,28 +192,51 @@ fprintf(fid_authors, '       <tr>\n');
       break
     end
     if j == 1 || j == 3
+fprintf(fid_authors,['         <td BGCOLOR = "#FFE7C6" WIDTH="250">', author{index}, '</td>\n']);
 fprintf(fid_authors, '         <td BGCOLOR = "#FFE7C6">\n');
     else
+fprintf(fid_authors,['         <td WIDTH="250">', author{index}, '</td>\n']);
 fprintf(fid_authors, '         <td>\n');
     end
-fprintf(fid_authors, '           <div class = "dropdown">\n');
-fprintf(fid_authors,['             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">', author{index}, '<span class="caret"></span></button>\n']);
-fprintf(fid_authors, '             <ul class="dropdown-menu">\n');
-    txt_entry = entry{index}; txt_date = date{index};
-    for k = 1:nr(index)
-fprintf(fid_authors,['               <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
+fprintf(fid_authors, '             <ul class="main-navigation">\n');
+
+    % get lists of entries and dates for each author
+    txt_entry = cell(0); txt_date = cell(0); date_num = [];
+    for k = 1:ne % scan all entries
+      if sum(strcmp(author{index}, authors{k,1})) 
+        txt_entry = [txt_entry; entries{k}];
+        date_num = [date_num; datenum(dates{k,1})];
+        txt_date = [txt_date; datestr(date_num(end), 'yyyy/mm/dd')];
+      end
+      
+      authors_mod = authors{k,2}; n_mod = length(authors_mod);
+      for l = 1:n_mod
+        date_mod = dates{k,2};
+        if sum(strcmp(author{index}, authors_mod{l})) 
+          txt_entry = [txt_entry; entries{k}];
+          date = date_mod{l}; date_num = [date_num; datenum(date{1})];
+          txt_date = [txt_date; datestr(date_num(end), 'yyyy/mm/dd')];
+        end
+      end
     end
+    nr = length(date_num);
+    
+    % sort entries on dates
+    [nm ind] = sort(date_num,'descend');
+    txt_entry = txt_entry(ind); txt_date = txt_date(ind);
+    
+fprintf(fid_authors,['               <li><a href="#">', num2str(nr), '</a>\n']);
+fprintf(fid_authors, '               <ul>\n');
+    for k = 1:nr
+fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
+    end
+fprintf(fid_authors, '               </ul>\n');
 fprintf(fid_authors, '             </ul>\n');
-fprintf(fid_authors, '           </div>\n');
-    if j == 1 || j == 3
-fprintf(fid_authors,['         </td><td  BGCOLOR = "#FFE7C6">', num2str(nr(index)), '</td>\n']);
-    else
-fprintf(fid_authors,['         </td><td>', num2str(nr(index)), '</td>\n']);
-    end
   end
+fprintf(fid_authors, '         </td>\n');
 fprintf(fid_authors, '       </tr>\n');
 end
-fprintf(fid_authors, '      </table>\n\n');
+fprintf(fid_authors, '      </table></div>\n\n');
 fprintf(fid_authors, '    </div> <!REPLACE_WITH_DASH_DASH end of content REPLACE_WITH_DASH_DASH>\n\n');
 
 fprintf(fid_authors, '    <div w3-include-html="sys/footer_amp.html"></div>\n');
