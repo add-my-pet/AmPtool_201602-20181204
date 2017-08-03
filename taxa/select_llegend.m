@@ -125,7 +125,7 @@ end
     function C = insert_Callback(source, eventdata) 
       global legend_local i_legend Hlegend
       N = (1:size(legend_local,1))'; % index-vector of legend items
-      item = {{'.', 12, 4, [0 0 0], [0 0 0]}, 'Animalia'}; % default marker, taxon
+      item = {{'-', 2, [0 0 0]}, 'Animalia'}; % default marker, taxon
       legend_local = [legend_local(N<i_legend,:); item; legend_local(N>=i_legend,:)];
       close(Hlegend); Hlegend = shllegend(legend_local,[],[],'',i_legend);
     end
