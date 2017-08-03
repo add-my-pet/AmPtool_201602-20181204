@@ -24,7 +24,7 @@ function  prt_toolbar_species(oid, species)
 %% Example of use
 % prt_menuBar_species(oid, metaData.species)
 
-fprintf(oid, '    <div class = "dropdown"><button onclick="species()" class="dropbtn"><b>Results</b></button>\n');
+fprintf(oid, '    <div class = "dropdown"><button onclick="species()" class="dropbtn">Results</button>\n');
 fprintf(oid, '      <div id="speciesDropdown" class="dropdown-content">\n');
 fprintf(oid,['        <a href="',species,'_par.html">Parameters</a>\n']);
 fprintf(oid,['        <a href="',species,'_stat.html">Implied properties</a>\n']);    

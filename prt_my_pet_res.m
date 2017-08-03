@@ -36,7 +36,7 @@ function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, dest
 % prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 
 % Remove underscore and capitalize first letter of english :
-speciesprintnm = strrep(metaData.species, '_', ' ');
+speciesprintnm = [strrep(metaData.species, '_', ' '), ' '];
 speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
 if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
   speciesprintnm_en(1)=char(speciesprintnm_en(1)-32);

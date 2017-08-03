@@ -1105,6 +1105,12 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '41977';        
       id_EoL = '224769';
       id_fishbase = taxon_txt;
+    case 'Carcharhinus_plumbeus'
+      id_CoL = 'c104e8012c5489acf8d94a5430d34752';
+      id_WoRMS = '105797';
+      id_Taxo = '41983';        
+      id_EoL = '218733';
+      id_fishbase = taxon_txt;
     case 'Rhizoprionodon_acutus'
       id_CoL = 'd7c076bc204bb11aa7e5d4e49ba7ffe9';
       id_WoRMS = '105802';
@@ -4048,4 +4054,5 @@ function [links info] = get_link(taxon, test)
   end
   
   % Taxonomicon: Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
+  % CoL: edition 2017 is used
   
