@@ -14,19 +14,20 @@
 % Changes in the sequence of entries on these pages can only be done by editing lists.
 %
 % The tree can be read in the direction from leaves to root with the function <../taxa/html/lineage.html *lineage*>,
-% and in the direction from root to leaves with the function <../taxa/html/pedigree.html *pedigree*>. 
+%   and in the direction from root to leaves with the function <../taxa/html/pedigree.html *pedigree*>. 
 % The default input of pedigree is the root Animalia, but can also be any node, which becomes the root of the output-tree.
 % The string produced by pedigree can directly be printed to the screen, which is useful for small trees, 
-% but also in an interactive html-file with <../taxa/html/treeview_taxa.html *treeview_taxa*>, 
-% which is parked in entries_admin/treeview, and can be viewed with any bowser, such as Filezilla.
+%   but also in an interactive html-file with <../taxa/html/treeview_taxa.html *treeview_taxa*>, 
+%   which is parked in entries_admin/treeview, and can be viewed with any bowser, such as Filezilla.
 %
 % Selection of entries is done with the functions <../taxa/html/select.html *select*> and <../taxa/html/select_01.html *select_01*>.
 % Function <../taxa/html/clade.html *clade*> finds the lowest taxon (node) that contains a set of specified taxa, and all its members.
 %
-% All data from all entries are collected by function <../html/write_allStat.html *write_allStat*> into a structure allStat.mat.
+% All data (i.e. meta-data, parameters, meta-parameters, properties) from all entries are collected by function 
+%   <../html/write_allStat.html *write_allStat*> into a structure allStat.mat.
 % Only curators that have all entries locally can run this function.
 % The structure allStat.mat has as first level field names the names of all entries, as specified by <../taxa/html/select.html *select*>.
-% As the AmP collection grows, lists-of-list change, so does allStat.mat.
+% As the AmP collection grows, lists-of-list change, so does allStat.mat; these two should be seen as a couple that should not be uncoupled.
 % All rates are given at temperature T_typical, which is entry-specific; use temperature coorection factor c_T to convert to other temperatures.
 % All functions that analyse data read in allStat.mat, using function <../html/read_allStat.html *read_allStat*>.
 
