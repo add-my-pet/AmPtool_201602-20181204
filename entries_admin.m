@@ -29,7 +29,8 @@
 % Only curators that have all entries locally can run this function.
 % The structure allStat.mat has as first level field names the names of all entries, as specified by <../taxa/html/select.html *select*>.
 % As the AmP collection grows, lists-of-list change, so does allStat.mat; these two should be seen as a couple that should not be uncoupled.
-% All rates are given at temperature T_typical, which is entry-specific; use temperature coorection factor c_T to convert to other temperatures.
+% All rates and times that are not primary parameters are given at temperature T_typical, which is entry-specific; 
+% use temperature correction factor c_T to convert to other temperatures.
 % All functions that analyse data read in allStat.mat, using function <../html/read_allStat.html *read_allStat*>.
 
 %% Analysis of data
