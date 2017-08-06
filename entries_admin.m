@@ -38,11 +38,12 @@
 % Several legends are available in subdir taxa as input-free functions that output a cell-array, such as <../taxa/html/legend_RSED.html *legend_RSED*> and <../taxa/html/legend_fish.html *legend_fish*>.
 % User-defined legends can be composed by DEBtool_M functions <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/select_legend.html *select_legend*> and 
 % <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/select_llegend.html *select_llegend*>.
+% The choice of possible taxa is limited to the onces present in the lists-of-lists.
 % Legends can be shown in a figure with DEBtool_M functions <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/shlegend.html *shlegend*> and 
 % <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/shllegend.html *shllegend*>.
 % Please notice that the sequence of rows of marker legends matters.
 %
-% Function <../html/shstat.html *shstat*> can be used in symbolic as well as numerical mode, and for 1-, 2- and 3-variate data.
-% The numerical mode is used in case that computations are required, for functions of parameters that are not already in allStat.mat.
+% Function <../html/shstat.html *shstat*> can be used in symbolic mode, and for 1-, 2- and 3-variate data, as given in allStat.mat.
+% It can also be used numerical mode in the case that computations are required, for functions of parameters that are not already in allStat.mat.
 % Markers in 2-var plots can be clicked to show the name of the corresponding entries.
 % The scipt <../mydata_shstat.m *mydata_shstat*> gives examples of use of shstat and shows how items can be added to figures that have been produced by shstat.
