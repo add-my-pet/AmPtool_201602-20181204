@@ -43,6 +43,6 @@
 % Please notice that the sequence of rows of marker legends matters.
 %
 % Function <../html/shstat.html *shstat*> can be used in symbolic as well as numerical mode, and for 1-, 2- and 3-variate data.
-% The numerical mode is used in case that computations are required, for functionas of parameters that are not already in allStat.mat.
+% The numerical mode is used in case that computations are required, for functions of parameters that are not already in allStat.mat.
 % Markers in 2-var plots can be clicked to show the name of the corresponding entries.
 % The scipt <../mydata_shstat.m *mydata_shstat*> gives examples of use of shstat and shows how items can be added to figures that have been produced by shstat.
