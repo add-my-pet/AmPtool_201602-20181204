@@ -102,12 +102,12 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '106362';
       id_Taxo = '167447';        
       id_EoL = '45502754';
-    case 'Sagitta_hispida'
+    case 'Ferosagitta_hispida'
       id_CoL = '5fa5c1982af0297dfe25875928c2570c';
-      id_WoRMS = '105454'; % unaccepted, to Ferosagitta hispida (Conant, 1895)
-      id_Taxo = '40644';   % unaccepted, to Sagitta bipunctata    
+      id_WoRMS = '105454'; 
+      id_Taxo = '40644';  
       id_Wiki = 'Chaetognatha';
-      id_EoL = '512014'; % unaccepted, to Ferosagitta hispida (Conant, 1895)
+      id_EoL = '512014'; 
     case 'Moniliformis_dubius'
       id_CoL = '2db31682f5ec69386b23ea4212b709b1';
       id_WoRMS = ''; % not present 2017/06/15 
@@ -704,7 +704,7 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '819836';
       id_Taxo = '34297';        
       id_EoL = '344717';
-    case 'Gammarus_roeseli' 
+    case 'Gammarus_roeselii' 
       id_CoL = '';   % not present 2017/06/15
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '';  % not present 2017/06/15 
@@ -795,6 +795,12 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '17374';   
       id_EoL = '2762484';
+    case 'Habrophlebia_lauta'
+      id_CoL = 'f2103bd7655a5018b3e09c7a4e5197fa';
+      id_WoRMS = ''; % not present 2017/08/03
+      id_Taxo = '17377';  % only at genus level
+      id_EoL = '3683937';
+      id_Wiki = 'Habrophlebia';
     case 'Locusta_migratoria'
       id_CoL = '9e147038cfb1f0aa33bcd94248a2d984';
       id_WoRMS = ''; % not present 2017/06/15
@@ -1122,6 +1128,19 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '105801';
       id_Taxo = '41997';        
       id_EoL = '206724';
+      id_fishbase = taxon_txt;
+    case 'Carcharias_taurus'
+      id_CoL = '2d7e5479972d3735b029784cf7b2347a';
+      id_WoRMS = '105843';
+      id_Taxo = '41881';    
+      id_EoL = '206680';
+      id_fishbase = taxon_txt;
+      id_AnAge = taxon;
+    case 'Lamna_nasus'
+      id_CoL = '6fbcbefe8c9bc1221a9859c6a240ff9a';
+      id_WoRMS = '105841';
+      id_Taxo = '41910';
+      id_EoL = '205461';
       id_fishbase = taxon_txt;
     case 'Carcharodon_carcharias'
       id_CoL = 'c5465928ea46eb759bbbf4d623c56bad';

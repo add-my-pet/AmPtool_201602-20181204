@@ -26,7 +26,12 @@ function [sel taxa_src] = select_01(taxon_src, taxon_sel)
 % [sel nm] = select_01(taxon_src, taxon); nm(sel)
 
 %% Example of use
-% sel = select_01('Aves') or sel = select_01({'Aves','Mammalia') or sel = select_01('Animalia',{'Aves','Mammalia')
+% sel = select_01('Aves'); or sel = select_01({'Aves','Mammalia'); or 
+% sel = select_01('Animalia',{'Aves','Mammalia'});
+%
+% sel_fish = select_01('Vertebrata') & ~select_01('Tetrapoda'); 
+% or 
+% sel_fish = select_01({'Myxini','Cephalaspidomorphi','Chondrichthyes','Actinopterygii','Sarcopterygii'}) 
 
 if ~exist('taxon_sel', 'var')
   taxon_sel = taxon_src; taxon_src = 'Animalia';

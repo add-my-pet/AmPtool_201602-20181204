@@ -23,7 +23,8 @@ function species = select(taxon)
 %% Remarks
 % The root is Animalia. 
 % If chosen as taxon, an ordered list of all species in the collection results.
-% The classification follows that of Wikipedia
+% The classification follows that of Wikipedia.
+% See also <select_01.html *select_01*>
 
 %% Example of use
 % species  = select('Animalia'); % get list of all species in the collection, taxonomically ordered

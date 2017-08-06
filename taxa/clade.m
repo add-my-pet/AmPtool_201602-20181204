@@ -1,4 +1,4 @@
-%% lineage
+%% clade
 % gets all species that are closest related to specified taxa
 
 %%
