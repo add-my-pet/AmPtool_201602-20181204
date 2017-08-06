@@ -19,6 +19,7 @@
 % The string produced by pedigree can directly be printed to the screen, which is useful for small trees, 
 %   but also in an interactive html-file with <../taxa/html/treeview_taxa.html *treeview_taxa*>, 
 %   which is parked in entries_admin/treeview, and can be viewed with any bowser, such as Filezilla.
+% The tree can be used to identify useful taxa for analysis.
 %
 % Selection of entries is done with the functions <../taxa/html/select.html *select*> and <../taxa/html/select_01.html *select_01*>.
 % Function <../taxa/html/clade.html *clade*> finds the lowest taxon (node) that contains a set of specified taxa, and all its members.
