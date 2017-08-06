@@ -3,28 +3,28 @@
 
 %%
 function treeview_taxa (pedigree_taxa)
-% created 2016/03/06 by Bas Kooijman
+% created 2016/03/06 by Bas Kooijman, modified 2017/08/06
 
 %% Syntax
 % <../treeview_taxa.m *treeview_taxa*> (pedigree_taxa) 
 
 %% Description
-% Clears and creates file treeview_taxa.js in DEBtool_M/taxa and writes java code to it
+% Clears and creates file /treeview/treeview_taxa.js and writes java code to it
 %
 % Input:
 %
 % * pedigree_taxa: character string with pedigree of a taxon
 %
 %% Example of use
-% treeview_taxa(pedigree('Animalia')); open treeview_taxa.html to see the result
+% treeview_taxa(pedigree('Cladocera')); open <../treeview/treeview_taxa.html *treeview_taxa.html*> to see the result
 
   WD = pwd;                      % store current path
-  taxa = which('treeview_taxa'); % locate DEBtool_M/taxa/
-  taxa = taxa(1:end - 15);       % path to DEBtool_M/taxa/
+  taxa = which('treeview_taxa'); % locate taxa
+  taxa = taxa(1:end - 15);       % path to taxa
   cd(taxa)                       % goto taxa
 
   try
-    fid_tv = fopen('treeview_taxa.js', 'w+'); % open file for writing, delete existing content
+    fid_tv = fopen('/treeview/treeview_taxa.js', 'w+'); % open file for writing, delete existing content
 
     % write header
     fprintf(fid_tv, '//\n');

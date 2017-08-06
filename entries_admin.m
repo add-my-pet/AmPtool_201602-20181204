@@ -12,8 +12,12 @@
 % The web-pages <http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/species_list.html *species-list*> and <http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/species_tree_Animalia.html *species-tree*> on the AmP website are composed from this tree.
 % Changes in the sequence of entries on these pages can only be done by editing lists.
 %
-% The tree can be read into the direction from root to leaves with the function <../taxa/html/pedigree.html *pedigree*>, 
-% and into the direction from leaves to root with the function <../taxa/html/lineage.html *lineage*>. 
+% The tree can be read in the direction from leaves to root with the function <../taxa/html/lineage.html *lineage*>,
+% and in the direction from root to leaves with the function <../taxa/html/pedigree.html *pedigree*>. 
+% The default input in pedigree is the root, but can also be any node.
+% The string produced by pedigree can directly be printed to the screen, which is useful for small trees, 
+% but also in an interactive html-file with <../taxa/html/treeview_taxa.html *treeview_taxa*>.
+%
 % Selection of entries is done with the functions <../taxa/html/select.html *select*> and <../taxa/html/select_01.html *select_01*>.
 % Function <../taxa/html/clade.html *clade*> finds the lowest taxon that contains a set of specified taxa, and all its memebers.
 %
@@ -25,12 +29,13 @@
 
 %% Analysis of data
 % The analysis is via plot function <../html/shstat.html *shstat*>, which has inputs data and legends (and optional further inputs).
-% A legend is a (n,2)-array of cells specifiying markers and taxa (marker legend), of lines and taxa (line legend, called llegend).
+% A legend is a (n,2)-array of cells specifiying markers and taxa (marker legend), or lines and taxa (line legend, called llegend).
 % Several legends are availeble in subdir taxa as input-free function that output a cell-array, such as <../taxa/html/legend_RSED.html *legend_RSED*> and <../taxa/html/legend_fish.html *legend_fish*>.
 % Other legends can be composed by DEBtool_M functions <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/select_legend.html *select_legend*> and 
 % <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/select_llegend.html *select_llegend*>.
 % Legends can be shown in a figure with DEBtool_M functions <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/shlegend.html *shlegend*> and 
 % <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/shllegend.html *shllegend*>.
+% Please notice that the sequence of rows of marker legends matters.
 %
 % Function <../html/shstat.html *shstat*> can be used in symbolic as well as numerical mode, and for 1-, 2- and 3-dimensional data.
 % Markers in 2-dim plots can be clicked to show the name of the corresponding entries.
