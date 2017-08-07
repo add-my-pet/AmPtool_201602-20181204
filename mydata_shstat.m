@@ -1,15 +1,16 @@
 %% mydata_shstat: demo script for using plotting tool shstat
 % see shprimpar for more examples of 1D plotting
 %
-% generate updated allStat if necessary
-% write_allStat(C2K(20),1); % notice that default allStat is at T=T_typical and f=1
-% allStat has fields for the tmep-correction c_T, so divide rates by c_T to go from T_typical to T_ref
+% Make sure that the lists-of-lists correspond with allStat.mat.
+% Generate updated allStat.mat if necessary (for curators only)
+%   write_allStat(C2K(20),1); % notice that default allStat is at T=T_typical and f=1
+% allStat has fields for the temp-correction c_T, so divide rates by c_T to go from T_typical to T_ref
 %
-% compose/modify your legend if you wish. You can also do this on-the-fly by selecting an empty legend.
+% Compose/modify your legend if you wish. You can also do this on-the-fly by selecting an empty legend.
 % mylegend = select_legend; replace legend_* by mylegend in the examples below, if you active this.
 % If your desired legend is close to an existing one, e.g. legend_fish, you can modify it by: mylegend = select_legend(legend_fish)
 
-close all % remove any existing figure
+close all    % remove any existing figure
 
 example = 8; % edit this number to see the various examples
 switch example
@@ -17,7 +18,7 @@ switch example
     shstat_options('default');
     shstat({'g', 'g_Hb'}, legend_RSED); 
 
-  case 2 % 2D: more tricks: no transformation (default is log10), description enabled
+  case 2 % 2D: more tricks: no transformation (default is log10), description enabled, adding items to the figure
     shstat_options('default');
     shstat_options('x_transform', 'none');
     shstat_options('y_transform', 'none');

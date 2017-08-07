@@ -211,6 +211,11 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '140430';
       id_Taxo = '39960';        
       id_EoL = '492903';
+    case 'Spisula_subtruncata'
+      id_CoL = '645d5bc0059ac916901c819a2e8ac614';
+      id_WoRMS = '140302'; 
+      id_Taxo = '39755';        
+      id_EoL = '448797';
     case 'Macoma_balthica'
       id_CoL = '7752e8e469ee3f69471f23a73bb94786';
       id_WoRMS = '141579'; % unaccepeted, to Limecola balthica (Linnaeus, 1758)
