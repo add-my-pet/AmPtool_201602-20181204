@@ -27,7 +27,7 @@
 % Function <../taxa/html/clade.html *clade*> finds the lowest taxon (node) that contains a set of specified taxa, and all its members.
 %
 % All data (i.e. meta-data, parameters, meta-parameters, properties) from all entries are collected by function 
-%   <../html/write_allStat.html *write_allStat*> into a structure allStat.mat.
+%   <../html/write_allStat.html *write_allStat*> into a structure *allStat.mat*.
 % Only curators that have all entries locally can run this function.
 % The structure allStat.mat has as first level field names the names of all entries, as specified by <../taxa/html/select.html *select*>.
 % As the AmP collection grows, lists-of-lists change, so does allStat.mat; these two should be seen as a couple that should not be uncoupled.
@@ -41,9 +41,9 @@
 % A (marker) legend is a (n,2)-array of cells specifiying markers and taxa.
 % A line lengend, called llegend for 1-variate data, does this for lines and taxa.
 % Several legends are available in subdir taxa as input-free functions that output the cell-array, such as <../taxa/html/legend_RSED.html *legend_RSED*> and <../taxa/html/legend_fish.html *legend_fish*>.
-% User-defined legends can be composed by DEBtool_M functions <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/select_legend.html *select_legend*> and 
+% Customised legends can be composed by DEBtool_M functions <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/select_legend.html *select_legend*> and 
 % <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/select_llegend.html *select_llegend*>.
-% The choice of possible taxa is limited to the onces present in the lists-of-lists.
+% The choice of possible taxa is restricted to the onces present in the lists-of-lists.
 % Legends can be shown in a figure with DEBtool_M functions <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/shlegend.html *shlegend*> and 
 % <http://www.bio.vu.nl/thb/deb/deblab/debtool/DEBtool_M/lib/misc/html/shllegend.html *shllegend*>.
 % Please notice that the sequence of rows of marker legends matters, see <../html/shstat.html *shstat*>.
