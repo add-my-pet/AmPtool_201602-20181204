@@ -196,6 +196,21 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '152774';
       id_Taxo = '114600';  
       id_EoL = '451167';
+    case 'Mya_arenaria'
+      id_CoL = 'b8018df2338b52a3f82bb35f20327198';
+      id_WoRMS = '140430';
+      id_Taxo = '39960';        
+      id_EoL = '492903';
+    case 'Arctica_islandica'
+      id_CoL = '5c0583f70d0785993185a7411b8a4cae';
+      id_WoRMS = '138802';
+      id_Taxo = '39737';        
+      id_EoL = '493164';
+    case 'Tridacna_gigas'
+      id_CoL = '4eb8d942654a006b5458b02e3a2c137b';
+      id_WoRMS = '207670';
+      id_Taxo = '39920';        
+      id_EoL = '2926830';
     case 'Cerastoderma_edule'
       id_CoL = '2af65e2b505c0c8b54696e3d1a6ae6cc';
       id_WoRMS = '138998';
@@ -206,26 +221,17 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '138999';
       id_Taxo = '84902';        
       id_EoL = '590197';
-    case 'Mya_arenaria'
-      id_CoL = 'b8018df2338b52a3f82bb35f20327198';
-      id_WoRMS = '140430';
-      id_Taxo = '39960';        
-      id_EoL = '492903';
     case 'Spisula_subtruncata'
       id_CoL = '645d5bc0059ac916901c819a2e8ac614';
       id_WoRMS = '140302'; 
       id_Taxo = '39755';        
       id_EoL = '448797';
+      id_Wiki = 'Spisula';
     case 'Macoma_balthica'
       id_CoL = '7752e8e469ee3f69471f23a73bb94786';
       id_WoRMS = '141579'; % unaccepeted, to Limecola balthica (Linnaeus, 1758)
       id_Taxo = '39503';        
       id_EoL = '590151';
-    case 'Ensis_directus'
-      id_CoL = '9535725bdbecb2f76d4461dc8a747406';
-      id_WoRMS = '140732';
-      id_Taxo = '39468';        
-      id_EoL = '448700';
     case 'Ruditapes_philippinarum'
       id_CoL = '020b3f1b4179f488782e4d69d7dc071f';
       id_WoRMS = '231750';
@@ -236,11 +242,21 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '231749';
       id_Taxo = '139552';        
       id_EoL = '3060328';
+    case 'Dosinia_exoleta'
+      id_CoL = '98038a896a55c991e0cc4262dcca1c32';
+      id_WoRMS = '141911';
+      id_Taxo = '39650';        
+      id_EoL = '395922';
     case 'Mytilopsis_sallei'
       id_CoL = '5e451e2ac36ade42130a9909b0979122';
       id_WoRMS = '397147';
       id_Taxo = '135649'; % only genus level 2017/07/21       
       id_EoL = '493167';
+    case 'Ensis_directus'
+      id_CoL = '9535725bdbecb2f76d4461dc8a747406';
+      id_WoRMS = '140732';
+      id_Taxo = '39468';        
+      id_EoL = '448700';
     case 'Echyridella_menziesii'
       id_CoL = '1467382d3ab24e1ca4e76417fc858224';
       id_WoRMS = ''; % not present 2017/06/15 
@@ -256,11 +272,6 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = ''; % not present 2017/06/15 
       id_Taxo = '';  % not present 2017/06/15
       id_EoL = '7262151';
-    case 'Arctica_islandica'
-      id_CoL = '5c0583f70d0785993185a7411b8a4cae';
-      id_WoRMS = '138802';
-      id_Taxo = '39737';        
-      id_EoL = '493164';
     case 'Argopecten_purpuratus'
       id_CoL = 'be54afd1d214780315c063fa0def0756';
       id_WoRMS = '394269';
@@ -1147,6 +1158,13 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '41910';
       id_EoL = '205461';
       id_fishbase = taxon_txt;
+    case 'Isurus_oxyrinchus'
+      id_CoL = 'c956e1fa5b7f322689f4ab1de39635f2';
+      id_WoRMS = '105839';
+      id_Taxo = '41907';        
+      id_EoL = '46322648';
+      id_fishbase = taxon_txt;
+      id_AnAge = taxon;
     case 'Carcharodon_carcharias'
       id_CoL = 'c5465928ea46eb759bbbf4d623c56bad';
       id_WoRMS = '105838';

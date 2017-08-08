@@ -26,7 +26,7 @@ function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
 
 % Removes underscores and makes first letter of english name be
 % in capital:
-speciesprintnm = strrep(metaData.species, '_', ' ');
+speciesprintnm = [strrep(metaData.species, '_', ' '), ' '];
 speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
 if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
   speciesprintnm_en(1)=char(speciesprintnm_en(1)-32);
