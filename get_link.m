@@ -1133,6 +1133,13 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '41983';        
       id_EoL = '218733';
       id_fishbase = taxon_txt;
+    case 'Galeocerdo_cuvier'
+      id_CoL = 'a1d45c8bf2076f511f940b6317ddab6c';
+      id_WoRMS = '105799';
+      id_Taxo = '41989';        
+      id_EoL = '206683';
+      id_fishbase = taxon_txt;
+      id_AnAge = taxon;
     case 'Rhizoprionodon_acutus'
       id_CoL = 'd7c076bc204bb11aa7e5d4e49ba7ffe9';
       id_WoRMS = '105802';
