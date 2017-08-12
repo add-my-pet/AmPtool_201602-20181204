@@ -35,18 +35,18 @@ function [links info] = get_link(taxon, test)
 % amphibiaseweb only has amphibians
 % ReptileDB only has reptiles
 % MSW3 only has mammals
-% AnAge only works well for Tetrapoda; ulread for AnAge is always successful, but <20000 long if entry does not exist
+% AnAge only works well for tetrapods; ulread for AnAge is always successful, but <20000 long if entry does not exist
 
 %% Example of use
 % links = get_link('Daphnia_magna')
 
-  % texts to supplement taxon
+  % texts to supplement taxon for various websites
   taxon_fish = [strrep(taxon,'_','-'), '.html'];         % used in fishbase
   taxon_amph = strrep(taxon,'_','+');                    % used in amphibiaweb
-  taxon_rep = ['genus=', strrep(taxon,'_','&species=')]; % used in reptile-database
+  taxon_rep = ['genus=', strrep(taxon,'_','&species=')]; % used in reptiledatabase
 
   % default identifiers
-  id_EoL = taxon; id_Wiki = taxon;  id_CoL = ''; id_Taxo = ''; id_WoRMS = '';
+  id_EoL = taxon; id_Wiki = taxon;  id_ADW = taxon; id_CoL = ''; id_Taxo = ''; id_WoRMS = '';
   id_molluscabase = ''; id_fishbase = ''; id_amphweb = ''; id_ReptileDB = ''; id_avibase = ''; id_MSW3 = ''; id_AnAge = ''; 
 
   switch taxon % overwrite id's if necessary, assign empty to delete (at bottom)
@@ -5291,7 +5291,7 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '12100795';
        
-    otherwise
+      otherwise % set default filled id's on empty
       id_EoL = '';
       id_Wiki = '';
       id_ADW = '';
