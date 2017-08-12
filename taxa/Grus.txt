@@ -1,9 +1,4 @@
 Grus_japonensis
 Grus_monacha
 Grus_americana
-Grus_antigone
-Grus_vipio
 Grus_virgo
-Grus_canadensis
-Grus_rubicunda
-Grus_leucogeranus

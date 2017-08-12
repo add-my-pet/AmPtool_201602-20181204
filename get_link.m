@@ -3759,21 +3759,7 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1049271';
       id_AnAge = taxon;       
       id_avibase = 'B87D744DCD48ECC9';
-      
-    case 'Grus_antigone'
-      id_CoL = '2f827f37dafa3abedcb078144d0cd10f';
-      id_Taxo = '53264';        
-      id_EoL = '915318';
-      id_AnAge = taxon;       
-      id_avibase = '8D891DB7520688E0'; % present as Antigone antigone
-      
-    case 'Grus_vipio'
-      id_CoL = '28717f30fbb5ef2ba20f85bb587a54d5';
-      id_Taxo = '53275';        
-      id_EoL = '915332';
-      id_AnAge = taxon;       
-      id_avibase = '1125F89DE2FF4F98'; % present as Antigone vipio
-      
+
     case 'Grus_virgo'
       id_CoL = '987b70eac098e65fbf96b62c25c06f86';  % unaccpeted, to Anthropoides virgo (Linnaeus, 1758)       
       id_Taxo = '167356'; % unaccepeted, to Anthropoides virgo (Linnaeus, 1758)       
@@ -3781,27 +3767,51 @@ function [links info] = get_link(taxon, test)
       id_AnAge = 'Anthropoides_virgo';
       id_ADW = 'Anthropoides_virgo';
       id_avibase = '64DDD14DF2EB9B39';
+
+    case 'Antigone_antigone'
+      id_CoL = '2f827f37dafa3abedcb078144d0cd10f'; % unaccepted, to Grus antigone
+      id_Taxo = '53264'; % unaccepted, to Grus antigone       
+      id_EoL = '915318'; % unaccepted, to Grus antigone
+      id_AnAge = taxon;  % unaccepted, to Grus antigone      
+      id_avibase = '8D891DB7520688E0'; 
+      id_Wiki = 'Grus_antigone';
+      id_ADW = 'Grus_antigone';
+                  
+    case 'Antigone_vipio'
+      id_CoL = '28717f30fbb5ef2ba20f85bb587a54d5'; % unaccepted, to Grus vipio
+      id_Taxo = '53275';  % unaccepted, to Grus vipio
+      id_EoL = '915332';  % unaccepted, to Grus vipio
+      id_AnAge = 'Grus_vipio';     
+      id_avibase = '1125F89DE2FF4F98'; 
+      id_ADW = 'Grus_vipio';
+      id_Wiki = 'Grus_vipio';
       
-    case 'Grus_canadensis'
-      id_CoL = 'b5fb32b609572d52ede7b7748943dc51';
-      id_Taxo = '53265';        
-      id_EoL = '1049272';
-      id_AnAge = taxon;       
-      id_avibase = 'E196D6F9AB1DFF7E'; % present as Antigone canadensis
+    case 'Antigone_canadensis'
+      id_CoL = 'b5fb32b609572d52ede7b7748943dc51'; % unaccepted, to Grus canadensis
+      id_Taxo = '53265';   % unaccepted, to Grus canadensis     
+      id_EoL = '1049272';  % unaccepted, to Grus canadensis
+      id_AnAge = 'Grus_canadensis';       
+      id_avibase = 'E196D6F9AB1DFF7E'; 
+      id_Wiki = 'Grus_canadensis';       
+      id_ADW = 'Grus_canadensis';             
       
-    case 'Grus_rubicunda'
-      id_CoL = '91e043fbcde2082b7347fce518462e0e';
-      id_Taxo = '83116';        
-      id_EoL = '915331';
-      id_AnAge = taxon;       
-      id_avibase = 'A4480D0279EA1C38'; % present as Antigone rubicunda
+    case 'Antigone_rubicunda'
+      id_CoL = '91e043fbcde2082b7347fce518462e0e'; % unaccepted, to Grus rubicunda
+      id_Taxo = '83116';   % unaccepted, to Grus rubicunda     
+      id_EoL = '915331';   % unaccepted, to Grus rubicunda
+      id_AnAge = 'Grus_rubicunda';       
+      id_avibase = 'A4480D0279EA1C38';
+      id_Wiki = 'Grus_rubicunda';       
+      id_ADW = 'Grus_rubicunda';             
       
-    case 'Grus_leucogeranus'
-      id_CoL = '0ae95f5329e0e7fe075c002169e60746';
-      id_Taxo = '53271';        
-      id_EoL = '915328';
-      id_AnAge = taxon;       
-      id_avibase = '77845DAD1C49E8F1'; % present as Leucogeranus leucogeranus
+    case 'Leucogeranus_leucogeranus'
+      id_CoL = '0ae95f5329e0e7fe075c002169e60746'; % unaccepted, to Grus leucogeranus
+      id_Taxo = '53271';   % unaccepted, to Grus leucogeranus     
+      id_EoL = '915328';   % unaccepted, to Grus leucogeranus
+      id_AnAge = 'Grus_leucogeranus';       
+      id_avibase = '77845DAD1C49E8F1';
+      id_Wiki = 'Grus_leucogeranus';
+      id_ADW = 'Grus_leucogeranus';
       
     case 'Phaethon_lepturus'
       id_CoL = '9c0e9cb143508bda222bd0adec5383db';
