@@ -33,7 +33,7 @@ function [links info] = get_link(taxon, test)
 % WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
 % fishbase only has fish
 % amphibiaseweb only has amphibians
-% ReptileDB only has reptiles
+% ReptileDB only has reptiles (no dino's)
 % MSW3 only has mammals
 % AnAge only works well for tetrapods; ulread for AnAge is always successful, but <20000 long if entry does not exist
 
