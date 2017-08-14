@@ -46,7 +46,7 @@ function [links info] = get_link(taxon, test)
   taxon_rep = ['genus=', strrep(taxon,'_','&species=')]; % used in reptiledatabase
 
   % default identifiers
-  id_EoL = taxon; id_Wiki = taxon;  id_ADW = taxon; id_CoL = ''; id_Taxo = ''; id_WoRMS = '';
+  id_Wiki = taxon;  id_ADW = taxon; id_CoL = ''; id_EoL = ''; id_Taxo = ''; id_WoRMS = '';
   id_molluscabase = ''; id_fishbase = ''; id_amphweb = ''; id_ReptileDB = ''; id_avibase = ''; id_MSW3 = ''; id_AnAge = ''; 
 
   switch taxon % overwrite id's if necessary, assign empty to delete (at bottom)
@@ -672,9 +672,9 @@ function [links info] = get_link(taxon, test)
     case 'Doryteuthis_pealeii'
       id_CoL = '71883eecc1e2f28199a9a79d82085fbf';
       id_WoRMS = '410354';
-      id_Taxo = '157870'; % present as Loligo_pealeii   
+      id_Taxo = '157870'; % present as Loligo pealeii   
       id_EoL = '448839';
-      id_ADW = ''; % not present at 2017/08/09
+      id_ADW = 'Loligo_pealeii'; 
       id_molluscabase = '574541';
       
    case 'Octopus_cyanea'
@@ -1632,13 +1632,21 @@ function [links info] = get_link(taxon, test)
       id_EoL = '847095';
       id_fishbase = taxon_fish;
        
+    case 'Alosa_alosa'
+      id_CoL = '85368f18336645854725c8f8210a151f';
+      id_WoRMS = '126413';
+      id_Taxo = '42627';        
+      id_EoL = '225607';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/17
+       
     case 'Alosa_sapidissima'
       id_CoL = '540d73069202e6462f72e6981a5d1e4c';
       id_WoRMS = '158670';
       id_Taxo = '42629';        
       id_EoL = '205467';
       id_fishbase = taxon_fish;
-       
+
     case 'Engraulis_encrasicolus'
       id_CoL = '2abe41c8ee39bb550534f328bf4717a3';
       id_WoRMS = '126426';
@@ -1668,20 +1676,6 @@ function [links info] = get_link(taxon, test)
       id_EoL = '224731';
       id_fishbase = taxon_fish;
        
-    case 'Danio_rerio'
-      id_CoL = 'ae6d1ad09071086da0498b39630b01f8';
-      id_WoRMS = '172875';  % not present 2017/06/16
-      id_Taxo = '172875';        
-      id_EoL = '204011';
-      id_fishbase = taxon_fish;
-       
-    case 'Pimephales_promelas'
-      id_CoL = '63c01b172492dc6862ba657e613edec0';
-      id_WoRMS = '';  % not present 2017/06/16
-      id_Taxo = '43662';   
-      id_EoL = '28754994';
-      id_fishbase = taxon_fish;
-       
     case 'Rhodeus_amarus'
       id_CoL = '383389bc215371c6bf7b0cf460aff92e';
       id_WoRMS = ''; % not present 2017/06/16
@@ -1689,6 +1683,79 @@ function [links info] = get_link(taxon, test)
       id_EoL = '217578';
       id_fishbase = taxon_fish;
        
+    case 'Barbus_barbus'
+      id_CoL = '963f554b3482a7f3ea34bc8a5fdf4253';
+      id_WoRMS = '154292'; 
+      id_Taxo = '43752';
+      id_EoL = '211593';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/12
+
+    case 'Cyprinus_carpio'
+      id_CoL = 'c6beac15d18bf1d88bab194fe597f1c7';
+      id_WoRMS = '154582'; 
+      id_Taxo = '43900';
+      id_EoL = '985921';
+      id_fishbase = taxon_fish;
+
+    case 'Carassius_carassius'
+      id_CoL = 'bee5791af5b67816a4310c3dc98c5397';
+      id_WoRMS = '154297'; 
+      id_Taxo = '43897';
+      id_EoL = '46324948';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/14
+      
+    case 'Danio_rerio'
+      id_CoL = 'ae6d1ad09071086da0498b39630b01f8';
+      id_WoRMS = '172875';  % not present 2017/06/16
+      id_Taxo = '172875';        
+      id_EoL = '204011';
+      id_fishbase = taxon_fish;
+       
+    case 'Abramis_brama'
+      id_CoL = 'a0b8ed2779121cee709ec4b1b05b6a30';
+      id_WoRMS = '154281'; 
+      id_Taxo = '43605';
+      id_EoL = '205715';
+      id_fishbase = taxon_fish;
+
+    case 'Pimephales_promelas'
+      id_CoL = '63c01b172492dc6862ba657e613edec0';
+      id_WoRMS = '';  % not present 2017/06/16
+      id_Taxo = '43662';   
+      id_EoL = '28754994';
+      id_fishbase = taxon_fish;
+       
+    case 'Chondrostoma_nasus'
+      id_CoL = '603cb21d9946407088321fa22f46ff2a';
+      id_WoRMS = '154585'; 
+      id_Taxo = '43623';
+      id_EoL = '339806';
+      id_fishbase = taxon_fish;
+
+    case 'Rutilus_rutilus'
+      id_CoL = '260d8de49c41aebdae8b37501aa3d809';
+      id_WoRMS = '154333'; 
+      id_Taxo = '43677';
+      id_EoL = '205274';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/13
+
+    case 'Alburnoides_bipunctatus'
+      id_CoL = '85a8443cf8643e8dc6c1083e0f3b734b';
+      id_WoRMS = '154288'; 
+      id_Taxo = '43608';
+      id_EoL = '204016';
+      id_fishbase = taxon_fish;
+
+    case 'Blicca_bjoerkna'
+      id_CoL = '3cb1fad6a7a0daf0c376aba3819a9b33';
+      id_WoRMS = '154274'; 
+      id_Taxo = '43617';
+      id_EoL = '46324661';
+      id_fishbase = taxon_fish;
+
     case 'Hydrocynus_vittatus'
       id_CoL = 'ed61d5b61ce91a6d34fbca8211ce5a9c';
       id_WoRMS = ''; % not present 2017/06/16
@@ -3761,9 +3828,9 @@ function [links info] = get_link(taxon, test)
       id_avibase = 'B87D744DCD48ECC9';
 
     case 'Grus_virgo'
-      id_CoL = '987b70eac098e65fbf96b62c25c06f86';  % unaccpeted, to Anthropoides virgo (Linnaeus, 1758)       
-      id_Taxo = '167356'; % unaccepeted, to Anthropoides virgo (Linnaeus, 1758)       
-      id_EoL = '915336';  % unaccepeted, to Anthropoides virgo (Linnaeus, 1758)       
+      id_CoL = '987b70eac098e65fbf96b62c25c06f86';  % unaccepted, to Anthropoides virgo (Linnaeus, 1758)       
+      id_Taxo = '167356'; % unaccepted, to Anthropoides virgo (Linnaeus, 1758)       
+      id_EoL = '915336';  % unaccepted, to Anthropoides virgo (Linnaeus, 1758)       
       id_AnAge = 'Anthropoides_virgo';
       id_ADW = 'Anthropoides_virgo';
       id_avibase = '64DDD14DF2EB9B39';
@@ -5301,8 +5368,7 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '12100795';
        
-      otherwise % set default filled id's on empty
-      id_EoL = '';
+    otherwise % set default filled id's on empty
       id_Wiki = '';
       id_ADW = '';
   end
