@@ -55,6 +55,7 @@ function species = select(taxon)
     species = textscan(perl('select.pl', taxon), '%s'); 
     species = species{1};
   catch
+    species = {};
     disp('Name of taxon is not recognized')
   end
   
