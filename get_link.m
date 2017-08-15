@@ -1691,6 +1691,14 @@ function [links info] = get_link(taxon, test)
       id_fishbase = taxon_fish;
       id_ADW = ''; % not present 2017/08/12
 
+    case 'Gobio_gobio'
+      id_CoL = '5f26c93dbec8e883890bf3f7e7624f4d';
+      id_WoRMS = '293609'; 
+      id_Taxo = '43733';
+      id_EoL = '207392';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/15
+
     case 'Cyprinus_carpio'
       id_CoL = 'c6beac15d18bf1d88bab194fe597f1c7';
       id_WoRMS = '154582'; 
@@ -1733,6 +1741,14 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '43623';
       id_EoL = '339806';
       id_fishbase = taxon_fish;
+
+    case 'Tinca_tinca'
+      id_CoL = 'c503c3c6a48018b9b1f5846f90a3ac4a';
+      id_WoRMS = '154343'; 
+      id_Taxo = '43684';
+      id_EoL = '210300';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/15
 
     case 'Rutilus_rutilus'
       id_CoL = '260d8de49c41aebdae8b37501aa3d809';
