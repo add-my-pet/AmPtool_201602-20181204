@@ -40,6 +40,17 @@ function species = select(taxon)
   taxa = taxa(1:end - 8);  % path to DEBtool_M/taxa/
   cd(taxa)                 % goto taxa
   
+  if ~isempty(strfind(taxon, '_'))
+    taxa = textscan(perl('select.pl', 'Animalia'), '%s');
+    if ismember(taxon, taxa{:})
+      species = {taxon};
+    else
+      species = {};
+      disp('Name of taxon is not recognized')
+    end
+    return
+  end
+  
   try
     species = textscan(perl('select.pl', taxon), '%s'); 
     species = species{1};

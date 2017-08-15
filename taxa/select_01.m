@@ -41,7 +41,7 @@ taxa_src = select(taxon_src); n_taxa_src = size(taxa_src,1);
 sel = false(n_taxa_src,1);
 
 if ~iscell(taxon_sel)
-  taxa = select(taxon_sel); n_taxa = size(taxa,1); 
+  taxa = select(taxon_sel); n_taxa = size(taxa,1);
   for i = 1:n_taxa
     sel(strcmp(taxa_src, taxa{i})) = true;
   end
