@@ -45,6 +45,7 @@ if ~iscell(taxon_sel)
   for i = 1:n_taxa
     sel(strcmp(taxa_src, taxa{i})) = true;
   end
+  
 else
   for j = 1:length(taxon_sel)
     taxa = select(taxon_sel{j}); n_taxa = size(taxa,1); 

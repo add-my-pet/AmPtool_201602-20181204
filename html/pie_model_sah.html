@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>run_whole_collection</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-06"><meta name="DC.source" content="run_whole_collection.m"><style type="text/css">
+      --><title>pie_model_sah</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="pie_model_sah.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,58 +55,53 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1></h1><!--introduction--><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Script: run_whole_collection</a></li></ul></div><h2>Script: run_whole_collection<a name="1"></a></h2><p>Run this to make</p><div><ul><li>places index.cache and index.wn in the entries folder</li><li>html pages for all of the different species in add_my_pet/entries</li><li>place the html and bib pages in entries_web and delete from entries</li><li>create zipped folder in entries_zip</li></ul></div><p>run prt_species_list_html to create ../species_list.html run prt_species_tree_taxa to create ../sys/species_tree_taxa.js files</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>pie_model_sah</h1><!--introduction--><p>counts number of entries of the various model types</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/02/21 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>created 2016/02/21 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[n model index] = <a href="../pie_model_sah.m"><b>pie_model_sah</b></a> (taxon)</p><h2>Description<a name="4"></a></h2><p>The frequency of the various models in the add_my_pet collection are counted and the result is presented in a pie</p><p>Output (apart from figure):</p><div><ul><li>n: nm-vector containing model counts in taxa</li><li>model: nm-vector with names of models</li><li>index: (ne,nm) binary matrix with models of each of ne members of the taxon</li></ul></div><h2>Remarks<a name="5"></a></h2><p>sum(n) = total number of animal species in the add_my_pet collection about_add_my_pet make a plot of this</p><h2>Example of use<a name="6"></a></h2><p>[n model index] = pie_model;</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
+%% pie_model_sah
+% counts number of entries of the various model types
 
-%% Script: run_whole_collection
-% Run this to make
+%%
+function [n model index] = pie_model_sah 
+%% created 2016/02/21 by Bas Kooijman
+
+%% Syntax
+% [n model index] = <../pie_model_sah.m *pie_model_sah*> (taxon)
+
+%% Description
+% The frequency of the various models in the add_my_pet collection are counted and the result is presented in a pie
 %
-% * places index.cache and index.wn in the entries folder
-% * html pages for all of the different species in add_my_pet/entries
-% * place the html and bib pages in entries_web and delete from entries
-% * create zipped folder in entries_zip
+% Output (apart from figure):
 % 
-% run prt_species_list_html to create ../species_list.html
-% run prt_species_tree_taxa to create ../sys/species_tree_taxa.js files
+% * n: nm-vector containing model counts in taxa
+% * model: nm-vector with names of models
+% * index: (ne,nm) binary matrix with models of each of ne members of the taxon
 
-entries = select('Animalia');
-n = length(entries);
+%% Remarks
+% sum(n) = total number of animal species in the add_my_pet collection
+% about_add_my_pet make a plot of this
 
-% first check that the list returned by select('Animalia) has same names as all of the
-% directories in entries
-[missingFromCollection, missingFromList] = check_collection;
-% if isempty(missingFromCollection) * isempty(missingFromCollection)  == 0 
-%     fprintf('check which species are missing by examining output of check_collection \n before proceeding any further \n' )
-%     return;
-% end
+%% Example of use
+% [n model index] = pie_model;
 
-WD = pwd; % store current path
-cd ('../entries/Homo_sapiens'); % go to random entry to prepare for hopping
-
-for i = 1:n     
-  fprintf('%g/ %g : %s \n',i,n, entries{i}) % report progress to screen 
-  %copyfile('../../index.cache',['../entries/',entries{i}])
-  %copyfile('../../index.wn',['../entries/',entries{i}])
+  model = {'std', 'stf', 'stx', 'ssj', 'sbp', 'abp', 'abj', 'asj', 'hep', 'hex'};
+  [models entries] = read_allStat('model');
+   
+  ne = length(entries); nm = length(model); index = zeros(ne,nm);
+  for i = 1:ne
+    index(i,:) = strcmp(model,models{i}); 
+  end
+  n = sum(index,1);
   
-  cd(['../',entries{i}]) % goto entry i 
-  %delete('*.html', '*bib') % delete html and bib files  
-  load(['results_',entries{i},'.mat']) % load results_my_pet.mat
-  [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); 
-  prdData = feval(['predict_',metaData.species], par, data, auxData);
-  prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:
-  
-  prt_bib_my_pet(metaData.species,metaData.biblist) % print bib file
-  prt_my_pet(metaData, metaPar, par, txtPar) % make html with parameters
-  prt_stat_my_pet(metaData, metaPar, par) % make html with implied properties
-  prt_results_my_pet(data, prdData, auxData, metaData, txtData, metaPar) % make html with results
-  
-  WD_loc = pwd;
-  cd('../../entries_zip' ); % goto directory with all of the zipped entries
-  zip_my_pet(entries{i}, '../entries'); % zip the entry
-  cd(WD_loc)  % goto original path    
+  txt = {'s-models'; 'a-models'; 'h-models'}; y = zeros(3,1);
+  y(1) = sum(n(1:5)); y(2) = sum(n([6,7,8])); y(3) = sum(n([9,10]));
+  pie3s(y, 'Bevel', 'Elliptical', 'Labels', txt);
+
+  if ~(sum(n) == ne)
+    fprintf('Warning: model types need updating')
+  end
 end
-    
-cd(WD)
+
+
 ##### SOURCE END #####
 --></body></html>
