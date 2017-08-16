@@ -3,7 +3,7 @@
 
 %%
 function allStat = write_addStat(taxa, T, f)
-% created 2016/11/18 by Bas Kooijman
+% created 2016/11/18 by Bas Kooijman, modified 2017/08/16
 
 %% Syntax
 % allStat = <write_addStat *write_addStat*> (T, f)
@@ -56,7 +56,7 @@ function allStat = write_addStat(taxa, T, f)
   absent = 0;
   for i = 1:n
     try % goto entries
-      cd(['../entries/', taxa{i}]) 
+      cd(['../../entries/', taxa{i}]) 
     catch
       fprintf([taxa{i}, ' does not occur in sister-directory entries\n']);
       absent = absent + 1;
@@ -78,4 +78,7 @@ function allStat = write_addStat(taxa, T, f)
     allStat = get_addStat(taxa, T, f);
   end
 
-  save('allStat') % overwrite allStat.mat
+  curation = which('write_allStat');   
+  cd(curation(1:end - 15))                         
+  save('../allStat') % overwrite allStat.mat
+  cd(WD)

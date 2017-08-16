@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>write_addStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-18"><meta name="DC.source" content="write_addStat.m"><style type="text/css">
+      --><title>write_addStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="write_addStat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -63,7 +63,7 @@ span.syscmd { color:#B28C00 }
 
 %%
 function allStat = write_addStat(taxa, T, f)
-% created 2016/11/18 by Bas Kooijman
+% created 2016/11/18 by Bas Kooijman, modified 2017/08/16
 
 %% Syntax
 % allStat = <write_addStat *write_addStat*> (T, f)
@@ -104,10 +104,10 @@ function allStat = write_addStat(taxa, T, f)
   
   % check if some members of taxa are already in allStat
   load allStat.mat
-  absent = ~isfield(allStat, taxa);
-  if sum(absent) > 0
-    fprintf('Not all members of taxa are present in allStat.mat\n');
-    taxa{absent}
+  present = isfield(allStat, taxa);
+  if sum(present) > 0
+    fprintf('Not all members of taxa are absent in existing allStat.mat\n');
+    taxa = taxa{present}
     return
   end
   
@@ -116,7 +116,7 @@ function allStat = write_addStat(taxa, T, f)
   absent = 0;
   for i = 1:n
     try % goto entries
-      cd(['../entries/', taxa{i}]) 
+      cd(['../../entries/', taxa{i}]) 
     catch
       fprintf([taxa{i}, ' does not occur in sister-directory entries\n']);
       absent = absent + 1;
@@ -132,13 +132,15 @@ function allStat = write_addStat(taxa, T, f)
     if ~exist('T', 'var')
       allStat = get_addStat(taxa);
     else
-      allStat = get_allStat(taxa, T);
+      allStat = get_addStat(taxa, T);
     end
   else
-    allStat = get_allStat(taxa, T, f);
+    allStat = get_addStat(taxa, T, f);
   end
 
-  save('allStat') % overwrite allStat.mat
-
+  curation = which('write_allStat');   
+  cd(curation(1:end - 15))                         
+  save('../allStat') % overwrite allStat.mat
+  cd(WD)
 ##### SOURCE END #####
 --></body></html>
