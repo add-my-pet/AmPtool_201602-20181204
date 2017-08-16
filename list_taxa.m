@@ -30,8 +30,8 @@ function ol = list_taxa (taxon)
   end
 
   WD = pwd;                  % store current path
-  taxa = which('list_taxa'); % locate DEBtool_M/taxa/
-  taxa = taxa(1:end - 11);   % path to DEBtool_M/taxa/
+  taxa = which('list_taxa.pl'); % locate DEBtool_M/taxa/
+  taxa = taxa(1:end - 12);   % path to DEBtool_M/taxa/
   cd(taxa)                   % goto taxa
 
   try

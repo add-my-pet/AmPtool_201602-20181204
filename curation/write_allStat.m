@@ -38,4 +38,4 @@ function allStat = write_allStat(T, f)
     allStat = get_allStat(T, f);
   end
 
-  save('allStat')
+  save('../allStat')
