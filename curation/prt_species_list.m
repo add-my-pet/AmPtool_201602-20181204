@@ -14,7 +14,7 @@ function prt_species_list
 
 %% Remarks
 % uses subfunctions open_species_list_html, prt_species_row and close_species_list_html
-% expects to find ../../entries/ with all entries given by AmPtool/taxa/select
+% expects to find ../../entries/ with all entries given by AmPtool/select
 % each row in the table has a name
 
 entries = select('Animalia');
@@ -61,7 +61,7 @@ function fid_Spec = open_species_list_html
 % if exist('n_spec','var')==0
 %   n_spec = 1;  % initiate species numbers
 
-fid_Spec = fopen('../species_list.html', 'w+'); % open file for writing, delete existing content
+fid_Spec = fopen('../../species_list.html', 'w+'); % open file for writing, delete existing content
   
 % make the header for species_list.html :
 fprintf(fid_Spec, '<!DOCTYPE html>\n');
