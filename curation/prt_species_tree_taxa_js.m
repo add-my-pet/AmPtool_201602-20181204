@@ -10,7 +10,7 @@ function prt_species_tree_taxa_js(taxa)
 % <../prt_species_tree_taxa_js.m *prt_species_tree_taxa_js*> (taxa) 
 
 %% Description
-% Clears and creates files ../sys/prt_species_tree_taxa{i}.js and writes java code to it
+% Clears and creates files ../../sys/prt_species_tree_taxa{i}.js and writes java code to it
 %
 % Input:
 %
@@ -18,18 +18,18 @@ function prt_species_tree_taxa_js(taxa)
 %
 % Output:
 % 
-% * writes files ../sys/prt_species_tree_taxa{i}.js for i = 1, 2, ..
+% * writes files ../../sys/prt_species_tree_taxa{i}.js for i = 1, 2, ..
 
 %% Remarks
-% file ../species_tree_taxa{i}.html calls 
-%  - java-scripts ../sys/ftiens4.js, ua.js
-%  - gif's ../img/nm.gif
-%  - jpg's ../img/tree/nm.jpg
-%  - txt's ../img/tree/nm.txt
+% file ../../species_tree_taxa{i}.html calls 
+%  - java-scripts ../../sys/ftiens4.js, ua.js
+%  - gif's ../../img/nm.gif
+%  - jpg's ../../img/tree/nm.jpg
+%  - txt's ../../img/tree/nm.txt
 
 %% Example of use
-% prt_species_tree_taxa_js; open ../species_tree_Animalia.html and ../species_tree_Tetrapoda.html to see the results
-% prt_species_tree_taxa_js({'Tetrapoda'}); open ../species_tree_Tetrapoda.html to see the result
+% prt_species_tree_taxa_js; open ../../species_tree_Animalia.html and ../species_tree_Tetrapoda.html to see the results
+% prt_species_tree_taxa_js({'Tetrapoda'}); open ../../species_tree_Tetrapoda.html to see the result
     
 %  check_entries; % test presence of entries in tree against local and server
   
@@ -41,7 +41,7 @@ function prt_species_tree_taxa_js(taxa)
     
   for i = 1:n
     pedigree_taxa = pedigree(taxa{i});
-    fid_tv = fopen(['../sys/species_tree_',taxa{i},'.js'], 'w+'); % open file for writing, delete existing content
+    fid_tv = fopen(['../../sys/species_tree_',taxa{i},'.js'], 'w+'); % open file for writing, delete existing content
 
     % write header
     fprintf(fid_tv, '//\n');

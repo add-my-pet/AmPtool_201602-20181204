@@ -24,7 +24,7 @@ function  prt_pie_SGGJR_tex(path_in, path_out)
 %% Remarks
 % Function prt_pie_SGGJR_tex is 
 %   assumed to be ran in entries_admin, 
-%   using <../tax/select.m *select*> to identify entry names.
+%   using <../select.m *select*> to identify entry names.
 
 %% Example of use
 % prt_pie_SGGJR_tex
@@ -33,7 +33,7 @@ function  prt_pie_SGGJR_tex(path_in, path_out)
     path_in = 'http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/';
   end
   if ~exist('path_out', 'var') || isempty('path_out')
-    path_out = '../entries_pie/';
+    path_out = '../../entries_pie/';
   end
 
   pie = {'pie_pSGJRb', 'pie_pSGJRp', 'pie_pSGJRi', 'pie_SGJRb'}; n_pie = length(pie);

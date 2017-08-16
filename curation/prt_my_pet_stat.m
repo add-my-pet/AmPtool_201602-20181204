@@ -11,7 +11,7 @@ function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
 %% Description
 % Read and writes my_pet_stat.html and write png files in current folder (irrespective of destinationFolder). 
 % This pages contains a list of implied model properties of my_pet. 
-% It calls entries_admin/get_statfields to see what statistics are printed in which order on the web.
+% It calls AmPtool/curation/get_statfields to see what statistics are printed in which order on the web.
 %
 % Input:
 %

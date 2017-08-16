@@ -1,5 +1,5 @@
 %% prt_species_list
-%  deletes and writes ../species_list.html 
+%  deletes and writes ../../species_list.html 
 
 %%
 function prt_species_list
@@ -10,11 +10,11 @@ function prt_species_list
 % <../prt_species_list.m *prt_species_list*>
 
 %% Description
-% deletes and writes ../species_list.html
+% deletes and writes ../../species_list.html
 
 %% Remarks
 % uses subfunctions open_species_list_html, prt_species_row and close_species_list_html
-% expects to find ../entries/ with all entries given by DEBtool_M/taxa/select
+% expects to find ../../entries/ with all entries given by AmPtool/taxa/select
 % each row in the table has a name
 
 entries = select('Animalia');
@@ -23,7 +23,7 @@ n = length(entries);
 fid_Spec = open_species_list_html; % open up species_list.html for writing and delete the old file
 
 WD = pwd; % store current path
-cd('../entries/Homo_sapiens') % goto random entry to prepare for hopping
+cd('../../entries/Homo_sapiens') % goto random entry to prepare for hopping
 
 for i = 1:n
   %fprintf('%g/ %g : %s \n',i,n, entries{i}) 
@@ -44,7 +44,7 @@ function fid_Spec = open_species_list_html
 % created by Bas Kooijman; modified 2015/04/14 Starrlight, 2016/11/03 Bas Kooijman
 
 % Syntax
-% fid_Spec = <../open_species_list_html.m *open_species_list_html*> 
+% fid_Spec = <../../open_species_list_html.m *open_species_list_html*> 
 
 % Description
 %

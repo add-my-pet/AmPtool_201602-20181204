@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_pie_SGGJR_tex</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-05-11"><meta name="DC.source" content="prt_pie_SGGJR_tex.m"><style type="text/css">
+      --><title>prt_pie_SGGJR_tex</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_pie_SGGJR_tex.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>prt_pie_SGGJR_tex</h1><!--introduction--><p>presents pies for allocation at birth, puberty, ultimate &amp; cum investment at birth</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>pSGGJR = <a href="../prt_pie_SGGJR_tex.m"><b>prt_pie_SGGJR_tex</b></a> (path_in, path_out)</p><h2>Description<a name="4"></a></h2><p>Writes 4 tex-documents that present the pies of output of <a href="../pie_SGGJR.m"><b>pie_SGGJR</b></a> for all entries in parent dir of entrie_admin</p><p>Input:</p><div><ul><li>path_in: optional character string path to input png-files (default 'http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/')</li><li>path_out: optional character string path for output tex-files (default '../entries_pie'</li></ul></div><p>Output:</p><div><ul><li>writes files pie_pSGJRb.tex, pie_pSGJRp.tex, pie_pSGJRi.tex, pie_SGJRb.tex</li><li>copies png files for all pies to path_out/img</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Function prt_pie_SGGJR_tex is   assumed to be ran in entries_admin,   using <a href="../tax/select.m"><b>select</b></a> to identify entry names.</p><h2>Example of use<a name="6"></a></h2><p>prt_pie_SGGJR_tex</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>prt_pie_SGGJR_tex</h1><!--introduction--><p>presents pies for allocation at birth, puberty, ultimate &amp; cum investment at birth</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>pSGGJR = <a href="../prt_pie_SGGJR_tex.m"><b>prt_pie_SGGJR_tex</b></a> (path_in, path_out)</p><h2>Description<a name="4"></a></h2><p>Writes 4 tex-documents that present the pies of output of <a href="../pie_SGGJR.m"><b>pie_SGGJR</b></a> for all entries in parent dir of entrie_admin</p><p>Input:</p><div><ul><li>path_in: optional character string path to input png-files (default 'http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/')</li><li>path_out: optional character string path for output tex-files (default '../entries_pie'</li></ul></div><p>Output:</p><div><ul><li>writes files pie_pSGJRb.tex, pie_pSGJRp.tex, pie_pSGJRi.tex, pie_SGJRb.tex</li><li>copies png files for all pies to path_out/img</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Function prt_pie_SGGJR_tex is   assumed to be ran in entries_admin,   using <a href="../select.m"><b>select</b></a> to identify entry names.</p><h2>Example of use<a name="6"></a></h2><p>prt_pie_SGGJR_tex</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_pie_SGGJR_tex
@@ -84,7 +84,7 @@ function  prt_pie_SGGJR_tex(path_in, path_out)
 %% Remarks
 % Function prt_pie_SGGJR_tex is 
 %   assumed to be ran in entries_admin, 
-%   using <../tax/select.m *select*> to identify entry names.
+%   using <../select.m *select*> to identify entry names.
 
 %% Example of use
 % prt_pie_SGGJR_tex
@@ -93,7 +93,7 @@ function  prt_pie_SGGJR_tex(path_in, path_out)
     path_in = 'http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/';
   end
   if ~exist('path_out', 'var') || isempty('path_out')
-    path_out = '../entries_pie/';
+    path_out = '../../entries_pie/';
   end
 
   pie = {'pie_pSGJRb', 'pie_pSGJRp', 'pie_pSGJRi', 'pie_SGJRb'}; n_pie = length(pie);

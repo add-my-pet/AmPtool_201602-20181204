@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_species_list</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-12-25"><meta name="DC.source" content="prt_species_list.m"><style type="text/css">
+      --><title>prt_species_list</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_species_list.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,11 +55,11 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>prt_species_list</h1><!--introduction--><pre>deletes and writes ../species_list.html</pre><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#7">subfunction open_species_list_html</a></li><li><a href="#8">subfunction prt_species_row</a></li><li><a href="#9">subfunction close_species_list(fid_Spec)</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_species_list.m"><b>prt_species_list</b></a></p><h2>Description<a name="4"></a></h2><p>deletes and writes ../species_list.html</p><h2>Remarks<a name="5"></a></h2><p>uses subfunctions open_species_list_html, prt_species_row and close_species_list_html expects to find ../entries/ with all entries given by DEBtool_M/taxa/select each row in the table has a name</p><h2>subfunction open_species_list_html<a name="7"></a></h2><p>opens up species_list.html for reading and writing</p><h2>subfunction prt_species_row<a name="8"></a></h2><p>places a line in species_list.html which has previously been opened for reading and writing</p><h2>subfunction close_species_list(fid_Spec)<a name="9"></a></h2><p>completes the table of species and closes species_list.html</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>prt_species_list</h1><!--introduction--><pre>deletes and writes ../../species_list.html</pre><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#7">subfunction open_species_list_html</a></li><li><a href="#8">subfunction prt_species_row</a></li><li><a href="#9">subfunction close_species_list(fid_Spec)</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_species_list.m"><b>prt_species_list</b></a></p><h2>Description<a name="4"></a></h2><p>deletes and writes ../../species_list.html</p><h2>Remarks<a name="5"></a></h2><p>uses subfunctions open_species_list_html, prt_species_row and close_species_list_html expects to find ../../entries/ with all entries given by AmPtool/taxa/select each row in the table has a name</p><h2>subfunction open_species_list_html<a name="7"></a></h2><p>opens up species_list.html for reading and writing</p><h2>subfunction prt_species_row<a name="8"></a></h2><p>places a line in species_list.html which has previously been opened for reading and writing</p><h2>subfunction close_species_list(fid_Spec)<a name="9"></a></h2><p>completes the table of species and closes species_list.html</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_species_list
-%  deletes and writes ../species_list.html 
+%  deletes and writes ../../species_list.html 
 
 %%
 function prt_species_list
@@ -70,11 +70,11 @@ function prt_species_list
 % <../prt_species_list.m *prt_species_list*>
 
 %% Description
-% deletes and writes ../species_list.html
+% deletes and writes ../../species_list.html
 
 %% Remarks
 % uses subfunctions open_species_list_html, prt_species_row and close_species_list_html
-% expects to find ../entries/ with all entries given by DEBtool_M/taxa/select
+% expects to find ../../entries/ with all entries given by AmPtool/taxa/select
 % each row in the table has a name
 
 entries = select('Animalia');
@@ -83,7 +83,7 @@ n = length(entries);
 fid_Spec = open_species_list_html; % open up species_list.html for writing and delete the old file
 
 WD = pwd; % store current path
-cd('../entries/Homo_sapiens') % goto random entry to prepare for hopping
+cd('../../entries/Homo_sapiens') % goto random entry to prepare for hopping
 
 for i = 1:n
   %fprintf('%g/ %g : %s \n',i,n, entries{i}) 
@@ -92,7 +92,7 @@ for i = 1:n
   prt_species_row(metaData, metaPar, fid_Spec)
 end
 
-close_species_list_html(fid_Spec); % close species_list.html
+close_species_list(fid_Spec); % close species_list.html
 cd(WD) % return to current dir
 
 end
@@ -104,7 +104,7 @@ function fid_Spec = open_species_list_html
 % created by Bas Kooijman; modified 2015/04/14 Starrlight, 2016/11/03 Bas Kooijman
 
 % Syntax
-% fid_Spec = <../open_species_list_html.m *open_species_list_html*> 
+% fid_Spec = <../../open_species_list_html.m *open_species_list_html*> 
 
 % Description
 %
@@ -141,7 +141,9 @@ fprintf(fid_Spec, '<script>w3IncludeHTML();</script>\n\n');
 fprintf(fid_Spec, '<div id = "main">\n');
 fprintf(fid_Spec, '  <div id = "main-wrapper-species">    \n');
 fprintf(fid_Spec, '    <div id="contentFull">\n\n');
-fprintf(fid_Spec, '      <H2>Species list: taxonomic view</H2>\n\n');
+fprintf(fid_Spec, '      <H2><a href="" title="Locate entries by name via searching with Crtl-F.\n');
+fprintf(fid_Spec, '        Locate entries via classification by scrolling.\n');
+fprintf(fid_Spec, '        Goto entries by clicking on entry names">Species list: taxonomic view</a></H2>\n\n');
 fprintf(fid_Spec, '      <table>\n');
 fprintf(fid_Spec, '        <TR HEIGHT=60 BGCOLOR = "#FFE7C6">\n');
 fprintf(fid_Spec, '          <TH><a class="link" target = "_blank" href="http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/phyla.html">phylum</a></TH>\n');

@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_authors</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-07-30"><meta name="DC.source" content="prt_authors.m"><style type="text/css">
+      --><title>prt_authors</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_authors.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,21 +55,26 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>prt_authors</h1><!--introduction--><p>prints authors.html with submitting authors and their entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/02/23 by Bas Kooijman, modified 2016/12/24, 2017/07/30</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li><li><a href="#7">subfunction</a></li></ul></div><h2>created 2016/02/23 by Bas Kooijman, modified 2016/12/24, 2017/07/30<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p><a href="../prt_authors.m"><b>prt_authors</b></a>(info)</p><h2>Description<a name="4"></a></h2><p>Writes ../authors.html with all authors and their submitted entries</p><h2>Example of use<a name="5"></a></h2><p>prt_authors</p><h2>subfunction<a name="7"></a></h2><p class="footer"><br>
+  </style></head><body><div class="content"><h1>prt_authors</h1><!--introduction--><p>prints authors.html with submitting/modification authors and their entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/02/23 by Bas Kooijman, modified 2016/12/24, 2017/07/30</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li><li><a href="#8">subfunction</a></li></ul></div><h2>created 2016/02/23 by Bas Kooijman, modified 2016/12/24, 2017/07/30<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p><a href="../prt_authors.m"><b>prt_authors</b></a></p><h2>Description<a name="4"></a></h2><p>Writes ../authors.html with all authors and their submitted/modified entries</p><h2>Remarks<a name="5"></a></h2><p>allStat.mat always has fields author and date_subm for each entry, but not always field(s) author_mod_*. If author_mod_* exists, date_mod_* must exist as well with a valid date-specification. Each author_mod_* field can have one or more authors</p><h2>Example of use<a name="6"></a></h2><p>prt_authors</p><h2>subfunction<a name="8"></a></h2><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_authors
-% prints authors.html with submitting authors and their entries
+% prints authors.html with submitting/modification authors and their entries
 
 %%
 function prt_authors
 %% created 2016/02/23 by Bas Kooijman, modified 2016/12/24, 2017/07/30
 
 %% Syntax
-% <../prt_authors.m *prt_authors*>(info)
+% <../prt_authors.m *prt_authors*>
 
 %% Description
-% Writes ../authors.html with all authors and their submitted entries
+% Writes ../authors.html with all authors and their submitted/modified entries
+
+%% Remarks
+% allStat.mat always has fields author and date_subm for each entry, but not always field(s) author_mod_*.
+% If author_mod_* exists, date_mod_* must exist as well with a valid date-specification.
+% Each author_mod_* field can have one or more authors
 
 %% Example of use
 % prt_authors
@@ -78,10 +83,10 @@ function prt_authors
   [adad entries] = read_allStat('author', 'date_subm', 'author_mod', 'date_mod'); 
   ne = length(entries);   
   % authors
-  authors = adad(:,[1 3]); 
+  authors = adad(:,[1 3]);                % (ne,>0)-cell array with all authors
   author = cell(0, 1); % convert (2*ne,1)-cell array, to (n,1)-cell array by vertcat all cell-arrays 
-  for i=1:ne
-    author1 = authors{i,1}; author2 = authors{i,2};
+  for i=1:ne % scan entries
+    author1 = authors{i,1}; author2 = authors{i,2}; % submit-, mod-authors
     author = [author; author1(:); author2(:)];
   end
   author = sort_fam(unique([author{:}])); % alphabetically arranged list of all authors
@@ -91,7 +96,7 @@ function prt_authors
     
   % prepare for writing authors.html
   nrow = ceil(na/4); % # of rows in author table, to be filled in cols
-  fid_authors = fopen('../authors.html', 'w+'); % open file for writing, delete existing content
+  fid_authors = fopen('../../authors.html', 'w+'); % open file for writing, delete existing content
   
 % write header for authors.html :
 fprintf(fid_authors, '<!DOCTYPE html>\n');
@@ -200,7 +205,7 @@ fprintf(fid_authors, '         <td>\n');
     end
 fprintf(fid_authors, '             <ul class="main-navigation">\n');
 
-    % get lists of entries and dates for each author
+    % get lists of entries and dates for current author
     txt_entry = cell(0); txt_date = cell(0); date_num = [];
     for k = 1:ne % scan all entries
       if sum(strcmp(author{index}, authors{k,1})) 
@@ -221,13 +226,13 @@ fprintf(fid_authors, '             <ul class="main-navigation">\n');
     end
     nr = length(date_num);
     
-    % sort entries on dates
+    % sort entries on dates for current author
     [nm ind] = sort(date_num,'descend');
     txt_entry = txt_entry(ind); txt_date = txt_date(ind);
     
 fprintf(fid_authors,['               <li><a href="#">', num2str(nr), '</a>\n']);
 fprintf(fid_authors, '               <ul>\n');
-    for k = 1:nr
+    for k = 1:nr % scan all dates/entries for current author
 fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
     end
 fprintf(fid_authors, '               </ul>\n');

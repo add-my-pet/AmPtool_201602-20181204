@@ -43,7 +43,7 @@ function allStat = get_allStat(T, f)
   ne = length(entries);
    
   WD = pwd;                % store current path
-  cd(['../entries/',entries{1}]) % goto entries
+  cd(['../../entries/',entries{1}]) % goto entries
 
   try
     for i = 1:ne

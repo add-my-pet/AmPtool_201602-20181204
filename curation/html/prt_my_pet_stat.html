@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_my_pet_stat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-01-05"><meta name="DC.source" content="prt_my_pet_stat.m"><style type="text/css">
+      --><title>prt_my_pet_stat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_my_pet_stat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>prt_my_pet_stat</h1><!--introduction--><p>Creates my_pet_stat.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_my_pet_stat.m"><b>prt_my_pet_stat</b></a> (metaData, metaPar, par, destinationFolder)</p><h2>Description<a name="4"></a></h2><p>Read and writes my_pet_stat.html and write png files in current folder (irrespective of destinationFolder). This pages contains a list of implied model properties of my_pet. It calls entries_admin/get_statfields to see what statistics are printed in which order on the web.</p><p>Input:</p><div><ul><li>metaData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaPar: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>par: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>destinationFolder: optional string with destination folder to which my_pet_stat.html is printed (default: current folder)</li></ul></div><h2>Example of use<a name="5"></a></h2><p>load('results_my_pet.mat'); prt_my_pet_stat(metaData, metaPar, par, destinationFolder)</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>prt_my_pet_stat</h1><!--introduction--><p>Creates my_pet_stat.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_my_pet_stat.m"><b>prt_my_pet_stat</b></a> (metaData, metaPar, par, destinationFolder)</p><h2>Description<a name="4"></a></h2><p>Read and writes my_pet_stat.html and write png files in current folder (irrespective of destinationFolder). This pages contains a list of implied model properties of my_pet. It calls AmPtool/curation/get_statfields to see what statistics are printed in which order on the web.</p><p>Input:</p><div><ul><li>metaData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaPar: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>par: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>destinationFolder: optional string with destination folder to which my_pet_stat.html is printed (default: current folder)</li></ul></div><h2>Example of use<a name="5"></a></h2><p>load('results_my_pet.mat'); prt_my_pet_stat(metaData, metaPar, par, destinationFolder)</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_my_pet_stat
@@ -63,7 +63,7 @@ span.syscmd { color:#B28C00 }
 
 %%
 function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
-% created 2016/03/30 Starrlight; modified 2016/09/23 Starrlight Augustine; 2016/11/05 Bas Kooijman
+% created 2016/03/30 Starrlight; modified 2016/09/23 Starrlight Augustine; 2016/11/05 Bas Kooijman; 2017/05/18 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_stat.m *prt_my_pet_stat*> (metaData, metaPar, par, destinationFolder) 
@@ -71,7 +71,7 @@ function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
 %% Description
 % Read and writes my_pet_stat.html and write png files in current folder (irrespective of destinationFolder). 
 % This pages contains a list of implied model properties of my_pet. 
-% It calls entries_admin/get_statfields to see what statistics are printed in which order on the web.
+% It calls AmPtool/curation/get_statfields to see what statistics are printed in which order on the web.
 %
 % Input:
 %
@@ -86,7 +86,7 @@ function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
 
 % Removes underscores and makes first letter of english name be
 % in capital:
-speciesprintnm = strrep(metaData.species, '_', ' ');
+speciesprintnm = [strrep(metaData.species, '_', ' '), ' '];
 speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
 if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
   speciesprintnm_en(1)=char(speciesprintnm_en(1)-32);
@@ -96,7 +96,7 @@ f = 1; % ad libitum feeding
 [stat, txtStat] = statistics_st(metaPar.model, par, metaData.T_typical, f);
 stat.z = par.z; txtStat.label.z = 'zoom factor'; txtStat.units.z = '-'; % add zoom factor to statistics which are to be printed 
 
-pie_SGGJR(stat, 1); % print 4 png-files for energy allocation to current folder
+pie_SGGJR(metaData.species, metaPar.model, par, stat, 1); % print 4 png-files for energy allocation to current folder
 
 % flds = fieldnmnst_st(stat); % fieldnames of all statistics
 [webStatFields, webColStat] = get_statfields(metaPar.model); % which statistics in what order should be printed in the table
@@ -132,22 +132,7 @@ fprintf(oid, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DA
 
 fprintf(oid, '<div id="top2">\n');
 fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
-% REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH makes links to the wikipedia page if it exists
-if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
-  url = eval(['metaData.biblist.', 'Wiki']);
-  url(1: strfind(url, 'http') - 1) = [];
-  url = url(1: strfind(url, '}') - 1);
-  fprintf(oid,['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A> (',speciesprintnm_en,'): &nbsp;\n']);
-elseif isfield(metaData.biblist,'wiki') %|| isfield(metaData.biblist,'wiki')
-  url = eval(['metaData.biblist.', 'wiki']);
-  url(1: strfind(url, 'http') - 1) = [];
-  url = url(1: strfind(url, '}') - 1);
-  fprintf(oid,['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A>(',speciesprintnm_en,'): &nbsp;\n']);
-end
-if isfield(metaData.biblist,'Wiki') ==0
-  fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
-end
-% REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
+fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
@@ -165,7 +150,7 @@ fprintf(oid, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DA
 fprintf(oid, '<div id = "main">\n');
 fprintf(oid, '  <div id = "main-wrapper">\n');
 fprintf(oid, '    <div id="contentFull">\n');
-fprintf(oid, '      <H1 id = "portaltop">Implied properties for this entry </H1>\n');	
+fprintf(oid, '      <H1 id = "portaltop">Implied properties for this entry</H1>\n');	
 			
 % print out text before the tables
 % fprintf(oid, '<H2>Implied properties for this entry</H2>');
@@ -174,15 +159,23 @@ fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://ww
 % print SGJR pies
 fprintf(oid, '      <H3>Energy investment, cumulated over the embryo period (left), and allocation during ontogeny</H3>\n');
 fprintf(oid, '      <div>\n');
-fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_SGJRb.png"  width="260px">\n']);
-fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRb.png" width="260px">\n']);
-fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRp.png" width="260px">\n']);
-fprintf(oid,['        <img src="../entries/', metaData.species, '/', metaData.species, '_pie_pSGJRi.png" width="260px">\n']);
+fprintf(oid,['        <a href = "../pie_SGJRb.html#', metaData.species, '" >\n']);
+fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_SGJRb.png"  width="260px"></a>\n']);
+fprintf(oid,['        <a href = "../pie_pSGJRb.html#', metaData.species, '" >\n']);
+fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_pSGJRb.png" width="260px"></a>\n']);
+fprintf(oid,['        <a href = "../pie_pSGJRp.html#', metaData.species, '" >\n']);
+fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_pSGJRp.png" width="260px"></a>\n']);
+fprintf(oid,['        <a href = "../pie_pSGJRi.html#', metaData.species, '" >\n']);
+fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_pSGJRi.png" width="260px"></a>\n']);
 fprintf(oid, '      </div>\n\n');
 fprintf(oid, '      <div class = "caption">   \n');
-fprintf(oid, '        Exploding sectors mean dissipation; numbers denote fractions of mobilized reserve. \n');
+fprintf(oid, '        Exploding sectors mean dissipation; numbers denote fractions of mobilized reserve.\n');
 fprintf(oid, '        Endpoints are somatic maintenance S, growth G, maturity maintenance J, maturity or reproduction R.\n'); 
-fprintf(oid, '        The difference between assimilation p_A and mobilization p_C is used to increase reserve.\n');
+fprintf(oid, '        Growth is splitted into overhead and flux fixed in tissue.\n'); 
+fprintf(oid, '        Reproduction overhead is not idicated, since it is pays at conversion of buffer to eggs/foetuses.\n'); 
+fprintf(oid, '        The change in reserve equals assimilation p_A minus mobilization p_C.\n');
+fprintf(oid, '        Wet weight W_w and total energy E_W exclude the reproduction buffer in adults.\n');
+fprintf(oid, '        Pies link to budget pages.\n');
 fprintf(oid, '      </div>\n\n');
 fprintf(oid, '      <p><p>\n');
 

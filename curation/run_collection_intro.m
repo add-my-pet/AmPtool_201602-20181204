@@ -2,9 +2,9 @@
 % runs functions for collection overhead
 
 %% before running this script
-% make sure that debtool_M/taxa/ is updated
-% make sure that ../img/tree is updated
-% make sure that entries_admin/get_link is updated
+% make sure that AmPtool/taxa/ is updated
+% make sure that ../../img/tree is updated
+% make sure that AmPtool/curation/get_link is updated
 % run write_allStat
 % run_collection(taxa-names) to generate files in entries_zip and entries_web
 

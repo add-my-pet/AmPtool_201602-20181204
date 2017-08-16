@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_toolbar_species</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-12-29"><meta name="DC.source" content="prt_toolbar_species.m"><style type="text/css">
+      --><title>prt_toolbar_species</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_toolbar_species.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>prt_toolbar_species</h1><!--introduction--><p>prints the menu bar which is used for the pages which are specific for a given species</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_toolbar_species.m"><b>prt_toolbar_species</b></a> (oid, species, fileName)</p><h2>Description<a name="4"></a></h2><p>Prints the menu bar to a given html file</p><p>Input:</p><div><ul><li>oid: string, id of file that the function writes to</li><li>species: string, name of the species (Genera_species)</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Indent of 4 spaces used for printing to html page</p><h2>Example of use<a name="6"></a></h2><p>prt_menuBar_species(oid, metaData.species)</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>prt_toolbar_species</h1><!--introduction--><p>prints the menu bar which is used for the pages which are specific for a given species</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_toolbar_species.m"><b>prt_toolbar_species</b></a> (oid, species, fileName)</p><h2>Description<a name="4"></a></h2><p>Prints the menu bar to a given html file</p><p>Input:</p><div><ul><li>oid: string, id of file that the function writes to</li><li>species: string, name of the species (Genera_species)</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Indent of 4 spaces used for printing to html page Edit drowdown.js for adding dropdwn's</p><h2>Example of use<a name="6"></a></h2><p>prt_menuBar_species(oid, metaData.species)</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_toolbar_species
@@ -79,19 +79,17 @@ function  prt_toolbar_species(oid, species)
 
 %% Remarks
 % Indent of 4 spaces used for printing to html page
+% Edit drowdown.js for adding dropdwn's
 
 %% Example of use
 % prt_menuBar_species(oid, metaData.species)
 
-fprintf(oid, '    <div class = "dropdown"><button onclick="species()" class="dropbtn"><b>Results</b></button>\n');
+fprintf(oid, '    <div class = "dropdown"><button onclick="species()" class="dropbtn">Results</button>\n');
 fprintf(oid, '      <div id="speciesDropdown" class="dropdown-content">\n');
-
-
-  fprintf(oid,['        <a  href="',species,'_par.html">Parameters</a>\n']);
-  fprintf(oid,['        <a href="',species,'_stat.html">Implied properties</a>\n']);    
-  fprintf(oid,['        <a href="',species,'_res.html">Predictions & Data</a>\n']);
-
-
+fprintf(oid,['        <a href="',species,'_par.html">Parameters</a>\n']);
+fprintf(oid,['        <a href="',species,'_stat.html">Implied properties</a>\n']);    
+fprintf(oid,['        <a href="',species,'_res.html">Predictions & Data</a>\n']);
+fprintf(oid,['        <a href="',species,'_bib.bib">Bibliography</a>\n']);
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 
@@ -104,6 +102,16 @@ fprintf(oid,['        <a HREF="../entries_zip/',species,'_zip.zip" TARGET="_top"
 fprintf(oid, '          <IMG SRC="../img/folder.png" WIDTH="110px"  BORDER="0" ></a>\n');
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
+
+links = get_link(species); n_link = size(links,1);
+fprintf(oid, '    <div class = "dropdown"><button onclick="link()" class="dropbtn">Links</button>\n');
+fprintf(oid, '      <div id="linkDropdown" class="dropdown-content">\n');
+for i = 1:n_link
+fprintf(oid,['        <a href="', links{i,1}, '" target="_blank">', links{i,2}, '</a>\n']);
+end
+fprintf(oid, '      </div>\n');
+fprintf(oid, '    </div>\n\n');
+
 
 end
 

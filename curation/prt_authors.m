@@ -36,7 +36,7 @@ function prt_authors
     
   % prepare for writing authors.html
   nrow = ceil(na/4); % # of rows in author table, to be filled in cols
-  fid_authors = fopen('../authors.html', 'w+'); % open file for writing, delete existing content
+  fid_authors = fopen('../../authors.html', 'w+'); % open file for writing, delete existing content
   
 % write header for authors.html :
 fprintf(fid_authors, '<!DOCTYPE html>\n');

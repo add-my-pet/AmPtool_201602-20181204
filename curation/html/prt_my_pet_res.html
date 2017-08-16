@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_my_pet_res</title><meta name="generator" content="MATLAB 8.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2016-11-13"><meta name="DC.source" content="prt_my_pet_res.m"><style type="text/css">
+      --><title>prt_my_pet_res</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_my_pet_res.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -23,7 +23,7 @@ a:visited { color:#004aa0; text-decoration:none; }
 
 p { padding:0px; margin:0px 0px 20px; }
 img { padding:0px; margin:0px 0px 20px; border:none; }
-p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+p img, pre img, tt img, li img { margin-bottom:0px; } 
 
 ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
 ul li { padding:0px; margin:0px 0px 7px 0px; }
@@ -38,12 +38,11 @@ ol li ul li { list-style:square; }
 
 .content { font-size:1.2em; line-height:140%; padding: 20px; }
 
-pre, code { font-size:12px; }
-tt { font-size: 1.2em; }
+pre, tt, code { font-size:12px; }
 pre { margin:0px 0px 20px; }
+pre.error { color:red; }
 pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
 pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
-pre.error { color:red; }
 
 @media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
 
@@ -55,18 +54,9 @@ span.syscmd { color:#B28C00 }
 
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
-.footer a { color:#878787; }
-.footer a:hover { color:#878787; text-decoration:underline; }
-.footer a:visited { color:#878787; }
 
-table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
-table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
-
-
-
-
-
-  </style></head><body><div class="content"><h1>prt_my_pet_res</h1><!--introduction--><p>read and write my_pet_res.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_my_pet_res.m"><b>prt_my_pet_res</b></a> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)</p><h2>Description<a name="4"></a></h2><p>Prints my_pet_res.html file which compares metapar.model predictions with data</p><p>Input:</p><div><ul><li>data: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>prdData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Predict_file"><b>predict_my_pet_par</b></a> file)</li><li>auxData: structure  (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>txtData:  structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaPar: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>destinationFolder : optional string with destination folder the files are printed to (default: current folder)</li></ul></div><h2>Example of use<a name="5"></a></h2><p>[data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]);</p><p>prdData = feval(['predict_',metaData.species], par, data, auxData);</p><p>prdData = predict_pseudodata(par, data, prdData);</p><p>load(['results_',entries{i},'.mat']) % load results_my_pet.mat</p><p>prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2015b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>prt_my_pet_res</h1><!--introduction--><p>read and write my_pet_res.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_my_pet_res.m"><b>prt_my_pet_res</b></a> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)</p><h2>Description<a name="4"></a></h2><p>Prints my_pet_res.html file which compares metapar.model predictions with data</p><p>Input:</p><div><ul><li>data: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>prdData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Predict_file"><b>predict_my_pet_par</b></a> file)</li><li>auxData: structure  (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>txtData:  structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaPar: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>destinationFolder : optional string with destination folder the files are printed to (default: current folder)</li></ul></div><h2>Example of use<a name="5"></a></h2><p>[data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]);</p><p>prdData = feval(['predict_',metaData.species], par, data, auxData);</p><p>prdData = predict_pseudodata(par, data, prdData);</p><p>load(['results_',entries{i},'.mat']) % load results_my_pet.mat</p><p>prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)</p><p class="footer"><br>
+      Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_my_pet_res
 % read and write my_pet_res.html
@@ -74,7 +64,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 %%
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
-% modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine; 2016/11/05 Bas Kooijman
+% modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine; 2016/11/05, 2017/01/04 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -106,7 +96,7 @@ function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, dest
 % prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 
 % Remove underscore and capitalize first letter of english :
-speciesprintnm = strrep(metaData.species, '_', ' ');
+speciesprintnm = [strrep(metaData.species, '_', ' '), ' '];
 speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
 if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
   speciesprintnm_en(1)=char(speciesprintnm_en(1)-32);
@@ -130,7 +120,8 @@ switch n_author
   
 end
 
-txt_date = [num2str(metaData.date_acc(1)), '/', num2str(metaData.date_acc(2)), '/', num2str(metaData.date_acc(3))]; 
+txt_date = datestr(datenum(metaData.date_subm), 'yyyy/mm/dd'); 
+txt_date_acc = datestr(datenum(metaData.date_acc), 'yyyy/mm/dd'); 
 
 % modifications
 mod = 0; % latest modification version
@@ -151,16 +142,14 @@ if mod > 0
       txt_author_mod = [metaData.(author_mod){1}, ', et al.'];
   end
   date_mod = ['date_mod_', num2str(mod)]; date_mod = metaData.(date_mod);
-  txt_date_mod = [num2str(date_mod(1)), '/', num2str(date_mod(2)), '/', num2str(date_mod(3))]; 
-else    
-
-end  
+  txt_date_mod = datestr(datenum(date_mod),'yyyy/mm/dd'); 
+end    
 
 % remove the underscore in the species name
 if exist('destinationFolder','var')
-fileName = [destinationFolder, metaData.species, '_res.html'];
+  fileName = [destinationFolder, metaData.species, '_res.html'];
 else
-fileName = [metaData.species, '_res.html'];    
+  fileName = [metaData.species, '_res.html'];    
 end
 oid = fopen(fileName, 'w+'); % open file for reading and writing, delete existing content
 
@@ -187,25 +176,9 @@ fprintf(oid, '<!REPLACE_WITH_DASH_DASH  Please put in bold and in fancy the righ
 fprintf(oid, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH->\n\n');
 
 fprintf(oid, '<div id="top2">\n');
-fprintf(oid, '  <h2 class="alignleft2"> &nbsp; &nbsp;\n');
-% REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
-% REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH makes links to the wikipedia page if it exists
-if isfield(metaData.biblist,'Wiki') %|| isfield(metaData.biblist,'wiki')
-  url = eval(['metaData.biblist.', 'Wiki']);
-  url(1: strfind(url, 'http') - 1) = [];
-  url = url(1: strfind(url, '}') - 1);
-  fprintf(oid, ['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A> (',speciesprintnm_en,'): &nbsp;\n']);
-elseif isfield(metaData.biblist,'wiki') %|| isfield(metaData.biblist,'wiki')
-  url = eval(['metaData.biblist.', 'wiki']);
-  url(1: strfind(url, 'http') - 1) = [];
-  url = url(1: strfind(url, '}') - 1);
-  fprintf(oid, ['    <A HREF = "',url,'" target = "_blank">',speciesprintnm,'</A>(',speciesprintnm_en,'): &nbsp;\n']);
-end
-if isfield(metaData.biblist,'Wiki') ==0
-  fprintf(oid, [speciesprintnm,'(',speciesprintnm_en,') &nbsp;\n']);
-end
-% REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
-fprintf(oid, '  </h2>\n\n');
+fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
+fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
+fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
 prt_toolbar_species(oid, metaData.species)
@@ -222,13 +195,14 @@ fprintf(oid, '<!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DA
 fprintf(oid, '<div id = "main">\n');
 fprintf(oid, '  <div id = "main-wrapper">\n');
 fprintf(oid, '    <div id="contentFull">\n');
-fprintf(oid, '      <H1 id = "portaltop">Predictions & Data </H1>\n\n');	
+fprintf(oid, '      <H1 id = "portaltop">Predictions & Data for this entry</H1>\n\n');	
    
 % Print results_my_pet
 fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n']);
 fprintf(oid, '      <p>\n');    
 fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Completeness" >COMPLETE</a>',' = %3.1f <BR>\n'],metaData.COMPLETE);
-fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Goodness_of_fit_criterion" >MRE</a>',' = %8.3f \n'],metaPar.MRE);   
+fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Mean_relative_error" >MRE</a>',' = %8.3f <BR>\n'],metaPar.MRE);   
+fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" >SMSE</a>',' = %8.3f \n'],metaPar.SMSE);   
 fprintf(oid, '      </p>\n\n');     % close the paragraph
 
 % % get predictions to compare with data: 
@@ -400,9 +374,8 @@ fprintf(oid,['        <TR BGCOLOR = "#FFE7C6"><TD><B>Data</B></TD><TD><B>General
 %  work in progress : (it is to make a link to html page with all of the
 %  figure on it)
 %  if isempty(metaData.data_1) == 0
-%  print_unidata_my_pet_html(metaData, metaPar)
-%  end
-%  
+%    prt_unidata_my_pet_html(metaData, metaPar)
+%  end  
 
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
 % Facts:
@@ -413,9 +386,18 @@ if isfield(metaData, 'facts')
   for i = 1:nst
     fprintf(oid, '        <li>\n'); % open bullet point
     str1 = metaData.facts.(nm{i});
-    if isfield(txtData.bibkey,nm{i})
-      str2 = metaData.bibkey.(nm{i});
-      fprintf(oid, ['          ', str1,' (',str2, ')\n']);
+    if isfield(metaData.bibkey,(nm{i}))
+      bib = metaData.bibkey.(nm{i}); 
+      if ~iscell(bib)
+        str2 = bib;
+      else
+        n_bib = length(bib);
+        str2 = bib{1};
+        for j = 2:n_bib
+          str2 = [str2, ', ', bib{j}];
+        end            
+      end
+      fprintf(oid, ['          ', str1,' (ref: ',str2, ')\n']);
     else
       fprintf(oid, ['          ', str1, '\n']);  
     end
@@ -481,6 +463,8 @@ else % modifications do exist
   fprintf(oid,['      <H3 ALIGN="CENTER">', txt_author, ', ', txt_date, ...
     ' (last modified by ', txt_author_mod, '\n', txt_date_mod,')','</H3>\n\n']);
 end
+  fprintf(oid,['      <H3 ALIGN="CENTER"> accepted: ', txt_date_acc,'</H3>\n\n']);
+
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
 
 fprintf(oid, '    </div> <!REPLACE_WITH_DASH_DASH end of content REPLACE_WITH_DASH_DASH>\n\n');
@@ -494,7 +478,7 @@ fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 fclose(oid);
 
-% options.showCode = false; publish('prt_my_pet_res', options);
+
 
 ##### SOURCE END #####
 --></body></html>
