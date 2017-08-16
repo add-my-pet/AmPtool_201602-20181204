@@ -1675,7 +1675,14 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '43032';        
       id_EoL = '224731';
       id_fishbase = taxon_fish;
-       
+
+    case 'Cobitis_taenia'
+      id_CoL = 'fabc08e8e5ea108ffa723983765f1eb5';
+      id_WoRMS = '154373'; 
+      id_Taxo = '43977';
+      id_EoL = '212556';
+      id_fishbase = taxon_fish;
+
     case 'Rhodeus_amarus'
       id_CoL = '383389bc215371c6bf7b0cf460aff92e';
       id_WoRMS = ''; % not present 2017/06/16

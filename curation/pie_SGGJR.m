@@ -67,7 +67,7 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
       ['E_W = ', num2str(stat.E_Wb, '% 1.2e'), ' J, W_w = ', num2str(stat.Ww_b, '% 1.2e'), ' g']});
   if wrt
     Hfig1 = tightfig(Hfig1);
-    saveas(Hfig1, ['../entries_web/', species, '_pie_pSGJRb.png']);
+    saveas(Hfig1, ['../../entries_web/', species, '_pie_pSGJRb.png']);
   end
   set(Hfig1, 'Outerposition', [50 500 600 600]);
 
@@ -84,7 +84,7 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
       ['E_W = ', num2str(stat.E_Wp, '% 1.2e'), ' J, W_w = ', num2str(stat.Ww_p, '% 1.2e'), ' g']});
   if wrt
     Hfig2 = tightfig(Hfig2);
-    saveas(Hfig2, ['../entries_web/', species, '_pie_pSGJRp.png']);
+    saveas(Hfig2, ['../../entries_web/', species, '_pie_pSGJRp.png']);
   end
   set(Hfig2, 'Outerposition', [650 500 600 600]);
  
@@ -112,7 +112,7 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
   end
   if wrt
     Hfig3 = tightfig(Hfig3);
-    saveas(Hfig3, ['../entries_web/', species, '_pie_pSGJRi.png'])
+    saveas(Hfig3, ['../../entries_web/', species, '_pie_pSGJRi.png'])
   end
   set(Hfig3, 'Outerposition', [650 20 600 600]);
     
@@ -143,7 +143,7 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, wrt)
   end
   if wrt
     Hfig4 = tightfig(Hfig4);
-    saveas(Hfig4, ['../entries_web/', species, '_pie_SGJRb.png'])
+    saveas(Hfig4, ['../../entries_web/', species, '_pie_SGJRb.png'])
   end
   set(Hfig4, 'Outerposition', [50 20 600 600]);
 

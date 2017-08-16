@@ -29,8 +29,8 @@ function tree = pedigree(taxon)
 % tree  = pedigree or tree = pedigree('Mollusca')
 
   WD = pwd;                 % store current path
-  taxa = which('pedigree'); % locate DEBtool_M/taxa/
-  taxa = taxa(1:end - 10);  % path to DEBtool_M/taxa/
+  taxa = which('pedigree.pl'); % 
+  taxa = taxa(1:end - 11);  % 
   cd(taxa)                  % goto taxa
 
   if ~exist('taxon', 'var')

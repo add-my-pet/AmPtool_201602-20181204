@@ -36,12 +36,12 @@ end
 nargin = length(varargin); % number of entries to scan    
 WD = pwd; % store current path
 
-destinationFolder = '../entries_web/'; % target for html and png files
+destinationFolder = '../../entries_web/'; % target for html and png files
 
 for i = 1:nargin 
   fprintf(' %g : %s \n', i, varargin{i}) % report progress to screen 
   
-  cd(['../entries/', varargin{i}]) % goto entry i in dir entries
+  cd(['../../entries/', varargin{i}]) % goto entry i in dir entries
   delete('*.cache', '*.wn','*.asv','*.bib') % delete unwanted and bib files
   %mat2pars_init(varargin{i})
   load(['results_', varargin{i}, '.mat']) % load results_my_pet.mat
@@ -55,7 +55,7 @@ for i = 1:nargin
   prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
   prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder) % print html with results
   
-  cd('../entries_zip' );
+  cd('../../entries_zip' );
   zip_my_pet(varargin{i}, '../entries'); % zip the entry
   
   cd(WD)  % goto original path    
