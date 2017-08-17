@@ -1,6 +1,7 @@
 %% read_allStat
 % read statistics and/or parameters in allStat.mat
 
+%%
 function [var entries units label] = read_allStat(varargin)
 % created 2016/04/24 by Bas Kooijman
 

@@ -1,4 +1,4 @@
-%% classify
+%% lineage
 % gets list of taxa to which a taxon belongs
 
 %%

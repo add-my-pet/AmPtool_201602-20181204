@@ -16,7 +16,7 @@ function treeview_taxa (pedigree_taxa)
 % * pedigree_taxa: character string with pedigree of a taxon
 %
 %% Example of use
-% treeview_taxa(pedigree('Cladocera')); open <../treeview/treeview_taxa.html *treeview_taxa.html*> to see the result
+% treeview_taxa(pedigree('Cladocera')); open <../taxa/treeview/treeview_taxa.html *treeview_taxa.html*> to see the result
 
   WD = pwd;                      % store current path
   taxa = which('treeview_taxa'); % locate taxa
@@ -24,7 +24,7 @@ function treeview_taxa (pedigree_taxa)
   cd(taxa)                       % goto taxa
 
   try
-    fid_tv = fopen('/treeview/treeview_taxa.js', 'w+'); % open file for writing, delete existing content
+    fid_tv = fopen('/taxa/treeview/treeview_taxa.js', 'w+'); % open file for writing, delete existing content
 
     % write header
     fprintf(fid_tv, '//\n');
