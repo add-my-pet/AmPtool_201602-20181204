@@ -2744,6 +2744,21 @@ function [links info] = get_link(taxon, test)
       id_EoL = '223357';
       id_fishbase = taxon_fish;
        
+    case 'Sander_lucioperca'
+      id_CoL = '04b433fe83af06d454d86967fc42368f';
+      id_WoRMS = '151308';
+      id_Taxo = '186511';        
+      id_EoL = '222787';
+      id_fishbase = taxon_fish;
+
+    case 'Gymnocephalus_cernuus'
+      id_CoL = '349c65df03755f01c50de8bc74868fd5';
+      id_WoRMS = '151302';
+      id_Taxo = '45187';        
+      id_EoL = '46328762';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/17
+
     case 'Notothenia_coriiceps'
       id_CoL = '0d2d14ff0bfeed9cef3cd477df4e2afd';
       id_WoRMS = '234679';
