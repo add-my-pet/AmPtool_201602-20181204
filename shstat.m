@@ -1,6 +1,7 @@
 %% shstat
 % plots statistics and/or parameters
 
+%%
 function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfig)
 % created 2016/04/23 by Bas Kooijman; modified 2017/04/20
 
@@ -31,13 +32,13 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 % * missing: cell string with names of entries that should have been plotted, but are missing (because of lack of data in allStat.mat) 
 
 %% Remarks
-% Legend can be set/modified with <../../DEBtool_M/taxa/html/select_legend.html *select_legend*>. Be aware that the sequence of taxa in legend matters. 
+% Legend can be set/modified with <select_legend.html *select_legend*>. Be aware that the sequence of taxa in legend matters. 
 % shstat composes a selection-of-entries matrix with first-to-last colum corresponding to taxa in first-to-last row of legend. 
 % In the case that a taxon is included in another one, double plotting is suppressed from first-to-last column of selection matrix, and plotting is done for last-to-first column.
 % So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding.
 % If Animalia is in legend before Aves, no Aves-markers are shown.
 %
-% Set options with <shstat_options,.html *shstat_options*> (such as logarithmic transformation of axes).
+% Set options with <shstat_options.html *shstat_options*> (such as logarithmic transformation of axes).
 % Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
 %
 % In case of 1 variable: ylabel 'survivor function' is plotted if y_label = 'on'; input legend is then optional.
@@ -50,10 +51,10 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 % In case of 3 variables: hit rotation in the toolbar of the figure.
 %
 % Make sure that allStat has been generated at the correct temperature (for times and rates); all parameters are at T_ref.
-% Make sure that allStat is consistent with select('Animalia'); can be done via <write_allStat.html *write_allStat*>.
+% Make sure that allStat is consistent with select('Animalia'); can be done via <../curation/html/write_allStat.html *write_allStat*>.
 
 %% Example of use
-% see <mydata_shstat.html *mydata_shstat*>
+% see <../mydata_shstat.m *mydata_shstat*>
 
   global x_transform y_transform z_transform  x_label y_label z_label
 

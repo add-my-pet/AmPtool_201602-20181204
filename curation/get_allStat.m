@@ -23,7 +23,7 @@ function allStat = get_allStat(T, f)
 
 %% Remarks
 % Statistics are given at T_typical or T. 
-% Meant to be used in combination with <write_allStat.html *write_allStat*> and <read_allStat.html *read_allStat*>.
+% Meant to be used in combination with <write_allStat.html *write_allStat*> and <../../html/read_allStat.html *read_allStat*>.
 % Since running this function takes some time, progress is written to screen.
 
 %% Example of use

@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>treeview_taxa</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-06"><meta name="DC.source" content="treeview_taxa.m"><style type="text/css">
+      --><title>treeview_taxa</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-17"><meta name="DC.source" content="treeview_taxa.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>treeview_taxa</h1><!--introduction--><p>write treeview_taxa.js that is called by treeview_taxa.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../treeview_taxa.m"><b>treeview_taxa</b></a> (pedigree_taxa)</p><h2>Description<a name="4"></a></h2><p>Clears and creates file /treeview/treeview_taxa.js and writes java code to it</p><p>Input:</p><div><ul><li>pedigree_taxa: character string with pedigree of a taxon</li></ul></div><h2>Example of use<a name="5"></a></h2><p>treeview_taxa(pedigree('Cladocera')); open <a href="../treeview/treeview_taxa.html"><b>treeview_taxa.html</b></a> to see the result</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>treeview_taxa</h1><!--introduction--><p>write treeview_taxa.js that is called by treeview_taxa.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../treeview_taxa.m"><b>treeview_taxa</b></a> (pedigree_taxa)</p><h2>Description<a name="4"></a></h2><p>Clears and creates file /treeview/treeview_taxa.js and writes java code to it</p><p>Input:</p><div><ul><li>pedigree_taxa: character string with pedigree of a taxon</li></ul></div><h2>Example of use<a name="5"></a></h2><p>treeview_taxa(pedigree('Cladocera')); open <a href="../taxa/treeview/treeview_taxa.html"><b>treeview_taxa.html</b></a> to see the result</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% treeview_taxa
@@ -76,7 +76,7 @@ function treeview_taxa (pedigree_taxa)
 % * pedigree_taxa: character string with pedigree of a taxon
 %
 %% Example of use
-% treeview_taxa(pedigree('Cladocera')); open <../treeview/treeview_taxa.html *treeview_taxa.html*> to see the result
+% treeview_taxa(pedigree('Cladocera')); open <../taxa/treeview/treeview_taxa.html *treeview_taxa.html*> to see the result
 
   WD = pwd;                      % store current path
   taxa = which('treeview_taxa'); % locate taxa
@@ -84,7 +84,7 @@ function treeview_taxa (pedigree_taxa)
   cd(taxa)                       % goto taxa
 
   try
-    fid_tv = fopen('/treeview/treeview_taxa.js', 'w+'); % open file for writing, delete existing content
+    fid_tv = fopen('/taxa/treeview/treeview_taxa.js', 'w+'); % open file for writing, delete existing content
 
     % write header
     fprintf(fid_tv, '//\n');
