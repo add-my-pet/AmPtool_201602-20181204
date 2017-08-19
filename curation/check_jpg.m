@@ -39,7 +39,7 @@ if ~(info == 1)
   tree = list_taxa; tree = tree(cellfun('isempty',strfind(tree, '_'))); tree = tree(cellfun('isempty',strfind(tree, 'Animalia'))); n_tree = length(tree);   % cell string with node names of tree, excluding entries
 end
 
-local = cellstr(ls('../img/tree')); local([1 2]) = [];  % cell string with local node names 
+local = cellstr(ls('../../img/tree')); local([1 2]) = [];  % cell string with local node names 
 i = cellfun('isempty',strfind(local, '.txt')); local_txt = local(i); local_jpg = local(~i); % split local in jpg and txt
 % reduce jpg and txt names to that of nodes 
 n_jpg = length(local_jpg);
