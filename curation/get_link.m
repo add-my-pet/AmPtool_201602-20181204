@@ -1698,6 +1698,13 @@ function [links info] = get_link(taxon, test)
       id_fishbase = taxon_fish;
       id_ADW = ''; % not present 2017/08/12
 
+    case 'Luciobarbus_sclateri'
+      id_CoL = '9c12f86d9e0181905f22e2497dc4f741';
+      id_WoRMS = '474116'; 
+      id_Taxo = '1682769';
+      id_EoL = '225284';
+      id_fishbase = taxon_fish;
+
     case 'Gobio_gobio'
       id_CoL = '5f26c93dbec8e883890bf3f7e7624f4d';
       id_WoRMS = '293609'; 
@@ -1891,6 +1898,22 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1156463';
       id_fishbase = taxon_fish;
        
+    case 'Coregonus_albula'
+      id_CoL = 'cb380684d38085d21164d9d0327fb629';
+      id_WoRMS = '127178';
+      id_Taxo = '42840';        
+      id_EoL = '223193';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/19
+ 
+    case 'Coregonus_lavaretus'
+      id_CoL = '165deb471da03a7f0547cf80906d35ce';
+      id_WoRMS = '127180';
+      id_Taxo = '42846';        
+      id_EoL = '267571';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/19
+ 
     case 'Esox_lucius'
       id_CoL = 'c828ed0d18644bc9e3cfe4b9507f3247';
       id_WoRMS = '154210';
