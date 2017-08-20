@@ -7,7 +7,7 @@
 % allStat has fields for the temp-correction c_T, so divide rates by c_T to go from T_typical to T_ref
 %
 % Compose/modify your legend if you wish. You can also do this on-the-fly by selecting an empty legend.
-% mylegend = select_legend; replace legend_* by mylegend in the examples below, if you active this.
+% mylegend = select_legend; replace legend_* by mylegend in the examples below, to activate this.
 % If your desired legend is close to an existing one, e.g. legend_fish, you can modify it by: mylegend = select_legend(legend_fish)
 
 close all    % remove any existing figure
