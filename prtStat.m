@@ -18,7 +18,7 @@ function prtStat(taxa, var)
   
   %% Example of use 
   % prtStat({'Paridae','Cyprinidae'}, 'p_M')
-  
-  [sel nm] = select_01(taxa); 
-  [val entries units label] = read_allStat(var); 
+    
+  [val nm units label] = read_allStat(var); 
+  sel = select_01(taxa); 
   printpar(nm(sel), val(sel), [], [label{1}, ': ', units{1}])
