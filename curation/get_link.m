@@ -4264,6 +4264,14 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;       
       id_avibase = '7296BC772F2643AD';
       
+    case 'Cyanistes_caeruleus'
+      id_CoL = 'df55272f9bdde6d18cd7f4942fe59ad9';
+      id_Taxo = '57700'; % present as Parus caeruleus       
+      id_EoL = '1051997';
+      id_AnAge = taxon;       
+      id_avibase = '9BE53D340F9A4305';
+      id_ADW = 'Parus_caeruleus';
+      
     case 'Periparus_ater'
       id_CoL = 'a1536cbd36af848c4cfb9234fad2e1e0';
       id_Taxo = '57696'; % present as Parus ater Linnaeus, 1758       
