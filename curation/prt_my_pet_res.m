@@ -4,7 +4,8 @@
 %%
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
-% modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine; 2016/11/05, 2017/01/04 Bas Kooijman
+% modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
+% 2016/11/05, 2017/01/04, 2017/08/21 Bas Kooijman,
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -181,7 +182,11 @@ for j = 1:nst
     prdta = prdData.(nm{j});
     re    = metaPar.RE(j); 
     unit  = txtData.units.(nm{j});
-    des   = txtData.label.(nm{j});
+    if isfield(txtData, 'comment') && isfield(txtData.comment, nm{j})
+      des   = ['<a href="" title="', txtData.comment.(nm{j}), '">', txtData.label.(nm{j}), '</a>'];
+    else
+      des   = txtData.label.(nm{j});
+    end        
     n = iscell(txtData.bibkey.(nm{j}));  % if 1 then there are several references for this data
     if n % if there are several references
       n = length(txtData.bibkey.(nm{j})); % number of references
@@ -265,8 +270,14 @@ if isempty(metaData.data_1) == 0
   for j = 1: n_uniData % for each univariate data set
     label  = nm{uniData(j)}; % "Data set"
     re     = metaPar.RE(uniData(j)); % "relative error"
-    ivar   = txtData.label.(nm{uniData(j)}){1}; % independant variable
-    dvar   = txtData.label.(nm{uniData(j)}){2}; % dependant variable
+    ivar   = txtData.label.(nm{uniData(j)}){1}; % independent variable
+    % dependent variable
+    if isfield(txtData, 'comment') && isfield(txtData.comment, nm{uniData(j)})
+      dvar   = ['<a href="" title="', txtData.comment.(nm{uniData(j)}), '">', txtData.label.(nm{uniData(j)}){2}, '</a>'];
+    else
+      dvar   = txtData.label.(nm{uniData(j)}){2};
+    end        
+
 
     if ID(j) < 10
       fig   = ['see <A href = "../entries/',metaData.species,'/results_',metaData.species,'_0',num2str(ID(j)),'.png"> Fig. ',num2str(ID(j)),'</A>'];

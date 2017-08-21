@@ -4250,12 +4250,13 @@ function [links info] = get_link(taxon, test)
       id_ADW = 'Parus cristatus'; 
       id_avibase = 'E553193354C74B21';
       
-    case 'Parus_atricapillus'
+    case 'Poecile_atricapillus'
       id_CoL = 'aed95c6ec867d5d04bbab05d19687d73';
-      id_Taxo = '57697';        
+      id_Taxo = '57697';   % present as Parus atricapillus     
       id_EoL = '1178539';
-      id_AnAge = ''; % not present 2017/06/18       
-      id_avibase = 'B1F0CC82E34E4541'; % present as Poecile atricapillus
+      id_AnAge = taxon;    
+      id_avibase = 'B1F0CC82E34E4541'; 
+      id_ADW = 'Parus_atricapillus';
       
     case 'Parus_major'
       id_CoL = '9a3033c7cf62b8a01f58d9a946e06126';
