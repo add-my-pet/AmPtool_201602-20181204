@@ -1,5 +1,5 @@
 %% prtStat
-% Print parameter or stastistics of selected entries names and values 
+% Print parameter or stastistic of selected entries names and values 
 
 %%
 function prtStat(taxa, var)
@@ -14,7 +14,7 @@ function prtStat(taxa, var)
   % Input:
   %
   % * taxa: cell-string with taxa
-  % * var: character string with prameter ot statistic
+  % * var: character string with parameter or statistic
   
   %% Example of use 
   % prtStat({'Paridae','Cyprinidae'}, 'p_M')

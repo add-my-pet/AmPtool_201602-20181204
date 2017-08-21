@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prtStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-20"><meta name="DC.source" content="prtStat.m"><style type="text/css">
+      --><title>prtStat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-21"><meta name="DC.source" content="prtStat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>prtStat</h1><!--introduction--><p>Print parameter or stastistics of selected entries names and values</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prtStat.m"><b>prtStat</b></a>(taxa, var)</p><h2>Description<a name="4"></a></h2><p>Print parameter or statistic values for selected entries to screen.</p><p>Input:</p><div><ul><li>taxa: cell-string with taxa</li><li>var: character string with prameter ot statistic</li></ul></div><h2>Example of use<a name="5"></a></h2><p>prtStat({'Paridae','Cyprinidae'}, 'p_M')</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>prtStat</h1><!--introduction--><p>Print parameter or stastistics of selected entries names and values</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prtStat.m"><b>prtStat</b></a>(taxa, var)</p><h2>Description<a name="4"></a></h2><p>Print parameter or statistic values for selected entries to screen.</p><p>Input:</p><div><ul><li>taxa: cell-string with taxa</li><li>var: character string with parameter or statistic</li></ul></div><h2>Example of use<a name="5"></a></h2><p>prtStat({'Paridae','Cyprinidae'}, 'p_M')</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prtStat
@@ -74,13 +74,13 @@ function prtStat(taxa, var)
   % Input:
   %
   % * taxa: cell-string with taxa
-  % * var: character string with prameter ot statistic
+  % * var: character string with parameter or statistic
   
   %% Example of use 
   % prtStat({'Paridae','Cyprinidae'}, 'p_M')
-  
-  [sel nm] = select_01(taxa); 
-  [val entries units label] = read_allStat(var); 
+    
+  [val nm units label] = read_allStat(var); 
+  sel = select_01(taxa); 
   printpar(nm(sel), val(sel), [], [label{1}, ': ', units{1}])
 
 ##### SOURCE END #####
