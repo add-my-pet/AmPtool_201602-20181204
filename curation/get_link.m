@@ -386,13 +386,13 @@ function [links info] = get_link(taxon, test)
       id_ADW = ''; % not present at 2017/08/09
       id_molluscabase = '140692';
       
-    case 'Crassostrea_gigas'
-      id_CoL = '93190b1650de88982e0161577b8b6a7e'; % unaccepted, to Magallana gigas (Thunberg, 1793)
-      id_WoRMS = '140656'; % unaccepted, to Magallana gigas (Thunberg, 1793)
-      id_Taxo = '39283';        
-      id_EoL = '451579';
+    case 'Magallana_gigas'
+      id_CoL = '93190b1650de88982e0161577b8b6a7e'; 
+      id_WoRMS = '836033'; 
+      id_Taxo = '39283'; % present as Crassostrea gigas      
+      id_EoL = '451579'; % present as Crassostrea gigas
       id_ADW = ''; % not present at 2017/08/09
-      id_molluscabase = '140656'; % unaccepted, to Magallana gigas (Thunberg, 1793)
+      id_molluscabase = '140656'; 
       
     case 'Ostrea_edulis'
       id_CoL = '3063d7e4904e854f23e2d5ac9861a140';
@@ -721,12 +721,12 @@ function [links info] = get_link(taxon, test)
       id_Wiki = 'Tardigrada';
       id_EoL = '12089749';
        
-    case 'Hypsibius_oberhaeuseri'
+    case 'Ramazzottius_oberhaeuseri'
       id_CoL = '1bd832ac6d7bb295abbd24520dbf0798';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '104402'; % unaccepted, to Ramazzottius oberhaeuseri       
+      id_Taxo = '104402'; %    
       id_Wiki = 'Tardigrada'; 
-      id_EoL = '1023979'; % unaccepted, to Ramazzottius oberhaeuseri       
+      id_EoL = '1023979';      
       id_ADW = ''; % not present at 2017/08/09
       
     case 'Milnesium_tardigradum'
@@ -838,6 +838,14 @@ function [links info] = get_link(taxon, test)
       id_Wiki = 'Daphnia_(subgenus)';
       id_EoL = '1020230'; 
        
+    case 'Daphnia_longispina'
+      id_CoL = '44a6d655825ccabe0b380c15cc884bc4';
+      id_WoRMS = '148373';
+      id_Taxo = '33104';        
+      id_Wiki = 'Daphnia_(subgenus)';
+      id_EoL = '338543'; 
+      id_ADW = ''; % not present at 2017/08/23
+
     case 'Daphnia_hyalina'
       id_CoL = '29d9d22b0b26cf7307af8c0faaa8cf06';
       id_WoRMS = '148374';
@@ -1008,6 +1016,12 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '34023';        
       id_EoL = '128502';
        
+    case 'Dissodactylus_primitivus'
+      id_CoL = 'c65c93082d671b96cf11dc1f4313c98c';
+      id_WoRMS = '422153';
+      id_Taxo = ''; % not present at 2017/08/23      
+      id_EoL = '342578';
+
     case 'Charybdis_bimaculata'
       id_CoL = '6c1210383c25336b3951f1dec88beeb5';
       id_WoRMS = ''; % not present 2017/06/15
