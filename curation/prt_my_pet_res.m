@@ -176,8 +176,12 @@ fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TD><b>Data</b></TD><TD><b>Observe
 
 for j = 1:nst
   [~, k] = size(data.(nm{j})); % number of data points per set
-  if k == 1       
-    name = nm{j};
+  if k == 1   
+    if isfield(auxData.temp, nm{j})
+        name = ['<a href="" title="Temperature: ', num2str(auxData.temp.(nm{j})), ' ', txtData.units.temp.(nm{j}), '">', nm{j}, '</a>'];
+    else
+        name = nm{j};
+    end
     dta   = data.(nm{j}); 
     prdta = prdData.(nm{j});
     re    = metaPar.RE(j); 
@@ -268,7 +272,16 @@ if isempty(metaData.data_1) == 0
  
   % print out columns in the univariate data set table:
   for j = 1: n_uniData % for each univariate data set
-    label  = nm{uniData(j)}; % "Data set"
+    if isfield(auxData.temp, nm{uniData(j)}) % label = nm
+      temp = auxData.temp.(nm{uniData(j)});
+      if length(temp) == 1
+        label = ['<a href="" title="Temperature: ', num2str(temp), ' ', txtData.units.temp.(nm{uniData(j)}), '">', nm{uniData(j)}, '</a>'];
+      else
+        label = ['<a href="" title="Temperature varies">', nm{uniData(j)}, '</a>'];
+      end
+    else
+      label  = nm{uniData(j)}; % "Data set"
+    end
     re     = metaPar.RE(uniData(j)); % "relative error"
     ivar   = txtData.label.(nm{uniData(j)}){1}; % independent variable
     % dependent variable
@@ -309,7 +322,7 @@ end
 % Print table with pseudo-data:
 [nm, nst] = fieldnmnst_st(pseudo);
 fprintf(oid, '      <TABLE id="t01">\n');
-fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="5"> Pseudo-data </TH></TR>\n');
+fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="5"> Pseudo-data at T<sub>ref</sub></TH></TR>\n');
 fprintf(oid,['        <TR BGCOLOR = "#FFE7C6"><TD><B>Data</B></TD><TD><B>Generalised animal</B></TD><TD><B>',strrep(metaData.species, '_', ' '),'</B></TD><TD><B>Unit</B></TD><TD><B>Description</B></TD></TR>\n']);
   for j = 1:nst
        name = nm{j};
