@@ -18,14 +18,14 @@ function [tree local server] = check_entries
 
 %% Remarks
 % The root of the tree is Animalia. The dates are not checked
-% Assumes that this function is run in dir entries_admin and that entries is a sister directory
+% Assumes that this function is run in dir AmPtool/curation and that entries is a sister directory of AmPtool
 % Assumes that path to entries on server is: http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/
 
 %% Example of use
 % check_entries
 
-tree = select; n_tree = length(tree);                                          % cell string with entry names of tree
-local = cellstr(ls('../entries')); local([1 2]) = []; n_local = length(local); % cell string with local entry names 
+tree = select; n_tree = length(tree);                                             % cell string with entry names of tree
+local = cellstr(ls('../../entries')); local([1 2]) = []; n_local = length(local); % cell string with local entry names 
 stat = read_allStat('species');
 
 % cell string with server entries stored on server

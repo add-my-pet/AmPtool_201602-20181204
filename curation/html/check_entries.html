@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>check_entries</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-04-07"><meta name="DC.source" content="check_entries.m"><style type="text/css">
+      --><title>check_entries</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-24"><meta name="DC.source" content="check_entries.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>check_entries</h1><!--introduction--><p>Checks entries for member inconsistencies</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>[tree local server] = <a href="../check_entries.m"><b>check_entries</b></a></p><h2>Description<a name="4"></a></h2><p>checks tree leaves against subdirectories of entries, local and on server</p><p>Output:</p><div><ul><li>tree, local, server: cell strings with names of entries</li><li>prints warnings on screen</li></ul></div><h2>Remarks<a name="5"></a></h2><p>The root of the tree is Animalia. The dates are not checked Assumes that this function is run in dir entries_admin and that entries is a sister directory Assumes that path to entries on server is: <a href="http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/">http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/</a></p><h2>Example of use<a name="6"></a></h2><p>check_entries</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>check_entries</h1><!--introduction--><p>Checks entries for member inconsistencies</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>[tree local server] = <a href="../check_entries.m"><b>check_entries</b></a></p><h2>Description<a name="4"></a></h2><p>checks tree leaves against subdirectories of entries, local and on server</p><p>Output:</p><div><ul><li>tree, local, server: cell strings with names of entries</li><li>prints warnings on screen</li></ul></div><h2>Remarks<a name="5"></a></h2><p>The root of the tree is Animalia. The dates are not checked Assumes that this function is run in dir AmPtool/curation and that entries is a sister directory of AmPtool Assumes that path to entries on server is: <a href="http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/">http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/</a></p><h2>Example of use<a name="6"></a></h2><p>check_entries</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% check_entries
@@ -78,22 +78,35 @@ function [tree local server] = check_entries
 
 %% Remarks
 % The root of the tree is Animalia. The dates are not checked
-% Assumes that this function is run in dir entries_admin and that entries is a sister directory
+% Assumes that this function is run in dir AmPtool/curation and that entries is a sister directory of AmPtool
 % Assumes that path to entries on server is: http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/
 
 %% Example of use
 % check_entries
 
-tree = select; n_tree = length(tree);                                          % cell string with entry names of tree
-local = cellstr(ls('../entries')); local([1 2]) = []; n_local = length(local); % cell string with local entry names 
+tree = select; n_tree = length(tree);                                             % cell string with entry names of tree
+local = cellstr(ls('../../entries')); local([1 2]) = []; n_local = length(local); % cell string with local entry names 
+stat = read_allStat('species');
 
-% cell string with server entries stored in server
+% cell string with server entries stored on server
 txt = urlread('http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/');
 head = strfind(txt,'folder.gif'); txt(1:head(1)) = []; 
 n_server = length(strfind(txt,'href="')); server = cell(n_server,1);
 for i = 1:n_server
   kill = strfind(txt,'href="'); txt(1:kill(1) + 5)= [];
   server{i} = txt(1:strfind(txt,'/"') - 1);
+end
+
+diff = setdiff(stat, local);
+if ~isempty(diff)
+  fprintf('warning from check_entries: present in allstat, but not in local\n');
+  diff
+end
+
+diff = setdiff(local, stat);
+if ~isempty(diff)
+  fprintf('warning from check_entries: present in local, but not in allstat\n');
+  diff
 end
 
 diff = setdiff(tree, local);
@@ -108,6 +121,17 @@ if ~isempty(diff)
   diff
 end
 
+diff = setdiff(local, server);
+if ~isempty(diff)
+  fprintf('warning from check_entries: present in local, but not on server\n');
+  diff
+end
+
+diff = setdiff(server, local);
+if ~isempty(diff)
+  fprintf('warning from check_entries: present in server, but not in local\n');
+  diff
+end
 
 ##### SOURCE END #####
 --></body></html>

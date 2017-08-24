@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>check_collection</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="check_collection.m"><style type="text/css">
+      --><title>check_collection</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-24"><meta name="DC.source" content="check_collection.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>check_collection</h1><!--introduction--><p>gives COMPLETE, and MRE</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/02/21 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>created 2016/02/21 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[info, missingSpecies] = <a href="../check_collection.m"><b>check_collection</b></a></p><h2>Description<a name="4"></a></h2><p>checks that all members of the list returned by select('Animalia') are in dir ../entries and vice-versa</p><p>Output:</p><div><ul><li>missingFromCollection: n-string of names of entries which are in the lists but are not in the collection</li><li>missingFromList: n-string of names of entries which are in the lists but are not in the collection</li></ul></div><h2>Remarks<a name="5"></a></h2><p>use this to e.g. make sure that the list in DEBtool_M/taxa are up to date and/or that all of the entries have been put on the web.</p><h2>Example of use<a name="6"></a></h2><p>[missingFromCollection, missingFromList] = check_collection</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>check_collection</h1><!--introduction--><p>gives COMPLETE, and MRE</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/02/21 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>created 2016/02/21 by Bas Kooijman<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p>[info, missingSpecies] = <a href="../check_collection.m"><b>check_collection</b></a></p><h2>Description<a name="4"></a></h2><p>checks that all members of the list returned by select('Animalia') are in dir ../../entries and vice-versa</p><p>Output:</p><div><ul><li>missingFromCollection: n-string of names of entries which are in the lists but are not in the collection</li><li>missingFromList: n-string of names of entries which are in the lists but are not in the collection</li></ul></div><h2>Remarks<a name="5"></a></h2><p>use this to e.g. make sure that the list in AmPtool/taxa are up to date and/or that all of the entries have been put on the web.</p><h2>Example of use<a name="6"></a></h2><p>[missingFromCollection, missingFromList] = check_collection</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% check_collection
@@ -69,7 +69,7 @@ function [missingFromCollection, missingFromList] = check_collection
 % [info, missingSpecies] = <../check_collection.m *check_collection*>
 
 %% Description
-% checks that all members of the list returned by select('Animalia') are in dir ../entries and vice-versa
+% checks that all members of the list returned by select('Animalia') are in dir ../../entries and vice-versa
 %
 %
 % Output: 
@@ -78,7 +78,7 @@ function [missingFromCollection, missingFromList] = check_collection
 % * missingFromList: n-string of names of entries which are in the lists but are not in the collection 
 
 %% Remarks
-% use this to e.g. make sure that the list in DEBtool_M/taxa are up to date
+% use this to e.g. make sure that the list in AmPtool/taxa are up to date
 % and/or that all of the entries have been put on the web.
 
 %% Example of use
@@ -86,7 +86,7 @@ function [missingFromCollection, missingFromList] = check_collection
 
 entries = select('Animalia');   % n-string of latin names of species in the lists
 WD = pwd;  % store current path
-cd('../.') % goto add_my_pet
+cd('../../.') % goto add_my_pet
         
 allFiles = dir('entries'); 
 allNames = {allFiles.name}; % n-string of names of directories

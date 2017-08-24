@@ -9,7 +9,7 @@ function [missingFromCollection, missingFromList] = check_collection
 % [info, missingSpecies] = <../check_collection.m *check_collection*>
 
 %% Description
-% checks that all members of the list returned by select('Animalia') are in dir ../entries and vice-versa
+% checks that all members of the list returned by select('Animalia') are in dir ../../entries and vice-versa
 %
 %
 % Output: 
@@ -18,7 +18,7 @@ function [missingFromCollection, missingFromList] = check_collection
 % * missingFromList: n-string of names of entries which are in the lists but are not in the collection 
 
 %% Remarks
-% use this to e.g. make sure that the list in DEBtool_M/taxa are up to date
+% use this to e.g. make sure that the list in AmPtool/taxa are up to date
 % and/or that all of the entries have been put on the web.
 
 %% Example of use
@@ -26,7 +26,7 @@ function [missingFromCollection, missingFromList] = check_collection
 
 entries = select('Animalia');   % n-string of latin names of species in the lists
 WD = pwd;  % store current path
-cd('../.') % goto add_my_pet
+cd('../../.') % goto add_my_pet
         
 allFiles = dir('entries'); 
 allNames = {allFiles.name}; % n-string of names of directories

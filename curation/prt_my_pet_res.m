@@ -178,7 +178,11 @@ for j = 1:nst
   [~, k] = size(data.(nm{j})); % number of data points per set
   if k == 1   
     if isfield(auxData.temp, nm{j})
-        name = ['<a href="" title="Temperature: ', num2str(auxData.temp.(nm{j})), ' ', txtData.units.temp.(nm{j}), '">', nm{j}, '</a>'];
+        temp = auxData.temp.(nm{j});
+        if strcmp(txtData.units.temp.(nm{j}), 'K')
+          temp = K2C(temp);
+        end
+        name = ['<a href="" title="Temperature: ', num2str(temp), ' C">', nm{j}, '</a>'];
     else
         name = nm{j};
     end
@@ -275,7 +279,10 @@ if isempty(metaData.data_1) == 0
     if isfield(auxData.temp, nm{uniData(j)}) % label = nm
       temp = auxData.temp.(nm{uniData(j)});
       if length(temp) == 1
-        label = ['<a href="" title="Temperature: ', num2str(temp), ' ', txtData.units.temp.(nm{uniData(j)}), '">', nm{uniData(j)}, '</a>'];
+        if strcmp(txtData.units.temp.(nm{uniData(j)}), 'K')
+          temp = K2C(temp);
+        end
+        label = ['<a href="" title="Temperature: ', num2str(temp), ' C">', nm{uniData(j)}, '</a>'];
       else
         label = ['<a href="" title="Temperature varies">', nm{uniData(j)}, '</a>'];
       end
