@@ -28,9 +28,11 @@ function [links info] = get_link(taxon, test)
 %
 % EoL is most complete 
 % CoL: edition 2017 is used
+% AWD: strong American bias, wierd common names
 % Taxonomicon: Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
 % Wiki: if it has not the entry name, a higher taxon is selected
 % WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
+%
 % fishbase only has fish
 % amphibiaseweb only has amphibians
 % ReptileDB only has reptiles (no dino's)
@@ -46,8 +48,8 @@ function [links info] = get_link(taxon, test)
   taxon_rep = ['genus=', strrep(taxon,'_','&species=')]; % used in reptiledatabase
 
   % default identifiers
-  id_Wiki = taxon;  id_ADW = taxon; id_CoL = ''; id_EoL = ''; id_Taxo = ''; id_WoRMS = '';
-  id_molluscabase = ''; id_fishbase = ''; id_amphweb = ''; id_ReptileDB = ''; id_avibase = ''; id_MSW3 = ''; id_AnAge = ''; 
+  id_Wiki = taxon;  id_ADW = taxon; id_CoL = ''; id_EoL = ''; id_Taxo = ''; id_WoRMS = ''; % general sites
+  id_molluscabase = ''; id_fishbase = ''; id_amphweb = ''; id_ReptileDB = ''; id_avibase = ''; id_MSW3 = ''; id_AnAge = ''; % taxon-specific sites
 
   switch taxon % overwrite id's if necessary, assign empty to delete (at bottom)
     case 'Haliclona_oculata'
@@ -780,7 +782,7 @@ function [links info] = get_link(taxon, test)
     case 'Triops_longicaudatus'
       id_CoL = 'cd00dfd705355d80c95c024877f73428';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '';  % not present 2017/06/15 
+      id_Taxo = '33078';  % present at genus level
       id_EoL = '338945';
        
     case 'Bosmina_longirostris'
@@ -1010,32 +1012,6 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '125153';
       id_EoL = '343938';
        
-    case 'Carcinus_maenas'
-      id_CoL = '182ab1e14f8181b51f406b97feedd219';
-      id_WoRMS = '107381';
-      id_Taxo = '34023';        
-      id_EoL = '128502';
-       
-    case 'Dissodactylus_primitivus'
-      id_CoL = 'c65c93082d671b96cf11dc1f4313c98c';
-      id_WoRMS = '422153';
-      id_Taxo = ''; % not present at 2017/08/23      
-      id_EoL = '342578';
-
-    case 'Charybdis_bimaculata'
-      id_CoL = '6c1210383c25336b3951f1dec88beeb5';
-      id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '125153';
-      id_Wiki = 'Charybdis_(genus)';
-      id_EoL = '4267035';
-      id_ADW = ''; % not present at 2017/08/09
-      
-    case 'Eriphia_verrucosa'
-      id_CoL = '528fd84a4773fb98b14863274a229cd7';
-      id_WoRMS = '107409';
-      id_Taxo = '228769'; % present as genus only 2017/07/18      
-      id_EoL = '344746';
-       
     case 'Crangon_crangon'
       id_CoL = '58d00d89008c1ec63431fabcc112c6bb';
       id_WoRMS = '107552';
@@ -1043,6 +1019,45 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1039673';
       id_ADW = 'Crangon'; % present as genus 2017/08/09
       
+    case 'Homarus_gammarus'
+      id_CoL = '53b26b75de1c86582f4b62a79890101b';
+      id_WoRMS = '107253';
+      id_Taxo = '33906';        
+      id_EoL = '1039672';
+      id_ADW = ''; % present as genus 2017/08/25
+
+    case 'Carcinus_maenas'
+      id_CoL = '182ab1e14f8181b51f406b97feedd219';
+      id_WoRMS = '107381';
+      id_Taxo = '34023';        
+      id_EoL = '128502';
+       
+    case 'Charybdis_bimaculata'
+      id_CoL = '6c1210383c25336b3951f1dec88beeb5';
+      id_WoRMS = '442874';
+      id_Taxo = '125153';
+      id_Wiki = 'Charybdis_(genus)';
+      id_EoL = '4267035';
+      id_ADW = ''; % not present at 2017/08/09
+      
+    case 'Dissodactylus_primitivus'
+      id_CoL = 'c65c93082d671b96cf11dc1f4313c98c';
+      id_WoRMS = '422153';
+      id_Taxo = ''; % not present at 2017/08/23      
+      id_EoL = '342578';
+      
+    case 'Cancer_pagurus'
+      id_CoL = 'f3183ce46e4cc2b2d00c3b4c026b9481';
+      id_WoRMS = '107276';
+      id_Taxo = '34019';        
+      id_EoL = '1022230';
+
+    case 'Eriphia_verrucosa'
+      id_CoL = '528fd84a4773fb98b14863274a229cd7';
+      id_WoRMS = '107409';
+      id_Taxo = '228769'; % present as genus only 2017/07/18      
+      id_EoL = '344746';
+       
     case 'Folsomia_candida'
       id_CoL = 'bec653e78eb0e5dd43f92cc01e7cbd73';
       id_WoRMS = ''; % not present 2017/06/15
@@ -1203,7 +1218,7 @@ function [links info] = get_link(taxon, test)
     case 'Echinus_affinis'
       id_CoL = 'e7cf9012297aa33bdaa907a4e2545d53'; % unaccepeted, to Gracilechinus affinis (Mortensen, 1903)
       id_WoRMS = '124279'; % unaccepted, to Gracilechinus affinis (Mortensen, 1903)
-      id_Taxo = ''; % not present 2017/06/15
+      id_Taxo = '41133'; % present at genus level 2017/06/15
       id_Wiki = 'Echinus_(sea_urchin)';
       id_EoL = '599662'; % unaccepted, to Gracilechinus affinis (Mortensen, 1903)
        
@@ -4867,11 +4882,11 @@ function [links info] = get_link(taxon, test)
        
     case {'Bos_primigenius_Angus','Bos_primigenius_Holstein','Bos_primigenius_Brahman'}
       id_CoL = '40e81482006c210a43ef64609163278e';
-      id_Taxo = '167484'; % unaccpeted, to Bos taurus primigenius Bojanus, 1827        
+      id_Taxo = '167484'; % unaccepted, to Bos taurus primigenius Bojanus, 1827        
       id_Wiki = 'Bos_primigenius';
-      id_EoL = '10408207'; % unaccpeted, to Bos taurus primigenius Bojanus, 1827 
-      id_AnAge = 'Bos_taurus';
-      id_MSW3 = '';
+      id_EoL = '10408207'; % unaccepted, to Bos taurus primigenius Bojanus, 1827 
+      id_AnAge = 'Bos_taurus'; 
+      id_MSW3 = '14200690'; % unaccepted, to Bos taurus primigenius
       id_ADW = 'Bos_taurus'; 
       
     case 'Rupicapra_rupicapra'
