@@ -1012,6 +1012,19 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '125153';
       id_EoL = '343938';
        
+    case 'Palaemonetes_varians'
+      id_CoL = 'a45817ffd94cf8158afac51a11b0b84e';
+      id_WoRMS = '587704';
+      id_Taxo = '33867'; % present only at genus level 2017/08/25
+      id_EoL = '344117';
+       
+    case 'Palaemon_elegans'
+      id_CoL = 'a86a4f3617fc9fe9b73cc7bde3f3df6a';
+      id_WoRMS = '107614';
+      id_Taxo = '33864';
+      id_EoL = '1021076';
+      id_ADW = ''; % not present at 2017/08/25
+       
     case 'Crangon_crangon'
       id_CoL = '58d00d89008c1ec63431fabcc112c6bb';
       id_WoRMS = '107552';
@@ -1019,6 +1032,19 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1039673';
       id_ADW = 'Crangon'; % present as genus 2017/08/09
       
+    case 'Astacus_astacus'
+      id_CoL = '526387756aa5574c4879c6cc114248fd';
+      id_WoRMS = ''; % not present at 2017/08/27
+      id_Taxo = '33912';        
+      id_EoL = '1021866';
+      id_ADW = ''; % not present at 2017/08/27
+
+    case 'Pacifastacus_leniusculus'
+      id_CoL = '0246f355d08dd93b520e831bea02b11c';
+      id_WoRMS = ''; % not present at 2017/08/27
+      id_Taxo = '33799';        
+      id_EoL = '1021882';
+
     case 'Homarus_gammarus'
       id_CoL = '53b26b75de1c86582f4b62a79890101b';
       id_WoRMS = '107253';
