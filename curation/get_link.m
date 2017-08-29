@@ -1052,6 +1052,12 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1039672';
       id_ADW = ''; % present as genus 2017/08/25
 
+    case 'Pagurus_bernhardus'
+      id_CoL = 'd502331f00b985acb856267f87a56af0';
+      id_WoRMS = '107232';
+      id_Taxo = '33949'; % unaccepted, to Eupagurus bernhardus       
+      id_EoL = '1040177';
+
     case 'Carcinus_maenas'
       id_CoL = '182ab1e14f8181b51f406b97feedd219';
       id_WoRMS = '107381';
@@ -1084,11 +1090,42 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '228769'; % present as genus only 2017/07/18      
       id_EoL = '344746';
        
+    case 'Isotoma_viridis'
+      id_CoL = 'b8137b5e5d97114a5a4b331b9142f963';
+      id_WoRMS = ''; % not present 2017/08/29
+      id_Taxo = '17266';
+      id_EoL = '203778';
+      id_ADW = ''; % not present 2017/08/29
+       
     case 'Folsomia_candida'
       id_CoL = 'bec653e78eb0e5dd43f92cc01e7cbd73';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '1045058';
       id_EoL = '1025638';
+       
+    case 'Tomocerus_minor'
+      id_CoL = 'dd9372bc363da71422ce5d9e7c1f793b';
+      id_WoRMS = ''; % not present 2017/08/29
+      id_Taxo = '102816';
+      id_EoL = '1175608';
+       
+    case 'Entomobrya_nivalis'
+      id_CoL = 'b1175f7c7a603611eac3c00d9cc7ec9a';
+      id_WoRMS = ''; % not present 2017/08/29
+      id_Taxo = '17270';
+      id_EoL = '1022843';
+       
+    case 'Orchesella_cincta'
+      id_CoL = '4442b746517ac6f609b10c50dc13708a';
+      id_WoRMS = ''; % not present 2017/08/29
+      id_Taxo = '17272';
+      id_EoL = '346716';
+       
+    case 'Lepidocyrtus_cyaneus'
+      id_CoL = 'f386759431721ac00fb630b5b2d5dfdf';
+      id_WoRMS = ''; % not present 2017/08/29
+      id_Taxo = '102688';
+      id_EoL = '346861';
        
     case 'Lepisma_saccharina'
       id_CoL = 'a5b311bccb146809dd1359c610f67f41';
