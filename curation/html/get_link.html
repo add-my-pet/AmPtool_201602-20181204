@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>get_link</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-12"><meta name="DC.source" content="get_link.m"><style type="text/css">
+      --><title>get_link</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-30"><meta name="DC.source" content="get_link.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>get_link</h1><!--introduction--><p>gets links to web-pages for AmP entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>[links info] = <a href="get_link"><b>get_link</b></a>(taxon)</p><h2>Description<a name="4"></a></h2><p>gets cell strings with links and descriptions for an entry potential web sites: CoL, EoL, Wiki, Taxo, WoRMS, fishbase, AnAge</p><p>Input:</p><div><ul><li>taxon: character string with name of an entry</li><li>test: optional boolean for testing existence of web sites (default 0)</li></ul></div><p>Output:</p><div><ul><li>links: (n,2)-cell array with links and names for links</li><li>info: (n,1)-matrix with true of false for existence of web pages (1's if test = 0)</li></ul></div><h2>Remarks<a name="5"></a></h2><p>empty ID links are removed from output; ID links are all empty if entry is not listed, but warning is given testing might take long time (therefore default 0)</p><p>EoL is most complete CoL: edition 2017 is used Taxonomicon: <a href="mailto:Sheila.Brands@utxs.com">Sheila.Brands@utxs.com</a>; <a href="mailto:Sheila.Brands@multiweb.nl">Sheila.Brands@multiweb.nl</a> Wiki: if it has not the entry name, a higher taxon is selected WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton fishbase only has fish amphibiaseweb only has amphibians ReptileDB only has reptiles (no dino's) MSW3 only has mammals AnAge only works well for tetrapods; ulread for AnAge is always successful, but &lt;20000 long if entry does not exist</p><h2>Example of use<a name="6"></a></h2><p>links = get_link('Daphnia_magna')</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>get_link</h1><!--introduction--><p>gets links to web-pages for AmP entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>[links info] = <a href="get_link"><b>get_link</b></a>(taxon, test)</p><h2>Description<a name="4"></a></h2><p>Gets cell strings with links and descriptions for an entry and can test presence of webpages.</p><p>Input:</p><div><ul><li>taxon: character string with name of an entry</li><li>test: optional boolean for testing existence of web pages (default 0)</li></ul></div><p>Output:</p><div><ul><li>links: (n,2)-cell array with links and names for links</li><li>info: (n,1)-matrix with true of false for existence of web pages (1's if test = 0)</li></ul></div><h2>Remarks<a name="5"></a></h2><p>empty ID links are removed from output; ID links are all empty if entry is not listed, but warning is given testing might take long time (therefore default 0)</p><p>Potential general web sites:   EoL is most complete   CoL: edition 2017 is used   AWD: strong American bias, wierd common names   Taxonomicon: <a href="mailto:Sheila.Brands@utxs.com">Sheila.Brands@utxs.com</a>; <a href="mailto:Sheila.Brands@multiweb.nl">Sheila.Brands@multiweb.nl</a>   Wikipedia: if it has not the entry name, a higher taxon is selected   WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton</p><p>Potential taxon-specific web sites:   molluscabase only has molluscs   fishbase only has fish   amphibiaseweb only has amphibians   ReptileDB only has reptiles (no dino's)   Avibase only has birds   MSW3 only has mammals   AnAge only works well for tetrapods; ulread for AnAge is always successful, but &lt;20000 long if entry does not exist</p><h2>Example of use<a name="6"></a></h2><p>links = get_link('Daphnia_magna')</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% get_link
@@ -66,16 +66,15 @@ function [links info] = get_link(taxon, test)
 % created 2017/06/14 by Bas Kooijman, modified 2017/07/11
 
 %% Syntax
-% [links info] = <get_link *get_link*>(taxon)
+% [links info] = <get_link *get_link*>(taxon, test)
 
 %% Description
-% gets cell strings with links and descriptions for an entry
-% potential web sites: CoL, EoL, Wiki, Taxo, WoRMS, fishbase, AnAge
+% Gets cell strings with links and descriptions for an entry and can test presence of webpages.
 %
 % Input:
 %
 % * taxon: character string with name of an entry
-% * test: optional boolean for testing existence of web sites (default 0)
+% * test: optional boolean for testing existence of web pages (default 0)
 %
 % Output:
 %
@@ -86,16 +85,22 @@ function [links info] = get_link(taxon, test)
 % empty ID links are removed from output; ID links are all empty if entry is not listed, but warning is given
 % testing might take long time (therefore default 0)
 %
-% EoL is most complete 
-% CoL: edition 2017 is used
-% Taxonomicon: Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
-% Wiki: if it has not the entry name, a higher taxon is selected
-% WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
-% fishbase only has fish
-% amphibiaseweb only has amphibians
-% ReptileDB only has reptiles (no dino's)
-% MSW3 only has mammals
-% AnAge only works well for tetrapods; ulread for AnAge is always successful, but <20000 long if entry does not exist
+% Potential general web sites:
+%   EoL is most complete 
+%   CoL: edition 2017 is used
+%   AWD: strong American bias, wierd common names
+%   Taxonomicon: Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
+%   Wikipedia: if it has not the entry name, a higher taxon is selected
+%   WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
+%
+% Potential taxon-specific web sites:
+%   molluscabase only has molluscs
+%   fishbase only has fish
+%   amphibiaseweb only has amphibians
+%   ReptileDB only has reptiles (no dino's)
+%   Avibase only has birds
+%   MSW3 only has mammals
+%   AnAge only works well for tetrapods; ulread for AnAge is always successful, but <20000 long if entry does not exist
 
 %% Example of use
 % links = get_link('Daphnia_magna')
@@ -106,8 +111,8 @@ function [links info] = get_link(taxon, test)
   taxon_rep = ['genus=', strrep(taxon,'_','&species=')]; % used in reptiledatabase
 
   % default identifiers
-  id_EoL = taxon; id_Wiki = taxon;  id_ADW = taxon; id_CoL = ''; id_Taxo = ''; id_WoRMS = '';
-  id_molluscabase = ''; id_fishbase = ''; id_amphweb = ''; id_ReptileDB = ''; id_avibase = ''; id_MSW3 = ''; id_AnAge = ''; 
+  id_Wiki = taxon;  id_ADW = taxon; id_CoL = ''; id_EoL = ''; id_Taxo = ''; id_WoRMS = ''; % general sites
+  id_molluscabase = ''; id_fishbase = ''; id_amphweb = ''; id_ReptileDB = ''; id_avibase = ''; id_MSW3 = ''; id_AnAge = ''; % taxon-specific sites
 
   switch taxon % overwrite id's if necessary, assign empty to delete (at bottom)
     case 'Haliclona_oculata'
@@ -446,13 +451,13 @@ function [links info] = get_link(taxon, test)
       id_ADW = ''; % not present at 2017/08/09
       id_molluscabase = '140692';
       
-    case 'Crassostrea_gigas'
-      id_CoL = '93190b1650de88982e0161577b8b6a7e'; % unaccepted, to Magallana gigas (Thunberg, 1793)
-      id_WoRMS = '140656'; % unaccepted, to Magallana gigas (Thunberg, 1793)
-      id_Taxo = '39283';        
-      id_EoL = '451579';
+    case 'Magallana_gigas'
+      id_CoL = '93190b1650de88982e0161577b8b6a7e'; 
+      id_WoRMS = '836033'; 
+      id_Taxo = '39283'; % present as Crassostrea gigas      
+      id_EoL = '451579'; % present as Crassostrea gigas
       id_ADW = ''; % not present at 2017/08/09
-      id_molluscabase = '140656'; % unaccepted, to Magallana gigas (Thunberg, 1793)
+      id_molluscabase = '140656'; 
       
     case 'Ostrea_edulis'
       id_CoL = '3063d7e4904e854f23e2d5ac9861a140';
@@ -732,9 +737,9 @@ function [links info] = get_link(taxon, test)
     case 'Doryteuthis_pealeii'
       id_CoL = '71883eecc1e2f28199a9a79d82085fbf';
       id_WoRMS = '410354';
-      id_Taxo = '157870'; % present as Loligo_pealeii   
+      id_Taxo = '157870'; % present as Loligo pealeii   
       id_EoL = '448839';
-      id_ADW = ''; % not present at 2017/08/09
+      id_ADW = 'Loligo_pealeii'; 
       id_molluscabase = '574541';
       
    case 'Octopus_cyanea'
@@ -781,12 +786,12 @@ function [links info] = get_link(taxon, test)
       id_Wiki = 'Tardigrada';
       id_EoL = '12089749';
        
-    case 'Hypsibius_oberhaeuseri'
+    case 'Ramazzottius_oberhaeuseri'
       id_CoL = '1bd832ac6d7bb295abbd24520dbf0798';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '104402'; % unaccepted, to Ramazzottius oberhaeuseri       
+      id_Taxo = '104402'; %    
       id_Wiki = 'Tardigrada'; 
-      id_EoL = '1023979'; % unaccepted, to Ramazzottius oberhaeuseri       
+      id_EoL = '1023979';      
       id_ADW = ''; % not present at 2017/08/09
       
     case 'Milnesium_tardigradum'
@@ -840,7 +845,7 @@ function [links info] = get_link(taxon, test)
     case 'Triops_longicaudatus'
       id_CoL = 'cd00dfd705355d80c95c024877f73428';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '';  % not present 2017/06/15 
+      id_Taxo = '33078';  % present at genus level
       id_EoL = '338945';
        
     case 'Bosmina_longirostris'
@@ -898,6 +903,14 @@ function [links info] = get_link(taxon, test)
       id_Wiki = 'Daphnia_(subgenus)';
       id_EoL = '1020230'; 
        
+    case 'Daphnia_longispina'
+      id_CoL = '44a6d655825ccabe0b380c15cc884bc4';
+      id_WoRMS = '148373';
+      id_Taxo = '33104';        
+      id_Wiki = 'Daphnia_(subgenus)';
+      id_EoL = '338543'; 
+      id_ADW = ''; % not present at 2017/08/23
+
     case 'Daphnia_hyalina'
       id_CoL = '29d9d22b0b26cf7307af8c0faaa8cf06';
       id_WoRMS = '148374';
@@ -1062,25 +1075,18 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '125153';
       id_EoL = '343938';
        
-    case 'Carcinus_maenas'
-      id_CoL = '182ab1e14f8181b51f406b97feedd219';
-      id_WoRMS = '107381';
-      id_Taxo = '34023';        
-      id_EoL = '128502';
+    case 'Palaemonetes_varians'
+      id_CoL = 'a45817ffd94cf8158afac51a11b0b84e';
+      id_WoRMS = '587704';
+      id_Taxo = '33867'; % present only at genus level 2017/08/25
+      id_EoL = '344117';
        
-    case 'Charybdis_bimaculata'
-      id_CoL = '6c1210383c25336b3951f1dec88beeb5';
-      id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '125153';
-      id_Wiki = 'Charybdis_(genus)';
-      id_EoL = '4267035';
-      id_ADW = ''; % not present at 2017/08/09
-      
-    case 'Eriphia_verrucosa'
-      id_CoL = '528fd84a4773fb98b14863274a229cd7';
-      id_WoRMS = '107409';
-      id_Taxo = '228769'; % present as genus only 2017/07/18      
-      id_EoL = '344746';
+    case 'Palaemon_elegans'
+      id_CoL = 'a86a4f3617fc9fe9b73cc7bde3f3df6a';
+      id_WoRMS = '107614';
+      id_Taxo = '33864';
+      id_EoL = '1021076';
+      id_ADW = ''; % not present at 2017/08/25
        
     case 'Crangon_crangon'
       id_CoL = '58d00d89008c1ec63431fabcc112c6bb';
@@ -1089,11 +1095,107 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1039673';
       id_ADW = 'Crangon'; % present as genus 2017/08/09
       
+    case 'Astacus_astacus'
+      id_CoL = '526387756aa5574c4879c6cc114248fd';
+      id_WoRMS = ''; % not present at 2017/08/27
+      id_Taxo = '33912';        
+      id_EoL = '1021866';
+      id_ADW = ''; % not present at 2017/08/27
+
+    case 'Pacifastacus_leniusculus'
+      id_CoL = '0246f355d08dd93b520e831bea02b11c';
+      id_WoRMS = ''; % not present at 2017/08/27
+      id_Taxo = '33799';        
+      id_EoL = '1021882';
+
+    case 'Homarus_gammarus'
+      id_CoL = '53b26b75de1c86582f4b62a79890101b';
+      id_WoRMS = '107253';
+      id_Taxo = '33906';        
+      id_EoL = '1039672';
+      id_ADW = ''; % present as genus 2017/08/25
+
+    case 'Pagurus_bernhardus'
+      id_CoL = 'd502331f00b985acb856267f87a56af0';
+      id_WoRMS = '107232';
+      id_Taxo = '33949'; % unaccepted, to Eupagurus bernhardus       
+      id_EoL = '1040177';
+
+    case 'Birgus_latro'
+      id_CoL = 'd773311cc66949c0a4c2afbcdc728d4c';
+      id_WoRMS = '208668';
+      id_Taxo = ''; % problems at 2017/08/30    
+      id_EoL = '2982586';
+      id_ADW = ''; % not present 2017/08/30
+
+    case 'Carcinus_maenas'
+      id_CoL = '182ab1e14f8181b51f406b97feedd219';
+      id_WoRMS = '107381';
+      id_Taxo = '34023';        
+      id_EoL = '128502';
+       
+    case 'Charybdis_bimaculata'
+      id_CoL = '6c1210383c25336b3951f1dec88beeb5';
+      id_WoRMS = '442874';
+      id_Taxo = '125153';
+      id_Wiki = 'Charybdis_(genus)';
+      id_EoL = '4267035';
+      id_ADW = ''; % not present at 2017/08/09
+      
+    case 'Dissodactylus_primitivus'
+      id_CoL = 'c65c93082d671b96cf11dc1f4313c98c';
+      id_WoRMS = '422153';
+      id_Taxo = ''; % not present at 2017/08/23      
+      id_EoL = '342578';
+      
+    case 'Cancer_pagurus'
+      id_CoL = 'f3183ce46e4cc2b2d00c3b4c026b9481';
+      id_WoRMS = '107276';
+      id_Taxo = '34019';        
+      id_EoL = '1022230';
+
+    case 'Eriphia_verrucosa'
+      id_CoL = '528fd84a4773fb98b14863274a229cd7';
+      id_WoRMS = '107409';
+      id_Taxo = '228769'; % present as genus only 2017/07/18      
+      id_EoL = '344746';
+       
+    case 'Isotoma_viridis'
+      id_CoL = 'b8137b5e5d97114a5a4b331b9142f963';
+      id_WoRMS = ''; % not present 2017/08/29
+      id_Taxo = '17266';
+      id_EoL = '203778';
+      id_ADW = ''; % not present 2017/08/29
+       
     case 'Folsomia_candida'
       id_CoL = 'bec653e78eb0e5dd43f92cc01e7cbd73';
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '1045058';
       id_EoL = '1025638';
+       
+    case 'Tomocerus_minor'
+      id_CoL = 'dd9372bc363da71422ce5d9e7c1f793b';
+      id_WoRMS = ''; % not present 2017/08/29
+      id_Taxo = '102816';
+      id_EoL = '1175608';
+       
+    case 'Entomobrya_nivalis'
+      id_CoL = 'b1175f7c7a603611eac3c00d9cc7ec9a';
+      id_WoRMS = ''; % not present 2017/08/29
+      id_Taxo = '17270';
+      id_EoL = '1022843';
+       
+    case 'Orchesella_cincta'
+      id_CoL = '4442b746517ac6f609b10c50dc13708a';
+      id_WoRMS = ''; % not present 2017/08/29
+      id_Taxo = '17272';
+      id_EoL = '346716';
+       
+    case 'Lepidocyrtus_cyaneus'
+      id_CoL = 'f386759431721ac00fb630b5b2d5dfdf';
+      id_WoRMS = ''; % not present 2017/08/29
+      id_Taxo = '102688';
+      id_EoL = '346861';
        
     case 'Lepisma_saccharina'
       id_CoL = 'a5b311bccb146809dd1359c610f67f41';
@@ -1249,7 +1351,7 @@ function [links info] = get_link(taxon, test)
     case 'Echinus_affinis'
       id_CoL = 'e7cf9012297aa33bdaa907a4e2545d53'; % unaccepeted, to Gracilechinus affinis (Mortensen, 1903)
       id_WoRMS = '124279'; % unaccepted, to Gracilechinus affinis (Mortensen, 1903)
-      id_Taxo = ''; % not present 2017/06/15
+      id_Taxo = '41133'; % present at genus level 2017/06/15
       id_Wiki = 'Echinus_(sea_urchin)';
       id_EoL = '599662'; % unaccepted, to Gracilechinus affinis (Mortensen, 1903)
        
@@ -1692,13 +1794,21 @@ function [links info] = get_link(taxon, test)
       id_EoL = '847095';
       id_fishbase = taxon_fish;
        
+    case 'Alosa_alosa'
+      id_CoL = '85368f18336645854725c8f8210a151f';
+      id_WoRMS = '126413';
+      id_Taxo = '42627';        
+      id_EoL = '225607';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/17
+       
     case 'Alosa_sapidissima'
       id_CoL = '540d73069202e6462f72e6981a5d1e4c';
       id_WoRMS = '158670';
       id_Taxo = '42629';        
       id_EoL = '205467';
       id_fishbase = taxon_fish;
-       
+
     case 'Engraulis_encrasicolus'
       id_CoL = '2abe41c8ee39bb550534f328bf4717a3';
       id_WoRMS = '126426';
@@ -1727,21 +1837,14 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '43032';        
       id_EoL = '224731';
       id_fishbase = taxon_fish;
-       
-    case 'Danio_rerio'
-      id_CoL = 'ae6d1ad09071086da0498b39630b01f8';
-      id_WoRMS = '172875';  % not present 2017/06/16
-      id_Taxo = '172875';        
-      id_EoL = '204011';
+
+    case 'Cobitis_taenia'
+      id_CoL = 'fabc08e8e5ea108ffa723983765f1eb5';
+      id_WoRMS = '154373'; 
+      id_Taxo = '43977';
+      id_EoL = '212556';
       id_fishbase = taxon_fish;
-       
-    case 'Pimephales_promelas'
-      id_CoL = '63c01b172492dc6862ba657e613edec0';
-      id_WoRMS = '';  % not present 2017/06/16
-      id_Taxo = '43662';   
-      id_EoL = '28754994';
-      id_fishbase = taxon_fish;
-       
+
     case 'Rhodeus_amarus'
       id_CoL = '383389bc215371c6bf7b0cf460aff92e';
       id_WoRMS = ''; % not present 2017/06/16
@@ -1749,6 +1852,102 @@ function [links info] = get_link(taxon, test)
       id_EoL = '217578';
       id_fishbase = taxon_fish;
        
+    case 'Barbus_barbus'
+      id_CoL = '963f554b3482a7f3ea34bc8a5fdf4253';
+      id_WoRMS = '154292'; 
+      id_Taxo = '43752';
+      id_EoL = '211593';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/12
+
+    case 'Luciobarbus_sclateri'
+      id_CoL = '9c12f86d9e0181905f22e2497dc4f741';
+      id_WoRMS = '474116'; 
+      id_Taxo = '1682769';
+      id_EoL = '225284';
+      id_fishbase = taxon_fish;
+
+    case 'Gobio_gobio'
+      id_CoL = '5f26c93dbec8e883890bf3f7e7624f4d';
+      id_WoRMS = '293609'; 
+      id_Taxo = '43733';
+      id_EoL = '207392';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/15
+
+    case 'Cyprinus_carpio'
+      id_CoL = 'c6beac15d18bf1d88bab194fe597f1c7';
+      id_WoRMS = '154582'; 
+      id_Taxo = '43900';
+      id_EoL = '985921';
+      id_fishbase = taxon_fish;
+
+    case 'Carassius_carassius'
+      id_CoL = 'bee5791af5b67816a4310c3dc98c5397';
+      id_WoRMS = '154297'; 
+      id_Taxo = '43897';
+      id_EoL = '46324948';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/14
+      
+    case 'Danio_rerio'
+      id_CoL = 'ae6d1ad09071086da0498b39630b01f8';
+      id_WoRMS = '172875';  % not present 2017/06/16
+      id_Taxo = '172875';        
+      id_EoL = '204011';
+      id_fishbase = taxon_fish;
+       
+    case 'Abramis_brama'
+      id_CoL = 'a0b8ed2779121cee709ec4b1b05b6a30';
+      id_WoRMS = '154281'; 
+      id_Taxo = '43605';
+      id_EoL = '205715';
+      id_fishbase = taxon_fish;
+
+    case 'Pimephales_promelas'
+      id_CoL = '63c01b172492dc6862ba657e613edec0';
+      id_WoRMS = '';  % not present 2017/06/16
+      id_Taxo = '43662';   
+      id_EoL = '28754994';
+      id_fishbase = taxon_fish;
+       
+    case 'Chondrostoma_nasus'
+      id_CoL = '603cb21d9946407088321fa22f46ff2a';
+      id_WoRMS = '154585'; 
+      id_Taxo = '43623';
+      id_EoL = '339806';
+      id_fishbase = taxon_fish;
+
+    case 'Tinca_tinca'
+      id_CoL = 'c503c3c6a48018b9b1f5846f90a3ac4a';
+      id_WoRMS = '154343'; 
+      id_Taxo = '43684';
+      id_EoL = '210300';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/15
+
+    case 'Rutilus_rutilus'
+      id_CoL = '260d8de49c41aebdae8b37501aa3d809';
+      id_WoRMS = '154333'; 
+      id_Taxo = '43677';
+      id_EoL = '205274';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/13
+
+    case 'Alburnoides_bipunctatus'
+      id_CoL = '85a8443cf8643e8dc6c1083e0f3b734b';
+      id_WoRMS = '154288'; 
+      id_Taxo = '43608';
+      id_EoL = '204016';
+      id_fishbase = taxon_fish;
+
+    case 'Blicca_bjoerkna'
+      id_CoL = '3cb1fad6a7a0daf0c376aba3819a9b33';
+      id_WoRMS = '154274'; 
+      id_Taxo = '43617';
+      id_EoL = '46324661';
+      id_fishbase = taxon_fish;
+
     case 'Hydrocynus_vittatus'
       id_CoL = 'ed61d5b61ce91a6d34fbca8211ce5a9c';
       id_WoRMS = ''; % not present 2017/06/16
@@ -1861,6 +2060,22 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1156463';
       id_fishbase = taxon_fish;
        
+    case 'Coregonus_albula'
+      id_CoL = 'cb380684d38085d21164d9d0327fb629';
+      id_WoRMS = '127178';
+      id_Taxo = '42840';        
+      id_EoL = '223193';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/19
+ 
+    case 'Coregonus_lavaretus'
+      id_CoL = '165deb471da03a7f0547cf80906d35ce';
+      id_WoRMS = '127180';
+      id_Taxo = '42846';        
+      id_EoL = '267571';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/19
+ 
     case 'Esox_lucius'
       id_CoL = 'c828ed0d18644bc9e3cfe4b9507f3247';
       id_WoRMS = '154210';
@@ -2714,6 +2929,21 @@ function [links info] = get_link(taxon, test)
       id_EoL = '223357';
       id_fishbase = taxon_fish;
        
+    case 'Sander_lucioperca'
+      id_CoL = '04b433fe83af06d454d86967fc42368f';
+      id_WoRMS = '151308';
+      id_Taxo = '186511';        
+      id_EoL = '222787';
+      id_fishbase = taxon_fish;
+
+    case 'Gymnocephalus_cernuus'
+      id_CoL = '349c65df03755f01c50de8bc74868fd5';
+      id_WoRMS = '151302';
+      id_Taxo = '45187';        
+      id_EoL = '46328762';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/08/17
+
     case 'Notothenia_coriiceps'
       id_CoL = '0d2d14ff0bfeed9cef3cd477df4e2afd';
       id_WoRMS = '234679';
@@ -3819,49 +4049,59 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1049271';
       id_AnAge = taxon;       
       id_avibase = 'B87D744DCD48ECC9';
-      
-    case 'Grus_antigone'
-      id_CoL = '2f827f37dafa3abedcb078144d0cd10f';
-      id_Taxo = '53264';        
-      id_EoL = '915318';
-      id_AnAge = taxon;       
-      id_avibase = '8D891DB7520688E0'; % present as Antigone antigone
-      
-    case 'Grus_vipio'
-      id_CoL = '28717f30fbb5ef2ba20f85bb587a54d5';
-      id_Taxo = '53275';        
-      id_EoL = '915332';
-      id_AnAge = taxon;       
-      id_avibase = '1125F89DE2FF4F98'; % present as Antigone vipio
-      
+
     case 'Grus_virgo'
-      id_CoL = '987b70eac098e65fbf96b62c25c06f86';  % unaccpeted, to Anthropoides virgo (Linnaeus, 1758)       
-      id_Taxo = '167356'; % unaccepeted, to Anthropoides virgo (Linnaeus, 1758)       
-      id_EoL = '915336';  % unaccepeted, to Anthropoides virgo (Linnaeus, 1758)       
+      id_CoL = '987b70eac098e65fbf96b62c25c06f86';  % unaccepted, to Anthropoides virgo (Linnaeus, 1758)       
+      id_Taxo = '167356'; % unaccepted, to Anthropoides virgo (Linnaeus, 1758)       
+      id_EoL = '915336';  % unaccepted, to Anthropoides virgo (Linnaeus, 1758)       
       id_AnAge = 'Anthropoides_virgo';
       id_ADW = 'Anthropoides_virgo';
       id_avibase = '64DDD14DF2EB9B39';
+
+    case 'Antigone_antigone'
+      id_CoL = '2f827f37dafa3abedcb078144d0cd10f'; % unaccepted, to Grus antigone
+      id_Taxo = '53264'; % unaccepted, to Grus antigone       
+      id_EoL = '915318'; % unaccepted, to Grus antigone
+      id_AnAge = taxon;  % unaccepted, to Grus antigone      
+      id_avibase = '8D891DB7520688E0'; 
+      id_Wiki = 'Grus_antigone';
+      id_ADW = 'Grus_antigone';
+                  
+    case 'Antigone_vipio'
+      id_CoL = '28717f30fbb5ef2ba20f85bb587a54d5'; % unaccepted, to Grus vipio
+      id_Taxo = '53275';  % unaccepted, to Grus vipio
+      id_EoL = '915332';  % unaccepted, to Grus vipio
+      id_AnAge = 'Grus_vipio';     
+      id_avibase = '1125F89DE2FF4F98'; 
+      id_ADW = 'Grus_vipio';
+      id_Wiki = 'Grus_vipio';
       
-    case 'Grus_canadensis'
-      id_CoL = 'b5fb32b609572d52ede7b7748943dc51';
-      id_Taxo = '53265';        
-      id_EoL = '1049272';
-      id_AnAge = taxon;       
-      id_avibase = 'E196D6F9AB1DFF7E'; % present as Antigone canadensis
+    case 'Antigone_canadensis'
+      id_CoL = 'b5fb32b609572d52ede7b7748943dc51'; % unaccepted, to Grus canadensis
+      id_Taxo = '53265';   % unaccepted, to Grus canadensis     
+      id_EoL = '1049272';  % unaccepted, to Grus canadensis
+      id_AnAge = 'Grus_canadensis';       
+      id_avibase = 'E196D6F9AB1DFF7E'; 
+      id_Wiki = 'Grus_canadensis';       
+      id_ADW = 'Grus_canadensis';             
       
-    case 'Grus_rubicunda'
-      id_CoL = '91e043fbcde2082b7347fce518462e0e';
-      id_Taxo = '83116';        
-      id_EoL = '915331';
-      id_AnAge = taxon;       
-      id_avibase = 'A4480D0279EA1C38'; % present as Antigone rubicunda
+    case 'Antigone_rubicunda'
+      id_CoL = '91e043fbcde2082b7347fce518462e0e'; % unaccepted, to Grus rubicunda
+      id_Taxo = '83116';   % unaccepted, to Grus rubicunda     
+      id_EoL = '915331';   % unaccepted, to Grus rubicunda
+      id_AnAge = 'Grus_rubicunda';       
+      id_avibase = 'A4480D0279EA1C38';
+      id_Wiki = 'Grus_rubicunda';       
+      id_ADW = 'Grus_rubicunda';             
       
-    case 'Grus_leucogeranus'
-      id_CoL = '0ae95f5329e0e7fe075c002169e60746';
-      id_Taxo = '53271';        
-      id_EoL = '915328';
-      id_AnAge = taxon;       
-      id_avibase = '77845DAD1C49E8F1'; % present as Leucogeranus leucogeranus
+    case 'Leucogeranus_leucogeranus'
+      id_CoL = '0ae95f5329e0e7fe075c002169e60746'; % unaccepted, to Grus leucogeranus
+      id_Taxo = '53271';   % unaccepted, to Grus leucogeranus     
+      id_EoL = '915328';   % unaccepted, to Grus leucogeranus
+      id_AnAge = 'Grus_leucogeranus';       
+      id_avibase = '77845DAD1C49E8F1';
+      id_Wiki = 'Grus_leucogeranus';
+      id_ADW = 'Grus_leucogeranus';
       
     case 'Phaethon_lepturus'
       id_CoL = '9c0e9cb143508bda222bd0adec5383db';
@@ -4172,12 +4412,13 @@ function [links info] = get_link(taxon, test)
       id_ADW = 'Parus cristatus'; 
       id_avibase = 'E553193354C74B21';
       
-    case 'Parus_atricapillus'
+    case 'Poecile_atricapillus'
       id_CoL = 'aed95c6ec867d5d04bbab05d19687d73';
-      id_Taxo = '57697';        
+      id_Taxo = '57697';   % present as Parus atricapillus     
       id_EoL = '1178539';
-      id_AnAge = ''; % not present 2017/06/18       
-      id_avibase = 'B1F0CC82E34E4541'; % present as Poecile atricapillus
+      id_AnAge = taxon;    
+      id_avibase = 'B1F0CC82E34E4541'; 
+      id_ADW = 'Parus_atricapillus';
       
     case 'Parus_major'
       id_CoL = '9a3033c7cf62b8a01f58d9a946e06126';
@@ -4185,6 +4426,14 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1051974';
       id_AnAge = taxon;       
       id_avibase = '7296BC772F2643AD';
+      
+    case 'Cyanistes_caeruleus'
+      id_CoL = 'df55272f9bdde6d18cd7f4942fe59ad9';
+      id_Taxo = '57700'; % present as Parus caeruleus       
+      id_EoL = '1051997';
+      id_AnAge = taxon;       
+      id_avibase = '9BE53D340F9A4305';
+      id_ADW = 'Parus_caeruleus';
       
     case 'Periparus_ater'
       id_CoL = 'a1536cbd36af848c4cfb9234fad2e1e0';
@@ -4766,11 +5015,11 @@ function [links info] = get_link(taxon, test)
        
     case {'Bos_primigenius_Angus','Bos_primigenius_Holstein','Bos_primigenius_Brahman'}
       id_CoL = '40e81482006c210a43ef64609163278e';
-      id_Taxo = '167484'; % unaccpeted, to Bos taurus primigenius Bojanus, 1827        
+      id_Taxo = '167484'; % unaccepted, to Bos taurus primigenius Bojanus, 1827        
       id_Wiki = 'Bos_primigenius';
-      id_EoL = '10408207'; % unaccpeted, to Bos taurus primigenius Bojanus, 1827 
-      id_AnAge = 'Bos_taurus';
-      id_MSW3 = '';
+      id_EoL = '10408207'; % unaccepted, to Bos taurus primigenius Bojanus, 1827 
+      id_AnAge = 'Bos_taurus'; 
+      id_MSW3 = '14200690'; % unaccepted, to Bos taurus primigenius
       id_ADW = 'Bos_taurus'; 
       
     case 'Rupicapra_rupicapra'
@@ -5351,8 +5600,7 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '12100795';
        
-      otherwise % set default filled id's on empty
-      id_EoL = '';
+    otherwise % set default filled id's on empty
       id_Wiki = '';
       id_ADW = '';
   end

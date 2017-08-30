@@ -6,16 +6,15 @@ function [links info] = get_link(taxon, test)
 % created 2017/06/14 by Bas Kooijman, modified 2017/07/11
 
 %% Syntax
-% [links info] = <get_link *get_link*>(taxon)
+% [links info] = <get_link *get_link*>(taxon, test)
 
 %% Description
-% gets cell strings with links and descriptions for an entry
-% potential web sites: CoL, EoL, Wiki, Taxo, WoRMS, fishbase, AnAge
+% Gets cell strings with links and descriptions for an entry and can test presence of webpages.
 %
 % Input:
 %
 % * taxon: character string with name of an entry
-% * test: optional boolean for testing existence of web sites (default 0)
+% * test: optional boolean for testing existence of web pages (default 0)
 %
 % Output:
 %
@@ -26,18 +25,22 @@ function [links info] = get_link(taxon, test)
 % empty ID links are removed from output; ID links are all empty if entry is not listed, but warning is given
 % testing might take long time (therefore default 0)
 %
-% EoL is most complete 
-% CoL: edition 2017 is used
-% AWD: strong American bias, wierd common names
-% Taxonomicon: Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
-% Wiki: if it has not the entry name, a higher taxon is selected
-% WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
+% Potential general web sites:
+%   EoL is most complete 
+%   CoL: edition 2017 is used
+%   AWD: strong American bias, wierd common names
+%   Taxonomicon: Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
+%   Wikipedia: if it has not the entry name, a higher taxon is selected
+%   WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
 %
-% fishbase only has fish
-% amphibiaseweb only has amphibians
-% ReptileDB only has reptiles (no dino's)
-% MSW3 only has mammals
-% AnAge only works well for tetrapods; ulread for AnAge is always successful, but <20000 long if entry does not exist
+% Potential taxon-specific web sites:
+%   molluscabase only has molluscs
+%   fishbase only has fish
+%   amphibiaseweb only has amphibians
+%   ReptileDB only has reptiles (no dino's)
+%   Avibase only has birds
+%   MSW3 only has mammals
+%   AnAge only works well for tetrapods; ulread for AnAge is always successful, but <20000 long if entry does not exist
 
 %% Example of use
 % links = get_link('Daphnia_magna')
@@ -1057,6 +1060,13 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '107232';
       id_Taxo = '33949'; % unaccepted, to Eupagurus bernhardus       
       id_EoL = '1040177';
+
+    case 'Birgus_latro'
+      id_CoL = 'd773311cc66949c0a4c2afbcdc728d4c';
+      id_WoRMS = '208668';
+      id_Taxo = ''; % problems at 2017/08/30    
+      id_EoL = '2982586';
+      id_ADW = ''; % not present 2017/08/30
 
     case 'Carcinus_maenas'
       id_CoL = '182ab1e14f8181b51f406b97feedd219';
