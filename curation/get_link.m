@@ -26,21 +26,23 @@ function [links info] = get_link(taxon, test)
 % testing might take long time (therefore default 0)
 %
 % Potential general web sites:
-%   EoL is most complete 
-%   CoL: edition 2017 is used
-%   AWD: strong American bias, wierd common names
-%   Taxonomicon: Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
-%   Wikipedia: if it has not the entry name, a higher taxon is selected
-%   WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
+%
+% * EoL is most complete 
+% * CoL: edition 2017 is used
+% * AWD: strong American bias, wierd common names
+% * Taxonomicon: Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
+% * Wikipedia: if it has not the entry name, a higher taxon is selected
+% * WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
 %
 % Potential taxon-specific web sites:
-%   molluscabase only has molluscs
-%   fishbase only has fish
-%   amphibiaseweb only has amphibians
-%   ReptileDB only has reptiles (no dino's)
-%   Avibase only has birds
-%   MSW3 only has mammals
-%   AnAge only works well for tetrapods; ulread for AnAge is always successful, but <20000 long if entry does not exist
+%
+% * molluscabase only has molluscs
+% * fishbase only has fish
+% * amphibiaseweb only has amphibians
+% * ReptileDB only has reptiles (no dino's)
+% * Avibase only has birds
+% * MSW3 only has mammals
+% * AnAge only works well for tetrapods; ulread for AnAge is always successful, but <20000 long if entry does not exist
 
 %% Example of use
 % links = get_link('Daphnia_magna')
@@ -48,7 +50,7 @@ function [links info] = get_link(taxon, test)
   % texts to supplement taxon for various websites
   taxon_fish = [strrep(taxon,'_','-'), '.html'];         % used in fishbase
   taxon_amph = strrep(taxon,'_','+');                    % used in amphibiaweb
-  taxon_rep = ['genus=', strrep(taxon,'_','&species=')]; % used in reptiledatabase
+  taxon_rep = ['genus=', strrep(taxon,'_','&species=')]; % used in reptileDB
 
   % default identifiers
   id_Wiki = taxon;  id_ADW = taxon; id_CoL = ''; id_EoL = ''; id_Taxo = ''; id_WoRMS = ''; % general sites
@@ -1009,6 +1011,13 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '33850';        
       id_EoL = '318602';
        
+    case 'Dichelopandalus_bonnieri'
+      id_CoL = '7befad821c474e8935f3f3f71bc4a865';
+      id_WoRMS = '107643';
+      id_Taxo = ''; % not present at 2017/09/01        
+      id_EoL = '342557';
+      id_Wiki = 'Pandalidae';
+       
     case 'Palaemonetes_pugio'
       id_CoL = '56cf1eeaf3d2f8441b8c41906c4c1ab1';
       id_WoRMS = '158370';
@@ -1055,6 +1064,12 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1039672';
       id_ADW = ''; % present as genus 2017/08/25
 
+    case 'Homarus_americanus'
+      id_CoL = '76584b6df172a0732db03a1a48747248';
+      id_WoRMS = '156134';
+      id_Taxo = ''; % problems at 2017/08/30           
+      id_EoL = '318853';
+
     case 'Pagurus_bernhardus'
       id_CoL = 'd502331f00b985acb856267f87a56af0';
       id_WoRMS = '107232';
@@ -1066,8 +1081,13 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '208668';
       id_Taxo = ''; % problems at 2017/08/30    
       id_EoL = '2982586';
-      id_ADW = ''; % not present 2017/08/30
 
+    case 'Macrocheira_kaempferi'
+      id_CoL = '4d138f5a5efbda0727be8e513e08d460';
+      id_WoRMS = '346131';
+      id_Taxo = ''; % problems at 2017/08/30       
+      id_EoL = '2924326';
+       
     case 'Carcinus_maenas'
       id_CoL = '182ab1e14f8181b51f406b97feedd219';
       id_WoRMS = '107381';
@@ -1106,6 +1126,7 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '17266';
       id_EoL = '203778';
       id_ADW = ''; % not present 2017/08/29
+      id_Wiki = 'Isotoma_(springtail)';
        
     case 'Folsomia_candida'
       id_CoL = 'bec653e78eb0e5dd43f92cc01e7cbd73';
@@ -1124,6 +1145,7 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = ''; % not present 2017/08/29
       id_Taxo = '17270';
       id_EoL = '1022843';
+      id_Wiki = 'Entomobryidae';
        
     case 'Orchesella_cincta'
       id_CoL = '4442b746517ac6f609b10c50dc13708a';
@@ -1157,6 +1179,14 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '17355';        
       id_Wiki = 'Heptageniidae';
       id_EoL = '3684255';
+      id_ADW = ''; % not present at 2017/08/09 
+      
+    case 'Epeorus_assimilis'
+      id_CoL = '43e4d8fe5d2f20a2aed705d41889c1e4';
+      id_WoRMS = ''; % not present 2017/06/15
+      id_Taxo = ''; % problems at 2017/08/31       
+      id_Wiki = 'Heptageniidae';
+      id_EoL = '3684227';
       id_ADW = ''; % not present at 2017/08/09 
       
     case 'Oligoneuriella_rhenana'
