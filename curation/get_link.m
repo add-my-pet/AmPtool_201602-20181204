@@ -2238,6 +2238,14 @@ function [links info] = get_link(taxon, test)
       id_EoL = '206692';
       id_fishbase = taxon_fish;
        
+    case 'Boreogadus_saida'
+      id_CoL = '74b88f2be1326b10f683981eb180ba11';
+      id_WoRMS = '126433';
+      id_Taxo = ''; % problems at 2017/09/02       
+      id_EoL = '203867';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present 2017/09/02
+       
     case 'Polymixia_nobilis'
       id_CoL = '70e2266b2d2a3c0706512274d0d36766';
       id_WoRMS = '127163';
