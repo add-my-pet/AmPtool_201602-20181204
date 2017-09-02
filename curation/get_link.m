@@ -1067,8 +1067,14 @@ function [links info] = get_link(taxon, test)
     case 'Homarus_americanus'
       id_CoL = '76584b6df172a0732db03a1a48747248';
       id_WoRMS = '156134';
-      id_Taxo = ''; % problems at 2017/08/30           
+      id_Taxo = '33905';
       id_EoL = '318853';
+
+    case 'Paralithodes_camtschaticus'
+      id_CoL = '4fe446d0accc8a50d042976741fae83e';
+      id_WoRMS = '233889';
+      id_Taxo = '33964';      
+      id_EoL = '342038';
 
     case 'Pagurus_bernhardus'
       id_CoL = 'd502331f00b985acb856267f87a56af0';
@@ -1079,13 +1085,13 @@ function [links info] = get_link(taxon, test)
     case 'Birgus_latro'
       id_CoL = 'd773311cc66949c0a4c2afbcdc728d4c';
       id_WoRMS = '208668';
-      id_Taxo = ''; % problems at 2017/08/30    
+      id_Taxo = '33958';
       id_EoL = '2982586';
 
     case 'Macrocheira_kaempferi'
       id_CoL = '4d138f5a5efbda0727be8e513e08d460';
       id_WoRMS = '346131';
-      id_Taxo = ''; % problems at 2017/08/30       
+      id_Taxo = '34004'; 
       id_EoL = '2924326';
        
     case 'Carcinus_maenas'
@@ -1184,7 +1190,7 @@ function [links info] = get_link(taxon, test)
     case 'Epeorus_assimilis'
       id_CoL = '43e4d8fe5d2f20a2aed705d41889c1e4';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = ''; % problems at 2017/08/31       
+      id_Taxo = ''; % not present 2017/09/02      
       id_Wiki = 'Heptageniidae';
       id_EoL = '3684227';
       id_ADW = ''; % not present at 2017/08/09 
@@ -1318,12 +1324,12 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '40989';        
       id_EoL = '607601';
        
-    case 'Echinus_affinis'
-      id_CoL = 'e7cf9012297aa33bdaa907a4e2545d53'; % unaccepeted, to Gracilechinus affinis (Mortensen, 1903)
-      id_WoRMS = '124279'; % unaccepted, to Gracilechinus affinis (Mortensen, 1903)
-      id_Taxo = '41133'; % present at genus level 2017/06/15
+    case 'Gracilechinus_affinis'
+      id_CoL = 'e7cf9012297aa33bdaa907a4e2545d53'; 
+      id_WoRMS = '124279'; 
+      id_Taxo = ''; % not present at 2017/09/02
       id_Wiki = 'Echinus_(sea_urchin)';
-      id_EoL = '599662'; % unaccepted, to Gracilechinus affinis (Mortensen, 1903)
+      id_EoL = '599662';
        
     case 'Sterechinus_neumayeri'
       id_CoL = 'd8fb71b73e11d1cdecfac8419e98fb50';
@@ -2241,7 +2247,7 @@ function [links info] = get_link(taxon, test)
     case 'Boreogadus_saida'
       id_CoL = '74b88f2be1326b10f683981eb180ba11';
       id_WoRMS = '126433';
-      id_Taxo = ''; % problems at 2017/09/02       
+      id_Taxo = '44297';
       id_EoL = '203867';
       id_fishbase = taxon_fish;
       id_ADW = ''; % not present 2017/09/02
