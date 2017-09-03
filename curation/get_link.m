@@ -2458,6 +2458,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '46410277';
       id_fishbase = taxon_fish;
        
+    case 'Arnoglossus_laterna'
+      id_CoL = '51d6d7169fa6c8452a674c217df73fed';
+      id_WoRMS = '127126';
+      id_Taxo = '46908';        
+      id_EoL = '212566';
+      id_fishbase = taxon_fish;
+       
     case 'Paralichthys_californicus'
       id_CoL = '792306f69c45f40c290b03b5508d0145';
       id_WoRMS = '275809';
@@ -4126,13 +4133,29 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;       
       id_avibase = '7E02237895784E9A';
       
+    case 'Eudyptula_minor'
+      id_CoL = 'e838f924c9d3a989c346b7b3b54d9f33';
+      id_WoRMS = '225932';
+      id_Taxo = '51413';        
+      id_EoL = '1049616';
+      id_AnAge = taxon;       
+      id_avibase = '151738D51BE6DDA4';
+      
     case 'Pygoscelis_adeliae'
       id_CoL = '1b57a7bf98db087e0a1a8d9757cbf688';
       id_WoRMS = '225757';
-      id_Taxo = '51413';        
+      id_Taxo = '51406';        
       id_EoL = '1049602';
       id_AnAge = ''; % not present 2017/06/18       
       id_avibase = '4A947BE7A06E046E';
+      
+    case 'Pygoscelis_antarcticus'
+      id_CoL = '347ec66a28df5a6e5ed91745e84774ab';
+      id_WoRMS = '225783';
+      id_Taxo = '1014811';        
+      id_EoL = '1064980';
+      id_AnAge = ''; % not present 2017/09/03       
+      id_avibase = '75B943A302F2CC67';
       
     case 'Fulmarus_glacialis'
       id_CoL = 'a6e247adc3755e7607c4862ae639f9c3';
