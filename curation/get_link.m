@@ -1324,11 +1324,49 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '40989';        
       id_EoL = '607601';
        
+    case 'Clypeaster_subdepressus'
+      id_CoL = 'a5e5fc38367a1168a3e799e37dd3de23'; 
+      id_WoRMS = '422499'; 
+      id_Taxo = '41172'; % only present at genus level 2017/09/03
+      id_EoL = '598170';
+
+    case 'Echinocardium_cordatum'
+      id_CoL = 'cb42794c2d338d39d5715697f05cbc87'; 
+      id_WoRMS = '124392'; 
+      id_Taxo = '41169'; 
+      id_EoL = '598133';
+
+    case 'Lytechinus_variegatus'
+      id_CoL = '59c591cbbdfa738cfe05d045af7cef14'; 
+      id_WoRMS = '367850'; 
+      id_Taxo = '41124'; 
+      id_EoL = '599644';
+      id_ADW = ''; % not present at 2017/09/03
+
+    case 'Strongylocentrotus_purpuratus'
+      id_CoL = '7b9f3ba064ef59fc81e6703ba245ce4a'; 
+      id_WoRMS = '240747'; 
+      id_Taxo = '41153'; 
+      id_EoL = '598175';
+
+    case 'Strongylocentrotus_droebachiensis'
+      id_CoL = 'f994b037baacad64fd548bfb571f8eb2'; 
+      id_WoRMS = '124321'; 
+      id_Taxo = '41150'; % present at genus-level only
+      id_EoL = '599668';
+
+    case 'Echinus_esculentus'
+      id_CoL = '76f5c7502b7d2106b49714daa8bcb73d'; 
+      id_WoRMS = '124287'; 
+      id_Taxo = '41134'; 
+      id_EoL = '599659';
+      id_ADW = ''; % not present at 2017/09/04
+       
     case 'Gracilechinus_affinis'
       id_CoL = 'e7cf9012297aa33bdaa907a4e2545d53'; 
       id_WoRMS = '124279'; 
       id_Taxo = ''; % not present at 2017/09/02
-      id_Wiki = 'Echinus_(sea_urchin)';
+      id_Wiki = 'Gracilechinus';
       id_EoL = '599662';
        
     case 'Sterechinus_neumayeri'
@@ -4156,6 +4194,14 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1064980';
       id_AnAge = ''; % not present 2017/09/03       
       id_avibase = '75B943A302F2CC67';
+      
+    case 'Pygoscelis_papua'
+      id_CoL = '5c2aa01f0d9ab0f0a4f7f058629039f7';
+      id_WoRMS = '225777';
+      id_Taxo = '51415';        
+      id_EoL = '1049603';
+      id_AnAge = taxon;   
+      id_avibase = 'F2B3BF2A1B6D05F6';
       
     case 'Fulmarus_glacialis'
       id_CoL = 'a6e247adc3755e7607c4862ae639f9c3';
