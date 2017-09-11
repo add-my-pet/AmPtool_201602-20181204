@@ -2,11 +2,11 @@
 % Print parameter or stastistic of selected entries names and values 
 
 %%
-function prtStat(taxa, var)
+function [nm val] = prtStat(taxa, var, in)
   % created by Bas Kooijman 2017/08/20
   
   %% Syntax 
-  % <../prtStat.m *prtStat*>(taxa, var)
+  % [nm val] = <../prtStat.m *prtStat*>(taxa, var, in)
   
   %% Description
   % Print parameter or statistic values for selected entries to screen. 
@@ -15,10 +15,28 @@ function prtStat(taxa, var)
   %
   % * taxa: cell-string with taxa
   % * var: character string with parameter or statistic
+  % * in: scalar with optional indicator for ordering increasing (1), decreasing (-1), no (0)
+  %
+  % Output
+  %
+  % * val: n-vector with values for parameter or statistic
+  % * nm: n-cellstring with names of entries
   
   %% Example of use 
   % prtStat({'Paridae','Cyprinidae'}, 'p_M')
     
   [val nm units label] = read_allStat(var); 
-  sel = select_01(taxa); 
-  printpar(nm(sel), val(sel), [], [label{1}, ': ', units{1}])
+  sel = select_01(taxa); nm = nm(sel); val = val(sel);
+
+  if ~exist('in', 'var') % yes or no sorting
+    in = 0;
+  end
+  switch in
+  case -1
+    [val i] = sort(val, 'descend'); nm = nm(i);
+  case 1
+    [val i] = sort(val, 'ascend'); nm = nm(i);
+  otherwise
+  end
+    
+  printpar(nm, val, [], [label{1}, ': ', units{1}])
