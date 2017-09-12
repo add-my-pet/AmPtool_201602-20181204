@@ -57,8 +57,8 @@ close all
 
 % log V_m - log [E_m]
 shstat_options('default');
-LmEm = read_allStat('L_m', 'E_m'); L_m = LmEm(:,1); E_m = LmEm(:,2);
-[Hfig, Hleg] = shstat([L_m.^3, E_m], legend_fish, datestr(datenum(date),'yyyy/mm/dd')); 
+LiEm = read_allStat('L_i', 'E_m'); L_i = LiEm(:,1); E_m = LiEm(:,2);
+[Hfig, Hleg] = shstat([L_i.^3, E_m], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
     
 figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
 xlabel('_{10}log max structural volume, cm^3')      
@@ -68,10 +68,10 @@ saveas(Hfig, '../../img/patterns/logV-logEm.png')
 saveas(Hleg, '../../img/patterns/legends_logV-logEm.png')
 close all
 
-% log V_m - log [p_M]
+% log V_m - log [p_M] ([p_M] is given at T_ref)
 shstat_options('default');
-LmpMcT = read_allStat('L_m', 'p_M', 'c_T'); L_m = LmpMcT(:,1); p_M = LmpMcT(:,2); c_T = LmpMcT(:,3);
-[Hfig, Hleg] = shstat([L_m.^3, p_M./c_T], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
+LipM = read_allStat('L_i', 'p_M'); L_i = LipM(:,1); p_M = LipM(:,2); 
+[Hfig, Hleg] = shstat([L_i.^3, p_M], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
     
 figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
 xlabel('_{10}log max structural volume, cm^3')      
