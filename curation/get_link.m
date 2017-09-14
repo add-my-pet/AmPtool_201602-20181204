@@ -1094,6 +1094,18 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '34004'; 
       id_EoL = '2924326';
        
+    case 'Hyas_coarctatus'
+      id_CoL = 'a24ed7fc517569923cb827f0d60a01c5';
+      id_WoRMS = '107323';
+      id_Taxo = '34000';  % present only at genus level
+      id_EoL = '981592';
+
+    case 'Chionoecetes_opilio'
+      id_CoL = 'e3de78753186013ed59ab3ac697413ea';
+      id_WoRMS = '107315';
+      id_Taxo = '75839'; % present only at genus level
+      id_EoL = '1025204';
+
     case 'Carcinus_maenas'
       id_CoL = '182ab1e14f8181b51f406b97feedd219';
       id_WoRMS = '107381';

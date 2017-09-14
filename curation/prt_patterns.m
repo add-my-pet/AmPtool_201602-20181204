@@ -58,10 +58,10 @@ close all
 % log V_m - log [E_m]
 shstat_options('default');
 LiEm = read_allStat('L_i', 'E_m'); L_i = LiEm(:,1); E_m = LiEm(:,2);
-[Hfig, Hleg] = shstat([L_i.^3, E_m], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
+[Hfig, Hleg] = shstat([L_i.^3, E_m], legend_shark, datestr(datenum(date),'yyyy/mm/dd')); 
     
 figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
-xlabel('_{10}log max structural volume, cm^3')      
+xlabel('_{10}log ultimate structural volume, cm^3')      
 ylabel('_{10}log max reserve capacity, J/cm^3')
 
 saveas(Hfig, '../../img/patterns/logV-logEm.png')
@@ -74,7 +74,7 @@ LipM = read_allStat('L_i', 'p_M'); L_i = LipM(:,1); p_M = LipM(:,2);
 [Hfig, Hleg] = shstat([L_i.^3, p_M], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
     
 figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
-xlabel('_{10}log max structural volume, cm^3')      
+xlabel('_{10}log ultimate structural volume, cm^3')      
 ylabel('_{10}log spec som maintenance at T_{ref}, J/d.cm^3')
 
 saveas(Hfig, '../../img/patterns/logV-logpM.png')
