@@ -1,3 +1,2 @@
-Asteroidea
-Ophiuroidea
-Echinoidea
+Asterozoa
+Echinozoa

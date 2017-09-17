@@ -181,6 +181,14 @@ function [links info] = get_link(taxon, test)
       id_EoL = '595706'; % present as Dugesia polychroa
       id_ADW = ''; % not present at 2017/08/09
       
+    case 'Baikaiobia_guttata'
+      id_CoL = ''; % not present 2017/09/17
+      id_WoRMS = ''; % not present 2017/09/17 
+      id_Taxo = '';  % not present 2017/09/17
+      id_EoL = ''; % not present 2017/09/17
+      id_ADW = ''; % not present 2017/09/17
+      id_Wiki = 'Tricladia';
+
     case 'Magellania_fragilis'
       id_CoL = '397256b281a713c08dd827ce925a4418';
       id_WoRMS = '235668';
@@ -202,12 +210,26 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '40579';        
       id_EoL = '600545';
       
+    case 'Myzostoma_cirriferum'
+      id_CoL = ''; % not present 2017/09/16
+      id_WoRMS = '130336';
+      id_Taxo = '114628'; % not accepted, to Myzostomum cirriferum Leuckart, 1827 
+      id_EoL = '2967081';
+      id_ADW = 'Myzostomum_cirriferum';
+
     case 'Capitella_teleta'
       id_CoL = 'fd9aa8aa73aaf17bae632c52a561664d';
       id_WoRMS = '592089';
       id_Taxo = ''; % not present 2017/06/15        
       id_EoL = '44282278';
       id_ADW = ''; % not present at 2017/08/09
+      
+    case 'Neanthes_arenaceodentata'
+      id_CoL = '36d20e9543e6c676d401c4a73d140d5e';
+      id_WoRMS = '334084';
+      id_Taxo = '480714'; 
+      id_EoL = '458741';
+      id_Wiki = 'Nereididae';
       
     case 'Arenicola_marina'
       id_CoL = '8981bb1d5f3ba68ed39eec35e0104438';
@@ -1400,6 +1422,12 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '124316';
       id_Taxo = '41136';        
       id_EoL = '599658';
+       
+    case 'Holothuria_scabra'
+      id_CoL = '814d1ea7cec08f5897ebe68e024442f4';
+      id_WoRMS = '210813';
+      id_Taxo = '41305'; % only present at genus level       
+      id_EoL = '587665';
        
     case 'Branchiostoma_floridae'
       id_CoL = '56b084fe5a8af1fb6b065bd2b921487b';
