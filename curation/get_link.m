@@ -273,6 +273,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '3126934';
       id_ADW = ''; % not present at 2017/08/09
       
+    case 'Barbronia_weberi'
+      id_CoL = '6deb30d583228d87219b6ddb697b8192';
+      id_WoRMS = ''; % not present 2017/09/18 
+      id_Taxo = '103702';  
+      id_EoL = '3139989';
+      id_Wiki = 'Erpobdelliformes'; 
+      
     case 'Lepidochitona_cinerea'
       id_CoL = '75dec12407157ff88b7093da4cd037b8';
       id_WoRMS = '152774';
@@ -812,6 +819,13 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '33078';  % present at genus level
       id_EoL = '338945';
        
+    case 'Diaphanosoma_brachyurum'
+      id_CoL = 'dd213856b4a492a6f01afd65e70991d4';
+      id_WoRMS = '234063';
+      id_Taxo = '33086';        
+      id_Wiki = 'Cladocera';
+      id_EoL = '338857';
+       
     case 'Bosmina_longirostris'
       id_CoL = '869bccad902dfe087fefb3d7f87982d8';
       id_WoRMS = ''; % not present 2017/06/15
@@ -908,18 +922,19 @@ function [links info] = get_link(taxon, test)
       id_Wiki = 'Cladocera';
       id_EoL = '327098';
        
-    case 'Diaphanosoma_brachyurum'
-      id_CoL = 'dd213856b4a492a6f01afd65e70991d4';
-      id_WoRMS = '234063';
-      id_Taxo = '33086';        
-      id_Wiki = 'Cladocera';
-      id_EoL = '338857';
+    case 'Moina_macrocopa'
+      id_CoL = '64f7d7cf39f36560a5224e6faa2ecca8'; % present as Leptodora_kindti
+      id_WoRMS = ''; % not present at 2017/09/18
+      id_Taxo = '156186';        
+      id_EoL = '1020228';
+      id_Wiki = 'Moina';
        
     case 'Leptodora_kindtii'
       id_CoL = 'd8f23f51d85cb363bede2f3632517e87'; % present as Leptodora_kindti
       id_WoRMS = '247980';
       id_Taxo = '33097';        
       id_EoL = '327210';
+      id_Wiki = 'Leptodora';
        
     case 'Nitokra_spinipes'
       id_CoL = '0747856e47615f0c02503a3612915bd8';
@@ -2550,34 +2565,6 @@ function [links info] = get_link(taxon, test)
       id_EoL = '217375';
       id_fishbase = taxon_fish;
        
-    case 'Platichthys_stellatus'
-      id_CoL = '053a76755a17dcb950ac3c94f3b8ea0c';
-      id_WoRMS = '154781';
-      id_Taxo = '46959';        
-      id_EoL = '214641';
-      id_fishbase = taxon_fish;
-       
-    case 'Pleuronectes_platessa'
-      id_CoL = '27a6782add287c044111388cc4996f04';
-      id_WoRMS = '127143';
-      id_Taxo = '46963';        
-      id_EoL = '208483';
-      id_fishbase = taxon_fish;
-       
-    case 'Limanda_limanda'
-      id_CoL = '56f0252000b66dd5b8afb1db11ea325e';
-      id_WoRMS = '127139';
-      id_Taxo = '46950';        
-      id_EoL = '993992';
-      id_fishbase = taxon_fish;
-       
-    case 'Limanda_ferruginea'
-      id_CoL = '04db571e4e47c5e9caa0a788e21cb419';
-      id_WoRMS = '158879';
-      id_Taxo = '178824';        
-      id_EoL = '205418';
-      id_fishbase = taxon_fish;
-       
     case 'Hippoglossus_hippoglossus'
       id_CoL = 'dc36286e5ce7fb2b3f8ea20980cf01a7';
       id_WoRMS = '127138';
@@ -2611,6 +2598,41 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '127140';
       id_Taxo = '46954';        
       id_EoL = '208740';
+      id_fishbase = taxon_fish;
+       
+    case 'Hypsopsetta_guttulata'
+      id_CoL = '00ca06e298143557d74785c5ebe41ca5';
+      id_WoRMS = '281128';
+      id_Taxo = '421966';        
+      id_EoL = '995096';
+      id_fishbase = taxon_fish;
+       
+    case 'Pleuronectes_platessa'
+      id_CoL = '27a6782add287c044111388cc4996f04';
+      id_WoRMS = '127143';
+      id_Taxo = '46963';        
+      id_EoL = '208483';
+      id_fishbase = taxon_fish;
+       
+    case 'Limanda_limanda'
+      id_CoL = '56f0252000b66dd5b8afb1db11ea325e';
+      id_WoRMS = '127139';
+      id_Taxo = '46950';        
+      id_EoL = '993992';
+      id_fishbase = taxon_fish;
+       
+    case 'Limanda_ferruginea'
+      id_CoL = '04db571e4e47c5e9caa0a788e21cb419';
+      id_WoRMS = '158879';
+      id_Taxo = '178824';        
+      id_EoL = '205418';
+      id_fishbase = taxon_fish;
+       
+    case 'Platichthys_stellatus'
+      id_CoL = '053a76755a17dcb950ac3c94f3b8ea0c';
+      id_WoRMS = '154781';
+      id_Taxo = '46959';        
+      id_EoL = '214641';
       id_fishbase = taxon_fish;
        
     case 'Oreochromis_niloticus'

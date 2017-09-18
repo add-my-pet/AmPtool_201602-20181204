@@ -1,5 +1,3 @@
-Bosminidae
-Chydoridae
-Daphniidae
 Sididae
+Anomopoda
 Leptodoridae
