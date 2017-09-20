@@ -806,6 +806,13 @@ function [links info] = get_link(taxon, test)
       id_Wiki = 'Aglaoctenus';
       id_EoL = '1196373';
        
+    case 'Tetragnatha_versicolor'
+      id_CoL = '808c85d1f5cdea0a28d4e20a8db931ac';
+      id_WoRMS = ''; % not present 2017/09/19
+      id_Taxo = '958783';   
+      id_Wiki = 'Tetragnatha';
+      id_EoL = '1193770';
+       
     case 'Cyprideis_torosa'
       id_CoL = 'fd7d758262a28756831f7f8614655d73';
       id_WoRMS = ''; % not present 2017/06/15
