@@ -237,6 +237,13 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '15271';        
       id_EoL = '486136';
       
+    case 'Urechis_caupo'
+      id_CoL = '6588e0703aeed419f42bfe94280334ac';
+      id_WoRMS = '266874';
+      id_Taxo = '15653'; 
+      id_EoL = '512273';
+      id_Wiki = 'Echiura';
+      
     case 'Dendrobaena_octaedra'
       id_CoL = '';   % not present 2017/06/15 
       id_WoRMS = ''; % not present 2017/06/15 
