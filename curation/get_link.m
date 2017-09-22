@@ -82,6 +82,12 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '11851';
       id_EoL = '203481';
       
+    case 'Cyanea_capillata'
+      id_CoL = '08804dad0ba263ccf88e072523cd00d9';
+      id_WoRMS = '135301';
+      id_Taxo = '11855';
+      id_EoL = '1005690';
+      
     case 'Mastigias_papua'
       id_CoL = 'dbf8c27746d6ab5b080fe529c023a253';
       id_WoRMS = '220485';
@@ -2676,6 +2682,14 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '176743';   
       id_EoL = '205173';
       id_Wiki = 'Hirundichthys';
+      id_fishbase = taxon_fish;
+       
+    case 'Oryzias_latipes'
+      id_CoL = '481dc2e4f470b63f53970ca5815f9c4e';
+      id_WoRMS = '281941';
+      id_Taxo = '44560';   
+      id_EoL = '211215';
+      id_ADW = ''; % not present 2017/09/22
       id_fishbase = taxon_fish;
        
     case 'Kryptolebias_marmoratus'
@@ -5512,11 +5526,11 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '12400944';
        
-    case 'Oryctolagus_cuniculus'
+    case {'Oryctolagus_cuniculus','Oryctolagus_cuniculus_NZW'}
       id_CoL = '0488cb00ad3e3545c4c28f8feaf747e0';
       id_Taxo = '61547';        
       id_EoL = '327977';
-      id_AnAge = taxon;
+      id_AnAge = 'Oryctolagus_cuniculus';
       id_MSW3 = '13500254';
        
     case 'Lepus_europaeus'
