@@ -1458,6 +1458,13 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '41305'; % only present at genus level       
       id_EoL = '587665';
        
+    case 'Stichopus_vastus'
+      id_CoL = '64d59d7a644c49463a5770c937728801';
+      id_WoRMS = '242062';
+      id_Taxo = '41313'; % only present at genus level       
+      id_EoL = '3067730';
+      id_ADW = ''; % not present at 2017/09/21
+
     case 'Branchiostoma_floridae'
       id_CoL = '56b084fe5a8af1fb6b065bd2b921487b';
       id_WoRMS = '266208';
