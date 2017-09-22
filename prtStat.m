@@ -23,11 +23,17 @@ function [nm val] = prtStat(taxa, var, in)
   % * nm: n-cellstring with names of entries
   
   %% Example of use 
-  % prtStat({'Paridae','Cyprinidae'}, 'p_M')
+  % prtStat({'Paridae','Cyprinidae'}, 'p_M');
     
   [val nm units label] = read_allStat(var); 
-  sel = select_01(taxa); nm = nm(sel); val = val(sel);
+  sel = select_01(taxa); 
 
+  if ~(length(val) == length(sel))
+    fprintf('Warning from prtStat: entries in allStart do not correspond with select\n');  
+  end
+      
+  nm = nm(sel); val = val(sel);
+  
   if ~exist('in', 'var') % yes or no sorting
     in = 0;
   end
@@ -36,7 +42,6 @@ function [nm val] = prtStat(taxa, var, in)
     [val i] = sort(val, 'descend'); nm = nm(i);
   case 1
     [val i] = sort(val, 'ascend'); nm = nm(i);
-  otherwise
   end
     
   printpar(nm, val, [], [label{1}, ': ', units{1}])
