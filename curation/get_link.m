@@ -144,14 +144,14 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '167447';        
       id_EoL = '45502754';
       id_ADW = ''; % not present at 2017/08/09
-      
-    case 'Ferosagitta_hispida'
-      id_CoL = '5fa5c1982af0297dfe25875928c2570c';
-      id_WoRMS = '105454'; 
-      id_Taxo = '40644';  
-      id_Wiki = 'Chaetognatha';
-      id_EoL = '512014'; 
-      
+
+    case 'Symsagittifera_roscoffensis'
+      id_CoL = '4115a356141cdb139611c3b87899630c';
+      id_WoRMS = '484585'; 
+      id_Taxo = '201059';  
+      id_ADW = ''; % not present at 2017/09/24
+      id_EoL = '5012595'; 
+
     case 'Moniliformis_dubius'
       id_CoL = '2db31682f5ec69386b23ea4212b709b1';
       id_WoRMS = ''; % not present 2017/06/15 
@@ -754,6 +754,13 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '158255';        
       id_EoL = '593211';       
       id_molluscabase = '342001';
+      
+    case 'Ferosagitta_hispida'
+      id_CoL = '5fa5c1982af0297dfe25875928c2570c';
+      id_WoRMS = '105454'; 
+      id_Taxo = '40644';  
+      id_Wiki = 'Chaetognatha';
+      id_EoL = '512014'; 
       
     case 'Macrobiotus_hufelandii'
       id_CoL = 'cdf5e8f2aaf144fd5170f295c272c445'; % unaccepted, to Macrobiotus_hufelandi
@@ -1386,6 +1393,18 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '172775';
       id_Taxo = '40845';        
       id_EoL = '4704670';
+       
+    case 'Ophiura_ophiura'
+      id_CoL = '51533cab6a045e41ca2485a45486d0f5';
+      id_WoRMS = '124929';
+      id_Taxo = '41021'; % present as Ophiura texturata 2017/09/23    
+      id_EoL = '585896';
+       
+    case 'Ophiura_albida'
+      id_CoL = 'eb0018e354a88294d9dc6f516edd801e';
+      id_WoRMS = '124913';
+      id_Taxo = '41020';        
+      id_EoL = '24082075';
        
     case 'Amphiura_filiformis'
       id_CoL = '03fbc60f382ddfd275761a2c906123c5';
