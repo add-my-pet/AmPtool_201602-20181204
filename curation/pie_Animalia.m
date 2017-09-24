@@ -66,7 +66,7 @@ function [x taxa] = pie_Animalia (n)
       end
       x(1) = sum(y(1:7)); taxa{1} = 'acraniates';
       x(2) = sum(y(8:13)); taxa{2} = 'fish';
-      x(3) = sum(y(14:15)) - y(14); taxa{3} = 'amph + rept';
+      x(3) = sum(y(14:15)) - y(16); taxa{3} = 'amph + rept';
       x(4) = y(16); taxa{4} = 'birds';
       x(5) = y(17); taxa{5} = 'mammals';
     case 6
@@ -78,7 +78,7 @@ function [x taxa] = pie_Animalia (n)
       x(1) = sum(y(1:4)); taxa{1} = 'para + rad + proto';
       x(2) = sum(y(5:7));  taxa{2} = 'acraniate deut';
       x(3) = sum(y(8:13)); taxa{3} = 'fish';
-      x(4) = sum(y(14:15)) - y(15); taxa{4} = 'amph + rept';
+      x(4) = sum(y(14:15)) - y(16); taxa{4} = 'amph + rept';
       x(5) = y(16); taxa{5} = 'birds';
       x(6) = y(17); taxa{6} = 'mammals';
    case 7
@@ -91,7 +91,7 @@ function [x taxa] = pie_Animalia (n)
       x(2) = sum(y(3:4));  taxa{2} = 'Protostomata';
       x(3) = sum(y(5:7));  taxa{3} = 'acraniate deut';
       x(4) = sum(y(8:13)); taxa{4} = 'fish';
-      x(5) = sum(y(14:15)) - y(15); taxa{5} = 'amph + rept';
+      x(5) = sum(y(14:15)) - y(16); taxa{5} = 'amph + rept';
       x(6) = y(16); taxa{6} = 'birds';
       x(7) = y(17); taxa{7} = 'mammals';
     case 8
