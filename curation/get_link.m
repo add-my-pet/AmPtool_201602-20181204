@@ -94,6 +94,12 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '458143';
       id_EoL = '203445';
       
+    case 'Ptilosarcus_gurneyi'
+      id_CoL = '19dd87c4059f3e0d7b8ee05643419b23';
+      id_WoRMS = '290947';
+      id_Taxo = '114546';
+      id_EoL = '199466';
+      
     case 'Mnemiopsis_leidyi'
       id_CoL = '1c0c292c0300677f3bce686e31495b3e';
       id_WoRMS = '106401';
@@ -1378,9 +1384,22 @@ function [links info] = get_link(taxon, test)
        
     case 'Pisaster_ochraceus'
       id_CoL = '55af8fcb16861cd1292551807b9040ed';
-      id_WoRMS = '240755';
+      id_WoRMS = '123867';
       id_Taxo = '40954';        
+      id_EoL = '598626';
+       
+    case 'Astropecten_irregularis'
+      id_CoL = 'f71b9bd4f4e08ea1d32dcdc33f66a9fa';
+      id_WoRMS = '240755';
+      id_Taxo = '40829';        
       id_EoL = '598469';
+      id_ADW = ''; % not present at 2017/09/25
+ 
+    case 'Crossaster_papposus'
+      id_CoL = '0f28438ad5d2a06cbe0482880c08c2b0';
+      id_WoRMS = '124154';
+      id_Taxo = '40903';        
+      id_EoL = '598562';
        
     case 'Asterina_gibbosa'
       id_CoL = '9bb47cd93065ef4d4f6c5761a3577c47';
