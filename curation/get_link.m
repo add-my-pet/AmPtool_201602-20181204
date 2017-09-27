@@ -972,13 +972,13 @@ function [links info] = get_link(taxon, test)
     case 'Nitokra_spinipes'
       id_CoL = '0747856e47615f0c02503a3612915bd8';
       id_WoRMS = '745852';
-      id_Taxo = '203273';  % present at genus level 2017/07/10    
+      id_Taxo = '203273';  % only present at genus level 2017/07/10    
       id_EoL = '1020994';
        
     case 'Acanthocyclops_robustus'
       id_CoL = 'd63a685097756b1c2cf45229db57cac0';
       id_WoRMS = ''; % not present 2017/06/15
-      id_Taxo = '';  % not present 2017/06/15    
+      id_Taxo = '107247';  % only present at genus level 2017/09/26   
       id_Wiki = 'Acanthocyclops';
       id_EoL = '1025087';
        
@@ -999,15 +999,21 @@ function [links info] = get_link(taxon, test)
     case 'Calanus_sinicus'
       id_CoL = '522187c194196c1a2931e0e054be2ebe';
       id_WoRMS = '346214';
-      id_Taxo = ''; % not present 2017/06/15       
+      id_Taxo = '33568'; % only present at genus level 2017/09/26      
       id_Wiki = 'Calanus';
       id_EoL = '1039703';
        
    case 'Eurytemora_affinis'
       id_CoL = 'b3cd8223fe63cbb356fab69438d3a23d';
       id_WoRMS = '104872';
-      id_Taxo = ''; % not present 2017/06/15          
+      id_Taxo = '143915'; % only present at genus level 2017/09/26                   
       id_Wiki = 'Temoridae';
+      id_EoL = '1020941';
+       
+   case 'Lepeophtheirus_salmonis'
+      id_CoL = '6df2ffbaf945346ec014bded8680bb67';
+      id_WoRMS = '135782';
+      id_Taxo = '206162'; % only present at genus level 2017/09/26          
       id_EoL = '1020941';
        
     case 'Asellus_aquaticus'
@@ -1059,9 +1065,21 @@ function [links info] = get_link(taxon, test)
     case 'Mysis_mixta'
       id_CoL = '75d47759bf7d4d79eaa4107c2c0423c0';
       id_WoRMS = '120113';
-      id_Taxo = '';  % not present 2017/06/15            
+      id_Taxo = '34093';  % only present at genus level 2017/09/27            
       id_Wiki = 'Mysis';
       id_EoL = '318325';
+       
+    case 'Neomysis_integer'
+      id_CoL = 'a266c337bd34e09b4734d6562dfc5cdc';
+      id_WoRMS = '120136';
+      id_Taxo = '34098';              
+      id_EoL = '344079';
+       
+    case 'Praunus_flexuosus'
+      id_CoL = '1071b4a0c4807ba65c09222da0ee64e5';
+      id_WoRMS = '120177';
+      id_Taxo = '34100';  % only present at genus level 2017/09/27            
+      id_EoL = '318599';
        
     case 'Euphausia_superba'
       id_CoL = '9b5816e13fe1783d6d65f7075aba514f';
@@ -1330,6 +1348,12 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '28492'; 
       id_EoL = '41592971';
+       
+    case 'Chironomus_riparius'
+      id_CoL = '714831352ad94741e4321eccdeb29f58';
+      id_WoRMS = ''; % not present 2017/09/27
+      id_Taxo = '28529';  % only present at genus level 2017/09/27
+      id_EoL = '44498235';
        
     case 'Chaoborus_americanus'
       id_CoL = '5dbeb214237206446fda16aaf06120cb';
