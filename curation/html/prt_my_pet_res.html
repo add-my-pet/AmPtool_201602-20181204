@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_my_pet_res</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_my_pet_res.m"><style type="text/css">
+      --><title>prt_my_pet_res</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-09-29"><meta name="DC.source" content="prt_my_pet_res.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -64,7 +64,8 @@ span.syscmd { color:#B28C00 }
 %%
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
-% modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine; 2016/11/05, 2017/01/04 Bas Kooijman
+% modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
+% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -181,7 +182,7 @@ fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', spe
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
-prt_toolbar_species(oid, metaData.species)
+prt_toolbar_species(oid, metaData.species, metaData.date_acc)
 fprintf(oid, '  </div> <!REPLACE_WITH_DASH_DASH end of navwrapper REPLACE_WITH_DASH_DASH>\n');
 fprintf(oid, '</div> <!REPLACE_WITH_DASH_DASH end of top2 REPLACE_WITH_DASH_DASH>\n\n');
 
@@ -235,13 +236,25 @@ fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TD><b>Data</b></TD><TD><b>Observe
 
 for j = 1:nst
   [~, k] = size(data.(nm{j})); % number of data points per set
-  if k == 1       
-    name = nm{j};
+  if k == 1   
+    if isfield(auxData.temp, nm{j})
+        temp = auxData.temp.(nm{j});
+        if strcmp(txtData.units.temp.(nm{j}), 'K')
+          temp = K2C(temp);
+        end
+        name = ['<a href="" title="Temperature: ', num2str(temp), ' C">', nm{j}, '</a>'];
+    else
+        name = nm{j};
+    end
     dta   = data.(nm{j}); 
     prdta = prdData.(nm{j});
     re    = metaPar.RE(j); 
     unit  = txtData.units.(nm{j});
-    des   = txtData.label.(nm{j});
+    if isfield(txtData, 'comment') && isfield(txtData.comment, nm{j})
+      des   = ['<a href="" title="', txtData.comment.(nm{j}), '">', txtData.label.(nm{j}), '</a>'];
+    else
+      des   = txtData.label.(nm{j});
+    end        
     n = iscell(txtData.bibkey.(nm{j}));  % if 1 then there are several references for this data
     if n % if there are several references
       n = length(txtData.bibkey.(nm{j})); % number of references
@@ -323,10 +336,28 @@ if isempty(metaData.data_1) == 0
  
   % print out columns in the univariate data set table:
   for j = 1: n_uniData % for each univariate data set
-    label  = nm{uniData(j)}; % "Data set"
+    if isfield(auxData.temp, nm{uniData(j)}) % label = nm
+      temp = auxData.temp.(nm{uniData(j)});
+      if length(temp) == 1
+        if strcmp(txtData.units.temp.(nm{uniData(j)}), 'K')
+          temp = K2C(temp);
+        end
+        label = ['<a href="" title="Temperature: ', num2str(temp), ' C">', nm{uniData(j)}, '</a>'];
+      else
+        label = ['<a href="" title="Temperature varies">', nm{uniData(j)}, '</a>'];
+      end
+    else
+      label  = nm{uniData(j)}; % "Data set"
+    end
     re     = metaPar.RE(uniData(j)); % "relative error"
-    ivar   = txtData.label.(nm{uniData(j)}){1}; % independant variable
-    dvar   = txtData.label.(nm{uniData(j)}){2}; % dependant variable
+    ivar   = txtData.label.(nm{uniData(j)}){1}; % independent variable
+    % dependent variable
+    if isfield(txtData, 'comment') && isfield(txtData.comment, nm{uniData(j)})
+      dvar   = ['<a href="" title="', txtData.comment.(nm{uniData(j)}), '">', txtData.label.(nm{uniData(j)}){2}, '</a>'];
+    else
+      dvar   = txtData.label.(nm{uniData(j)}){2};
+    end        
+
 
     if ID(j) < 10
       fig   = ['see <A href = "../entries/',metaData.species,'/results_',metaData.species,'_0',num2str(ID(j)),'.png"> Fig. ',num2str(ID(j)),'</A>'];
@@ -358,7 +389,7 @@ end
 % Print table with pseudo-data:
 [nm, nst] = fieldnmnst_st(pseudo);
 fprintf(oid, '      <TABLE id="t01">\n');
-fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="5"> Pseudo-data </TH></TR>\n');
+fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="5"> Pseudo-data at T<sub>ref</sub></TH></TR>\n');
 fprintf(oid,['        <TR BGCOLOR = "#FFE7C6"><TD><B>Data</B></TD><TD><B>Generalised animal</B></TD><TD><B>',strrep(metaData.species, '_', ' '),'</B></TD><TD><B>Unit</B></TD><TD><B>Description</B></TD></TR>\n']);
   for j = 1:nst
        name = nm{j};

@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_my_pet_par</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_my_pet_par.m"><style type="text/css">
+      --><title>prt_my_pet_par</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-09-29"><meta name="DC.source" content="prt_my_pet_par.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -64,7 +64,8 @@ span.syscmd { color:#B28C00 }
 %%
 function prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder)
 % created 2015/04/11 by Starrlight Augustine
-% modified 2015/07/27 Starrlight; 2015/08/06 Dina; 2016/03/30 Starrlight; 2016/11/05 Bas
+% modified 2015/07/27 Starrlight Augustin; 2015/08/06 Dina Lika; 2016/03/30 Starrlight Augustine;
+% 2016/11/05; 2017/09/29 Bas Kooijman
 
 
 %% Syntax
@@ -154,7 +155,7 @@ fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', spe
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
-prt_toolbar_species(oid, metaData.species)
+prt_toolbar_species(oid, metaData.species, metaData.date_acc)
 fprintf(oid, '  </div><!REPLACE_WITH_DASH_DASH end navwrapper REPLACE_WITH_DASH_DASH>\n');
 fprintf(oid, '</div><!REPLACE_WITH_DASH_DASH end top2 REPLACE_WITH_DASH_DASH>\n\n');
 
