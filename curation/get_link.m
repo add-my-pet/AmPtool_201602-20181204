@@ -1062,6 +1062,18 @@ function [links info] = get_link(taxon, test)
       id_EoL = '4248762';
       id_ADW = ''; % not present at 2017/08/09 
       
+    case 'Leptomysis_lingvura'
+      id_CoL = 'd9266defb43c8336539b6b24151e1ee1';
+      id_WoRMS = '120054';
+      id_Taxo = '33032';  % only present at genus level 2017/09/28              
+      id_EoL = '1018151';
+       
+    case 'Hemimysis_speluncola'
+      id_CoL = 'db7ac8c44d87726097820b9eac516128';
+      id_WoRMS = '120030';
+      id_Taxo = '34090'; % only present at genus level 2017/09/28             
+      id_EoL = '128022';
+       
     case 'Mysis_mixta'
       id_CoL = '75d47759bf7d4d79eaa4107c2c0423c0';
       id_WoRMS = '120113';
@@ -1412,6 +1424,13 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '40954';        
       id_EoL = '598626';
        
+    case 'Astropecten_aranciacus'
+      id_CoL = '';
+      id_WoRMS = '123856';
+      id_Taxo = '40828';        
+      id_EoL = '45327530';
+      id_ADW = ''; % not present at 2017/09/29
+ 
     case 'Astropecten_irregularis'
       id_CoL = 'f71b9bd4f4e08ea1d32dcdc33f66a9fa';
       id_WoRMS = '240755';
