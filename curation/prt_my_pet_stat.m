@@ -3,7 +3,7 @@
 
 %%
 function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
-% created 2016/03/30 Starrlight; modified 2016/09/23 Starrlight Augustine; 2016/11/05 Bas Kooijman; 2017/05/18 Bas Kooijman
+% created 2016/03/30 Starrlight; modified 2016/09/23 Starrlight Augustine; 2016/11/05, 2017/05/18 2017/09/29 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_stat.m *prt_my_pet_stat*> (metaData, metaPar, par, destinationFolder) 
@@ -76,7 +76,7 @@ fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', spe
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
-prt_toolbar_species(oid, metaData.species)
+prt_toolbar_species(oid, metaData.species, metaData.date_acc)
 fprintf(oid, '  </div><!-- end of navwrapper -->\n');
 fprintf(oid, '</div><!-- end of top2 -->\n\n');
 

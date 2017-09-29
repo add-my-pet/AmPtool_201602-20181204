@@ -5,7 +5,7 @@
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
-% 2016/11/05, 2017/01/04, 2017/08/21 Bas Kooijman,
+% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -122,7 +122,7 @@ fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', spe
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
-prt_toolbar_species(oid, metaData.species)
+prt_toolbar_species(oid, metaData.species, metaData.date_acc)
 fprintf(oid, '  </div> <!-- end of navwrapper -->\n');
 fprintf(oid, '</div> <!-- end of top2 -->\n\n');
 

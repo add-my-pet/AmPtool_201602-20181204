@@ -55,7 +55,7 @@ for i = 1:nargin
   prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
   prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder) % print html with results
   
-  cd('../../entries_zip' );
+  cd('../../entries_zip');
   zip_my_pet(varargin{i}, '../entries'); % zip the entry
   
   cd(WD)  % goto original path    

@@ -4,7 +4,8 @@
 %%
 function prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder)
 % created 2015/04/11 by Starrlight Augustine
-% modified 2015/07/27 Starrlight; 2015/08/06 Dina; 2016/03/30 Starrlight; 2016/11/05 Bas
+% modified 2015/07/27 Starrlight Augustin; 2015/08/06 Dina Lika; 2016/03/30 Starrlight Augustine;
+% 2016/11/05; 2017/09/29 Bas Kooijman
 
 
 %% Syntax
@@ -94,7 +95,7 @@ fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', spe
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
-prt_toolbar_species(oid, metaData.species)
+prt_toolbar_species(oid, metaData.species, metaData.date_acc)
 fprintf(oid, '  </div><!-- end navwrapper -->\n');
 fprintf(oid, '</div><!-- end top2 -->\n\n');
 
