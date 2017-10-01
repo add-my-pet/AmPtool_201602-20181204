@@ -1438,6 +1438,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '598469';
       id_ADW = ''; % not present at 2017/09/25
  
+    case 'Protoreaster_nodosus'
+      id_CoL = 'd2d4152c326c838986333c282bfc8473';
+      id_WoRMS = '213285';
+      id_Taxo = '40858'; % only present at genus level 2017/10/01      
+      id_EoL = '4704956';
+      id_ADW = ''; % not present at 2017/10/01
+       
     case 'Crossaster_papposus'
       id_CoL = '0f28438ad5d2a06cbe0482880c08c2b0';
       id_WoRMS = '124154';
