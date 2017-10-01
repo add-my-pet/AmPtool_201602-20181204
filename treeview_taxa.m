@@ -24,7 +24,7 @@ function treeview_taxa (pedigree_taxa)
   cd(taxa)                       % goto taxa
 
   try
-    fid_tv = fopen('/taxa/treeview/treeview_taxa.js', 'w+'); % open file for writing, delete existing content
+    fid_tv = fopen('./taxa/treeview/treeview_taxa.js', 'w+'); % open file for writing, delete existing content
 
     % write header
     fprintf(fid_tv, '//\n');
@@ -62,7 +62,7 @@ function treeview_taxa (pedigree_taxa)
         fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "treeview_taxa.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
         %fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", ""))\n']);
       else
-        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/i_results_', node, '.html"))\n']); 
+        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/', node, '_res.html"))\n']); 
       end
     end
  
