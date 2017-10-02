@@ -49,8 +49,8 @@ function treeview_taxa (pedigree_taxa)
     fprintf(fid_tv, 'HIGHLIGHT = 1\n\n');  % 0: Do not highlight the selected node; 1: Highlight the selected node
   
     % build tree
-    nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
-    fprintf(fid_tv, ['foldersTree = gFld("<b>', node, '</b>", "treeview_taxa.html")\n']);
+    nl = strfind(pedigree_taxa, char(10)); root = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
+    fprintf(fid_tv, ['foldersTree = gFld("<b>', root, '</b>", "treeview_taxa.html")\n']);
 
     while length(pedigree_taxa) > 3
       nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
@@ -66,6 +66,7 @@ function treeview_taxa (pedigree_taxa)
       end
     end
  
+    fprintf(fid_tv, ['foldersTree.treeID = "', root, '"\n']);
     fclose(fid_tv);
   
   catch

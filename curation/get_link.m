@@ -1438,6 +1438,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '598469';
       id_ADW = ''; % not present at 2017/09/25
  
+    case 'Archaster_typicus'
+      id_CoL = '144f27a0c1868bfa17681085c7e30b41';
+      id_WoRMS = '213119';
+      id_Taxo = '40840'; 
+      id_EoL = '4704992';
+      id_ADW = ''; % not present at 2017/10/02
+       
     case 'Acanthaster_planci'
       id_CoL = '050716176957e3e3fbdd5a572cf33d1c';
       id_WoRMS = '213289';
