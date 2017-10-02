@@ -1438,6 +1438,12 @@ function [links info] = get_link(taxon, test)
       id_EoL = '598469';
       id_ADW = ''; % not present at 2017/09/25
  
+    case 'Acanthaster_planci'
+      id_CoL = '050716176957e3e3fbdd5a572cf33d1c';
+      id_WoRMS = '213289';
+      id_Taxo = '40898'; 
+      id_EoL = '598484';
+       
     case 'Protoreaster_nodosus'
       id_CoL = 'd2d4152c326c838986333c282bfc8473';
       id_WoRMS = '213285';
