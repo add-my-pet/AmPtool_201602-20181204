@@ -1,4 +1,2 @@
-Caretta
-Chelonia
-Lepidochelys
-Natator
+Carettinae
+Cheloniinae

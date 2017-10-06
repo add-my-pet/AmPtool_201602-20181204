@@ -320,6 +320,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '493164';     
       id_molluscabase = '138802';
       
+    case 'Sphaerium_corneum'
+      id_CoL = 'd6cc7df13f1f1d9a37cbd8ff86c9a824';
+      id_WoRMS = ''; % not present at 2017/10/04
+      id_Taxo = '39602';        
+      id_EoL = '493224'; % unaccpeted, to Sphaerium asiaticum     
+      id_molluscabase = '181564';
+      
     case 'Tridacna_gigas'
       id_CoL = '4eb8d942654a006b5458b02e3a2c137b';
       id_WoRMS = '207670';
@@ -1558,6 +1565,12 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '124316';
       id_Taxo = '41136';        
       id_EoL = '599658';
+       
+    case 'Psammechinus_miliaris'
+      id_CoL = '51494e9d786ca1490738fe95476f0561';
+      id_WoRMS = '124319';
+      id_Taxo = '41139';        
+      id_EoL = '599663';
        
     case 'Holothuria_scabra'
       id_CoL = '814d1ea7cec08f5897ebe68e024442f4';
@@ -3482,6 +3495,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
+    case 'Eunectes_notaeus'
+      id_CoL = '4ee2063f7571ac7a26a80209578b79fa';
+      id_Taxo = '49884';        
+      id_EoL = '794660';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
     case 'Boa_constrictor'
       id_CoL = '253bb4ac5026b77a3adf9b78516913b9';
       id_Taxo = '49860';        
@@ -3518,29 +3538,20 @@ function [links info] = get_link(taxon, test)
       id_AnAge = ''; % not present 2017/06/18
       id_ReptileDB = taxon_rep;
        
-    case {'Caretta_caretta','Caretta_caretta_MED'}
-      id_CoL = '5667c31e110f65b6f24658fa8d7f650f';
-      id_WoRMS = '137205';
-      id_Taxo = '48469';
-      id_EoL = '1275929';
-      id_AnAge = 'Caretta_caretta';
-      id_ReptileDB = 'genus=Caretta&species=caretta';
-      id_ADW = 'Caretta_caretta'; 
-      
-    case 'Chelonia_mydas'
-      id_CoL = 'bd036a3edaf9c6342bc3984210d1ae5f';
-      id_WoRMS = '137206';
-      id_Taxo = '48475'; 
-      id_EoL = '454546';
-      id_AnAge = taxon;
+    case 'Apalone_spinifera'
+      id_CoL = 'e69205efb61d6d64105a38b2adf5d72a';
+      id_WoRMS = ''; % not present 2010/10/05
+      id_Taxo = '48407';
+      id_EoL = '795751';
+      id_AnAge = taxon; 
       id_ReptileDB = taxon_rep;
-       
-    case 'Lepidochelys_kempii'
-      id_CoL = '54e9e281f6d060b3f03a3d1295107826';
-      id_WoRMS = '137208';
-      id_Taxo = '48486'; 
-      id_EoL = '1056176';
-      id_AnAge = taxon;
+
+    case 'Chelydra_serpentina'
+      id_CoL = 'be461ad353cdc36aa5c5432f715565c0';
+      id_WoRMS = ''; % not present 2010/10/05
+      id_Taxo = '48499';
+      id_EoL = '795409';
+      id_AnAge = taxon; 
       id_ReptileDB = taxon_rep;
        
     case 'Dermochelys_coriacea'
@@ -3551,12 +3562,69 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
+    case {'Caretta_caretta','Caretta_caretta_MED'}
+      id_CoL = '5667c31e110f65b6f24658fa8d7f650f';
+      id_WoRMS = '137205';
+      id_Taxo = '48469';
+      id_EoL = '1275929';
+      id_AnAge = 'Caretta_caretta';
+      id_ReptileDB = 'genus=Caretta&species=caretta';
+      id_ADW = 'Caretta_caretta'; 
+      
+    case 'Lepidochelys_kempii'
+      id_CoL = '54e9e281f6d060b3f03a3d1295107826';
+      id_WoRMS = '137208';
+      id_Taxo = '48486'; 
+      id_EoL = '1056176';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
     case 'Natator_depressus'
       id_CoL = '912bfcb48046a727508637ce96085aa7';
       id_WoRMS = ''; % not present at 2017/06/14
       id_Taxo = '93064';        
       id_EoL = '791397';
       id_AnAge = ''; % not present at 2017/06/14
+      id_ReptileDB = taxon_rep;
+       
+    case 'Chelonia_mydas'
+      id_CoL = 'bd036a3edaf9c6342bc3984210d1ae5f';
+      id_WoRMS = '137206';
+      id_Taxo = '48475'; 
+      id_EoL = '454546';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
+    case 'Emys_orbicularis'
+      id_CoL = 'ba71bd298d244353522becf4be071d6c';
+      id_WoRMS = ''; % not present 2017/10/04
+      id_Taxo = '48623'; 
+      id_EoL = '1056912';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
+    case 'Testudo_graeca'
+      id_CoL = '2fa6a5c48b6ff1ea7b518aa3d37d1503';
+      id_WoRMS = ''; % not present 2017/10/04
+      id_Taxo = '607890'; 
+      id_EoL = '1055221';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
+    case 'Testudo_hermanni'
+      id_CoL = 'de344232dec0a18f04e689df114abb38';
+      id_WoRMS = ''; % not present 2017/10/04
+      id_Taxo = '607892'; 
+      id_EoL = '1055218';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
+    case 'Mauremys_japonica'
+      id_CoL = 'ea5748c10a4bfa12e5ecdc6b36c7d993';
+      id_WoRMS = ''; % not present 2017/10/05
+      id_Taxo = '48581'; 
+      id_EoL = '1055873';
+      id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
     case 'Deinosuchus_rugosus'
@@ -4407,7 +4475,7 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '51494';        
       id_EoL = '1047350';
       id_AnAge = taxon;       
-      id_avibase = '';
+      id_avibase = '049D9AEA4AFBFDFA';
       
     case 'Diomedea_exulans'
       id_CoL = '9cf46c5413e6bef61c029d6cef69ff57';
@@ -4527,7 +4595,7 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '55345';        
       id_EoL = '1050030';
       id_AnAge = ''; % not present 2017/06/18       
-      id_avibase = '';
+      id_avibase = 'BCC6CD0D279E592A';
       
     case 'Euptilotis_neoxenus'
       id_CoL = '9e2e1359f85b411a7a1c34b7aa1151b5';
@@ -4705,121 +4773,121 @@ function [links info] = get_link(taxon, test)
       id_CoL = '9f7d79f2f0a042ef0e8368239dfb1cb3';
       id_Taxo = '57343';        
       id_EoL = '1052636';
-      id_AnAge = taxon;
-       
+      id_AnAge = taxon;       
       id_avibase = '88F4B969622B8268';
+      
     case 'Regulus_regulus'
       id_CoL = '39de64eea659b04cfd67c5d4ff5633f4';
       id_Taxo = '57355';        
       id_EoL = '1051232';
-      id_AnAge = taxon;
-       
+      id_AnAge = taxon;      
       id_avibase = 'A7CC62D6BD333F25';
+      
     case 'Regulus_ignicapillus'
       id_CoL = '8480c26fe2dde898a777686976e2e1e4';
       id_Taxo = '1126234'; % unaccepted, to Regulus ignicapilla (Temminck, 1820)       
       id_EoL = '1051231';
-      id_AnAge = ''; % not present 2017/06/18
-       
+      id_AnAge = ''; % not present 2017/06/18       
       id_avibase = '85B03849153146D8';
+      
     case 'Tichodroma_muraria'
       id_CoL = '1c8d1f126dda2f5330c60f85fcfb30c4';
       id_Taxo = '57768';        
       id_EoL = '1051060';
-      id_AnAge = ''; % not present 2017/06/18
-       
+      id_AnAge = ''; % not present 2017/06/18       
       id_avibase = '89C425901C5B5343';
+      
     case 'Troglodytes_aedon'
       id_CoL = '844d88011fccf9fc3ebd08155e87483b';
       id_Taxo = '56758';        
       id_EoL = '1050659';
-      id_AnAge = taxon;
-       
+      id_AnAge = taxon;      
       id_avibase = '51E937020E0F3B99';
+      
     case 'Sitta_europaea'
       id_CoL = '9ba4a95ae5651cb91dbeca2e404f662d';
       id_Taxo = '57744';        
       id_EoL = '1051081';
-      id_AnAge = taxon;
-       
-      id_avibase = '';
+      id_AnAge = taxon;      
+      id_avibase = '9C2B53A087F44E10';
+      
     case 'Cinclus_cinclus'
       id_CoL = 'fcb3f9f786fe924fe49d1c502504a864';
       id_Taxo = '56716';        
       id_EoL = '916125';
       id_AnAge = taxon;
-       
       id_avibase = '9C2B53A087F44E10';
+      
     case 'Turdus_merula'
       id_CoL = '8539f68b2f729827c29dc81a2b30763a';
       id_Taxo = '57002';        
       id_EoL = '1177498';
       id_AnAge = taxon;
-       
       id_avibase = '6D7A9C93AD1830EB';
+      
     case 'Turdus_philomelos'
       id_CoL = '9015bb30c0dcb8d6b26e8fd46c70d8ac';
       id_Taxo = '57011';        
       id_EoL = '1052742';
-      id_AnAge = taxon;
-       
+      id_AnAge = taxon;       
       id_avibase = 'D929EB214A698282';
+      
     case 'Sturnus_vulgaris'
       id_CoL = 'cbb6ad24ade1b086f9f6ad89fe92ac3d';
       id_Taxo = '59258';        
       id_EoL = '922253';
-      id_AnAge = taxon;
-       
-      id_avibase = '94A4403295E2D9BEw   7';
+      id_AnAge = taxon;       
+      id_avibase = '94A4403295E2D9BE';
+
     case 'Toxostoma_curvirostre'
       id_CoL = '004ebe47b553114eda7f8ccc707f1348';
       id_Taxo = '83018';        
       id_EoL = '1050711';
-      id_AnAge = taxon;
-       
+      id_AnAge = taxon;       
       id_avibase = '2B37C1B59B70D72B';
+      
     case 'Cinnyris_jugularis'
       id_CoL = 'd7ff4b36e31373ca9a0d3b401e370436';
       id_Taxo = '1126557';        
       id_EoL = '1051761';
-      id_AnAge = ''; % not present 2017/06/18
-       
+      id_AnAge = ''; % not present 2017/06/18       
       id_avibase = 'CBE7EC407BB927CB';
+      
     case 'Passer_domesticus'
       id_CoL = '9cd9581803902beb26aee9ddcc6e4575';
       id_Taxo = '59109';        
       id_EoL = '922241';
-      id_AnAge = taxon;
-       
+      id_AnAge = taxon;       
       id_avibase = '240E33900CE34D44';
+      
     case 'Anthus_pratensis'
       id_CoL = 'eb78a0bc492c93711d4c1ca8426d71d9';
       id_Taxo = '56453';        
       id_EoL = '1051319';
-      id_AnAge = taxon;
-       
+      id_AnAge = taxon;       
       id_avibase = '14873249B607CEB1';
+      
     case 'Motacilla_flava'
       id_CoL = 'eca91fcd14896fe760fc1c8eef9774bf';
       id_Taxo = '56477';        
       id_EoL = '4405334';
-      id_AnAge = taxon;
-       
+      id_AnAge = taxon;    
       id_avibase = '5983D6776C4C4F85';
+      
     case 'Passerculus_sandwichensis'
       id_CoL = 'a40e57e0efe04426fca93156aee1edf4';
       id_Taxo = '58100';        
       id_EoL = '1052592';
-      id_AnAge = taxon;
-       
+      id_AnAge = taxon;       
       id_avibase = '26EB95E7DDA0BFEB';
+      
     case 'Carduelis_carduelis'
       id_CoL = '8388549b54689013a002e39459658043';
       id_Taxo = '58514';        
       id_EoL = '1051079';
-      id_AnAge = taxon;
-       
+      id_AnAge = taxon;       
       id_avibase = '1B235E0052ACC519';
+      
     case 'Ornithorhynchus_anatinus'
       id_CoL = '3bc186304963c8d2e15564c630a7021e';
       id_Taxo = '59646';        
