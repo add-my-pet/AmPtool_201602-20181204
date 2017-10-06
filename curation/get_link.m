@@ -3532,15 +3532,23 @@ function [links info] = get_link(taxon, test)
        
     case 'Pseudemydura_umbrina'
       id_CoL = '02201b34a72c0285ab6719ce051efc2f';
-      id_WoRMS = ''; % not present 2010/06/16
+      id_WoRMS = ''; % not present 2017/06/16
       id_Taxo = '48233';
       id_EoL = '793828';
       id_AnAge = ''; % not present 2017/06/18
       id_ReptileDB = taxon_rep;
        
+    case 'Carettochelys_insculpta'
+      id_CoL = 'd9122d373653b2515fe81b26d31f1da9';
+      id_WoRMS = ''; % not present 2017/10/06
+      id_Taxo = '48380';
+      id_EoL = '1056984';
+      id_AnAge = taxon; 
+      id_ReptileDB = taxon_rep;
+       
     case 'Apalone_spinifera'
       id_CoL = 'e69205efb61d6d64105a38b2adf5d72a';
-      id_WoRMS = ''; % not present 2010/10/05
+      id_WoRMS = ''; % not present 2017/10/05
       id_Taxo = '48407';
       id_EoL = '795751';
       id_AnAge = taxon; 
@@ -3548,7 +3556,7 @@ function [links info] = get_link(taxon, test)
 
     case 'Chelydra_serpentina'
       id_CoL = 'be461ad353cdc36aa5c5432f715565c0';
-      id_WoRMS = ''; % not present 2010/10/05
+      id_WoRMS = ''; % not present 2017/10/05
       id_Taxo = '48499';
       id_EoL = '795409';
       id_AnAge = taxon; 
