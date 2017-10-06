@@ -3530,6 +3530,22 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
+    case 'Pelomedusa_subrufa'
+      id_CoL = '70fb9207dac7da2ac75ad41d468fbe12';
+      id_WoRMS = ''; % not present 2017/10/06
+      id_Taxo = '48191';
+      id_EoL = '791177';
+      id_AnAge = taxon; 
+      id_ReptileDB = taxon_rep;
+       
+    case 'Podocnemis_unifilis'
+      id_CoL = 'a007f06fbc0c0dbcecd1fd883f03e4bd';
+      id_WoRMS = ''; % not present 2017/10/06
+      id_Taxo = '48187';
+      id_EoL = '790997';
+      id_AnAge = taxon; 
+      id_ReptileDB = taxon_rep;
+       
     case 'Pseudemydura_umbrina'
       id_CoL = '02201b34a72c0285ab6719ce051efc2f';
       id_WoRMS = ''; % not present 2017/06/16
