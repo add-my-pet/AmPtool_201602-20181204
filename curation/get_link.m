@@ -3651,6 +3651,14 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
+    case 'Platysternon_megacephalum'
+      id_CoL = '9e3d4546e9f1e79be8b7e03d1ec7752a';
+      id_WoRMS = ''; % not present 2017/10/08
+      id_Taxo = '48515'; 
+      id_EoL = '791024';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
     case 'Emys_orbicularis'
       id_CoL = 'ba71bd298d244353522becf4be071d6c';
       id_WoRMS = ''; % not present 2017/10/04
