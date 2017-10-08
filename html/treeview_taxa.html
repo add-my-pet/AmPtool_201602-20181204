@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>treeview_taxa</h1><!--introduction--><p>shows pedigree in interactive html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../treeview_taxa.m"><b>treeview_taxa</b></a> (taxon)</p><h2>Description<a name="4"></a></h2><p>First procudes pedegree with function <a href="pedigree.m"><b>pedigree</b></a> and uses the result to create file /treeview/treeview_taxa.js and opens AmPtool/taxa/treeview/treeview_taxa.html in the system browser.</p><p>Input:</p><div><ul><li>pedigree_taxa: character string with pedigree of a taxon</li></ul></div><h2>Example of use<a name="5"></a></h2><p>treeview_taxa('Cladocera');</p><p class="footer"><br>
+  </style></head><body><div class="content"><h1>treeview_taxa</h1><!--introduction--><p>shows pedigree in interactive html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../treeview_taxa.m"><b>treeview_taxa</b></a> (taxon)</p><h2>Description<a name="4"></a></h2><p>First procudes pedegree with function <a href="pedigree.m"><b>pedigree</b></a> and uses the result to create file /treeview/treeview_taxa.js and opens AmPtool/taxa/treeview/treeview_taxa.html in the system browser.</p><p>Input:</p><div><ul><li>taxon: character string with a taxon that is a node in the taxonomic tree</li></ul></div><h2>Example of use<a name="5"></a></h2><p>treeview_taxa('Cladocera');</p><p class="footer"><br>
       Published with MATLAB&reg; 7.14<br></p></div><!--
 ##### SOURCE BEGIN #####
 %% treeview_taxa
@@ -75,7 +75,7 @@ function treeview_taxa (taxon)
 %
 % Input:
 %
-% * pedigree_taxa: character string with pedigree of a taxon
+% * taxon: character string with a taxon that is a node in the taxonomic tree
 
 %% Example of use
 % treeview_taxa('Cladocera');

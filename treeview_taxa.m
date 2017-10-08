@@ -15,7 +15,7 @@ function treeview_taxa (taxon)
 %
 % Input:
 %
-% * pedigree_taxa: character string with pedigree of a taxon
+% * taxon: character string with a taxon that is a node in the taxonomic tree
 
 %% Example of use
 % treeview_taxa('Cladocera');
