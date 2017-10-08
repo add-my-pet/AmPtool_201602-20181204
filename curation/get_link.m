@@ -3554,6 +3554,22 @@ function [links info] = get_link(taxon, test)
       id_AnAge = ''; % not present 2017/06/18
       id_ReptileDB = taxon_rep;
        
+    case 'Hydromedusa_maximiliani'
+      id_CoL = 'e99db52a9453446ed652e4389cab0a12';
+      id_WoRMS = ''; % not present 2017/10/07
+      id_Taxo = '48268';
+      id_EoL = '2815879';
+      id_AnAge = ''; % not present 2017/10/07
+      id_ReptileDB = taxon_rep;
+       
+    case 'Chelus_fimbriata'
+      id_CoL = '';   % not present 2017/10/07
+      id_WoRMS = ''; % not present 2017/10/07
+      id_Taxo = '4196212';
+      id_EoL = '795410';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
     case 'Carettochelys_insculpta'
       id_CoL = 'd9122d373653b2515fe81b26d31f1da9';
       id_WoRMS = ''; % not present 2017/10/06
@@ -3578,11 +3594,27 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon; 
       id_ReptileDB = taxon_rep;
        
+    case 'Dermatemys_mawii'
+      id_CoL = 'c3b908ded6324cd2ebd49df19414851b';
+      id_WoRMS = ''; % not present 2017/10/07
+      id_Taxo = '48377';
+      id_EoL = '815713';
+      id_AnAge = taxon; 
+      id_ReptileDB = taxon_rep;
+       
     case 'Dermochelys_coriacea'
       id_CoL = 'dd8153b49c7daf4582b11583525bc26c';
       id_WoRMS = '137209';
       id_Taxo = '48459';        
       id_EoL = '815711';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
+    case 'Claudius_angustatus'
+      id_CoL = '00d089296bf70b151bc6848f3c21392c';
+      id_WoRMS = ''; % not present at 2017/10/07
+      id_Taxo = '48323';        
+      id_EoL = '795375';
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        

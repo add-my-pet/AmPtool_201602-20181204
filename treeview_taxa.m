@@ -1,22 +1,24 @@
 %% treeview_taxa
-% write treeview_taxa.js that is called by treeview_taxa.html
+% shows pedigree in interactive html
 
 %%
-function treeview_taxa (pedigree_taxa)
-% created 2016/03/06 by Bas Kooijman, modified 2017/08/06
+function treeview_taxa (taxon)
+% created 2016/03/06 by Bas Kooijman, modified 2017/08/06, 2017/10/08
 
 %% Syntax
-% <../treeview_taxa.m *treeview_taxa*> (pedigree_taxa) 
+% <../treeview_taxa.m *treeview_taxa*> (taxon) 
 
 %% Description
-% Clears and creates file /treeview/treeview_taxa.js and writes java code to it
+% First procudes pedegree with function <pedigree.m *pedigree*> and uses
+% the result to create file /treeview/treeview_taxa.js and opens 
+% AmPtool/taxa/treeview/treeview_taxa.html in the system browser.
 %
 % Input:
 %
 % * pedigree_taxa: character string with pedigree of a taxon
-%
+
 %% Example of use
-% treeview_taxa(pedigree('Cladocera')); open <../taxa/treeview/treeview_taxa.html *treeview_taxa.html*> in subdirectory taxa/treeview to see the result
+% treeview_taxa('Cladocera');
 
   WD = pwd;                      % store current path
   taxa = which('treeview_taxa'); % locate taxa
@@ -24,6 +26,7 @@ function treeview_taxa (pedigree_taxa)
   cd(taxa)                       % goto taxa
 
   try
+    pedigree_taxa = pedigree(taxon);
     fid_tv = fopen('./taxa/treeview/treeview_taxa.js', 'w+'); % open file for writing, delete existing content
 
     % write header
@@ -72,5 +75,7 @@ function treeview_taxa (pedigree_taxa)
   catch
     disp('An error occured during writing file treeview_taxa.js')
   end
+  
+  web('/treeview/treeview_taxa.html','-browser')
   
   cd(WD)                    % goto original path
