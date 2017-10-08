@@ -9,13 +9,13 @@ function treeview_taxa (taxon)
 % <../treeview_taxa.m *treeview_taxa*> (taxon) 
 
 %% Description
-% First procudes pedegree with function <pedigree.m *pedigree*> and uses
-% the result to create file /treeview/treeview_taxa.js and opens 
-% AmPtool/taxa/treeview/treeview_taxa.html in the system browser.
+% First procudes pedigree with function <pedigree.m *pedigree*> and 
+% uses the result to create file /treeview/treeview_taxa.js and 
+% opens AmPtool/taxa/treeview/treeview_taxa.html in the system browser.
 %
 % Input:
 %
-% * taxon: character string with a taxon that is a node in the taxonomic tree
+% * taxon: character string with a taxon that is a node in the taxonomic tree, see <list_taxa.m *list_taxa*>
 
 %% Example of use
 % treeview_taxa('Cladocera');
