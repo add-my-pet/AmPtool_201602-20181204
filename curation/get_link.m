@@ -3553,6 +3553,31 @@ function [links info] = get_link(taxon, test)
       id_EoL = '793828';
       id_AnAge = ''; % not present 2017/06/18
       id_ReptileDB = taxon_rep;
+
+     case 'Chelodina_oblonga'
+      id_CoL = '49268c6c328437171ef67863c2cb96f2';
+      id_WoRMS = ''; % not present 2017/10/09
+      id_Taxo = '48245';
+      id_EoL = '795413';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+
+    case 'Elseya_dentata'
+      id_CoL = '4257c55ec5c83ecd201337d03cb3b597';
+      id_WoRMS = ''; % not present 2017/10/09
+      id_Taxo = '48255';
+      id_EoL = '794869';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+      id_ADW = ''; % not present 2017/10/09
+
+    case 'Emydura_macquarii'
+      id_CoL = '3fd3f782ce264d9b03ccae31e613ea25';
+      id_WoRMS = ''; % not present 2017/10/09
+      id_Taxo = '93062';
+      id_EoL = '794804';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
        
     case 'Hydromedusa_maximiliani'
       id_CoL = 'e99db52a9453446ed652e4389cab0a12';
@@ -3667,6 +3692,22 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
+    case 'Gopherus_agassizii'
+      id_CoL = 'c5e9526e98a713152334a74e1311d2a1';
+      id_WoRMS = ''; % not present 2017/10/10
+      id_Taxo = '398391'; 
+      id_EoL = '456478';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
+    case 'Gopherus_polyphemus'
+      id_CoL = '2c470b11270cf44f3d69dd022e6ac6e9';
+      id_WoRMS = ''; % not present 2017/10/10
+      id_Taxo = '48663'; 
+      id_EoL = '456481';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
     case 'Testudo_graeca'
       id_CoL = '2fa6a5c48b6ff1ea7b518aa3d37d1503';
       id_WoRMS = ''; % not present 2017/10/04
@@ -3683,12 +3724,29 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
+    case 'Aldabrachelys_gigantea'
+      id_CoL = 'c7ac6533a2e27e88c22624b9780bf004';
+      id_WoRMS = ''; % not present 2017/10/10
+      id_Taxo = '3806202'; 
+      id_EoL = '795005'; % present as Dipsochelys dussumieri
+      id_AnAge = 'Geochelone_gigantea';
+      id_ReptileDB = taxon_rep;
+      id_ADW = 'Dipsochelys_dussumieri';
+
     case 'Mauremys_japonica'
       id_CoL = 'ea5748c10a4bfa12e5ecdc6b36c7d993';
       id_WoRMS = ''; % not present 2017/10/05
       id_Taxo = '48581'; 
       id_EoL = '1055873';
       id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
+    case 'Mauremys_sinensis'
+      id_CoL = 'e1cfc2c8463ee0f1befcd8d223257b31';
+      id_WoRMS = ''; % not present 2017/10/10
+      id_Taxo = '1685684'; 
+      id_EoL = '458849'; % present as Ocadia sinensis
+      id_AnAge = ''; % not present 2017/10/10
       id_ReptileDB = taxon_rep;
        
     case 'Deinosuchus_rugosus'

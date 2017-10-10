@@ -9,7 +9,7 @@ function treeview_taxa (taxon)
 % <../treeview_taxa.m *treeview_taxa*> (taxon) 
 
 %% Description
-% First procudes pedigree with function <pedigree.m *pedigree*> and 
+% First procudes pedigree with function <pedigree.html *pedigree*> and 
 % uses the result to create file /treeview/treeview_taxa.js and 
 % opens AmPtool/taxa/treeview/treeview_taxa.html in the system browser.
 %
