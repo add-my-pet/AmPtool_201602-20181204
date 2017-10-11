@@ -3733,6 +3733,24 @@ function [links info] = get_link(taxon, test)
       id_ReptileDB = taxon_rep;
       id_ADW = 'Dipsochelys_dussumieri';
 
+    case 'Chelonoidis_niger'
+      id_CoL = 'd70e55f5c72310311d5bd52089200292';
+      id_WoRMS = ''; % not present 2017/10/11
+      id_Taxo = '4682952'; 
+      id_EoL = '794300'; % present as Chelonoidis nigra 2017/10/11
+      id_AnAge = 'Geochelone_nigra';
+      id_ReptileDB = taxon_rep;
+      id_ADW = 'Chelonoidis_nigra';
+
+    case 'Stigmochelys_pardalis'
+      id_CoL = 'f4a53caae2df0db7d89765b274570efa';
+      id_WoRMS = ''; % not present 2017/10/11
+      id_Taxo = '3818344'; 
+      id_EoL = '794299'; % present as Psammobates pardalis 2017/10/11
+      id_AnAge = 'Geochelone_pardalis';
+      id_ReptileDB = taxon_rep;
+      id_ADW = 'Psammobates_pardalis';
+
     case 'Mauremys_japonica'
       id_CoL = 'ea5748c10a4bfa12e5ecdc6b36c7d993';
       id_WoRMS = ''; % not present 2017/10/05
@@ -3748,7 +3766,15 @@ function [links info] = get_link(taxon, test)
       id_EoL = '458849'; % present as Ocadia sinensis
       id_AnAge = ''; % not present 2017/10/10
       id_ReptileDB = taxon_rep;
-       
+
+    case 'Cuora_flavomarginata'
+      id_CoL = 'd96fb3f9f1cba27ef6ee7875c24059ae';
+      id_WoRMS = ''; % not present 2017/10/11
+      id_Taxo = '48541'; 
+      id_EoL = '1056709';
+      id_AnAge = taxon; 
+      id_ReptileDB = taxon_rep;
+
     case 'Deinosuchus_rugosus'
       id_CoL = ''; % not present 2010/06/16
       id_Taxo = '50639'; % present as genus 2010/06/16      
