@@ -5,7 +5,7 @@
 function prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder)
 % created 2015/04/11 by Starrlight Augustine
 % modified 2015/07/27 Starrlight Augustin; 2015/08/06 Dina Lika; 2016/03/30 Starrlight Augustine;
-% 2016/11/05; 2017/09/29 Bas Kooijman
+% 2016/11/05; 2017/09/29; 2017/10/13 Bas Kooijman
 
 
 %% Syntax
@@ -71,14 +71,14 @@ fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');
 fprintf(oid, '<HEAD>\n');
 fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
-fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../sys/style.css">\n'); 
-fprintf(oid, '  <script src="../sys/dropdown.js"></script>\n');
-fprintf(oid, '  <script src="../sys/w3data.js"></script>\n');
+fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../../sys/style.css">\n'); 
+fprintf(oid, '  <script src="../../sys/dropdown.js"></script>\n');
+fprintf(oid, '  <script src="../../sys/w3data.js"></script>\n');
 fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
-fprintf(oid, '<div w3-include-html="../sys/wallpaper_entry.html"></div>\n');
-fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../../sys/wallpaper_entry.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../../sys/toolbar_entry.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
@@ -91,7 +91,7 @@ fprintf(oid, '<!--------------------------------------------------------------->
 
 fprintf(oid, '<div id="top2">\n');
 fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
-fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
+fprintf(oid,['    <a href = "../../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
@@ -206,7 +206,7 @@ fprintf(oid, '      </TABLE>\n\n');
 
 fprintf(oid, '    </div> <!-- end of content -->\n\n');
 
-fprintf(oid, '    <div w3-include-html="../sys/footer_amp.html"></div>\n');
+fprintf(oid, '    <div w3-include-html="../../sys/footer_amp.html"></div>\n');
 fprintf(oid, '    <script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '  </div> <!-- end of main wrapper -->\n');

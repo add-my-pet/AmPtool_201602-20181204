@@ -3,7 +3,7 @@
 
 %%
 function prt_about
-%% created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02, 2016/10/24
+% created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02, 2016/10/24, 2017/10/13
 
 %% Syntax
 % <../prt_about *prt_about*>
@@ -216,23 +216,23 @@ fprintf(fid_about, '      <!----------------------------------------------------
 fprintf(fid_about, '      <TABLE id="t02">\n');
 fprintf(fid_about, '        <TR><TH colspan="2"><b>Latest additions to the collection:</b></TH></TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{1}, '_res.html "><I>', entries_new{1}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path,  entries_new{1}, '/', entries_new{1}, '_res.html "><I>', entries_new{1}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(1,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{2}, '_res.html "><I>', entries_new{2}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{2}, '/', entries_new{2}, '_res.html "><I>', entries_new{2}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(2,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{3}, '_res.html"><I>', entries_new{3}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{3}, '/', entries_new{3}, '_res.html"><I>', entries_new{3}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(3,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{4}, '_res.html "><I>', entries_new{4}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{4}, '/', entries_new{4}, '_res.html "><I>', entries_new{4}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(4,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{5}, '_res.html "><I>', entries_new{5}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{5}, '/', entries_new{5}, '_res.html "><I>', entries_new{5}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(5,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '      </TABLE>\n\n');

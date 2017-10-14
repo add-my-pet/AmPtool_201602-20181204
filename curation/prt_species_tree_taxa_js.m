@@ -4,7 +4,7 @@
 %%
 function prt_species_tree_taxa_js(taxa)
 % created 2016/03/06 by Bas Kooijman, 
-% modified 2016/06/01 Starrlight Augustine, 2016/06/02, 2016/10/08 Bas Kooijman
+% modified 2016/06/01 Starrlight Augustine, 2016/06/02, 2016/10/08, 2017/10/13 Bas Kooijman
 
 %% Syntax
 % <../prt_species_tree_taxa_js.m *prt_species_tree_taxa_js*> (taxa) 
@@ -80,7 +80,7 @@ function prt_species_tree_taxa_js(taxa)
         fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "species_tree_',taxa{i},'.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
         %fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", ""))\n']);
       else
-        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '_res.html"))\n']); 
+        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '/', node '_res.html"))\n']); 
       end
     end
     

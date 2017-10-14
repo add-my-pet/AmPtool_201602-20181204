@@ -4,7 +4,7 @@
 %%
 function prt_species_list
 % created by Bas Kooijman; modified 2015/04/14 Starrlight Augustine & Goncalo Marques; 
-%   modified 2015/07/21 Starrlight Augustine; 2015/08/28 Starrlight Augustine; 2016/11/05 Bas Kooijman
+%   modified 2015/07/21 Starrlight Augustine; 2015/08/28 Starrlight Augustine; 2016/11/05, 2017/10/13 Bas Kooijman
 
 %% Syntax
 % <../prt_species_list.m *prt_species_list*>
@@ -131,7 +131,7 @@ n_data_0 = length(data_0); n_data_1 = length(data_1);
 
   fprintf(fid_Spec,['        <TR id = "', species, '">\n']);
   fprintf(fid_Spec,['          <TD>', phylum, '</TD>  <TD>', metaData.class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD>\n']);
-  fprintf(fid_Spec,['          <TD><A TARGET="_top" HREF="entries_web/', species, '_res.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD>\n']);
+  fprintf(fid_Spec,['          <TD><A TARGET="_top" HREF="entries_web/', species, '/', species, '_res.html">', speciesprintnm, '</A></TD> <TD>', speciesprintnm_en, '</TD>\n']);
   fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFC6A5">%s</TD>\n', model);
   fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFE7C6">%8.3f</TD>\n', MRE);
    fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFE7C6">%8.3f</TD>\n', SMSE);

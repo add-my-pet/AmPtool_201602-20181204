@@ -3,7 +3,7 @@
 
 %%
 function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
-% created 2016/03/30 Starrlight; modified 2016/09/23 Starrlight Augustine; 2016/11/05, 2017/05/18 2017/09/29 Bas Kooijman
+% created 2016/03/30 Starrlight; modified 2016/09/23 Starrlight Augustine; 2016/11/05, 2017/05/18 2017/09/29, 2017/10/13 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_stat.m *prt_my_pet_stat*> (metaData, metaPar, par, destinationFolder) 
@@ -36,15 +36,15 @@ f = 1; % ad libitum feeding
 [stat, txtStat] = statistics_st(metaPar.model, par, metaData.T_typical, f);
 stat.z = par.z; txtStat.label.z = 'zoom factor'; txtStat.units.z = '-'; % add zoom factor to statistics which are to be printed 
 
-pie_SGGJR(metaData.species, metaPar.model, par, stat, 1); % print 4 png-files for energy allocation to current folder
+pie_SGGJR(metaData.species, metaPar.model, par, stat, destinationFolder); % print 4 png-files for energy allocation to destinationFolder
 
 % flds = fieldnmnst_st(stat); % fieldnames of all statistics
 [webStatFields, webColStat] = get_statfields(metaPar.model); % which statistics in what order should be printed in the table
 
 if exist('destinationFolder','var')
-fileName = [destinationFolder, metaData.species, '_stat.html'];
+  fileName = [destinationFolder, metaData.species, '_stat.html'];
 else
-fileName = [metaData.species, '_stat.html'];    
+  fileName = [metaData.species, '_stat.html'];    
 end
 oid = fopen(fileName, 'w+'); % % open file for writing, delete existing content
 
@@ -52,14 +52,14 @@ fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');
 fprintf(oid, '<HEAD>\n');
 fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
-fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../sys/style.css">\n'); 
-fprintf(oid, '  <script src="../sys/dropdown.js"></script>\n');
-fprintf(oid, '  <script src="../sys/w3data.js"></script>\n');
+fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../../sys/style.css">\n'); 
+fprintf(oid, '  <script src="../../sys/dropdown.js"></script>\n');
+fprintf(oid, '  <script src="../../sys/w3data.js"></script>\n');
 fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
-fprintf(oid, '<div w3-include-html="../sys/wallpaper_entry.html"></div>\n');
-fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../../sys/wallpaper_entry.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../../sys/toolbar_entry.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
@@ -72,7 +72,7 @@ fprintf(oid, '<!--------------------------------------------------------------->
 
 fprintf(oid, '<div id="top2">\n');
 fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
-fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
+fprintf(oid,['    <a href = "../../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
@@ -99,14 +99,14 @@ fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://ww
 % print SGJR pies
 fprintf(oid, '      <H3>Energy investment, cumulated over the embryo period (left), and allocation during ontogeny</H3>\n');
 fprintf(oid, '      <div>\n');
-fprintf(oid,['        <a href = "../pie_SGJRb.html#', metaData.species, '" >\n']);
-fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_SGJRb.png"  width="260px"></a>\n']);
-fprintf(oid,['        <a href = "../pie_pSGJRb.html#', metaData.species, '" >\n']);
-fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_pSGJRb.png" width="260px"></a>\n']);
-fprintf(oid,['        <a href = "../pie_pSGJRp.html#', metaData.species, '" >\n']);
-fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_pSGJRp.png" width="260px"></a>\n']);
-fprintf(oid,['        <a href = "../pie_pSGJRi.html#', metaData.species, '" >\n']);
-fprintf(oid,['          <img src="../entries_web/', metaData.species, '_pie_pSGJRi.png" width="260px"></a>\n']);
+fprintf(oid,['        <a href = "../../pie_SGJRb.html#', metaData.species, '" >\n']);
+fprintf(oid,['          <img src="', metaData.species, '_pie_SGJRb.png"  width="260px"></a>\n']);
+fprintf(oid,['        <a href = "../../pie_pSGJRb.html#', metaData.species, '" >\n']);
+fprintf(oid,['          <img src="', metaData.species, '_pie_pSGJRb.png" width="260px"></a>\n']);
+fprintf(oid,['        <a href = "../../pie_pSGJRp.html#', metaData.species, '" >\n']);
+fprintf(oid,['          <img src="', metaData.species, '_pie_pSGJRp.png" width="260px"></a>\n']);
+fprintf(oid,['        <a href = "../../pie_pSGJRi.html#', metaData.species, '" >\n']);
+fprintf(oid,['          <img src="', metaData.species, '_pie_pSGJRi.png" width="260px"></a>\n']);
 fprintf(oid, '      </div>\n\n');
 fprintf(oid, '      <div class = "caption">   \n');
 fprintf(oid, '        Exploding sectors mean dissipation; numbers denote fractions of mobilized reserve.\n');
@@ -132,7 +132,7 @@ fprintf(oid, '      </TABLE>\n\n');
 
 fprintf(oid, '    </div> <!-- end of content -->\n\n');
 
-fprintf(oid, '    <div w3-include-html="../sys/footer_amp.html"></div>\n');
+fprintf(oid, '    <div w3-include-html="../../sys/footer_amp.html"></div>\n');
 fprintf(oid, '    <script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '  </div> <!-- main wrapper -->\n');

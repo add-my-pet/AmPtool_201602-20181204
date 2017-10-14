@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>shstat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-17"><meta name="DC.source" content="shstat.m"><style type="text/css">
+      --><title>shstat</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-10-14"><meta name="DC.source" content="shstat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -63,7 +63,7 @@ span.syscmd { color:#B28C00 }
 
 %%
 function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfig)
-% created 2016/04/23 by Bas Kooijman; modified 2017/04/20
+% created 2016/04/23 by Bas Kooijman; modified 2017/04/20, 2017/10/14
 
 %% Syntax
 % [Hfig val entries missing] =  <../shstat.m *shstat*>(vars, legend, label_title, Hfig)
@@ -173,7 +173,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
     n_taxa = size(legend, 1); % number of taxa to be plotted
     sel = zeros(n_entries, n_taxa);
     [sel(:,1) entries_sel] = select_01('Animalia', legend{1,2});
-    if ~isequaln(entries, entries_sel)
+    if ~isempty(setdiff(entries_sel, entries))
       fprintf('Error in shstat: entries in allStat do not correspond with entries in select(''Animalia'')\n')
       Hfig = []; missing = []; return
     end
@@ -273,12 +273,12 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
   switch n_vars
     case 1
         
+      set(gca, 'FontSize', 15, 'Box', 'on', 'YTick', 0:0.2:1)
       xlabel(label_x)
       ylim([0 1]);
       if strcmp(y_label, 'on')
         ylabel('survivor function')
       end
-      set(gca, 'FontSize', 15, 'Box', 'on', 'YTick', 0:0.2:1)
 
       if n_taxa <= 1
         % set colors for survivor function and median

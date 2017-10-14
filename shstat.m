@@ -3,7 +3,7 @@
 
 %%
 function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfig)
-% created 2016/04/23 by Bas Kooijman; modified 2017/04/20
+% created 2016/04/23 by Bas Kooijman; modified 2017/04/20, 2017/10/14
 
 %% Syntax
 % [Hfig val entries missing] =  <../shstat.m *shstat*>(vars, legend, label_title, Hfig)
@@ -113,7 +113,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
     n_taxa = size(legend, 1); % number of taxa to be plotted
     sel = zeros(n_entries, n_taxa);
     [sel(:,1) entries_sel] = select_01('Animalia', legend{1,2});
-    if ~isequaln(entries, entries_sel)
+    if ~isempty(setdiff(entries_sel, entries))
       fprintf('Error in shstat: entries in allStat do not correspond with entries in select(''Animalia'')\n')
       Hfig = []; missing = []; return
     end

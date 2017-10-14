@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_about</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_about.m"><style type="text/css">
+      --><title>prt_about</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-10-14"><meta name="DC.source" content="prt_about.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -55,7 +55,7 @@ span.syscmd { color:#B28C00 }
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
 
-  </style></head><body><div class="content"><h1>prt_about</h1><!--introduction--><p>generates ../about.html, ../img/png's</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02, 2016/10/24</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li></ul></div><h2>created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02, 2016/10/24<a name="2"></a></h2><h2>Syntax<a name="3"></a></h2><p><a href="../prt_about"><b>prt_about</b></a></p><h2>Description<a name="4"></a></h2><p>Runs plotting routines, creates png-files and link them in an html-file</p><p>Output:</p><pre>* files are written in ../img/about:</pre><pre>    - entries.png,
+  </style></head><body><div class="content"><h1>prt_about</h1><!--introduction--><p>generates ../about.html, ../img/png's</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_about"><b>prt_about</b></a></p><h2>Description<a name="4"></a></h2><p>Runs plotting routines, creates png-files and link them in an html-file</p><p>Output:</p><pre>* files are written in ../img/about:</pre><pre>    - entries.png,
     - pie_Animal.png
     - pie_model.png
     - COMPLETE.png
@@ -69,7 +69,7 @@ span.syscmd { color:#B28C00 }
 
 %%
 function prt_about
-%% created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02, 2016/10/24
+% created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02, 2016/10/24, 2017/10/13
 
 %% Syntax
 % <../prt_about *prt_about*>
@@ -126,7 +126,7 @@ set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('time, yr')
 ylabel('# of add\_my\_pet entries')
 xlim([2009; max(dates)])
-saveas (gca,'../img/about/entries.png')
+saveas (gca,'../../img/about/entries.png')
 close all
 
 % COMPLETE, MRE plots
@@ -282,23 +282,23 @@ fprintf(fid_about, '      <!REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_
 fprintf(fid_about, '      <TABLE id="t02">\n');
 fprintf(fid_about, '        <TR><TH colspan="2"><b>Latest additions to the collection:</b></TH></TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{1}, '_res.html "><I>', entries_new{1}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path,  entries_new{1}, '/', entries_new{1}, '_res.html "><I>', entries_new{1}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(1,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{2}, '_res.html "><I>', entries_new{2}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{2}, '/', entries_new{2}, '_res.html "><I>', entries_new{2}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(2,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{3}, '_res.html"><I>', entries_new{3}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{3}, '/', entries_new{3}, '_res.html"><I>', entries_new{3}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(3,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{4}, '_res.html "><I>', entries_new{4}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{4}, '/', entries_new{4}, '_res.html "><I>', entries_new{4}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(4,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{5}, '_res.html "><I>', entries_new{5}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{5}, '/', entries_new{5}, '_res.html "><I>', entries_new{5}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(5,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '      </TABLE>\n\n');

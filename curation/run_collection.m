@@ -36,9 +36,10 @@ end
 nargin = length(varargin); % number of entries to scan    
 WD = pwd; % store current path
 
-destinationFolder = '../../entries_web/'; % target for html and png files
 
 for i = 1:nargin 
+  destinationFolder = ['../../entries_web/', varargin{i},'/']; % target for html and png files
+  mkdir(destinationFolder);
   fprintf(' %g : %s \n', i, varargin{i}) % report progress to screen 
   
   cd(['../../entries/', varargin{i}]) % goto entry i in dir entries

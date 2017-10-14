@@ -3,7 +3,7 @@
 
 %%
 function prt_pie_SGGJR
-% created 2017/05/12 Bas Kooijman
+% created 2017/05/12 Bas Kooijman, modified 2017/10/14
 
 %% Syntax
 % <../prt_pie_SGGJR.m *prt_pie_SGGJR*> 
@@ -101,8 +101,8 @@ if mod(i,4) == 1
 fprintf(oid, '      <div class = "pierow">\n');
 end
 fprintf(oid,['        <div class = "pie" id = "', entries{i},'">\n']);
-fprintf(oid,['          <a href = "entries_web/', entries{i},'_stat.html">\n']);
-fprintf(oid,['          <img src="entries_web/', entries{i}, '_', pie{j}, '.png"  width="260px"></a>\n']);
+fprintf(oid,['          <a href = "entries_web/', entries{i}, '/', entries{i},'_stat.html">\n']);
+fprintf(oid,['          <img src="entries_web/', entries{i}, '/', entries{i}, '_', pie{j}, '.png"  width="260px"></a>\n']);
 fprintf(oid,'           <div class = "piecap">\n');
 fprintf(oid,['             <i>', strrep(entries{i}, '_', ' '), '</i><br>\n']);
 fprintf(oid,['             ', nm_en, '\n']);

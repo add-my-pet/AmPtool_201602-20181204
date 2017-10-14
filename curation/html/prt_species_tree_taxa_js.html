@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_species_tree_taxa_js</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_species_tree_taxa_js.m"><style type="text/css">
+      --><title>prt_species_tree_taxa_js</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-10-14"><meta name="DC.source" content="prt_species_tree_taxa_js.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -64,7 +64,7 @@ span.syscmd { color:#B28C00 }
 %%
 function prt_species_tree_taxa_js(taxa)
 % created 2016/03/06 by Bas Kooijman, 
-% modified 2016/06/01 Starrlight Augustine, 2016/06/02, 2016/10/08 Bas Kooijman
+% modified 2016/06/01 Starrlight Augustine, 2016/06/02, 2016/10/08, 2017/10/13 Bas Kooijman
 
 %% Syntax
 % <../prt_species_tree_taxa_js.m *prt_species_tree_taxa_js*> (taxa) 
@@ -140,7 +140,7 @@ function prt_species_tree_taxa_js(taxa)
         fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "species_tree_',taxa{i},'.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
         %fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", ""))\n']);
       else
-        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '_res.html"))\n']); 
+        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '/', node '_res.html"))\n']); 
       end
     end
     

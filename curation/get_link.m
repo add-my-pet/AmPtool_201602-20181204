@@ -2827,6 +2827,22 @@ function [links info] = get_link(taxon, test)
       id_EoL = '223483';
       id_fishbase = taxon_fish;
        
+    case 'Nothobranchius_furzeri'
+      id_CoL = '122b5c294fd8d0d77e50831f6c089e15';
+      id_WoRMS = ''; % not present 2017/10/13
+      id_Taxo = '181385';        
+      id_EoL = '218173';
+      id_fishbase = taxon_fish;
+       
+    case 'Nothobranchius_kadleci'
+      id_CoL = '3badcb4c79813f005161513d913413a5';
+      id_WoRMS = ''; % not present 2017/10/13
+      id_Taxo = '44522'; % only present at genus level 2017/10/13      
+      id_EoL = '23931';  % only present at genus level 2017/10/13
+      id_fishbase = taxon_fish;
+      id_Wiki = 'Nothobranchius';
+      id_ADW = ''; % not present at 2017/10/13
+       
     case 'Atherina_presbyter'
       id_CoL = '8aa69a96e25e63f574382883df9016f5';
       id_WoRMS = '272030';

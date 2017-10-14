@@ -3,7 +3,7 @@
 
 %%
 function prt_species_names
-% created at 2016/12/30 by Bas Kooijman
+% created at 2016/12/30 by Bas Kooijman, modified 2017/10/13
 
 %% Syntax
 % <../../prt_species_names.m *prt_species_names*>
@@ -27,7 +27,7 @@ nms(:,2) = cnm; [cnm index] = sort(cnm);
 
 fid_Spec = fopen('../../species_names.html', 'w+'); % open file for writing, delete existing content
   
-% make the header for species_list.html :
+% make the header for species_list.html
 fprintf(fid_Spec, '<!DOCTYPE html>\n');
 fprintf(fid_Spec, '<HTML>\n');
 fprintf(fid_Spec, '<HEAD>\n');
@@ -59,7 +59,7 @@ fprintf(fid_Spec, '        Click here for common names">Scientific names</a></H2
 fprintf(fid_Spec, '      <div class = "newspaper">\n'); 
 
 for i = 1:n
-fprintf(fid_Spec,['        <a target="_top" href="entries_web/', snm{i}, '_res.html" title="', nms{i,2}, '">', snm_prt{i}, '</a><br>\n']);
+fprintf(fid_Spec,['        <a target="_top" href="entries_web/', snm{i}, '/', snm{i}, '_res.html" title="', nms{i,2}, '">', snm_prt{i}, '</a><br>\n']);
 end
 fprintf(fid_Spec, '      </div>\n\n');  
 fprintf(fid_Spec, '      <H2 id="common_name"><a href="#scientific_name" title="Locate entries by common name.\n');
@@ -68,7 +68,7 @@ fprintf(fid_Spec, '        Goto entries by clicking on entry names.\n');
 fprintf(fid_Spec, '        Click here for scientific names">Common names</a></H2>\n\n');
 fprintf(fid_Spec, '      <div class = "newspaper">\n');  
 for i = 1:n
-fprintf(fid_Spec,['        <a target="_top" href="entries_web/', snm{index(i)}, '_res.html" title="', snm_prt{index(i)}, '">', cnm{i}, '</a><br>\n']);
+fprintf(fid_Spec,['        <a target="_top" href="entries_web/', snm{index(i)}, '/', snm{index(i)}, '_res.html" title="', snm_prt{index(i)}, '">', cnm{i}, '</a><br>\n']);
 end
 fprintf(fid_Spec, '      </div>\n\n');  
 fprintf(fid_Spec, '    </div> <!-- end of content -->\n\n');

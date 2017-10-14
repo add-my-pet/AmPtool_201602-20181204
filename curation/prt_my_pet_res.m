@@ -5,7 +5,7 @@
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
-% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29 Bas Kooijman
+% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -98,14 +98,14 @@ fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');
 fprintf(oid, '<HEAD>\n');
 fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
-fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../sys/style.css">\n'); 
-fprintf(oid, '  <script src="../sys/dropdown.js"></script>\n');
-fprintf(oid, '  <script src="../sys/w3data.js"></script>\n');
+fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../../sys/style.css">\n'); 
+fprintf(oid, '  <script src="../../sys/dropdown.js"></script>\n');
+fprintf(oid, '  <script src="../../sys/w3data.js"></script>\n');
 fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
-fprintf(oid, '<div w3-include-html="../sys/wallpaper_entry.html"></div>\n');
-fprintf(oid, '<div w3-include-html="../sys/toolbar_entry.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../../sys/wallpaper_entry.html"></div>\n');
+fprintf(oid, '<div w3-include-html="../../sys/toolbar_entry.html"></div>\n');
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
@@ -118,7 +118,7 @@ fprintf(oid, '<!--------------------------------------------------------------->
 
 fprintf(oid, '<div id="top2">\n');
 fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
-fprintf(oid,['    <a href = "../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
+fprintf(oid,['    <a href = "../../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
@@ -300,9 +300,9 @@ if isempty(metaData.data_1) == 0
 
 
     if ID(j) < 10
-      fig   = ['see <A href = "../entries/',metaData.species,'/results_',metaData.species,'_0',num2str(ID(j)),'.png"> Fig. ',num2str(ID(j)),'</A>'];
+      fig   = ['see <A href = "../../entries/',metaData.species,'/results_',metaData.species,'_0',num2str(ID(j)),'.png"> Fig. ',num2str(ID(j)),'</A>'];
     else
-      fig   = ['see <A href = "../entries/',metaData.species,'/results_',metaData.species,'_',num2str(ID(j)),'.png"> Fig. ',num2str(ID(j)),'</A>'];
+      fig   = ['see <A href = "../../entries/',metaData.species,'/results_',metaData.species,'_',num2str(ID(j)),'.png"> Fig. ',num2str(ID(j)),'</A>'];
     end        
     n = iscell(txtData.bibkey.(nm{uniData(j)}));
     if n
@@ -440,7 +440,7 @@ end
 
 fprintf(oid, '    </div> <!-- end of content -->\n\n');
 
-fprintf(oid, '    <div w3-include-html="../sys/footer_amp.html"></div>\n');
+fprintf(oid, '    <div w3-include-html="../../sys/footer_amp.html"></div>\n');
 fprintf(oid, '    <script>w3IncludeHTML();</script>\n\n');
 
 fprintf(oid, '  </div> <!-- main wrapper -->\n');

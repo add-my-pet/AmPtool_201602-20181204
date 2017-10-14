@@ -4,7 +4,7 @@
 
 %%
 function  prt_toolbar_species(oid, species, date_acc)
-% created 2016/11/02 by Starrlight; modified 2017/09/29 Bas Kooijman 
+% created 2016/11/02 by Starrlight; modified 2017/09/29, 2017/10/13 Bas Kooijman 
 
 %% Syntax
 % <../prt_toolbar_species.m *prt_toolbar_species*> (oid, species, date_acc)
@@ -27,20 +27,20 @@ function  prt_toolbar_species(oid, species, date_acc)
 
 fprintf(oid, '    <div class = "dropdown"><button onclick="species()" class="dropbtn">Results</button>\n');
 fprintf(oid, '      <div id="speciesDropdown" class="dropdown-content">\n');
-fprintf(oid,['        <a href="',species,'_par.html">Parameters</a>\n']);
-fprintf(oid,['        <a href="',species,'_stat.html">Implied properties</a>\n']);    
-fprintf(oid,['        <a href="',species,'_res.html">Predictions & Data</a>\n']);
-fprintf(oid,['        <a href="',species,'_bib.bib">Bibliography</a>\n']);
+fprintf(oid,['        <a href="', species, '_par.html">Parameters</a>\n']);
+fprintf(oid,['        <a href="', species, '_stat.html">Implied properties</a>\n']);    
+fprintf(oid,['        <a href="', species, '_res.html">Predictions & Data</a>\n']);
+fprintf(oid,['        <a href="', species,'_bib.bib">Bibliography</a>\n']);
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 
 fprintf(oid, '    <div class = "dropdown"><button onclick="code()" class="dropbtn">Code</button>\n');
 fprintf(oid, '      <div id="codeDropdown" class="dropdown-content">\n');
-fprintf(oid,['        <a href="../entries/',species,'/mydata_',species,'.m" target="_blank">mydata</a>\n']);
-fprintf(oid,['        <a href="../entries/',species,'/pars_init_',species,'.m" target="_blank">pars_init</a>\n']);
-fprintf(oid,['        <a href="../entries/',species,'/predict_',species,'.m" target="_blank">predict</a>\n']);
-fprintf(oid,['        <a HREF="../entries_zip/',species,'_', datestr(datenum(date_acc), 'yyyymmdd'), '.zip" TARGET="_top" onMouseOver="window.status=Close submenu; return true;">\n']);
-fprintf(oid, '          <IMG SRC="../img/folder.png" WIDTH="110px"  BORDER="0" ></a>\n');
+fprintf(oid,['        <a href="../../entries/',species,'/mydata_',species,'.m" target="_blank">mydata</a>\n']);
+fprintf(oid,['        <a href="../../entries/',species,'/pars_init_',species,'.m" target="_blank">pars_init</a>\n']);
+fprintf(oid,['        <a href="../../entries/',species,'/predict_',species,'.m" target="_blank">predict</a>\n']);
+fprintf(oid,['        <a HREF="../../entries_zip/',species,'_', datestr(datenum(date_acc), 'yyyymmdd'), '.zip" TARGET="_top" onMouseOver="window.status=Close submenu; return true;">\n']);
+fprintf(oid, '          <IMG SRC="../../img/folder.png" WIDTH="110px"  BORDER="0" ></a>\n');
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 

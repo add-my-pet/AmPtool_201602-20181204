@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_pie_SGGJR</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-16"><meta name="DC.source" content="prt_pie_SGGJR.m"><style type="text/css">
+      --><title>prt_pie_SGGJR</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-10-14"><meta name="DC.source" content="prt_pie_SGGJR.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -63,7 +63,7 @@ span.syscmd { color:#B28C00 }
 
 %%
 function prt_pie_SGGJR
-% created 2017/05/12 Bas Kooijman
+% created 2017/05/12 Bas Kooijman, modified 2017/10/14
 
 %% Syntax
 % <../prt_pie_SGGJR.m *prt_pie_SGGJR*> 
@@ -101,7 +101,7 @@ function prt_pie_SGGJR
 
 for  j = 1:4 % scan pies
     
-oid = fopen(['../', pie{j}, '.html'], 'w+'); % open file for writing, delete existing content
+oid = fopen(['../../', pie{j}, '.html'], 'w+'); % open file for writing, delete existing content
 
 fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');
@@ -161,8 +161,8 @@ if mod(i,4) == 1
 fprintf(oid, '      <div class = "pierow">\n');
 end
 fprintf(oid,['        <div class = "pie" id = "', entries{i},'">\n']);
-fprintf(oid,['          <a href = "entries_web/', entries{i},'_stat.html">\n']);
-fprintf(oid,['          <img src="entries_web/', entries{i}, '_', pie{j}, '.png"  width="260px"></a>\n']);
+fprintf(oid,['          <a href = "entries_web/', entries{i}, '/', entries{i},'_stat.html">\n']);
+fprintf(oid,['          <img src="entries_web/', entries{i}, '/', entries{i}, '_', pie{j}, '.png"  width="260px"></a>\n']);
 fprintf(oid,'           <div class = "piecap">\n');
 fprintf(oid,['             <i>', strrep(entries{i}, '_', ' '), '</i><br>\n']);
 fprintf(oid,['             ', nm_en, '\n']);
