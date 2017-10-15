@@ -3320,6 +3320,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
+    case 'Andrias_japonicus'
+      id_CoL = '41349267f4b608eff2affa9111ed15de';
+      id_Taxo = '47271';        
+      id_EoL = '319982';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
     case 'Lissotriton_vulgaris'
       id_CoL = '8eb8ecd651629c0276ce18bb308d38e8';
       id_Taxo = '985978';        
@@ -3327,10 +3334,25 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
-    case 'Andrias_japonicus'
-      id_CoL = '41349267f4b608eff2affa9111ed15de';
-      id_Taxo = '47247';        
-      id_EoL = '319982';
+    case 'Amphiuma_means'
+      id_CoL = '0d414109bff9293787d947877ee0de85';
+      id_Taxo = '47352';        
+      id_EoL = '332599';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+      id_ADW = ''; % not present at 2017/10/15
+
+    case 'Proteus_anguinus'
+      id_CoL = '902f579a3013675de3ac2a27821e4433';
+      id_Taxo = '985978';        
+      id_EoL = '331216';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Siren_lacertina'
+      id_CoL = '585fee795ef444b7901ead9c4f560f9d';
+      id_Taxo = '985994';        
+      id_EoL = '331129';
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
