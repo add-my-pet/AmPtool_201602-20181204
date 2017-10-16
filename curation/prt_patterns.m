@@ -32,7 +32,7 @@ cWdW = read_allStat('c_T', 'W_dWm', 'dWm'); c_T = cWdW(:,1); W = cWdW(:,2); dW =
 set(gca, 'FontSize', 15, 'Box', 'on')
 
 figure(Hfig) 
-xlabel('_{10}log weight at max gowth, g')      
+xlabel('_{10}log weight at max growth, g')      
 ylabel('_{10}log max growth at T_{ref}, g/d')
 
 saveas(Hfig, '../../img/patterns/logW-logdW.png')
