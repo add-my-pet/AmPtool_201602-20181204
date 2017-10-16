@@ -3327,6 +3327,20 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
+    case 'Cryptobranchus_alleganiensis'
+      id_CoL = '0b437ecc1a60d46a1627791f64c9b9db';
+      id_Taxo = '47250';        
+      id_EoL = '331124';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Hynobius_nebulosus'
+      id_CoL = '574b291971ce90bf962848d15095707e';
+      id_Taxo = '47250';        
+      id_EoL = '1048033';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
     case 'Lissotriton_vulgaris'
       id_CoL = '8eb8ecd651629c0276ce18bb308d38e8';
       id_Taxo = '985978';        
