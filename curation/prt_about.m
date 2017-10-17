@@ -58,7 +58,7 @@ n = size(surv_dates, 1)/2;
 plot(surv_dates(:,1), n * (1 - surv_dates(:,2)), 'b', 'Linewidth', 2)
 set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('time, yr')
-ylabel('# of add\_my\_pet entries')
+ylabel('# of AmP entries')
 xlim([2009; max(dates)])
 saveas (gca,'../../img/about/entries.png')
 close all
