@@ -3341,11 +3341,32 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
+    case 'Ambystoma_mexicanum'
+      id_CoL = 'bf23a5a83215eb7cd6a5eaae8c5f587b';
+      id_Taxo = '93027';        
+      id_EoL = '1019571';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
     case 'Lissotriton_vulgaris'
       id_CoL = '8eb8ecd651629c0276ce18bb308d38e8';
       id_Taxo = '985978';        
       id_EoL = '10194926';
       id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Salamandra_salamandra'
+      id_CoL = '2da5d094f1f3b4d8bd13a461c5054291';
+      id_Taxo = '47311';        
+      id_EoL = '333311';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Salamandra_lanzai'
+      id_CoL = 'f9f9ebdeed31ebf8acabb85230936380';
+      id_Taxo = '151422';        
+      id_EoL = '331870';
+      id_AnAge = ''; % not present at 2017/10/17
       id_amphweb = taxon_amph;
        
     case 'Amphiuma_means'
