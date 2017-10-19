@@ -2829,19 +2829,26 @@ function [links info] = get_link(taxon, test)
        
     case 'Nothobranchius_furzeri'
       id_CoL = '122b5c294fd8d0d77e50831f6c089e15';
-      id_WoRMS = ''; % not present 2017/10/13
+      id_WoRMS = '1013134'; 
       id_Taxo = '181385';        
       id_EoL = '218173';
       id_fishbase = taxon_fish;
        
     case 'Nothobranchius_kadleci'
       id_CoL = '3badcb4c79813f005161513d913413a5';
-      id_WoRMS = ''; % not present 2017/10/13
+      id_WoRMS = '1008133'; 
       id_Taxo = '44522'; % only present at genus level 2017/10/13      
       id_EoL = '23931';  % only present at genus level 2017/10/13
       id_fishbase = taxon_fish;
       id_Wiki = 'Nothobranchius';
       id_ADW = ''; % not present at 2017/10/13
+       
+    case 'Fundulopanchax_gardneri'
+      id_CoL = '9a7a5e7cb389be07278cf6ebc8e3bcb5';
+      id_WoRMS = '1013634';
+      id_Taxo = ''; % not working at 2017/10/19      
+      id_EoL = '216582';  
+      id_fishbase = taxon_fish;
        
     case 'Atherina_presbyter'
       id_CoL = '8aa69a96e25e63f574382883df9016f5';
@@ -3345,6 +3352,13 @@ function [links info] = get_link(taxon, test)
       id_CoL = 'bf23a5a83215eb7cd6a5eaae8c5f587b';
       id_Taxo = '93027';        
       id_EoL = '1019571';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Plethodon_cinereus'
+      id_CoL = 'a2743c12f96b3492a8352ada6b54703d';
+      id_Taxo = ''; % problems at 2017/10/19       
+      id_EoL = '333692';
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
