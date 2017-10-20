@@ -3,7 +3,7 @@
 
 %%
 function prt_authors
-%% created 2016/02/23 by Bas Kooijman, modified 2016/12/24, 2017/07/30
+%% created 2016/02/23 by Bas Kooijman, modified 2016/12/24, 2017/07/30, 2017/10/20
 
 %% Syntax
 % <../prt_authors.m *prt_authors*>
@@ -173,7 +173,7 @@ fprintf(fid_authors, '             <ul class="main-navigation">\n');
 fprintf(fid_authors,['               <li><a href="#">', num2str(nr), '</a>\n']);
 fprintf(fid_authors, '               <ul>\n');
     for k = 1:nr % scan all dates/entries for current author
-fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
+fprintf(fid_authors,['                 <li><a target="_top" href="entries_web/', txt_entry{k}, '/', txt_entry{k}, '_res.html">', txt_date{k}, ' ', txt_entry{k}, '</a></li>\n']);
     end
 fprintf(fid_authors, '               </ul>\n');
 fprintf(fid_authors, '             </ul>\n');
