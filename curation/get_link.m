@@ -3348,6 +3348,28 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
+    case 'Plethodon_cinereus'
+      id_CoL = 'a2743c12f96b3492a8352ada6b54703d';
+      id_Taxo = '47446';
+      id_EoL = '333692';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Amphiuma_means'
+      id_CoL = '0d414109bff9293787d947877ee0de85';
+      id_Taxo = '47352';        
+      id_EoL = '332599';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+      id_ADW = ''; % not present at 2017/10/15
+
+    case 'Rhyacotriton_olympicus'
+      id_CoL = 'd9dd7cc82382b49509dd444cee24311e';
+      id_Taxo = '47363';
+      id_EoL = '1018900';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
     case 'Ambystoma_mexicanum'
       id_CoL = 'bf23a5a83215eb7cd6a5eaae8c5f587b';
       id_Taxo = '93027';        
@@ -3355,11 +3377,11 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
-    case 'Plethodon_cinereus'
-      id_CoL = 'a2743c12f96b3492a8352ada6b54703d';
-      id_Taxo = ''; % problems at 2017/10/19       
-      id_EoL = '333692';
-      id_AnAge = taxon;
+    case 'Dicamptodon_tenebrosus'
+      id_CoL = '22616372b9bc8beb8bd6fe5bb4940fcc';
+      id_Taxo = '137953';
+      id_EoL = '330494';
+      id_AnAge = 'Dicamptodon_ensatus';
       id_amphweb = taxon_amph;
        
     case 'Lissotriton_vulgaris'
@@ -3383,14 +3405,6 @@ function [links info] = get_link(taxon, test)
       id_AnAge = ''; % not present at 2017/10/17
       id_amphweb = taxon_amph;
        
-    case 'Amphiuma_means'
-      id_CoL = '0d414109bff9293787d947877ee0de85';
-      id_Taxo = '47352';        
-      id_EoL = '332599';
-      id_AnAge = taxon;
-      id_amphweb = taxon_amph;
-      id_ADW = ''; % not present at 2017/10/15
-
     case 'Proteus_anguinus'
       id_CoL = '902f579a3013675de3ac2a27821e4433';
       id_Taxo = '985978';        
