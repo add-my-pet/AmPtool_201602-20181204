@@ -1444,7 +1444,13 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '40829';        
       id_EoL = '598469';
       id_ADW = ''; % not present at 2017/09/25
- 
+
+    case 'Luidia_sarsii'
+      id_CoL = 'f49bc17a4e12e74c3dc1095d8fff0654';
+      id_WoRMS = '123922';
+      id_Taxo = '40808';   % present as Luidia_sarsi       
+      id_EoL = '46326605'; % present as Luidia_sarsi
+
     case 'Archaster_typicus'
       id_CoL = '144f27a0c1868bfa17681085c7e30b41';
       id_WoRMS = '213119';
@@ -3614,6 +3620,13 @@ function [links info] = get_link(taxon, test)
       id_CoL = '2c91a42f205ad78e94e75be5dc844684';
       id_Taxo = '50340';        
       id_EoL = '289378';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
+    case 'Crotalus_horridus'
+      id_CoL = 'e9f8350bf5f3e9c9dc286e5c54a9807d';
+      id_Taxo = '50384';        
+      id_EoL = '963777';
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
