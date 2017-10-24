@@ -94,6 +94,18 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '458143';
       id_EoL = '203445';
       
+    case 'Rhizostoma_octopus'
+      id_CoL = 'c73258a81408309516936f312686772a';
+      id_WoRMS = '152203';
+      id_Taxo = '11875';
+      id_EoL = '2552541';
+      
+    case 'Lychnorhiza_lucerna'
+      id_CoL = '46556d3c743bdb6db72206faaca92672';
+      id_WoRMS = '290320';
+      id_Taxo = '451574';
+      id_EoL = '203436';
+      
     case 'Ptilosarcus_gurneyi'
       id_CoL = '19dd87c4059f3e0d7b8ee05643419b23';
       id_WoRMS = '290947';
