@@ -3,7 +3,7 @@
 
 %%
 function prt_species_names
-% created at 2016/12/30 by Bas Kooijman, modified 2017/10/13, 2017/10/20
+% created at 2016/12/30 by Bas Kooijman, modified 2017/10/13, 2017/10/20, 2017/10/24
 
 %% Syntax
 % <../../prt_species_names.m *prt_species_names*>
@@ -50,11 +50,11 @@ fprintf(fid_Spec, '    }\n\n');
 
 fprintf(fid_Spec, '    #Input_sn {\n');
 fprintf(fid_Spec, '      background-image: url(''img/searchicon.png'');\n');
-fprintf(fid_Spec, '      background-position: 10px 12px;\n');
+fprintf(fid_Spec, '      background-position: 2px -10px;\n');
 fprintf(fid_Spec, '      background-repeat: no-repeat;\n');
-fprintf(fid_Spec, '      width: 100%%;\n');
-fprintf(fid_Spec, '      font-size: 16px;\n');
-fprintf(fid_Spec, '      padding: 12px 20px 12px 40px;\n');
+fprintf(fid_Spec, '      width: 50%%;\n');
+fprintf(fid_Spec, '      font-size: 14px;\n');
+fprintf(fid_Spec, '      padding: 5px 10px 7px 40px;\n');
 fprintf(fid_Spec, '      border: 1px solid #ddd;\n');
 fprintf(fid_Spec, '      margin-bottom: 12px;\n');
 fprintf(fid_Spec, '    }\n\n');
@@ -82,11 +82,11 @@ fprintf(fid_Spec, '    }\n\n');
 
 fprintf(fid_Spec, '    #Input_cn {\n');
 fprintf(fid_Spec, '      background-image: url(''img/searchicon.png'');\n');
-fprintf(fid_Spec, '      background-position: 10px 12px;\n');
+fprintf(fid_Spec, '      background-position: 2px -10px;\n');
 fprintf(fid_Spec, '      background-repeat: no-repeat;\n');
-fprintf(fid_Spec, '      width: 100%%;\n');
-fprintf(fid_Spec, '      font-size: 16px;\n');
-fprintf(fid_Spec, '      padding: 12px 20px 12px 40px;\n');
+fprintf(fid_Spec, '      width: 50%%;\n');
+fprintf(fid_Spec, '      font-size: 14px;\n');
+fprintf(fid_Spec, '      padding: 5px 10px 7px 40px;\n');
 fprintf(fid_Spec, '      border: 1px solid #ddd;\n');
 fprintf(fid_Spec, '      margin-bottom: 12px;\n');
 fprintf(fid_Spec, '    }\n\n');
