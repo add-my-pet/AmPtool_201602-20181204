@@ -4,7 +4,7 @@
 %%
 function prt_species_list
 % created by Bas Kooijman; modified 2015/04/14 Starrlight Augustine & Goncalo Marques; 
-%   modified 2015/07/21 Starrlight Augustine; 2015/08/28 Starrlight Augustine; 2016/11/05, 2017/10/13 Bas Kooijman
+%   modified 2015/07/21, 2015/08/28 Starrlight Augustine; 2016/11/05, 2017/10/13, 2017/10/24 Bas Kooijman
 
 %% Syntax
 % <../prt_species_list.m *prt_species_list*>
@@ -71,7 +71,57 @@ fprintf(fid_Spec, '  <TITLE>Species List</TITLE>\n');
 fprintf(fid_Spec, '  <link rel="stylesheet" type="text/css" href="sys/style.css"> \n');
 fprintf(fid_Spec, '  <script src="sys/dropdown.js"></script>\n');
 fprintf(fid_Spec, '  <script src="sys/w3data.js"></script>\n');
-fprintf(fid_Spec, '</HEAD>\n\n');
+fprintf(fid_Spec, '  <style>\n');
+fprintf(fid_Spec, '    #InputPhylum {\n');
+fprintf(fid_Spec, '      background-image: url(''img/searchicon.png''); /* Add a search icon to input */\n');
+fprintf(fid_Spec, '      background-position: 10px 12px; /* Position the search icon */\n');
+fprintf(fid_Spec, '      background-repeat: no-repeat; /* Do not repeat the icon image */\n');
+fprintf(fid_Spec, '      width: 10%%; /* Width of search field */\n');
+fprintf(fid_Spec, '      font-size: 16px; /* Increase font-size */\n');
+fprintf(fid_Spec, '      padding: 10px 10px 20px 50px; /* Add some padding */\n');
+fprintf(fid_Spec, '      border: 1px solid #ddd; /* Add a grey border */\n');
+fprintf(fid_Spec, '      margin-bottom: 12px; /* Add some space below the input */\n');
+fprintf(fid_Spec, '    }\n\n');
+
+fprintf(fid_Spec, '    #InputClass {\n');
+fprintf(fid_Spec, '      background-image: url(''img/searchicon.png''); /* Add a search icon to input */\n');
+fprintf(fid_Spec, '      background-position: 10px 12px; /* Position the search icon */\n');
+fprintf(fid_Spec, '      background-repeat: no-repeat; /* Do not repeat the icon image */\n');
+fprintf(fid_Spec, '      width: 10%%; /* Width of search field */\n');
+fprintf(fid_Spec, '      font-size: 16px; /* Increase font-size */\n');
+fprintf(fid_Spec, '      padding: 10px 10px 20px 50px; /* Add some padding */\n');
+fprintf(fid_Spec, '      border: 1px solid #ddd; /* Add a grey border */\n');
+fprintf(fid_Spec, '      margin-bottom: 12px; /* Add some space below the input */\n');
+fprintf(fid_Spec, '    }\n\n');
+
+fprintf(fid_Spec, '    #InputOrder {\n');
+fprintf(fid_Spec, '      background-image: url(''img/searchicon.png''); /* Add a search icon to input */\n');
+fprintf(fid_Spec, '      background-position: 10px 12px; /* Position the search icon */\n');
+fprintf(fid_Spec, '      background-repeat: no-repeat; /* Do not repeat the icon image */\n');
+fprintf(fid_Spec, '      width: 10%%; /* Width of search field */\n');
+fprintf(fid_Spec, '      font-size: 16px; /* Increase font-size */\n');
+fprintf(fid_Spec, '      padding: 10px 10px 20px 50px; /* Add some padding */\n');
+fprintf(fid_Spec, '      border: 1px solid #ddd; /* Add a grey border */\n');
+fprintf(fid_Spec, '      margin-bottom: 12px; /* Add some space below the input */\n');
+fprintf(fid_Spec, '    }\n\n');
+
+fprintf(fid_Spec, '    #speciesTable {\n');
+fprintf(fid_Spec, '      border-collapse: collapse; /* Collapse borders */\n');
+fprintf(fid_Spec, '      width: 100%%; /* Full-width */\n\n');
+fprintf(fid_Spec, '    }\n');
+
+fprintf(fid_Spec, '    #speciesTable th, #speciesTable td {\n');
+fprintf(fid_Spec, '      text-align: left; /* Left-align text */\n');
+fprintf(fid_Spec, '      padding: 12px; /* Add padding */\n');
+fprintf(fid_Spec, '    }\n\n');
+
+fprintf(fid_Spec, '    #speciesTable tr.header, #speciesTable tr:hover {\n');
+fprintf(fid_Spec, '      /* Add a grey background color to the table header and on hover */\n');
+fprintf(fid_Spec, '      background-color: #f1f1f1;\n');
+fprintf(fid_Spec, '    }\n');
+fprintf(fid_Spec, '  </style>\n');
+
+fprintf(fid_Spec, '</HEAD>\n');
 fprintf(fid_Spec, '<BODY>\n\n');
 
 fprintf(fid_Spec, '<div w3-include-html="sys/wallpaper_amp.html"></div>\n');
@@ -84,7 +134,14 @@ fprintf(fid_Spec, '    <div id="contentFull">\n\n');
 fprintf(fid_Spec, '      <H2><a href="" title="Locate entries by name via searching with Crtl-F.\n');
 fprintf(fid_Spec, '        Locate entries via classification by scrolling.\n');
 fprintf(fid_Spec, '        Goto entries by clicking on entry names">Species list: taxonomic view</a></H2>\n\n');
-fprintf(fid_Spec, '      <table>\n');
+
+fprintf(fid_Spec, '      <div>\n');
+fprintf(fid_Spec, '        <input type="text" id="InputPhylum" onkeyup="FunctionPhylum()" placeholder="Search for phylum ..">\n');
+fprintf(fid_Spec, '        <input type="text" id="InputClass" onkeyup="FunctionClass()" placeholder="Search for class ..">\n');
+fprintf(fid_Spec, '        <input type="text" id="InputOrder" onkeyup="FunctionOrder()" placeholder="Search for order ..">\n');
+fprintf(fid_Spec, '      </div>\n\n');
+
+fprintf(fid_Spec, '      <table id="speciesTable">\n');
 fprintf(fid_Spec, '        <TR HEIGHT=60 BGCOLOR = "#FFE7C6">\n');
 fprintf(fid_Spec, '          <TH><a class="link" target = "_blank" href="http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/phyla.html">phylum</a></TH>\n');
 fprintf(fid_Spec, '          <TH>class</TH> <TH>order</TH> <TH>family</TH> <TH>species</TH> <TH>common name</TH>\n');
@@ -163,6 +220,72 @@ function close_species_list(fid_Spec)
 % * fidSpec : scalar
 
 fprintf(fid_Spec, '      </table>\n\n');
+
+fprintf(fid_Spec, '      <script>\n');
+fprintf(fid_Spec, '        function FunctionPhylum() {\n');
+fprintf(fid_Spec, '          // Declare variables\n');
+fprintf(fid_Spec, '          var input, filter, table, tr, td, i;\n');
+fprintf(fid_Spec, '          input = document.getElementById("InputPhylum");\n');
+fprintf(fid_Spec, '          filter = input.value.toUpperCase();\n');
+fprintf(fid_Spec, '          table = document.getElementById("speciesTable");\n');
+fprintf(fid_Spec, '          tr = table.getElementsByTagName("tr");\n\n');
+
+fprintf(fid_Spec, '          // Loop through all table rows, and hide those who don''t match the search query\n');
+fprintf(fid_Spec, '          for (i = 0; i < tr.length; i++) {\n');
+fprintf(fid_Spec, '          td = tr[i].getElementsByTagName("td")[0];\n');
+fprintf(fid_Spec, '          if (td) {\n');
+fprintf(fid_Spec, '            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {\n');
+fprintf(fid_Spec, '              tr[i].style.display = "";\n');
+fprintf(fid_Spec, '            } else {\n');
+fprintf(fid_Spec, '              tr[i].style.display = "none";\n');
+fprintf(fid_Spec, '              }\n');
+fprintf(fid_Spec, '            }\n');
+fprintf(fid_Spec, '          }\n');
+fprintf(fid_Spec, '        }\n\n');
+ 
+fprintf(fid_Spec, '        function FunctionClass() {\n');
+fprintf(fid_Spec, '          // Declare variables\n');
+fprintf(fid_Spec, '          var input, filter, table, tr, td, i;\n');
+fprintf(fid_Spec, '          input = document.getElementById("InputClass");\n');
+fprintf(fid_Spec, '          filter = input.value.toUpperCase();\n');
+fprintf(fid_Spec, '          table = document.getElementById("speciesTable");\n');
+fprintf(fid_Spec, '          tr = table.getElementsByTagName("tr");\n\n');
+
+fprintf(fid_Spec, '          // Loop through all table rows, and hide those who don''t match the search query\n');
+fprintf(fid_Spec, '          for (i = 0; i < tr.length; i++) {\n');
+fprintf(fid_Spec, '          td = tr[i].getElementsByTagName("td")[1];\n');
+fprintf(fid_Spec, '          if (td) {\n');
+fprintf(fid_Spec, '            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {\n');
+fprintf(fid_Spec, '              tr[i].style.display = "";\n');
+fprintf(fid_Spec, '            } else {\n');
+fprintf(fid_Spec, '              tr[i].style.display = "none";\n');
+fprintf(fid_Spec, '              }\n');
+fprintf(fid_Spec, '            }\n');
+fprintf(fid_Spec, '          }\n');
+fprintf(fid_Spec, '        }\n\n');
+
+fprintf(fid_Spec, '        function FunctionOrder() {\n');
+fprintf(fid_Spec, '          // Declare variables\n');
+fprintf(fid_Spec, '          var input, filter, table, tr, td, i;\n');
+fprintf(fid_Spec, '          input = document.getElementById("InputOrder");\n');
+fprintf(fid_Spec, '          filter = input.value.toUpperCase();\n');
+fprintf(fid_Spec, '          table = document.getElementById("speciesTable");\n');
+fprintf(fid_Spec, '          tr = table.getElementsByTagName("tr");\n\n');
+
+fprintf(fid_Spec, '          // Loop through all table rows, and hide those who don''t match the search query\n');
+fprintf(fid_Spec, '          for (i = 0; i < tr.length; i++) {\n');
+fprintf(fid_Spec, '          td = tr[i].getElementsByTagName("td")[2];\n');
+fprintf(fid_Spec, '          if (td) {\n');
+fprintf(fid_Spec, '            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {\n');
+fprintf(fid_Spec, '              tr[i].style.display = "";\n');
+fprintf(fid_Spec, '            } else {\n');
+fprintf(fid_Spec, '              tr[i].style.display = "none";\n');
+fprintf(fid_Spec, '              }\n');
+fprintf(fid_Spec, '            }\n');
+fprintf(fid_Spec, '          }\n');
+fprintf(fid_Spec, '        }\n');
+fprintf(fid_Spec, '      </script>\n\n');
+
 fprintf(fid_Spec, '    </div> <!-- end of content -->\n\n');
 
 fprintf(fid_Spec, '    <div w3-include-html="sys/footer_amp.html"></div>\n');
