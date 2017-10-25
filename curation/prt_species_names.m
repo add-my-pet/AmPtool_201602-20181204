@@ -3,7 +3,7 @@
 
 %%
 function prt_species_names
-% created at 2016/12/30 by Bas Kooijman, modified 2017/10/13, 2017/10/20, 2017/10/24
+% created at 2016/12/30 by Bas Kooijman, modified 2017/10/13, 2017/10/20, 2017/10/24, , 2017/10/25
 
 %% Syntax
 % <../../prt_species_names.m *prt_species_names*>
@@ -52,7 +52,7 @@ fprintf(fid_Spec, '    #Input_sn {\n');
 fprintf(fid_Spec, '      background-image: url(''img/searchicon.png'');\n');
 fprintf(fid_Spec, '      background-position: 2px -10px;\n');
 fprintf(fid_Spec, '      background-repeat: no-repeat;\n');
-fprintf(fid_Spec, '      width: 50%%;\n');
+fprintf(fid_Spec, '      width: 18%%;\n');
 fprintf(fid_Spec, '      font-size: 14px;\n');
 fprintf(fid_Spec, '      padding: 5px 10px 7px 40px;\n');
 fprintf(fid_Spec, '      border: 1px solid #ddd;\n');
@@ -84,7 +84,7 @@ fprintf(fid_Spec, '    #Input_cn {\n');
 fprintf(fid_Spec, '      background-image: url(''img/searchicon.png'');\n');
 fprintf(fid_Spec, '      background-position: 2px -10px;\n');
 fprintf(fid_Spec, '      background-repeat: no-repeat;\n');
-fprintf(fid_Spec, '      width: 50%%;\n');
+fprintf(fid_Spec, '      width: 18%%;\n');
 fprintf(fid_Spec, '      font-size: 14px;\n');
 fprintf(fid_Spec, '      padding: 5px 10px 7px 40px;\n');
 fprintf(fid_Spec, '      border: 1px solid #ddd;\n');
@@ -123,38 +123,50 @@ fprintf(fid_Spec, '<script>w3IncludeHTML();</script>\n\n');
 fprintf(fid_Spec, '<div id = "main">\n');
 fprintf(fid_Spec, '  <div id = "main-wrapper-species">    \n');
 fprintf(fid_Spec, '    <div id="contentFull">\n\n');
+
+fprintf(fid_Spec, '      <div>\n');
+fprintf(fid_Spec, '        <input type="text" id="Input_sn" onkeyup="Function_sn()" placeholder="Search for scientific names.." title="Type in a name">\n');
+fprintf(fid_Spec, '        <input type="text" id="Input_cn" onkeyup="Function_cn()" placeholder="Search for common names.." title="Type in a name">\n');
+fprintf(fid_Spec, '      </div>\n\n');
+
 fprintf(fid_Spec, '      <H2 id="scientific_name"><a href="#common_name" title="Locate entries by scientific name.\n');
 fprintf(fid_Spec, '        Goto entries by clicking on entry names.\n');
 fprintf(fid_Spec, '        Click here for common names">Scientific names</a></H2>\n');
-fprintf(fid_Spec, '        <input type="text" id="Input_sn" onkeyup="Function_sn()" placeholder="Search for scientific names.." title="Type in a name">\n\n');
 fprintf(fid_Spec, '      <div class = "newspaper">\n'); 
-fprintf(fid_Spec, '        <ul id="scientific_nm">');
+fprintf(fid_Spec, '        <ul id="scientific_nm">\n');
 
 for i = 1:n
 fprintf(fid_Spec,['          <li><a target="_top" href="entries_web/', snm{i}, '/', snm{i}, '_res.html" title="', nms{i,2}, '">', snm_prt{i}, '</a></li>\n']);
 end
-fprintf(fid_Spec, '        </ul>');
+fprintf(fid_Spec, '        </ul>\n');
 fprintf(fid_Spec, '      </div>\n\n');  
+
 fprintf(fid_Spec, '      <H2 id="common_name"><a href="#scientific_name" title="Locate entries by common name.\n');
 fprintf(fid_Spec, '        Species can have several common names; the first one mentioned in Wikipedia has been chosen.\n');
 fprintf(fid_Spec, '        Goto entries by clicking on entry names.\n');
 fprintf(fid_Spec, '        Click here for scientific names">Common names</a></H2>\n');
-fprintf(fid_Spec, '        <input type="text" id="Input_cn" onkeyup="Function_cn()" placeholder="Search for common names.." title="Type in a name">\n\n');
 
 fprintf(fid_Spec, '      <div class = "newspaper">\n');  
 fprintf(fid_Spec, '        <ul id="common_nm">');
 for i = 1:n
 fprintf(fid_Spec,['          <li><a target="_top" href="entries_web/', snm{index(i)}, '/', snm{index(i)}, '_res.html" title="', snm_prt{index(i)}, '">', cnm{i}, '</a></li>\n']);
 end
-fprintf(fid_Spec, '        </ul>');
+fprintf(fid_Spec, '        </ul>\n');
 fprintf(fid_Spec, '      </div>\n\n'); 
 
 fprintf(fid_Spec, '      <script>\n');
 fprintf(fid_Spec, '        function Function_sn() {\n');
-fprintf(fid_Spec, '          var input, filter, ul, li, a, i;\n');
+fprintf(fid_Spec, '          var input, filter, h2, ul, li, a, i;\n');
 fprintf(fid_Spec, '          input = document.getElementById("Input_sn");\n');
 fprintf(fid_Spec, '          filter = input.value.toUpperCase();\n');
+fprintf(fid_Spec, '          h2 = document.getElementById("common_name");\n');
+fprintf(fid_Spec, '          h2.style.display = "none";\n');
+fprintf(fid_Spec, '          h2 = document.getElementById("scientific_name");\n');
+fprintf(fid_Spec, '          h2.style.display = "";\n');
+fprintf(fid_Spec, '          ul = document.getElementById("common_nm");\n');
+fprintf(fid_Spec, '          ul.style.display = "none";\n');
 fprintf(fid_Spec, '          ul = document.getElementById("scientific_nm");\n');
+fprintf(fid_Spec, '          ul.style.display = "";\n');
 fprintf(fid_Spec, '          li = ul.getElementsByTagName("li");\n');
 fprintf(fid_Spec, '          for (i = 0; i < li.length; i++) {\n');
 fprintf(fid_Spec, '            a = li[i].getElementsByTagName("a")[0];\n');
@@ -167,10 +179,17 @@ fprintf(fid_Spec, '          }\n');
 fprintf(fid_Spec, '        }\n\n');
 
 fprintf(fid_Spec, '        function Function_cn() {\n');
-fprintf(fid_Spec, '          var input, filter, ul, li, a, i;\n');
+fprintf(fid_Spec, '          var input, filter, h2, ul, li, a, i;\n');
 fprintf(fid_Spec, '          input = document.getElementById("Input_cn");\n');
 fprintf(fid_Spec, '          filter = input.value.toUpperCase();\n');
+fprintf(fid_Spec, '          h2 = document.getElementById("scientific_name");\n');
+fprintf(fid_Spec, '          h2.style.display = "none";\n');
+fprintf(fid_Spec, '          h2 = document.getElementById("common_name");\n');
+fprintf(fid_Spec, '          h2.style.display = "";\n');
+fprintf(fid_Spec, '          ul = document.getElementById("scientific_nm");\n');
+fprintf(fid_Spec, '          ul.style.display = "none";\n');
 fprintf(fid_Spec, '          ul = document.getElementById("common_nm");\n');
+fprintf(fid_Spec, '          ul.style.display = "";\n');
 fprintf(fid_Spec, '          li = ul.getElementsByTagName("li");\n');
 fprintf(fid_Spec, '          for (i = 0; i < li.length; i++) {\n');
 fprintf(fid_Spec, '            a = li[i].getElementsByTagName("a")[0];\n');
@@ -178,10 +197,10 @@ fprintf(fid_Spec, '            if (a.innerHTML.toUpperCase().indexOf(filter) > -
 fprintf(fid_Spec, '              li[i].style.display = "";\n');
 fprintf(fid_Spec, '            } else {\n');
 fprintf(fid_Spec, '            li[i].style.display = "none";\n');
+fprintf(fid_Spec, '            }\n');
 fprintf(fid_Spec, '          }\n');
 fprintf(fid_Spec, '        }\n');
-fprintf(fid_Spec, '       }\n');
-fprintf(fid_Spec, '    </script>\n\n');
+fprintf(fid_Spec, '      </script>\n\n');
 
 fprintf(fid_Spec, '    </div> <!-- end of content -->\n\n');
 
