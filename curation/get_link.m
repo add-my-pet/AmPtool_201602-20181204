@@ -3437,6 +3437,14 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
+    case 'Hoplobatrachus_tigerinus'
+      id_CoL = 'f271d6261ffd34918ddec16dd1ec4078';
+      id_Taxo = '143092';        
+      id_EoL = '331125';
+      id_AnAge = 'Hoplobatrachus_occipitalis'; % species not present 2017/10/24
+      id_amphweb = taxon_amph;
+      id_ADW = ''; % species not present 2017/10/24
+       
     case 'Crinia_nimbus'
       id_CoL = '7653067dbfb18458578b1e698667cacc';
       id_Taxo = '781013';        
@@ -3469,6 +3477,13 @@ function [links info] = get_link(taxon, test)
       id_CoL = 'e53ae9ac85ef2c141a509f6405bc98f7';
       id_Taxo = '47784';        
       id_EoL = '333310';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Pyxicephalus_adspersus'
+      id_CoL = '82c1ed4b7da83deee8b6617f3b4b05c3';
+      id_Taxo = '';        
+      id_EoL = '330829';
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
