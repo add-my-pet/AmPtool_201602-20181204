@@ -5,7 +5,7 @@
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
-% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13 Bas Kooijman
+% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -421,11 +421,11 @@ for i = 1:nst
 end
 fprintf(oid, '      </ul>\n\n');     % close unordered list   
 fprintf(oid, '      <p>\n');
-fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex files with references for this entry </A> <BR>\n']);
+fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex files with references for this entry</A> <BR>\n']);
 fprintf(oid, '      </p>\n\n' );
   
 % ----------------------------------------------------------
-% Authors and last data of modification
+% Authors and last date of modification
 fprintf(oid, '      <HR> \n');
 
 if mod == 0 % no modifications exist
@@ -435,6 +435,7 @@ else % modifications do exist
     ' (last modified by ', txt_author_mod, '\n', txt_date_mod,')','</H3>\n\n']);
 end
   fprintf(oid,['      <H3 ALIGN="CENTER"> accepted: ', txt_date_acc,'</H3>\n\n']);
+  fprintf(oid,['      <H3 ALIGN="CENTER"> refer to this entry as: AmP ', speciesprintnm, ' version ' txt_date_acc,' bio.vu.nl/thb/deb/deblab/add_my_pet/</H3>\n\n']);
 
 % ----------------------------------------------------------
 

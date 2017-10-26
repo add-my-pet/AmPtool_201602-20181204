@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_toolbar_species</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-10-14"><meta name="DC.source" content="prt_toolbar_species.m"><style type="text/css">
+      --><title>prt_toolbar_species</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-10-26"><meta name="DC.source" content="prt_toolbar_species.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -64,7 +64,7 @@ span.syscmd { color:#B28C00 }
 
 %%
 function  prt_toolbar_species(oid, species, date_acc)
-% created 2016/11/02 by Starrlight; modified 2017/09/29, 2017/10/13 Bas Kooijman 
+% created 2016/11/02 by Starrlight; modified 2017/09/29, 2017/10/13 2017/10/26 Bas Kooijman 
 
 %% Syntax
 % <../prt_toolbar_species.m *prt_toolbar_species*> (oid, species, date_acc)
@@ -94,13 +94,18 @@ fprintf(oid,['        <a href="', species,'_bib.bib">Bibliography</a>\n']);
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 
+zip = get_zip(species); n_zip = size(zip, 1); % see if there are any obsolete zip's in the archive
 fprintf(oid, '    <div class = "dropdown"><button onclick="code()" class="dropbtn">Code</button>\n');
 fprintf(oid, '      <div id="codeDropdown" class="dropdown-content">\n');
 fprintf(oid,['        <a href="../../entries/',species,'/mydata_',species,'.m" target="_blank">mydata</a>\n']);
 fprintf(oid,['        <a href="../../entries/',species,'/pars_init_',species,'.m" target="_blank">pars_init</a>\n']);
 fprintf(oid,['        <a href="../../entries/',species,'/predict_',species,'.m" target="_blank">predict</a>\n']);
 fprintf(oid,['        <a HREF="../../entries_zip/',species,'_', datestr(datenum(date_acc), 'yyyymmdd'), '.zip" TARGET="_top" onMouseOver="window.status=Close submenu; return true;">\n']);
-fprintf(oid, '          <IMG SRC="../../img/folder.png" WIDTH="110px"  BORDER="0" ></a>\n');
+fprintf(oid,['          <IMG SRC="../../img/zipicon.png" WIDTH="30px"  BORDER="0" >', datestr(datenum(date_acc), 'yyyymmdd'), '</a>\n']);
+for i = 1:n_zip % work from bottom to top to get oldest zip's on bottom
+fprintf(oid,['        <a HREF="../../entries_zip/', zip{n_zip-i+1,1}, '" TARGET="_top" onMouseOver="window.status=Close submenu; return true;">\n']);
+fprintf(oid,['          <IMG SRC="../../img/zipicon.png" WIDTH="30px"  BORDER="0" >', zip{n_zip-i+1,2}, '</a>\n']);
+end
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 
