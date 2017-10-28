@@ -1081,6 +1081,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '4248762';
       id_ADW = ''; % not present at 2017/08/09 
       
+    case 'Dikerogammarus_villosus' 
+      id_CoL = '';   % not present 2017/10/27
+      id_WoRMS = '148586'; 
+      id_Taxo = '';  % not present 2017/06/15 
+      id_EoL = '3033511';
+      id_ADW = ''; % not present at 2017/10/27 
+      
     case 'Leptomysis_lingvura'
       id_CoL = 'd9266defb43c8336539b6b24151e1ee1';
       id_WoRMS = '120054';
@@ -3445,6 +3452,21 @@ function [links info] = get_link(taxon, test)
       id_amphweb = taxon_amph;
       id_ADW = ''; % species not present 2017/10/24
        
+    case 'Alytes_muletensis'
+      id_CoL = 'fd3165ed5e32b8049775bb31500ea9e8';
+      id_Taxo = '107488';        
+      id_EoL = '1039071';
+      id_amphweb = taxon_amph;
+      id_AnAge = ''; % species not present 2017/10/24
+      id_ADW = ''; % species not present 2017/10/27
+       
+    case 'Xenopus_laevis'
+      id_CoL = '42c96d87bc825c54d3d4ad99dabc5985';
+      id_Taxo = '47520'; 
+      id_EoL = '1038993';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
     case 'Crinia_nimbus'
       id_CoL = '7653067dbfb18458578b1e698667cacc';
       id_Taxo = '781013';        
@@ -3477,6 +3499,20 @@ function [links info] = get_link(taxon, test)
       id_CoL = 'e53ae9ac85ef2c141a509f6405bc98f7';
       id_Taxo = '47784';        
       id_EoL = '333310';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Rana_temporaria'
+      id_CoL = '2722b8314c6250b8a73cbe019f621cd2';
+      id_Taxo = '47660';        
+      id_EoL = '331133';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Rana_arvalis'
+      id_CoL = 'a887de6c09178f428a46e18dbb9fe0aa';
+      id_Taxo = '47623';        
+      id_EoL = '333000';
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        

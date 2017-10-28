@@ -121,7 +121,7 @@ fprintf(oid, '      <p><p>\n');
 
 % print the table with the properties :    
 fprintf(oid, '      <TABLE id = "t01">\n');
-fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="4">Implied properties at typical temperature (%g deg. C)</TH></TR>\n', K2C(metaData.T_typical));
+fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="4">Implied properties at typical temperature (%g deg. C) and abundant food</TH></TR>\n', K2C(metaData.T_typical));
 fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH>symbol</TH><TH> value</TH><TH> units</TH><TH> description</TH></TR>\n');
 for i = 1:length(webStatFields)
   fprintf(oid, '        <TR BGCOLOR = "%s"> <TD>%s</TD> <TD>%g</TD> <TD>%s</TD><TD>%s</TD></TR>\n',...
