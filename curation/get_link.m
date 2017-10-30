@@ -3458,7 +3458,7 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1039071';
       id_amphweb = taxon_amph;
       id_AnAge = ''; % species not present 2017/10/24
-      id_ADW = ''; % species not present 2017/10/27
+      id_ADW = '';   % species not present 2017/10/27
        
     case 'Xenopus_laevis'
       id_CoL = '42c96d87bc825c54d3d4ad99dabc5985';
@@ -3466,6 +3466,22 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1038993';
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
+       
+    case 'Pelobates_fuscus'
+      id_CoL = 'c497f2612f8241eb783e9e1c3296b0d8';
+      id_Taxo = '47555'; 
+      id_EoL = '330757';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+      id_ADW = ''; % not present 2017/10/29
+       
+    case 'Pelobates_syriacus'
+      id_CoL = 'b9d61eae367e75d567ede17c15f9d0c8';
+      id_Taxo = '47558'; 
+      id_EoL = '1048335';
+      id_AnAge = ''; % not present 2017/10/29
+      id_amphweb = taxon_amph;
+      id_ADW = ''; % not present 2017/10/29
        
     case 'Crinia_nimbus'
       id_CoL = '7653067dbfb18458578b1e698667cacc';
@@ -3514,6 +3530,27 @@ function [links info] = get_link(taxon, test)
       id_Taxo = '47623';        
       id_EoL = '333000';
       id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Pelophylax_ridibundus'
+      id_CoL = '48ee82c4a8e4451d6efa47ab666fcc33';
+      id_Taxo = '996613';        
+      id_EoL = '320013';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Pelophylax_lessonae'
+      id_CoL = 'c1c8455fa1dc78c3bdc5df2de48cc696';
+      id_Taxo = '996607';        
+      id_EoL = '332998';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Pelophylax_esculentus' % hybrid
+      id_CoL = ''; % not present 2017/10/29
+      id_Taxo = '1000640';        
+      id_EoL = '46326676';
+      id_AnAge = ''; % not present 2017/10/29
       id_amphweb = taxon_amph;
        
     case 'Pyxicephalus_adspersus'
