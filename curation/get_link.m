@@ -3452,6 +3452,14 @@ function [links info] = get_link(taxon, test)
       id_amphweb = taxon_amph;
       id_ADW = ''; % species not present 2017/10/24
        
+    case 'Bombina_bombina'
+      id_CoL = 'a1fdfb7bbd135e748b7570d4c0a9f6f6';
+      id_Taxo = '47532';        
+      id_EoL = '333308';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+      id_ADW = ''; % species not present 2017/10/30
+       
     case 'Alytes_muletensis'
       id_CoL = 'fd3165ed5e32b8049775bb31500ea9e8';
       id_Taxo = '107488';        
@@ -3555,10 +3563,18 @@ function [links info] = get_link(taxon, test)
        
     case 'Pyxicephalus_adspersus'
       id_CoL = '82c1ed4b7da83deee8b6617f3b4b05c3';
-      id_Taxo = '';        
+      id_Taxo = '47618';        
       id_EoL = '330829';
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
+       
+    case 'Hyla_arborea'
+      id_CoL = '74e4ee9fad1d658f40e22a5d856e6a11';
+      id_Taxo = '47847';        
+      id_EoL = '332925';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+      id_ADW = ''; % not present at 2017/10/31
        
     case 'Sphenodon_punctatus'
       id_CoL = '25b1757fa601bfa9d01e3e9460c93b06';
