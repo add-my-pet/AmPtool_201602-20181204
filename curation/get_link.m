@@ -3576,6 +3576,13 @@ function [links info] = get_link(taxon, test)
       id_amphweb = taxon_amph;
       id_ADW = ''; % not present at 2017/10/31
        
+    case 'Hyperolius_viridiflavus'
+      id_CoL = 'daf7eb17c19199b157dd5dd8c6f4d26b';
+      id_Taxo = '138972';        
+      id_EoL = '130067';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
     case 'Sphenodon_punctatus'
       id_CoL = '25b1757fa601bfa9d01e3e9460c93b06';
       id_Taxo = '48794';        
