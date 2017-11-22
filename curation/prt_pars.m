@@ -39,12 +39,13 @@ set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('\kappa_X, -') % overwrite for better DEB notation
 saveas(gca, '../../img/pars/kapX.png')
 
-figure(3) % {p_Am}/z, scaled specific assimilation
+figure(3) % {p_Am}, scaled specific assimilation
 shstat_options('x_transform', 'log10');
-pAmz = read_allStat('p_Am','z','s_M');
-shstat(pAmz(:,1) ./ pAmz(:,2), [], '\{p_{Am}\} at T_{ref}', 3);
+pAmsM = read_allStat('p_Am', 's_M'); pAm = pAmsM(:,1); pAmj = prod(pAmsM, 2);
+Hfig = shstat(pAmj, {'r', 'r'}, '\{p_{Am}\} at T_{ref}, before and after acceleration', 3);
+shstat(pAm,  {'b', 'b'}, [], Hfig);
 set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('_{10}log \{p_{Am}\}/z, J/d.cm^2') 
+xlabel('_{10}log \{p_{Am}\}, J/d.cm^2') 
 saveas(gca, '../../img/pars/pAm.png')
 
 figure(4) % v, energy conductance
@@ -92,20 +93,19 @@ set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('\kappa_R, -') % overwrite for better DEB notation
 saveas(gca, '../../img/pars/kapR.png')
 
-figure(10) % E_Hb/z^3, scaled maturity at birth
+figure(10) % E_Hb, maturity at birth
 shstat_options('x_transform', 'log10');
-EHbz = read_allStat('E_Hb','z'); 
-shstat(EHbz(:,1) ./ EHbz(:,2).^3, [], [], 10);
+shstat({'E_Hb'}, [], [], 10);
 set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('_{10}log E_H^b/ z^3, J')
+xlabel('_{10}log E_H^b, J')
 saveas(gca, '../../img/pars/EHb.png')
 
-figure(11) % E_Hp/z^3, scaled maturity at puberty
+figure(11) % E_Hp, maturity at puberty
 shstat_options('x_transform', 'log10');
 EHpz = read_allStat('E_Hp','z'); 
-shstat(EHpz(:,1) ./ EHpz(:,2).^3, [], [], 11);
+shstat({'E_Hp'}, [], [], 11);
 set(gca, 'FontSize', 15, 'Box', 'on')
-xlabel('_{10}log E_H^p/ z^3, J')
+xlabel('_{10}log E_H^p, J')
 saveas(gca, '../../img/pars/EHp.png')
 
 figure(12) % h_a, ageing acceleration
@@ -132,6 +132,7 @@ zsM = read_allStat('z', 's_M'); z = zsM(:,1); zj = prod(zsM,2);
 Hfig = shstat(zj, {'r', 'r'}, 'z before and after acceleration', 15);
 shstat(z,  {'b', 'b'}, [], Hfig);
 set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('_{10}log z, -')
 saveas(gca, '../../img/pars/z.png')
 
 close all

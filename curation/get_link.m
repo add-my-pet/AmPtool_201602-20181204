@@ -375,14 +375,32 @@ function [links info] = get_link(taxon, test)
       id_EoL = '590151';      
       id_molluscabase = '141579';
       
+    case 'Thyasira_gouldi'
+      id_CoL = 'dc19c27b17c4dea50708c165254d9c2c';
+      id_WoRMS = '861611';
+      id_Taxo = '113636'; % only present at genus level 2017/11/22       
+      id_EoL = '3028005';
+      id_ADW = ''; % not present at 2017/11/22
+      id_molluscabase = '141663';
+     
+    case 'Parathyasira_sp'
+      id_CoL = 'bdff2d9e399937a2ecb4d5c92c92b596';
+      id_WoRMS = '861611';
+      id_Taxo = '113636'; % only present at genus level 2017/11/22       
+      id_EoL = '3028005';
+      id_ADW = ''; % not present at 2017/11/22
+      id_molluscabase = '141663';
+      id_Wiki = '';
+      id_ADW = 'Parathyasira';
+     
     case 'Ruditapes_philippinarum'
       id_CoL = '020b3f1b4179f488782e4d69d7dc071f';
       id_WoRMS = '231750';
       id_Taxo = '39617';        
       id_EoL = '395921';
-      id_ADW = ''; % not present at 2017/08/09
-      
+      id_ADW = ''; % not present at 2017/08/09      
       id_molluscabase = '231750';
+      
     case 'Ruditapes_decussatus'
       id_CoL = 'd288b9f0f3748a3f1555be799829a11f';
       id_WoRMS = '231749';
@@ -2445,6 +2463,13 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '154806';
       id_Taxo = '180273';        
       id_EoL = '215832';
+      id_fishbase = taxon_fish;
+       
+    case 'Pseudophycis_bachus'
+      id_CoL = '3577c698756ee7e78651de2bb67c6499';
+      id_WoRMS = '282468';
+      id_Taxo = '185269';        
+      id_EoL = '213429';
       id_fishbase = taxon_fish;
        
     case 'Trisopterus_luscus'
@@ -5569,6 +5594,14 @@ function [links info] = get_link(taxon, test)
       id_EoL = '328536';
       id_AnAge = taxon;
       id_MSW3 = '14300116';
+       
+    case 'Lagenorhynchus_obscurus'
+      id_CoL = '2b77c8ff7966c1a93528ee536722dd6d';
+      id_WoRMS = '231434';
+      id_Taxo = '68729';        
+      id_EoL = '317317';
+      id_AnAge = taxon;
+      id_MSW3 = '14300065';
        
     case 'Delphinus_delphis'
       id_CoL = '53f82736e0e55a75583156a10dc0770e';
