@@ -3,7 +3,7 @@
 
 %%
 function [nm val] = prtStat(taxa, var, in)
-  % created by Bas Kooijman 2017/08/20
+  % created by Bas Kooijman 2017/08/20, modified 2017/11/24
   
   %% Syntax 
   % [nm val] = <../prtStat.m *prtStat*>(taxa, var, in)
@@ -15,7 +15,8 @@ function [nm val] = prtStat(taxa, var, in)
   %
   % * taxa: cell-string with taxa
   % * var: character string with parameter or statistic
-  % * in: scalar with optional indicator for ordering increasing (1), decreasing (-1), no (0)
+  % * in: scalar with optional indicator for ordering increasing (1),
+  % decreasing (-1), no printing to screen (0); default: no ordering and printing to screen
   %
   % Output
   %
@@ -35,7 +36,7 @@ function [nm val] = prtStat(taxa, var, in)
   nm = nm(sel); val = val(sel);
   
   if ~exist('in', 'var') % yes or no sorting
-    in = 0;
+    in = NaN;
   end
   switch in
   case -1
@@ -44,4 +45,6 @@ function [nm val] = prtStat(taxa, var, in)
     [val i] = sort(val, 'ascend'); nm = nm(i);
   end
     
-  printpar(nm, val, [], [label{1}, ': ', units{1}])
+  if ~(in == 0)
+    printpar(nm, val, [], [label{1}, ': ', units{1}])
+  end
