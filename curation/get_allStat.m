@@ -69,8 +69,9 @@ function allStat = get_allStat(T, f)
       % acceptance
       allStat.(entries{i}).date_acc = metaData.date_acc; allStat.(entries{i}).units.date_acc = '-'; allStat.(entries{i}).label.date_acc = 'acceptance date';
       % typical body temp
-      allStat.(entries{i}).T_typical = metaData.T_typical;
-            
+      allStat.(entries{i}).T_typical = metaData.T_typical;  allStat.(entries{i}).units.T_typical = 'K';
+        allStat.(entries{i}).label.T_typical = 'typical body temperature';
+
       % parameters
       par = rmfield_wtxt(par, 'free');   % remove substructure free from par
       [nm nst] = fieldnmnst_st(par);     % get number of parameter fields
