@@ -50,9 +50,9 @@ function tab = compare_taxa(llegend, nr, format)
   end
   
   % compose selection table
-  nm = select; n_nm = length(nm);
-  sel = false(n_nm, n_leg);
-  for i = 1:n_leg
+  [sel, nm] = select_01(llegend(1,2)); n_nm = length(nm);
+  sel = [sel, false(n_nm, n_leg - 1)]; 
+  for i = 2:n_leg
     sel(:,i) = select_01(llegend(i,2));
   end
   
@@ -192,7 +192,10 @@ function tab = compare_taxa(llegend, nr, format)
   if ~isempty(format)
     saveas(gca,[txt_var, '.', format])
   end
-  tab = add2tab(tab, i, txt_var, unit, val, sel);
+  tab(1+i,1) = {txt_var}; tab(1+i,2) = {unit};
+  for j = 1: size(sel,2)
+    tab(1+i,2+j) = {median(val(sel(:,j)))};
+  end
 
   end
 
@@ -201,11 +204,5 @@ function tab = compare_taxa(llegend, nr, format)
     saveas(gca,['llegend', '.', format])
   end
   
-  end
+ 
   
-  function tab = add2tab(tab, i, txt_var, unit, val, sel)
-    tab(1+i,1) = {txt_var}; tab(1+i,2) = {unit};
-    for j = 1: size(sel,2)
-      tab(1+i,2+j) = {median(val(sel(:,j)))};
-    end
-  end
