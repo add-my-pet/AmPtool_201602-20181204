@@ -4950,6 +4950,14 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_avibase = '8BAFB01E85D7AF4B';
       
+    case 'Platalea_leucorodia'
+      id_CoL = '94c683511cf31861591cdf435513d232';
+      id_WoRMS = '416678';
+      id_Taxo = '51947'; 
+      id_EoL = '1049642';
+      id_AnAge = taxon;
+      id_avibase = 'A0A584C1E7D786FE';
+      
     case 'Aquila_chrysaetos'
       id_CoL = '5b68758c108a10b7c6be9f990d3ad0a3';
       id_Taxo = '52605'; 
