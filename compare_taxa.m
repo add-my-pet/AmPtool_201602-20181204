@@ -1,5 +1,5 @@
 %% compare_taxa
-% makes graphs of survivor functions and a table of selected quantities for selected taxa
+% makes graphs of survivor functions and compose median values in a table of selected quantities for selected taxa
 
 %%
 function tab = compare_taxa(llegend, nr, format)
@@ -13,8 +13,8 @@ function tab = compare_taxa(llegend, nr, format)
 %
 % Input:
 %
-% * llegend: line-legend of taxa
-% * nr: optional n-vector with selected quantities (default all)
+% * llegend: line-legend of taxa, see Remarks
+% * nr: optional n-vector with selected quantities 1 till 19, e.g. [6 2 4],  (default all)
 % * format: optional character string with format for saving graphs, such as 'jpg' or 'png' or 'fig' (default empty meaning no saving)
 %
 % Output:
@@ -25,17 +25,18 @@ function tab = compare_taxa(llegend, nr, format)
 % Warning: if format is specified in a valid way, existing graphs might be overwritten in the current directory, including file llegend.format.
 % The warnings produced by shstat about missing values might not apply to the selection as specified in llegend.
 % Be prepared that plotting might take long if all graphs are selected.
+% The rows in the table match positions in nr; the columns match positions in llegend.
 % Line-legend can be composed with <select_llegend.html *select_llegend*>.
 % Convert output table to numbers with cell2mat: tab(1,:) = []; tab(:,1:2) = []; cell2mat(tab)
 
 %% Example of use
-%  tab = compare_taxa({{'-', 2, [1 0 0]}, 'Boreogadus'; {'-', 2, [0 0 1]},  'Gadiformes'; {'-', 2, [0 0 0]}, 'Actinopterygii'});
+%  llegend = {{'-', 2, [1 0 0]}, 'Boreogadus'; {'-', 2, [0 0 1]},  'Gadiformes'; {'-', 2, [0 0 0]}, 'Actinopterygii'}; tab = compare_taxa(llegend, [8 3]);
 
-  if ~exist('nr','var') || isempty(nr)
+  if ~exist('nr', 'var') || isempty(nr)
     nr = 1:19; % edit this if new graphs are added
   end
  
-  if ~exist('format','var') 
+  if ~exist('format', 'var') 
     format = [];
   end
 
@@ -44,7 +45,7 @@ function tab = compare_taxa(llegend, nr, format)
   
   % initiate table
   tab = cell(n_nr+1, n_leg+1); 
-  tab(1,1) = {date};
+  tab(1,1) = {datestr(date,26)}; tab(1,2) = {'unit'};
   for i=1:n_leg
     tab(1,2+i) = llegend(i,2);
   end
@@ -61,7 +62,7 @@ function tab = compare_taxa(llegend, nr, format)
   shstat_options('default');
   shstat_options('y_label', 'on'); % if 'off' (default), no `survivor function' shown on yaxis
 
-  for i = 1:n_nr
+  for i = 1:n_nr % scan figures
   switch nr(i)
       
     case 1 % T_typical (typical body temperature)
@@ -111,21 +112,21 @@ function tab = compare_taxa(llegend, nr, format)
     case 8 % r: dWm/W_dWm (max growth over weight-at-that-moment)
       fig(i); txt_var = 'max-r'; unit = '1/d';
       shstat_options('x_transform', 'log10');
-      vars = read_allStat('dWm', 'W_dWm', 'c_T'); r = vars(:,1)./vars(:,2)./vars(:,3);
+      vars = read_allStat('dWm', 'W_dWm', 'c_T'); r = vars(:,1) ./ vars(:,2) ./ vars(:,3);
       [Hfig, Hleg, val] = shstat(r, llegend, 'At T_{ref}', i); close(Hleg);
       fig(Hfig); xlabel(['_{10}log ', txt_var, ', ', unit])
 
     case 9 % R_i/Ww_i (max reprod rate over max weight)
       fig(i); txt_var = 'spec-R_i'; unit = '#/d.g';
       shstat_options('x_transform', 'log10');
-      vars = read_allStat('R_i', 'c_T', 'Ww_i'); R_i = vars(:,1)./vars(:,2)./ vars(:,3);
+      vars = read_allStat('R_i', 'c_T', 'Ww_i'); R_i = vars(:,1) ./ vars(:,2) ./ vars(:,3);
       [Hfig, Hleg, val] = shstat(R_i, llegend, 'At T_{ref}', i); close(Hleg);
       fig(Hfig); xlabel(['_{10}log ', txt_var, ', ', unit])
 
     case 10 % p_Ri/Ww_i (max reprod power over max weight)
       fig(i); txt_var = 'spec-p_{Ri}'; unit = 'J/d.g';
       shstat_options('x_transform', 'log10');
-      vars = read_allStat('p_Ri', 'c_T', 'Ww_i'); p_Ri = vars(:,1)./vars(:,2)./vars(:,3);
+      vars = read_allStat('p_Ri', 'c_T', 'Ww_i'); p_Ri = vars(:,1) ./ vars(:,2) ./ vars(:,3);
       [Hfig, Hleg, val] = shstat(p_Ri, llegend, 'At T_{ref}', i); close(Hleg);
       fig(Hfig); xlabel(['_{10}log ', txt_var, ', ', unit])
 
@@ -141,7 +142,7 @@ function tab = compare_taxa(llegend, nr, format)
       [Hfig, Hleg, val] = shstat({'s_M'}, llegend, [], i); close(Hleg);
       fig(Hfig); xlabel(['_{10}log ', txt_var, ', ', unit])
 
-    case 13 % s_s (suply stress) 
+    case 13 % s_s (supply stress) 
       fig(i); txt_var = 's_s'; unit = '-';
       shstat_options('x_transform', 'log10');
       [Hfig, Hleg, val] = shstat({'s_s'}, llegend, [], i); close(Hleg);
@@ -175,29 +176,29 @@ function tab = compare_taxa(llegend, nr, format)
     case 18 % p_Mi/p_Ai (som maint over assimilation)
       fig(i); txt_var = 's_{MA}'; unit = '-';
       shstat_options('x_transform', 'log10');
-      vars = read_allStat('p_Si', 'p_Ai'); s_SA = vars(:,1)./vars(:,2);
+      vars = read_allStat('p_Si', 'p_Ai'); s_SA = vars(:,1) ./ vars(:,2);
       [Hfig, Hleg, val] = shstat(s_SA, llegend, [], i); close(Hleg);
       fig(Hfig); xlabel(['_{10}log ', txt_var, ', ', unit])
 
     case 19 % p_Ji/p_Ai (mat maint over assimilation)
       fig(i); txt_var = 's_{JA}'; unit = '-';
       shstat_options('x_transform', 'log10');
-      vars = read_allStat('p_Ji', 'p_Ai'); s_JA = vars(:,1)./vars(:,2);
+      vars = read_allStat('p_Ji', 'p_Ai'); s_JA = vars(:,1) ./ vars(:,2);
       [Hfig, Hleg, val] = shstat(s_JA, llegend, [], i); close(Hleg);
       fig(Hfig); xlabel(['_{10}log ', txt_var, ', ', unit])
 
-  end
+  end % of switch
   
   % save figure, add to table
   if ~isempty(format)
     saveas(gca,[txt_var, '.', format])
   end
   tab(1+i,1) = {txt_var}; tab(1+i,2) = {unit};
-  for j = 1: size(sel,2)
+  for j = 1: n_leg % scan taxa
     tab(1+i,2+j) = {median(val(sel(:,j)))};
   end
 
-  end
+  end % of figure scan
 
   shllegend(llegend);
   if ~isempty(format)
