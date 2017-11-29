@@ -3393,11 +3393,18 @@ function [links info] = get_link(taxon, test)
        
     case 'Hynobius_nebulosus'
       id_CoL = '574b291971ce90bf962848d15095707e';
-      id_Taxo = '47250';        
+      id_Taxo = '47235'; 
       id_EoL = '1048033';
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
+    case 'Onychodactylus_japonicus'
+      id_CoL = '279f59ed123931657ef0d6b8d92f429d';
+      id_Taxo = '47239';        
+      id_EoL = '330495';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+
     case 'Plethodon_cinereus'
       id_CoL = 'a2743c12f96b3492a8352ada6b54703d';
       id_Taxo = '47446';
@@ -4957,6 +4964,14 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1049642';
       id_AnAge = taxon;
       id_avibase = 'A0A584C1E7D786FE';
+      
+    case 'Ardea_herodias'
+      id_CoL = '6efeb35a87864c70193c0a75b38d01aa';
+      id_WoRMS = '159382';
+      id_Taxo = '51741'; 
+      id_EoL = '1048656';
+      id_AnAge = taxon;
+      id_avibase = '93694BB5492F7012';
       
     case 'Aquila_chrysaetos'
       id_CoL = '5b68758c108a10b7c6be9f990d3ad0a3';
