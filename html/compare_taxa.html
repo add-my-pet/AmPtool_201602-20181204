@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>compare_taxa</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-11-27"><meta name="DC.source" content="compare_taxa.m"><style type="text/css">
+      --><title>compare_taxa</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-11-29"><meta name="DC.source" content="compare_taxa.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,25 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>compare_taxa</h1><!--introduction--><p>makes graphs of survivor functions and compose median values in a table of selected quantities for selected taxa</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>tab = <a href="../compare_taxa.m"><b>compare_taxa</b></a> (llegend, nr, format)</p><h2 id="4">Description</h2><p>makes graphs of survivor functions of selected quantities and compose median values in a table</p><p>Input:</p><div><ul><li>llegend: line-legend of taxa, see Remarks</li><li>nr: optional n-vector with selected quantities 1 till 19, e.g. [6 2 4],  (default all)</li><li>format: optional character string with format for saving graphs, such as 'jpg' or 'png' or 'fig' (default empty meaning no saving)</li></ul></div><p>Output:</p><div><ul><li>tab: cell-array with median values of quantities, element (1,1) gives the current date</li></ul></div><h2 id="5">Remarks</h2><p>Warning: if format is specified in a valid way, existing graphs might be overwritten in the current directory, including file llegend.format. The warnings produced by shstat about missing values might not apply to the selection as specified in llegend. Be prepared that plotting might take long if all graphs are selected. The rows in the table match positions in nr; the columns match positions in llegend. Line-legend can be composed with <a href="select_llegend.html"><b>select_llegend</b></a>. Convert output table to numbers with cell2mat: tab(1,:) = []; tab(:,1:2) = []; cell2mat(tab)</p><h2 id="6">Example of use</h2><pre>llegend = {{'-', 2, [1 0 0]}, 'Boreogadus'; {'-', 2, [0 0 1]},  'Gadiformes'; {'-', 2, [0 0 0]}, 'Actinopterygii'}; tab = compare_taxa(llegend, [8 3]);</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>compare_taxa</h1><!--introduction--><p>makes graphs of survivor functions and compose median values in a table of selected quantities for selected taxa</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>tab = <a href="../compare_taxa.m"><b>compare_taxa</b></a> (llegend, nr, format)</p><h2 id="4">Description</h2><p>makes graphs of survivor functions of selected quantities and compose median values in a table</p><p>Input:</p><div><ul><li>llegend: line-legend of taxa, see Remarks</li><li>nr: optional n-vector with selected quantities 1 till 19, e.g. [6 2 4],  (default all)</li></ul></div><pre>  -  1  T_typical (typical body temperature)
+  -  2  kappa (allocation fraction to soma)
+  -  3  [p_M] (spec somatic maintenance)
+  -  4  v (energy conductance)
+  -  5  [E_m] (reserve capacity)
+  -  6  E_0 (initial energy)
+  -  7  Ww_i (max wet weight)
+  -  8  r: dWm/W_dWm (max growth over weight-at-that-moment)
+  -  9  R_i/Ww_i (max reprod rate over max weight)
+  - 10  p_Ri/Ww_i (max reprod power over max weight)
+  - 11  g (energy investment ratio)
+  - 12  s_M (acceleration)
+  - 13  s_s (supply stress)
+  - 14  s_H^bp (maturity ratio)
+  - 15  s_HL^bp (maturity density ratio)
+  - 16  h_a (aging acceleration)
+  - 17  a_m (longevity)
+  - 18  p_Mi/p_Ai (som maint over assimilation)
+  - 19  p_Ji/p_Ai (mat maint over assimilation)</pre><div><ul><li>format: optional character string with format for saving graphs, such as 'jpg' or 'png' or 'fig' (default empty meaning no saving)</li></ul></div><p>Output:</p><div><ul><li>tab: cell-array with median values of quantities, element (1,1) gives the current date</li></ul></div><h2 id="5">Remarks</h2><p>Warning: if format is specified in a valid way, existing graphs might be overwritten in the current directory, including file llegend.format. The warnings produced by shstat about missing values might not apply to the selection as specified in llegend. Be prepared that plotting might take long if all graphs are selected. The rows in the table match positions in nr; the columns match positions in llegend. Line-legend can be composed with <a href="select_llegend.html"><b>select_llegend</b></a>. Convert output table to numbers with cell2mat: tab(1,:) = []; tab(:,1:2) = []; cell2mat(tab)</p><h2 id="6">Example of use</h2><pre>llegend = {{'-', 2, [1 0 0]}, 'Boreogadus'; {'-', 2, [0 0 1]},  'Gadiformes'; {'-', 2, [0 0 0]}, 'Actinopterygii'}; tab = compare_taxa(llegend, [8 3]);</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% compare_taxa
 % makes graphs of survivor functions and compose median values in a table of selected quantities for selected taxa
@@ -85,6 +103,27 @@ function tab = compare_taxa(llegend, nr, format)
 %
 % * llegend: line-legend of taxa, see Remarks
 % * nr: optional n-vector with selected quantities 1 till 19, e.g. [6 2 4],  (default all)
+%
+%    -  1  T_typical (typical body temperature)
+%    -  2  kappa (allocation fraction to soma)
+%    -  3  [p_M] (spec somatic maintenance)
+%    -  4  v (energy conductance)
+%    -  5  [E_m] (reserve capacity)
+%    -  6  E_0 (initial energy)
+%    -  7  Ww_i (max wet weight)
+%    -  8  r: dWm/W_dWm (max growth over weight-at-that-moment)
+%    -  9  R_i/Ww_i (max reprod rate over max weight)
+%    - 10  p_Ri/Ww_i (max reprod power over max weight)
+%    - 11  g (energy investment ratio)
+%    - 12  s_M (acceleration)
+%    - 13  s_s (supply stress) 
+%    - 14  s_H^bp (maturity ratio)
+%    - 15  s_HL^bp (maturity density ratio)
+%    - 16  h_a (aging acceleration)
+%    - 17  a_m (longevity)
+%    - 18  p_Mi/p_Ai (som maint over assimilation)
+%    - 19  p_Ji/p_Ai (mat maint over assimilation)
+% 
 % * format: optional character string with format for saving graphs, such as 'jpg' or 'png' or 'fig' (default empty meaning no saving)
 %
 % Output:

@@ -15,6 +15,27 @@ function tab = compare_taxa(llegend, nr, format)
 %
 % * llegend: line-legend of taxa, see Remarks
 % * nr: optional n-vector with selected quantities 1 till 19, e.g. [6 2 4],  (default all)
+%
+%    -  1  T_typical (typical body temperature)
+%    -  2  kappa (allocation fraction to soma)
+%    -  3  [p_M] (spec somatic maintenance)
+%    -  4  v (energy conductance)
+%    -  5  [E_m] (reserve capacity)
+%    -  6  E_0 (initial energy)
+%    -  7  Ww_i (max wet weight)
+%    -  8  r: dWm/W_dWm (max growth over weight-at-that-moment)
+%    -  9  R_i/Ww_i (max reprod rate over max weight)
+%    - 10  p_Ri/Ww_i (max reprod power over max weight)
+%    - 11  g (energy investment ratio)
+%    - 12  s_M (acceleration)
+%    - 13  s_s (supply stress) 
+%    - 14  s_H^bp (maturity ratio)
+%    - 15  s_HL^bp (maturity density ratio)
+%    - 16  h_a (aging acceleration)
+%    - 17  a_m (longevity)
+%    - 18  p_Mi/p_Ai (som maint over assimilation)
+%    - 19  p_Ji/p_Ai (mat maint over assimilation)
+% 
 % * format: optional character string with format for saving graphs, such as 'jpg' or 'png' or 'fig' (default empty meaning no saving)
 %
 % Output:

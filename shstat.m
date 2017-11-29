@@ -121,7 +121,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
       sel(:,i) =  select_01('Animalia', legend{i,2});
     end
     sel = once(sel);    % remove double selections  
-    missing = entries(isnan(sum(val(sum(sel,2) == 1,:),2))); % determine missing entries
+    missing = entries(isnan(sum(val(any(sel,2),:),2))); % determine missing entries
   end
   n_missing = length(missing);
   if ~(n_missing == 0)
