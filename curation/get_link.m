@@ -4507,46 +4507,6 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;       
       id_avibase = '082F3A63A99AEDD4';
       
-    case 'Fratercula_arctica'
-      id_CoL = '80c12642c3ab7cc036ee3749463ca606';
-      id_WoRMS = '137131';
-      id_Taxo = '53907';        
-      id_EoL = '1049938';
-      id_AnAge = taxon;       
-      id_avibase = '2771624B64AD7F2C';
-      
-    case 'Ptychoramphus_aleuticus'
-      id_CoL = '1b8b9f4a86353758c7ff85c17a850ab4';
-      id_WoRMS = '344115';
-      id_Taxo = '53917';        
-      id_EoL = '1049882';
-      id_AnAge = taxon;      
-      id_avibase = '2CF6D6F60FAD0DE9';
-      
-    case 'Aethia_pusilla'
-      id_CoL = 'eedd1a360668ef531a40b98d4493618e';
-      id_WoRMS = '344016';
-      id_Taxo = '53928';        
-      id_EoL = '1049894';
-      id_AnAge = taxon;      
-      id_avibase = '044509DAF1E58241';
-      
-    case 'Aethia_cristatella'
-      id_CoL = '7048c7929886b0410e3501585b00d8a9';
-      id_WoRMS = '344015';
-      id_Taxo = '53927';        
-      id_EoL = '1049883';
-      id_AnAge = taxon;
-      id_avibase = '3DC4EBB85AB96A2A';
-      
-    case 'Cepphus_grylle'
-      id_CoL = 'f56cecae9c9629f9bcc610161d9b483e';
-      id_WoRMS = '137130';
-      id_Taxo = '53898';        
-      id_EoL = '1049817';
-      id_AnAge = taxon;       
-      id_avibase = 'B5AA5952E13FE5F3';
-      
     case 'Uria_aalge'
       id_CoL = '1f21d6d69cb8c09be9a27485d68bc4d1';
       id_WoRMS = '137133';
@@ -4586,6 +4546,54 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1049760';
       id_AnAge = taxon;       
       id_avibase = '64F4DD81371B269F';
+      
+    case 'Cepphus_grylle'
+      id_CoL = 'f56cecae9c9629f9bcc610161d9b483e';
+      id_WoRMS = '137130';
+      id_Taxo = '53898';        
+      id_EoL = '1049817';
+      id_AnAge = taxon;       
+      id_avibase = 'B5AA5952E13FE5F3';
+      
+    case 'Aethia_pusilla'
+      id_CoL = 'eedd1a360668ef531a40b98d4493618e';
+      id_WoRMS = '344016';
+      id_Taxo = '53928';        
+      id_EoL = '1049894';
+      id_AnAge = taxon;      
+      id_avibase = '044509DAF1E58241';
+      
+    case 'Ptychoramphus_aleuticus'
+      id_CoL = '1b8b9f4a86353758c7ff85c17a850ab4';
+      id_WoRMS = '344115';
+      id_Taxo = '53917';        
+      id_EoL = '1049882';
+      id_AnAge = taxon;      
+      id_avibase = '2CF6D6F60FAD0DE9';
+      
+    case 'Aethia_cristatella'
+      id_CoL = '7048c7929886b0410e3501585b00d8a9';
+      id_WoRMS = '344015';
+      id_Taxo = '53927';        
+      id_EoL = '1049883';
+      id_AnAge = taxon;
+      id_avibase = '3DC4EBB85AB96A2A';
+      
+    case 'Cerorhinca_monocerata'
+      id_CoL = '505164cb8828600e0b0fa29f255fe3e5';
+      id_WoRMS = '344029';
+      id_Taxo = '53902';        
+      id_EoL = '1049927';
+      id_AnAge = taxon;       
+      id_avibase = '53D94597DFB84ECB';
+      
+    case 'Fratercula_arctica'
+      id_CoL = '80c12642c3ab7cc036ee3749463ca606';
+      id_WoRMS = '137131';
+      id_Taxo = '53907';        
+      id_EoL = '1049938';
+      id_AnAge = taxon;       
+      id_avibase = '2771624B64AD7F2C';
       
     case 'Chlidonias_leucopterus'
       id_CoL = 'a666e4b62baba1a7edf044f52f7eefd5';

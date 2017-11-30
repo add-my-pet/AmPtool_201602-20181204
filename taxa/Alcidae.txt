@@ -1,9 +1,2 @@
-Fratercula
-Ptychoramphus
-Aethia
-Cepphus
-Uria
-Alle
-Pinguinus
-Alca
-
+Alcinae
+Fraterculinae
