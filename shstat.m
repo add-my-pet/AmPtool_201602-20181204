@@ -232,7 +232,8 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
         plot([x_min; x_median; x_median], [0.5;0.5;0], colmed, surv_x(:,1), surv_x(:,2), colfn, 'Linewidth', 2)
         
       elseif n_taxa > 1 
-        for i = 1:n_taxa
+        for j = 1:n_taxa
+          i = n_taxa - j + 1; % reverse sequence of plotting to get crossings of lines natural
           line = legend{i,1}; LT = line{1}; LW = line{2}; LC = line{3};  
           x_median = median(val_plot(sel(:,i)==1,1)); x_min = min(val_plot(sel(:,i)==1,1));
           surv_x = surv(val_plot(sel(:,i)==1, 1)); 
