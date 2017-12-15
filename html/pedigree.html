@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>pedigree</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-06"><meta name="DC.source" content="pedigree.m"><style type="text/css">
+      --><title>pedigree</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-12-14"><meta name="DC.source" content="pedigree.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -23,7 +23,7 @@ a:visited { color:#004aa0; text-decoration:none; }
 
 p { padding:0px; margin:0px 0px 20px; }
 img { padding:0px; margin:0px 0px 20px; border:none; }
-p img, pre img, tt img, li img { margin-bottom:0px; } 
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
 
 ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
 ul li { padding:0px; margin:0px 0px 7px 0px; }
@@ -38,11 +38,12 @@ ol li ul li { list-style:square; }
 
 .content { font-size:1.2em; line-height:140%; padding: 20px; }
 
-pre, tt, code { font-size:12px; }
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
 pre { margin:0px 0px 20px; }
-pre.error { color:red; }
 pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
 pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
 
 @media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
 
@@ -54,43 +55,61 @@ span.syscmd { color:#B28C00 }
 
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
 
-  </style></head><body><div class="content"><h1>pedigree</h1><!--introduction--><p>gets classification tree of a taxon</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>tree = <a href="../pedigree.m"><b>pedigree</b></a> (taxon)</p><h2>Description<a name="4"></a></h2><p>gets a tree of all species in the add_my_pet collection that belong to a particular taxon</p><p>Input:</p><div><ul><li>optional character string with name of taxon (default 'Animalia')</li></ul></div><p>Output:</p><div><ul><li>character string with a tree of all species in the add_my_pet collection that belong to that taxon</li></ul></div><h2>Remarks<a name="5"></a></h2><p>The root is Animalia. If chosen as taxon, an tree of all species in the collection results. New lines are written with char(10), tabs with char(9). The classification follows that of Wikipedia</p><h2>Example of use<a name="6"></a></h2><p>tree  = pedigree or tree = pedigree('Mollusca')</p><p class="footer"><br>
-      Published with MATLAB&reg; 7.14<br></p></div><!--
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>pedigree</h1><!--introduction--><p>gets classification tree of a taxon</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>tree = <a href="../pedigree.m"><b>pedigree</b></a> (taxon)</p><h2 id="4">Description</h2><p>gets a tree of all species in the add_my_pet collection that belong to a particular taxon and writes the value of a parameter or statistic behind entry names.</p><p>Input:</p><div><ul><li>taxon: optional character string with name of taxon (default 'Animalia')</li><li>var: character string with parameter or statistic</li></ul></div><p>Output:</p><div><ul><li>character string with a tree of all species in the add_my_pet collection that belong to that taxon</li><li>nm: n-cellstring with names of entries (non-empty if var is specified)</li><li>val: n-vector with values for parameter or statistic (non-empty if var is specified)</li><li>units: charactore string with units (non-empty if var is specified)</li><li>label: charactore string with label (non-empty if var is specified)</li></ul></div><h2 id="5">Remarks</h2><p>The default root is Animalia. If chosen as taxon, a tree of all species in the collection results. New lines are written with char(10), tabs with char(9). The classification follows that of Wikipedia. See <a href="prtStat.html"><b>prtStat</b></a> for lists without tree. See <a href="treeview_taxa.html"><b>treeview_taxa</b></a> for an interactive tree in html.</p><h2 id="6">Example of use</h2><p>tree  = pedigree or tree = pedigree('Mollusca') or pedigree('Alcidae', 'p_M')</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% pedigree
 % gets classification tree of a taxon
 
 %%
-function tree = pedigree(taxon)
-% created 2015/09/18 by Bernd Brandt
+function [tree, nm, val, units, label] = pedigree(taxon, var)
+% created 2015/09/18 by Bernd Brandt; modified 2017/12/14 by Bas Kooijman
 
 %% Syntax
 % tree = <../pedigree.m *pedigree*> (taxon) 
 
 %% Description
-% gets a tree of all species in the add_my_pet collection that belong to a particular taxon
+% gets a tree of all species in the add_my_pet collection that belong to a
+% particular taxon and writes the value of a parameter or statistic behind
+% entry names.
 %
 % Input:
 %
-% * optional character string with name of taxon (default 'Animalia')
+% * taxon: optional character string with name of taxon (default 'Animalia')
+% * var: character string with parameter or statistic
 %
 % Output:
 % 
 % * character string with a tree of all species in the add_my_pet collection that belong to that taxon
+% * nm: n-cellstring with names of entries (non-empty if var is specified)
+% * val: n-vector with values for parameter or statistic (non-empty if var is specified)
+% * units: charactore string with units (non-empty if var is specified)
+% * label: charactore string with label (non-empty if var is specified)
 
 %% Remarks
-% The root is Animalia. 
-% If chosen as taxon, an tree of all species in the collection results.
+% The default root is Animalia. 
+% If chosen as taxon, a tree of all species in the collection results.
 % New lines are written with char(10), tabs with char(9).
-% The classification follows that of Wikipedia
+% The classification follows that of Wikipedia.
+% See <prtStat.html *prtStat*> for lists without tree.
+% See <treeview_taxa.html *treeview_taxa*> for an interactive tree in html.
 
 %% Example of use
-% tree  = pedigree or tree = pedigree('Mollusca')
+% tree  = pedigree or tree = pedigree('Mollusca') or pedigree('Alcidae', 'p_M')
 
   WD = pwd;                 % store current path
-  taxa = which('pedigree'); % locate DEBtool_M/taxa/
-  taxa = taxa(1:end - 10);  % path to DEBtool_M/taxa/
+  taxa = which('pedigree.pl'); % 
+  taxa = taxa(1:end - 11);  % 
   cd(taxa)                  % goto taxa
 
   if ~exist('taxon', 'var')
@@ -104,6 +123,17 @@ function tree = pedigree(taxon)
   end
   
   cd(WD)                    % goto original path
+  
+  if ~exist('var', 'var')
+     nm = []; val = []; label = []; units = [];
+  else
+    [nm, val, units, label] = prtStat(taxon, var, 0);
+    n = length(nm);
+    for i = 1:n
+      tree = strrep(tree,nm{i},[nm{i}, ' ', num2str(val(i)), ' ', units]);
+    end
+    tree = [label, ': ', tree];
+  end
 
 end
 

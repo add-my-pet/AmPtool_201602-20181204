@@ -2,11 +2,11 @@
 % Print parameter or stastistic of selected entries names and values 
 
 %%
-function [nm val] = prtStat(taxa, var, in)
-  % created by Bas Kooijman 2017/08/20, modified 2017/11/24
+function [nm, val, units, label] = prtStat(taxa, var, in)
+  % created by Bas Kooijman 2017/08/20, modified 2017/11/24, 2017/12/14
   
   %% Syntax 
-  % [nm val] = <../prtStat.m *prtStat*>(taxa, var, in)
+  % [nm, val, units, label] = <../prtStat.m *prtStat*>(taxa, var, in)
   
   %% Description
   % Print parameter or statistic values for selected entries to screen. 
@@ -15,13 +15,18 @@ function [nm val] = prtStat(taxa, var, in)
   %
   % * taxa: cell-string with taxa
   % * var: character string with parameter or statistic
-  % * in: scalar with optional indicator for ordering increasing (1),
-  % decreasing (-1), no printing to screen (0); default: no ordering and printing to screen
+  % * in:  optional scalar with indicator for ordering increasing (1), decreasing (-1), no printing to screen (0); default: no ordering and printing to screen (empty)
   %
   % Output
   %
-  % * val: n-vector with values for parameter or statistic
   % * nm: n-cellstring with names of entries
+  % * val: n-vector with values for parameter or statistic
+  % * units: charactore string with units
+  % * label: charactore string with label
+  
+  %% Remarks
+  % See <pedigreet.html *pedigree*> for lists with tree
+
   
   %% Example of use 
   % prtStat({'Paridae','Cyprinidae'}, 'p_M');
@@ -38,13 +43,16 @@ function [nm val] = prtStat(taxa, var, in)
   if ~exist('in', 'var') % yes or no sorting
     in = NaN;
   end
+  
   switch in
-  case -1
-    [val i] = sort(val, 'descend'); nm = nm(i);
-  case 1
-    [val i] = sort(val, 'ascend'); nm = nm(i);
+    case -1
+      [val i] = sort(val, 'descend'); nm = nm(i);
+    case 1
+      [val i] = sort(val, 'ascend'); nm = nm(i);
   end
     
+  units = units{1}; label = label{1};
+  
   if ~(in == 0)
-    printpar(nm, val, [], [label{1}, ': ', units{1}])
+    printpar(nm, val, [], [label, ': ', units])
   end

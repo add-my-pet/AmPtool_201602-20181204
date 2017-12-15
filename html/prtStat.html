@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prtStat</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-11-24"><meta name="DC.source" content="prtStat.m"><style type="text/css">
+      --><title>prtStat</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-12-14"><meta name="DC.source" content="prtStat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,17 +66,17 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>prtStat</h1><!--introduction--><p>Print parameter or stastistic of selected entries names and values</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>[nm val] = <a href="../prtStat.m"><b>prtStat</b></a>(taxa, var, in)</p><h2 id="4">Description</h2><p>Print parameter or statistic values for selected entries to screen.</p><p>Input:</p><div><ul><li>taxa: cell-string with taxa</li><li>var: character string with parameter or statistic</li><li>in: scalar with optional indicator for ordering increasing (1), decreasing (-1), no printing to screen (0); default: no ordering and printing to screen</li></ul></div><p>Output</p><div><ul><li>val: n-vector with values for parameter or statistic</li><li>nm: n-cellstring with names of entries</li></ul></div><h2 id="5">Example of use</h2><p>prtStat({'Paridae','Cyprinidae'}, 'p_M');</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>prtStat</h1><!--introduction--><p>Print parameter or stastistic of selected entries names and values</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>[nm, val, units, label] = <a href="../prtStat.m"><b>prtStat</b></a>(taxa, var, in)</p><h2 id="4">Description</h2><p>Print parameter or statistic values for selected entries to screen.</p><p>Input:</p><div><ul><li>taxa: cell-string with taxa</li><li>var: character string with parameter or statistic</li><li>in:  optional scalar with indicator for ordering increasing (1), decreasing (-1), no printing to screen (0); default: no ordering and printing to screen (empty)</li></ul></div><p>Output</p><div><ul><li>nm: n-cellstring with names of entries</li><li>val: n-vector with values for parameter or statistic</li><li>units: charactore string with units</li><li>label: charactore string with label</li></ul></div><h2 id="5">Remarks</h2><p>See <a href="pedigreet.html"><b>pedigree</b></a> for lists with tree</p><h2 id="6">Example of use</h2><p>prtStat({'Paridae','Cyprinidae'}, 'p_M');</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prtStat
 % Print parameter or stastistic of selected entries names and values 
 
 %%
-function [nm val] = prtStat(taxa, var, in)
-  % created by Bas Kooijman 2017/08/20, modified 2017/11/24
+function [nm, val, units, label] = prtStat(taxa, var, in)
+  % created by Bas Kooijman 2017/08/20, modified 2017/11/24, 2017/12/14
   
   %% Syntax 
-  % [nm val] = <../prtStat.m *prtStat*>(taxa, var, in)
+  % [nm, val, units, label] = <../prtStat.m *prtStat*>(taxa, var, in)
   
   %% Description
   % Print parameter or statistic values for selected entries to screen. 
@@ -85,13 +85,18 @@ function [nm val] = prtStat(taxa, var, in)
   %
   % * taxa: cell-string with taxa
   % * var: character string with parameter or statistic
-  % * in: scalar with optional indicator for ordering increasing (1),
-  % decreasing (-1), no printing to screen (0); default: no ordering and printing to screen
+  % * in:  optional scalar with indicator for ordering increasing (1), decreasing (-1), no printing to screen (0); default: no ordering and printing to screen (empty)
   %
   % Output
   %
-  % * val: n-vector with values for parameter or statistic
   % * nm: n-cellstring with names of entries
+  % * val: n-vector with values for parameter or statistic
+  % * units: charactore string with units
+  % * label: charactore string with label
+  
+  %% Remarks
+  % See <pedigreet.html *pedigree*> for lists with tree
+
   
   %% Example of use 
   % prtStat({'Paridae','Cyprinidae'}, 'p_M');
@@ -108,15 +113,18 @@ function [nm val] = prtStat(taxa, var, in)
   if ~exist('in', 'var') % yes or no sorting
     in = NaN;
   end
+  
   switch in
-  case -1
-    [val i] = sort(val, 'descend'); nm = nm(i);
-  case 1
-    [val i] = sort(val, 'ascend'); nm = nm(i);
+    case -1
+      [val i] = sort(val, 'descend'); nm = nm(i);
+    case 1
+      [val i] = sort(val, 'ascend'); nm = nm(i);
   end
     
+  units = units{1}; label = label{1};
+  
   if ~(in == 0)
-    printpar(nm, val, [], [label{1}, ': ', units{1}])
+    printpar(nm, val, [], [label, ': ', units])
   end
 
 ##### SOURCE END #####
