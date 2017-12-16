@@ -1,14 +1,15 @@
 %% shstat_taxa
-% plots statistics and/or parameters for a taxon 
+% plots statistics and/or parameters for a taxon as function of taxonomic distance
 
-function [Hfig Hleg val entries missing] = shstat_taxa(vars, legend, Hfig)
+function [Hfig Hleg val entries missing] = shstat_taxa(vars, legend, label_title, Hfig)
 % created 2017/04/22 by Bas Kooijman
 
 %% Syntax
 % [Hfig val entries] =  <../shstat_taxa.m *shstat_taxa*>(vars, legend, label_title, Hfig)
 
 %% Description
-% plots statistics and/or parameters using allStat.mat as source (which must exist) for a taxon specified in legend{end,2}. 
+% Plots statistics and/or parameters using allStat.mat as source (which must exist) for a taxon specified in legend{end,2} as function of normalised taxonomic distance.
+% These distances are computed with <dist_taxa.html *dist_taxa*>, on the basis of the classification, as specified in the lists-of-lists for subsequent pairs of entries.
 %
 % Input vars can also be a numerical (n,k)-matrix for n = length(select) and f = size(vars,2), but the labels on the yxis are then empty and output val equals input vars.
 % In that case, read_allStat is bypassed and labels must be set by user afterwards, see mydata_shstat.
@@ -29,6 +30,7 @@ function [Hfig Hleg val entries missing] = shstat_taxa(vars, legend, Hfig)
 % * missing: cell string with names of entries that should have been plotted, but are missing (because of lack of data in allStat.mat) 
 
 %% Remarks
+% The computation of taxonomic distances might take some time.
 % Legend can be set/modified with <../../DEBtool_M/taxa/html/select_legend.html *select_legend*>.  
 % In the case that a taxon is included in another one, double plotting is suppressed from first-to-last column of selection matrix, and plotting is done for last-to-first column.
 % So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding.
@@ -36,7 +38,7 @@ function [Hfig Hleg val entries missing] = shstat_taxa(vars, legend, Hfig)
 %
 % No transformation is done in this function, so, if required, do it outside and use numerical mode.
 %
-% Make sure that allStat has been generated at the correct temperature (for times and rates); all parameters are at T_ref.
+% Make sure that allStat has been generated at the correct temperature (for times and rates); all parameters are at T_ref, but statistics at T_typical.
 % Make sure that allStat is consistent with select('Animalia'); can be done via <write_allStat.html *write_allStat*>.
 %
 % Set options with <shstat_options,.html *shstat_options*> (such as logarithmic transformation of axes).
