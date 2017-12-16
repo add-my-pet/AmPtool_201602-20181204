@@ -138,6 +138,7 @@ kap = linspace(0, 1, 100); ss = kap.^2 .* (1 - kap);
 plot(ss, kap, 'k', 'Linewidth', 2)
 xlim([0 4/27]); ylim([0 1]);
 saveas(Hfig, '../../img/patterns/ss-kap.png')
+Hleg = shlegend(legend_vert, [], [0.9 0.25]); % reduce height of legend
 saveas(Hleg, '../../img/patterns/legends_ss-kap.png')
 
 close all
