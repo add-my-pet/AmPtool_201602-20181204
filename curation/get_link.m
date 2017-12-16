@@ -4555,6 +4555,14 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;       
       id_avibase = 'B5AA5952E13FE5F3';
       
+    case 'Brachyramphus_brevirostris'
+      id_CoL = '08870044d34d0b9f903b57b34bc5d058';
+      id_WoRMS = '254310';
+      id_Taxo = '53892';        
+      id_EoL = '1048948';
+      id_AnAge = '';       
+      id_avibase = '7AD855E2377EBA1E';
+
     case 'Aethia_pusilla'
       id_CoL = 'eedd1a360668ef531a40b98d4493618e';
       id_WoRMS = '344016';
