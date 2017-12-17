@@ -33,7 +33,7 @@ set(gca, 'FontSize', 15, 'Box', 'on')
 
 figure(Hfig) 
 xlabel('_{10}log weight at max growth, g')      
-ylabel('_{10}log max growth at T_{ref}, g/d')
+ylabel('_{10}log max growth, g/d')
 
 saveas(Hfig, '../../img/patterns/logW-logdW.png')
 saveas(Hleg, '../../img/patterns/legends_logW-logdW.png')
@@ -49,7 +49,7 @@ set(gca, 'FontSize', 15, 'Box', 'on')
 
 figure(Hfig) 
 xlabel('_{10}log max adult weight, g')      
-ylabel('_{10}log O_2 consumption at T_{ref}, mol/d')
+ylabel('_{10}log O_2 consumption, mol/d')
 
 saveas(Hfig, '../../img/patterns/logW-logJO.png')
 saveas(Hleg, '../../img/patterns/legends_logW-logJO.png')
@@ -75,7 +75,7 @@ LipM = read_allStat('L_i', 'p_M'); L_i = LipM(:,1); p_M = LipM(:,2);
     
 figure(Hfig) % add labels to figure, because this is not done by shstat in numerical mode
 xlabel('_{10}log ultimate structural volume, cm^3')      
-ylabel('_{10}log spec som maintenance at T_{ref}, J/d.cm^3')
+ylabel('_{10}log spec som maint, J/d.cm^3')
 
 saveas(Hfig, '../../img/patterns/logV-logpM.png')
 saveas(Hleg, '../../img/patterns/legends_logV-logpM.png')
@@ -87,8 +87,8 @@ WRpMcT = read_allStat('Wd_b', 'R_i', 'p_M', 'c_T'); Wd_b = WRpMcT(:,1); R_i = WR
 [Hfig Hleg] = shstat([p_M ./ c_T, Wd_b .* R_i ./ c_T], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
 
 figure(Hfig) 
-xlabel('_{10}log spec som maintenance at T_{ref}, J/d.cm^3')      
-ylabel('_{10}log spec max reprod rate \times weight at birth at T_{ref}, g/d')
+xlabel('_{10}log spec som maintenance, J/d.cm^3')      
+ylabel('_{10}log spec max reprod rate \times W_b, g/d')
 
 saveas(Hfig, '../../img/patterns/logpM-logRW.png')
 saveas(Hleg, '../../img/patterns/legends_logpM-logRW.png')
@@ -101,8 +101,8 @@ WdWpMcT = read_allStat('W_dWm', 'dWm', 'p_M', 'c_T'); W_dWm = WdWpMcT(:,1); dWm 
 %set(gca, 'FontSize', 15, 'Box', 'on')
 
 figure(Hfig) 
-xlabel('_{10}log spec som maintenance at T_{ref}, J/d.cm^3')      
-ylabel('_{10}log spec max growth rate at T_{ref}, 1/d')
+xlabel('_{10}log spec som maintenance, J/d.cm^3')      
+ylabel('_{10}log spec max growth rate, 1/d')
 
 saveas(Hfig, '../../img/patterns/logpM-logdWW.png')
 saveas(Hleg, '../../img/patterns/legends_logpM-logdWW.png')
