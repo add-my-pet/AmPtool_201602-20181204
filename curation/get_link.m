@@ -4603,6 +4603,14 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;       
       id_avibase = '2771624B64AD7F2C';
       
+    case 'Fratercula_cirrhata'
+      id_CoL = '0f49dcc5798d913825d050e1035cbbce';
+      id_WoRMS = '344610';
+      id_Taxo = '53910';        
+      id_EoL = '1049982';
+      id_AnAge = '';       
+      id_avibase = 'F79373497BC9C8FD';
+      
     case 'Chlidonias_leucopterus'
       id_CoL = 'a666e4b62baba1a7edf044f52f7eefd5';
       id_WoRMS = '137136';
@@ -5281,6 +5289,20 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;       
       id_avibase = 'D929EB214A698282';
       
+    case 'Turdus_migratorius'
+      id_CoL = '777be7339135b948e17df3b6e23e4549';
+      id_Taxo = '57003';        
+      id_EoL = '1177506';
+      id_AnAge = taxon;
+      id_avibase = 'D77E4B418D581FB2';
+      
+    case 'Catharus_minimus'
+      id_CoL = 'a396879ac8ff28c620d38e100c18fa5d';
+      id_Taxo = '56821';        
+      id_EoL = '1177538';
+      id_AnAge = taxon;
+      id_avibase = 'B904BB227C07317E';
+
     case 'Sturnus_vulgaris'
       id_CoL = 'cbb6ad24ade1b086f9f6ad89fe92ac3d';
       id_Taxo = '59258';        
@@ -5330,13 +5352,51 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;       
       id_avibase = '26EB95E7DDA0BFEB';
       
+    case 'Passerella_iliaca'
+      id_CoL = 'bd0ac24c9c3e1d6db6c2380ff226c261';
+      id_Taxo = '58102';        
+      id_EoL = '922653';
+      id_AnAge = taxon;       
+      id_avibase = '0B1B2EB673757787';
+      
+    case 'Zonotrichia_leucophrys'
+      id_CoL = 'd0c8d5e9ad2b93f844411eea5c4095f5';
+      id_Taxo = '58134';        
+      id_EoL = '1052728';
+      id_AnAge = taxon;       
+      id_avibase = '8601A4678CABA542';
+      
+    case 'Spizelloides_arborea'
+      id_CoL = '1639e2f02600e5075a95beebeae976a6';
+      id_Taxo = '58125'; % present as Spizella arborea        
+      id_EoL = '46349910';
+      id_AnAge = taxon;       
+      id_avibase = '2A86F9C93636CDA3';
+      id_ADW = 'Spizella_arborea';
+      
+    case 'Acanthis_flammea'
+      id_CoL = '67942f4f3c2cad73a6cc089d61db86cc';
+      id_Taxo = '58520';  % present as Carduelis flammea 
+      id_EoL = '1051077'; % present as Carduelis flammea 
+      id_AnAge = taxon;       
+      id_avibase = 'A2BB98A9A61F777B';
+      id_ADW = ''; % not present at 2017/12/17
+      
     case 'Carduelis_carduelis'
       id_CoL = '8388549b54689013a002e39459658043';
       id_Taxo = '58514';        
       id_EoL = '1051079';
       id_AnAge = taxon;       
       id_avibase = '1B235E0052ACC519';
-      
+
+    case 'Setophaga_striata'
+      id_CoL = '891172a2730002d57948ac2b10c03c80';
+      id_Taxo = '58396'; % present at genus level only 2017/12/17      
+      id_EoL = '918802'; % present as Dendroica striata 2017/12/17 
+      id_AnAge = taxon;       
+      id_avibase = '544A5E6BC69CEAAC';
+      id_ADW = ''; % not present at 2017/12/17
+
     case 'Ornithorhynchus_anatinus'
       id_CoL = '3bc186304963c8d2e15564c630a7021e';
       id_Taxo = '59646';        
