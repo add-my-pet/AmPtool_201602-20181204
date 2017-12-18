@@ -23,7 +23,8 @@ function prt_patterns
 
 close all
 
-% log W-log dW
+
+% Fig 1: log W - log dW
 shstat_options('default');
 shstat_options('x_label', 'on');
 shstat_options('y_label', 'on');
@@ -39,7 +40,7 @@ saveas(Hfig, '../../img/patterns/logW-logdW.png')
 saveas(Hleg, '../../img/patterns/legends_logW-logdW.png')
 close all
 
-% log W-log J_O
+% Fig 2: log W-log J_O
 shstat_options('default');
 shstat_options('x_label', 'on');
 shstat_options('y_label', 'on');
@@ -55,7 +56,7 @@ saveas(Hfig, '../../img/patterns/logW-logJO.png')
 saveas(Hleg, '../../img/patterns/legends_logW-logJO.png')
 close all
 
-% log V_m - log [E_m]
+% Fig 3: log V_m - log [E_m]
 shstat_options('default');
 LiEm = read_allStat('L_i', 'E_m'); L_i = LiEm(:,1); E_m = LiEm(:,2);
 [Hfig, Hleg] = shstat([L_i.^3, E_m], legend_shark, datestr(datenum(date),'yyyy/mm/dd')); 
@@ -68,7 +69,7 @@ saveas(Hfig, '../../img/patterns/logV-logEm.png')
 saveas(Hleg, '../../img/patterns/legends_logV-logEm.png')
 close all
 
-% log V_m - log [p_M] ([p_M] is given at T_ref)
+% Fig 4: log V_m - log [p_M] ([p_M] is given at T_ref)
 shstat_options('default');
 LipM = read_allStat('L_i', 'p_M'); L_i = LipM(:,1); p_M = LipM(:,2); 
 [Hfig, Hleg] = shstat([L_i.^3, p_M], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
@@ -81,20 +82,20 @@ saveas(Hfig, '../../img/patterns/logV-logpM.png')
 saveas(Hleg, '../../img/patterns/legends_logV-logpM.png')
 close all
 
-% low p_M- log RW
+% Fig 5: low p_M- log RW
 shstat_options('default');
-WRpMcT = read_allStat('Wd_b', 'R_i', 'p_M', 'c_T'); Wd_b = WRpMcT(:,1); R_i = WRpMcT(:,2); p_M = WRpMcT(:,3); c_T = WRpMcT(:,4);
-[Hfig Hleg] = shstat([p_M ./ c_T, Wd_b .* R_i ./ c_T], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
+WWRpMcT = read_allStat('Wd_b', 'Wd_i', 'R_i', 'p_M', 'c_T'); Wd_b = WWRpMcT(:,1); Wd_i = WWRpMcT(:,2); R_i = WWRpMcT(:,3); p_M = WWRpMcT(:,4); c_T = WWRpMcT(:,5);
+[Hfig Hleg] = shstat([p_M, Wd_b ./Wd_i .* R_i ./ c_T], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
 
 figure(Hfig) 
 xlabel('_{10}log spec som maintenance, J/d.cm^3')      
-ylabel('_{10}log spec max reprod rate \times W_b, g/d')
+ylabel('_{10}log max reprod rate \times W_d^b/ W_d^\infty, 1/d')
 
 saveas(Hfig, '../../img/patterns/logpM-logRW.png')
 saveas(Hleg, '../../img/patterns/legends_logpM-logRW.png')
 close all
 
-% log p_M-log dW/W
+% Fig 6: log p_M - log dW/W
 shstat_options('default');
 WdWpMcT = read_allStat('W_dWm', 'dWm', 'p_M', 'c_T'); W_dWm = WdWpMcT(:,1); dWm = WdWpMcT(:,2); p_M = WdWpMcT(:,3); c_T = WdWpMcT(:,4);
 [Hfig Hleg] = shstat([p_M ./ c_T, dWm ./ W_dWm ./ c_T], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
@@ -108,7 +109,7 @@ saveas(Hfig, '../../img/patterns/logpM-logdWW.png')
 saveas(Hleg, '../../img/patterns/legends_logpM-logdWW.png')
 close all
 
-% log ss-kap
+% Fig 7: log ss - kap
 shstat_options('default');
 shstat_options('y_transform', 'none');
 shstat_options('x_label', 'on');
@@ -125,7 +126,7 @@ saveas(Hleg, '../../img/patterns/legends_logss-kap.png')
 
 close all
 
-% ss-kap
+% Fig 8: ss - kap
 shstat_options('x_transform', 'none');
 shstat_options('y_transform', 'none');
 shstat_options('x_label', 'on');
