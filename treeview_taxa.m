@@ -15,10 +15,18 @@ function treeview_taxa (taxon)
 %
 % Input:
 %
-% * taxon: character string with a taxon that is a node in the taxonomic tree, see <list_taxa.m *list_taxa*>
+% * taxon: optional character string with a taxon (default 'Animalia')
+
+
+%% Remarks
+% taxon must be  a node in the taxonomic tree, see <list_taxa.m *list_taxa*>
 
 %% Example of use
 % treeview_taxa('Cladocera');
+
+  if ~exist('taxon','var') || isempty(taxon)
+    taxon = 'Animalia';
+  end
 
   WD = pwd;                      % store current path
   taxa = which('treeview_taxa'); % locate taxa
