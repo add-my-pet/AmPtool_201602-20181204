@@ -2942,6 +2942,14 @@ function [links info] = get_link(taxon, test)
       id_EoL = '988226';
       id_fishbase = taxon_fish;
        
+    case 'Lipophrys_pholis'
+      id_CoL = '12a70aeb24ecc66da3b1f69ab0ee6002';
+      id_WoRMS = '126768';
+      id_Taxo = '178995';        
+      id_EoL = '222239';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present at 2017/12/20
+ 
     case 'Gerres_equulus'
       id_CoL = '23cd92cc305ff9a3bf3649785c8e464b';
       id_WoRMS = '276956';
