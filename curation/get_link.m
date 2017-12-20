@@ -4108,6 +4108,14 @@ function [links info] = get_link(taxon, test)
       id_AnAge = ''; % not present 2017/06/18
       id_ADW = ''; % not present at 2017/08/09 
       
+    case 'Rapetosaurus_krausei'
+      id_CoL = '2fd163a61171a67edf1bbde17360805a'; 
+      id_Taxo = ''; % not present at 2017/12/20       
+      id_Wiki = 'Rapetosaurus';
+      id_EoL = '4657962';
+      id_AnAge = ''; % not present 2017/12/20
+      id_ADW = ''; % not present at 2017/12/20 
+      
     case 'Apatosaurus_spec'
       id_CoL = '901ec65eb9b9c783b00e6a2b21cde5d3'; % A. ajax
       id_Taxo = '50887'; % present as genus
