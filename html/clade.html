@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>clade</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-06"><meta name="DC.source" content="clade.m"><style type="text/css">
+      --><title>clade</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-12-23"><meta name="DC.source" content="clade.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -23,7 +23,7 @@ a:visited { color:#004aa0; text-decoration:none; }
 
 p { padding:0px; margin:0px 0px 20px; }
 img { padding:0px; margin:0px 0px 20px; border:none; }
-p img, pre img, tt img, li img { margin-bottom:0px; } 
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
 
 ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
 ul li { padding:0px; margin:0px 0px 7px 0px; }
@@ -38,11 +38,12 @@ ol li ul li { list-style:square; }
 
 .content { font-size:1.2em; line-height:140%; padding: 20px; }
 
-pre, tt, code { font-size:12px; }
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
 pre { margin:0px 0px 20px; }
-pre.error { color:red; }
 pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
 pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
 
 @media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
 
@@ -54,29 +55,40 @@ span.syscmd { color:#B28C00 }
 
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
 
-  </style></head><body><div class="content"><h1>clade</h1><!--introduction--><p>gets all species that are closest related to specified taxa</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>members = <a href="../clade.m"><b>clade</b></a> (taxa)</p><h2>Description<a name="4"></a></h2><p>gets all species in the add_my_pet collection that belong to the lowest common taxon of a group of taxa. To find this taxon, the lineages of all members of input taxa are obtained, then the taxon of lowest rank is found that is shared by all members of input taxa and all members of this taxon in the add_my_pet collection are selected.</p><p>Input:</p><div><ul><li>cell string with names of taxa</li></ul></div><p>Output:</p><div><ul><li>cell string with all species in the add_my_pet collection that belong to that taxon</li><li>character string with the name of the lowest taxon all taxa belong</li></ul></div><h2>Remarks<a name="5"></a></h2><p>The root is Animalia. If this is the lowest common taxon, the output contains all species in the collection. If the input cell string has length 1, clade is similar to <a href="select.html"><b>select</b></a>. The classification follows that of Wikipedia.</p><h2>Example of use<a name="6"></a></h2><p>members  = clade({'Gorilla', 'Tupaia'})</p><p class="footer"><br>
-      Published with MATLAB&reg; 7.14<br></p></div><!--
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>clade</h1><!--introduction--><p>gets all species that are closest related to specified taxa</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>[members, taxon] = <a href="../clade.m"><b>clade</b></a> (taxa, level)</p><h2 id="4">Description</h2><p>gets all species in the add_my_pet collection that belong to the lowest common taxon of a group of taxa. To find this taxon, the lineages of all members of input taxa are obtained, then the taxon of lowest rank is found that is shared by all members of input taxa and all members of this taxon in the add_my_pet collection are selected. If a single taxon is specified, members are selected from a taxon that is a number of levels up in the classification.</p><p>Input:</p><div><ul><li>taxa: cell string with names of taxa or character string with a single name</li><li>level: optional integer with number of nodes up, in the case of a single taxon (default: 3)</li></ul></div><p>Output:</p><div><ul><li>cell string with all species in the add_my_pet collection that belong to that taxon</li><li>character string with the name of the lowest taxon all taxa belong</li></ul></div><h2 id="5">Remarks</h2><p>The root is Animalia. If this is the lowest common taxon, the output contains all species in the collection. The classification follows that of Wikipedia.</p><h2 id="6">Example of use</h2><p>members  = clade({'Gorilla', 'Tupaia'}) or clade('Daphnia_magna') or clade('Homarus_gammarus',4)</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% clade
 % gets all species that are closest related to specified taxa
 
 %%
-function [members, taxon] = clade(taxa)
-% created 2015/09/18 by Bas Kooijman
+function [members, taxon] = clade(taxa, level)
+% created 2015/09/18 by Bas Kooijman; modified 2017/12/23
 
 %% Syntax
-% members = <../clade.m *clade*> (taxa) 
+% [members, taxon] = <../clade.m *clade*> (taxa, level) 
 
 %% Description
 % gets all species in the add_my_pet collection that belong to the lowest common taxon of a group of taxa.
 % To find this taxon, the lineages of all members of input taxa are obtained, 
 % then the taxon of lowest rank is found that is shared by all members of input taxa 
 % and all members of this taxon in the add_my_pet collection are selected.
+% If a single taxon is specified, members are selected from a taxon that is a number of levels up in the classification.
 %
 % Input:
 %
-% * cell string with names of taxa
+% * taxa: cell string with names of taxa or character string with a single name
+% * level: optional integer with number of nodes up, in the case of a single taxon (default: 3)
 %
 % Output:
 % 
@@ -86,14 +98,39 @@ function [members, taxon] = clade(taxa)
 %% Remarks
 % The root is Animalia. 
 % If this is the lowest common taxon, the output contains all species in the collection.
-% If the input cell string has length 1, clade is similar to <select.html *select*>.
 % The classification follows that of Wikipedia.
 
 %% Example of use
 % members  = clade({'Gorilla', 'Tupaia'})
+% or
+% clade('Daphnia_magna')
+% or
+% clade('Homarus_gammarus',4)
 
 
   n = length(taxa);
+  
+  if  ~iscell(taxa) || n == 1
+    if iscell(taxa)
+      taxa = taxa{1};
+    end
+    
+    if ~exist('level', 'var')
+      level = 3;
+    end
+  
+    list = lineage(taxa);
+    
+    if length(list) == 1
+      fprintf('Taxon is not recognized\n')
+      members = list; taxon = list;
+    else
+      taxon = list{end-level};
+      members = select(taxon);
+    end
+  
+    return
+  end
   
   for i = 1:n % obtain lineages for all taxa called lin1, lin2, ..
     lin = lineage(taxa{i});
@@ -104,22 +141,18 @@ function [members, taxon] = clade(taxa)
     eval(['lin', num2str(i), ' = lin;']);
   end
   
-  if n == 1 % nothing to compare with
-    taxon = taxa{1};
-  else      % n > 1
-    true = 1; j = 0; % initiate selection process
-    while true
-      j = j + 1; % step down the lineage
-      taxon = lin1{j};
-      for i = 2 : n % step through taxa
-        eval(['true = isequal(taxon, lin', num2str(i), '{j});']);
-        if ~true
-          break
-        end
+  true = 1; j = 0; % initiate selection process
+  while true
+    j = j + 1; % step down the lineage
+    taxon = lin1{j};
+    for i = 2 : n % step through taxa
+      eval(['true = isequal(taxon, lin', num2str(i), '{j});']);
+      if ~true
+        break
       end
     end
-    taxon = lin1{j-1};
-  end 
+  end
+  taxon = lin1{j-1};
   
   members = select(taxon); 
 
