@@ -2208,6 +2208,20 @@ function [links info] = get_link(taxon, test)
       id_EoL = '206410';
       id_fishbase = taxon_fish;
        
+    case 'Colossoma_macropomum'
+      id_CoL = '819d6a87a748f6d1bf45619ce1dc03ab';
+      id_WoRMS = '1020122';
+      id_Taxo = '171593';  
+      id_EoL = '215393';
+      id_fishbase = taxon_fish;
+
+    case 'Hyphessobrycon_pulchripinnis'
+      id_CoL = '3c750f030175c17dfbaf9d63a4ee9f4f';
+      id_WoRMS = '1015050';
+      id_Taxo = '43195';  
+      id_EoL = '219060';
+      id_fishbase = taxon_fish;
+
     case 'Electrophorus_electricus'
       id_CoL = '3cef65beebb836d276014fb79322b074';
       id_WoRMS = ''; % not present 2017/06/16
@@ -2600,6 +2614,29 @@ function [links info] = get_link(taxon, test)
       id_EoL = '994642';
       id_fishbase = taxon_fish;
        
+    case 'Rhinogobius_brunneus'
+      id_CoL = '9e30ea601609951de533ce0666402007';
+      id_WoRMS = '282581';
+      id_Taxo = '43740';  % present at genus level 2017/12/23      
+      id_EoL = '225347';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present at 2017/12/23
+      id_Wiki = 'Rhinogobius';
+       
+    case 'Gobius_niger'
+      id_CoL = '82314e73a3d4a82de533d65b06f040f7';
+      id_WoRMS = '126892';
+      id_Taxo = '46580';  % web problems at 2017/12/23      
+      id_EoL = '206703';
+      id_fishbase = taxon_fish;
+      
+    case 'Gobius_paganellus'
+      id_CoL = '24b68175826ee426b900b75da82c1229';
+      id_WoRMS = '126893';
+      id_Taxo = '46580';  % web problems at 2017/12/23      
+      id_EoL = '2802153';
+      id_fishbase = taxon_fish;
+      
     case 'Hippocampus_whitei'
       id_CoL = '34e00e147e87daed81ad04fe6747aa6f';
       id_WoRMS = '212235';
