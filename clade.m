@@ -26,9 +26,9 @@ function [members, taxon] = clade(taxa, level)
 % * character string with the name of the lowest taxon all taxa belong
 
 %% Remarks
-% The root is Animalia. 
-% If this is the lowest common taxon, the output contains all species in the collection.
-% The classification follows that of Wikipedia.
+% The root is Animalia; If this is the lowest common taxon, the output contains all species in the collection.
+% Print properties of related taxa with e.g. prtStat(clade('Lemmus_trimucronatus'), 'p_M');.
+% Include the tree as well with e.g. [~, taxon]= clade('Lemmus_trimucronatus'); pedigree(taxon, 'p_M') 
 
 %% Example of use
 % members  = clade({'Gorilla', 'Tupaia'})
