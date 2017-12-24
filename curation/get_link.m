@@ -6230,6 +6230,27 @@ function [links info] = get_link(taxon, test)
       id_AnAge = 'Arvocola_terrestris';
       id_MSW3 = '13000176';
        
+    case 'Sigmodon_hispidus'
+      id_CoL = '032d1817b74afd0b3f98ef6ec6bfa2bb';
+      id_Taxo = '62413';      
+      id_EoL = '328441';     
+      id_AnAge = taxon;
+      id_MSW3 = '13000917';
+       
+    case 'Neotoma_floridana'
+      id_CoL = '8d1b8e42c5c97c5f37d5dd0f9650a064';
+      id_Taxo = '62330'; 
+      id_EoL = '3892960';  
+      id_AnAge = taxon;
+      id_MSW3 = '13000412';
+       
+    case 'Lemmus_trimucronatus'
+      id_CoL = '6d229d483afce29dae4bee95e6d4cca0';
+      id_Taxo = '62591'; % unaccepted, to Lemmus sibiricus (Kerr, 1792)        
+      id_EoL = '11022277';
+      id_AnAge = ''; % not present 2017/06/18
+      id_MSW3 = '13000236';
+       
     case 'Mus_musculus'
       id_CoL = '8fb9683c27c3f939a62710d716994ad3';
       id_Taxo = '63058';        
@@ -6244,12 +6265,19 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13001766';
        
-    case 'Lemmus_trimucronatus'
-      id_CoL = '6d229d483afce29dae4bee95e6d4cca0';
-      id_Taxo = '62591'; % unaccepted, to Lemmus sibiricus (Kerr, 1792)        
-      id_EoL = '11022277';
-      id_AnAge = ''; % not present 2017/06/18
-      id_MSW3 = '13000236';
+    case 'Apodemus_speciosus'
+      id_CoL = '9227237b727b45659a549bd98af5c6cd';
+      id_Taxo = '62924';   
+      id_EoL = '1178949';
+      id_AnAge = taxon; 
+      id_MSW3 = '13001220';
+       
+    case 'Apodemus_agrarius'
+      id_CoL = '881148241e8f1327aa73a5509759183f';
+      id_Taxo = ''; % web problems at 2017/12/24
+      id_EoL = '1178729';
+      id_AnAge = taxon; 
+      id_MSW3 = '13001204';
        
     case 'Glis_glis'
       id_CoL = 'a35eaad2acaaf584762b9843f35c3dc5';
