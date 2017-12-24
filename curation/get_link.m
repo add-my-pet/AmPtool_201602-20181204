@@ -6209,6 +6209,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13400134';
        
+    case 'Myocastor_coypus'
+      id_CoL = '36d74b421fdbd62de05372461c50d907';
+      id_Taxo = '63540';        
+      id_EoL = '328471';
+      id_AnAge = taxon;
+      id_MSW3 = '13400557';
+       
     case 'Microtus_arvalis'
       id_CoL = 'c316d43b9cbe48bea99f1d1a1f0c3f3d';
       id_Taxo = '62673';        
@@ -6230,12 +6237,19 @@ function [links info] = get_link(taxon, test)
       id_AnAge = 'Arvocola_terrestris';
       id_MSW3 = '13000176';
        
-    case 'Sigmodon_hispidus'
-      id_CoL = '032d1817b74afd0b3f98ef6ec6bfa2bb';
-      id_Taxo = '62413';      
-      id_EoL = '328441';     
-      id_AnAge = taxon;
-      id_MSW3 = '13000917';
+    case 'Lemmus_trimucronatus'
+      id_CoL = '6d229d483afce29dae4bee95e6d4cca0';
+      id_Taxo = '62591'; % unaccepted, to Lemmus sibiricus (Kerr, 1792)        
+      id_EoL = '11022277';
+      id_AnAge = ''; % not present 2017/06/18
+      id_MSW3 = '13000236';
+       
+    case 'Cricetus_cricetus'
+      id_CoL = 'eccb22160f6e4314b78276bc26e80bf8';
+      id_Taxo = ''; % web problems at 2017/12/24  
+      id_EoL = '1179512';
+      id_AnAge = taxon; 
+      id_MSW3 = '13000362';
        
     case 'Neotoma_floridana'
       id_CoL = '8d1b8e42c5c97c5f37d5dd0f9650a064';
@@ -6244,12 +6258,12 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13000412';
        
-    case 'Lemmus_trimucronatus'
-      id_CoL = '6d229d483afce29dae4bee95e6d4cca0';
-      id_Taxo = '62591'; % unaccepted, to Lemmus sibiricus (Kerr, 1792)        
-      id_EoL = '11022277';
-      id_AnAge = ''; % not present 2017/06/18
-      id_MSW3 = '13000236';
+    case 'Sigmodon_hispidus'
+      id_CoL = '032d1817b74afd0b3f98ef6ec6bfa2bb';
+      id_Taxo = '62413';      
+      id_EoL = '328441';     
+      id_AnAge = taxon;
+      id_MSW3 = '13000917';
        
     case 'Mus_musculus'
       id_CoL = '8fb9683c27c3f939a62710d716994ad3';

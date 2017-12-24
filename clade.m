@@ -23,7 +23,7 @@ function [members, taxon] = clade(taxa, level)
 % Output:
 % 
 % * cell string with all species in the add_my_pet collection that belong to that taxon
-% * character string with the name of the lowest taxon all taxa belong
+% * character string with the name of the lowest taxon to which all taxa belong
 
 %% Remarks
 % The root is Animalia; If this is the lowest common taxon, the output contains all species in the collection.
