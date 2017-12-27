@@ -2626,14 +2626,14 @@ function [links info] = get_link(taxon, test)
     case 'Gobius_niger'
       id_CoL = '82314e73a3d4a82de533d65b06f040f7';
       id_WoRMS = '126892';
-      id_Taxo = '46580';  % web problems at 2017/12/23      
+      id_Taxo = '46584';    
       id_EoL = '206703';
       id_fishbase = taxon_fish;
       
     case 'Gobius_paganellus'
       id_CoL = '24b68175826ee426b900b75da82c1229';
       id_WoRMS = '126893';
-      id_Taxo = '46580';  % web problems at 2017/12/23      
+      id_Taxo = '46587';      
       id_EoL = '2802153';
       id_fishbase = taxon_fish;
       
@@ -5866,6 +5866,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '14200476';
        
+    case 'Okapia_johnstoni'
+      id_CoL = '6e53878317a74051cf2698e02fd631b5';
+      id_Taxo = '68116';        
+      id_EoL = '308387';
+      id_AnAge = taxon;
+      id_MSW3 = '14200484';
+       
     case 'Odocoileus_virginianus'
       id_CoL = '49c19661f2a48ff49d60d571f9f827ca';
       id_Taxo = '68077';        
@@ -6167,6 +6174,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '14100050';
        
+    case 'Pedetes_capensis'
+      id_CoL = '0d413960a6814a83859b738b8453a188';
+      id_Taxo = '62191';        
+      id_EoL = '289798';
+      id_AnAge = taxon;
+      id_MSW3 = '13200003';
+       
     case 'Castor_fiber'
       id_CoL = '3b8681fe6477ed5a3762fcdef4d00eb2';
       id_Taxo = '62130';        
@@ -6244,9 +6258,16 @@ function [links info] = get_link(taxon, test)
       id_AnAge = ''; % not present 2017/06/18
       id_MSW3 = '13000236';
        
+    case 'Lemmus_lemmus'
+      id_CoL = '392246600f5efac3100ab1cd0d81e1ea';
+      id_Taxo = '62589';        
+      id_EoL = '1179632';
+      id_AnAge = taxon;
+      id_MSW3 = '13000233';
+       
     case 'Cricetus_cricetus'
       id_CoL = 'eccb22160f6e4314b78276bc26e80bf8';
-      id_Taxo = ''; % web problems at 2017/12/24  
+      id_Taxo = '62488'; 
       id_EoL = '1179512';
       id_AnAge = taxon; 
       id_MSW3 = '13000362';
@@ -6264,6 +6285,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '328441';     
       id_AnAge = taxon;
       id_MSW3 = '13000917';
+       
+    case 'Otonyctomys_hatti'
+      id_CoL = 'bec50c34d9c15688a3a32b28e953d479';
+      id_Taxo = '88621';      
+      id_EoL = '1180027';     
+      id_AnAge = ''; % not present at 2017/12/25
+      id_MSW3 = '13000984';
        
     case 'Mus_musculus'
       id_CoL = '8fb9683c27c3f939a62710d716994ad3';
@@ -6288,10 +6316,17 @@ function [links info] = get_link(taxon, test)
        
     case 'Apodemus_agrarius'
       id_CoL = '881148241e8f1327aa73a5509759183f';
-      id_Taxo = ''; % web problems at 2017/12/24
+      id_Taxo = '62911';
       id_EoL = '1178729';
       id_AnAge = taxon; 
       id_MSW3 = '13001204';
+       
+    case 'Aplodontia_rufa'
+      id_CoL = '2b7177151ff875a0061b0c4cfe8c14fb';
+      id_Taxo = '61669';        
+      id_EoL = '327978';
+      id_AnAge = taxon; 
+      id_MSW3 = '12300005';
        
     case 'Glis_glis'
       id_CoL = 'a35eaad2acaaf584762b9843f35c3dc5';
@@ -6306,6 +6341,27 @@ function [links info] = get_link(taxon, test)
       id_EoL = '327985';
       id_AnAge = taxon;
       id_MSW3 = '12400944';
+       
+    case 'Cynomys_ludovicianus'
+      id_CoL = 'fe2c48fc52f5c23504ec901961d8d0ed';
+      id_Taxo = '61869';        
+      id_EoL = '311548';
+      id_AnAge = taxon;
+      id_MSW3 = '12400916';
+       
+    case 'Tamias_striatus'
+      id_CoL = '025829bf7b2e2a50ae1ce3ec11d3c545';
+      id_Taxo = '170037';        
+      id_EoL = '311526';
+      id_AnAge = taxon;
+      id_MSW3 = '12401228';
+       
+    case 'Sciurus_carolinensis'
+      id_CoL = '940aaf006e4e611ff7f68afc25bea81c';
+      id_Taxo = '61711';        
+      id_EoL = '347685';
+      id_AnAge = taxon;
+      id_MSW3 = '12400104';
        
     case {'Oryctolagus_cuniculus','Oryctolagus_cuniculus_NZW'}
       id_CoL = '0488cb00ad3e3545c4c28f8feaf747e0';
