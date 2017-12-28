@@ -5932,6 +5932,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '14200813';
        
+    case 'Rousettus_aegyptiacus'
+      id_CoL = 'e34d7bd62bb6259fca64de38f894e5f0';
+      id_Taxo = '63887';        
+      id_EoL = '323421';
+      id_AnAge = taxon;
+      id_MSW3 = '13800397';
+       
     case 'Pipistrellus_pipistrellus'
       id_CoL = 'cb943ad6e446a67c750a5ad39aa8e911';
       id_Taxo = '169449';        
@@ -6293,6 +6300,20 @@ function [links info] = get_link(taxon, test)
       id_AnAge = ''; % not present at 2017/12/25
       id_MSW3 = '13000984';
        
+    case 'Acomys_cahirinus'
+      id_CoL = '5c3b33a388f9b15b2cc0f171852181fe';
+      id_Taxo = '62902';        
+      id_EoL = '1037942';
+      id_AnAge = taxon;
+      id_MSW3 = '13001002';
+       
+    case 'Meriones_unguiculatus'
+      id_CoL = 'ce4af97516c27964f9650c4995810324';
+      id_Taxo = '62832';        
+      id_EoL = '1179766';
+      id_AnAge = taxon;
+      id_MSW3 = '13001155';
+       
     case 'Mus_musculus'
       id_CoL = '8fb9683c27c3f939a62710d716994ad3';
       id_Taxo = '63058';        
@@ -6320,6 +6341,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1178729';
       id_AnAge = taxon; 
       id_MSW3 = '13001204';
+       
+    case 'Hydromys_chrysogaster'
+      id_CoL = '8fbe6cacb33128464db7383604d22f4a';
+      id_Taxo = '63239';
+      id_EoL = '1179099';
+      id_AnAge = taxon; 
+      id_MSW3 = '13001380s';
        
     case 'Aplodontia_rufa'
       id_CoL = '2b7177151ff875a0061b0c4cfe8c14fb';
