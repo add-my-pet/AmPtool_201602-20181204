@@ -5939,12 +5939,26 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13800397';
        
-    case 'Pipistrellus_pipistrellus'
-      id_CoL = 'cb943ad6e446a67c750a5ad39aa8e911';
-      id_Taxo = '169449';        
-      id_EoL = '127390';
+    case 'Eidolon_helvum'
+      id_CoL = 'e734438d4d6d888c4526530f829f62cc';
+      id_Taxo = '63745';        
+      id_EoL = '327335';
       id_AnAge = taxon;
-      id_MSW3 = '13802094';
+      id_MSW3 = '13800097';
+      
+    case 'Rhinolophus_hipposideros'
+      id_CoL = 'c17422dcc16d254fd33cb3ff9389f12e';
+      id_Taxo = '64130';        
+      id_EoL = '328775';
+      id_AnAge = taxon;
+      id_MSW3 = '13800555';
+      
+    case 'Miniopterus_schreibersii'
+      id_CoL = 'e41c465b3340bc16c35ac03d158a1ab6';
+      id_Taxo = '65101';        
+      id_EoL = '4437149';
+      id_AnAge = taxon;
+      id_MSW3 = '13802613';
        
     case 'Desmodus_rotundus'
       id_CoL = '5ed68b3442894a2a01c67ec56d5bc32a';
@@ -5959,6 +5973,20 @@ function [links info] = get_link(taxon, test)
       id_EoL = '327438';
       id_AnAge = taxon;
       id_MSW3 = '13801300';
+       
+    case 'Tadarida_brasiliensis'
+      id_CoL = 'f6ac3f27f010ac109c046f34d2b68ccf';
+      id_Taxo = '65317';        
+      id_EoL = '327954';
+      id_AnAge = taxon;
+      id_MSW3 = '13801768';
+       
+    case 'Pipistrellus_pipistrellus'
+      id_CoL = 'cb943ad6e446a67c750a5ad39aa8e911';
+      id_Taxo = '169449';        
+      id_EoL = '127390';
+      id_AnAge = taxon;
+      id_MSW3 = '13802094';
        
     case 'Manis_crassicaudata'
       id_CoL = '736a2ea04e95eb28f95226cc77b01c98';
@@ -6202,6 +6230,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13400041';
        
+    case 'Cryptomys_mechowi'
+      id_CoL = 'eb112691eb817cb8db29ba1ed18949c1';
+      id_Taxo = '112574';        
+      id_EoL = '999274';
+      id_AnAge = taxon;
+      id_MSW3 = '13400019';
+       
     case 'Hystrix_africaeaustralis'
       id_CoL = '2acff5dbbbdae886a56163692f0c86bb';
       id_Taxo = '63383';        
@@ -6237,6 +6272,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13400557';
        
+    case 'Zapus_hudsonius'
+      id_CoL = '2a3a17939f78c55ad7b30ffe9ec74e0f';
+      id_Taxo = '63313';        
+      id_EoL = '328465';
+      id_AnAge = taxon;
+      id_MSW3 = '12900083';
+       
     case 'Microtus_arvalis'
       id_CoL = 'c316d43b9cbe48bea99f1d1a1f0c3f3d';
       id_Taxo = '62673';        
@@ -6251,6 +6293,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = ''; % not present 2017/06/18
       id_MSW3 = '13000252';
        
+    case 'Microtus_pennsylvanicus'
+      id_CoL = '1f2f938c0924db8b02fbf7dc834fbe2d';
+      id_Taxo = '62713';        
+      id_EoL = '1037788';
+      id_AnAge = taxon; 
+      id_MSW3 = '13000290';
+  
     case 'Arvicola_amphibius'
       id_CoL = '2e7ace9ed0522b2ef99288425947efc8';
       id_Taxo = '62634'; % unaccepted, to Arvicola terrestris (C. Linnaeus, 1758)       
@@ -6376,6 +6425,14 @@ function [links info] = get_link(taxon, test)
       id_EoL = '311548';
       id_AnAge = taxon;
       id_MSW3 = '12400916';
+       
+    case 'Urocitellus_richardsonii'
+      id_CoL = '6fa3443ae9b8549b7238c1f332f5c44b';
+      id_Taxo = '61934';    % present as Spermophilus richardsonii 2017/12/29       
+      id_EoL = '327848';
+      id_AnAge = taxon;     % present as Spermophilus richardsonii 2017/12/29
+      id_MSW3 = '12401074'; % present as Spermophilus richardsonii 2017/12/29
+      id_ADW = 'Spermophilus richardsonii';
        
     case 'Tamias_striatus'
       id_CoL = '025829bf7b2e2a50ae1ce3ec11d3c545';
