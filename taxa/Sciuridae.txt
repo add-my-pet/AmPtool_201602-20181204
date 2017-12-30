@@ -1,5 +1,2 @@
-Marmota
-Cynomys
-Urocitellus
-Tamias
-Sciurus
+Sciurinae
+Xerinae

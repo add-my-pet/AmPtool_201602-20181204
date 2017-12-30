@@ -2,3 +2,5 @@ Mus
 Rattus
 Apodemus
 Hydromys
+Notomys
+Rhabdomys

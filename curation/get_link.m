@@ -6223,6 +6223,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '12600005';
        
+    case 'Dipodomys_merriami'
+      id_CoL = '868f1da7a95064a2d3cb7e0e2c5017d7';
+      id_Taxo = '62063';        
+      id_EoL = '328112';
+      id_AnAge = taxon;
+      id_MSW3 = '12700032';
+       
     case 'Heterocephalus_glaber'
       id_CoL = '578ce28e305022faa88b77f2b880502f';
       id_Taxo = '63627';        
@@ -6243,6 +6250,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '326520';
       id_AnAge = taxon;
       id_MSW3 = '13400050';
+       
+    case 'Cavia_porcellus'
+      id_CoL = '928a06f0767ad435adb2b3eb0fb000d5';
+      id_Taxo = '63446';        
+      id_EoL = '326924';
+      id_AnAge = taxon;
+      id_MSW3 = '13400181';
        
     case 'Cavia_tschudii'
       id_CoL = 'f83a21896fe575a2978cfd1222434dca';
@@ -6265,12 +6279,41 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13400134';
        
+    case 'Lagostomus_maximus'
+      id_CoL = 'fab7b2591249ffbbaa04ac931fd36c4a';
+      id_Taxo = '63504';        
+      id_EoL = '326930';
+      id_AnAge = taxon;
+      id_MSW3 = '13400161';
+       
+    case 'Erethizon_dorsatus'
+      id_CoL = '2147e2adb893f3a46063dea642a45b67';
+      id_Taxo = '63429';        
+      id_EoL = '328469'; % present as Erethizon dorsatum 2017/12/30
+      id_AnAge = taxon;
+      id_MSW3 = '13400108'; % present as Erethizon dorsata 2017/12/30
+      id_ADW = 'Erethizon_dorsatum';
+       
     case 'Myocastor_coypus'
       id_CoL = '36d74b421fdbd62de05372461c50d907';
       id_Taxo = '63540';        
       id_EoL = '328471';
       id_AnAge = taxon;
       id_MSW3 = '13400557';
+       
+    case 'Octodon_degus'
+      id_CoL = '205cebbc86a7765cc84ef0a0a54dfccd';
+      id_Taxo = '63545';        
+      id_EoL = '326372';
+      id_AnAge = taxon;
+      id_MSW3 = '13400373';
+       
+    case 'Jaculus_jaculus'
+      id_CoL = '45c7e291464112f0fb107733e7dfc97b';
+      id_Taxo = '63326';        
+      id_EoL = '327896';
+      id_AnAge = taxon;
+      id_MSW3 = '12900051';
        
     case 'Zapus_hudsonius'
       id_CoL = '2a3a17939f78c55ad7b30ffe9ec74e0f';
@@ -6321,6 +6364,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13000233';
        
+    case 'Dicrostonyx_groenlandicus'
+      id_CoL = 'bd34e658a344cf84f7883435a6afe136';
+      id_Taxo = '62581';        
+      id_EoL = '328424';
+      id_AnAge = taxon;
+      id_MSW3 = '13000190';
+       
     case 'Cricetus_cricetus'
       id_CoL = 'eccb22160f6e4314b78276bc26e80bf8';
       id_Taxo = '62488'; 
@@ -6363,6 +6413,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13001155';
        
+    case 'Psammomys_obesus'
+      id_CoL = 'fd682d424f1c84a57606aaf97701f48b';
+      id_Taxo = '62839';        
+      id_EoL = '1179772';
+      id_AnAge = taxon;
+      id_MSW3 = '13001163';
+       
     case 'Mus_musculus'
       id_CoL = '8fb9683c27c3f939a62710d716994ad3';
       id_Taxo = '63058';        
@@ -6397,6 +6454,21 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1179099';
       id_AnAge = taxon; 
       id_MSW3 = '13001380s';
+       
+    case 'Notomys_alexis'
+      id_CoL = 'cf09c16836cf5dadb18a38a593de0b5d';
+      id_Taxo = '63088';
+      id_EoL = '1179286';
+      id_AnAge = taxon; 
+      id_MSW3 = '13001619';
+       
+    case 'Rhabdomys_pumilio'
+      id_CoL = '3ed0f1ceaa91616fafdbd70905cd6479';
+      id_Taxo = ''; % web problems at 2017/12/30
+      id_EoL = '1179410';
+      id_AnAge = taxon; 
+      id_MSW3 = '13001796';
+      id_ADW = ''; % not present at 2017/12/30
        
     case 'Aplodontia_rufa'
       id_CoL = '2b7177151ff875a0061b0c4cfe8c14fb';
@@ -6447,6 +6519,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '347685';
       id_AnAge = taxon;
       id_MSW3 = '12400104';
+       
+    case 'Glaucomys_volans'
+      id_CoL = '144951863a899b2070da16efc8a43a70';
+      id_Taxo = '61979';        
+      id_EoL = '347431';
+      id_AnAge = taxon;
+      id_MSW3 = '12400328';
        
     case {'Oryctolagus_cuniculus','Oryctolagus_cuniculus_NZW'}
       id_CoL = '0488cb00ad3e3545c4c28f8feaf747e0';
