@@ -3,7 +3,8 @@ Rattus
 Apodemus
 Hydromys
 Notomys
+Arvicanthis
 Lemniscomys
 Rhabdomys
 Pseudomys
-Arvicanthis
+Otomys

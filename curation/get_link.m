@@ -6223,12 +6223,34 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '12600005';
        
+    case 'Geomys_bursarius'
+      id_CoL = '40264570b2d60b43ba9eb087453b2d76';
+      id_Taxo = '62007';        
+      id_EoL = '328027';
+      id_AnAge = taxon;
+      id_MSW3 = '12800063';
+       
     case 'Dipodomys_merriami'
       id_CoL = '868f1da7a95064a2d3cb7e0e2c5017d7';
       id_Taxo = '62063';        
       id_EoL = '328112';
       id_AnAge = taxon;
       id_MSW3 = '12700032';
+       
+    case 'Dipodomys_deserti'
+      id_CoL = 'aeaca9e2da0962afc26ccd16e320346f';
+      id_Taxo = '62059';        
+      id_EoL = '328080';
+      id_AnAge = taxon;
+      id_MSW3 = '12700014';
+       
+    case 'Perognathus_longimembris'
+      id_CoL = '9c5c1e0297c6a797711ecfd761e75f78';
+      id_Taxo = '62103';        
+      id_EoL = '311574';
+      id_AnAge = taxon;
+      id_MSW3 = '12700343';
+      id_ADW = ''; % not present at 2018/01/01
        
     case 'Heterocephalus_glaber'
       id_CoL = '578ce28e305022faa88b77f2b880502f';
@@ -6250,6 +6272,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '326520';
       id_AnAge = taxon;
       id_MSW3 = '13400050';
+       
+    case 'Geocapromys_ingrahami'
+      id_CoL = '0b4d83ff43e2fc31fb32d3c7ca7d1fb7';
+      id_Taxo = '63512';        
+      id_EoL = '24934758';
+      id_AnAge = taxon;
+      id_MSW3 = '13400572';
        
     case 'Cavia_porcellus'
       id_CoL = '928a06f0767ad435adb2b3eb0fb000d5';
@@ -6293,6 +6322,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13400161';
        
+    case 'Myoprocta_acouchy'
+      id_CoL = 'd8372b39b01cdbd6dfa518269d480c03';
+      id_Taxo = '93514';        
+      id_EoL = '326580';
+      id_AnAge = taxon;
+      id_MSW3 = '13400266';
+       
     case 'Erethizon_dorsatus'
       id_CoL = '2147e2adb893f3a46063dea642a45b67';
       id_Taxo = '63429';        
@@ -6329,6 +6365,20 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '12900083';
        
+    case 'Napaeozapus_insignis'
+      id_CoL = '4c67c02931c22a7c1194f591c4b94271';
+      id_Taxo = '63311';        
+      id_EoL = '328468';
+      id_AnAge = taxon;
+      id_MSW3 = '12900081';
+       
+    case 'Arvicola_amphibius'
+      id_CoL = '2e7ace9ed0522b2ef99288425947efc8';
+      id_Taxo = '62634'; % unaccepted, to Arvicola terrestris (C. Linnaeus, 1758)       
+      id_EoL = '1179597'; % unaccepted, to Arvicola terrestris (C. Linnaeus, 1758)       
+      id_AnAge = 'Arvocola_terrestris';
+      id_MSW3 = '13000176';
+       
     case 'Microtus_arvalis'
       id_CoL = 'c316d43b9cbe48bea99f1d1a1f0c3f3d';
       id_Taxo = '62673';        
@@ -6344,6 +6394,14 @@ function [links info] = get_link(taxon, test)
       id_MSW3 = '13000246';
       id_ADW = ''; % not present at 2017/12/31
        
+    case 'Microtus_guentheri'
+      id_CoL = '5f2b64945f3528a5244646de9b508423';
+      id_Taxo = '62689';        
+      id_EoL = '1179644';
+      id_AnAge = taxon; 
+      id_MSW3 = '13000266';
+      id_ADW = ''; % not present at 2018/01/01
+      
     case 'Microtus_cabrerae'
       id_CoL = 'f79ac11999508ad757439910090b87b0';
       id_Taxo = '62682';        
@@ -6372,12 +6430,19 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon; 
       id_MSW3 = '13000286';
   
-    case 'Arvicola_amphibius'
-      id_CoL = '2e7ace9ed0522b2ef99288425947efc8';
-      id_Taxo = '62634'; % unaccepted, to Arvicola terrestris (C. Linnaeus, 1758)       
-      id_EoL = '1179597'; % unaccepted, to Arvicola terrestris (C. Linnaeus, 1758)       
-      id_AnAge = 'Arvocola_terrestris';
-      id_MSW3 = '13000176';
+    case 'Dicrostonyx_groenlandicus'
+      id_CoL = 'bd34e658a344cf84f7883435a6afe136';
+      id_Taxo = '62581';        
+      id_EoL = '328424';
+      id_AnAge = taxon;
+      id_MSW3 = '13000190';
+       
+    case 'Lagurus_lagurus'
+      id_CoL = 'a5f1eab0fa22e76a1b54d43226f0023d';
+      id_Taxo = '62663';        
+      id_EoL = '1179627';
+      id_AnAge = taxon;
+      id_MSW3 = '13000224';
        
     case 'Lemmus_trimucronatus'
       id_CoL = '6d229d483afce29dae4bee95e6d4cca0';
@@ -6393,19 +6458,19 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13000233';
        
-    case 'Lagurus_lagurus'
-      id_CoL = 'a5f1eab0fa22e76a1b54d43226f0023d';
-      id_Taxo = '62663';        
-      id_EoL = '1179627';
+    case 'Myopus_schisticolor'
+      id_CoL = 'e40fb437249a928ba5d7c03de7c016fe';
+      id_Taxo = '62594';        
+      id_EoL = '1179676';
       id_AnAge = taxon;
-      id_MSW3 = '13000224';
+      id_MSW3 = '13000321';
        
-    case 'Dicrostonyx_groenlandicus'
-      id_CoL = 'bd34e658a344cf84f7883435a6afe136';
-      id_Taxo = '62581';        
-      id_EoL = '328424';
+    case 'Phenacomys_intermedius'
+      id_CoL = '5af42f383812eb8cab6f27b2f41b1f6b';
+      id_Taxo = '62760';        
+      id_EoL = '328446';
       id_AnAge = taxon;
-      id_MSW3 = '13000190';
+      id_MSW3 = '13000334';
        
     case 'Cricetus_cricetus'
       id_CoL = 'eccb22160f6e4314b78276bc26e80bf8';
@@ -6428,6 +6493,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '3892960';  
       id_AnAge = taxon;
       id_MSW3 = '13000412';
+       
+    case 'Neotoma_albigula'
+      id_CoL = '876c7c8f0ca8e25508dd23af0babd70a';
+      id_Taxo = '62327'; 
+      id_EoL = '328452';  
+      id_AnAge = taxon;
+      id_MSW3 = '13000404';
        
     case 'Peromyscus_polionotus'
       id_CoL = '15b221fdbebfa8b0e0e7d1bb13d9924f';
@@ -6456,6 +6528,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1037784';  
       id_AnAge = taxon;
       id_MSW3 = '13000489';
+       
+    case 'Onychomys_torridus'
+      id_CoL = 'b8788f974cc0554690c6bbff97a16833';
+      id_Taxo = '62349'; 
+      id_EoL = '328464';  
+      id_AnAge = taxon;
+      id_MSW3 = '13000433';
        
     case 'Sigmodon_hispidus'
       id_CoL = '032d1817b74afd0b3f98ef6ec6bfa2bb';
@@ -6499,6 +6578,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13001163';
        
+    case 'Gerbillus_pyramidum'
+      id_CoL = '44ca94c1289f5fc4ed76824194176ea8';
+      id_Taxo = '62814';        
+      id_EoL = '1179741';
+      id_AnAge = taxon;
+      id_MSW3 = '13001130';
+       
     case 'Mus_musculus'
       id_CoL = '8fb9683c27c3f939a62710d716994ad3';
       id_Taxo = '63058';        
@@ -6513,6 +6599,13 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '13001766';
        
+    case 'Rattus_lutreolus'
+      id_CoL = '19ef5909586d13d713d15cba40d7b422';
+      id_Taxo = '63130';        
+      id_EoL = '1179381';
+      id_AnAge = taxon;
+      id_MSW3 = '13001755';
+       
     case 'Apodemus_speciosus'
       id_CoL = '9227237b727b45659a549bd98af5c6cd';
       id_Taxo = '62924';   
@@ -6526,6 +6619,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1178729';
       id_AnAge = taxon; 
       id_MSW3 = '13001204';
+       
+    case 'Apodemus_semotus'
+      id_CoL = '0b938bb38dd7de0b8c0ca769affddbd0';
+      id_Taxo = '62923';
+      id_EoL = '1178948';
+      id_AnAge = taxon; 
+      id_MSW3 = '13001219';
        
     case 'Hydromys_chrysogaster'
       id_CoL = '8fbe6cacb33128464db7383604d22f4a';
@@ -6562,6 +6662,20 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1179335';
       id_AnAge = taxon; 
       id_MSW3 = '13001705';
+       
+    case 'Otomys_irroratus'
+      id_CoL = '225b54b66948f4e9365e70906d9eda5c';
+      id_Taxo = '62559'; 
+      id_EoL = '1179573';
+      id_AnAge = taxon; 
+      id_MSW3 = '13001898';
+       
+    case 'Mystromys_albicaudatus'
+      id_CoL = '5e75183bc5d98e04c6fd26eb29e5219f';
+      id_Taxo = '62552'; 
+      id_EoL = '1179534';
+      id_AnAge = taxon; 
+      id_MSW3 = '13000113';
        
     case 'Arvicanthis_niloticus'
       id_CoL = '4d1ed15483c94551e0778524e5c884d5';
