@@ -1,6 +1,8 @@
+Micaelamys
 Mus
 Rattus
 Apodemus
+Chiropodomys
 Hydromys
 Notomys
 Arvicanthis
@@ -8,3 +10,4 @@ Lemniscomys
 Rhabdomys
 Pseudomys
 Otomys
+Praomys

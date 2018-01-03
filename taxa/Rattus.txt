@@ -1,2 +1,3 @@
 Rattus_norvegicus
 Rattus_lutreolus
+Rattus_fuscipes
