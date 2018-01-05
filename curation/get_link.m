@@ -7331,7 +7331,7 @@ function [links info] = get_link(taxon, test)
   elseif exist('test', 'var') && test == true % test links 
     for i= 1:n_links 
       try 
-        urlread(links{i,1});
+        
       catch
         fprintf(['warning from get_link for ', taxon, ': ', links{i,2}, ' for ', links{i,1}, 'does not exist\n']);
         info(i) = 0;
