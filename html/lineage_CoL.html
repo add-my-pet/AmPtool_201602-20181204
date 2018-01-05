@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>lineage_CoL</h1><!--introduction--><p>gets lineage of a species in Catolog of Life</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>[lineage rank id_CoL] = <a href="lineage_CoL"><b>lineage_CoL</b></a>(my_pet)</p><h2 id="4">Description</h2><p>Gets lineage of species from the Catolog of Life: kingdom, phylum, class, order, family, genus, species. To this end, the identifier for the accepted taxon name in CoL is obtained with <a href="get_id_CoL.html"><b>get_id_CoL</b></a></p><p>Input:</p><div><ul><li>my_pet: character string with name of an entry</li></ul></div><p>Output:</p><div><ul><li>lineage: (n,1) cell array with lineage</li><li>rank: (n,1) cell array with ranks</li><li>id_CoL: identifier for species in CoL</li></ul></div><h2 id="5">Remarks</h2><p><a href="lineage.html"><b>lineage</b></a> gives a similar result for AmP entries</p><h2 id="6">Example of use</h2><p>lineage_CoL('Daphnia_magna')</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>lineage_CoL</h1><!--introduction--><p>gets lineage of a species in Catolog of Life</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>[lineage rank id_CoL] = <a href="../lineage_CoL.m"><b>lineage_CoL</b></a>(my_pet)</p><h2 id="4">Description</h2><p>Gets lineage of species from the Catolog of Life: kingdom, phylum, class, order, family, genus, species. To this end, the identifier for the accepted taxon name in CoL is obtained with <a href="get_id_CoL.html"><b>get_id_CoL</b></a></p><p>Input:</p><div><ul><li>my_pet: character string with name of an entry</li></ul></div><p>Output:</p><div><ul><li>lineage: (n,1) cell array with lineage</li><li>rank: (n,1) cell array with ranks</li><li>id_CoL: identifier for species in CoL</li></ul></div><h2 id="5">Remarks</h2><p><a href="lineage.html"><b>lineage</b></a> gives a similar result for AmP entries</p><h2 id="6">Example of use</h2><p>lineage_CoL('Daphnia_magna')</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% lineage_CoL
 % gets lineage of a species in Catolog of Life
@@ -76,7 +76,7 @@ function [lineage rank id_CoL] = lineage_CoL(my_pet)
 % created 2018/01/05 by Bas Kooijman
 
 %% Syntax
-% [lineage rank id_CoL] = <lineage_CoL *lineage_CoL*>(my_pet)
+% [lineage rank id_CoL] = <../lineage_CoL.m *lineage_CoL*>(my_pet)
 
 %% Description
 % Gets lineage of species from the Catolog of Life: kingdom, phylum, class, order, family, genus, species. 
@@ -100,7 +100,7 @@ function [lineage rank id_CoL] = lineage_CoL(my_pet)
 
 id_CoL = get_id_CoL(my_pet);
 if isempty(id_CoL)
-  lineage = {mypet};
+  lineage = {mypet}; rank = {'Species'};
   return
 end
 

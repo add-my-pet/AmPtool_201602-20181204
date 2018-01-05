@@ -6,7 +6,7 @@ function [lineage rank id_CoL] = lineage_CoL(my_pet)
 % created 2018/01/05 by Bas Kooijman
 
 %% Syntax
-% [lineage rank id_CoL] = <lineage_CoL *lineage_CoL*>(my_pet)
+% [lineage rank id_CoL] = <../lineage_CoL.m *lineage_CoL*>(my_pet)
 
 %% Description
 % Gets lineage of species from the Catolog of Life: kingdom, phylum, class, order, family, genus, species. 

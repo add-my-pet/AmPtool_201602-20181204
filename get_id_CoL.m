@@ -6,7 +6,7 @@ function id_CoL = get_id_CoL(my_pet)
 % created 2018/01/05 by Bas Kooijman
 
 %% Syntax
-% id_CoL = <get_id_CoL *get_id_CoL*>(my_pet)
+% id_CoL = <../get_id_CoL.m *get_id_CoL*>(my_pet)
 
 %% Description
 % Gets identifier for an accepted species name in the Catolog of Life

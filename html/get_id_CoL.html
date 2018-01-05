@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>get_id_CoL</h1><!--introduction--><p>gets id of species name in Catolog of Life</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>id_CoL = <a href="get_id_CoL"><b>get_id_CoL</b></a>(my_pet)</p><h2 id="4">Description</h2><p>Gets identifier for an accepted species name in the Catolog of Life</p><p>Input:</p><div><ul><li>my_pet: character string with name of an entry</li></ul></div><p>Output:</p><div><ul><li>id_CoL: character string of id in CoL</li></ul></div><h2 id="5">Remarks</h2><p>Outputs empty string if identification was not successful</p><h2 id="6">Example of use</h2><p>id_CoL = get_id_CoL('Daphnia_magna')</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>get_id_CoL</h1><!--introduction--><p>gets id of species name in Catolog of Life</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>id_CoL = <a href="../get_id_CoL.m"><b>get_id_CoL</b></a>(my_pet)</p><h2 id="4">Description</h2><p>Gets identifier for an accepted species name in the Catolog of Life</p><p>Input:</p><div><ul><li>my_pet: character string with name of an entry</li></ul></div><p>Output:</p><div><ul><li>id_CoL: character string of id in CoL</li></ul></div><h2 id="5">Remarks</h2><p>Outputs empty string if identification was not successful</p><h2 id="6">Example of use</h2><p>id_CoL = get_id_CoL('Daphnia_magna')</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% get_id_CoL
 % gets id of species name in Catolog of Life
@@ -76,7 +76,7 @@ function id_CoL = get_id_CoL(my_pet)
 % created 2018/01/05 by Bas Kooijman
 
 %% Syntax
-% id_CoL = <get_id_CoL *get_id_CoL*>(my_pet)
+% id_CoL = <../get_id_CoL.m *get_id_CoL*>(my_pet)
 
 %% Description
 % Gets identifier for an accepted species name in the Catolog of Life
@@ -99,10 +99,10 @@ my_pet = strrep(my_pet, '_', '+');
 url = urlread(['http://webservice.catalogueoflife.org/col/webservice?name=', my_pet]);
 i_0 = 10 + strfind(url,'<result>'); i_1 = strfind(url,'</result>') - 1; 
 n_res = length(i_0); % number of returned results
+id_CoL = [];         % initiate identifier
 
 if n_res == 0
-  id_CoL = []; 
-  fprintf('Species not found in CoL\n');
+  fprintf('Warning from get_id_CoL: Species not found in CoL\n');
   return
 end
 
@@ -115,6 +115,11 @@ for i = 1:n_res % scan results
     id_CoL = res_i(j_0:j_1);
     break
   end
+end
+
+if isempty(id_CoL)
+  fprintf('Warning from get_id_CoL: Species not accepted in CoL\n');
+  return
 end
 
 ##### SOURCE END #####
