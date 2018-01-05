@@ -29,10 +29,10 @@ my_pet = strrep(my_pet, '_', '+');
 url = urlread(['http://webservice.catalogueoflife.org/col/webservice?name=', my_pet]);
 i_0 = 10 + strfind(url,'<result>'); i_1 = strfind(url,'</result>') - 1; 
 n_res = length(i_0); % number of returned results
+id_CoL = [];         % initiate identifier
 
 if n_res == 0
-  id_CoL = []; 
-  fprintf('Species not found in CoL\n');
+  fprintf('Warning from get_id_CoL: Species not found in CoL\n');
   return
 end
 
@@ -45,4 +45,9 @@ for i = 1:n_res % scan results
     id_CoL = res_i(j_0:j_1);
     break
   end
+end
+
+if isempty(id_CoL)
+  fprintf('Warning from get_id_CoL: Species not accepted in CoL\n');
+  return
 end
