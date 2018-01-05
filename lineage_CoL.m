@@ -9,7 +9,8 @@ function [lineage rank id_CoL] = lineage_CoL(my_pet)
 % [lineage rank id_CoL] = <lineage_CoL *lineage_CoL*>(my_pet)
 
 %% Description
-% Gets lineage of species from the Catolog of Life: kingdom, phylum, class, order, family, genus, species
+% Gets lineage of species from the Catolog of Life: kingdom, phylum, class, order, family, genus, species. 
+% To this end, the identifier for the accepted taxon name in CoL is obtained with <get_id_CoL.html *get_id_CoL*> 
 %
 % Input:
 %
