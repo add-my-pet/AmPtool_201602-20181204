@@ -13,7 +13,7 @@ function ol = list_taxa (taxon)
 %
 % Output:
 % 
-% * taxon: optional chracterstrin with name of taxon (default 'Animalia')
+% * taxon: optional chracterstring with name of taxon (default 'Animalia')
 %
 % Output:
 % 
