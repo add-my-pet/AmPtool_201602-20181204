@@ -9,7 +9,7 @@ function get_data_types
 % <../get_data_types.m *get_data_types*>
 
 %% Description
-% sets globals data_types_0 data_types_1 for use in check_data. 
+% sets globals data_types_0 data_types_1 for use in check_data by reading from DEBwiki. 
 
 %% Remarks
 % re-check this function after non-additive edits of DEBwiki pages for zero- and uni-variate data

@@ -24,8 +24,8 @@ function [taxa, model, exact] = select_data (data, model)
 
 %% Remarks
 % sequence of data is ignored; zero- and uni-variate data can be mixed
-% all data elements must be typified names, as mentioned in DEBwiki; all
-% model names must be typified model
+% all data elements must be typified names, as mentioned in DEBwiki; if data is an empty cell string, entries are only selected on the basis of model
+% all model names must be typified model
 
 %% Example of use
 % select_data({'ab'; 'am'; 'Ww-N'})

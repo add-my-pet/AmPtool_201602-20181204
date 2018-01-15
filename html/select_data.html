@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>select_data (data, model)</h1><!--introduction--><p>selects taxa with a particular combination of data and models</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2018/01/12 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="2">created 2018/01/12 by Bas Kooijman</h2><h2 id="3">Syntax</h2><p>[taxa, models, exact] = <a href="../select_data.m"><b>select_data</b></a> (data, model)</p><h2 id="4">Description</h2><p>selects taxa with a particular combination of data and models</p><p>Input:</p><div><ul><li>data: cell string with combination of data</li><li>model: optional cell string with models (default: all)</li></ul></div><p>Output:</p><div><ul><li>taxa: cell string with names of taxon</li><li>model: cell string with names of corresponding models</li><li>exact: vector of booleans if the matxh is exact, meaning that that entry has no more data</li></ul></div><h2 id="5">Remarks</h2><p>sequence of data is ignored; zero- and uni-variate data can be mixed all data elements must be typified names, as mentioned in DEBwiki; all model names must be typified model</p><h2 id="6">Example of use</h2><p>select_data({'ab'; 'am'; 'Ww-N'})</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>select_data (data, model)</h1><!--introduction--><p>selects taxa with a particular combination of data and models</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#2">created 2018/01/12 by Bas Kooijman</a></li><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="2">created 2018/01/12 by Bas Kooijman</h2><h2 id="3">Syntax</h2><p>[taxa, models, exact] = <a href="../select_data.m"><b>select_data</b></a> (data, model)</p><h2 id="4">Description</h2><p>selects taxa with a particular combination of data and models</p><p>Input:</p><div><ul><li>data: cell string with combination of data</li><li>model: optional cell string with models (default: all)</li></ul></div><p>Output:</p><div><ul><li>taxa: cell string with names of taxon</li><li>model: cell string with names of corresponding models</li><li>exact: vector of booleans if the matxh is exact, meaning that that entry has no more data</li></ul></div><h2 id="5">Remarks</h2><p>sequence of data is ignored; zero- and uni-variate data can be mixed all data elements must be typified names, as mentioned in DEBwiki; if data is an empty cell string, entries are only selected on the basis of model all model names must be typified model</p><h2 id="6">Example of use</h2><p>select_data({'ab'; 'am'; 'Ww-N'})</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% select_data (data, model)
 % selects taxa with a particular combination of data and models
@@ -94,8 +94,8 @@ function [taxa, model, exact] = select_data (data, model)
 
 %% Remarks
 % sequence of data is ignored; zero- and uni-variate data can be mixed
-% all data elements must be typified names, as mentioned in DEBwiki; all
-% model names must be typified model
+% all data elements must be typified names, as mentioned in DEBwiki; if data is an empty cell string, entries are only selected on the basis of model
+% all model names must be typified model
 
 %% Example of use
 % select_data({'ab'; 'am'; 'Ww-N'})
