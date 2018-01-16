@@ -53,6 +53,8 @@ elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'}, data)
    COMPLETE = 1.5;
 elseif STRCMP({'Li'; 'Wdi'; 'L-Wd'; 'L-WC'; 'L-WN'; 'Wd-JO'; 'Wd-JN'}, data)
    COMPLETE = 1.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Wwb'; 'Wwi'; 'Ri'}, data)
+   COMPLETE = 1.5;%
 elseif STRCMP({'ah'; 'ab'; 'aj'; 'ap'; 'am'; 'Lh'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wwi'; 'Ri'}, data)
    COMPLETE = 1.5;
 elseif STRCMP({'ab'; 'as'; 'aj'; 'ap'; 'am'; 'Lb'; 'Ls'; 'Lj'; 'Lp'; 'Li'; 'Wwi'; 'Ri'; 'L-Ww'}, data)
@@ -67,8 +69,12 @@ elseif STRCMP({'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Ww_t'; 'Wwi'; 'R_L'}, data)
    COMPLETE = 1.7;
 elseif STRCMP({'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 'L-Ww'; 'L-N'; 'Ww-JO'}, data)
    COMPLETE = 1.7;
+elseif STRCMP({'tg'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'}, data)
+   COMPLETE = 1.7;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'}, data)
    COMPLETE = 1.7;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'rB'; 'Ri'}, data)
+   COMPLETE = 1.8;%
 elseif STRCMP({'ab'; 'am'; 'Lb'; 'L_t'; 'Wdb'; 'Wd_t'; 'Ni'; 't-L'}, data)
    COMPLETE = 1.8;
 elseif STRCMP({'ah'; 'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'L_t'; 'Wwp'; 'Wwi'; 'Ri'}, data)
@@ -95,6 +101,10 @@ elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'L_t'; 'Li'; 'Wwp'; 'Wwi'; 'Ri'}, d
    COMPLETE = 2.0;
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Li'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'}, data)
    COMPLETE = 2.0;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'}, data)
+   COMPLETE = 2.1;%
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 'pL'}, data)
+   COMPLETE = 2.1;
 elseif STRCMP({'ap';'am';'Lb';'Lp';'Li';'Ri'; 'L-Ww'; 't-L'}, data)
    COMPLETE = 2.1;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wdb'; 'Wdp'; 'Wdi'; 'Ni'; 'L-Ww'}, data)
@@ -113,14 +123,24 @@ elseif STRCMP({'aj'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 'GSI'; 'L-Ww'; 'Ww-JO
    COMPLETE = 2.2;
 elseif STRCMP({'ab'; 'aj_T'; 'ap'; 'am'; 'Lj'; 'Lp'; 'Li'; 'Wwb'; 'Wwj'; 'Wwp'; 'Wwi'; 'Ri'}, data)
    COMPLETE = 2.2;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lx'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'}, data)
+   COMPLETE = 2.2;%
 elseif STRCMP({'ab'; 'am'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'GSI'}, data)
    COMPLETE = 2.2;
 elseif STRCMP({'ah'; 'ab'; 'ap'; 'am'; 'Lh'; 'Lp'; 'Li'; 'Wwi'; 'Ri'}, data)
    COMPLETE = 2.2;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'L_t'; 'Ww0'; 'Wwb'; 'Wwp'; 'Wwi'; 'R_L'}, data)
    COMPLETE = 2.2;
-elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Li'; 'Ww0'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'}, data)
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'}, data)
    COMPLETE = 2.3;%
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'}, data)
+   COMPLETE = 2.3;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lx'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 'JLi'}, data)
+   COMPLETE = 2.3;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'}, data)
+   COMPLETE = 2.3;
+elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Li'; 'Ww0'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'}, data)
+   COMPLETE = 2.3;
 elseif STRCMP({'ab'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwi'; 'Ri'; 't-L'}, data)
    COMPLETE = 2.3;
 elseif STRCMP({'am'; 'Lp'; 'Li'; 'Wwb'; 'GSI'; 't-L';'L-Ww'}, data)
@@ -221,8 +241,84 @@ elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Li'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'; 't-Ww'},
    COMPLETE = 2.5;
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Ww'}, data)
    COMPLETE = 2.5;
-elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Lb'; 'Li' ; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'}, data)
    COMPLETE = 2.5;%
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L'; 'L-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L'; 'L-Ww'; 'L-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 'JXi'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 'JXi'; 't-L'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp';  'Wwi'; 'Ri'; 't-Ww'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 'JLi'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am';'Wwb'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-Wwe'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'; 'L-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Li'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'; 'L-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 'JXi'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 'JXi'; 't-L'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 'pL'; 't-Ww'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L'}, data)
+   COMPLETE = 2.5;
+elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Lb'; 'Li' ; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Ww'}, data)
+   COMPLETE = 2.5;
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww'}, data)
    COMPLETE = 2.5;
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'LR'; 'Li'; 'Wwb'; 'WwR'; 'Ri'; 't-Ww'}, data)
@@ -699,8 +795,18 @@ elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ww0'; 'Wwb'; 'Wwp'; 'Wwi'; '
    COMPLETE = 2.6;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 'L-Ww'; 'L-N'}, data)
    COMPLETE = 2.6;
-elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'; 't-Ww_f'; 't-T'}, data)
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Ww_f'}, data)
    COMPLETE = 2.6;%
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww_f'}, data)
+   COMPLETE = 2.6;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-Wwe'}, data)
+   COMPLETE = 2.6;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwi'; 'Ri'; 't-L_f'}, data)
+   COMPLETE = 2.6;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'pXi'; 'pAi'; 'pL'; 't-L'; 'Ww-JO'}, data)
+   COMPLETE = 2.6;
+elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'; 't-Ww_f'; 't-T'}, data)
+   COMPLETE = 2.6;
 elseif STRCMP({'ab'; 'aj'; 'ap'; 'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wwb'; 'Wwj'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'; 'pX-pG'}, data)
    COMPLETE = 2.6;
 elseif STRCMP({'ap'; 'am'; 'Lb'; 'Li'; 'Ww_t';'Wwp'; 'Wwi'; 'Ri'; 't-Ww_f'}, data)
@@ -730,6 +836,8 @@ elseif STRCMP({'ab_T'; 'ap'; 'am'; 'Lp'; 'Li'; 'Wwb'; 'Ww_L'; 'Wwp'; 'Wwi'; 'Ri'
 elseif STRCMP({'ah_T'; 'ap'; 'am'; 'Lh'; 'Lp'; 'Li'; 'R_L'; 'GSI'; 't-L_f'; 't-Ww'; 'L-Ww'; 'T-ah'}, data)
    COMPLETE = 2.6;
 elseif STRCMP({'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Ri'; 't-L_f'; 'L-Ww'}, data)
+   COMPLETE = 2.6;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 'pXi'; 't-L'; 't-Ww'}, data)
    COMPLETE = 2.6;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 't-L_f'; 'L-Ww'}, data)
    COMPLETE = 2.6;
@@ -787,18 +895,32 @@ elseif STRCMP({'am'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L_f'}, data)
    COMPLETE = 2.6;
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Li'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'; 't-Ww_f'}, data)
    COMPLETE = 2.6;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx';  'Wwi'; 'Ri'; 'pXi'; 't-Ww'}, data)
+   COMPLETE = 2.6;%
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 'pXi'; 't-Ww_f'}, data)
+   COMPLETE = 2.6;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L'; 't-Ww_f'}, data)
    COMPLETE = 2.6;
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww_f'}, data)
    COMPLETE = 2.6;
 elseif STRCMP({'ab'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww_f'}, data)
    COMPLETE = 2.6;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L_f'; 't-Ww_f'}, data)
+   COMPLETE = 2.6;%
+elseif STRCMP({'ab'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww_f'}, data)
+   COMPLETE = 2.6;
 elseif STRCMP({'ap'; 'am'; 'Lb'; 'Li'; 'Wwi'; 'Ri'; 't-L_f'; 't-Ww_f'}, data)
    COMPLETE = 2.7;
 elseif STRCMP({'ab'; 'aj'; 'ap'; 'am'; 'Lj'; 'Li'; 'Wwb'; 'Wwj'; 'Wwi'; 'Ri'; 't-L_f'}, data)
    COMPLETE = 2.7;
-elseif STRCMP({'ab'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww'; 't-Wd'; 't-E'; 't-JO'}, data)
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 'pXi'; 't-L'}, data)
    COMPLETE = 2.7;%
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L_f'}, data)
+   COMPLETE = 2.7;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww'; 't-Wwe'; 't-Le'}, data)
+   COMPLETE = 2.7;
+elseif STRCMP({'ab'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww'; 't-Wd'; 't-E'; 't-JO'}, data)
+   COMPLETE = 2.7;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'; 'L-Ww_f'; 'L-N'; 'T-JO_f'; 'T-ab'}, data)
    COMPLETE = 2.7;
 elseif STRCMP({'ab'; 'aj'; 'ap'; 'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wwb'; 'Wwj'; 'Wwp'; 'Wwi'; 'Ri'; 't-Le'; 't-L'; 'L-N'}, data)
@@ -855,6 +977,12 @@ elseif STRCMP({'aj'; 'ap'; 'am'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L_f'}
    COMPLETE = 2.7;
 elseif STRCMP({'am'; 'Lp'; 'Li'; 'Wwb'; 't-L'; 'L-Ww'; 'L-N'}, data)
    COMPLETE = 2.7;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-Wwe'; 't-Ww'}, data)
+   COMPLETE = 2.7;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww'; 't-Wwe'}, data)
+   COMPLETE = 2.7;%
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww_f'}, data)
+   COMPLETE = 2.7;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'; 't-Ww'; 'L-Ww'; 'X-JX'}, data)
    COMPLETE = 2.7;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L_f'; 't-S_f'}, data)
@@ -865,6 +993,20 @@ elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wdb'; 'Wdp'; 'Wdi'; 'Ri'; 'L
    COMPLETE = 2.7;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L_f'; 't-Ww_f'}, data)
    COMPLETE = 2.7;
+elseif STRCMP({'ab'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 'pL'; 't-Ww'; 'Ww-JO'}, data)
+   COMPLETE = 2.8;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L'; 't-Le'; 't-Ww'; 't-Wwe'}, data)
+   COMPLETE = 2.8;%
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Ww'; 't-Wwe'}, data)
+   COMPLETE = 2.8;
+elseif STRCMP({'ab'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww'; 'Ww-JO'}, data)
+   COMPLETE = 2.8;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 't-Le'; 't-Wwe'; 't-L'; 't-Ww_f'; 'Ww-JO'}, data)
+   COMPLETE = 2.8;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Wwe'; 't-Ww'}, data)
+   COMPLETE = 2.8;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww'; 't-Le'; 't-Wwe'; 'L-Ww'}, data)
+   COMPLETE = 2.8;
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww'; 't-pX'}, data)
    COMPLETE = 2.8;
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'; 't-Ww'; 't-pX'}, data)
@@ -903,8 +1045,12 @@ elseif STRCMP({'am'; 'WC0'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww_T'; 'T-ab'; 'T-ap';
    COMPLETE = 2.8;
 elseif STRCMP({'ap'; 'am'; 'Lp'; 'Li'; 'Wwb'; 'Ri'; 't-L'; 'L-Ww'; 'Wd-JO_T'}, data)
    COMPLETE = 2.8;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 'pL'; 't-L'; 't-Ww'; 'Ww-JO'}, data)
+   COMPLETE = 2.8;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lx'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 'pL'; 'JO_W'; 't-L'; 't-Ww'}, data)
+   COMPLETE = 2.8;
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Li'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'; 't-Ww'; 't-JX'}, data)
-   COMPLETE = 2.8;%
+   COMPLETE = 2.8;
 elseif STRCMP({'ab_T'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'; 't-Ww_T'; 'L-Ww'; 'Ww-p+_T'}, data)
    COMPLETE = 2.8;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lp'; 'Li'; 'Wwi'; 'Ri'; 't-L_f'}, data)
@@ -935,6 +1081,8 @@ elseif STRCMP({'ah'; 'ab'; 'ap'; 'am'; 'Lh'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Ww
    COMPLETE = 2.8;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ri'; 'L-Wd_f'; 'X-dL_L'; 'X-dWd_W'; 't-L_f'; 'Wd-JO_f'; 'X-JC_W'; 'X-JX_W'}, data)
    COMPLETE = 2.8;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Ww_f'; 't-L_f'; 't-Wwe'}, data)
+   COMPLETE = 2.9;%
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Wwi'; 'Ri'; 't-Ww'; 't-Wwe'; 't-JCe'}, data)
    COMPLETE = 2.9;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L_fT'; 't-R_T'; 't-S'}, data)
@@ -949,6 +1097,8 @@ elseif STRCMP({'ab'; 'ap'; 'am'; 'Li'; 'Ww0'; 'Wwb'; 'Wwx'; 'WwR'; 'Wwi'; 'Ri'; 
    COMPLETE = 2.9;
 elseif STRCMP({'ab'; 'ax'; 'aR'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww'; 't-Wwe'}, data)
    COMPLETE = 2.9;
+elseif STRCMP({'ab'; 'ax'; 'ap'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww_f'; 't-L_f'; 't-S'; 't-JO'; 't-JX'}, data)
+   COMPLETE = 3;%
 elseif STRCMP({'ah'; 'ab'; 'ap'; 'am'; 'Lh'; 'Lb'; 'Lp'; 'Li'; 'Wwh'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 'E0'; 'T-ab'; 't-L_T'; 't-Ww_T'; 'L-Ww'; 'L-F'}, data)
    COMPLETE = 3;
 elseif STRCMP({'ab_T'; 'ap'; 'am'; 'L_t'; 'Lp'; 'Li'; 'Wdb'; 'Wwb'; 'Wwi'; 'Ri'; 't-JOe_T'}, data)
@@ -1021,6 +1171,8 @@ elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'GSI'; '
    COMPLETE = 3.8;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww_f'; 't-R_f'}, data)
    COMPLETE = 3.8;
+elseif STRCMP({'tg'; 'ax'; 'ap'; 'Li'; 'Wwb'; 'Wwx';  'Wwi'; 'Ri'; 't-Wwe'; 't-Ww_f'; 't-S_f'}, data)
+   COMPLETE = 4.0;%
 elseif STRCMP({'ab'; 'aj'; 'ap'; 'am'; 'L0'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wd0'; 'Wwi'; 'Ri'; 'GSI'; 't-Le'; 't-L_fT'; 't-Ww_f'; 't-Wd_f'; 't-N'; 't-JO'; 't-S'}, data)
    COMPLETE = 4.5;
 elseif STRCMP({'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wdi'; 'Ri'; 't-L_f'; 't-JX_f'; 't-N_f'; 'L-Wd_f'; 'L-JO_T'; 'L-Wd'}, data)
