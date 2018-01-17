@@ -25,8 +25,7 @@ function [var units label] = read_stat(entries, varargin)
 %% Remarks
 % Make sure that allStat has been generated at the correct temperature; 
 % All parameters are at T_ref, the statistics at T or T_typical, see <write_allStat.html *write_allStat*>.
-% Print all to screen: printpar(select, read_allStat('Ww_i'))
-% Print selection to screen: tax = select; tax(read_allStat('N_i')<10)
+% Print all to screen: printpar(entries, read_stat(entries, 'Ww_i'))
 % Put core parameters in a structure with <read_pars.html *read_pars*>
 % Use <read_allStat.html *read_allStat*> to include all entries.
 
