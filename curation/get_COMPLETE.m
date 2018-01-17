@@ -34,6 +34,12 @@ function COMPLETE = get_COMPLETE(data, n)
 % 
 % * COMPLETE: scalar for COMPLETE
 
+%% Remarks
+% Before adding a data-combination, make sure that it not already exists, by running this function with NaN as result.
+% Before changing either a combination of a COMPLETE setting, first find out which entries are affected, 
+%   by running <../../html/select_data.html *select_data*>, with a copy-paste of the combination to be changed.
+% All changes should be carried through systematically.
+
 %% Example of use
 % get_COMPLETE('std', sort({'ab', 'am', 'Wwi'}))
 

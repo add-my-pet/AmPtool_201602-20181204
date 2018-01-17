@@ -3,7 +3,7 @@
 
 %%
 function [taxa, model, exact] = select_data (data, model)
-%% created 2018/01/12 by Bas Kooijman
+% created 2018/01/12 by Bas Kooijman
 
 %% Syntax
 % [taxa, models, exact] = <../select_data.m *select_data*> (data, model)
