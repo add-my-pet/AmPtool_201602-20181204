@@ -12,7 +12,12 @@ function get_data_types
 % sets globals data_types_0 data_types_1 for use in check_data by reading from DEBwiki. 
 
 %% Remarks
-% re-check this function after non-additive edits of DEBwiki pages for zero- and uni-variate data
+% Re-check this function after edits of DEBwiki pages for zero- and uni-variate data:
+%
+% * http://www.debtheory.org/wiki/index.php?title=Zero-variate_data
+% * http://www.debtheory.org/wiki/index.php?title=Univariate_data
+%
+% Since the Lisbon server is slow, this function assigns to globals, rather than explicit output
 
 %% Example of use
 % get_data_types

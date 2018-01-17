@@ -144,54 +144,60 @@ fprintf(fid_about, '    </div>\n\n');
 
 fprintf(fid_about, '    <div class="sidelement2">\n');
 fprintf(fid_about, '      <img src="img/about/pie_model.png" width="350px"> \n');
-fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_blank">variety of related models</a> captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.\n');
-fprintf(fid_about, '        </div>\n');
-fprintf(fid_about, '      </div>\n\n');
+fprintf(fid_about, '      <div class = "caption">   \n');
+fprintf(fid_about, '        A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_blank">variety of related models</a> captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.\n');
+fprintf(fid_about, '      </div>\n');
+fprintf(fid_about, '    </div>\n\n');
 
-fprintf(fid_about, '      <H2 class="clear"> Data completeness and mean relative errors</H2>\n\n');  
+fprintf(fid_about, '    <h2 class="clear"></h2>\n');
+fprintf(fid_about, '    At 2018/01/01, when the collection had 1000 entries, there were \n');
+fprintf(fid_about, '    112 <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" TARGET="_blank">zero-variate data types</a>, and \n');
+fprintf(fid_about, '    153 <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" TARGET="_blank">univariates data types</a>, in \n');
+fprintf(fid_about, '    570 combinations, written by 125 <a href = "authors.html">authors</a>.\n\n');
 
-fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about, '        <img src="img/about/COMPLETE.png" width="350px">\n');
-fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_blank">data completness</a>.\n');
-fprintf(fid_about, '        </div>\n');
-fprintf(fid_about, '      </div>\n\n');
+fprintf(fid_about, '    <H2 class="clear"> Data completeness and mean relative errors</H2>\n\n');  
 
-fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about, '        <img src="img/about/MRE.png" width="350px">\n');
-fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          Survivor functions of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE) and Symmetric Mean Squared Error (SMSE)</a>.\n');
-fprintf(fid_about, '        </div>\n');
-fprintf(fid_about, '      </div>\n\n');
+fprintf(fid_about, '    <div class="sidelement2">\n');
+fprintf(fid_about, '      <img src="img/about/COMPLETE.png" width="350px">\n');
+fprintf(fid_about, '      <div class = "caption">   \n');
+fprintf(fid_about, '        Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_blank">data completness</a>.\n');
+fprintf(fid_about, '      </div>\n');
+fprintf(fid_about, '    </div>\n\n');
 
-fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about, '        <img src="img/about/COMPLETE_MRE.png" width="350px">\n');
-fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          The relationship between mean relative error and data completeness. \n');
-fprintf(fid_about, '        </div>\n');
-fprintf(fid_about, '      </div>\n\n');
+fprintf(fid_about, '    <div class="sidelement2">\n');
+fprintf(fid_about, '      <img src="img/about/MRE.png" width="350px">\n');
+fprintf(fid_about, '      <div class = "caption">   \n');
+fprintf(fid_about, '        Survivor functions of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE) and Symmetric Mean Squared Error (SMSE)</a>.\n');
+fprintf(fid_about, '      </div>\n');
+fprintf(fid_about, '    </div>\n\n');
 
-fprintf(fid_about, '      <div class="sidelement2">\n');
-fprintf(fid_about, '        <img src="img/about/MRE_SMSE.png" width="350px">\n');
-fprintf(fid_about, '        <div class = "caption">\n');
-fprintf(fid_about, '          The relationship between <a href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" TARGET="_blanck">symmetric mean squared error (SMSE)</a> and mean relative error. \n');
-fprintf(fid_about, '        </div>\n');
-fprintf(fid_about, '      </div>\n\n');
+fprintf(fid_about, '    <div class="sidelement2">\n');
+fprintf(fid_about, '      <img src="img/about/COMPLETE_MRE.png" width="350px">\n');
+fprintf(fid_about, '      <div class = "caption">   \n');
+fprintf(fid_about, '        The relationship between mean relative error and data completeness. \n');
+fprintf(fid_about, '      </div>\n');
+fprintf(fid_about, '    </div>\n\n');
+
+fprintf(fid_about, '    <div class="sidelement2">\n');
+fprintf(fid_about, '      <img src="img/about/MRE_SMSE.png" width="350px">\n');
+fprintf(fid_about, '      <div class = "caption">\n');
+fprintf(fid_about, '        The relationship between <a href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" TARGET="_blanck">symmetric mean squared error (SMSE)</a> and mean relative error. \n');
+fprintf(fid_about, '      </div>\n');
+fprintf(fid_about, '    </div>\n\n');
         
-fprintf(fid_about, '      <H2 id="disclaimer" class = "clear"> Disclaimer</H2>\n\n');    
+fprintf(fid_about, '    <H2 id="disclaimer" class = "clear"> Disclaimer</H2>\n\n');    
 
-fprintf(fid_about, '      Add-my-pet is optimized for learning, training and research.\n');
-fprintf(fid_about, '      Some of the text on this website might be simplified to improve reading and basic understanding.\n');
-fprintf(fid_about, '      Files, references, and code are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.\n');
-fprintf(fid_about, '      <p>\n');
-fprintf(fid_about, '      The entries continue to change as the collection grows for several reasons: \n');
-fprintf(fid_about, '      errors are spotted and corrected; more data is included; assumptions about data quality change; entries are split up by population; \n');
-fprintf(fid_about, '      our understanding of what are the best priors to use for particular taxa increases; algorithms for estimation are improved; the model changed. \n');
-fprintf(fid_about, '      <p>\n');
-fprintf(fid_about, '      Add-my-pet makes explicit a number of wide spread scientific problems such as: data quality, differences between experiments etc. \n');
-fprintf(fid_about, '      The resulting parameter estimates depend on a lot of assumptions concerning which data we choose to include and exclude as well as how the data is interpreted\n');
-fprintf(fid_about, '      (e.g. what we are willing to assume about the initial conditions of the organism.)\n\n');
+fprintf(fid_about, '    Add-my-pet is optimized for learning, training and research.\n');
+fprintf(fid_about, '    Some of the text on this website might be simplified to improve reading and basic understanding.\n');
+fprintf(fid_about, '    Files, references, and code are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.\n');
+fprintf(fid_about, '    <p>\n');
+fprintf(fid_about, '    The entries continue to change as the collection grows for several reasons: \n');
+fprintf(fid_about, '    errors are spotted and corrected; more data is included; assumptions about data quality change; entries are split up by population; \n');
+fprintf(fid_about, '    our understanding of what are the best priors to use for particular taxa increases; algorithms for estimation are improved; the model changed. \n');
+fprintf(fid_about, '    <p>\n');
+fprintf(fid_about, '    Add-my-pet makes explicit a number of wide spread scientific problems such as: data quality, differences between experiments etc. \n');
+fprintf(fid_about, '    The resulting parameter estimates depend on a lot of assumptions concerning which data we choose to include and exclude as well as how the data is interpreted\n');
+fprintf(fid_about, '    (e.g. what we are willing to assume about the initial conditions of the organism.)\n\n');
 
 fprintf(fid_about, '    <!--------------------------------------------------------------->\n');
 fprintf(fid_about, '    <!--   This div closes the content box                         -->\n');

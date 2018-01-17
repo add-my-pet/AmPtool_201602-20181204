@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>get_data_types</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-01-07"><meta name="DC.source" content="get_data_types.m"><style type="text/css">
+      --><title>get_data_types</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-01-17"><meta name="DC.source" content="get_data_types.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>get_data_types</h1><!--introduction--><p>copies data types from DEBwiki pages to globals data_types_0 data_types_1</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../get_data_types.m"><b>get_data_types</b></a></p><h2 id="4">Description</h2><p>sets globals data_types_0 data_types_1 for use in check_data.</p><h2 id="5">Remarks</h2><p>re-check this function after non-additive edits of DEBwiki pages for zero- and uni-variate data</p><h2 id="6">Example of use</h2><p>get_data_types</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>get_data_types</h1><!--introduction--><p>copies data types from DEBwiki pages to globals data_types_0 data_types_1</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../get_data_types.m"><b>get_data_types</b></a></p><h2 id="4">Description</h2><p>sets globals data_types_0 data_types_1 for use in check_data by reading from DEBwiki.</p><h2 id="5">Remarks</h2><p>Re-check this function after edits of DEBwiki pages for zero- and uni-variate data:</p><div><ul><li><a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data">http://www.debtheory.org/wiki/index.php?title=Zero-variate_data</a></li><li><a href="http://www.debtheory.org/wiki/index.php?title=Univariate_data">http://www.debtheory.org/wiki/index.php?title=Univariate_data</a></li></ul></div><p>Since the Lisbon server is slow, this function assigns to globals, rather than explicit output</p><h2 id="6">Example of use</h2><p>get_data_types</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% get_data_types
 % copies data types from DEBwiki pages to globals data_types_0 data_types_1
@@ -79,10 +79,15 @@ function get_data_types
 % <../get_data_types.m *get_data_types*>
 
 %% Description
-% sets globals data_types_0 data_types_1 for use in check_data. 
+% sets globals data_types_0 data_types_1 for use in check_data by reading from DEBwiki. 
 
 %% Remarks
-% re-check this function after non-additive edits of DEBwiki pages for zero- and uni-variate data
+% Re-check this function after edits of DEBwiki pages for zero- and uni-variate data:
+%
+% * http://www.debtheory.org/wiki/index.php?title=Zero-variate_data
+% * http://www.debtheory.org/wiki/index.php?title=Univariate_data
+%
+% Since the Lisbon server is slow, this function assigns to globals, rather than explicit output
 
 %% Example of use
 % get_data_types
