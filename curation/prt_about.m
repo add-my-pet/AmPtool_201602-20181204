@@ -153,7 +153,7 @@ fprintf(fid_about, '    <h2 class="clear"></h2>\n');
 fprintf(fid_about, '    At 2018/01/01, when the collection had 1000 entries, there were \n');
 fprintf(fid_about, '    112 <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" TARGET="_blank">zero-variate data types</a>, and \n');
 fprintf(fid_about, '    153 <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" TARGET="_blank">univariate data types</a>, in \n');
-fprintf(fid_about, '    570 combinations, written by 125 <a href = "authors.html">authors</a>.\n\n');
+fprintf(fid_about, '    588 combinations, written by 125 <a href = "authors.html">authors</a>.\n\n');
 
 fprintf(fid_about, '    <H2 class="clear"> Data completeness and mean relative errors</H2>\n\n');  
 

@@ -104,19 +104,3 @@ function allStat = get_allStat(T, f)
   cd(WD)                   % goto original path
 end
 
-
-%% subfunction
-function author_date_mod = get_author_date_mod(metaData)
-% gets (n,2)-cell array with authors and dates of modifications.
-
-  author_date_mod = cell(0,2); % initiate (n,2) array with modication author(s), date(s)
-  [nm nr] = fieldnmnst_st(metaData); 
-  n = strfind(nm, 'author_mod');
-  for i = 1:nr
-    if ~isempty(n{i})
-      author = metaData.(nm{i});
-      date = {metaData.(strrep(nm{i}, 'author', 'date'))};
-      author_date_mod = [author_date_mod; {author(:)', date}];
-    end
-  end
-end

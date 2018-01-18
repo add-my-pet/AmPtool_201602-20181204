@@ -1,9 +1,9 @@
 %% check_collection
-% gives COMPLETE, and MRE 
+% checks entries in tree vs in dir entries
 
 %%
 function [missingFromCollection, missingFromList] = check_collection
-%% created 2016/02/21 by Bas Kooijman
+% created 2016/02/21 by Bas Kooijman
 
 %% Syntax
 % [info, missingSpecies] = <../check_collection.m *check_collection*>

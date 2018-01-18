@@ -51,8 +51,13 @@ for i = 1:length(dataFields)
   end
 end
 
+% the printing style prepares for copy-paste to get_COMPLETE
 fprintf('data_0: ');
-fprintf('%s, ', metaData.data_0{1:end-1}); fprintf('%s \n', metaData.data_0{end});
+if isempty(metaData.data_1)
+  fprintf('''%s''; ', metaData.data_0{1:end-1}); fprintf('''%s'' \n', metaData.data_0{end});
+else
+  fprintf('''%s''; ', metaData.data_0{1:end}); fprintf(' \n');
+end
 % check for correctness of data types
 diff = setdiff(metaData.data_0, data_types_0);
 if ~isempty(diff)
@@ -75,9 +80,14 @@ for i = 1:length(dataFields0)
   fprintf([dataFields0{i}, ', ', txtData.label.(dataFields0{i}), ' (',  bibkey, ')\n']);
 end
 
+% the printing style prepares for copy-paste to get_COMPLETE
 fprintf('\ndata_1: ');
 if isfield(metaData, 'data_1') && ~isempty(metaData.data_1)
-  fprintf('%s, ', metaData.data_1{1:end-1}); fprintf('%s \n', metaData.data_1{end});
+  if length(metaData.data_1)>1
+    fprintf('''%s''; ', metaData.data_1{1:end-1}); fprintf('''%s'' \n', metaData.data_1{end});
+  else
+    fprintf('''%s'' \n', metaData.data_1{end});
+  end
 else
   fprintf('There is no data_1 vector with univariate data information.\n');
 end
@@ -104,6 +114,7 @@ for i = 1:length(dataFields1)
   fprintf([dataFields1{i}, ', ', txtData.units.(dataFields1{i}){1},  ';', txtData.units.(dataFields1{i}){2},  ',   ', txtData.label.(dataFields1{i}){1},  ';', txtData.label.(dataFields1{i}){2}, '  (',  bibkey, ')\n']);
 end
 
+% if expected COMPLETE is NaN, the data combination is not in get_COMPLETE
 data = [metaData.data_0(:); metaData.data_1(:)]; COMPLETE = get_COMPLETE(data);
 fprintf(['\nCOMPLETE = ', num2str(metaData.COMPLETE), '; expected COMPLETE = ', num2str(COMPLETE),'\n\n'])
 cd(WD)                   % goto original path
