@@ -30,9 +30,10 @@ function CD = COMPLETE_data
 
 %% Remarks
 % Before adding a data-combination, make sure that it not already exists, by running this function with NaN as result.
-% Before changing either a combination of a COMPLETE setting, first find out which entries are affected, 
+% Before changing either a combination or a COMPLETE setting, first find out which entries are affected, 
 %   by running <../../html/select_data.html *select_data*>, with a copy-paste of the combination to be changed.
-% All changes should be carried through systematically.
+% All changes should be carried through systematically. Activate test for uniqueness at the end of this function after edits.
+% This function is called by get_COMPLETE.
 
 %% Example of use
 % cd = COMPLETE_data
@@ -175,7 +176,6 @@ CD = { ...
  2.5 {'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'} 
  2.5 {'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'; 't-Ww'} 
  2.5 {'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-L'} 
- 2.5 {'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-Ww'} 
  2.5 {'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww'} 
  2.5 {'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww'} 
  2.5 {'tg'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 'JXi'; 't-L'} 
@@ -318,7 +318,6 @@ CD = { ...
  2.5 {'ap'; 'am'; 'Lp'; 'Li';  'Wwb'; 'Wwi'; 'Ri'; 't-L'} 
  2.5 {'ab'; 'ap'; 'am'; 'Vb'; 'Vp'; 'Vi'; 'Ri'; 't-A'; 't-V'; 't-N'} 
  2.5 {'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Ni'; 't-L'; 't-Ww'} 
- 2.5 {'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'L_t'; 'Ni'; 'Wwb'; 'Wwi'; 't-L'; 't-Ww'} 
  2.5 {'ab'; 'ap'; 'am'; 'Lb'; 'Li'; 'Wwi'; 't-L'; 'L-Ww'; 'T-JO'} 
  2.5 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Wd'} 
  2.5 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww'} 
@@ -473,7 +472,6 @@ CD = { ...
  2.6 {'aj'; 'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wdb'; 'Wdj'; 'Wdp'; 'Wdi'; 'Ri'; 't-L'; 'T-ab'; 'T-aj'; 'T-ap'; 'T-am'} 
  2.6 {'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wdb'; 'Wdj'; 'Wdp'; 'Wdi'; 'Ri'; 't-L'; 'T-ab'; 'T-aj'; 'T-ap'; 'T-am'} 
  2.6 {'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Ri'; 't-L'; 'L-Wd'; 'T-ab'; 'T-aj'; 'T-ap'; 'T-am'} 
- 2.6 {'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wdb'; 'Wdj'; 'Wdp'; 'Wdi'; 'Ri'; 't-L'; 'T-ab'; 'T-aj'; 'T-ap'; 'T-am'} 
  2.6 {'ah'; 'ab'; 'ap'; 'am'; 'Lh'; 'Lp'; 'Li'; 'L_W'; 'Wwb'; 'Wwp'; 'Wwi'; 'R_L'; 't-L_f'} 
  2.6 {'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 't-L'; 'L-Ww'; 'L-N'; 'T-ab'} 
  2.6 {'am'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L_f'} 
@@ -544,7 +542,6 @@ CD = { ...
  2.8 {'ah'; 'am'; 'Lh'; 'L_t'; 'Lp'; 'Li'; 'Wwi'; 't-L'; 'L-Ww'; 'L-N'; 'Ww-N'} 
  2.8 {'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-WwVe'; 't-JOe'; 't-WwYe'}
  2.8 {'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww_f'} 
- 2.8 {'ah'; 'ab'; 'aj'; 'ap'; 'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L_f'; 'L-Ww'; 'Ww-N'} 
  2.8 {'ah'; 'ab'; 'aj'; 'ap'; 'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L_f'; 'L-Ww'; 'Ww-N'} 
  2.8 {'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 't-Le'; 't-L_f'; 't-Ww'; 'L-Ww'; 't-N'; 'T-ab'} 
  2.8 {'ab'; 'aj'; 'ap'; 'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L',; 'L-N'; 'L-Ww'} 
@@ -627,3 +624,14 @@ CD = { ...
  5.0 {'am'; 'Lb'; 'Li'; 'Wwb_f'; 'Wdb_f'; 'Wwp'; 'Wdi'; 'Ri'; 'T-ab'; 't-L_fT'; 't-N_fT'; 'Ww-JO'} 
  5.0 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'WC0'; 'Wdi'; 'Ri'; 't-L_f'; 't-JX_f'; 't-N_f'; 'L-Wd_f'; 'L-JO_T'; 'L-Wd'} 
 };
+
+if 0 % test for uniqueness; activate after edits
+  n = size(CD,1); x = 41; % line number of text "CD = { ..." in this function
+  for i = 1:n-1
+    for j = i+1:n
+      if STRCMP(CD{i,2},CD{j,2})
+        fprintf(['data at lines ', num2str(x + i), ' and ', num2str(x + j), ' are the same\n'])  
+      end
+    end
+  end
+end
