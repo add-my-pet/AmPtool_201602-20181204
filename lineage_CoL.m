@@ -30,7 +30,7 @@ function [lineage rank id_CoL] = lineage_CoL(my_pet)
 
 id_CoL = get_id_CoL(my_pet);
 if isempty(id_CoL)
-  lineage = {mypet}; rank = {'Species'};
+  lineage = {my_pet}; rank = {'Species'};
   return
 end
 

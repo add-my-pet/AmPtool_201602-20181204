@@ -61,7 +61,7 @@ function [members, taxon] = clade(taxa, level)
       % proceed with finding lineage in CoL
       list = lineage_CoL(taxa);
       n_list = length(list);
-      if n_list == 0 % also not present in CoL
+      if n_list == 0 || n_list == 1 % also not present in CoL
         return 
       end
       
