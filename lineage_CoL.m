@@ -28,7 +28,7 @@ function [lineage rank id_CoL] = lineage_CoL(my_pet)
 %% Example of use
 % lineage_CoL('Daphnia_magna')
 
-id_CoL = get_id_CoL(my_pet);
+[id_CoL my_pet] = get_id_CoL(my_pet);
 if isempty(id_CoL)
   lineage = {my_pet}; rank = {'Species'};
   return
