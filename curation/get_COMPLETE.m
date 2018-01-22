@@ -1,5 +1,5 @@
 %% get_COMPLETE
-% gets value fro COMPLETE, given data types
+% gets value for COMPLETE, given data types
 
 %%
 function COMPLETE = get_COMPLETE(data, n)
