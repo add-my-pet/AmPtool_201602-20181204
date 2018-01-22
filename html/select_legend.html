@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>select_legend</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-08-06"><meta name="DC.source" content="select_legend.m"><style type="text/css">
+      --><title>select_legend</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-01-22"><meta name="DC.source" content="select_legend.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -23,7 +23,7 @@ a:visited { color:#004aa0; text-decoration:none; }
 
 p { padding:0px; margin:0px 0px 20px; }
 img { padding:0px; margin:0px 0px 20px; border:none; }
-p img, pre img, tt img, li img { margin-bottom:0px; } 
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
 
 ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
 ul li { padding:0px; margin:0px 0px 7px 0px; }
@@ -38,11 +38,12 @@ ol li ul li { list-style:square; }
 
 .content { font-size:1.2em; line-height:140%; padding: 20px; }
 
-pre, tt, code { font-size:12px; }
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
 pre { margin:0px 0px 20px; }
-pre.error { color:red; }
 pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
 pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
 
 @media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
 
@@ -54,29 +55,40 @@ span.syscmd { color:#B28C00 }
 
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
 
-  </style></head><body><div class="content"><h1>select_legend</h1><!--introduction--><p>graphical user interface for setting legend</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p>legend = <a href="../select_legend.m"><b>select_legend</b></a> (legend)</p><h2>Description<a name="4"></a></h2><p>Select or edit a legend; the active item is indicated and can be changed with button #. Edit maker specs with button marker and taxon name with button taxon. Edit the sequence with buttons v and ^, insert with &gt;, remove with x. The sequence matters if taxa are not mutually exclusive and some markers will be plotted on top of each other.</p><p>Input:</p><div><ul><li>legend: optional (n,2)-matrix with markers (5-vector of cells) and taxa (string)</li></ul></div><p>Output:</p><div><ul><li>legend: (m,2)-matrix with markers (5-vector of cells) and taxa (string)</li></ul></div><h2>Remarks<a name="5"></a></h2><p>Press any key when done. Calls <a href="../../lib/misc/html/select_marker.html"><b>select_marker</b></a> to edit markers.</p><h2>Example of use<a name="6"></a></h2><p>legend = select_legend;</p><p class="footer"><br>
-      Published with MATLAB&reg; 7.14<br></p></div><!--
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>select_legend</h1><!--introduction--><p>graphical user interface for setting legend</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>legend = <a href="../select_legend.m"><b>select_legend</b></a> (legend, k)</p><h2 id="4">Description</h2><p>Select or edit a legend; the active item is indicated and can be changed with button #. Edit maker specs with button marker and taxon name with button taxon. Edit the sequence with buttons v and ^, insert with &gt;, remove with x. The sequence matters if taxa are not mutually exclusive and some markers will be plotted on top of each other. If second input is true, the setting of colors is ommitted; shstat then  sets colors according to a third variable</p><p>Input:</p><div><ul><li>legend: optional (n,2)-matrix with markers (5-vector of cells) and taxa (string)</li><li>k: boolean for ommiting color setting (default false)</li></ul></div><p>Output:</p><div><ul><li>legend: (m,2)-matrix with markers (5-vector of cells) and taxa (string)</li></ul></div><h2 id="5">Remarks</h2><p>Press any key when done. Calls <a href="../../lib/misc/html/select_marker.html"><b>select_marker</b></a> to edit markers.</p><h2 id="6">Example of use</h2><p>legend = select_legend;</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% select_legend
 % graphical user interface for setting legend
 
 %%
-function legend = select_legend(legend)
-% created 2016/02/28 by Bas Kooijman; modified 2016/03/08 by Dina Lika
+function legend = select_legend(legend, k)
+% created 2016/02/28 by Bas Kooijman; modified 2016/03/08 by Dina Lika, 2018/01/22 by Bas Kooijman
 
 %% Syntax
-% legend = <../select_legend.m *select_legend*> (legend)
+% legend = <../select_legend.m *select_legend*> (legend, k)
 
 %% Description
 % Select or edit a legend; the active item is indicated and can be changed with button #. 
 % Edit maker specs with button marker and taxon name with button taxon.
 % Edit the sequence with buttons v and ^, insert with >, remove with x. 
 % The sequence matters if taxa are not mutually exclusive and some markers will be plotted on top of each other.
+% If second input is true, the setting of colors is ommitted; shstat then  sets colors according to a third variable
 %
 % Input:
 %
 % * legend: optional (n,2)-matrix with markers (5-vector of cells) and taxa (string)
+% * k: boolean for ommiting color setting (default false)
 %
 % Output: 
 % 
@@ -91,14 +103,24 @@ function legend = select_legend(legend)
 
   global legend_local i_legend Hlegend
   
-  if ~exist('legend', 'var')
+  if ~exist('legend', 'var') && ~exist('k', 'var') || ~k
     legend_local = { ...
         {'v', 10, 2, [0 0 1], [0 0 1]}, 'Aves'; ...
         {'o', 10, 2, [1 0 0], [1 0 0]}, 'Chordata'; ...
         {'.', 10, 2, [0 0 0], [0 0 0]}, 'Animalia'; ...
         };
+    k = false;
+  elseif ~exist('legend', 'var') && k
+    legend_local = { ...
+        {'v', 10, 2}, 'Aves'; ...
+        {'o', 10, 2}, 'Chordata'; ...
+        {'.', 10, 2}, 'Animalia'; ...
+        };
   else
     legend_local = legend;
+    if ~exist('k', 'var')
+      k = false;
+    end
   end
 
   i_legend = size(legend_local,1); % default index of active item
@@ -158,7 +180,7 @@ end
     end
     function C = marker_Callback(source, eventdata) 
       global legend_local  i_legend Hlegend
-      legend_local(i_legend,1) = {select_marker(legend_local{i_legend,1})}; 
+      legend_local(i_legend,1) = {select_marker(legend_local{i_legend,1}, k)}; 
       close(Hlegend); Hlegend = shlegend(legend_local,[],[],'',i_legend);
     end
     function C = taxon_Callback(source, eventdata) 
