@@ -3,7 +3,7 @@
 
 %%
 function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfig)
-% created 2016/04/23 by Bas Kooijman; modified 2017/04/20, 2017/10/14
+% created 2016/04/23 by Bas Kooijman; modified 2017/04/20, 2017/10/14, 2018/01/22
 
 %% Syntax
 % [Hfig val entries missing] =  <../shstat.m *shstat*>(vars, legend, label_title, Hfig)
@@ -14,7 +14,9 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 % Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty and output val equals input vars.
 % In that case, read_allStat is bypassed and labels must be set by user afterwards, see mydata_shstat.
 %
-% If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}), or, if ledend is an (n,2)-cell array, n survival curves are plotted.
+% If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}). 
+% If legend is an (n,2)-cell array with color specs of survivor functions and medians, n survival curves are plotted.
+% If the marker specifications in the legend are cell strings of length 3, the number of variables must be 3 and the third one is used to set colors using the lava color scheme.
 %
 % Input:
 %
@@ -37,6 +39,9 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 % In the case that a taxon is included in another one, double plotting is suppressed from first-to-last column of selection matrix, and plotting is done for last-to-first column.
 % So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding.
 % If Animalia is in legend before Aves, no Aves-markers are shown.
+%
+% If the marker specs have length 3 and there are 3 variables, points with a larger value for the third variable will be plotted on top of the ones with a smaller value.
+% The third variable is then used to set the colors of the markers
 %
 % Set options with <shstat_options.html *shstat_options*> (such as logarithmic transformation of axes).
 % Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
@@ -261,18 +266,34 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
       Hleg = shlegend(legend);
       
     case 3
-      for j = 1:n_taxa % scan taxa
-        i = n_taxa - j + 1; % reverse sequence of plotting in case markers overlap
-        marker = legend{i,1}; T = marker{1}; MS = marker{2}; LW = marker{3}; MEC = marker{4}; MFC = marker{5};  
-        plot3(val_plot(sel(:,i)==1,1), val_plot(sel(:,i)==1,2), val_plot(sel(:,i)==1,3), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
+      if length(legend{1,1}) == 5 % all markers within a taxon are identical
+        for j = 1:n_taxa % scan taxa
+          i = n_taxa - j + 1; % reverse sequence of plotting in case markers overlap
+          marker = legend{i,1}; T = marker{1}; MS = marker{2}; LW = marker{3}; MEC = marker{4}; MFC = marker{5};  
+          plot3(val_plot(sel(:,i)==1,1), val_plot(sel(:,i)==1,2), val_plot(sel(:,i)==1,3), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', MFC, 'MarkerEdgeColor', MEC)
+        end
+      else % length(legend{1,1}) == 3, markers within a taxon differ in color, set by third variable
+        for j = 1:n_taxa % scan taxa
+          i = n_taxa - j + 1; % reverse sequence of plotting in case markers overlap
+          marker = legend{i,1}; T = marker{1}; MS = marker{2}; LW = marker{3};
+          v1 = val_plot(sel(:,i)==1,1); v2 = val_plot(sel(:,i)==1,2); v3 = val_plot(sel(:,i)==1,3); n_taxai = length(v1);
+          [v3, ind] = sort(v3); v1 = v1(ind); v2 = v2(ind); % sort according to v3 to handle overlapping marker plots within a taxon
+          range = [min(v3) 1.1 * max(v3)]; color = color_lava((v3 - range(1))/ (range(2) - range(1))); % set colors accoring to v3
+          for i = 1:n_taxai
+            plot3(v1(i), v2(i), v3(i), T, 'MarkerSize', MS, 'LineWidth', LW, 'MarkerFaceColor', color(i,:), 'MarkerEdgeColor', color(i,:))
+          end
+        end    
       end
       set(gca, 'FontSize', 15, 'Box', 'on')
       xlabel(label_x)  
       ylabel(label_y)
       zlabel(label_z)
-      
+  
       Hleg = shlegend(legend);
-
+      if length(legend{1,1}) == 3
+        %shcolor_lava(range); 
+      end
+      
   end
   
 end

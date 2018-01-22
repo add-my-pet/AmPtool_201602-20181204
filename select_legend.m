@@ -2,21 +2,23 @@
 % graphical user interface for setting legend
 
 %%
-function legend = select_legend(legend)
-% created 2016/02/28 by Bas Kooijman; modified 2016/03/08 by Dina Lika
+function legend = select_legend(legend, k)
+% created 2016/02/28 by Bas Kooijman; modified 2016/03/08 by Dina Lika, 2018/01/22 by Bas Kooijman
 
 %% Syntax
-% legend = <../select_legend.m *select_legend*> (legend)
+% legend = <../select_legend.m *select_legend*> (legend, k)
 
 %% Description
 % Select or edit a legend; the active item is indicated and can be changed with button #. 
 % Edit maker specs with button marker and taxon name with button taxon.
 % Edit the sequence with buttons v and ^, insert with >, remove with x. 
 % The sequence matters if taxa are not mutually exclusive and some markers will be plotted on top of each other.
+% If second input is true, the setting of colors is ommitted; shstat then  sets colors according to a third variable
 %
 % Input:
 %
 % * legend: optional (n,2)-matrix with markers (5-vector of cells) and taxa (string)
+% * k: boolean for ommiting color setting (default false)
 %
 % Output: 
 % 
@@ -31,14 +33,24 @@ function legend = select_legend(legend)
 
   global legend_local i_legend Hlegend
   
-  if ~exist('legend', 'var')
+  if ~exist('legend', 'var') && ~exist('k', 'var') || ~k
     legend_local = { ...
         {'v', 10, 2, [0 0 1], [0 0 1]}, 'Aves'; ...
         {'o', 10, 2, [1 0 0], [1 0 0]}, 'Chordata'; ...
         {'.', 10, 2, [0 0 0], [0 0 0]}, 'Animalia'; ...
         };
+    k = false;
+  elseif ~exist('legend', 'var') && k
+    legend_local = { ...
+        {'v', 10, 2}, 'Aves'; ...
+        {'o', 10, 2}, 'Chordata'; ...
+        {'.', 10, 2}, 'Animalia'; ...
+        };
   else
     legend_local = legend;
+    if ~exist('k', 'var')
+      k = false;
+    end
   end
 
   i_legend = size(legend_local,1); % default index of active item
@@ -98,7 +110,7 @@ end
     end
     function C = marker_Callback(source, eventdata) 
       global legend_local  i_legend Hlegend
-      legend_local(i_legend,1) = {select_marker(legend_local{i_legend,1})}; 
+      legend_local(i_legend,1) = {select_marker(legend_local{i_legend,1}, k)}; 
       close(Hlegend); Hlegend = shlegend(legend_local,[],[],'',i_legend);
     end
     function C = taxon_Callback(source, eventdata) 
