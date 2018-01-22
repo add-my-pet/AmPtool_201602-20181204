@@ -1,5 +1,2 @@
-Isopoda
-Amphipoda
-Mysida
-Euphausiacea
-Decapoda
+Peracarida
+Eucarida
