@@ -296,7 +296,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 
       Hleg = shlegend(legend);
       if length(legend{1,1}) == 3
-        %shcolor_lava(range); 
+        shcolor_lava(range); 
       end
       
   end
