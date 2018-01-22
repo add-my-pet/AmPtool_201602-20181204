@@ -39,8 +39,10 @@ end
 for i = 1:n_res % scan results
   res_i = url(i_0(i):i_1(i));
   j_0 = 13 + strfind(res_i, '<name_status>'); j_1 = strfind(res_i, '</name_status>') - 1;
-  name_status = res_i(j_0:j_1); 
-  if strcmp(name_status,'accepted name')
+  name_status = res_i(j_0:j_1);
+  j_0 = 6 + strfind(res_i, '<name>'); j_1 = strfind(res_i, '</name>') - 1;
+  name = res_i(j_0:j_1); my_pet = strrep(my_pet, '+', ' ');
+  if strcmp(name,my_pet) && strcmp(name_status,'accepted name')
     j_0 = 4 + strfind(res_i, '<id>'); j_1 = strfind(res_i, '</id>') - 1;
     id_CoL = res_i(j_0:j_1);
     break
