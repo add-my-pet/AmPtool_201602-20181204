@@ -368,6 +368,13 @@ function [links info] = get_link(taxon, test)
       id_Wiki = 'Spisula';     
       id_molluscabase = '140302';
       
+    case 'Spisula_solidissima'
+      id_CoL = '103350a1dd4dc352ac58a7c6ee59492a';
+      id_WoRMS = '156996'; 
+      id_Taxo = '39754';        
+      id_EoL = '448794';
+      id_molluscabase = '156996';
+      
     case 'Macoma_balthica'
       id_CoL = '7752e8e469ee3f69471f23a73bb94786';
       id_WoRMS = '141579'; % unaccepeted, to Limecola balthica (Linnaeus, 1758)
@@ -416,6 +423,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '395922';      
       id_molluscabase = '141911';
       
+    case 'Mercenaria_mercenaria'
+      id_CoL = '02d4e8872e4092cee6d6af417cf86d53';
+      id_WoRMS = '141919';
+      id_Taxo = '39696';        
+      id_EoL = '492162';      
+      id_molluscabase = '141919';
+      
     case 'Mytilopsis_sallei'
       id_CoL = '5e451e2ac36ade42130a9909b0979122';
       id_WoRMS = '397147';
@@ -462,6 +476,14 @@ function [links info] = get_link(taxon, test)
       id_ADW = ''; % not present at 2017/08/09
       id_molluscabase = '394269';
       
+    case 'Placopecten_magellanicus'
+      id_CoL = '60267b9440fb093260b9eec16c18c54f';
+      id_WoRMS = '156972';
+      id_Taxo = '39370';        
+      id_EoL = '448745';
+      id_ADW = ''; % not present at 2018/01/23
+      id_molluscabase = '156972';
+      
     case 'Pecten_maximus'
       id_CoL = 'cfba025bc7568aa8054058b764da5484';
       id_WoRMS = '140712';
@@ -485,6 +507,13 @@ function [links info] = get_link(taxon, test)
       id_EoL = '451579'; % present as Crassostrea gigas
       id_ADW = ''; % not present at 2017/08/09
       id_molluscabase = '140656'; 
+      
+    case 'Crassostrea_virginica'
+      id_CoL = '5e156cdb8840e74e41c7f31d8749cacc'; 
+      id_WoRMS = '140657'; 
+      id_Taxo = '39285';  
+      id_EoL = '449554'; % present as Crassostrea brasiliana
+      id_molluscabase = '140657'; 
       
     case 'Ostrea_edulis'
       id_CoL = '3063d7e4904e854f23e2d5ac9861a140';
