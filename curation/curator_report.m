@@ -4,7 +4,7 @@
 %%
 function curator_report(speciesnm)
   % created 2015/08/01 by Goncalo Marques
-  % modified 2015/08/06 Dina Lika, 2018/01/17 by Bas Kooijman
+  % modified 2015/08/06 Dina Lika, 2018/01/23 by Bas Kooijman
   
   %% Syntax 
   % <../curator_report.m *curator_report*> (speciesnm)
@@ -14,7 +14,7 @@ function curator_report(speciesnm)
   %
   % Follows :
   %
-  % * - check spelling species name
+  % * - check species name and lineage
   % * - runs check_my_pet
   % * - runs check_data: displays data_0, data_1, data fields, and COMPLETE
   % * - compares par, metaPar and txtPar in pars_init and .mat
@@ -35,36 +35,11 @@ function curator_report(speciesnm)
 
 pointNumber = 1; 
 
-if ~isempty(strfind(speciesnm, ' '))
-  fprintf('The species name in input should not have spaces.\n');
-  fprintf('The standard species name follow the form ''Genus_species''.\n');
-  return;
-end
+fprintf('\n%d. Warnings from check_my_pet:\n\n', pointNumber);
+check_speciesnm(speciesnm);
 
-% run the mydata file
-[data, auxData, metaData, txtData, weights] = feval(['mydata_', speciesnm]);
+pause
 
-% check species/lineage info with CoL
-[lin rank] = lineage_CoL(metaData.species); % print warning if species name is not accepeted in Catalog of Life
-if ~strcmp(lin{end}, metaData.species)
-  fprintf(['Accepted name in CoL: ', lin{end}, '\n'])
-end
-family = lin{strcmp('Family', rank)};
-if ~strcmp(family, metaData.family)
-  fprintf(['Family name in CoL: ', family, '\n'])
-end
-order = lin{strcmp('Order', rank)};
-if ~strcmp(order, metaData.order)
-  fprintf(['Order name in CoL: ', order, '\n'])
-end
-class = lin{strcmp('Class', rank)};
-if ~strcmp(class, metaData.class)
-  fprintf(['Class name in CoL: ', class, '\n'])
-end
-phylum = lin{strcmp('Phylum', rank)};
-if ~strcmp(phylum, metaData.phylum)
-  fprintf(['Phylum name in CoL: ', phylum, '\n'])
-end
 
 %% run check_my_pet
 

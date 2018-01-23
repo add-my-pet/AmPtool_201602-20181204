@@ -3,13 +3,13 @@
 
 %%
 function allStat = get_allStat(T, f)
-% created 2016/04/22 by Bas Kooijman
+% created 2016/04/22 by Bas Kooijman, modified 2018/01/23
 
 %% Syntax
 % allStat = <get_allStat *get_allStat*> (T, f)
 
 %% Description
-% gets model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of all entries.
+% gets lineage, model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of all entries.
 % Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.
 %
 % Input:
@@ -52,8 +52,12 @@ function allStat = get_allStat(T, f)
       load (['results_', entries{i}])
       
       % metaData
-      allStat.(entries{i}).species = metaData.species; allStat.(entries{i}).units.species = '-'; allStat.(entries{i}).label.species = 'scientific name';
+      allStat.(entries{i}).species = metaData.species; allStat.(entries{i}).units.species = '-'; allStat.(entries{i}).label.species = 'taxon name';
       allStat.(entries{i}).species_en = metaData.species_en; allStat.(entries{i}).units.species_en = '-'; allStat.(entries{i}).label.species_en = 'common name';
+      allStat.(entries{i}).family  = metaData.family;  allStat.(entries{i}).units.family = '-';  allStat.(entries{i}).label.family = 'taxon name';
+      allStat.(entries{i}).order   = metaData.order;   allStat.(entries{i}).units.order = '-';   allStat.(entries{i}).label.order = 'taxon name';
+      allStat.(entries{i}).class   = metaData.class;   allStat.(entries{i}).units.class = '-';   allStat.(entries{i}).label.class = 'taxon name';
+      allStat.(entries{i}).phylum  = metaData.phylum;  allStat.(entries{i}).units.phylum = '-';  allStat.(entries{i}).label.phylum = 'taxon name';
       % data/model
       allStat.(entries{i}).model = metaPar.model; allStat.(entries{i}).units.model = '-'; allStat.(entries{i}).label.model = 'DEB model';
       allStat.(entries{i}).MRE = metaPar.MRE; allStat.(entries{i}).units.MRE = '-'; allStat.(entries{i}).label.MRE = 'Mean Relative Error';
