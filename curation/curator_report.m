@@ -31,11 +31,7 @@ function curator_report(speciesnm)
   %% Example of use
   % curator_report('my_pet') 
 
-WD = pwd;
-path = which(['mydata_', speciesnm]); path(end-length(speciesnm)-8: end) = [];
-cd(path)
-
-%% check species name
+%% check species name and lineage
 
 pointNumber = 1; 
 
@@ -44,18 +40,38 @@ if ~isempty(strfind(speciesnm, ' '))
   fprintf('The standard species name follow the form ''Genus_species''.\n');
   return;
 end
-get_id_CoL(speciesnm); % print warning if species name is not accepeted in Catalog of Life
+
+% run the mydata file
+[data, auxData, metaData, txtData, weights] = feval(['mydata_', speciesnm]);
+
+% check species/lineage info with CoL
+[lin rank] = lineage_CoL(metaData.species); % print warning if species name is not accepeted in Catalog of Life
+if ~strcmp(lin{end}, metaData.species)
+  fprintf(['Accepted name in CoL: ', lin{end}, '\n'])
+end
+family = lin{strcmp('Family', rank)};
+if ~strcmp(family, metaData.family)
+  fprintf(['Family name in CoL: ', family, '\n'])
+end
+order = lin{strcmp('Order', rank)};
+if ~strcmp(order, metaData.order)
+  fprintf(['Order name in CoL: ', order, '\n'])
+end
+class = lin{strcmp('Class', rank)};
+if ~strcmp(class, metaData.class)
+  fprintf(['Class name in CoL: ', class, '\n'])
+end
+phylum = lin{strcmp('Phylum', rank)};
+if ~strcmp(phylum, metaData.phylum)
+  fprintf(['Phylum name in CoL: ', phylum, '\n'])
+end
 
 %% run check_my_pet
 
 pointNumber = pointNumber + 1; 
 
-
 fprintf('\n%d. Warnings from check_my_pet:\n\n', pointNumber);
 check_my_pet(speciesnm);
-
-[data, auxData, metaData, txtData, weights] = feval(['mydata_', speciesnm]);
-
 
 pause
 
@@ -259,6 +275,4 @@ if autoEst
   end
 
 end
-
-cd(WD)
 
