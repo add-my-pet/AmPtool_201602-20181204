@@ -175,7 +175,7 @@ function prt_species_row(fid_Spec, id)
   fprintf(fid_Spec,['        <TR id = "', species, '">\n']); % open and identify the species row
 
   % edit species and species_en
-  species = strrep(species, '_', ' ');          % remove underscores 
+  species_prt = strrep(species, '_', ' ');      % remove underscores 
   if species_en(1) >= 'a' && species_en(1)<='z' % put first letter of common name in capital
     species_en(1) = char(species_en(1) - 32);
   end
@@ -185,7 +185,7 @@ function prt_species_row(fid_Spec, id)
   n_data_0 = length(data_0); n_data_1 = length(data_1); 
   
   fprintf(fid_Spec,['          <TD>', phylum, '</TD>  <TD>', class, '</TD> <TD>', order, '</TD> <TD>', family, '</TD>\n']);
-  fprintf(fid_Spec,['          <TD><A TARGET="_top" HREF="entries_web/', species, '/', species, '_res.html">', species, '</A></TD> <TD>', species_en, '</TD>\n']);
+  fprintf(fid_Spec,['          <TD><A TARGET="_top" HREF="entries_web/', species, '/', species, '_res.html">', species_prt, '</A></TD> <TD>', species_en, '</TD>\n']);
   fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFC6A5">%s</TD>\n', model);
   fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFE7C6">%8.3f</TD>\n', MRE);
   fprintf(fid_Spec, '          <TD style="text-align:center"  BGCOLOR = "#FFE7C6">%8.3f</TD>\n', SMSE);
