@@ -55,23 +55,53 @@ function [members, taxon] = clade(taxa, level)
     list = lineage(taxa);
     
     if length(list) == 1
-      fprintf('Taxon is not recognized in AmP\n')
-      members = list; taxon = list;
+      fprintf([taxa, ' is not recognized in AmP\n'])
       
       % proceed with finding lineage in CoL
-      list = lineage_CoL(taxa);
-      n_list = length(list);
-      if n_list == 0 || n_list == 1 % also not present in CoL
-        return 
+      list_CoL = lineage_CoL(taxa);
+      n_CoL = length(list_CoL);
+      if n_CoL > 0 % species found in CoL
+        ol = list_taxa; % ordered list of all taxa
+        for i = 1:n_CoL % find lowest rank that is present in AmP
+          if ~isempty(list_CoL{n_CoL - i}) && ismember(list_CoL{n_CoL - i}, ol)
+            taxon_CoL = list_CoL{n_CoL - i}; members_CoL = select(taxon_CoL); 
+            n_members_CoL = length(members_CoL);
+            break
+          end
+        end
+      else
+        n_members_CoL = 0;
       end
-      
-      % find lowest rank that is present in AmP
-      ol = list_taxa; % ordered list of all taxa
-      for i = 1:n_list
-         if ~isempty(list{n_list - i}) && ismember(list{n_list - i}, ol)
-           taxon = list{n_list - i}; members = select(taxon); 
-           break
-         end
+
+      % proceed with finding lineage in Taxo
+      list_Taxo = lineage_Taxo(taxa);
+      n_Taxo = length(list_Taxo);
+      if n_Taxo > 0 % species found in Taxo
+        ol = list_taxa; % ordered list of all taxa
+        for i = 1:n_Taxo % find lowest rank that is present in AmP
+          if ~isempty(list_Taxo{n_Taxo - i}) && ismember(list_Taxo{n_Taxo - i}, ol)
+            taxon_Taxo = list_Taxo{n_Taxo - i}; members_Taxo = select(taxon_Taxo); 
+            n_members_Taxo = length(members_Taxo);
+            break
+          end
+        end
+      else
+        n_members_Taxo = 0;
+      end
+
+      % choose between CoL or Taxo on the basis of smallest number of members
+      if n_members_CoL == 0 && n_members_Taxo == 0
+        members = []; taxon = [];
+      elseif n_members_CoL == 0
+        members = members_Taxo; taxon = taxon_Taxo;
+      elseif n_members_Taxo == 0
+        members = members_CoL; taxon = taxon_CoL;
+      elseif n_members_Taxo < n_members_CoL 
+        members = members_Taxo; taxon = taxon_Taxo;
+        fprintf(['CoL gives ', num2str(n_members_CoL), ' members, Taxo gives ', num2str(n_members_Taxo), ' members\n'])
+      else
+        members = members_CoL; taxon = taxon_CoL;
+        fprintf(['CoL gives ', num2str(n_members_CoL), ' members, Taxo gives ', num2str(n_members_Taxo), ' members\n'])
       end
       
     else

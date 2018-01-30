@@ -2980,6 +2980,20 @@ function [links info] = get_link(taxon, test)
       id_EoL = '1012133';
       id_fishbase = taxon_fish;
        
+    case 'Pomacentrus_amboinensis'
+      id_CoL = '6cfb8cc5f6926f969c43509aec117a87';
+      id_WoRMS = '277132';
+      id_Taxo = '184427';        
+      id_EoL = '219498';
+      id_fishbase = taxon_fish;
+       
+    case 'Pomacentrus_coelestis'
+      id_CoL = '1a3fe094fb5ff6e1065a36c41e392fc0';
+      id_WoRMS = '277145';
+      id_Taxo = '184439';        
+      id_EoL = '212891';
+      id_fishbase = taxon_fish;
+       
     case 'Chelon_labrosus'
       id_CoL = '78be26413dd8d85e73278dd3188eab9f';
       id_WoRMS = '126977';
@@ -6060,6 +6074,27 @@ function [links info] = get_link(taxon, test)
       id_AnAge = taxon;
       id_MSW3 = '14000738';
        
+    case 'Nyctereutes_procyonoides'
+      id_CoL = '6ec904764dc49972c516a4e145fe1119';
+      id_Taxo = '66488';    
+      id_EoL = '328684';
+      id_AnAge = taxon;
+      id_MSW3 = '14000825';
+       
+    case 'Ailurus_fulgens'
+      id_CoL = 'a07ca43a0c727b51a5b150c820059dda';
+      id_Taxo = '66628';        
+      id_EoL = '327984';
+      id_AnAge = taxon;
+      id_MSW3 = '14001690';
+       
+    case 'Mephitis_mephitis'
+      id_CoL = 'a0856c50ba56219cf5adef9e4b42ac81';
+      id_Taxo = '66780';        
+      id_EoL = '328593';
+      id_AnAge = taxon;
+      id_MSW3 = '14001552';
+       
     case 'Meles_meles'
       id_CoL = '423f1dbd6d3e388a3382399597913189';
       id_Taxo = '66751';        
@@ -6082,6 +6117,14 @@ function [links info] = get_link(taxon, test)
       id_EoL = '328044';
       id_AnAge = taxon;
       id_MSW3 = '14001112';
+       
+    case 'Procyon_lotor'
+      id_CoL = '14b81ecc6b8b77c9ae06b5f4d59826d5';
+      id_WoRMS = ''; % not present at 2018/01/28
+      id_Taxo = '66610';       
+      id_EoL = '328598';
+      id_AnAge = taxon;
+      id_MSW3 = '14001664';
        
     case 'Ursus_arctos'
       id_CoL = '3620a6afc683c9cb9e66e3bc9d143133';

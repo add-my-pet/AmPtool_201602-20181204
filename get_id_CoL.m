@@ -9,11 +9,11 @@ function [id_CoL accepted_name] = get_id_CoL(my_pet)
 % [id_CoL accepted_name] = <../get_id_CoL.m *get_id_CoL*>(my_pet)
 
 %% Description
-% Gets identifier for an accepted species name in the Catolog of Life
+% Gets identifier for an accepted species name in the Catalog of Life
 %
 % Input:
 %
-% * my_pet: character string with name of an entry
+% * my_pet: character string with name of a taxon
 %
 % Output:
 %
@@ -21,7 +21,8 @@ function [id_CoL accepted_name] = get_id_CoL(my_pet)
 % * accepted_name: character string with accepted name
 
 %% Remarks
-% Outputs empty string if identification was not successful
+% Outputs empty string if identification was not successful.
+% Used in lineage_CoL
 
 %% Example of use
 % id_CoL = get_id_CoL('Daphnia_magna')
@@ -34,7 +35,7 @@ id_CoL = [];         % initiate identifier
 accepted_name = [];  % initiate accepted name
 
 if n_res == 0
-  fprintf('Warning from get_id_CoL: Species not found in CoL\n');
+  fprintf(['Warning from get_id_CoL: ', my_pet, ' not found in CoL\n']);
   return
 end
 
