@@ -47,7 +47,7 @@ function allStat = write_addStat(taxa, T, f)
   present = isfield(allStat, taxa);
   if sum(present) > 0
     fprintf('Not all members of taxa are absent in existing allStat.mat\n');
-    taxa = taxa{present}
+    taxa = taxa{present};
     return
   end
   
