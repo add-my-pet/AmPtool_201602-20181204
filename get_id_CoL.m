@@ -27,8 +27,8 @@ function [id_CoL accepted_name] = get_id_CoL(my_pet)
 %% Example of use
 % id_CoL = get_id_CoL('Daphnia_magna')
 
-my_pet = strrep(my_pet, '_', '+');
-url = urlread(['http://webservice.catalogueoflife.org/col/webservice?name=', my_pet]);
+my_pet_CoL = strrep(my_pet, '_', '+');
+url = urlread(['http://webservice.catalogueoflife.org/col/webservice?name=', my_pet_CoL]);
 i_0 = 10 + strfind(url,'<result>'); i_1 = strfind(url,'</result>') - 1; 
 n_res = length(i_0); % number of returned results
 id_CoL = [];         % initiate identifier

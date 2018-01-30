@@ -38,7 +38,7 @@ function [members, taxon] = clade(taxa, level)
 % or
 % clade('Homarus_gammarus',4)
 % or
-% clade('Daphnia_galatea') % while 'Daphnia_galatea' was not present in AmP at 2018/01/05 
+% clade('Daphnia_galeata') % while 'Daphnia_galeate' was not present in AmP at 2018/01/05 
 
 
   n = length(taxa);
@@ -56,8 +56,10 @@ function [members, taxon] = clade(taxa, level)
     
     if length(list) == 1
       fprintf([taxa, ' is not recognized in AmP\n'])
-      
-      % proceed with finding lineage in CoL
+
+      % proceed by finding lineage in Col and Taxo
+      ol = list_taxa; % ordered list of all taxa
+      % CoL
       list_CoL = lineage_CoL(taxa);
       n_CoL = length(list_CoL);
       if n_CoL > 0 % species found in CoL
@@ -72,12 +74,10 @@ function [members, taxon] = clade(taxa, level)
       else
         n_members_CoL = 0;
       end
-
-      % proceed with finding lineage in Taxo
+      % Taxo
       list_Taxo = lineage_Taxo(taxa);
       n_Taxo = length(list_Taxo);
       if n_Taxo > 0 % species found in Taxo
-        ol = list_taxa; % ordered list of all taxa
         for i = 1:n_Taxo % find lowest rank that is present in AmP
           if ~isempty(list_Taxo{n_Taxo - i}) && ismember(list_Taxo{n_Taxo - i}, ol)
             taxon_Taxo = list_Taxo{n_Taxo - i}; members_Taxo = select(taxon_Taxo); 
