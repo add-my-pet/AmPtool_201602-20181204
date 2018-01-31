@@ -3,7 +3,7 @@
 
 %%
 function [members, taxon] = clade(taxa, level)
-% created 2015/09/18 by Bas Kooijman; modified 2017/12/23, 2018/01/05
+% created 2015/09/18 by Bas Kooijman; modified 2017/12/23, 2018/01/05, 2018/01/30
 
 %% Syntax
 % [members, taxon] = <../clade.m *clade*> (taxa, level) 
@@ -14,7 +14,7 @@ function [members, taxon] = clade(taxa, level)
 %   then the taxon of lowest rank is found that is shared by all members of input taxa 
 %   and all members of this taxon in the add_my_pet collection are selected.
 % If a single taxon is specified, members are selected from a taxon that is a number of levels up in the classification, including the single taxon.
-% If this single taxon is not present in AmP, it is searched in Catalog of Life, and the lowest taxon in its lineage that is present in AmP is selected as clade
+% If this single taxon is not present in AmP, it is searched in Catalog of Life and Taxonomicon, and the lowest taxon in these lineages that is present in AmP is selected as clade
 %
 % Input:
 %
@@ -38,7 +38,7 @@ function [members, taxon] = clade(taxa, level)
 % or
 % clade('Homarus_gammarus',4)
 % or
-% clade('Daphnia_galeata') % while 'Daphnia_galeate' was not present in AmP at 2018/01/05 
+% clade('Daphnia_galeata') % while 'Daphnia_galeata' was not present in AmP at 2018/01/05 
 
 
   n = length(taxa);

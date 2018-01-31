@@ -39,7 +39,8 @@ function allStat = write_allStat(T, f)
   end
   
   % check if allStat and local dir ../../entries have the same entries
-  entries_local = cellstr(ls('../../entries')); entries_allStat = fieldnames(allStat); 
+  entries_local = cellstr(ls('../../entries')); entries_local(1:2) = []; % remove '.' and '..'
+  entries_allStat = fieldnames(allStat); 
   diff = setdiff(entries_allStat, entries_local);
   if ~isempty(diff)
     fprintf('warning from write_allStat: present in allStat, but not in debtool/entries\n');

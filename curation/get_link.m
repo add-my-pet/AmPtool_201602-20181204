@@ -2,35 +2,33 @@
 % gets links to web-pages for AmP entries
 
 %%
-function [links info] = get_link(taxon, test)
-% created 2017/06/14 by Bas Kooijman, modified 2017/07/11
+function links = get_link(taxon, open)
+% created 2017/06/14 by Bas Kooijman, modified 2017/07/11, 2018/01/30
 
 %% Syntax
-% [links info] = <get_link *get_link*>(taxon, test)
+% links = <get_link *get_link*>(taxon, open)
 
 %% Description
-% Gets cell strings with links and descriptions for an entry and can test presence of webpages.
+% Gets cell strings with links and descriptions for an entry and open the webpages.
 %
 % Input:
 %
 % * taxon: character string with name of an entry
-% * test: optional boolean for testing existence of web pages (default 0)
+% * open: optional boolean for opening the web pages (default 0: not open)
 %
 % Output:
 %
 % * links: (n,2)-cell array with links and names for links
-% * info: (n,1)-matrix with true of false for existence of web pages (1's if test = 0)
 
 %% Remarks
-% empty ID links are removed from output; ID links are all empty if entry is not listed, but warning is given
-% testing might take long time (therefore default 0)
+% empty ID links are removed from output; ID links are all empty if entry  is not listed, but warning is given.
 %
 % Potential general web sites:
 %
-% * EoL is most complete 
-% * CoL: edition 2017 is used
+% * EoL: also used in get_id_EoL; is most complete 
+% * CoL: also used in get_id_CoL
 % * AWD: strong American bias, wierd common names
-% * Taxonomicon: Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
+% * Taxonomicon: also used in get_id_Taxo; Sheila.Brands@utxs.com; Sheila.Brands@multiweb.nl
 % * Wikipedia: if it has not the entry name, a higher taxon is selected
 % * WoRMS only has marine species, such as the polar bear, but no other bears; inconsistent presence for freshwater plankton
 %
@@ -382,7 +380,7 @@ function [links info] = get_link(taxon, test)
       id_EoL = '590151';      
       id_molluscabase = '141579';
       
-    case 'Thyasira_gouldi'
+    case 'Thyasira_cf_gouldi'
       id_CoL = 'dc19c27b17c4dea50708c165254d9c2c';
       id_WoRMS = '861611';
       id_Taxo = '113636'; % only present at genus level 2017/11/22       
@@ -2634,6 +2632,21 @@ function [links info] = get_link(taxon, test)
       id_WoRMS = '281236';
       id_Taxo = '46650';        
       id_EoL = '356410';
+      id_fishbase = taxon_fish;
+       
+    case 'Ostorhinchus_doederleini'
+      id_CoL = 'd42f623436e438e19c54392b9dca8193';
+      id_WoRMS = '273008'; % accepted as Apogon doederleini at 2018/01/31
+      id_Taxo = '106041';  % accepted as Apogon doederleini at 2018/01/31     
+      id_EoL = '987899';   % accepted as Apogon doederleini at 2018/01/31
+      id_fishbase = taxon_fish;
+      id_ADW = 'Apogon_doederleini';
+       
+    case 'Siphamia_tubifer'
+      id_CoL = 'c690cd565103e7c3d9ddbaa8ef830be6';
+      id_WoRMS = '277708'; 
+      id_Taxo = '187807';    
+      id_EoL = '213953'; 
       id_fishbase = taxon_fish;
        
     case 'Pomatoschistus_minutus'
@@ -7396,18 +7409,13 @@ function [links info] = get_link(taxon, test)
   links = links(~cellfun(@isempty, { ...
     id_CoL, id_EoL, id_Wiki, id_ADW, id_Taxo, id_WoRMS, ...                                     % general/animal web sites
     id_molluscabase, id_fishbase, id_amphweb, id_ReptileDB, id_avibase, id_MSW3, id_AnAge}),:); % taxon web sites
-  n_links = size(links,1); info = ones(n_links,1);
+  n_links = size(links,1); 
   
   if n_links == 0
     fprintf(['warning from get_link for ', taxon, ': no links specified\n']);
-  elseif exist('test', 'var') && test == true % test links 
+  elseif exist('open', 'var') && open == true % open web sites
     for i= 1:n_links 
-      try 
-        
-      catch
-        fprintf(['warning from get_link for ', taxon, ': ', links{i,2}, ' for ', links{i,1}, 'does not exist\n']);
-        info(i) = 0;
-      end
+      web(links{i,1},'-browser');
     end
   end
     
