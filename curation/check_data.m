@@ -31,8 +31,8 @@ if length(data_types_0) == 0 || length(data_types_0) == 0
   get_data_types
 end
 
-WD = pwd;
-cd(['../../entries/',my_pet]) % goto entry my_pet
+%WD = pwd;
+%cd(['../../entries/',my_pet]) % goto entry my_pet
 
 % check data_0 and data_1
 [data, auxData, metaData, txtData] = feval(['mydata_', my_pet]);
@@ -117,5 +117,5 @@ end
 % if expected COMPLETE is NaN, the data combination is not in get_COMPLETE
 data = [metaData.data_0(:); metaData.data_1(:)]; COMPLETE = get_COMPLETE(data);
 fprintf(['\nCOMPLETE = ', num2str(metaData.COMPLETE), '; expected COMPLETE = ', num2str(COMPLETE),'\n\n'])
-cd(WD)                   % goto original path
+%cd(WD)                   % goto original path
 
