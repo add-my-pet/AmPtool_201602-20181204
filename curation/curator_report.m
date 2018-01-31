@@ -67,7 +67,6 @@ pause
 
 pointNumber = pointNumber + 1; 
 
-
 mydataText = fileread(['mydata_', speciesnm, '.m']);
 expression = 'url{\S*}';
 urls = regexp(mydataText,expression,'match');

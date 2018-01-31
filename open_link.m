@@ -8,16 +8,16 @@ function open_link(taxon)
 % <open_link *open_link*>(taxon)
 
 %% Description
-% Opens links in the system brouwser, as provded by <get_link.html *get_link*>
+% Opens web links for an entry in the system brouwser, as provded by <get_link.html *get_link*>
 %
 % Input:
 %
 % * taxon: character string with name of an entry
 
+%% Remark
+% Uses curation function <curation/get_link.html *get_link*> in display mode
+
 %% Example
 % open_link('Daphnia_magna')
 
-links = get_link(taxon); n = length(links);
-for i = 1:n
-  web(links{i},'-browser')
-end
+get_link(taxon, 1);
