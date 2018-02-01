@@ -119,6 +119,7 @@ pointNumber = pointNumber + 1;
 
 fprintf('\n%d. Checking extra parameters:\n\n', pointNumber);
 
+[data, auxData, metaData, txtData, weights] = feval(['mydata_', speciesnm]);
 [par, metaPar, txtPar] = feval(['pars_init_', speciesnm], metaData);
 standChem = addchem([], [], [], [], metaData.phylum, metaData.class);
 
