@@ -6051,13 +6051,41 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '13900009';
        
+    case 'Arctictis_binturong'
+      id_CoL = '3c735d7b095669a2a48998e96246a492';
+      id_Taxo = '66896';        
+      id_EoL = '328085';
+      id_AnAge = taxon;
+      id_MSW3 = '14000273';
+       
     case 'Crocuta_crocuta'
       id_CoL = '93b93fda51bb5cdc6f82fe48dadab8b6';
       id_Taxo = '67062';        
       id_EoL = '311569';
       id_AnAge = taxon;
       id_MSW3 = '14000684';
-       
+
+    case 'Atilax_paludinosus'
+      id_CoL = '1d6f6170cd196481c17a080406f6bbb4';
+      id_Taxo = '66960';        
+      id_EoL = '1038688';
+      id_AnAge = taxon;
+      id_MSW3 = '14000479';
+
+    case 'Herpestes_javanicus'
+      id_CoL = '758edaecdd2102d8deff382f324cd6f1';
+      id_Taxo = '168277';        
+      id_EoL = '311956';
+      id_AnAge = taxon;
+      id_MSW3 = '14000608';
+
+    case 'Suricata_suricatta'
+      id_CoL = '5c20e061da841fd6a2a5ec9c3cb8687d';
+      id_Taxo = '67031';        
+      id_EoL = '311580';
+      id_AnAge = taxon;
+      id_MSW3 = '14000678';
+
     case 'Panthera_leo'
       id_CoL = 'c67c449dc0cc8bf14732d7fabf8f2b10';
       id_Taxo = '67265';        
