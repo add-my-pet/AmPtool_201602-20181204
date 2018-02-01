@@ -66,10 +66,10 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>prt_my_pet_bib</h1><!--introduction--><p>read and write ../../entries_web/my_pet_bib.bib</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../prt_bib_my_pet.m"><b>prt_bib_my_pet</b></a> (species, biblist, destinationFolder)</p><h2 id="4">Description</h2><p>Prints a ../../entries_web/my_pet_bib.bib file with the entry's bibliography</p><p>Input:</p><div><ul><li>species: string with latin name of species</li><li>biblist:  structure with each field containing a reference in bibtext format.</li><li>destinationFolder : optional string with destination folder the files are printed to (default: current folder)</li></ul></div><h2 id="5">Remarks</h2><p>The name of the key corresponds to the bibtex key. The structure metaData.biblist is output from mydata_my_pet file If you load results_my_pet.mat then species is found in metaData.species and biblist is biblist.metaData. Specify empty destinationFolder for testing during the curators report phase</p><h2 id="6">Example of use</h2><p>load('results_my_pet.mat'); prt_my_pet_bib(metaData.species,metaData.biblist) if you wish to print in the current folder else prt_my_pet_bib(metaData.species,metaData.biblist, '../myFolder/')</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>prt_my_pet_bib</h1><!--introduction--><p>read and write my_pet_bib.bib</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../prt_bib_my_pet.m"><b>prt_bib_my_pet</b></a> (species, biblist, destinationFolder)</p><h2 id="4">Description</h2><p>Prints a my_pet_bib.bib file with the entry's bibliography</p><p>Input:</p><div><ul><li>species: string with latin name of species</li><li>biblist:  structure with each field containing a reference in bibtext format.</li><li>destinationFolder : optional string with destination folder the files are printed to (default: current folder)</li></ul></div><h2 id="5">Remarks</h2><p>The name of the key corresponds to the bibtex key. The structure metaData.biblist is output from mydata_my_pet file If you load results_my_pet.mat then species is found in metaData.species and biblist is biblist.metaData. Specify empty destinationFolder for testing during the curators report phase</p><h2 id="6">Example of use</h2><p>load('results_my_pet.mat'); prt_my_pet_bib(metaData.species,metaData.biblist) if you wish to print in the current folder else prt_my_pet_bib(metaData.species,metaData.biblist, '../myFolder/')</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_my_pet_bib
-% read and write ../../entries_web/my_pet_bib.bib
+% read and write my_pet_bib.bib
 
 %%
 function prt_my_pet_bib(species, biblist, destinationFolder)
@@ -79,7 +79,7 @@ function prt_my_pet_bib(species, biblist, destinationFolder)
 % <../prt_bib_my_pet.m *prt_bib_my_pet*> (species, biblist, destinationFolder) 
 
 %% Description
-% Prints a ../../entries_web/my_pet_bib.bib file with the entry's bibliography 
+% Prints a my_pet_bib.bib file with the entry's bibliography 
 %
 % Input:
 %

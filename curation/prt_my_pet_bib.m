@@ -1,5 +1,5 @@
 %% prt_my_pet_bib
-% read and write ../../entries_web/my_pet_bib.bib
+% read and write my_pet_bib.bib
 
 %%
 function prt_my_pet_bib(species, biblist, destinationFolder)
@@ -9,7 +9,7 @@ function prt_my_pet_bib(species, biblist, destinationFolder)
 % <../prt_bib_my_pet.m *prt_bib_my_pet*> (species, biblist, destinationFolder) 
 
 %% Description
-% Prints a ../../entries_web/my_pet_bib.bib file with the entry's bibliography 
+% Prints a my_pet_bib.bib file with the entry's bibliography 
 %
 % Input:
 %
