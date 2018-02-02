@@ -21,8 +21,7 @@ function prt_my_pet_bib(species, biblist, destinationFolder)
 %% Remarks
 % The name of the key corresponds to the bibtex key. The structure metaData.biblist is output from mydata_my_pet file
 % If you load results_my_pet.mat then species is found in metaData.species
-% and biblist is biblist.metaData.
-% Specify empty destinationFolder for testing during the curators report phase
+% and biblist is metaData.biblist. 
 
 %% Example of use
 % load('results_my_pet.mat');
