@@ -6058,12 +6058,34 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14000273';
        
+    case 'Paradoxurus_hermaphroditus'
+      id_CoL = 'fc764f5ca19d53d8b128c77ad58ce166';
+      id_Taxo = '66914';        
+      id_EoL = '328089';
+      id_AnAge = taxon;
+      id_MSW3 = '14000317';
+
+    case 'Civettictis_civetta'
+      id_CoL = '0ddd3f80f4a56b0703a6c258eb5f296a';
+      id_Taxo = '66880';        
+      id_EoL = '328092';
+      id_AnAge = taxon;
+      id_MSW3 = '14000378';
+      id_ADW = ''; % not present 2018/02/01 
+       
     case 'Crocuta_crocuta'
       id_CoL = '93b93fda51bb5cdc6f82fe48dadab8b6';
       id_Taxo = '67062';        
       id_EoL = '311569';
       id_AnAge = taxon;
       id_MSW3 = '14000684';
+
+    case 'Hyaena_brunnea'
+      id_CoL = '403909c9def187964308949247e2a53c';
+      id_Taxo = '168311';        
+      id_EoL = '32527772';
+      id_AnAge = taxon;
+      id_MSW3 = '14000686';
 
     case 'Atilax_paludinosus'
       id_CoL = '1d6f6170cd196481c17a080406f6bbb4';
@@ -6092,6 +6114,13 @@ function links = get_link(taxon, open)
       id_EoL = '328672';
       id_AnAge = taxon;
       id_MSW3 = '14000228';
+       
+    case 'Lynx_lynx'
+      id_CoL = '89f97dcbcfdbcaad43c3645951bbcaa5';
+      id_Taxo = '168586';        
+      id_EoL = '328603';
+      id_AnAge = taxon;
+      id_MSW3 = '14000156';
        
     case 'Vulpes_lagopus'
       id_CoL = '74f649c50206103b78005228c898e177';
