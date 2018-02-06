@@ -9,7 +9,9 @@ function allStat = get_allStat(T, f)
 % allStat = <get_allStat *get_allStat*> (T, f)
 
 %% Description
-% gets lineage, model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of all entries.
+% Gets lineage, model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics and biblist of all entries.
+% It does so by directory-hopping using ../../entries, which must contain all entries, and visiting the results_my_pet.mat files.
+% This assumes that the content of this .mat file is consistent with the mydata_my_pet and the pars_init_my_pet files.
 % Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.
 %
 % Input:

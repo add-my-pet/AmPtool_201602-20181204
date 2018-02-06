@@ -2,11 +2,11 @@
 % translates .bib to .bbl by running Latex under Matlab
 
 %%
-function bib2bbl(my_pet_bib)
+function bib2bbl(my_pet_bib, destinationFolder)
 % created 2018/02/03 by Bas Kooijman
 
 %% Syntax
-% <bib2bbl *bib2bbl*>(my_pet_bib)
+% <bib2bbl *bib2bbl*>(my_pet_bib, destinationFolder)
 
 %% Description
 % Translates a bib-file into a bbl-file
@@ -14,33 +14,38 @@ function bib2bbl(my_pet_bib)
 % Input:
 %
 % * my_pet_bib: bib-file name without extension
+% * destinationFolder: optional specification of destinations folder (default: empty)
 
 %% Remarks
-% assumes that Latex can be ran onder dos.
+% assumes that Bibtex can be ran onder dos.
 % The intended use is 
 % 
-% * convert biblist in results_my_pet.mat to bib via prt_my_pet_bib
+% * convert biblist in results_my_pet.mat to bib by prt_my_pet_bib
 % * convert bib to bbl by bib2bbl
 % * convert bbl to html by bbl2html
-% * insert html-snippet in results_my_pet.html
+% * insert html-snippet in results_my_pet.html by prt_my_pet_res
 
-% create latex file
-fid = fopen([my_pet_bib, '.tex'], 'w+'); % open tex file
+% create aux file
+
+if ~exist('destinationFolder', 'var')
+  destinationFolder = '';
+end
+fid = fopen([destinationFolder, my_pet_bib, '.aux'], 'w+'); % open file for reading and writing and deletes old content
 
 fprintf(fid,[ ...
-   '\\documentclass{article}\n' ...
-   '\\pagestyle{empty}\n' ...
-   '\\usepackage{a4wide,url}\n' ...
-   '\\begin{document}\n' ...
-   '  \\nocite{*}\n' ...
-   '  \\bibliographystyle{plain}\n' ...
-   '  \\bibliography{', my_pet_bib, '}\n' ...
-   '\\end{document}\n']);
+   '\\relax\n' ...
+   '\\citation{*}\n' ...
+   '\\bibstyle{plain}\n' ...
+   '\\bibdata{', my_pet_bib, '}\n']);
 fclose(fid);
 
-% run pdflatex and bibtex
-dos(['pdflatex --interaction=batchmode ', my_pet_bib]);
+% run bibtex
+WD = pwd;
+if ~isempty(destinationFolder)
+  cd(destinationFolder)
+end
 dos(['bibtex ', my_pet_bib]);
+cd(WD)
 
 % remove help files
-delete([my_pet_bib, '.tex'], [my_pet_bib, '.aux'], [my_pet_bib, '.log'], [my_pet_bib, '.blg'])
+delete([destinationFolder, my_pet_bib, '.aux'], [destinationFolder, my_pet_bib, '.blg'])

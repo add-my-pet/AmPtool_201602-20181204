@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>get_allStat</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-01-24"><meta name="DC.source" content="get_allStat.m"><style type="text/css">
+      --><title>get_allStat</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-02-06"><meta name="DC.source" content="get_allStat.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>get_allStat</h1><!--introduction--><p>obtain a structure with all pars and stats for all entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>allStat = <a href="get_allStat"><b>get_allStat</b></a> (T, f)</p><h2 id="4">Description</h2><p>gets lineage, model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of all entries. Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.</p><p>Input:</p><div><ul><li>T: optional scalar with body temperature in Kelvin for ststistics (default T_typical, which is entry-specific)</li><li>f: optional scalar with scaled functional response (default 1)</li></ul></div><p>Output:</p><div><ul><li>allStat: structure with all parameters and statistics values, including their units and labels</li></ul></div><h2 id="5">Remarks</h2><p>Statistics are given at T_typical or T. Meant to be used in combination with <a href="write_allStat.html"><b>write_allStat</b></a> and <a href="../../html/read_allStat.html"><b>read_allStat</b></a>. Since running this function takes some time, progress is written to screen.</p><h2 id="6">Example of use</h2><p>allStat = get_allStat; see mydata_shstat</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>get_allStat</h1><!--introduction--><p>obtain a structure with all pars and stats for all entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>allStat = <a href="get_allStat"><b>get_allStat</b></a> (T, f)</p><h2 id="4">Description</h2><p>Gets lineage, model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics and biblist of all entries. It does so by directory-hopping using ../../entries, which must contain all entries, and visiting the results_my_pet.mat files. This assumes that the content of this .mat file is consistent with the mydata_my_pet and the pars_init_my_pet files. Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.</p><p>Input:</p><div><ul><li>T: optional scalar with body temperature in Kelvin for ststistics (default T_typical, which is entry-specific)</li><li>f: optional scalar with scaled functional response (default 1)</li></ul></div><p>Output:</p><div><ul><li>allStat: structure with all parameters and statistics values, including their units and labels</li></ul></div><h2 id="5">Remarks</h2><p>Statistics are given at T_typical or T. Meant to be used in combination with <a href="write_allStat.html"><b>write_allStat</b></a> and <a href="../../html/read_allStat.html"><b>read_allStat</b></a>. Since running this function takes some time, progress is written to screen.</p><h2 id="6">Example of use</h2><p>allStat = get_allStat; see mydata_shstat</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% get_allStat
 % obtain a structure with all pars and stats for all entries
@@ -79,7 +79,9 @@ function allStat = get_allStat(T, f)
 % allStat = <get_allStat *get_allStat*> (T, f)
 
 %% Description
-% gets lineage, model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics of all entries.
+% Gets lineage, model, MRE, SMSE, CLOMPLETE, author, date_subm, date_acc, all parameters and statistics and biblist of all entries.
+% It does so by directory-hopping using ../../entries, which must contain all entries, and visiting the results_my_pet.mat files.
+% This assumes that the content of this .mat file is consistent with the mydata_my_pet and the pars_init_my_pet files.
 % Parameters are always expressed at T_ref, i.e. C2K(20), irrespective of input T.
 %
 % Input:
@@ -122,12 +124,12 @@ function allStat = get_allStat(T, f)
       load (['results_', entries{i}])
       
       % metaData
-      allStat.(entries{i}).species = metaData.species; allStat.(entries{i}).units.species = '-'; allStat.(entries{i}).label.species = 'taxon name';
+      allStat.(entries{i}).species = metaData.species; allStat.(entries{i}).units.species = '-'; allStat.(entries{i}).label.species = 'taxon';
       allStat.(entries{i}).species_en = metaData.species_en; allStat.(entries{i}).units.species_en = '-'; allStat.(entries{i}).label.species_en = 'common name';
-      allStat.(entries{i}).family  = metaData.family;  allStat.(entries{i}).units.family = '-';  allStat.(entries{i}).label.family = 'taxon name';
-      allStat.(entries{i}).order   = metaData.order;   allStat.(entries{i}).units.order = '-';   allStat.(entries{i}).label.order = 'taxon name';
-      allStat.(entries{i}).class   = metaData.class;   allStat.(entries{i}).units.class = '-';   allStat.(entries{i}).label.class = 'taxon name';
-      allStat.(entries{i}).phylum  = metaData.phylum;  allStat.(entries{i}).units.phylum = '-';  allStat.(entries{i}).label.phylum = 'taxon name';
+      allStat.(entries{i}).family  = metaData.family;  allStat.(entries{i}).units.family = '-';  allStat.(entries{i}).label.family = 'taxon';
+      allStat.(entries{i}).order   = metaData.order;   allStat.(entries{i}).units.order = '-';   allStat.(entries{i}).label.order = 'taxon';
+      allStat.(entries{i}).class   = metaData.class;   allStat.(entries{i}).units.class = '-';   allStat.(entries{i}).label.class = 'taxon';
+      allStat.(entries{i}).phylum  = metaData.phylum;  allStat.(entries{i}).units.phylum = '-';  allStat.(entries{i}).label.phylum = 'taxon';
       % data/model
       allStat.(entries{i}).model = metaPar.model; allStat.(entries{i}).units.model = '-'; allStat.(entries{i}).label.model = 'DEB model';
       allStat.(entries{i}).MRE = metaPar.MRE; allStat.(entries{i}).units.MRE = '-'; allStat.(entries{i}).label.MRE = 'Mean Relative Error';

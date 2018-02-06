@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_my_pet_res</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-10-26"><meta name="DC.source" content="prt_my_pet_res.m"><style type="text/css">
+      --><title>prt_my_pet_res</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-02-06"><meta name="DC.source" content="prt_my_pet_res.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -23,7 +23,7 @@ a:visited { color:#004aa0; text-decoration:none; }
 
 p { padding:0px; margin:0px 0px 20px; }
 img { padding:0px; margin:0px 0px 20px; border:none; }
-p img, pre img, tt img, li img { margin-bottom:0px; } 
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
 
 ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
 ul li { padding:0px; margin:0px 0px 7px 0px; }
@@ -38,11 +38,12 @@ ol li ul li { list-style:square; }
 
 .content { font-size:1.2em; line-height:140%; padding: 20px; }
 
-pre, tt, code { font-size:12px; }
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
 pre { margin:0px 0px 20px; }
-pre.error { color:red; }
 pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
 pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
 
 @media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
 
@@ -54,9 +55,18 @@ span.syscmd { color:#B28C00 }
 
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
 
-  </style></head><body><div class="content"><h1>prt_my_pet_res</h1><!--introduction--><p>read and write my_pet_res.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_my_pet_res.m"><b>prt_my_pet_res</b></a> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)</p><h2>Description<a name="4"></a></h2><p>Prints my_pet_res.html file which compares metapar.model predictions with data</p><p>Input:</p><div><ul><li>data: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>prdData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Predict_file"><b>predict_my_pet_par</b></a> file)</li><li>auxData: structure  (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>txtData:  structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaPar: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>destinationFolder : optional string with destination folder the files are printed to (default: current folder)</li></ul></div><h2>Example of use<a name="5"></a></h2><p>[data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]);</p><p>prdData = feval(['predict_',metaData.species], par, data, auxData);</p><p>prdData = predict_pseudodata(par, data, prdData);</p><p>load(['results_',entries{i},'.mat']) % load results_my_pet.mat</p><p>prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)</p><p class="footer"><br>
-      Published with MATLAB&reg; 7.14<br></p></div><!--
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>prt_my_pet_res</h1><!--introduction--><p>read and write my_pet_res.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../prt_my_pet_res.m"><b>prt_my_pet_res</b></a> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)</p><h2 id="4">Description</h2><p>Prints my_pet_res.html file which compares metapar.model predictions with data</p><p>Input:</p><div><ul><li>data: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>prdData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Predict_file"><b>predict_my_pet_par</b></a> file)</li><li>auxData: structure  (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaData: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>txtData:  structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Mydata_file"><b>mydata_my_pet_par</b></a> file)</li><li>metaPar: structure (output of <a href="http://www.debtheory.org/wiki/index.php?title=Pars_init_file"><b>pars_init_my_pet_par</b></a> file)</li><li>destinationFolder : optional string with destination folder the files are printed to (default: current folder)</li></ul></div><h2 id="5">Example of use</h2><p>[data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]);</p><p>prdData = feval(['predict_',metaData.species], par, data, auxData);</p><p>prdData = predict_pseudodata(par, data, prdData);</p><p>load(['results_',entries{i},'.mat']) % load results_my_pet.mat</p><p>prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_my_pet_res
 % read and write my_pet_res.html
@@ -65,7 +75,7 @@ span.syscmd { color:#B28C00 }
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
-% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26 Bas Kooijman
+% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26, 2018/02/06 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -161,6 +171,11 @@ fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
 fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../../sys/style.css">\n'); 
 fprintf(oid, '  <script src="../../sys/dropdown.js"></script>\n');
 fprintf(oid, '  <script src="../../sys/w3data.js"></script>\n');
+fprintf(oid, '  <style>\n');
+fprintf(oid, '    ul.ref{\n');
+fprintf(oid, '      list-style-type: square;\n');
+fprintf(oid, '    }\n');
+fprintf(oid, '  </style>\n');
 fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
@@ -402,13 +417,13 @@ fprintf(oid,['        <TR BGCOLOR = "#FFE7C6"><TD><B>Data</B></TD><TD><B>General
   end
  fprintf(oid, '      </TABLE>\n\n'); 
  
-%  work in progress : (it is to make a link to html page with all of the
-%  figure on it)
+%  work in progress : (it is to make a link to html page with all of the figures on it)
 %  if isempty(metaData.data_1) == 0
 %    prt_unidata_my_pet_html(metaData, metaPar)
 %  end  
 
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
+
 % Facts:
 if isfield(metaData, 'facts') 
   fprintf(oid, '      <H3 style="clear:both" class="pet">Facts</H3>\n');
@@ -434,11 +449,11 @@ if isfield(metaData, 'facts')
     end
     fprintf(oid, '        </li>\n' ); % close bullet point
   end
-  fprintf(oid,'      </ul>\n');     % close the unordered list    
+  fprintf(oid,'      </ul>\n');       % close the unordered list    
 end
 
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
-% Discussion:
+
 if isfield(metaData, 'discussion') == 1
   fprintf(oid, '      <H3 style="clear:both" class="pet">Discussion</H3>\n');
   fprintf(oid, '      <ul> \n');     % open the unordered list
@@ -463,25 +478,26 @@ if isfield(metaData, 'acknowledgment') == 1
   fprintf(oid, '      <H3 style="clear:both" class="pet">Acknowledgment</H3>\n');
   fprintf(oid, '        <ul> \n');     % open the unordered list
     
-  fprintf(oid, '          <li>\n'); % open bullet point
+  fprintf(oid, '          <li>\n');    % open bullet point
   str = metaData.acknowledgment;
   fprintf(oid, ['          ', str, '\n']);
-  fprintf(oid, '          </li>\n' ); % close bullet point
+  fprintf(oid, '          </li>\n' );  % close bullet point
    
-  fprintf(oid,'         </ul>\n\n');  % open the unordered list      
+  fprintf(oid,'         </ul>\n\n\n');   % close the unordered list      
 end
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
 
 % Bibliography:
 fprintf(oid, '      <H3 style="clear:both" class="pet">Bibliography</H3>\n');
 [nm, nst] = fieldnmnst_st(metaData.biblist);
-fprintf(oid, '      <ul>\n');     % open unordered list   
-for i = 1:nst
-  fprintf(oid,['        <li>', nm{i},'</li>\n']); % open bullet point
-end
-fprintf(oid, '      </ul>\n\n');     % close unordered list   
+
+fclose(oid); % insert biblist un ul format
+bib2bbl([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '/']);
+bbl2html([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '/'], [metaData.species, '_res']);
+oid = fopen(fileName, 'a'); % open file for appending
+
 fprintf(oid, '      <p>\n');
-fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex files with references for this entry </A> <BR>\n']);
+fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex files with references for this entry</A> <BR>\n']);
 fprintf(oid, '      </p>\n\n' );
   
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
@@ -495,7 +511,7 @@ else % modifications do exist
     ' (last modified by ', txt_author_mod, '\n', txt_date_mod,')','</H3>\n\n']);
 end
   fprintf(oid,['      <H3 ALIGN="CENTER"> accepted: ', txt_date_acc,'</H3>\n\n']);
-  fprintf(oid,['      <H3 ALIGN="CENTER"> refer to this entry as: AmP ', speciesprintnm, ' version ' txt_date_acc,' bio.vu.nl/thb/research/deb/deblab/add_my_pet/</H3>\n\n']);
+  fprintf(oid,['      <H3 ALIGN="CENTER"> refer to this entry as: AmP ', speciesprintnm, ' version ' txt_date_acc,' bio.vu.nl/thb/deb/deblab/add_my_pet/</H3>\n\n']);
 
 % REPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASHREPLACE_WITH_DASH_DASH
 

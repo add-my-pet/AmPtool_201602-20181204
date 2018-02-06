@@ -5,7 +5,7 @@
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
-% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26 Bas Kooijman
+% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26, 2018/02/06 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -101,6 +101,11 @@ fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
 fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../../sys/style.css">\n'); 
 fprintf(oid, '  <script src="../../sys/dropdown.js"></script>\n');
 fprintf(oid, '  <script src="../../sys/w3data.js"></script>\n');
+fprintf(oid, '  <style>\n');
+fprintf(oid, '    ul.ref{\n');
+fprintf(oid, '      list-style-type: square;\n');
+fprintf(oid, '    }\n');
+fprintf(oid, '  </style>\n');
 fprintf(oid, '</HEAD>\n\n');
 fprintf(oid, '<BODY>\n\n');
 
@@ -342,13 +347,13 @@ fprintf(oid,['        <TR BGCOLOR = "#FFE7C6"><TD><B>Data</B></TD><TD><B>General
   end
  fprintf(oid, '      </TABLE>\n\n'); 
  
-%  work in progress : (it is to make a link to html page with all of the
-%  figure on it)
+%  work in progress : (it is to make a link to html page with all of the figures on it)
 %  if isempty(metaData.data_1) == 0
 %    prt_unidata_my_pet_html(metaData, metaPar)
 %  end  
 
 % ----------------------------------------------------------
+
 % Facts:
 if isfield(metaData, 'facts') 
   fprintf(oid, '      <H3 style="clear:both" class="pet">Facts</H3>\n');
@@ -374,11 +379,11 @@ if isfield(metaData, 'facts')
     end
     fprintf(oid, '        </li>\n' ); % close bullet point
   end
-  fprintf(oid,'      </ul>\n');     % close the unordered list    
+  fprintf(oid,'      </ul>\n');       % close the unordered list    
 end
 
 % ----------------------------------------------------------
-% Discussion:
+
 if isfield(metaData, 'discussion') == 1
   fprintf(oid, '      <H3 style="clear:both" class="pet">Discussion</H3>\n');
   fprintf(oid, '      <ul> \n');     % open the unordered list
@@ -403,23 +408,24 @@ if isfield(metaData, 'acknowledgment') == 1
   fprintf(oid, '      <H3 style="clear:both" class="pet">Acknowledgment</H3>\n');
   fprintf(oid, '        <ul> \n');     % open the unordered list
     
-  fprintf(oid, '          <li>\n'); % open bullet point
+  fprintf(oid, '          <li>\n');    % open bullet point
   str = metaData.acknowledgment;
   fprintf(oid, ['          ', str, '\n']);
-  fprintf(oid, '          </li>\n' ); % close bullet point
+  fprintf(oid, '          </li>\n' );  % close bullet point
    
-  fprintf(oid,'         </ul>\n\n');  % open the unordered list      
+  fprintf(oid,'         </ul>\n\n\n');   % close the unordered list      
 end
 % ----------------------------------------------------------
 
 % Bibliography:
 fprintf(oid, '      <H3 style="clear:both" class="pet">Bibliography</H3>\n');
 [nm, nst] = fieldnmnst_st(metaData.biblist);
-fprintf(oid, '      <ul>\n');     % open unordered list   
-for i = 1:nst
-  fprintf(oid,['        <li>', nm{i},'</li>\n']); % open bullet point
-end
-fprintf(oid, '      </ul>\n\n');     % close unordered list   
+
+fclose(oid); % insert biblist un ul format
+bib2bbl([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '/']);
+bbl2html([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '/'], [metaData.species, '_res']);
+oid = fopen(fileName, 'a'); % open file for appending
+
 fprintf(oid, '      <p>\n');
 fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex files with references for this entry</A> <BR>\n']);
 fprintf(oid, '      </p>\n\n' );

@@ -42,23 +42,23 @@ for i = 1:nargin
   mkdir(destinationFolder);
   fprintf(' %g : %s \n', i, varargin{i}) % report progress to screen 
   
-  cd(['../../entries/', varargin{i}]) % goto entry i in dir entries
-  delete('*.cache', '*.wn','*.asv','*.bib') % delete unwanted and bib files
-  %mat2pars_init(varargin{i})
+  cd(['../../entries/', varargin{i}]) % goto entry i in dir entries  
+  delete('*.cache', '*.wn', '*.asv', '*.bib') % delete unwanted and bib files
+  %
   load(['results_', varargin{i}, '.mat']) % load results_my_pet.mat
   [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); % run mydata_* to create data files
   prdData = feval(['predict_',metaData.species], par, data, auxData); % run predict_* to compute predictions
-  prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:
-  
+  prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:  
   cd(WD) % goto orginal path, but print to destinationFolder
+  
   prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder) % print bib file
   prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % print html with parameters
   prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
   prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder) % print html with results
-  
+  web(['../../entries_web/', varargin{i}, '_res.html'], '-browser')
+
   cd('../../entries_zip');
-  zip_my_pet(varargin{i}, '../entries'); % zip the entry
-  
+  zip_my_pet(varargin{i}, '../entries'); % zip the entry  
   cd(WD)  % goto original path    
 end
     
