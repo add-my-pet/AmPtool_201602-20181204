@@ -24,6 +24,11 @@ function bib2bbl(my_pet_bib, destinationFolder)
 % * convert bib to bbl by bib2bbl
 % * convert bbl to html by bbl2html
 % * insert html-snippet in results_my_pet.html by prt_my_pet_res
+%
+% Notice that 
+%
+% * {\em ...} can have an arbitrary number of nested {}, but \emph{} and \textit{} cannot handle nested {}
+% * web-adress cannot contain spaces or %20; use ~ instead; this will be replaced by a space in function bbl2html
 
 % create aux file
 

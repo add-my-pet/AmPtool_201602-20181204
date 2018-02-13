@@ -3,14 +3,17 @@
 
 %%
 function run_collection(varargin)
-% created 2016/11/13 Bas Kooijman and Starrlight Augustine; modified 2017/04/26 Bas Kooijman
+% created 2016/11/13 Bas Kooijman and Starrlight Augustine; modified 2017/04/26, 2018/02/13 Bas Kooijman
 
 %% Syntax
 % <../run_collection.m *run_collection*> (varargin)
 
 %% Description
-% * writes html and bib pages in entries_web and zip file in entries_zip
-% * deletes .cache, .wn, .asv, .bib files from entries
+% Writes html and bib pages in entries_web and zip file in entries_zip.
+% Deletes .cache, .wn, .asv, .bib,  .bbl', .html files from entries.
+% This function calls function bib2bbl, which writes and deletes the .aux file as source for Bibtex.
+% It also runs Bibtex (under Matlab) to produce a bbl-file, make sure that you have it.
+% Then function bbl2html is called, which produces html code, writes it in my_pet_res.html, and deletes the bbl-file.
 %
 % Input:
 %
@@ -42,7 +45,8 @@ for i = 1:nargin
   mkdir(destinationFolder);
   fprintf(' %g : %s \n', i, varargin{i}) % report progress to screen 
   
-  cd(['../../entries/', varargin{i}]) % goto entry i in dir entries  
+  cd(['../../entries/', varargin{i}]) % goto entry i in dir entries
+  feval(['run_', varargin{i}]); close all;
   delete('*.cache', '*.wn', '*.asv', '*.bib', '*.bbl', '*.html') % delete unwanted and bib files
   %
   load(['results_', varargin{i}, '.mat']) % load results_my_pet.mat

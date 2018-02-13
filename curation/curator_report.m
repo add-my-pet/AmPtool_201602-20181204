@@ -38,7 +38,7 @@ pointNumber = 1;
 fprintf('\n%d. Warnings from check_my_pet:\n\n', pointNumber);
 check_speciesnm(speciesnm);
 
-pause
+fprintf('Hit a key to continue\n'); pause
 
 
 %% run check_my_pet
@@ -48,7 +48,7 @@ pointNumber = pointNumber + 1;
 fprintf('\n%d. Warnings from check_my_pet:\n\n', pointNumber);
 check_my_pet(speciesnm);
 
-pause
+fprintf('Hit a key to continue\n'); pause
 
 %% run check_data for data_0, data_1 and COMPLETE
 
@@ -61,29 +61,20 @@ fprintf('\nCheck the consistency between metaData and data.\n');
 fprintf('Check that the labels for each data type are used and consistent with the contents.\n');
 fprintf('Contact the web administrator with any new labels that should be added to the table (http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction)\n');
 
-pause
+fprintf('Hit a key to continue\n'); pause
 
-%% check url
+%% check bibliography and url's
 
 pointNumber = pointNumber + 1; 
 
-mydataText = fileread(['mydata_', speciesnm, '.m']);
-expression = 'url{\S*}';
-urls = regexp(mydataText,expression,'match');
-if isempty(urls)
-  fprintf('\n%d. There are no urls in mydata to check.\n\n', pointNumber);  
-else
-  fprintf('\n%d. Check the following list of urls found in mydata:\n\n', pointNumber);
-  for i = 1:length(urls)
-    if strcmp(urls{i}(end-1),'}')
-      fprintf('%s\n', urls{i}(5:end-2));
-    else
-      fprintf('%s\n', urls{i}(5:end-1));
-    end
-  end
-end
+[data, auxData, metaData] = feval(['mydata_', speciesnm]); % get metaData.biblist
+prt_my_pet_bib(speciesnm, metaData.biblist) % biblist2bib
+bib2bbl([speciesnm,'_bib']);                % runs Bibtex to convert bib to bbl
+bbl2html([speciesnm,'_bib']);               % converts bbl to html
+web([speciesnm,'_bib.html'],'-browser');    % open html of bibliography in system browser
 
-pause
+fprintf('Hit a key to continue\n'); pause
+delete([speciesnm,'_bib.bib'],[speciesnm,'_bib.html']); % delete produced files
 
 %% compare values in pars_init with values in the .mat
 
@@ -111,7 +102,7 @@ else
   fprintf('The txtPar is different in pars_init and .mat.\n');
 end
 
-pause
+fprintf('Hit a key to continue\n'); pause
 
 %% check extra parameters
 
@@ -139,7 +130,7 @@ end
 fprintf('\nCheck if these are all used in predict.\n');
 fprintf('Check if there should exist customized filters involving these parameters.\n');
 
-pause
+fprintf('Hit a key to continue\n'); pause
 
 %% check freeing of parameters
 
@@ -169,7 +160,7 @@ end
 fprintf('\nCheck if the values above are reasonable and if there is enough data to estimate them.\n\n');
 
 
-pause; 
+fprintf('Hit a key to continue\n'); pause; 
 
 %% check implied properties 
 
@@ -183,7 +174,7 @@ if prnt
   display(stat)
 end
 
-pause; 
+fprintf('Hit a key to continue\n'); pause; 
 
 %% check bibliography
 
@@ -214,7 +205,7 @@ pointNumber = pointNumber + 1;
 
 fprintf('\n%d. Please after the curation process execute the run file with estim_option, results_output=2 \n\n', pointNumber);
 
-pause; 
+fprintf('Hit a key to continue\n'); pause; 
 
 %% check if the parameter set was obtained after continuation from .mat 
 
@@ -237,7 +228,7 @@ if autoEst
 
   fprintf('Restart from .mat after first convergence. Press enter:\n\n');
 
-  pause
+  fprintf('Hit a key to continue\n'); pause
 
   eval(['run_', speciesnm]);
 

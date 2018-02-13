@@ -24,6 +24,9 @@ function bbl2html(my_pet_bib, destinationFolder, filenm)
 % * convert bib to bbl by bib2bbl
 % * convert bbl to html by bbl2html
 % * insert html-snippet in results_my_pet.html
+%
+% This code does not handle nested {} in \emph{...} or \textit{...}, but is does in {\em ...}
+% Uppercase project handles single character only, so: {P}{S}dfre, not {PS}dfre
 
 if ~exist('destinationFolder', 'var')
   destinationFolder = '';
@@ -41,6 +44,13 @@ bbl = strrep(bbl, '\begin{thebibliography}{1}', '');
 bbl = strrep(bbl, '\end{thebibliography}', '');
 i = strfind(bbl, '\bibitem'); bbl(1:i-1) = []; % remove heading stuff
 bbl = strrep(bbl, char(13), '');               % remove unnecessary new lines
+% Although special characters are dealt with below, \~{x} is an exception, due to double-use as spacing character
+bbl = strrep(bbl, '\~', '&~'); % tilde above characters must be replaced before tilde as space is replaced
+x =  regexp(bbl, '&~{.}', 'match'); n = length(x);
+for j=1:n
+   txt = x{j}; txt(1:3) = []; txt(end) = [];
+   bbl = strrep(bbl, ['&~{', txt, '}'], ['&', txt, 'tilde;']);
+end
 bbl = strrep(bbl, '~', ' '); bbl = strrep(bbl, '\newblock', ' ');
 
 % number of bibitems
@@ -59,21 +69,19 @@ for i = 1:n_bib % scan bibitems
   url = regexp(bibitem_i, '\url{\S.*}', 'match'); n = length(url);
   for j=1:n
     txt = url{j}; txt(1:4) = []; txt(end) = [];
-    bibitem_i = strrep(bibitem_i, ['\url{', txt, '}'], ['<a href="', txt, '">', txt, '</a>']);
+    bibitem_i = strrep(bibitem_i, ['\url{', txt, '}'], ['<a href="', txt, '" target="_blank">', txt, '</a>']);
   end
   
-  
-  bibitem_i = strrep(bibitem_i, '\em', '&em'); % expression \em gives problems in following line
-  em =  regexp(bibitem_i, '{&em\s\w.*}', 'match'); n = length(em);
+  n = length(strfind(bibitem_i, '{\em')); 
   for j=1:n
-    txt = em{j}; txt(1:5) = []; txt(end) = [];
-    bibitem_i = strrep(bibitem_i, ['{&em ', txt, '}'], ['<i>', txt, '</i>']);
+    txt = bibitem_i; txt(1: (3 + strfind(txt, '{\em'))) = []; txt(strfind_close(txt): end) = [];
+    bibitem_i = strrep(bibitem_i, ['{\em', txt, '}'], ['<i>', txt, '</i>']);
   end
 
-  n = length(strfind(bibitem_i, '&emph'));
+  n = length(strfind(bibitem_i, '\emph'));
   for j=1:n
-    txt = bibitem_i; txt(1: (5 + strfind(txt, '&emph{'))) = []; txt(strfind(txt, '}'): end) = [];
-    bibitem_i = strrep(bibitem_i, ['&emph{', txt, '}'], ['<i>', txt, '</i>']);
+    txt = bibitem_i; txt(1: (5 + strfind(txt, '\emph{'))) = []; txt(strfind(txt, '}'): end) = [];
+    bibitem_i = strrep(bibitem_i, ['\emph{', txt, '}'], ['<i>', txt, '</i>']);
   end
 
   n = length(strfind(bibitem_i, '\textit'));
@@ -83,59 +91,80 @@ for i = 1:n_bib % scan bibitems
   end
 
   % special characters
+  %
+  % single characters
+  bibitem_i = strrep(bibitem_i, '\&',    '&amp;');
+  bibitem_i = strrep(bibitem_i, '{\o}',  '&oslash;');
+  bibitem_i = strrep(bibitem_i, '{\O}',  '&Oslash;');
+  bibitem_i = strrep(bibitem_i, '{\ae}', '&aelig;');
+  bibitem_i = strrep(bibitem_i, '{\ss}', '&szlig;');
+  bibitem_i = strrep(bibitem_i, '\alpha','&alpha;');
+  bibitem_i = strrep(bibitem_i, '\beta', '&beta;');
+  bibitem_i = strrep(bibitem_i, '\gamma','&gamma;');
+  bibitem_i = strrep(bibitem_i, '\Gamma','&Gamma;');
+  bibitem_i = strrep(bibitem_i, '\delta','&delta;');
+  bibitem_i = strrep(bibitem_i, '\Delta','&Delta;');
+  bibitem_i = strrep(bibitem_i, '{\l}',  '&#322;');
+  bibitem_i = strrep(bibitem_i, '{\L}',  '&#321;');
+  bibitem_i = strrep(bibitem_i, '\v{c}', '&#269;');
+  bibitem_i = strrep(bibitem_i, '\v{e}', '&#283;');
+  bibitem_i = strrep(bibitem_i, '\v{g}', '&#287;');
+  bibitem_i = strrep(bibitem_i, '\v{z}', '&#382;');
+  bibitem_i = strrep(bibitem_i, '\v{Z}', '&#381;');
+  bibitem_i = strrep(bibitem_i, '{\i}',  '&#305;');
+  bibitem_i = strrep(bibitem_i, '\.{z}', '&#378;');
+  bibitem_i = strrep(bibitem_i, '!',     '%');
+  %
+  % composite characters
   bibitem_i = strrep(bibitem_i, '\r', '&r'); % ring
-  r =  regexp(bibitem_i, '&r{\w*}', 'match'); n = length(r);
+  %r =  regexp(bibitem_i, '&r{\w*}', 'match'); n = length(r);
+  r =  regexp(bibitem_i, '&r{.}', 'match'); n = length(r);
   for j=1:n
     txt = r{j}; txt(1:3) = []; txt(end) = [];
     bibitem_i = strrep(bibitem_i, ['&r{', txt, '}'], ['&', txt, 'ring;']);
   end
-
+  %
   bibitem_i = strrep(bibitem_i, '\c', '&c'); % cedil
   c =  regexp(bibitem_i, '&c{\w*}', 'match'); n = length(c);
   for j=1:n
     txt = c{j}; txt(1:3) = []; txt(end) = [];
     bibitem_i = strrep(bibitem_i, ['&c{', txt, '}'], ['&', txt, 'cedil;']);
   end
-
+  %
   bibitem_i = strrep(bibitem_i, '\"', '&"'); % uml
   x =  regexp(bibitem_i, '&"{\w*}', 'match'); n = length(x);
   for j=1:n
     txt = x{j}; txt(1:3) = []; txt(end) = [];
     bibitem_i = strrep(bibitem_i, ['&"{', txt, '}'], ['&', txt, 'uml;']);
   end
-
+  %
   bibitem_i = strrep(bibitem_i, '\''', '&'''); % acute
   x =  regexp(bibitem_i, '&''{\w*}', 'match'); n = length(x);
   for j=1:n
     txt = x{j}; txt(1:3) = []; txt(end) = [];
     bibitem_i = strrep(bibitem_i, ['&''{', txt, '}'], ['&', txt, 'acute;']);
   end
-
+  %
   bibitem_i = strrep(bibitem_i, '\`', '&`'); % grave
   x =  regexp(bibitem_i, '&`{\w*}', 'match'); n = length(x);
   for j=1:n
     txt = x{j}; txt(1:3) = []; txt(end) = [];
     bibitem_i = strrep(bibitem_i, ['&`{', txt, '}'], ['&', txt, 'grave;']);
   end
-
-  bibitem_i = strrep(bibitem_i, '\~', '&~'); % tilde
-  x =  regexp(bibitem_i, '&~{\w*}', 'match'); n = length(x);
+  %
+  n = length(strfind(bibitem_i,'\^{')); % circ
   for j=1:n
-    txt = x{j}; txt(1:3) = []; txt(end) = [];
-    bibitem_i = strrep(bibitem_i, ['&~{', txt, '}'], ['&', txt, 'tilde;']);
+    txt = bibitem_i; txt(1: (2 + strfind(txt, '\^{'))) = []; txt(strfind(txt, '}'): end) = [];
+    bibitem_i = strrep(bibitem_i, ['\^{', txt, '}'], ['&', txt, 'circ;']);
   end
-
-  bibitem_i = strrep(bibitem_i, '\^', '&^'); % circ
-  x =  regexp(bibitem_i, '&^{\w*}', 'match'); n = length(x);
+ 
+  
+  %up =  regexp(bibitem_i, '{\w*}', 'match'); n = length(up); % uppercase protection
+  up =  regexp(bibitem_i, '{.}', 'match'); n = length(up); % uppercase protection
   for j=1:n
-    txt = x{j}; txt(1:3) = []; txt(end) = [];
-    bibitem_i = strrep(bibitem_i, ['&^{', txt, '}'], ['&', txt, 'circ;']);
+    txt = up{j}; txt(1) = []; txt(end) = [];
+    bibitem_i = strrep(bibitem_i, ['{', txt, '}'], txt);
   end
-
-  bibitem_i = strrep(bibitem_i, '\&', '&amp;');
-  bibitem_i = strrep(bibitem_i, '{\ss}', '&szlig;');
-  bibitem_i = strrep(bibitem_i, '{\l}', '&#322');
-  bibitem_i = strrep(bibitem_i, '{\L}', '&#321');
 
   bibitem_i = strrep(bibitem_i, '\', ''); % just avoid problems
   
@@ -152,3 +181,29 @@ fclose(fid);
 % remove bbl file
 delete([destinationFolder, my_pet_bib, '.bbl'])
 
+end
+
+
+function ind = strfind_close(txt)
+% find index of closing }, given the string already opened (so leading { is not included)
+% e.g. txt = 'df{fg}rty}...' then  result is 10
+
+i_open = strfind(txt, '{')';
+i_close = strfind(txt, '}')';
+
+if isempty(i_close)
+  ind = [];
+  fprintf('warning from srtfind_close: no closing } found\n')
+  return
+elseif isempty(i_open) || i_close(1) < i_open(1) % pattern {..}..{..}
+  ind = i_close(1);
+  return
+end
+
+n_open = length(i_open);   open = ones(n_open,1);
+n_close = length(i_close); close = - ones(n_close,1);
+i_oc = [i_open; i_close]; [x, i_oc] = sort(i_oc); 
+count = [open; close]; count = cumsum(count(i_oc));
+ind = x(count==-1); ind = ind(1);
+
+end
