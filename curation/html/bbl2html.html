@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>bbl2html</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-02-11"><meta name="DC.source" content="bbl2html.m"><style type="text/css">
+      --><title>bbl2html</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-02-13"><meta name="DC.source" content="bbl2html.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -142,10 +142,10 @@ for i = 1:n_bib % scan bibitems
     bibitem_i = strrep(bibitem_i, ['\url{', txt, '}'], ['<a href="', txt, '" target="_blank">', txt, '</a>']);
   end
   
-  n = length(strfind(bibitem_i, '{\em ')); 
+  n = length(strfind(bibitem_i, '{\em')); 
   for j=1:n
-    txt = bibitem_i; txt(1: (4 + strfind(txt, '{\em'))) = []; txt(strfind_close(txt): end) = [];
-    bibitem_i = strrep(bibitem_i, ['{\em ', txt, '}'], ['<i>', txt, '</i>']);
+    txt = bibitem_i; txt(1: (3 + strfind(txt, '{\em'))) = []; txt(strfind_close(txt): end) = [];
+    bibitem_i = strrep(bibitem_i, ['{\em', txt, '}'], ['<i>', txt, '</i>']);
   end
 
   n = length(strfind(bibitem_i, '\emph'));
@@ -161,6 +161,29 @@ for i = 1:n_bib % scan bibitems
   end
 
   % special characters
+  %
+  % single characters
+  bibitem_i = strrep(bibitem_i, '\&',    '&amp;');
+  bibitem_i = strrep(bibitem_i, '{\o}',  '&oslash;');
+  bibitem_i = strrep(bibitem_i, '{\O}',  '&Oslash;');
+  bibitem_i = strrep(bibitem_i, '{\ae}', '&aelig;');
+  bibitem_i = strrep(bibitem_i, '{\ss}', '&szlig;');
+  bibitem_i = strrep(bibitem_i, '\alpha','&alpha;');
+  bibitem_i = strrep(bibitem_i, '\beta', '&beta;');
+  bibitem_i = strrep(bibitem_i, '\gamma','&gamma;');
+  bibitem_i = strrep(bibitem_i, '\Gamma','&Gamma;');
+  bibitem_i = strrep(bibitem_i, '\delta','&delta;');
+  bibitem_i = strrep(bibitem_i, '\Delta','&Delta;');
+  bibitem_i = strrep(bibitem_i, '{\l}',  '&#322;');
+  bibitem_i = strrep(bibitem_i, '{\L}',  '&#321;');
+  bibitem_i = strrep(bibitem_i, '\v{c}', '&#269;');
+  bibitem_i = strrep(bibitem_i, '\v{e}', '&#283;');
+  bibitem_i = strrep(bibitem_i, '\v{g}', '&#287;');
+  bibitem_i = strrep(bibitem_i, '\v{z}', '&#382;');
+  bibitem_i = strrep(bibitem_i, '\v{Z}', '&#381;');
+  bibitem_i = strrep(bibitem_i, '{\i}',  '&#305;');
+  bibitem_i = strrep(bibitem_i, '\.{z}', '&#378;');
+  bibitem_i = strrep(bibitem_i, '!',     '%');
   %
   % composite characters
   bibitem_i = strrep(bibitem_i, '\r', '&r'); % ring
@@ -199,33 +222,12 @@ for i = 1:n_bib % scan bibitems
     bibitem_i = strrep(bibitem_i, ['&`{', txt, '}'], ['&', txt, 'grave;']);
   end
   %
-  bibitem_i = strrep(bibitem_i, '\^', '&^'); % circ
-  x =  regexp(bibitem_i, '&^{\w*}', 'match'); n = length(x);
+  n = length(strfind(bibitem_i,'\^{')); % circ
   for j=1:n
-    txt = x{j}; txt(1:3) = []; txt(end) = [];
-    bibitem_i = strrep(bibitem_i, ['&^{', txt, '}'], ['&', txt, 'circ;']);
+    txt = bibitem_i; txt(1: (2 + strfind(txt, '\^{'))) = []; txt(strfind(txt, '}'): end) = [];
+    bibitem_i = strrep(bibitem_i, ['\^{', txt, '}'], ['&', txt, 'circ;']);
   end
-  %
-  % single characters
-  bibitem_i = strrep(bibitem_i, '\&',    '&amp;');
-  bibitem_i = strrep(bibitem_i, '{\o}',  '&oslash;');
-  bibitem_i = strrep(bibitem_i, '{\O}',  '&Oslash;');
-  bibitem_i = strrep(bibitem_i, '{\ae}', '&aelig;');
-  bibitem_i = strrep(bibitem_i, '{\ss}', '&szlig;');
-  bibitem_i = strrep(bibitem_i, '\alpha','&alpha;');
-  bibitem_i = strrep(bibitem_i, '\beta', '&beta;');
-  bibitem_i = strrep(bibitem_i, '\gamma','&gamma;');
-  bibitem_i = strrep(bibitem_i, '\Gamma','&Gamma;');
-  bibitem_i = strrep(bibitem_i, '\delta','&delta;');
-  bibitem_i = strrep(bibitem_i, '\Delta','&Delta;');
-  bibitem_i = strrep(bibitem_i, '{\l}',  '&#322;');
-  bibitem_i = strrep(bibitem_i, '{\L}',  '&#321;');
-  bibitem_i = strrep(bibitem_i, '\v{c}', '&#269;');
-  bibitem_i = strrep(bibitem_i, '\v{e}', '&#283;');
-  bibitem_i = strrep(bibitem_i, '\v{g}', '&#287;');
-  bibitem_i = strrep(bibitem_i, '\v{z}', '&#382;');
-  bibitem_i = strrep(bibitem_i, '{\i}',  '&#305;');
-  bibitem_i = strrep(bibitem_i, '\.{z}',  '&#378;');
+ 
   
   %up =  regexp(bibitem_i, '{\w*}', 'match'); n = length(up); % uppercase protection
   up =  regexp(bibitem_i, '{.}', 'match'); n = length(up); % uppercase protection

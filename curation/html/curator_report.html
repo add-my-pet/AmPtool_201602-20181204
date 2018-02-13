@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>curator_report</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-01-17"><meta name="DC.source" content="curator_report.m"><style type="text/css">
+      --><title>curator_report</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-02-13"><meta name="DC.source" content="curator_report.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>curator_report</h1><!--introduction--><p>Produces a report to help curators analyse a submission</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li><li><a href="#7">check species name</a></li><li><a href="#8">run check_my_pet</a></li><li><a href="#9">run check_data for data_0, data_1 and COMPLETE</a></li><li><a href="#10">check url</a></li><li><a href="#11">compare values in pars_init with values in the .mat</a></li><li><a href="#12">check extra parameters</a></li><li><a href="#13">check freeing of parameters</a></li><li><a href="#14">check implied properties</a></li><li><a href="#15">check bibliography</a></li><li><a href="#16">check if the parameter set was obtained after continuation from .mat</a></li><li><a href="#17">check if the parameter set was obtained after continuation from .mat</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../curator_report.m"><b>curator_report</b></a> (speciesnm)</p><h2 id="4">Description</h2><p>Produces a report to help curators analyse a submission.</p><p>Follows :</p><div><ul><li>- check spelling species name</li><li>- runs check_my_pet</li><li>- runs check_data: displays data_0, data_1, data fields, and COMPLETE</li><li>- compares par, metaPar and txtPar in pars_init and .mat</li></ul></div><p>Input</p><div><ul><li>speciesnm: string with species name</li></ul></div><p>Output is printed to screen</p><h2 id="5">Remarks</h2><p>This function is supposed to be run in the directory of the source files: mydata_speciesnm, pars_init_speciesnm</p><h2 id="6">Example of use</h2><p>curator_report('my_pet')</p><h2 id="7">check species name</h2><h2 id="8">run check_my_pet</h2><h2 id="9">run check_data for data_0, data_1 and COMPLETE</h2><h2 id="10">check url</h2><h2 id="11">compare values in pars_init with values in the .mat</h2><h2 id="12">check extra parameters</h2><h2 id="13">check freeing of parameters</h2><h2 id="14">check implied properties</h2><h2 id="15">check bibliography</h2><h2 id="16">check if the parameter set was obtained after continuation from .mat</h2><h2 id="17">check if the parameter set was obtained after continuation from .mat</h2><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>curator_report</h1><!--introduction--><p>Produces a report to help curators analyse a submission</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li><li><a href="#7">check species name and lineage</a></li><li><a href="#8">run check_my_pet</a></li><li><a href="#9">run check_data for data_0, data_1 and COMPLETE</a></li><li><a href="#10">check bibliography and url's</a></li><li><a href="#11">compare values in pars_init with values in the .mat</a></li><li><a href="#12">check extra parameters</a></li><li><a href="#13">check freeing of parameters</a></li><li><a href="#14">check implied properties</a></li><li><a href="#15">check bibliography</a></li><li><a href="#16">check if the parameter set was obtained after continuation from .mat</a></li><li><a href="#17">check if the parameter set was obtained after continuation from .mat</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../curator_report.m"><b>curator_report</b></a> (speciesnm)</p><h2 id="4">Description</h2><p>Produces a report to help curators analyse a submission.</p><p>Follows :</p><div><ul><li>- check species name and lineage</li><li>- runs check_my_pet</li><li>- runs check_data: displays data_0, data_1, data fields, and COMPLETE</li><li>- compares par, metaPar and txtPar in pars_init and .mat</li></ul></div><p>Input</p><div><ul><li>speciesnm: string with species name</li></ul></div><p>Output is printed to screen</p><h2 id="5">Remarks</h2><p>This function is supposed to be run in the directory of the source files: mydata_speciesnm, pars_init_speciesnm</p><h2 id="6">Example of use</h2><p>curator_report('my_pet')</p><h2 id="7">check species name and lineage</h2><h2 id="8">run check_my_pet</h2><h2 id="9">run check_data for data_0, data_1 and COMPLETE</h2><h2 id="10">check bibliography and url's</h2><h2 id="11">compare values in pars_init with values in the .mat</h2><h2 id="12">check extra parameters</h2><h2 id="13">check freeing of parameters</h2><h2 id="14">check implied properties</h2><h2 id="15">check bibliography</h2><h2 id="16">check if the parameter set was obtained after continuation from .mat</h2><h2 id="17">check if the parameter set was obtained after continuation from .mat</h2><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% curator_report
 % Produces a report to help curators analyse a submission
@@ -74,7 +74,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 %%
 function curator_report(speciesnm)
   % created 2015/08/01 by Goncalo Marques
-  % modified 2015/08/06 Dina Lika, 2018/01/17 by Bas Kooijman
+  % modified 2015/08/06 Dina Lika, 2018/01/23 by Bas Kooijman
   
   %% Syntax 
   % <../curator_report.m *curator_report*> (speciesnm)
@@ -84,7 +84,7 @@ function curator_report(speciesnm)
   %
   % Follows :
   %
-  % * - check spelling species name
+  % * - check species name and lineage
   % * - runs check_my_pet
   % * - runs check_data: displays data_0, data_1, data fields, and COMPLETE
   % * - compares par, metaPar and txtPar in pars_init and .mat
@@ -101,33 +101,24 @@ function curator_report(speciesnm)
   %% Example of use
   % curator_report('my_pet') 
 
-WD = pwd;
-path = which(['mydata_', speciesnm]); path(end-length(speciesnm)-8: end) = [];
-cd(path)
-
-%% check species name
+%% check species name and lineage
 
 pointNumber = 1; 
 
-if ~isempty(strfind(speciesnm, ' '))
-  fprintf('The species name in input should not have spaces.\n');
-  fprintf('The standard species name follow the form ''Genus_species''.\n');
-  return;
-end
-get_id_CoL(speciesnm); % print warning if species name is not accepeted in Catalog of Life
+fprintf('\n%d. Warnings from check_my_pet:\n\n', pointNumber);
+check_speciesnm(speciesnm);
+
+fprintf('Hit a key to continue\n'); pause
+
 
 %% run check_my_pet
 
 pointNumber = pointNumber + 1; 
 
-
 fprintf('\n%d. Warnings from check_my_pet:\n\n', pointNumber);
 check_my_pet(speciesnm);
 
-[data, auxData, metaData, txtData, weights] = feval(['mydata_', speciesnm]);
-
-
-pause
+fprintf('Hit a key to continue\n'); pause
 
 %% run check_data for data_0, data_1 and COMPLETE
 
@@ -140,30 +131,20 @@ fprintf('\nCheck the consistency between metaData and data.\n');
 fprintf('Check that the labels for each data type are used and consistent with the contents.\n');
 fprintf('Contact the web administrator with any new labels that should be added to the table (http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction)\n');
 
-pause
+fprintf('Hit a key to continue\n'); pause
 
-%% check url
+%% check bibliography and url's
 
 pointNumber = pointNumber + 1; 
 
+[data, auxData, metaData] = feval(['mydata_', speciesnm]); % get metaData.biblist
+prt_my_pet_bib(speciesnm, metaData.biblist) % biblist2bib
+bib2bbl([speciesnm,'_bib']);                % runs Bibtex to convert bib to bbl
+bbl2html([speciesnm,'_bib']);               % converts bbl to html
+web([speciesnm,'_bib.html'],'-browser');    % open html of bibliography in system browser
 
-mydataText = fileread(['mydata_', speciesnm, '.m']);
-expression = 'url{\S*}';
-urls = regexp(mydataText,expression,'match');
-if isempty(urls)
-  fprintf('\n%d. There are no urls in mydata to check.\n\n', pointNumber);  
-else
-  fprintf('\n%d. Check the following list of urls found in mydata:\n\n', pointNumber);
-  for i = 1:length(urls)
-    if strcmp(urls{i}(end-1),'}')
-      fprintf('%s\n', urls{i}(5:end-2));
-    else
-      fprintf('%s\n', urls{i}(5:end-1));
-    end
-  end
-end
-
-pause
+fprintf('Hit a key to continue\n'); pause
+delete([speciesnm,'_bib.bib'],[speciesnm,'_bib.html']); % delete produced files
 
 %% compare values in pars_init with values in the .mat
 
@@ -191,7 +172,7 @@ else
   fprintf('The txtPar is different in pars_init and .mat.\n');
 end
 
-pause
+fprintf('Hit a key to continue\n'); pause
 
 %% check extra parameters
 
@@ -199,6 +180,7 @@ pointNumber = pointNumber + 1;
 
 fprintf('\n%d. Checking extra parameters:\n\n', pointNumber);
 
+[data, auxData, metaData, txtData, weights] = feval(['mydata_', speciesnm]);
 [par, metaPar, txtPar] = feval(['pars_init_', speciesnm], metaData);
 standChem = addchem([], [], [], [], metaData.phylum, metaData.class);
 
@@ -218,7 +200,7 @@ end
 fprintf('\nCheck if these are all used in predict.\n');
 fprintf('Check if there should exist customized filters involving these parameters.\n');
 
-pause
+fprintf('Hit a key to continue\n'); pause
 
 %% check freeing of parameters
 
@@ -248,7 +230,7 @@ end
 fprintf('\nCheck if the values above are reasonable and if there is enough data to estimate them.\n\n');
 
 
-pause; 
+fprintf('Hit a key to continue\n'); pause; 
 
 %% check implied properties 
 
@@ -262,7 +244,7 @@ if prnt
   display(stat)
 end
 
-pause; 
+fprintf('Hit a key to continue\n'); pause; 
 
 %% check bibliography
 
@@ -293,7 +275,7 @@ pointNumber = pointNumber + 1;
 
 fprintf('\n%d. Please after the curation process execute the run file with estim_option, results_output=2 \n\n', pointNumber);
 
-pause; 
+fprintf('Hit a key to continue\n'); pause; 
 
 %% check if the parameter set was obtained after continuation from .mat 
 
@@ -316,7 +298,7 @@ if autoEst
 
   fprintf('Restart from .mat after first convergence. Press enter:\n\n');
 
-  pause
+  fprintf('Hit a key to continue\n'); pause
 
   eval(['run_', speciesnm]);
 
@@ -329,8 +311,6 @@ if autoEst
   end
 
 end
-
-cd(WD)
 
 
 ##### SOURCE END #####
