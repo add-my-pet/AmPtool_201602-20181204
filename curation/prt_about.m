@@ -3,7 +3,7 @@
 
 %%
 function prt_about
-% created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02, 2016/10/24, 2017/10/13
+% created 2016/02/23 by Bas Kooijman; modified 2016/04/26, 2016/06/02, 2016/10/24, 2017/10/13, 2018/02/28
 
 %% Syntax
 % <../prt_about *prt_about*>
@@ -22,6 +22,7 @@ function prt_about
 %      - MRE.png
 %      - COMPLETE_MRE.png
 %      - MRE_SMSE.png
+%      - DEBlib.png
 %
 % * file is written in ../about.html 
 
@@ -35,7 +36,6 @@ function prt_about
 % Don't forget to refresh species_tree_js with prt_species_tree_js.m
 
 close all
-clear all
 
 % write_allStat; % update Staristics structure allStat.mat
 
@@ -50,7 +50,7 @@ saveas (gca, '../../img/about/pie_model.png')
 close all
 
 % # of entries in time
-[dates entries_new dates_new] = get_date_subm;
+[dates, entries_new, dates_new] = get_date_subm;
 surv_dates = surv(dates, 2006); 
 surv_dates([1; end - 1; end],:) = [];    
 n = size(surv_dates, 1)/2;
@@ -95,6 +95,20 @@ xlabel('(Symmetic) Mean (Squared) Relative Error')
 ylabel('survivor function')
 xlim([0 0.55])
 saveas (gca,'../../img/about/MRE.png')
+close all
+
+% # of DEB papers in time
+dates = get_date_DEB('../../DEB Library.bib'); % requires update via zotero
+surv_dates = surv(dates, 1979); 
+surv_dates([1; end - 1; end],:) = [];    
+n = size(surv_dates, 1)/2;
+    
+plot(surv_dates(:,1), n * (1 - surv_dates(:,2)), 'b', 'Linewidth', 2)
+set(gca, 'FontSize', 15, 'Box', 'on')
+xlabel('time, yr')
+ylabel('# of DEB publications')
+xlim([1979; max(dates)])
+saveas (gca,'../../img/about/DEBlib.png')
 close all
 
 % Write about.html
@@ -269,6 +283,17 @@ fprintf(fid_about, '      <H2 class="clear"> Background documentation </H2>\n\n'
 fprintf(fid_about, '      <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Add-my-pet_papers" TARGET="_blank">An increasing number of papers has been published on the add-my-pet collection, both on the methodology and ecological and evolutionary patterns in parameter values among species.</a>\n');        
 fprintf(fid_about, '      <p>\n');
 fprintf(fid_about, '      <a href="http://www.bio.vu.nl/thb/deb/DEB_papers.pdf" TARGET="_blank">Many papers have been written on specific entries</a>, which have been cited at entry-pages. \n');
+
+fprintf(fid_about, '      <H2 class="clear"> DEB publications in time</H2>\n\n');
+
+fprintf(fid_about, '      <div class="sidelement">\n');
+fprintf(fid_about, '        <img src="img/about/DEBlib.png" width="350px">\n');
+fprintf(fid_about, '        <div class = "caption">   \n');
+fprintf(fid_about, '          Publications in which DEB theory plays a substantial role.\n');
+fprintf(fid_about, '          <A HREF ="https://www.zotero.org/groups/500643/deb_library/" target="_blank">They can be found in the DEB liberary on Zotero</A>.\n\n');
+fprintf(fid_about, '        </div>\n');
+fprintf(fid_about, '      </div>\n\n');
+
 fprintf(fid_about, '    </div> <!-- end of sidebar -->\n\n');
 
 fprintf(fid_about, '    <div w3-include-html="sys/footer_amp.html"></div>\n');

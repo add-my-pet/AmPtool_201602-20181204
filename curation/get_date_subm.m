@@ -6,7 +6,7 @@ function [dates taxa_new dates_new] = get_date_subm(n_new)
 %% created 2016/02/21 by Bas Kooijman
 
 %% Syntax
-% [dates taxa_new dates_new] = <../get_date_subm.m *get_date_subm*>
+% [dates taxa_new dates_new] = <../get_date_subm.m *get_date_subm*>(n_new)
 
 %% Description
 % Gets the submission dates of entries in add_my_pet collection
