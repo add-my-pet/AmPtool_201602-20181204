@@ -28,12 +28,14 @@ function prt_about
 
 %% Remarks
 % First run write_allStat
-% Copy png files to 
+% Don't forget to refresh species_tree_js with prt_species_tree_js.m
+%   This is done automatically in run_collection_intro
+% Don't forget to refresh ../../DEB Library.bib by exporting in Bibtex-mode from Zotero
+% After running prt_about, copy png files to 
 %   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img
 % and about.html file to
 %   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet
 % to present them on the web.
-% Don't forget to refresh species_tree_js with prt_species_tree_js.m
 
 close all
 
@@ -290,7 +292,8 @@ fprintf(fid_about, '      <div class="sidelement">\n');
 fprintf(fid_about, '        <img src="img/about/DEBlib.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Publications in which DEB theory plays a substantial role.\n');
-fprintf(fid_about, '          <A HREF ="https://www.zotero.org/groups/500643/deb_library/" target="_blank">They can be found in the DEB liberary on Zotero</A>.\n\n');
+fprintf(fid_about, '          <A HREF ="https://www.zotero.org/groups/500643/deb_library/" target="_blank">They can be found in the DEB liberary on Zotero</A>.\n');
+fprintf(fid_about, '          Mail <a HREF="mailto:starrlight.augustine@akvaplan.niva.no">Starrlight</a> to become member (no fee) and access all pdf''s.\n\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 

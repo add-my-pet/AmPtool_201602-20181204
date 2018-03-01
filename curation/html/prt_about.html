@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_about</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-02-28"><meta name="DC.source" content="prt_about.m"><style type="text/css">
+      --><title>prt_about</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-03-01"><meta name="DC.source" content="prt_about.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -73,7 +73,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
     - MRE.png
     - COMPLETE_MRE.png
     - MRE_SMSE.png
-    - DEBlib.png</pre><div><ul><li>file is written in ../about.html</li></ul></div><h2 id="5">Remarks</h2><p>First run write_allStat Copy png files to   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img and about.html file to   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet to present them on the web. Don't forget to refresh species_tree_js with prt_species_tree_js.m</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+    - DEBlib.png</pre><div><ul><li>file is written in ../about.html</li></ul></div><h2 id="5">Remarks</h2><p>First run write_allStat Don't forget to refresh species_tree_js with prt_species_tree_js.m   This is done automatically in run_collection_intro Don't forget to refresh ../../DEB Library.bib by exporting in Bibtex-mode from Zotero After running prt_about, copy png files to   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img and about.html file to   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet to present them on the web.</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_about
 % generates ../about.html, ../img/png's
@@ -105,12 +105,14 @@ function prt_about
 
 %% Remarks
 % First run write_allStat
-% Copy png files to 
+% Don't forget to refresh species_tree_js with prt_species_tree_js.m
+%   This is done automatically in run_collection_intro
+% Don't forget to refresh ../../DEB Library.bib by exporting in Bibtex-mode from Zotero
+% After running prt_about, copy png files to 
 %   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet/img
 % and about.html file to
 %   /home/websites/www.bio.vu.nl/webroot/thb/deb/deblab/add_my_pet
 % to present them on the web.
-% Don't forget to refresh species_tree_js with prt_species_tree_js.m
 
 close all
 
@@ -367,7 +369,8 @@ fprintf(fid_about, '      <div class="sidelement">\n');
 fprintf(fid_about, '        <img src="img/about/DEBlib.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Publications in which DEB theory plays a substantial role.\n');
-fprintf(fid_about, '          <A HREF ="https://www.zotero.org/groups/500643/deb_library/" target="_blank">They can be found in the DEB liberary on Zotero</A>.\n\n');
+fprintf(fid_about, '          <A HREF ="https://www.zotero.org/groups/500643/deb_library/" target="_blank">They can be found in the DEB liberary on Zotero</A>.\n');
+fprintf(fid_about, '          Mail <a HREF="mailto:starrlight.augustine@akvaplan.niva.no">Starrlight</a> to become member and access all pdf''s.\n\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 
