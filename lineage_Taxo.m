@@ -33,6 +33,11 @@ if isempty(id_Taxo)
 end
 
 url = urlread(['http://taxonomicon.taxonomy.nl/TaxonTree.aspx?id=', id_Taxo]);
+if ~isempty(strfind(url, 'This unexpected error'))
+  lineage = []; rank = []; 
+  fprintf('Warning from lineage_Taxo: website Taxonomicon is presently not working properly\n')
+  return
+end
 % remove all stuff around classification
 url(1:strfind(url, '&#32;') - 1) = []; 
 url(strfind(url, '<br /></p></div>'):end) = [];
