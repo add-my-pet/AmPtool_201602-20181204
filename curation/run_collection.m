@@ -56,8 +56,8 @@ for i = 1:nargin
   cd(WD) % goto orginal path, but print to destinationFolder
   
   prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder) % print bib file
-  %prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % print html with parameters
-  %prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
+  prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % print html with parameters
+  prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
   prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder) % print html with results
 
   cd('../../entries_zip');

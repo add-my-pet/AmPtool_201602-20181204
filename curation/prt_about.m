@@ -100,7 +100,8 @@ saveas (gca,'../../img/about/MRE.png')
 close all
 
 % # of DEB papers in time
-dates = get_date_DEB('../../DEB Library.bib'); % requires update via zotero
+dates = get_date_DEB('../../DEB Library.bib'); % requires update via Zotero
+dates = [dates; (datenum(date) - datenum('01-Jan-000'))/365.25];
 surv_dates = surv(dates, 1979); 
 surv_dates([1; end - 1; end],:) = [];    
 n = size(surv_dates, 1)/2;
@@ -152,7 +153,7 @@ fprintf(fid_about, '    <H2 id = "aims">Overview of the collection</H2>\n\n');
 
 fprintf(fid_about, '    <div class="sidelement2">\n');
 fprintf(fid_about, '      <img src="img/about/pie_Animalia.png" width="350px">\n');
-fprintf(fid_about, '      <div class = "caption">   \n');
+fprintf(fid_about, '      <div class = "caption">\n');
 fprintf(fid_about, '        The collection is complete for large <a href="phyla.html" target="_blank">phyla</a>. \n');
 fprintf(fid_about, '        Chordates are complete at order level, primates at family level.\n');
 fprintf(fid_about, '      </div>\n');
@@ -160,8 +161,9 @@ fprintf(fid_about, '    </div>\n\n');
 
 fprintf(fid_about, '    <div class="sidelement2">\n');
 fprintf(fid_about, '      <img src="img/about/pie_model.png" width="350px"> \n');
-fprintf(fid_about, '      <div class = "caption">   \n');
-fprintf(fid_about, '        A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_blank">variety of related models</a> captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.\n');
+fprintf(fid_about, '      <div class = "caption"><font color = "magenta">\n');
+fprintf(fid_about, '        A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_blank">variety of related models</a> \n');
+fprintf(fid_about, '        captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.</font>\n');
 fprintf(fid_about, '      </div>\n');
 fprintf(fid_about, '    </div>\n\n');
 
@@ -169,7 +171,21 @@ fprintf(fid_about, '    <h2 class="clear"></h2>\n');
 fprintf(fid_about, '    At 2018/01/01, when the collection had 1000 entries, there were \n');
 fprintf(fid_about, '    112 <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" TARGET="_blank">zero-variate data types</a>, and \n');
 fprintf(fid_about, '    153 <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" TARGET="_blank">univariate data types</a>, in \n');
-fprintf(fid_about, '    588 combinations, written by 125 <a href = "authors.html">authors</a>.\n\n');
+fprintf(fid_about, '    588 combinations, written by 125 <a href = "authors.html">authors</a>. \n');
+fprintf(fid_about, '    So, few entries share the same data type combination and the number of data types is very much larger than the number of parameters. \n');
+fprintf(fid_about, '    This argues for comparison on the basis of parameters, since all parameters were estimated for all species. \n');
+fprintf(fid_about, '    Moreover, by being mechanistic (= based on first principles), DEB models interprete data, rather than just describe it, so can reveal inconsistencies in data \n');
+fprintf(fid_about, '      and predict un-measured properties of species as functions of parameters.\n\n');
+
+fprintf(fid_about, '    <h2 class="clear"></h2>\n');
+fprintf(fid_about, '    Apart from exant species, the collection also has a number of extinct ones, demonstrating that DEB models can still be applied if data availability is poor.\n');
+fprintf(fid_about, '    Examples are: \n');
+fprintf(fid_about, '      <a href="entries_web/Deinosuchus_rugosus/Deinosuchus_rugosus_res.html">Deinosuchus</a>,\n');
+fprintf(fid_about, '      <a href="entries_web/Pterodaustro_guinazui/Pterodaustro_guinazui_res.html">Pterodaustro</a>,\n');
+fprintf(fid_about, '      <a href="entries_web/Tyrannosaurus_rex/Tyrannosaurus_rex_res.html">Tyrannosaurus</a>,\n');
+fprintf(fid_about, '      <a href="entries_web/Archaeopteryx_lithographica/Archaeopteryx_lithographica_res.html">Archaeopteryx</a> and \n');
+fprintf(fid_about, '      <a href="entries_web/Pinguinus_impennis/Pinguinus_impennis_res.html">great auk</a>. \n');
+fprintf(fid_about, '    Needless to say, however: more data generally reduces uncertainty in parameter values.\n\n');
 
 fprintf(fid_about, '    <H2 class="clear"> Data completeness and mean relative errors</H2>\n\n');  
 
@@ -284,7 +300,7 @@ fprintf(fid_about, '      <H2 class="clear"> Background documentation </H2>\n\n'
     
 fprintf(fid_about, '      <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Add-my-pet_papers" TARGET="_blank">An increasing number of papers has been published on the add-my-pet collection, both on the methodology and ecological and evolutionary patterns in parameter values among species.</a>\n');        
 fprintf(fid_about, '      <p>\n');
-fprintf(fid_about, '      <a href="http://www.bio.vu.nl/thb/deb/DEB_papers.pdf" TARGET="_blank">Many papers have been written on specific entries</a>, which have been cited at entry-pages. \n');
+fprintf(fid_about, '      Many papers have been written on specific entries, which have been cited at entry-pages. \n');
 
 fprintf(fid_about, '      <H2 class="clear"> DEB publications in time</H2>\n\n');
 
@@ -292,8 +308,8 @@ fprintf(fid_about, '      <div class="sidelement">\n');
 fprintf(fid_about, '        <img src="img/about/DEBlib.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Publications in which DEB theory plays a substantial role.\n');
-fprintf(fid_about, '          <A HREF ="https://www.zotero.org/groups/500643/deb_library/" target="_blank">They can be found in the DEB liberary on Zotero</A>.\n');
-fprintf(fid_about, '          Mail <a HREF="mailto:starrlight.augustine@akvaplan.niva.no">Starrlight</a> to become member (no fee) and access all pdf''s.\n\n');
+fprintf(fid_about, '          <a HREF ="https://www.zotero.org/groups/500643/deb_library/" target="_blank">They can be found in the DEB liberary on Zotero</a>, \n');
+fprintf(fid_about, '          including all pdf''s, which you can access if you are <a href="index.html#DEBlib">member</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 
