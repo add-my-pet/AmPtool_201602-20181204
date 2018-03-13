@@ -1033,6 +1033,25 @@ function links = get_link(taxon, open)
       id_EoL = '327210';
       id_Wiki = 'Leptodora';
        
+    case 'Pollicipes_polymerus'
+      id_CoL = 'a42970103ec89cd036510f82fe968d29';
+      id_WoRMS = '535329';
+      id_Taxo = '76206'; 
+      id_EoL = '335092';
+       
+    case 'Amphibalanus_amphitrite'
+      id_CoL = '4d32e73ac272ffb524ab0186a71a2cdc';
+      id_WoRMS = '421137';
+      id_Taxo = '1383615';  % only present at subfamily level 2018/03/10    
+      id_EoL = '1039496';
+      id_ADW = 'Balanus_amphitrite';
+       
+    case 'Argulus_coregoni'
+      id_CoL = 'd632ab75e743ee0dd2ed9f25a08dd0ca';
+      id_WoRMS = ''; % not present at 2018/03/12
+      id_Taxo = '33658';     
+      id_EoL = '335530';
+
     case 'Nitokra_spinipes'
       id_CoL = '0747856e47615f0c02503a3612915bd8';
       id_WoRMS = '745852';

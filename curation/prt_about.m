@@ -148,125 +148,127 @@ fprintf(fid_about, '  <div id = "main-wrapper">    \n');
 fprintf(fid_about, '    <div id="content">\n');
 
 %%
-fprintf(fid_about, '    <H1 id = "portaltop">About Add-my-pet</H1>\n'); 
-fprintf(fid_about, '    <H2 id = "aims">Overview of the collection</H2>\n\n');
+fprintf(fid_about, '      <H1 id = "portaltop">About Add-my-pet</H1>\n'); 
+fprintf(fid_about, '      <H2 id = "aims">Overview of the collection</H2>\n\n');
 
-fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about, '      <img src="img/about/pie_Animalia.png" width="350px">\n');
-fprintf(fid_about, '      <div class = "caption">\n');
-fprintf(fid_about, '        The collection is complete for large <a href="phyla.html" target="_blank">phyla</a>. \n');
-fprintf(fid_about, '        Chordates are complete at order level, primates at family level.\n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n\n');
+fprintf(fid_about, '      <div class="sidelement2">\n');
+fprintf(fid_about, '        <img src="img/about/pie_Animalia.png" width="350px">\n');
+fprintf(fid_about, '        <div class = "caption">\n');
+fprintf(fid_about, '          The collection is complete for large <a href="phyla.html" target="_blank">phyla</a>. \n');
+fprintf(fid_about, '          Chordates are complete at order level, primates at family level.\n');
+fprintf(fid_about, '        </div>\n');
+fprintf(fid_about, '      </div>\n\n');
 
-fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about, '      <img src="img/about/pie_model.png" width="350px"> \n');
-fprintf(fid_about, '      <div class = "caption"><font color = "magenta">\n');
-fprintf(fid_about, '        A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_blank">variety of related models</a> \n');
-fprintf(fid_about, '        captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.</font>\n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n\n');
+fprintf(fid_about, '      <div class="sidelement2">\n');
+fprintf(fid_about, '        <img src="img/about/pie_model.png" width="350px"> \n');
+fprintf(fid_about, '        <div class = "caption"><font color = "magenta">\n');
+fprintf(fid_about, '          A <a href="http://www.debtheory.org/wiki/index.php?title=Typified_models" TARGET="_blank">variety of related models</a> \n');
+fprintf(fid_about, '          captures animal life-cycle diversity and quantifies properties in <a href="pars.html" target="_blank">parameters</a>.</font>\n');
+fprintf(fid_about, '        </div>\n');
+fprintf(fid_about, '      </div>\n\n');
 
-fprintf(fid_about, '    <h2 class="clear"></h2>\n');
-fprintf(fid_about, '    At 2018/01/01, when the collection had 1000 entries, there were \n');
-fprintf(fid_about, '    112 <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" TARGET="_blank">zero-variate data types</a>, and \n');
-fprintf(fid_about, '    153 <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" TARGET="_blank">univariate data types</a>, in \n');
-fprintf(fid_about, '    588 combinations, written by 125 <a href = "authors.html">authors</a>. \n');
-fprintf(fid_about, '    So, few entries share the same data type combination and the number of data types is very much larger than the number of parameters. \n');
-fprintf(fid_about, '    This argues for comparison on the basis of parameters, since all parameters were estimated for all species. \n');
-fprintf(fid_about, '    Moreover, by being mechanistic (= based on first principles), DEB models interprete data, rather than just describe it, so can reveal inconsistencies in data \n');
-fprintf(fid_about, '      and predict un-measured properties of species as functions of parameters.\n\n');
+fprintf(fid_about, '      <h2 class="clear"></h2>\n');
+fprintf(fid_about, '      Although <a href = "http://www.debtheory.org/wiki/" teget = "_blank">Dynamic Energy Budget (DEB) theory</a> applies to all organisms, \n');
+fprintf(fid_about, '        the AmP collection only deals with <a href="phyla.html">animals</a>. \n');
+fprintf(fid_about, '      The reason is that animals eat other organisms, which don''t vary that much in chemical composition. \n');
+fprintf(fid_about, '      Given the habitat, their environment can be characterized by the variables food availability and temperature as a first rough approximation. \n');
+fprintf(fid_about, '      This characterisation is hard to make "complete" for other organisms, which hampers comparison. \n');
+fprintf(fid_about, '      Comparison is the most useful asset of this collection.\n\n');
 
-fprintf(fid_about, '    <h2 class="clear"></h2>\n');
-fprintf(fid_about, '    Apart from exant species, the collection also has a number of extinct ones, demonstrating that DEB models can still be applied if data availability is poor.\n');
-fprintf(fid_about, '    Examples are: \n');
-fprintf(fid_about, '      <a href="entries_web/Deinosuchus_rugosus/Deinosuchus_rugosus_res.html">Deinosuchus</a>,\n');
-fprintf(fid_about, '      <a href="entries_web/Pterodaustro_guinazui/Pterodaustro_guinazui_res.html">Pterodaustro</a>,\n');
-fprintf(fid_about, '      <a href="entries_web/Tyrannosaurus_rex/Tyrannosaurus_rex_res.html">Tyrannosaurus</a>,\n');
-fprintf(fid_about, '      <a href="entries_web/Archaeopteryx_lithographica/Archaeopteryx_lithographica_res.html">Archaeopteryx</a> and \n');
-fprintf(fid_about, '      <a href="entries_web/Pinguinus_impennis/Pinguinus_impennis_res.html">great auk</a>. \n');
-fprintf(fid_about, '    Needless to say, however: more data generally reduces uncertainty in parameter values.\n\n');
+fprintf(fid_about, '      <p>\n');
+fprintf(fid_about, '      At 2018/01/01, when the collection had 1000 entries, there were \n');
+fprintf(fid_about, '      112 <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" TARGET="_blank">zero-variate data types</a>, and \n');
+fprintf(fid_about, '      153 <a href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" TARGET="_blank">univariate data types</a>, in \n');
+fprintf(fid_about, '      588 combinations, written by 125 <a href = "authors.html">authors</a>. \n');
+fprintf(fid_about, '      So, few entries share the same data type combination and the number of data types is very much larger than the number of parameters. \n');
+fprintf(fid_about, '      This argues for comparison on the basis of parameters, since all parameters were estimated for all species. \n');
+fprintf(fid_about, '      Moreover, by being mechanistic (= based on first principles), DEB models interprete data, rather than just describe it, so can reveal inconsistencies in data \n');
+fprintf(fid_about, '        and predict un-measured properties of species as functions of parameters.\n\n');
 
-fprintf(fid_about, '    <H2 class="clear"> Data completeness and mean relative errors</H2>\n\n');  
+fprintf(fid_about, '      <p>\n');
+fprintf(fid_about, '      Apart from extant species, the collection also has a number of extinct ones, demonstrating that DEB models can still be applied if data availability is poor.\n');
+fprintf(fid_about, '      Examples are: \n');
+fprintf(fid_about, '        <a href="entries_web/Deinosuchus_rugosus/Deinosuchus_rugosus_res.html">Deinosuchus</a>,\n');
+fprintf(fid_about, '        <a href="entries_web/Pterodaustro_guinazui/Pterodaustro_guinazui_res.html">Pterodaustro</a>,\n');
+fprintf(fid_about, '        <a href="entries_web/Tyrannosaurus_rex/Tyrannosaurus_rex_res.html">Tyrannosaurus</a>,\n');
+fprintf(fid_about, '        <a href="entries_web/Archaeopteryx_lithographica/Archaeopteryx_lithographica_res.html">Archaeopteryx</a> and \n');
+fprintf(fid_about, '        <a href="entries_web/Pinguinus_impennis/Pinguinus_impennis_res.html">great auk</a>. \n');
+fprintf(fid_about, '      Needless to say, however: more data generally reduces uncertainty in parameter values.\n\n');
 
-fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about, '      <img src="img/about/COMPLETE.png" width="350px">\n');
-fprintf(fid_about, '      <div class = "caption">   \n');
-fprintf(fid_about, '        Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_blank">data completness</a>.\n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n\n');
+fprintf(fid_about, '      <h2 class="clear">Data completeness and mean relative errors</h2>\n\n');  
 
-fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about, '      <img src="img/about/MRE.png" width="350px">\n');
-fprintf(fid_about, '      <div class = "caption">   \n');
-fprintf(fid_about, '        Survivor functions of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE) and Symmetric Mean Squared Error (SMSE)</a>.\n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n\n');
+fprintf(fid_about, '      <div class="sidelement2">\n');
+fprintf(fid_about, '        <img src="img/about/COMPLETE.png" width="350px">\n');
+fprintf(fid_about, '        <div class = "caption">   \n');
+fprintf(fid_about, '          Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_blank">data completness</a>.\n');
+fprintf(fid_about, '        </div>\n');
+fprintf(fid_about, '      </div>\n\n');
 
-fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about, '      <img src="img/about/COMPLETE_MRE.png" width="350px">\n');
-fprintf(fid_about, '      <div class = "caption">   \n');
-fprintf(fid_about, '        The relationship between mean relative error and data completeness. \n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n\n');
+fprintf(fid_about, '      <div class="sidelement2">\n');
+fprintf(fid_about, '        <img src="img/about/MRE.png" width="350px">\n');
+fprintf(fid_about, '        <div class = "caption">   \n');
+fprintf(fid_about, '          Survivor functions of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE) and Symmetric Mean Squared Error (SMSE)</a>.\n');
+fprintf(fid_about, '        </div>\n');
+fprintf(fid_about, '      </div>\n\n');
 
-fprintf(fid_about, '    <div class="sidelement2">\n');
-fprintf(fid_about, '      <img src="img/about/MRE_SMSE.png" width="350px">\n');
-fprintf(fid_about, '      <div class = "caption">\n');
+fprintf(fid_about, '      <div class="sidelement2">\n');
+fprintf(fid_about, '        <img src="img/about/COMPLETE_MRE.png" width="350px">\n');
+fprintf(fid_about, '        <div class = "caption">   \n');
+fprintf(fid_about, '          The relationship between mean relative error and data completeness. \n');
+fprintf(fid_about, '        </div>\n');
+fprintf(fid_about, '      </div>\n\n');
+
+fprintf(fid_about, '      <div class="sidelement2">\n');
+fprintf(fid_about, '        <img src="img/about/MRE_SMSE.png" width="350px">\n');
+fprintf(fid_about, '        <div class = "caption">\n');
 fprintf(fid_about, '        The relationship between <a href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" TARGET="_blanck">symmetric mean squared error (SMSE)</a> and mean relative error. \n');
-fprintf(fid_about, '      </div>\n');
-fprintf(fid_about, '    </div>\n\n');
+fprintf(fid_about, '        </div>\n');
+fprintf(fid_about, '      </div>\n\n');
         
-fprintf(fid_about, '    <H2 id="disclaimer" class = "clear"> Disclaimer</H2>\n\n');    
+fprintf(fid_about, '      <H2 id="disclaimer" class = "clear"> Disclaimer</H2>\n\n');    
 
-fprintf(fid_about, '    Add-my-pet is optimized for learning, training and research.\n');
-fprintf(fid_about, '    Some of the text on this website might be simplified to improve reading and basic understanding.\n');
-fprintf(fid_about, '    Files, references, and code are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.\n');
-fprintf(fid_about, '    <p>\n');
-fprintf(fid_about, '    The entries continue to change as the collection grows for several reasons: \n');
-fprintf(fid_about, '    errors are spotted and corrected; more data is included; assumptions about data quality change; entries are split up by population; \n');
-fprintf(fid_about, '    our understanding of what are the best priors to use for particular taxa increases; algorithms for estimation are improved; the model changed. \n');
-fprintf(fid_about, '    <p>\n');
-fprintf(fid_about, '    Add-my-pet makes explicit a number of wide spread scientific problems such as: data quality, differences between experiments etc. \n');
-fprintf(fid_about, '    The resulting parameter estimates depend on a lot of assumptions concerning which data we choose to include and exclude as well as how the data is interpreted\n');
-fprintf(fid_about, '    (e.g. what we are willing to assume about the initial conditions of the organism.)\n\n');
+fprintf(fid_about, '      Add-my-pet is optimized for learning, training and research.\n');
+fprintf(fid_about, '      Some of the text on this website might be simplified to improve reading and basic understanding.\n');
+fprintf(fid_about, '      Files, references, and code are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.\n\n');
 
-fprintf(fid_about, '    <!--------------------------------------------------------------->\n');
-fprintf(fid_about, '    <!--   This div closes the content box                         -->\n');
-fprintf(fid_about, '    <!--   Do not delete                                           -->\n');
-fprintf(fid_about, '    <!--------------------------------------------------------------->\n');
+fprintf(fid_about, '      <p>\n');
+fprintf(fid_about, '      The entries continue to change as the collection grows for several reasons: \n');
+fprintf(fid_about, '      errors are spotted and corrected; more data is included; assumptions about data quality change; entries are split up by population; \n');
+fprintf(fid_about, '      our understanding of what are the best priors to use for particular taxa increases; algorithms for estimation are improved; the model changed.\n\n');
+
+fprintf(fid_about, '      <p>\n');
+fprintf(fid_about, '      Add-my-pet makes explicit a number of wide spread scientific problems such as: data quality, differences between experiments etc. \n');
+fprintf(fid_about, '      The resulting parameter estimates depend on a lot of assumptions concerning which data we choose to include and exclude as well as how the data is interpreted\n');
+fprintf(fid_about, '      (e.g. what we are willing to assume about the initial conditions of the organism.)\n\n');
+
 fprintf(fid_about, '    </div> <!-- end of content -->\n\n');
 %%
 fprintf(fid_about, '    <!--------------------------------------------------------------->\n');
-fprintf(fid_about, '    <!--   EDIT the content of the second column                   -->\n');
-fprintf(fid_about, '    <!--   remove if we use contentFull (see above)                -->\n');
+fprintf(fid_about, '    <!--   Sidebar                                                 -->\n');
 fprintf(fid_about, '    <!--------------------------------------------------------------->\n');
 
 fprintf(fid_about, '    <div id = "sidebar">\n\n');  
 
 fprintf(fid_about, '      <H1 id = "portaltop"> &nbsp;</H1> <!--   This is here to make heading across both columns even  -->\n');   
-fprintf(fid_about, '      <H2 class="clear"> Entries in time </H2>\n\n');
+fprintf(fid_about, '      <H2 class="clear">Entries in time </H2>\n\n');
 
 fprintf(fid_about, '      <div class="sidelement">\n');
 fprintf(fid_about, '        <img src="img/about/entries.png" width="350px">\n');
-fprintf(fid_about, '        <div class = "caption">   \n');
+fprintf(fid_about, '        <div class = "caption">\n');
 fprintf(fid_about, '          The add-my-pet collection started at 2009/02/12 as part of the \n');
-fprintf(fid_about, '          <A HREF ="http://deb.akvaplan.com/teledescription.html" target="_blank">DEB tele course</A>.\n');
+fprintf(fid_about, '          <A HREF ="http://deb.akvaplan.com/teledescription.html" target="_blank">DEB tele course</A>.<br>\n');
 fprintf(fid_about,['          It has ', num2str(n_entries), ' entries at ', datestr(date,26), '\n']);
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
     
-fprintf(fid_about, '      <!--------------------------------------------------------------->\n');
-fprintf(fid_about, '      <!--  Latest entries                                           -->\n');
-fprintf(fid_about, '      <!---------------------------------------------------------------> \n');
-fprintf(fid_about, '      <TABLE id="t02">\n');
+fprintf(fid_about, '      <TABLE id="t02"> <!-- Latest additions -->\n'); 
 fprintf(fid_about, '        <TR><TH colspan="2"><b>Latest additions to the collection:</b></TH></TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path,  entries_new{1}, '/', entries_new{1}, '_res.html "><I>', entries_new{1}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{1}, '/', entries_new{1}, '_res.html"><I>', entries_new{1}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(1,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{2}, '/', entries_new{2}, '_res.html "><I>', entries_new{2}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{2}, '/', entries_new{2}, '_res.html"><I>', entries_new{2}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(2,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
@@ -274,44 +276,49 @@ fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{3}, 
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(3,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{4}, '/', entries_new{4}, '_res.html "><I>', entries_new{4}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{4}, '/', entries_new{4}, '_res.html"><I>', entries_new{4}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(4,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '        <TR>\n');
-fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{5}, '/', entries_new{5}, '_res.html "><I>', entries_new{5}, '</I></a></TD>\n']);
+fprintf(fid_about,['          <TD WIDTH=300><a HREF = "', path, entries_new{5}, '/', entries_new{5}, '_res.html"><I>', entries_new{5}, '</I></a></TD>\n']);
 fprintf(fid_about,['          <TD WIDTH=100>', dates_new(5,:), '</TD>\n']);
 fprintf(fid_about, '        </TR>\n');
 fprintf(fid_about, '      </TABLE>\n\n');
 
-fprintf(fid_about, '      <H2 class="clear"> DEB research & DEBtool</H2>\n\n');
+fprintf(fid_about, '      <H2 class="clear">DEB research & DEBtool</H2>\n\n');
 
 fprintf(fid_about, '      <div>\n');
-fprintf(fid_about, '        <img src="img/about/daphnia1a.gif" alt="" width="180" height="" id="daphnia" onmouseover="changeImage(''img/about/daphnia1b.gif'')"/>\n');
+fprintf(fid_about, '        <center>\n');
+fprintf(fid_about, '          <img src="img/about/daphnia1a.gif" width="160" id="daphnia" onmouseover="changeImage(''img/about/daphnia1b.gif'')"/>\n');
+fprintf(fid_about, '        </center>\n');
 fprintf(fid_about, '      </div>\n');
 fprintf(fid_about, '      <div class = "caption" onmouseover="changeImage(''img/about/daphnia1a.gif'')">\n');
 fprintf(fid_about, '        DEB research started in the spring of 1979 \n');
-fprintf(fid_about, '        with a study on how toxicants affect reproduction in the waterflea <i>Dapnia magna</i>,\n');
-fprintf(fid_about, '        including the consequences at the population level.\n'); 
-fprintf(fid_about, '        Software package <a href="/thb/deb/deblab/DEBtool_M/manual/" target="_top">DEBtool</a> was developed\n');
-fprintf(fid_about, '        since 2000 to support applications of DEB theory, such as Add-my-Pet.\n');
+fprintf(fid_about, '          with a study on how toxicants affect reproduction in the waterflea <i>Dapnia magna</i>, \n');
+fprintf(fid_about, '          including consequences for populations.<br>\n'); 
+fprintf(fid_about, '        Software package <a href="/thb/deb/deblab/DEBtool_M/manual/" target="_top">DEBtool</a> was developed \n');
+fprintf(fid_about, '          since 2000 to support applications of DEB theory, such as Add-my-Pet.\n');
 fprintf(fid_about, '      </div>\n\n');
 
-fprintf(fid_about, '      <H2 class="clear"> Background documentation </H2>\n\n');
-    
-fprintf(fid_about, '      <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Add-my-pet_papers" TARGET="_blank">An increasing number of papers has been published on the add-my-pet collection, both on the methodology and ecological and evolutionary patterns in parameter values among species.</a>\n');        
-fprintf(fid_about, '      <p>\n');
-fprintf(fid_about, '      Many papers have been written on specific entries, which have been cited at entry-pages. \n');
-
-fprintf(fid_about, '      <H2 class="clear"> DEB publications in time</H2>\n\n');
+fprintf(fid_about, '      <H2 class="clear">DEB publications in time</H2>\n\n');
 
 fprintf(fid_about, '      <div class="sidelement">\n');
 fprintf(fid_about, '        <img src="img/about/DEBlib.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Publications in which DEB theory plays a substantial role.\n');
-fprintf(fid_about, '          <a HREF ="https://www.zotero.org/groups/500643/deb_library/" target="_blank">They can be found in the DEB liberary on Zotero</a>, \n');
+fprintf(fid_about, '          <a HREF ="https://www.zotero.org/groups/500643/deb_library/" target="_blank">They can be found in the DEB library on Zotero</a>, \n');
 fprintf(fid_about, '          including all pdf''s, which you can access if you are <a href="index.html#DEBlib">member</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
+
+fprintf(fid_about, '      <H2 class="clear">Background documentation </H2>\n\n');
+    
+fprintf(fid_about, '      <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Add-my-pet_papers" TARGET="_blank">\n');
+fprintf(fid_about, '      An increasing number of papers has been published on the add-my-pet collection, \n');
+fprintf(fid_about, '        both on the methodology and ecological and evolutionary patterns in parameter values among species.</a>\n\n');
+
+fprintf(fid_about, '      <p>\n');
+fprintf(fid_about, '      Many papers have been written on specific entries, which have been cited at entry-pages. \n');
 
 fprintf(fid_about, '    </div> <!-- end of sidebar -->\n\n');
 
