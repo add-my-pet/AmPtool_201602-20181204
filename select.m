@@ -48,6 +48,7 @@ function species = select(taxon)
       species = {};
       disp('Name of taxon is not recognized')
     end
+    cd(WD);
     return
   end
   
