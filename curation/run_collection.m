@@ -39,17 +39,17 @@ end
 nargin = length(varargin); % number of entries to scan    
 WD = pwd; % store current path
 
-
 for i = 1:nargin 
   destinationFolder = ['../../entries_web/', varargin{i},'/']; % target for html and png files
   mkdir(destinationFolder);
   fprintf(' %g : %s \n', i, varargin{i}) % report progress to screen 
   
   cd(['../../entries/', varargin{i}]) % goto entry i in dir entries
+
   feval(['run_', varargin{i}]); close all;
   delete('*.cache', '*.wn', '*.asv', '*.bib', '*.bbl', '*.html') % delete unwanted and bib files
   %
-  load(['results_', varargin{i}, '.mat']) % load results_my_pet.mat
+  load(['results_', varargin{i}, '.mat']) % load results_my_pet.mat 
   [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); % run mydata_* to create data files
   prdData = feval(['predict_',metaData.species], par, data, auxData); % run predict_* to compute predictions
   prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:  
