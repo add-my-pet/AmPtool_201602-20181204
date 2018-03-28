@@ -3,7 +3,7 @@
 
 %%
 function run_collection(varargin)
-% created 2016/11/13 Bas Kooijman and Starrlight Augustine; modified 2017/04/26, 2018/02/13 Bas Kooijman
+% created 2016/11/13 Bas Kooijman and Starrlight Augustine; modified 2017/04/26, 2018/02/13, 2018/03/28 Bas Kooijman
 
 %% Syntax
 % <../run_collection.m *run_collection*> (varargin)
@@ -17,7 +17,7 @@ function run_collection(varargin)
 %
 % Input:
 %
-% * entries: optional cell array with entry names, or character string with entry names (default all entries)
+% * entries: optional cell array with entry names, or character string with entry or node names (default 'Animalia')
 %
 % Output:
 %
@@ -28,10 +28,16 @@ function run_collection(varargin)
 % run_collection_intro to generate about and access files for the collection
 
 %% Example of use
-% run_collection or run_collection('Mola_mola') or run_collection('Mola_mola', 'Molva_molva') or run_collection({'Mola_mola', 'Molva_molva'})
+% run_collection or 
+% run_collection('Mola_mola') or
+% run_collection('Mola_mola', 'Molva_molva') or
+% run_collection({'Mola_mola', 'Molva_molva'}) or 
+% run_collection('Clitellata');
 
 if isempty(varargin)
   varargin = select('Animalia');
+elseif ~iscell(varargin{1}) && isempty(strfind(varargin{1},'_'))
+  varargin = select(varargin{1});
 elseif iscell(varargin{1})    
   varargin = varargin{:}; % unpack cell string  
 end
