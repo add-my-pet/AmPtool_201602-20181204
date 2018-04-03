@@ -27,7 +27,7 @@ function check_data(my_pet)
 
 global data_types_0 data_types_1
 
-if length(data_types_0) == 0 || length(data_types_0) == 0
+if length(data_types_0) == 0 || length(data_types_1) == 0
   get_data_types
 end
 
