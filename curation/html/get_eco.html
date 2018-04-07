@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>get_eco</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-04"><meta name="DC.source" content="get_eco.m"><style type="text/css">
+      --><title>get_eco</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-07"><meta name="DC.source" content="get_eco.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>get_eco</h1><!--introduction--><p>specifies ecology for AmP entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>[climate, ecozone, habitat, migrate, food] = <a href="get_eco"><b>get_eco</b></a>(taxon)</p><h2 id="4">Description</h2><p>Fills cell strings with ecological specifications of AmP species</p><p>Input:</p><div><ul><li>taxon: character string with name of an entry</li></ul></div><p>Output:</p><div><ul><li>climate, climate, ecozone, habitat, migrate, food: cell arrays with codes</li></ul></div><h2 id="5">Remarks</h2><p>codes are described in AmPeco.html</p><h2 id="6">Example of use</h2><p>[climate, ecozone, habitat, migrate, food] = get_eco('Daphnia_magna');</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>get_eco</h1><!--introduction--><p>specifies ecology for AmP entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>[climate, ecozone, habitat, migrate, food] = <a href="get_eco"><b>get_eco</b></a>(taxon)</p><h2 id="4">Description</h2><p>Fills cell strings with ecological specifications of AmP species</p><p>Input:</p><div><ul><li>taxon: character string with name of an entry</li></ul></div><p>Output:</p><div><ul><li>climate, ecozone, habitat, migrate, food: cell arrays with codes</li></ul></div><h2 id="5">Remarks</h2><p>codes are described in AmPeco.html</p><h2 id="6">Example of use</h2><p>[climate, ecozone, habitat, migrate, food] = get_eco('Daphnia_magna');</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% get_eco
 % specifies ecology for AmP entries
@@ -87,7 +87,7 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
 %
 % Output:
 %
-% * climate, climate, ecozone, habitat, migrate, food: cell arrays with codes
+% * climate, ecozone, habitat, migrate, food: cell arrays with codes
 
 %% Remarks
 % codes are described in AmPeco.html
@@ -1771,268 +1771,268 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
       food = {};
 
     case 'Myxine_glutinosa'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MAN'};
+      habitat = {'0iMd'};
       migrate = {};
-      food = {};
+      food = {'biSf'};
 
     case 'Eptatretus_stoutii'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MPE'};
+      habitat = {'0iMd'};
       migrate = {};
-      food = {};
+      food = {'biSf'};
 
     case 'Lampetra_planeri'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'Cf'};
+      ecozone = {'THp'};
+      habitat = {'0iFc'};
+      migrate = {'Mp'};
+      food = {'biD'};
 
     case 'Callorhinchus_capensis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MASE','MISW'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf'};
 
     case 'Raja_brachyura'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MAE','MAm'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Raja_clavata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MAE','MAm'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Raja_montagui'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MAE','MAm'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Raja_rhina'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MANW','MASW','MPNE','MPSE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Beringraja_binoculata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MPN'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Leucoraja_erinacea'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MANE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Leucoraja_naevus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MAE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Rhinobatos_productus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MPE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf'};
 
     case 'Trygonoptera_personata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MIE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Manta_birostris'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA','MB','MC'};
+      ecozone = {'MC'};
+      habitat = {'0iMpe'};
       migrate = {};
-      food = {};
+      food = {'biPz'};
 
     case 'Torpedo_marmorata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MAE','MAm'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf'};
 
     case 'Pristis_pectinata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA'};
+      ecozone = {'MA'};
+      habitat = {'0iMcd'};
+      migrate = {'Ma'};
+      food = {'biCi','biCf'};
 
     case 'Squatina_californica'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MPE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf'};
 
     case 'Pristiophorus_cirratus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MIE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf'};
 
     case 'Squalus_acanthias'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MC'};
+      ecozone = {'MAN','MAm','MAS'};
+      habitat = {'0iMcd'};
+      migrate = {'Mo'};
+      food = {'biCi','biCf'};
 
     case 'Somniosus_microcephalus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'ME'};
+      ecozone = {'MN','MAN'};
+      habitat = {'0iMp'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf','biCb','biCm'};
 
     case 'Etmopterus_perryi'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MAW'};
+      habitat = {'0iMpb'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf'};
 
     case 'Chlamydoselachus_anguineus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MIW','MPW','MPE','MAE'};
+      habitat = {'0iMdb'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf'};
 
     case 'Heptranchias_perlo'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA','MB','MC'};
+      ecozone = {'MC'};
+      habitat = {'0iMdb'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf'};
 
     case 'Heterodontus_portusjacksoni'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MB'};
+      ecozone = {'MIE'};
+      habitat = {'0iMd'};
+      migrate = {'Mo'};
+      food = {'biCi','biCf'};
 
     case 'Chiloscyllium_plagiosum'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MIE','MPW'};
+      habitat = {'0iMr','0iMd'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf'};
 
     case 'Rhincodon_typus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA','MB'};
+      ecozone = {'MC'};
+      habitat = {'0iMpe'};
+      migrate = {'Mo'};
+      food = {'biPz'};
 
     case 'Sphyrna_lewini'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA'};
+      ecozone = {'MC'};
+      habitat = {'0iMpe'};
+      migrate = {'Mo'};
+      food = {'biCic','biCf'};
 
     case 'Scyliorhinus_canicula'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB','MC'};
+      ecozone = {'MANE','MAm'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Carcharhinus_leucas'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA','MB'};
+      ecozone = {'MC'};
+      habitat = {'0iFL','0iMc','0iMr'};
+      migrate = {'Ma'};
+      food = {'biCi','biCf','biCr','biSm'};
 
     case 'Carcharhinus_plumbeus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MC'};
+      habitat = {'0iMcp'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCf'};
 
     case 'Galeocerdo_cuvier'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA','MB'};
+      ecozone = {'MC'};
+      habitat = {'0iMcp'};
+      migrate = {'Mo'};
+      food = {'biCi','biCf','biCr','biCa','biCm'};
 
     case 'Rhizoprionodon_acutus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA','MB'};
+      ecozone = {'MAE','MI','MPW'};
+      habitat = {'0iMcd'};
+      migrate = {'Ma'};
+      food = {'biCi','biCf'};
 
     case 'Prionace_glauca'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA','MB','MC'};
+      ecozone = {'MC'};
+      habitat = {'0iMpe'};
+      migrate = {'Mo'};
+      food = {'biCi','biCf','biSm'};
 
     case 'Carcharias_taurus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA','MB'};
+      ecozone = {'MC'};
+      habitat = {'0iMr'};
+      migrate = {'Mo'};
+      food = {'biCi','biCf'};
 
     case 'Lamna_nasus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MC'};
+      ecozone = {'MC'};
+      habitat = {'i0Mp'};
+      migrate = {'Mo'};
+      food = {'biCic','biCf'};
 
     case 'Isurus_oxyrinchus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA','MB'};
+      ecozone = {'MC'};
+      habitat = {'0iMpe'};
+      migrate = {'Mo'};
+      food = {'biCic','biCf'};
 
     case 'Carcharodon_carcharias'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA','MB','MC'};
+      ecozone = {'MC'};
+      habitat = {'0iMp'};
+      migrate = {'Mo'};
+      food = {'biCic','biCf','biCb','biCim'};
 
     case 'Erpetoichthys_calabaricus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Aw'};
+      ecozone = {'TPa'};
+      habitat = {'0iFe'};
       migrate = {};
       food = {};
 
@@ -5987,7 +5987,7 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
     case 'Panthera_leo'
       climate = {'Am','BS'};
       ecozone = {'TPa'};
-      habitat = {'0iTg','0iTs'};
+      habitat = {'0iTg','0iTs','0iTi'};
       migrate = {};
       food = {'bxM','xiCm'};
 
