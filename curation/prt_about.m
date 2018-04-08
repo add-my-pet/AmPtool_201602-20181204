@@ -111,6 +111,7 @@ set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('time, yr')
 ylabel('# of DEB publications')
 xlim([1979; max(dates)])
+title(datestr(date,26))
 saveas (gca,'../../img/about/DEBlib.png')
 close all
 
