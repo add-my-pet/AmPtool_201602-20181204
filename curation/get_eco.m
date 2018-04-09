@@ -2268,109 +2268,109 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
       food = {'biCi','biCvf'};
 
     case 'Ictalurus_punctatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Cfa','Dfa'};
+      ecozone = {'THn'};
+      habitat = {'0iFr'};
       migrate = {};
-      food = {};
+      food = {'biCi','biCvf'};
 
     case 'Corydoras_aeneus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iFm'};
       migrate = {};
-      food = {};
+      food = {'biCi','jiHl'};
 
     case 'Lepidogalaxias_salamandroides'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'Bwh'};
+      ecozone = {'TA'};
+      habitat = {'0iFp'};
+      migrate = {'TW'};
+      food = {'biCi'};
 
     case 'Argentina_silus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MC'};
+      ecozone = {'MANE'};
+      habitat = {'0iMdb'};
+      migrate = {'Mo'};
+      food = {'Pz'};
 
     case 'Galaxias_paucispondylus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Cfa'};
+      ecozone = {'TA'};
+      habitat = {'0iFc'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Galaxias_prognathus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Cfa'};
+      ecozone = {'TA'};
+      habitat = {'0iFc'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Galaxias_maculatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'Cfa','BWk'};
+      ecozone = {'TN','TA'};
+      habitat = {'jiFc','jiFl','0jMcp'};
+      migrate = {'Mdc'};
+      food = {'biCi'};
 
     case 'Thymallus_thymallus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Cfa','Cfb','Dfa'};
+      ecozone = {'THp'};
+      habitat = {'0iFr','0iFc'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Oncorhynchus_tshawytscha'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MC','ME'};
+      ecozone = {'MPN'};
+      habitat = {'0jFr','jiMpe'};
+      migrate = {'Ma'};
+      food = {'bjCi','jiCic','jiCvf'};
 
     case 'Oncorhynchus_mykiss'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MC'};
+      ecozone = {'MPN'};
+      habitat = {'0jFr','jiMpe'};
+      migrate = {'Ma'};
+      food = {'bjCi','jiCic','jiCvf'};
 
     case 'Salmo_trutta'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MC'};
+      ecozone = {'MAE'};
+      habitat = {'0jFr','jiMpe'};
+      migrate = {'Ma'};
+      food = {'bjCi','jiCic','jiCvf'};
 
     case 'Salvelinus_alpinus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MC','ME'};
+      ecozone = {'MAN','MN'};
+      habitat = {'0jFr','jiMpe'};
+      migrate = {'Ma'};
+      food = {'biCi','jiCvf'};
 
     case 'Coregonus_albula'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'Dfc'};
+      ecozone = {'MAb'};
+      habitat = {'0jFr','jiMpe'};
+      migrate = {'Ma'};
+      food = {'biPz'};
 
     case 'Coregonus_lavaretus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MC'};
+      ecozone = {'MAE'};
+      habitat = {'0jFr','jiMpe'};
+      migrate = {'Ma'};
+      food = {'biPz'};
 
     case 'Esox_lucius'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'Cfb','Dfb','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'0iFl'};
+      migrate = {'Mp'};
+      food = {'bjCi','jiCvf'};
 
     case 'Osmerus_mordax'
       climate = {};
