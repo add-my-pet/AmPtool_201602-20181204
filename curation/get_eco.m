@@ -2933,11 +2933,11 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
       food = {'biCi'};
 
     case 'Aphanius_fasciatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Csa'};
+      ecozone = {'MAm'};
+      habitat = {'0iFm','0iMm'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Nothobranchius_furzeri'
       climate = {};
