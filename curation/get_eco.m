@@ -2940,417 +2940,417 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
       food = {'biCi'};
 
     case 'Nothobranchius_furzeri'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Cwc'};
+      ecozone = {'TPa'};
+      habitat = {'0iFpe'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Nothobranchius_kadleci'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Am'};
+      ecozone = {'TPa'};
+      habitat = {'0iFpe'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Fundulopanchax_gardneri'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Am'};
+      ecozone = {'TPa'};
+      habitat = {'0iFp','0iFm'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Atherina_presbyter'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MB','MC'};
+      ecozone = {'MAE'};
+      habitat = {'0iMcp'};
+      migrate = {'Mo'};
+      food = {'biCi'};
 
     case 'Chromis_chromis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMc','0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Pomacentrus_amboinensis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MC'};
+      ecozone = {'MIE','MPW'};
+      habitat = {'0iMr'};
+      migrate = {'Mo'};
+      food = {'biCi'};
 
     case 'Pomacentrus_coelestis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MIE','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Chelon_labrosus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MB','MC'};
+      ecozone = {'MAE'};
+      habitat = {'jiFm','0iMm'};
+      migrate = {'0iMc'};
+      food = {'biCi'};
 
     case 'Pseudochromis_flavivertex'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MINW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Lepadogaster_lepadogaster'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMi'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Parablennius_ruber'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB','MC'};
+      ecozone = {'MAE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Lipophrys_pholis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MAE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Gerres_equulus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MPNW'};
+      habitat = {'0iMd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Uranoscopus_scaber'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Achoerodus_viridis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MPSW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi','jiCvf'};
 
     case 'Semicossyphus_pulcher'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MPE'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Dicentrarchus_labrax'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MB','MC'};
+      ecozone = {'MAE'};
+      habitat = {'0iMcd'};
+      migrate = {'Mo'};
+      food = {'biCi','jiCvi'};
 
     case 'Platax_orbicularis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MIN','MIE','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Chaetodon_larvatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MIr'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Sciaena_umbra'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi','jiCvf'};
 
     case 'Argyrosomus_regius'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMp'};
+      migrate = {'Mo'};
+      food = {'biCi'};
 
     case 'Acanthurus_lineatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MI','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Acanthurus_olivaceus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MIE','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Ctenochaetus_striatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MI','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Zebrasoma_scopas'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MI','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Naso_brevirostris'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MI','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Naso_hexacanthus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MI','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Naso_tuberosus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MI'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Naso_unicornis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MI','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Naso_vlamingii'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MI','MP'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Prionurus_maculatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MPSW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Pomacanthus_imperator'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MIE','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Lutjanus_fulviflamma'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MI','MPW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Lutjanus_guttatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MPE'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Lobotes_surinamensis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA','MB'};
+      ecozone = {'MC'};
+      habitat = {'0iMp'};
+      migrate = {'Mo'};
+      food = {'biCi'};
 
     case 'Dentex_dentex'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMp'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Pagellus_erythrinus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMp'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Sparus_aurata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Diplodus_puntazzo'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMp'};
+      migrate = {'Mo'};
+      food = {'biCi'};
 
     case 'Boops_boops'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MB','MC'};
+      ecozone = {'MAE'};
+      habitat = {'0iMd'};
+      migrate = {'Mo'};
+      food = {'biCi'};
 
     case 'Acanthopagrus_berda'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA'};
+      ecozone = {'MI'};
+      habitat = {'0iMd'};
+      migrate = {'Mo'};
+      food = {'biCi'};
 
     case 'Siganus_sutor'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA'};
+      ecozone = {'MI'};
+      habitat = {'0iMd'};
+      migrate = {'Mo'};
+      food = {'biCi'};
 
     case 'Scatophagus_argus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA'};
+      ecozone = {'MI','MPW'};
+      habitat = {'0iMr','0iFm','0iMm'};
+      migrate = {'Ma'};
+      food = {'biCi'};
 
     case 'Priacanthus_macracanthus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MA'};
+      ecozone = {'MIE','MPW'};
+      habitat = {'0iMr'};
+      migrate = {'Mo'};
+      food = {'biCi'};
 
     case 'Capros_aper'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB','MC'};
+      ecozone = {'MAE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Lophius_piscatorius'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MC'};
+      ecozone = {'MAE'};
+      habitat = {'0iMdb'};
       migrate = {};
-      food = {};
+      food = {'biCvf'};
 
     case 'Balistes_vetula'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MAW'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCvf'};
 
     case 'Mola_mola'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'MB','MC'};
+      ecozone = {'MC'};
+      habitat = {'0iMpe'};
+      migrate = {'Mo'};
+      food = {'biCi','biCij'};
 
     case 'Pempheris_adusta'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MI','MP'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Pempheris_schwenkii'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MP'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Lepomis_cyanellus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Cfb','Dfa'};
+      ecozone = {'THn'};
+      habitat = {'0iFl','0iFp'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Epinephelus_marginatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMr'};
       migrate = {};
-      food = {};
+      food = {'biCi','jiCvf'};
 
     case 'Serranus_scriba'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MB'};
+      ecozone = {'MAE'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi','jiCvf'};
 
     case 'Perca_fluviatilis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Cfa','Dfc','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'0iFr','0iFl','0iFp'};
       migrate = {};
-      food = {};
+      food = {'biCi','piCvf'};
 
     case 'Sander_lucioperca'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      migrate = {};
-      food = {};
+      climate = {'Cfa','Dfc','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'0iFr','0iFl','0iFe'};
+      migrate = {'Mp'};
+      food = {'biCi','piCvf'};
 
     case 'Gymnocephalus_cernuus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'Cfa','Dfc','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'0iFr','0iFl','0iFp','0iFe'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Notothenia_coriiceps'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'EF'};
+      ecozone = {'MS'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Chaenocephalus_aceratus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'EF'};
+      ecozone = {'MS'};
+      habitat = {'0iMcd'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Platycephalus_fuscus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
+      climate = {'MA'};
+      ecozone = {'MPW'};
+      habitat = {'0iMm'};
       migrate = {};
-      food = {};
+      food = {'biCi'};
 
     case 'Chelidonichthys_lucerna'
       climate = {};
@@ -7281,5 +7281,5 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
   end
 
   if isempty(climate) && isempty(ecozone) && isempty(habitat) &&  isempty(migrate) && isempty(food)
-    fprintf (['Warning from get_eco: all excological specifications of ', taxon, ' are empty\n'])
+    fprintf (['Warning from get_eco: all ecological specifications of ', taxon, ' are empty\n'])
   end
