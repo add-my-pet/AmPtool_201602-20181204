@@ -1899,7 +1899,7 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
     case 'Carcharhinus_leucas'
       climate = {'MA','MB'};
       ecozone = {'MC'};
-      habitat = {'0iFL','0iMc','0iMr'};
+      habitat = {'0iFl','0iMc','0iMr'};
       migrate = {'Ma'};
       food = {'biCi','biCvf','biCvr','biSvm'};
 
@@ -1941,7 +1941,7 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
     case 'Lamna_nasus'
       climate = {'MC'};
       ecozone = {'MC'};
-      habitat = {'i0Mp'};
+      habitat = {'0iMp'};
       migrate = {'Mo'};
       food = {'biCic','biCvf'};
 
