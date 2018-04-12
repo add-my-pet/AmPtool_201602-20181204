@@ -20,7 +20,9 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
 % * climate, ecozone, habitat, migrate, food: cell arrays with codes
 
 %% Remarks
-% codes are described in AmPeco.html
+% The codes are described in AmPeco.html.
+% check the correctness of the codes with <check_eco *check_eco*>
+
 
 %% Example of use
 % [climate, ecozone, habitat, migrate, food] = get_eco('Daphnia_magna');

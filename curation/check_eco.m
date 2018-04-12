@@ -13,7 +13,7 @@ function check_eco(varin)
 %
 % Input:
 %
-% * varin: character or cell string with name(s) of entry 
+% * varin: optional character or cell string with name(s) of entry (default: select('Animalia')) 
 
 %% Remarks
 % run get_eco_types to copy AmPeco info to labels for eco-codes. 
@@ -25,8 +25,13 @@ function check_eco(varin)
 global eco_types
 
 if length(eco_types) == 0 
-  get_eco_types
+  get_eco_types;
 end
+
+if ~exist('varin','var')
+  varin = select;
+end
+    
 C = fields(eco_types.climate); E = fields(eco_types.ecozone); H = fields(eco_types.habitat); M = fields(eco_types.migrate); F = fields(eco_types.food);
 n = length(varin);
 
