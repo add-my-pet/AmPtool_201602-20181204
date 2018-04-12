@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>check_data</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-01-24"><meta name="DC.source" content="check_data.m"><style type="text/css">
+      --><title>check_data</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-04-12"><meta name="DC.source" content="check_data.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>check_data</h1><!--introduction--><p>Checks data labels</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../check_data.m"><b>check_data</b></a>(my_pet)</p><h2 id="4">Description</h2><p>Checks typified data labels for existence and prints data labels for checking. Also prints COMPLETE and EXPECTED complet.</p><p>Input:</p><div><ul><li>my_pet: character sring with name of entry</li></ul></div><h2 id="5">Remarks</h2><p>run update_data_labels to copy DEBwiki info to labels for typified data. If check_data is run for the first time, waiting time can be several minutes, due to Lisbon's DEBwiki server being slow. If typified data labels are not recognized, change the labels, or add labels to the Zero-variate/Univariate data pages at DEBwiki. If get_COMPLETE returns NaN, add the data-combination and the COMPLETE value to this function.</p><h2 id="6">Example of use</h2><p>check_data('Turdus_merula')</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>check_data</h1><!--introduction--><p>Checks data labels</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../check_data.m"><b>check_data</b></a>(my_pet)</p><h2 id="4">Description</h2><p>Checks typified data labels for existence and prints data labels for checking. Also prints COMPLETE and EXPECTED complet.</p><p>Input:</p><div><ul><li>my_pet: character string with name of entry</li></ul></div><h2 id="5">Remarks</h2><p>run get_data_types to copy DEBwiki info to labels for typified data. If check_data is run for the first time, waiting time can be several minutes, due to Lisbon's DEBwiki server being slow. If typified data labels are not recognized, change the labels, or add labels to the Zero-variate/Univariate data pages at DEBwiki. If get_COMPLETE returns NaN, add the data-combination and the COMPLETE value to this function.</p><h2 id="6">Example of use</h2><p>check_data('Turdus_merula')</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% check_data
 % Checks data labels 
@@ -84,10 +84,10 @@ function check_data(my_pet)
 %
 % Input:
 %
-% * my_pet: character sring with name of entry 
+% * my_pet: character string with name of entry 
 
 %% Remarks
-% run update_data_labels to copy DEBwiki info to labels for typified data. 
+% run get_data_types to copy DEBwiki info to labels for typified data. 
 % If check_data is run for the first time, waiting time can be several minutes, due to Lisbon's DEBwiki server being slow.
 % If typified data labels are not recognized, change the labels, or add labels to the Zero-variate/Univariate data pages at DEBwiki.
 % If get_COMPLETE returns NaN, add the data-combination and the COMPLETE value to this function.
@@ -97,12 +97,12 @@ function check_data(my_pet)
 
 global data_types_0 data_types_1
 
-if length(data_types_0) == 0 || length(data_types_0) == 0
+if length(data_types_0) == 0 || length(data_types_1) == 0
   get_data_types
 end
 
-WD = pwd;
-cd(['../../entries/',my_pet]) % goto entry my_pet
+%WD = pwd;
+%cd(['../../entries/',my_pet]) % goto entry my_pet
 
 % check data_0 and data_1
 [data, auxData, metaData, txtData] = feval(['mydata_', my_pet]);
@@ -187,7 +187,7 @@ end
 % if expected COMPLETE is NaN, the data combination is not in get_COMPLETE
 data = [metaData.data_0(:); metaData.data_1(:)]; COMPLETE = get_COMPLETE(data);
 fprintf(['\nCOMPLETE = ', num2str(metaData.COMPLETE), '; expected COMPLETE = ', num2str(COMPLETE),'\n\n'])
-cd(WD)                   % goto original path
+%cd(WD)                   % goto original path
 
 
 ##### SOURCE END #####
