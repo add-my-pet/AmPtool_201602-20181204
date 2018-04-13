@@ -36,6 +36,12 @@ function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, dest
 %
 % prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 
+global eco_types
+
+if length(eco_types) == 0 
+  get_eco_types;
+end
+
 % Remove underscore and capitalize first letter of english :
 speciesprintnm = [strrep(metaData.species, '_', ' '), ' '];
 speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
@@ -143,13 +149,62 @@ fprintf(oid, '  <div id = "main-wrapper">\n');
 fprintf(oid, '    <div id="contentFull">\n');
 fprintf(oid, '      <H1 id = "portaltop">Predictions & Data for this entry</H1>\n\n');	
    
-% Print results_my_pet
-fprintf(oid,['      <H2>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></H2>\n']);
-fprintf(oid, '      <p>\n');    
-fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Completeness" >COMPLETE</a>',' = %3.1f <BR>\n'],metaData.COMPLETE);
-fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Mean_relative_error" >MRE</a>',' = %8.3f <BR>\n'],metaPar.MRE);   
-fprintf(oid,['        <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" >SMSE</a>',' = %8.3f \n'],metaPar.SMSE);   
-fprintf(oid, '      </p>\n\n');     % close the paragraph
+% start content
+
+% table with model, COMPLETE, MRE, SMSE, eco-codes
+[climate, ecozone, habitat, migrate, food] = get_eco(metaData.species);
+n_C = length(climate); code_C = '';
+for i = 1:n_C
+  code_C = [code_C, '<a href="" title="', eco_types.climate.(climate{i}), '">', climate{i}, '</a>, '];
+end
+code_C(end - (0:1)) = []; 
+n_E = length(ecozone); code_E = '';
+for i = 1:n_E
+  code_E = [code_E, '<a href="" title="', eco_types.ecozone.(ecozone{i}), '">', ecozone{i}, '</a>, '];
+end
+code_E(end - (0:1)) = []; 
+n_H = length(habitat); code_H = '';
+for i = 1:n_H
+  code = habitat{i}; label = [eco_types.habitat.(code(3:end)), ' for stage ', code(1:2)];
+  code_H = [code_H, '<a href="" title="', label, '">', code, '</a>, '];
+end
+code_H(end - (0:1)) = [];
+n_M = length(migrate); code_M = '';
+for i = 1:n_M
+  code_M = [code_M, '<a href="" title="', eco_types.migrate.(migrate{i}), '">', migrate{i}, '</a>, '];
+end
+if n_M > 0
+  code_M(end - (0:1)) = [];
+end
+n_F = length(food); code_F = '';
+for i = 1:n_F
+  code = food{i}; label = [eco_types.food.(code(3:end)), ' for stage ', code(1:2)];
+  code_F = [code_F, '<a href="" title="', label, '">', code, '</a>, '];
+end
+code_F(end - (0:1)) = []; 
+
+fprintf(oid, '      <table>\n');    
+fprintf(oid, '        <tr>\n');    
+fprintf(oid,['          <td width=500>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></td>\n']);    
+fprintf(oid,['          <td><a href="../../AmPeco.html#C" target="_blank">climate: </a></td> <td>', code_C, '</td>\n']);
+fprintf(oid, '        </tr>\n');    
+fprintf(oid, '        <tr>\n');    
+fprintf(oid, '          <td width=300></td>\n');    
+fprintf(oid,['          <td><a href="../../AmPeco.html#E" target="_blank">ecozone: </a></td> <td>', code_E, '</td>\n']);
+fprintf(oid, '        </tr>\n');    
+fprintf(oid, '        <tr>\n');    
+fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Completeness" >COMPLETE</a>',' = %3.1f </td>\n'], metaData.COMPLETE);
+fprintf(oid,['          <td><a href="../../AmPeco.html#H" target="_blank">habitat: </a></td> <td>', code_H, '</td>\n']);
+fprintf(oid, '        </tr>\n');    
+fprintf(oid, '        <tr>\n');    
+fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Mean_relative_error" >MRE</a>',' = %8.3f </td>\n'], metaPar.MRE);   
+fprintf(oid,['          <td><a href="../../AmPeco.html#M" target="_blank">migrate: </a></td> <td>', code_M, '</td>\n']);
+fprintf(oid, '        </tr>\n');    
+fprintf(oid, '        <tr>\n');    
+fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" >SMSE</a>',' = %8.3f </td>\n'], metaPar.SMSE);   
+fprintf(oid,['          <td><a href="../../AmPeco.html#F" target="_blank">food: </a></td> <td>', code_F, '</td>\n']);
+fprintf(oid, '        </tr>\n');    
+fprintf(oid, '      </table>\n\n');     
 
 % % get predictions to compare with data: 
 % [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); 

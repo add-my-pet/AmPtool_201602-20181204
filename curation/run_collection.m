@@ -3,7 +3,7 @@
 
 %%
 function run_collection(varargin)
-% created 2016/11/13 Bas Kooijman and Starrlight Augustine; modified 2017/04/26, 2018/02/13, 2018/03/28 Bas Kooijman
+% created 2016/11/13 Bas Kooijman and Starrlight Augustine; modified 2017/04/26, 2018/02/13, 2018/03/28, 2018/04/13 Bas Kooijman
 
 %% Syntax
 % <../run_collection.m *run_collection*> (varargin)
@@ -62,9 +62,9 @@ for i = 1:nargin
   cd(WD) % goto orginal path, but print to destinationFolder
   
   prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder) % print bib file
+  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder) % print html with results
   prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % print html with parameters
   prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
-  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder) % print html with results
 
   cd('../../entries_zip');
   zip_my_pet(varargin{i}, '../entries'); % zip the entry  

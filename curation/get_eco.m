@@ -1990,7 +1990,7 @@ function [climate, ecozone, habitat, migrate, food] = get_eco(taxon)
       food = {'biCi','biCvf'};
 
     case 'Atractosteus_spatula'
-      climate = {};
+      climate = {'MB','Cfb'};
       ecozone = {'THn'};
       habitat = {'0iFe','0iFm','0iMm'};
       migrate = {};
