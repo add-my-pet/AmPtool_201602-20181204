@@ -181,6 +181,9 @@ end
 
 fprintf('Hit a key to continue\n'); pause; 
 
+delete(['report_',speciesnm,'.html']); % delete produced file
+
+
 % save figures
 % global pets
 % pets = {speciesnm};
