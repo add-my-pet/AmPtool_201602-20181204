@@ -4,7 +4,8 @@
 %%
 function curator_report(speciesnm)
   % created 2015/08/01 by Goncalo Marques
-  % modified 2015/08/06 Dina Lika, 2018/01/23 by Bas Kooijman
+  % modified 2015/08/06 Dina Lika, 2018/01/23 by Bas Kooijman, 2018/04/15
+  % by Starrlight
   
   %% Syntax 
   % <../curator_report.m *curator_report*> (speciesnm)
@@ -35,7 +36,7 @@ function curator_report(speciesnm)
 
 pointNumber = 1; 
 
-fprintf('\n%d. Warnings from check_my_pet:\n\n', pointNumber);
+fprintf('\n%d. Checking if the species already in AmP:\n\n', pointNumber);
 check_speciesnm(speciesnm);
 
 fprintf('Hit a key to continue\n'); pause

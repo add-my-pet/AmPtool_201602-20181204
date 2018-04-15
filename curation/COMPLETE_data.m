@@ -582,6 +582,7 @@ CD = { ...
  2.9 {'ah'; 'ab'; 'ap'; 'am'; 'Lh'; 'Lp'; 'Li';'Wwh'; 'Wwp'; 'Wwi'; 'Ri'; 'E0'; 'T-ah'; 't-WwYe_T'; 't-WwVe_T'; 't-JOe_T'; 't-JCe_T'; 'L_0-L_t'; 'L-Ww'} 
  2.9 {'ab'; 'ap'; 'am'; 'Li'; 'Ww0'; 'Wwb'; 'Wwx'; 'WwR'; 'Wwi'; 'Ri'; 't-Ww'; 't-Le'; 't-N'} 
  2.9 {'ab'; 'ax'; 'aR'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww'; 't-Wwe'} 
+ 2.9 {'ab'; 'aj'; 'ap'; 'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wd0'; 'Wwb'; 'Wdb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'; 't-Ww_f'; 't-N_f'; 't-S'} 
  3.0 {'tg'; 'ax'; 'ap'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww_f'; 't-L_f'; 't-S'; 't-JO'; 't-JX'} 
  3.0 {'ah'; 'ab'; 'ap'; 'am'; 'Lh'; 'Lb'; 'Lp'; 'Li'; 'Wwh'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 'E0'; 'T-ab'; 't-L_T'; 't-Ww_T'; 'L-Ww'; 'L-F'} 
  3.0 {'ab_T'; 'ap'; 'am'; 'L_t'; 'Lp'; 'Li'; 'Wdb'; 'Wwb'; 'Wwi'; 'Ri'; 't-JOe_T'} 

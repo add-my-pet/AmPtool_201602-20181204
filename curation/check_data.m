@@ -117,5 +117,9 @@ end
 % if expected COMPLETE is NaN, the data combination is not in get_COMPLETE
 data = [metaData.data_0(:); metaData.data_1(:)]; COMPLETE = get_COMPLETE(data);
 fprintf(['\nCOMPLETE = ', num2str(metaData.COMPLETE), '; expected COMPLETE = ', num2str(COMPLETE),'\n\n'])
+
+if isnan(COMPLETE)
+    fprintf('Add the new data combination to AmPtool routine COMPLETE_data \n\n')
+end
 %cd(WD)                   % goto original path
 
