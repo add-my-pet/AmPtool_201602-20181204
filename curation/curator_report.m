@@ -67,6 +67,7 @@ fprintf('Hit a key to continue\n'); pause
 %% check bibliography and url's
 
 pointNumber = pointNumber + 1; 
+fprintf('\n%d. Check Bibliography and check the Urls in the bib \n\n', pointNumber);
 
 [data, auxData, metaData] = feval(['mydata_', speciesnm]); % get metaData.biblist
 prt_my_pet_bib(speciesnm, metaData.biblist) % biblist2bib
@@ -80,7 +81,6 @@ delete([speciesnm,'_bib.bib'],[speciesnm,'_bib.html']); % delete produced files
 %% compare values in pars_init with values in the .mat
 
 pointNumber = pointNumber + 1; 
-
 fprintf('\n%d. Comparison of parameters in pars_init with .mat file:\n\n', pointNumber);
 
 [infoPar, infoMetaPar, infoTxtPar] = matisinit(speciesnm);
@@ -173,17 +173,13 @@ prnt = input('Enter: 1 to compute statistics else 0 ton continue: ');
 if prnt
   [stat, txt_stat] = statistics_st(metaPar.model, par, metaData.T_typical, 1);
   display(stat)
+  
+  prt_report_my_pet(metaData, metaPar, par, metaData.T_typical, 1);
+  web(['report_',speciesnm,'.html'],'-browser');    % open html of bibliography in system browser
+  
 end
 
 fprintf('Hit a key to continue\n'); pause; 
-
-%% check bibliography
-
-pointNumber = pointNumber + 1; 
-
-fprintf('\n%d. Generate a .bib. \n Then upload bib_my_pet.bib in References ''my_pet'' project in Overleaf.\n\n', pointNumber);
- 
-prt_my_pet_bib(metaData.species,metaData.biblist)
 
 % save figures
 % global pets
@@ -200,7 +196,7 @@ prt_my_pet_bib(metaData.species,metaData.biblist)
 
 pause; 
 
-%% check if the parameter set was obtained after continuation from .mat 
+%% make sure figures are saved
 
 pointNumber = pointNumber + 1;
 
@@ -214,7 +210,7 @@ pointNumber = pointNumber + 1;
 
 fprintf('\n%d. Check if the parameter set was obtained after continuation from .mat.\n\n', pointNumber);
 
-fprintf('Copy results_my_pet.mat to results_my_pet_author.mat\n\n', pointNumber);
+fprintf('Copy results_my_pet.mat to results_my_pet_author.mat %s \n\n', pointNumber);
 
 filenm1 = ['results_', speciesnm, '.mat']; 
 filenm2 = ['results_', speciesnm, '_author.mat'];
