@@ -24,7 +24,7 @@ function allEco = write_allEco
   entries = select; n = length(entries);
   
   for i = 1:n
-    [allEco.(entries{i}).climate, allEco.(entries{i}).ecozone, allEco.(entries{i}).habitat, allEco.(entries{i}).migrate, allEco.(entries{i}).food] = get_eco(entries{i});
+    [allEco.(entries{i}).climate, allEco.(entries{i}).ecozone, allEco.(entries{i}).habitat, allEco.(entries{i}).embryo, allEco.(entries{i}).migrate, allEco.(entries{i}).food] = get_eco(entries{i});
   end
 
   save('../allEco')

@@ -30,9 +30,11 @@ end
 
 if ~exist('varin','var')
   varin = select;
+elseif isempty(strfind(varin,'_'))
+  varin = select(varin);
 end
     
-C = fields(eco_types.climate); E = fields(eco_types.ecozone); H = fields(eco_types.habitat); M = fields(eco_types.migrate); F = fields(eco_types.food);
+C = fields(eco_types.climate); E = fields(eco_types.ecozone); H = fields(eco_types.habitat); B = fields(eco_types.embryo); M = fields(eco_types.migrate); F = fields(eco_types.food);
 n = length(varin);
 
 stage = { ...
@@ -44,7 +46,7 @@ stage = { ...
     'ei'};
 
 for i = 1:n % scan entries
-  [climate, ecozone, habitat, migrate, food] = get_eco(varin{i});
+  [climate, ecozone, habitat, embryo, migrate, food] = get_eco(varin{i});
  
   n_C = length(climate);
   for j = 1:n_C 
@@ -65,6 +67,13 @@ for i = 1:n % scan entries
     code = habitat{j}; code_stage = code(1:2); code_H = code(3:end);
     if ~ismember(code_H,H) || ~ismember(code_stage,stage)
       fprintf(['Warning from check_eco for ', varin{i}, ': the habitat-code ', code, ' is not recognized\n']);
+    end
+  end
+
+  n_B = length(embryo);
+  for j = 1:n_B 
+    if ~ismember(embryo{j},B)
+      fprintf(['Warning from check_eco for ', varin{i}, ': the embryo-code ', embryo{j}, ' is not recognized\n']);
     end
   end
 
