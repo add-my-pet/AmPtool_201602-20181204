@@ -6937,6 +6937,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '13001744';
        
+    case 'Apodemus_sylvaticus'
+      id_CoL = 'aaeda2082619f754c1fd3debd9bddbc0';
+      id_Taxo = '167367';   
+      id_EoL = '1178950';
+      id_AnAge = taxon; 
+      id_MSW3 = '13001221';
+       
     case 'Apodemus_speciosus'
       id_CoL = '9227237b727b45659a549bd98af5c6cd';
       id_Taxo = '62924';   
