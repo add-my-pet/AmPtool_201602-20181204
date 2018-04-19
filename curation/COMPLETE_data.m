@@ -421,6 +421,8 @@ CD = { ...
  2.5 {'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'}
  2.5 {'ab'; 'ax'; 'aR'; 'ap'; 'am'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'; 't-Ww'} 
  2.5 {'ab'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww'} 
+ 2.5 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'; 't-Ww'; 'L-Ww'; 't-N'; 't-dC'; 't-WwR'}
+ 2.5 {'ab'; 'ax'; 'aR'; 'am'; 'Lb'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri';'t-Ww'; 't-N'; 't-Le'; 't-Wwe'}; 
  2.6 {'ab'; 'ax'; 'aR'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 'ax-Wwx_f'} 
  2.6 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Ri'; 't-L'; 't-Ww'} 
  2.6 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 'JXi'; 'pAi'; 't-L_f'; 't-Ww'} 
