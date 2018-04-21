@@ -4130,6 +4130,7 @@ function links = get_link(taxon, open)
       id_AnAge = 'Geochelone_nigra';
       id_ReptileDB = taxon_rep;
       id_ADW = 'Chelonoidis_nigra';
+      id_Wiki = 'Chelonoidis';
 
     case 'Stigmochelys_pardalis'
       id_CoL = 'f4a53caae2df0db7d89765b274570efa';

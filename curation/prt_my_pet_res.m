@@ -155,7 +155,7 @@ n_C = length(climate); code_C = '';
 for i = 1:n_C
   code_C = [code_C, '<a href="" title="', eco_types.climate.(climate{i}), '">', climate{i}, '</a>, '];
 end
-code_C(end - (0:1)) = []; 
+code_C(end - (0:1)) = [];
 %
 n_E = length(ecozone); code_E = '';
 for i = 1:n_E
