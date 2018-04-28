@@ -87,7 +87,7 @@ for i = 1:n % scan entries
   n_F = length(food);
   for j = 1:n_F 
     code = food{j}; code_stage = code(1:2); code_F = code(3:end);
-    if ~ismember(code_F,F) || ~ismember(code_stage,stage)
+    if ~ismember(code_F,F) || ~ismember(code_stage,stage) || ~isempty(strfind(code_stage,'0'))
       fprintf(['Warning from check_eco for ', varin{i}, ': the food-code ', code, ' is not recognized\n']);
     end
   end

@@ -61,8 +61,9 @@ for i = 1:nargin
   prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:  
   cd(WD) % goto orginal path, but print to destinationFolder
   
-  prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder) % print bib file
-  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder) % print html with results
+  prt_my_pet_toolbar(metaData.species,metaData.species_en,metaData.date_acc, destinationFolder) % print toolbar
+  prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder)                          % print bib file
+  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)         % print html with results
   prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % print html with parameters
   prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
 

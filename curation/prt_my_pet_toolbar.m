@@ -1,36 +1,50 @@
-%% prt_toolbar_species
-% prints the menu bar which is used for the pages which are specific for a
-% given species
+%% prt_my_pet_toolbar
+% prints the menu bar which is used for the pages which are specific for a given species
 
 %%
-function  prt_toolbar_species(oid, species, date_acc)
-% created 2016/11/02 by Starrlight; modified 2017/09/29, 2017/10/13 2017/10/26 Bas Kooijman 
+function  prt_my_pet_toolbar(species, species_en, date_acc, destinationFolder)
+% created 2018/04/27 Bas Kooijman 
 
 %% Syntax
-% <../prt_toolbar_species.m *prt_toolbar_species*> (oid, species, date_acc)
+% <../prt_my_pet_toolbar.m *prt_my_pet_toolbar*> (species, species_en, date_acc, destinationFolder)
 
 %% Description
 % Prints the menu bar to a given html file
 %
 % Input:
 %
-% * oid: string, id of file that the function writes to
-% * species: string, name of the species (Genus_species)
+% * species: string, scientific name of the species (Genus_species)
+% * species_en: string, common name of the species 
 % * date_acc: 3-vector with date of acceptance (from metaData.date_acc)
+% * destinationFolder : optional string with destination folder the files are printed to (default: current folder)
 
 %% Remarks
 % Indent of 4 spaces used for printing to html page
 % Edit drowdown.js for adding dropdwn's
 
 %% Example of use
-% prt_menuBar_species(oid, metaData.species)
+% load('results_my_pet.mat');
+% prt_my_pet_toolbar(metaData.species,metaData.species_en,metaData.date_acc) if you wish to print in the current folder
 
+if exist('destinationFolder','var') && isempty('destinationFolder')
+  oid = [];
+elseif exist('destinationFolder','var') 
+  oid = fopen([destinationFolder, species, '_toolbar.html'], 'w+'); % open file for reading and writing and deletes old content
+else
+  oid = fopen([species, '_toolbar.html'], 'w+');                    % open file for reading and writing and deletes old content   
+end
+
+fprintf(oid, '  <h1 class="alignleft2">\n');
+fprintf(oid,['    <a href="../../species_list.html#', species,'"> &nbsp; ', species, '</a> (', species_en, '): &nbsp;\n']);
+fprintf(oid, '  </h1>\n\n');
+
+fprintf(oid, '  <div id="navwrapper">\n');
 fprintf(oid, '    <div class = "dropdown"><button onclick="species()" class="dropbtn">Results</button>\n');
 fprintf(oid, '      <div id="speciesDropdown" class="dropdown-content">\n');
 fprintf(oid,['        <a href="', species, '_par.html">Parameters</a>\n']);
 fprintf(oid,['        <a href="', species, '_stat.html">Implied properties</a>\n']);    
 fprintf(oid,['        <a href="', species, '_res.html">Predictions & Data</a>\n']);
-fprintf(oid,['        <a href="', species,'_bib.bib">Bibliography</a>\n']);
+fprintf(oid,['        <a href="', species, '_bib.bib">Bibliography</a>\n']);
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 
@@ -58,4 +72,8 @@ end
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 
+fprintf(oid, '  </div> <!-- end of navwrapper -->\n');
+
+fclose(oid);
 end
+

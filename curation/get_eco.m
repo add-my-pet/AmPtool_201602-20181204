@@ -2623,7 +2623,7 @@ function [climate, ecozone, habitat, embryo, migrate, food] = get_eco(taxon)
 
     case 'Galaxias_paucispondylus'
       climate = {'Cfa'};
-      ecozone = {'TA'};
+      ecozone = {'TAz'};
       habitat = {'0iFc'};
       embryo  = {'Fg'};
       migrate = {};
@@ -2631,7 +2631,7 @@ function [climate, ecozone, habitat, embryo, migrate, food] = get_eco(taxon)
 
     case 'Galaxias_prognathus'
       climate = {'Cfa'};
-      ecozone = {'TA'};
+      ecozone = {'TAz'};
       habitat = {'0iFc'};
       embryo  = {'Fg'};
       migrate = {};
@@ -4351,7 +4351,7 @@ function [climate, ecozone, habitat, embryo, migrate, food] = get_eco(taxon)
 
     case 'Furcifer_labordi'
       climate = {'Am','Aw'};
-      ecozone = {'TPa'};
+      ecozone = {'TPam'};
       habitat = {'0iTf'};
       embryo  = {'Tt'};
       migrate = {};
@@ -4712,218 +4712,218 @@ function [climate, ecozone, habitat, embryo, migrate, food] = get_eco(taxon)
     case 'Gavialis_gangeticus'
       climate = {'Aw','BWh','BSh','Cfa'};
       ecozone = {'TPi'};
-      habitat = {'0bTd','biFr'};
+      habitat = {'0bTd','biFc','biFr'};
       embryo  = {'Tt'};
       migrate = {};
       food    = {'bpCi','bpCva','biCvf'};
 
     case 'Crocodylus_johnsoni'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BSh'};
+      ecozone = {'TA'};
+      habitat = {'0bTd','biFm','biFr'};
+      embryo  = {'Tt'};
       migrate = {};
-      food    = {};
+      food    = {'bpCi','biCv'};
 
     case 'Crocodylus_niloticus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Am','Cwa','Cwb'};
+      ecozone = {'TPa'};
+      habitat = {'0bTd','biFm','biFl','biFp','biFr'};
+      embryo  = {'Tl'};
       migrate = {};
-      food    = {};
+      food    = {'bpCi','biCv'};
 
     case 'Pterodaustro_guinazui'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0bTd','biMm'};
+      embryo  = {'Ts'};
       migrate = {};
-      food    = {};
+      food    = {'0iP'};
 
     case 'Plateosaurus_engelhardti'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BS','Df'};
+      ecozone = {'THp'};
+      habitat = {'0iTi','0iTh'};
+      embryo  = {'Ts'};
       migrate = {};
-      food    = {};
+      food    = {'biH'};
 
     case 'Camerasaurus_spec'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BS'};
+      ecozone = {'THn'};
+      habitat = {'0iTi','0iTs'};
+      embryo  = {'Ts'};
       migrate = {};
-      food    = {};
+      food    = {'biH'};
 
     case 'Rapetosaurus_krausei'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'A','Df'};
+      ecozone = {'TPam'};
+      habitat = {'0iTh','0iTf'};
+      embryo  = {'Ts'};
       migrate = {};
-      food    = {};
+      food    = {'biH'};
 
     case 'Apatosaurus_spec'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BS'};
+      ecozone = {'THn'};
+      habitat = {'0iTi','0iTs'};
+      embryo  = {'Ts'};
       migrate = {};
-      food    = {};
+      food    = {'biH'};
 
     case 'Mamenchisaurus_spec'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BS'};
+      ecozone = {'THp'};
+      habitat = {'0iTi','0iTs'};
+      embryo  = {'Ts'};
       migrate = {};
-      food    = {};
+      food    = {'biH'};
 
     case 'Psittacosaurus_mongoliensis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BS','Df'};
+      ecozone = {'THp'};
+      habitat = {'0iTi','0iTs'};
+      embryo  = {'Tns'};
       migrate = {};
-      food    = {};
+      food    = {'biH'};
 
     case 'Maiasaura_peeblesorum'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BS','Df'};
+      ecozone = {'THn'};
+      habitat = {'0iTi','0iTs'};
+      embryo  = {'Tns'};
       migrate = {};
-      food    = {};
+      food    = {'biH'};
 
     case 'Daspletosaurus_torosus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BS','Df'};
+      ecozone = {'THn'};
+      habitat = {'0iTi'};
+      embryo  = {'Tns'};
       migrate = {};
-      food    = {};
+      food    = {'biCvr','biSvr'};
 
     case 'Gorgosaurus_libratus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BS','Df'};
+      ecozone = {'THn'};
+      habitat = {'0iTi'};
+      embryo  = {'Tns'};
       migrate = {};
-      food    = {};
+      food    = {'biCvr','biSvr'};
 
     case 'Tyrannosaurus_rex'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BS','Df'};
+      ecozone = {'THn'};
+      habitat = {'0iTi'};
+      embryo  = {'Tns'};
       migrate = {};
-      food    = {};
+      food    = {'biCvr','biSvr'};
 
     case 'Archaeopteryx_lithographica'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Df'};
+      ecozone = {'THp'};
+      habitat = {'0iTi','0iTf'};
+      embryo  = {'Tl'};
       migrate = {};
-      food    = {};
+      food    = {'biCi'};
 
     case 'Apteryx_mantelli'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Cfb'};
+      ecozone = {'TAz'};
+      habitat = {'0iTf'};
+      embryo  = {'Tntm'};
       migrate = {};
-      food    = {};
+      food    = {'biCi'};
 
     case 'Dromaius_novaehollandiae'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BWh','BSh','Cfa'};
+      ecozone = {'TA'};
+      habitat = {'0iTg','0iTs','0iTd'};
+      embryo  = {'Tnsm'};
       migrate = {};
-      food    = {};
+      food    = {'biCi','biHl'};
 
     case 'Struthio_camelus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BWh','BSh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTg','0iTs','0iTd'};
+      embryo  = {'Tnsm'};
       migrate = {};
-      food    = {};
+      food    = {'biCi','biHl'};
 
     case 'Rhea_americana'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Aw','Cfa','Cwa','Cwb'};
+      ecozone = {'TN'};
+      habitat = {'0iTg','0iTs','0iTd'};
+      embryo  = {'Tnsm'};
       migrate = {};
-      food    = {};
+      food    = {'biCi','biCv','biHl'};
 
     case 'Rhynchotus_rufescens'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'A','Cfa','Cwa','Cwb'};
+      ecozone = {'TN'};
+      habitat = {'0iTg','0iTs'};
+      embryo  = {'Tnsm'};
       migrate = {};
-      food    = {};
+      food    = {'biCi','biHl'};
 
     case 'Alectura_lathami'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Cfa','Cfb'};
+      ecozone = {'TA'};
+      habitat = {'0iTf','0iTh'};
+      embryo  = {'Tl'};
       migrate = {};
-      food    = {};
+      food    = {'biCi','biHs'};
 
     case 'Tetrastes_bonasia'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Dfb','Dfc','Dwb','Dwc'};
+      ecozone = {'THp'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnsf'};
       migrate = {};
-      food    = {};
+      food    = {'bxCi','biHs'};
 
     case 'Gallus_gallus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'A'};
+      ecozone = {'TPi'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnsf'};
       migrate = {};
-      food    = {};
+      food    = {'bxCi','biHs'};
 
     case 'Gallus_gallus_IR'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'A'};
+      ecozone = {'TPi'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnsf'};
       migrate = {};
-      food    = {};
+      food    = {'bxCi','biHs'};
 
     case 'Gallus_gallus_WL'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'A'};
+      ecozone = {'TPi'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnsf'};
       migrate = {};
-      food    = {};
+      food    = {'bxCi','biHs'};
 
     case 'Coturnix_japonica'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Dwa','Dwb'};
+      ecozone = {'TPi'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnsf'};
       migrate = {};
-      food    = {};
+      food    = {'bxCi','biHs'};
 
     case 'Colinus_virginianus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Cfa','Dfa','Dfb'};
+      ecozone = {'THn'};
+      habitat = {'0iTg','0iTh','0iTf'};
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'bxCi','biHs'};
 
     case 'Anas_platyrhynchos'
       climate = {'Cfa','Cfb','Csa','Csb','Dfa','Dfb','Dfc'};
@@ -4934,748 +4934,748 @@ function [climate, ecozone, habitat, embryo, migrate, food] = get_eco(taxon)
       food    = {'biCi','xiHl','xiHr'};
 
     case 'Aythya_fuligula'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'biFp','biFm'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ms'};
+      food    = {'biCi','biCim'};
 
     case 'Aythya_americana'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfc','BSk'};
+      ecozone = {'THn'};
+      habitat = {'biFp','biFm'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ms'};
+      food    = {'biCi','biCim','xiHl'};
 
     case 'Mergus_merganser'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'biFp','biFm'};
+      embryo  = {'Tnwf'};
+      migrate = {'Ml'};
+      food    = {'biCi','biCvf'};
 
     case 'Mergus_serrator'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'biFp','biFm','xiMc'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ml'};
+      food    = {'biCi','biCvf','biCva'};
 
     case 'Melanitta_perspicillata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfc'};
+      ecozone = {'THn'};
+      habitat = {'biFp','biFm','xiMc'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Somateria_mollissima'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfc'};
+      ecozone = {'MC'};
+      habitat = {'xiMc'};
+      embryo  = {'Tncf'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Podilymbus_podiceps'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BSk','Cf','Csb','Dfa','Dfb'};
+      ecozone = {'THn','TN'};
+      habitat = {'0iFp','0iFm'};
+      embryo  = {'Tnffm'};
       migrate = {};
-      food    = {};
+      food    = {'biCi'};
 
     case 'Phoeniconaias_minor'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'BSh','Cw'};
+      ecozone = {'TPa'};
+      habitat = {'0iS'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biP'};
 
     case 'Columba_oenas'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfb','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnwfm'};
+      migrate = {'Ms'};
+      food    = {'biHs','biCi'};
 
     case 'Columba_livia'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BSk','Csa'};
+      ecozone = {'THp'};
+      habitat = {'0iTd'};
+      embryo  = {'Tncfm'};
       migrate = {};
-      food    = {};
+      food    = {'biHs','bxCi'};
 
     case 'Mesitornis_variegatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'A'};
+      ecozone = {'TPam'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCi','xiHs'};
 
     case 'Pterocles_alchata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'BSk','BWk','Csa'};
+      ecozone = {'THp','TPi'};
+      habitat = {'0iTa','0iTd'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'bxCi','xiHs'};
 
     case 'Apus_apus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'BSh','BSk','Csa','Cfb','Dfb','Dfc'};
+      ecozone = {'THp','TPi'};
+      habitat = {'0iTh','0iTf','0iTi','0iTg'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Archilochus_alexandri'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'BSk','BWk'};
+      ecozone = {'THn'};
+      habitat = {'0iTh'};
+      embryo  = {'Tnpf'};
+      migrate = {'Ml'};
+      food    = {'biCi','xiHn'};
 
     case 'Aegotheles_cristatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Cfa','Cfb'};
+      ecozone = {'TA'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnwf'};
       migrate = {};
-      food    = {};
+      food    = {'biCi'};
 
     case 'Podargus_strigoides'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'BSh','BSk','Cfa'};
+      ecozone = {'TA'};
+      habitat = {'0iTh','0iHf','0iTi'};
+      embryo  = {'Tnpfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCi'};
 
     case 'Cuculus_canorus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cwa','Cfa','Cfb','Dfb','Dfc'};
+      ecozone = {'THp','TPi'};
+      habitat = {'0iTh','0iTf','0iTi'};
+      embryo  = {'Tnpo'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Clamator_glandarius'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'BSh','BSk','Csa','Csb'};
+      ecozone = {'THp','TPa'};
+      habitat = {'0iTh','0iTf','0iTi'};
+      embryo  = {'Tnpo'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Tauraco_erythrolophus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Cwb'};
+      ecozone = {'TPa'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpfm'};
       migrate = {};
-      food    = {};
+      food    = {'0iHs'};
 
     case 'Ardeotis_kori'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Bsh','Aw'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTs','0iTg'};
+      embryo  = {'Tnsf'};
       migrate = {};
-      food    = {};
+      food    = {'0iO'};
 
     case 'Opisthocomus_hoazin'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Af','Am'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpfm'};
       migrate = {};
-      food    = {};
+      food    = {'bxHlf','xiHl'};
 
     case 'Calidris_ferruginea'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'ET'};
+      ecozone = {'THp'};
+      habitat = {'0iTht'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Calidris_alpina'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'ET','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'0iTht'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Calidris_bairdii'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfc','ET'};
+      ecozone = {'TH'};
+      habitat = {'0iTht'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Calidris_minuta'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfc','ET'};
+      ecozone = {'TH'};
+      habitat = {'0iTht'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Calidris_minutilla'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfc','ET'};
+      ecozone = {'THn'};
+      habitat = {'0iTht'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Calidris_maritima'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfc','ET'};
+      ecozone = {'TH'};
+      habitat = {'0iTht'};
+      embryo  = {'Tnsm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Philomachus_pugnax'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfb','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'0iTht','0iTg'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Tringa_flavipes'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfc'};
+      ecozone = {'THn'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Tringa_totanus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfb','Dfc'};
+      ecozone = {'THp','0iThh'};
+      habitat = {'0iTg'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Limnodromus_griseus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfb','Dfc'};
+      ecozone = {'THn'};
+      habitat = {'0iThh'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Limosa_haemastica'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfa','Dfb','Dfa'};
+      ecozone = {'THn'};
+      habitat = {'0iTh'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Limosa_limosa'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfb'};
+      ecozone = {'THp'};
+      habitat = {'0iTh','0iTg'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Numenius_phaeopus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfb','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'0iTh','0iTg'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Uria_aalge'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'MC'};
+      ecozone = {'MAN'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCvf'};
 
     case 'Uria_lomvia'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'MC','ME'};
+      ecozone = {'MAN'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCvf'};
 
     case 'Alle_alle'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'ME'};
+      ecozone = {'MAN'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCik'};
 
     case 'Pinguinus_impennis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'MC'};
+      ecozone = {'MAN'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCvf'};
 
     case 'Alca_torda'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'MC'};
+      ecozone = {'MAN'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCvf'};
 
     case 'Cepphus_grylle'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'MC'};
+      ecozone = {'MAN'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCvf','biCik'};
 
     case 'Brachyramphus_brevirostris'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'ME'};
+      ecozone = {'MPN'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCik'};
 
     case 'Ptychoramphus_aleuticus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'MC'};
+      ecozone = {'MPNE'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCik'};
 
     case 'Aethia_pusilla'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC','ME'};
+      ecozone = {'MPNE'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCik'};
 
     case 'Aethia_cristatella'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC','ME'};
+      ecozone = {'MPNW'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCik'};
 
     case 'Cerorhinca_monocerata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC'};
+      ecozone = {'MPN'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tntfm'};
+      migrate = {'Ms'};
+      food    = {'biCik','biCvf'};
 
     case 'Fratercula_arctica'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC'};
+      ecozone = {'MAN'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tntfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf'};
 
     case 'Fratercula_cirrhata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC'};
+      ecozone = {'MPNE'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tntfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf'};
 
     case 'Chlidonias_leucopterus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfb'};
+      ecozone = {'THp','TPa','TA'};
+      habitat = {'0iFm'};
+      embryo  = {'Tnffm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCii'};
 
     case 'Sterna_paradisaea'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfc','ET'};
+      ecozone = {'TH'};
+      habitat = {'0iTht','0iThh'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf'};
 
     case 'Sterna_hirundo'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfb','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'0iTht','0iThh'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf'};
 
     case 'Thalasseus_sandvicensis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfb','Dfc'};
+      ecozone = {'MA'};
+      habitat = {'0iTht','0iThh'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf'};
 
     case 'Chroicocephalus_ridibundus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfb'};
+      ecozone = {'TH'};
+      habitat = {'0iFl','0iFm','0iMm'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf','biCi'};
 
     case 'Larus_argentatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb','Dfb','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'0iFe','0iMm','biMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf','biCi','biSi','biSv'};
 
     case 'Rissa_tridactyla'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC','ME'};
+      ecozone = {'MAN','MPN','MN'};
+      habitat = {'biMc','0bTd'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf'};
 
     case 'Rissa_brevirostris'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC','ME'};
+      ecozone = {'MPN'};
+      habitat = {'biMc','0bTd'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf','biCic'};
 
     case 'Stercorarius_longicaudus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'ET','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'0iTht'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCvb','biCvm','biSv','xiHs'};
 
     case 'Stercorarius_skua'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC'};
+      ecozone = {'MAN'};
+      habitat = {'0iTg','xiMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCvb','biCvm','biSv','xiHs'};
 
     case 'Stercorarius_maccormicki'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC'};
+      ecozone = {'MS'};
+      habitat = {'0iTg','xiMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCvb','biCvm','biSv','xiHs'};
 
     case 'Himantopus_mexicanus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'BWh','BSh'};
+      ecozone = {'THn','TN'};
+      habitat = {'0xTs','xiFm','xiFe'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCi'};
 
     case 'Haematopus_moquini'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'BWk','BSh','BSk'};
+      ecozone = {'TPa'};
+      habitat = {'0xTs','xiFm','xiFe'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCim'};
 
     case 'Vanellus_vanellus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfb'};
+      ecozone = {'THp'};
+      habitat = {'0xTg','xiFm','xiFe'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCi'};
 
     case 'Vanellus_armatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Aw','Cwa','Cwb'};
+      ecozone = {'TPa'};
+      habitat = {'0iTg','0iTs','0iTa'};
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCi'};
 
     case 'Vanellus_coronatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Aw','BWh','BSh','Cwa','Cwb'};
+      ecozone = {'TPa'};
+      habitat = {'0iTg','0iTs','0iTa'};
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCii'};
 
     case 'Charadrius_pecuarius'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Aw','BWh','BSh','Cwa','Cwb'};
+      ecozone = {'TPa'};
+      habitat = {'0iTg','0iTs','0iFm','0iSm'};
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCii'};
 
     case 'Pluvialis_dominica'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'ET','Dfc'};
+      ecozone = {'THn'};
+      habitat = {'0iTht'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
 
     case 'Gallinula_chloropus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Aw','BSk','Cfb','Dfb'};
+      ecozone = {'THp','TPa','TPi'};
+      habitat = {'0iFm'};
+      embryo  = {'Tnffm'};
+      migrate = {'Ms'};
+      food    = {'biCi','biHl'};
 
     case 'Grus_japonensis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dwb'};
+      ecozone = {'THp'};
+      habitat = {'xiFm','0xTht'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'bxCi','xiO'};
 
     case 'Grus_monacha'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dwb','Dwc','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'xiFm','0xTht'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'bxCi','xiO'};
 
     case 'Grus_americana'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfb'};
+      ecozone = {'THn'};
+      habitat = {'xiThh'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'bxCi','xiO'};
 
     case 'Grus_virgo'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'BSk','Dfa','Dfb'};
+      ecozone = {'THp'};
+      habitat = {'0iTa','0iTs'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'bxCi','xiO'};
 
     case 'Antigone_antigone'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Aw','BSh'};
+      ecozone = {'TPi','TA'};
+      habitat = {'0iTg','xiFm'};
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'bxCi','xiO'};
 
     case 'Antigone_vipio'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dwc'};
+      ecozone = {'THp'};
+      habitat = {'0iTs','0iThh'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'bxCi','xiO'};
 
     case 'Antigone_canadensis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Cfa','Dfa','Dfb','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'0iTg','0iTht','0iThh'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'bxCi','xiO'};
 
     case 'Antigone_rubicunda'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Aw','BWh','BSh'};
+      ecozone = {'TA'};
+      habitat = {'0iTg','0iTs','0iTa','xiFm','xiMm'};
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'bxCi','xiO'};
 
     case 'Leucogeranus_leucogeranus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'ET'};
+      ecozone = {'THp'};
+      habitat = {'0iTht'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'bxCi','xiO'};
 
     case 'Phaethon_lepturus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'MA'};
+      ecozone = {'MC'};
+      habitat = {'xiMpe','0xTd'};
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCvf','biCic'};
 
     case 'Phaethon_rubricauda'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'MA'};
+      ecozone = {'MP','MI'};
+      habitat = {'xiMpe','0xTd'}
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCvf','biCic'};
 
     case 'Rhynochetos_jubatus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Af'};
+      ecozone = {'TAz'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCi','biCvr'};
 
     case 'Gavia_stellata'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfb','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'0iFl','xiMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf'};
 
     case 'Gavia_immer'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfb','Dfc'};
+      ecozone = {'THn'};
+      habitat = {'0iFl','xiMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf'};
 
     case 'Eudyptula_minor'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC'};
+      ecozone = {'MISE','MPSW'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCic','biCik'};
 
     case 'Pygoscelis_adeliae'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'ME'};
+      ecozone = {'TS'};
+      habitat = {'0iMc'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCic','biCik'};
 
     case 'Pygoscelis_antarcticus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'ME','MC'};
+      ecozone = {'TS'};
+      habitat = {'0iMc'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCic','biCik'};
 
     case 'Pygoscelis_papua'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'ME','MC'};
+      ecozone = {'MS'};
+      habitat = {'0iMc'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCic','biCik'};
 
     case 'Fulmarus_glacialis'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC','ME'};
+      ecozone = {'MN','MC'};
+      habitat = {'0iMc'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCic','biCik','biCij','bjSv'};
 
     case 'Diomedea_exulans'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC'};
+      ecozone = {'MC'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCic','biCik','biSv'};
 
     case 'Thalassarche_melanophrys'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC'};
+      ecozone = {'MC'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCic','biCik','biSv'};
 
     case 'Ciconia_ciconia'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'BSk','Cfb','Dfb'};
+      ecozone = {'THp'};
+      habitat = {'0iTg','0iTs','xiFm'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ml'};
+      food    = {'biCva','biCi'};
 
     case 'Phalacrocorax_auritus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'Dfa','Dfb'};
+      ecozone = {'THn'};
+      habitat = {'0xTf','0iMi','xiFl','xiFp'};
+      embryo  = {'Tnpfm','Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf'};
 
     case 'Sula_bassana'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
-      migrate = {};
-      food    = {};
+      climate = {'MC'};
+      ecozone = {'MAN'};
+      habitat = {'Mc'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf'};
 
     case 'Sula_nebouxii'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'MA','MB'};
+      ecozone = {'MPE'};
+      habitat = {'Mc'};
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCvf'};
 
     case 'Balaeniceps_rex'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Aw','Cwb','Cwc'};
+      ecozone = {'TPa'};
+      habitat = {'0iFm'};
+      embryo  = {'Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCvf','biCva','biCvr'};
 
     case 'Pelecanus_onocrotalus'
-      climate = {};
-      ecozone = {};
-      habitat = {};
-      embryo  = {};
+      climate = {'Csa','Dfa','Dfb'};
+      ecozone = {'TPa','THp'};
+      habitat = {'0iFl','oiFe'};
+      embryo  = {'Tnwfm','Tnsfm'};
       migrate = {};
-      food    = {};
+      food    = {'biCvf'};
 
     case 'Platalea_leucorodia'
       climate = {};

@@ -5,7 +5,7 @@
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
-% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26, 2018/02/06 Bas Kooijman
+% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26, 2018/02/06, 2018/04/28 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -117,25 +117,8 @@ fprintf(oid, '<BODY>\n\n');
 
 fprintf(oid, '<div w3-include-html="../../sys/wallpaper_entry.html"></div>\n');
 fprintf(oid, '<div w3-include-html="../../sys/toolbar_entry.html"></div>\n');
+fprintf(oid,['<div id="top2" w3-include-html="', metaData.species, '_toolbar.html"></div>\n']);
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
-
-fprintf(oid, '<!--------------------------------------------------------------->\n');
-fprintf(oid, '<!--  PART menuBar_species                                     -->\n');
-fprintf(oid, '<!--  TOP PART OF WEBPAGE IS FIXED                             -->\n');
-fprintf(oid, '<!--   It has the logo and the menu with Javascript            -->\n');
-fprintf(oid, '<!--  dropdown menus                                           -->\n');
-fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->\n');
-fprintf(oid, '<!--------------------------------------------------------------->\n\n');
-
-fprintf(oid, '<div id="top2">\n');
-fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
-fprintf(oid,['    <a href = "../../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
-fprintf(oid, '  </h1>\n\n');
-
-fprintf(oid, '  <div id="navwrapper">\n');
-prt_toolbar_species(oid, metaData.species, metaData.date_acc)
-fprintf(oid, '  </div> <!-- end of navwrapper -->\n');
-fprintf(oid, '</div> <!-- end of top2 -->\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
 fprintf(oid, '<!--   PART main                                               -->\n');
