@@ -9,7 +9,7 @@ function  prt_my_pet_toolbar(species, species_en, date_acc, destinationFolder)
 % <../prt_my_pet_toolbar.m *prt_my_pet_toolbar*> (species, species_en, date_acc, destinationFolder)
 
 %% Description
-% Prints the menu bar to a given html file
+% Prints my_pet_toolbar.html for presentation in my_pet_res.html, my_pet_par.html, my_pet_stat.html, 
 %
 % Input:
 %
@@ -19,8 +19,8 @@ function  prt_my_pet_toolbar(species, species_en, date_acc, destinationFolder)
 % * destinationFolder : optional string with destination folder the files are printed to (default: current folder)
 
 %% Remarks
-% Indent of 4 spaces used for printing to html page
-% Edit drowdown.js for adding dropdwn's
+% Indent of 2 spaces used for printing to html page
+% Edit /sys/drowdown.js for adding dropdwn's
 
 %% Example of use
 % load('results_my_pet.mat');

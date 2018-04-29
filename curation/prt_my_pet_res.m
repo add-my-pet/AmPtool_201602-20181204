@@ -450,7 +450,7 @@ if isfield(metaData, 'acknowledgment') == 1
   fprintf(oid, ['          ', str, '\n']);
   fprintf(oid, '          </li>\n' );  % close bullet point
    
-  fprintf(oid,'         </ul>\n\n\n');   % close the unordered list      
+  fprintf(oid,'         </ul>\n\n\n'); % close the unordered list      
 end
 % ----------------------------------------------------------
 
@@ -464,7 +464,7 @@ bbl2html([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '
 oid = fopen(fileName, 'a'); % open file for appending
 
 fprintf(oid, '      <p>\n');
-fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex files with references for this entry</A> <BR>\n']);
+fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex file with references for this entry</A> <BR>\n']);
 fprintf(oid, '      </p>\n\n' );
   
 % ----------------------------------------------------------
