@@ -90,7 +90,7 @@ for i = 1:n
 end
 
 % food
-txt = url(strfind(url,'id="F.'): end); j = 6 + strfind(txt, 'id="F.'); n = length(j);
+txt = url(strfind(url,'id="F.'): strfind(url,'id="G"')); j = 6 + strfind(txt, 'id="F.'); n = length(j);
 for i = 1:n
   rtxt = txt(j(i):end);
   code = rtxt(1:strfind(rtxt,'"') - 1);
