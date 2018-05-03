@@ -6703,6 +6703,7 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '13400108'; % present as Erethizon dorsata 2017/12/30
       id_ADW = 'Erethizon_dorsatum';
+      id_Wiki = 'Erethizon_dorsatum';
        
     case 'Myocastor_coypus'
       id_CoL = '36d74b421fdbd62de05372461c50d907';
