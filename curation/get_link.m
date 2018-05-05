@@ -1534,6 +1534,7 @@ function links = get_link(taxon, open)
       id_WoRMS = '123922';
       id_Taxo = '40808';   % present as Luidia_sarsi       
       id_EoL = '46326605'; % present as Luidia_sarsi
+      id_ADW = 'Luidia';   % only present at genus level 2018/05/05
 
     case 'Archaster_typicus'
       id_CoL = '144f27a0c1868bfa17681085c7e30b41';
@@ -1591,17 +1592,18 @@ function links = get_link(taxon, open)
       id_Taxo = '40989';        
       id_EoL = '607601';
        
-    case 'Clypeaster_subdepressus'
-      id_CoL = 'a5e5fc38367a1168a3e799e37dd3de23'; 
-      id_WoRMS = '422499'; 
-      id_Taxo = '41172'; % only present at genus level 2017/09/03
-      id_EoL = '598170';
-
     case 'Echinocardium_cordatum'
       id_CoL = 'cb42794c2d338d39d5715697f05cbc87'; 
       id_WoRMS = '124392'; 
       id_Taxo = '41169'; 
       id_EoL = '598133';
+
+    case 'Clypeaster_subdepressus'
+      id_CoL = 'a5e5fc38367a1168a3e799e37dd3de23'; 
+      id_WoRMS = '422499'; 
+      id_Taxo = '41172'; % only present at genus level 2017/09/03
+      id_EoL = '598170';
+      id_Wiki = 'Clypeaster';
 
     case 'Lytechinus_variegatus'
       id_CoL = '59c591cbbdfa738cfe05d045af7cef14'; 
@@ -1674,7 +1676,8 @@ function links = get_link(taxon, open)
       id_Taxo = '41313'; % only present at genus level       
       id_EoL = '3067730';
       id_ADW = ''; % not present at 2017/09/21
-
+      id_Wiki = 'Stichopus'; % only present at genus level 2018/05/05 
+      
     case 'Branchiostoma_floridae'
       id_CoL = '56b084fe5a8af1fb6b065bd2b921487b';
       id_WoRMS = '266208';

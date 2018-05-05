@@ -18,7 +18,7 @@ function run_collection(varargin)
 %
 % Input:
 %
-% * entries: optional cell array with entry names, or character string with entry or node names (default 'Animalia')
+% * varargin: optional cell array with entry names, or character string with entry or node names (default 'Animalia')
 %
 % Output:
 %

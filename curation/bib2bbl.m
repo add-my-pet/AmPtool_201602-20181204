@@ -31,7 +31,6 @@ function bib2bbl(my_pet_bib, destinationFolder)
 % * web-adress cannot contain spaces or %20; use ~ instead; this will be replaced by a space in function bbl2html
 
 % create aux file
-
 if ~exist('destinationFolder', 'var')
   destinationFolder = '';
 end

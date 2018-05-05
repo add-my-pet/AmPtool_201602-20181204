@@ -5,7 +5,7 @@
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
-% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26, 2018/02/06, 2018/04/28 Bas Kooijman
+% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26, 2018/02/06, 2018/04/28, 2018/05/05 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -35,12 +35,6 @@ function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, dest
 % load(['results_',entries{i},'.mat']) % load results_my_pet.mat
 %
 % prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
-
-global eco_types
-
-if length(eco_types) == 0 
-  get_eco_types;
-end
 
 % Remove underscore and capitalize first letter of english :
 speciesprintnm = [strrep(metaData.species, '_', ' '), ' '];
@@ -131,71 +125,12 @@ fprintf(oid, '<div id = "main">\n');
 fprintf(oid, '  <div id = "main-wrapper">\n');
 fprintf(oid, '    <div id="contentFull">\n');
 fprintf(oid, '      <H1 id = "portaltop">Predictions & Data for this entry</H1>\n\n');	
-   
+
+fclose(oid);
+
 % table with model, COMPLETE, MRE, SMSE, eco-codes
-[climate, ecozone, habitat, embryo, migrate, food] = get_eco(metaData.species);
-n_C = length(climate); code_C = '';
-for i = 1:n_C
-  code_C = [code_C, '<a href="" title="', eco_types.climate.(climate{i}), '">', climate{i}, '</a>, '];
-end
-code_C(end - (0:1)) = [];
-%
-n_E = length(ecozone); code_E = '';
-for i = 1:n_E
-  code_E = [code_E, '<a href="" title="', eco_types.ecozone.(ecozone{i}), '">', ecozone{i}, '</a>, '];
-end
-code_E(end - (0:1)) = []; 
-%
-n_H = length(habitat); code_H = '';
-for i = 1:n_H
-  code = habitat{i}; label = [eco_types.habitat.(code(3:end)), ' for stage ', code(1:2)];
-  code_H = [code_H, '<a href="" title="', label, '">', code, '</a>, '];
-end
-code_H(end - (0:1)) = [];
-%
-n_B = length(embryo); code_B = '';
-for i = 1:n_B
-  code_B = [code_B, '<a href="" title="', eco_types.embryo.(embryo{i}), '">', embryo{i}, '</a>, '];
-end
-code_B(end - (0:1)) = []; 
-%
-n_M = length(migrate); code_M = '';
-for i = 1:n_M
-  code_M = [code_M, '<a href="" title="', eco_types.migrate.(migrate{i}), '">', migrate{i}, '</a>, '];
-end
-if n_M > 0
-  code_M(end - (0:1)) = [];
-end
-%
-n_F = length(food); code_F = '';
-for i = 1:n_F
-  code = food{i}; label = [eco_types.food.(code(3:end)), ' for stage ', code(1:2)];
-  code_F = [code_F, '<a href="" title="', label, '">', code, '</a>, '];
-end
-code_F(end - (0:1)) = []; 
-%
-fprintf(oid, '      <table>\n');    
-fprintf(oid, '        <tr>\n');    
-fprintf(oid,['          <td width=250><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models">Model: </a>', metaPar.model,'</td>\n']);    
-fprintf(oid, '          <td></td><td width=250></td>\n');    
-fprintf(oid, '          <td></td><td width=250></td>\n');    
-fprintf(oid, '        </tr>\n');    
-fprintf(oid, '        <tr>\n');    
-fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Completeness" >COMPLETE</a>',' = %3.1f </td>\n'], metaData.COMPLETE);
-fprintf(oid,['          <td><a href="../../AmPeco.html#C" target="_blank">climate: </a></td> <td>', code_C, '</td>\n']);
-fprintf(oid,['          <td><a href="../../AmPeco.html#B" target="_blank">embryo:  </a></td> <td>', code_B, '</td>\n']);
-fprintf(oid, '        </tr>\n');    
-fprintf(oid, '        <tr>\n');    
-fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Mean_relative_error" >MRE</a>',' = %8.3f </td>\n'], metaPar.MRE);   
-fprintf(oid,['          <td><a href="../../AmPeco.html#E" target="_blank">ecozone: </a></td> <td>', code_E, '</td>\n']);
-fprintf(oid,['          <td><a href="../../AmPeco.html#M" target="_blank">migrate: </a></td> <td>', code_M, '</td>\n']);
-fprintf(oid, '        </tr>\n');    
-fprintf(oid, '        <tr>\n');    
-fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" >SMSE</a>',' = %8.3f </td>\n'], metaPar.SMSE);   
-fprintf(oid,['          <td><a href="../../AmPeco.html#H" target="_blank">habitat: </a></td> <td>', code_H, '</td>\n']);
-fprintf(oid,['          <td><a href="../../AmPeco.html#F" target="_blank">food: </a></td> <td>', code_F, '</td>\n']);
-fprintf(oid, '        </tr>\n');    
-fprintf(oid, '      </table>\n\n');     
+prt_my_pet_eco(metaData.species, metaPar.model, metaData.COMPLETE, metaPar.MRE, metaPar.SMSE, destinationFolder);
+fopen(fileName, 'a'); % further append to my_pet_res.html
 
 % make structure for 'real' and predicted pseudodata:
 pseudo = data.psd;
@@ -421,6 +356,7 @@ end
 
 % ----------------------------------------------------------
 
+% Discussion
 if isfield(metaData, 'discussion') == 1
   fprintf(oid, '      <H3 style="clear:both" class="pet">Discussion</H3>\n');
   fprintf(oid, '      <ul> \n');     % open the unordered list
@@ -458,7 +394,7 @@ end
 fprintf(oid, '      <H3 style="clear:both" class="pet">Bibliography</H3>\n');
 [nm, nst] = fieldnmnst_st(metaData.biblist);
 
-fclose(oid); % insert biblist un ul format
+fclose(oid); % insert biblist in ul format
 bib2bbl([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '/']);
 bbl2html([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '/'], [metaData.species, '_res']);
 oid = fopen(fileName, 'a'); % open file for appending
