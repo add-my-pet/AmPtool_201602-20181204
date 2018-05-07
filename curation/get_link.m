@@ -98,6 +98,7 @@ function links = get_link(taxon, open)
       id_WoRMS = '152203';
       id_Taxo = '11875';
       id_EoL = '2552541';
+      id_Wiki = 'Rhizostoma';
       
     case 'Lychnorhiza_lucerna'
       id_CoL = '46556d3c743bdb6db72206faaca92672';
