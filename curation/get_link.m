@@ -1011,14 +1011,14 @@ function links = get_link(taxon, open)
       id_CoL = '986bcd982c77ba4c25548ad2906f3f49';
       id_WoRMS = '148398';
       id_Taxo = '33110';        
-      id_Wiki = 'Cladocera';
+      id_Wiki = 'Daphniidae';
       id_EoL = '128488';
        
     case 'Simocephalus_serrulatus'
       id_CoL = 'c80b9c7571c8f66720bdd1978b6df130';
       id_WoRMS = '412852';
       id_Taxo = '156184';        
-      id_Wiki = 'Cladocera';
+      id_Wiki = 'Daphniidae';
       id_EoL = '327098';
        
     case 'Moina_macrocopa'
@@ -1053,6 +1053,7 @@ function links = get_link(taxon, open)
       id_WoRMS = ''; % not present at 2018/03/12
       id_Taxo = '33658';     
       id_EoL = '335530';
+      id_Wiki = 'Argulus';
 
     case 'Nitokra_spinipes'
       id_CoL = '0747856e47615f0c02503a3612915bd8';
@@ -1100,6 +1101,39 @@ function links = get_link(taxon, open)
       id_WoRMS = '135782';
       id_Taxo = '206162'; % only present at genus level 2017/09/26          
       id_EoL = '1020941';
+       
+    case 'Leptomysis_lingvura'
+      id_CoL = 'd9266defb43c8336539b6b24151e1ee1';
+      id_WoRMS = '120054';
+      id_Taxo = '33032';  % only present at genus level 2017/09/28              
+      id_EoL = '1018151';
+      id_Wiki = 'Mysidae';
+       
+    case 'Hemimysis_speluncola'
+      id_CoL = 'db7ac8c44d87726097820b9eac516128';
+      id_WoRMS = '120030';
+      id_Taxo = '34090'; % only present at genus level 2017/09/28             
+      id_EoL = '128022';
+      id_Wiki = 'Mysidae';
+       
+    case 'Mysis_mixta'
+      id_CoL = '75d47759bf7d4d79eaa4107c2c0423c0';
+      id_WoRMS = '120113';
+      id_Taxo = '34093';  % only present at genus level 2017/09/27            
+      id_Wiki = 'Mysis';
+      id_EoL = '318325';
+       
+    case 'Neomysis_integer'
+      id_CoL = 'a266c337bd34e09b4734d6562dfc5cdc';
+      id_WoRMS = '120136';
+      id_Taxo = '34098';              
+      id_EoL = '344079';
+       
+    case 'Praunus_flexuosus'
+      id_CoL = '1071b4a0c4807ba65c09222da0ee64e5';
+      id_WoRMS = '120177';
+      id_Taxo = '34100';  % only present at genus level 2017/09/27            
+      id_EoL = '318599';
        
     case 'Asellus_aquaticus'
       id_CoL = '4acab09868db831471b70493b88c5cc0';
@@ -1154,37 +1188,6 @@ function links = get_link(taxon, open)
       id_EoL = '3033511';
       id_ADW = ''; % not present at 2017/10/27 
       
-    case 'Leptomysis_lingvura'
-      id_CoL = 'd9266defb43c8336539b6b24151e1ee1';
-      id_WoRMS = '120054';
-      id_Taxo = '33032';  % only present at genus level 2017/09/28              
-      id_EoL = '1018151';
-       
-    case 'Hemimysis_speluncola'
-      id_CoL = 'db7ac8c44d87726097820b9eac516128';
-      id_WoRMS = '120030';
-      id_Taxo = '34090'; % only present at genus level 2017/09/28             
-      id_EoL = '128022';
-       
-    case 'Mysis_mixta'
-      id_CoL = '75d47759bf7d4d79eaa4107c2c0423c0';
-      id_WoRMS = '120113';
-      id_Taxo = '34093';  % only present at genus level 2017/09/27            
-      id_Wiki = 'Mysis';
-      id_EoL = '318325';
-       
-    case 'Neomysis_integer'
-      id_CoL = 'a266c337bd34e09b4734d6562dfc5cdc';
-      id_WoRMS = '120136';
-      id_Taxo = '34098';              
-      id_EoL = '344079';
-       
-    case 'Praunus_flexuosus'
-      id_CoL = '1071b4a0c4807ba65c09222da0ee64e5';
-      id_WoRMS = '120177';
-      id_Taxo = '34100';  % only present at genus level 2017/09/27            
-      id_EoL = '318599';
-       
     case 'Euphausia_superba'
       id_CoL = '9b5816e13fe1783d6d65f7075aba514f';
       id_WoRMS = '236217';
@@ -1317,6 +1320,7 @@ function links = get_link(taxon, open)
       id_WoRMS = '422153';
       id_Taxo = ''; % not present at 2017/08/23      
       id_EoL = '342578';
+      id_Wiki = 'Dissodactylus';
       
     case 'Cancer_pagurus'
       id_CoL = 'f3183ce46e4cc2b2d00c3b4c026b9481';

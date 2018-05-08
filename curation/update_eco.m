@@ -39,6 +39,7 @@ nargin = length(varargin); % number of entries to scan
 for i=1:nargin
   destinationFolder = ['../../entries_web/', varargin{i},'/']; % target for html and png files
   mkdir(destinationFolder);
+  fprintf([varargin{i},'\n']);
   
   % get head, tail and old table from my_pet_res.html
   my_pet_res = urlread(['https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/', varargin{i}, '/', varargin{i},'_res.html']);
