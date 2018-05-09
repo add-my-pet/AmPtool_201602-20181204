@@ -10,7 +10,7 @@ function get_eco_types
 %% Description
 % sets global eco_types for use in check_eco and prt_my_pet_res by reading from AmPeco.html.
 % eco_type is a matlab structure with labels.
-% The first-level fields are: climate, ecozone, habitat, embryo, migrate, food; the second-level fields are the codes
+% The first-level fields are: climate, ecozone, habitat, embryo, migrate, food, gender, reprod; the second-level fields are the codes
 
 %% Remarks
 % Re-check this function after edits of AmPeco.html for eco-types
@@ -101,4 +101,31 @@ for i = 1:n
   end
   eco_types.food.(code) = label;
 end
+  
+% gender
+txt = url(strfind(url,'id="G.'): strfind(url,'id="R"')); j = 6 + strfind(txt, 'id="G.'); n = length(j);
+for i = 1:n
+  rtxt = txt(j(i):end);
+  code = rtxt(1:strfind(rtxt,'"') - 1);
+  rtxt(1:4 + strfind(rtxt,'</b> ')) = [];
+  label = rtxt(1:strfind(rtxt,'</li>') - 1);
+  if ~isempty(strfind(label,'<ul>'))
+    label = splitlines(label); label = label{1};
+  end
+  eco_types.gender.(code) = label;
+end
+
+% reprod
+txt = url(strfind(url,'id="R.'): end); j = 6 + strfind(txt, 'id="R.'); n = length(j);
+for i = 1:n
+  rtxt = txt(j(i):end);
+  code = rtxt(1:strfind(rtxt,'"') - 1);
+  rtxt(1:4 + strfind(rtxt,'</b> ')) = [];
+  label = rtxt(1:strfind(rtxt,'</li>') - 1);
+  if ~isempty(strfind(label,'<ul>'))
+    label = splitlines(label); label = label{1};
+  end
+  eco_types.reprod.(code) = label;
+end
+
 

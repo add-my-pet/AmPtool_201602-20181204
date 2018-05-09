@@ -71,5 +71,12 @@ for i=1:nargin
   fprintf(oid, tail);
   fclose(oid);
 
+  oid = fopen(['../../entries_web/', varargin{i}, '/', varargin{i}, '_res.html']);
+  my_pet_res_new = fread(oid);
+  fclose(oid);
+  n_old = length(my_pet_res); n_new = length(my_pet_res_new);
+  if n_new < n_old
+    fprintf(['Warning from update_eco for ', varargin{i},',: length old res-file = ', num2str(n_old), ', while new length = ', num2str(n_new), '\n']);
+  end
 
 end

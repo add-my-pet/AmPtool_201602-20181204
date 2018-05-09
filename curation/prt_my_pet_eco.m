@@ -33,7 +33,7 @@ end
 
 oid = fopen([destinationFolder, species, '_res.html'], 'a'); % open file for appending
 
-[climate, ecozone, habitat, embryo, migrate, food] = get_eco(species);
+[climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = get_eco(species);
 
 % write eco-labels in hover-text of eco-codes in html
 % climate
@@ -75,29 +75,41 @@ for i = 1:n_F
   code = food{i}; label = [eco_types.food.(code(3:end)), ' for stage ', code(1:2)];
   code_F = [code_F, '<a href="" title="', label, '">', code, '</a>, '];
 end
-code_F(end - (0:1)) = []; 
+code_F(end - (0:1)) = [];
+% gender
+n_G = length(gender); code_G = '';
+for i = 1:n_G
+  code_G = [code_G, '<a href="" title="', eco_types.gender.(gender{i}), '">', gender{i}, '</a>, '];
+end
+code_G(end - (0:1)) = []; 
+% reprod
+n_R = length(reprod); code_R = '';
+for i = 1:n_R
+  code_R = [code_R, '<a href="" title="', eco_types.reprod.(reprod{i}), '">', reprod{i}, '</a>, '];
+end
+code_R(end - (0:1)) = []; 
 
-% write table in html
+% write (4,3)-table in html
 fprintf(oid, '      <table>\n');    
 fprintf(oid, '        <tr>\n');    
 fprintf(oid,['          <td width=250><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models">Model: </a>', model,'</td>\n']);    
-fprintf(oid, '          <td></td><td width=250></td>\n');    
-fprintf(oid, '          <td></td><td width=250></td>\n');    
+fprintf(oid,['          <td><a href="../../AmPeco.html#C" target="_blank">climate: </a></td> <td width=250>', code_C, '</td>\n']);
+fprintf(oid,['          <td><a href="../../AmPeco.html#M" target="_blank">migrate: </a></td> <td width=250>', code_M, '</td>\n']);
 fprintf(oid, '        </tr>\n');    
 fprintf(oid, '        <tr>\n');    
 fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Completeness" >COMPLETE</a>',' = %3.1f </td>\n'], COMPLETE);
-fprintf(oid,['          <td><a href="../../AmPeco.html#C" target="_blank">climate: </a></td> <td>', code_C, '</td>\n']);
-fprintf(oid,['          <td><a href="../../AmPeco.html#B" target="_blank">embryo:  </a></td> <td>', code_B, '</td>\n']);
+fprintf(oid,['          <td><a href="../../AmPeco.html#E" target="_blank">ecozone: </a></td> <td>', code_E, '</td>\n']);
+fprintf(oid,['          <td><a href="../../AmPeco.html#F" target="_blank">food:    </a></td> <td>', code_F, '</td>\n']);
 fprintf(oid, '        </tr>\n');    
 fprintf(oid, '        <tr>\n');    
 fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Mean_relative_error" >MRE</a>',' = %8.3f </td>\n'], MRE);   
-fprintf(oid,['          <td><a href="../../AmPeco.html#E" target="_blank">ecozone: </a></td> <td>', code_E, '</td>\n']);
-fprintf(oid,['          <td><a href="../../AmPeco.html#M" target="_blank">migrate: </a></td> <td>', code_M, '</td>\n']);
+fprintf(oid,['          <td><a href="../../AmPeco.html#H" target="_blank">habitat: </a></td> <td>', code_H, '</td>\n']);
+fprintf(oid,['          <td><a href="../../AmPeco.html#G" target="_blank">gender:  </a></td> <td>', code_G, '</td>\n']);
 fprintf(oid, '        </tr>\n');    
 fprintf(oid, '        <tr>\n');    
 fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" >SMSE</a>',' = %8.3f </td>\n'], SMSE);   
-fprintf(oid,['          <td><a href="../../AmPeco.html#H" target="_blank">habitat: </a></td> <td>', code_H, '</td>\n']);
-fprintf(oid,['          <td><a href="../../AmPeco.html#F" target="_blank">food: </a></td> <td>', code_F, '</td>\n']);
+fprintf(oid,['          <td><a href="../../AmPeco.html#B" target="_blank">embryo:  </a></td> <td>', code_B, '</td>\n']);
+fprintf(oid,['          <td><a href="../../AmPeco.html#R" target="_blank">reprod:  </a></td> <td>', code_R, '</td>\n']);
 fprintf(oid, '        </tr>\n');    
 fprintf(oid, '      </table>\n\n');     
 

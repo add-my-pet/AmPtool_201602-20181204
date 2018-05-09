@@ -94,4 +94,18 @@ for i = 1:n % scan entries
     end
   end
 
+  n_G = length(gender);
+  for j = 1:n_G 
+    if ~ismember(gender{j},G)
+      fprintf(['Warning from check_eco for ', varargin{i}, ': the gender-code ', gender{j}, ' is not recognized\n']);
+    end
+  end
+
+  n_R = length(reprod);
+  for j = 1:n_R 
+    if ~ismember(reprod{j},R)
+      fprintf(['Warning from check_eco for ', varargin{i}, ': the reprod-code ', reprod{j}, ' is not recognized\n']);
+    end
+  end
+
 end
