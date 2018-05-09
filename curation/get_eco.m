@@ -8146,7 +8146,8 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Mv'};
       migrate = {};
       food    = {'bxM','xiCvf','xiCic','xiCik'};
-
+      gender  = {'Dg'};
+      reprod  = {'O'};
 
     case 'Physeter_macrocephalus'
       climate = {'MA','MB','MC','ME'};
