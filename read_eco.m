@@ -32,7 +32,15 @@ function codes = read_eco(entries, varargin)
   if iscell(varargin{1})    
     varargin = varargin{:}; % unpack cell string
   end
-  nargin = length(varargin);    
+  nargin = length(varargin);
+  
+  for j = 1:nargin
+    if ~ismember(varargin{j}, {'climate', 'ecozone', 'habitat', 'embryo', 'migrate', 'food', 'gender', 'reprod'})
+      fprintf (['Error in read_eco: variable "', varargin{j}, '" is not recognized\n']);
+      codes = [];  return
+    end
+  end
+
   codes = cell(n,nargin);
   
   for i = 1:n
