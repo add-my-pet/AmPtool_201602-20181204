@@ -28,7 +28,11 @@ function [taxa, sel] = select_eco (var, code)
 %% Example of use
 % [taxa, sel] = select_eco('ecozone', {'TA'})
 
-   
+if ~ismember(var, {'climate', 'ecozone', 'habitat', 'embryo', 'migrate', 'food', 'gender', 'reprod'})
+  fprintf (['Error in select_eco: variable "', var, '" is not recognized\n']);
+  taxa = []; sel = []; return
+end
+
 [codes, entries] = read_allEco(var); n_entries = length(entries); sel = false(n_entries,1);
 n_code = length(code); N_code = zeros(n_code,1);
 for k = 1:n_code
