@@ -39,20 +39,19 @@ nargin = length(varargin); % number of entries to scan
 for i=1:nargin
   destinationFolder = ['../../entries_web/', varargin{i},'/']; % target for html and png files
   mkdir(destinationFolder);
-  fprintf([varargin{i},'\n']);
+  %fprintf([varargin{i},'\n']); % not necessary, since progress is fast
   
   % get head, tail and old table from my_pet_res.html
   my_pet_res = urlread(['https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/', varargin{i}, '/', varargin{i},'_res.html']);
   table_start = strfind(my_pet_res,'<table>'); head = my_pet_res(1:table_start - 7); % notice removal of leading spaces to get outline correct
   table_end = 8 + strfind(my_pet_res,'</table>'); tail = my_pet_res(table_end:end);
   table_old = my_pet_res(table_start:table_end); % text with old table only
-  
-  % get model, COMPLETE, MRE, and SMSE from old table
-  % notice that peaces of text are deleted after reading
+    
+  % get model, COMPLETE, MRE, and SMSE from old table; notice that pieces of text are deleted after reading
   % model 
   index = 10 + strfind(table_old,'Model: </a>');     table_old(1:index) = []; model = table_old(1: strfind(table_old, '</td>') - 1);
   % COMPLETE
-  index = 15 + strfind(table_old,'COMPLETE</a> = '); table_old(1:index) = []; COMPLETE = str2num(table_old(1: strfind(table_old, '</td>') - 1));
+  index = 14 + strfind(table_old,'COMPLETE</a> = '); table_old(1:index) = []; COMPLETE = str2num(table_old(1: strfind(table_old, '</td>') - 1));
   % MRE
   index = 10 + strfind(table_old,'MRE</a> = ');      table_old(1:index) = []; MRE = str2num(table_old(1: strfind(table_old, '</td>') - 1));
   % SMSE
@@ -60,23 +59,25 @@ for i=1:nargin
  
   % write updated my_pet_res.html
   fileName = [destinationFolder, varargin{i}, '_res.html'];   
-  
-  oid = fopen(fileName, 'w+'); % open file for reading and writing, delete existing content
+  % head
+  oid = fopen(fileName, 'w+');   % open file for reading and writing, delete existing content
   fprintf(oid, head);
   fclose(oid);
-  %
+  % table
   prt_my_pet_eco(varargin{i}, model, COMPLETE, MRE, SMSE, destinationFolder); % write new table
-  %
-  oid = fopen(fileName, 'a'); % open file for appending
+  % tail
+  oid = fopen(fileName, 'a');    % open file for appending
+  tail = strrep(tail, '%','%%'); % replace any % in tail, since writing stops at %
   fprintf(oid, tail);
   fclose(oid);
 
+  % check if result does not deviate in length, compared to original
   oid = fopen(['../../entries_web/', varargin{i}, '/', varargin{i}, '_res.html']);
-  my_pet_res_new = fread(oid);
+  n_old = length(my_pet_res); n_new = length(fread(oid));
   fclose(oid);
-  n_old = length(my_pet_res); n_new = length(my_pet_res_new);
+  %
   if n_new < n_old
-    fprintf(['Warning from update_eco for ', varargin{i},',: length old res-file = ', num2str(n_old), ', while new length = ', num2str(n_new), '\n']);
+    fprintf(['Warning from update_eco for ', varargin{i},': length old res-file = ', num2str(n_old), ', while new length = ', num2str(n_new), '\n']);
   end
 
 end

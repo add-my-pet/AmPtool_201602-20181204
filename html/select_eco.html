@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>write_allStat</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-05-10"><meta name="DC.source" content="write_allStat.m"><style type="text/css">
+      --><title>select_eco</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-05-10"><meta name="DC.source" content="select_eco.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,71 +66,63 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>write_allStat</h1><!--introduction--><p>writes a structure with all pars and stats for all entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>allStat = <a href="write_allStat"><b>write_allStat</b></a> (T, f)</p><h2 id="4">Description</h2><p>Writes result of <a href="get_allStat.html"><b>get_allStat</b></a> to file allStat.mat in parent dir of curation</p><p>Input:</p><div><ul><li>T: optional scalar with body temperature in Kelvin (default T_typical, which is entry-specific)</li><li>f: optional scalar with scaled functional response (default 1)</li></ul></div><p>Ouput:</p><div><ul><li>allStat: stucture with all parameters and statistics of all entries</li></ul></div><h2 id="5">Remarks</h2><p>See <a href="write_addStat.html"><b>write_addStat</b></a> for appending a few entries to allStat. For 411 entries, the allStat.mat file is 2.6 Mb. and write_allStat takes 8 minutes to generate. See <a href="read_allStat.html"><b>read_allStat</b></a> for extracting values from allStat.mat.</p><h2 id="6">Example of use</h2><p>write_allStat;</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>select_eco</h1><!--introduction--><p>selects taxa with a particular codes for a variable</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>taxa = <a href="../select_eco.m"><b>select_eco</b></a> (var, code)</p><h2 id="4">Description</h2><p>Selects taxa with a particular eco-code for a specified variable. Stage codes for the variables food and habitat are ignored. Daughter codes are included in the selection. E.g. TA for variable ecozone also selects entries with TAt and TAz for ecozone.</p><p>Input:</p><div><ul><li>var: character string with name of variable: climate, ecozone, habitat, embryo, migrate, food, gender, reprod.</li><li>code: character string codes</li></ul></div><p>Output:</p><div><ul><li>taxa: cell string with names of selected entries</li><li>sel: vector of booleans that indicate selection in the whole collection of entries</li></ul></div><h2 id="5">Remarks</h2><h2 id="6">Example of use</h2><p>[taxa, sel] = select_eco('ecozone', {'TA'})</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-%% write_allStat
-% writes a structure with all pars and stats for all entries
+%% select_eco
+% selects taxa with a particular codes for a variable
 
 %%
-function allStat = write_allStat(T, f)
-% created 2016/04/24 by Bas Kooijman, modified 2017/08/16, 2018/08/16
+function [taxa, sel] = select_eco (var, code)
+% created 2018/05/10 by Bas Kooijman
 
 %% Syntax
-% allStat = <write_allStat *write_allStat*> (T, f)
+% taxa = <../select_eco.m *select_eco*> (var, code)
 
 %% Description
-% Writes result of <get_allStat.html *get_allStat*> to file allStat.mat in parent dir of curation
+% Selects taxa with a particular eco-code for a specified variable. Stage codes for the variables food and habitat are ignored.
+% Daughter codes are included in the selection. E.g. TA for variable ecozone also selects entries with TAt and TAz for ecozone.
 %
 % Input:
+% 
+% * var: character string with name of variable: climate, ecozone, habitat, embryo, migrate, food, gender, reprod.
+% * code: character string codes
 %
-% * T: optional scalar with body temperature in Kelvin (default T_typical, which is entry-specific)
-% * f: optional scalar with scaled functional response (default 1)
-%
-% Ouput:
-%
-% * allStat: stucture with all parameters and statistics of all entries
+% Output: 
+% 
+% * taxa: cell string with names of selected entries
+% * sel: vector of booleans that indicate selection in the whole collection of entries
 
 %% Remarks
-% See <write_addStat.html *write_addStat*> for appending a few entries to allStat.
-% For 411 entries, the allStat.mat file is 2.6 Mb. and write_allStat takes 8 minutes to generate.
-% See <read_allStat.html *read_allStat*> for extracting values from allStat.mat.
+% 
 
 %% Example of use
-% write_allStat;
+% [taxa, sel] = select_eco('ecozone', {'TA'})
 
-  if ~exist('f', 'var') 
-    if ~exist('T', 'var')
-      allStat = get_allStat;
-    else
-      allStat = get_allStat(T);
+   
+[codes, entries] = read_allEco(var); n_entries = length(entries); sel = false(n_entries,1);
+n_code = length(code); N_code = zeros(n_code,1);
+for k = 1:n_code
+  N_code = length(code{k});
+end
+
+for i = 1:n_entries   % scan entries
+  codes_i = codes{i}; n_codes_i = length(codes_i);
+  for j = 1:n_codes_i % scan codes for entries i
+    for k = 1:n_code  % scan specified codes
+      codes_ij = codes_i{j}; 
+      if strcmp(var,'food') || strcmp(var,'habitat') % remove stage codes
+        codes_ij(1:2) = [];
+      end
+      N = min(N_code(k),length(codes_ij));
+      if strcmp(code{k}, codes_ij(1:N))
+        sel(i) = true;
+        break
+      end
     end
-  else
-    allStat = get_allStat(T, f);
   end
-  
-  % check if allStat and local dir ../../entries have the same entries
-  entries_local = cellstr(ls('../../entries')); entries_local(1:2) = []; % remove '.' and '..'
-  entries_allStat = fieldnames(allStat); 
-  diff = setdiff(entries_allStat, entries_local);
-  if ~isempty(diff)
-    fprintf('warning from write_allStat: present in allStat, but not in debtool/entries\n');
-    diff
-  end
-  %
-  diff = setdiff(entries_local, entries_allStat);
-  if ~isempty(diff)
-    fprintf('warning from write_allStat: present in debtool/entries, but not in allStat\n');
-    diff
-  end
+end
 
+taxa = entries(sel); 
 
-  WD = pwd;                        % store current path
-  curation = which('write_allStat');   
-  curation = curation(1:end - 15);         
-  cd(curation)                     % goto taxa
-
-  save('../allStat.mat','allStat')
-  
-  cd(WD);
 ##### SOURCE END #####
 --></body></html>

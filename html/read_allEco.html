@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>write_allStat</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-05-10"><meta name="DC.source" content="write_allStat.m"><style type="text/css">
+      --><title>read_allEco</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-05-10"><meta name="DC.source" content="read_allEco.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,71 +66,51 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>write_allStat</h1><!--introduction--><p>writes a structure with all pars and stats for all entries</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>allStat = <a href="write_allStat"><b>write_allStat</b></a> (T, f)</p><h2 id="4">Description</h2><p>Writes result of <a href="get_allStat.html"><b>get_allStat</b></a> to file allStat.mat in parent dir of curation</p><p>Input:</p><div><ul><li>T: optional scalar with body temperature in Kelvin (default T_typical, which is entry-specific)</li><li>f: optional scalar with scaled functional response (default 1)</li></ul></div><p>Ouput:</p><div><ul><li>allStat: stucture with all parameters and statistics of all entries</li></ul></div><h2 id="5">Remarks</h2><p>See <a href="write_addStat.html"><b>write_addStat</b></a> for appending a few entries to allStat. For 411 entries, the allStat.mat file is 2.6 Mb. and write_allStat takes 8 minutes to generate. See <a href="read_allStat.html"><b>read_allStat</b></a> for extracting values from allStat.mat.</p><h2 id="6">Example of use</h2><p>write_allStat;</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>read_allEco</h1><!--introduction--><p>read eco-codes in allEco.mat</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>[codes, entries] = <a href="../read_allEco.m"><b>read_allEco</b></a>(varargin)</p><h2 id="4">Description</h2><p>read eco-codes in allEco.mat. Possible arguments are: climate, ecozone, habitat, embryo, migrate, food, gender, reprod.</p><p>Input:</p><div><ul><li>varargin: names of variables or cell-string with names of variables</li></ul></div><p>Output</p><div><ul><li>codes: (n,x)-cell-array with codes</li><li>entries: n-cell string with names of entries</li></ul></div><h2 id="5">Remarks</h2><p>Field migrate can be empty in case of no migration or torpor.</p><h2 id="6">Example of use</h2><p>gender_embryo = read_allEco('gender', 'embryo');</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
-%% write_allStat
-% writes a structure with all pars and stats for all entries
+%% read_allEco
+% read eco-codes in allEco.mat
 
 %%
-function allStat = write_allStat(T, f)
-% created 2016/04/24 by Bas Kooijman, modified 2017/08/16, 2018/08/16
+function [codes, entries] = read_allEco(varargin)
+% created 2018/05/10 by Bas Kooijman
 
 %% Syntax
-% allStat = <write_allStat *write_allStat*> (T, f)
+% [codes, entries] = <../read_allEco.m *read_allEco*>(varargin)
 
 %% Description
-% Writes result of <get_allStat.html *get_allStat*> to file allStat.mat in parent dir of curation
+% read eco-codes in allEco.mat. Possible arguments are: climate, ecozone, habitat, embryo, migrate, food, gender, reprod.
 %
 % Input:
 %
-% * T: optional scalar with body temperature in Kelvin (default T_typical, which is entry-specific)
-% * f: optional scalar with scaled functional response (default 1)
+% * varargin: names of variables or cell-string with names of variables
 %
-% Ouput:
+% Output
 %
-% * allStat: stucture with all parameters and statistics of all entries
+% * codes: (n,x)-cell-array with codes
+% * entries: n-cell string with names of entries
 
 %% Remarks
-% See <write_addStat.html *write_addStat*> for appending a few entries to allStat.
-% For 411 entries, the allStat.mat file is 2.6 Mb. and write_allStat takes 8 minutes to generate.
-% See <read_allStat.html *read_allStat*> for extracting values from allStat.mat.
+% Field migrate can be empty in case of no migration or torpor.
 
 %% Example of use
-% write_allStat;
-
-  if ~exist('f', 'var') 
-    if ~exist('T', 'var')
-      allStat = get_allStat;
-    else
-      allStat = get_allStat(T);
+% gender_embryo = read_allEco('gender', 'embryo'); 
+  
+  load('allEco')        % get all codes in structure allEco
+  entries = fieldnames(allEco); n = length(entries); 
+  if iscell(varargin{1})    
+    varargin = varargin{:}; % unpack cell string
+  end
+  nargin = length(varargin);    
+  codes = cell(n,nargin);
+  
+  for i = 1:n
+    for j = 1:nargin
+      codes{i,j} = allEco.(entries{i}).(varargin{j});
     end
-  else
-    allStat = get_allStat(T, f);
   end
-  
-  % check if allStat and local dir ../../entries have the same entries
-  entries_local = cellstr(ls('../../entries')); entries_local(1:2) = []; % remove '.' and '..'
-  entries_allStat = fieldnames(allStat); 
-  diff = setdiff(entries_allStat, entries_local);
-  if ~isempty(diff)
-    fprintf('warning from write_allStat: present in allStat, but not in debtool/entries\n');
-    diff
   end
-  %
-  diff = setdiff(entries_local, entries_allStat);
-  if ~isempty(diff)
-    fprintf('warning from write_allStat: present in debtool/entries, but not in allStat\n');
-    diff
-  end
+    
 
-
-  WD = pwd;                        % store current path
-  curation = which('write_allStat');   
-  curation = curation(1:end - 15);         
-  cd(curation)                     % goto taxa
-
-  save('../allStat.mat','allStat')
-  
-  cd(WD);
 ##### SOURCE END #####
 --></body></html>

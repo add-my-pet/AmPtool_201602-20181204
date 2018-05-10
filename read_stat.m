@@ -14,7 +14,7 @@ function [var units label] = read_stat(entries, varargin)
 % Input:
 %
 % * entries: n-cell string with names of entries
-% * vararg: names of variables or cell-string with names of variables
+% * varargin: names of variables or cell-string with names of variables
 %
 % Output
 %

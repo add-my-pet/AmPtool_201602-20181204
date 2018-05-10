@@ -80,5 +80,5 @@ function allStat = write_addStat(taxa, T, f)
 
   curation = which('write_allStat');   
   cd(curation(1:end - 15))                         
-  save('../allStat') % overwrite allStat.mat
+  save('../allStat.mat','allStat') % overwrite allStat.mat
   cd(WD)

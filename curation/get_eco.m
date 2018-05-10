@@ -6,7 +6,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
 % created 2018/04/03 by Bas Kooijman
 
 %% Syntax
-% [climate, ecozone, habitat, embryo, migrate, food] = <get_eco *get_eco*>(taxon)
+% [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = <get_eco *get_eco*>(taxon)
 
 %% Description
 % Fills cell strings with ecological specifications of AmP species
@@ -17,7 +17,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
 %
 % Output:
 %
-% * climate, ecozone, habitat, embryo, migrate, food: cell arrays with codes
+% * climate, ecozone, habitat, embryo, migrate, food, gender, reprod: cell arrays with codes
 
 %% Remarks
 % The codes are described in AmPeco.html.
@@ -25,8 +25,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
 
 
 %% Example of use
-% [climate, ecozone, habitat, embryo, migrate, food] = get_eco('Daphnia_magna');
-
+% [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = get_eco('Daphnia_magna');
 
   switch taxon
     case 'Haliclona_oculata'
