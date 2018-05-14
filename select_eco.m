@@ -34,6 +34,9 @@ if ~ismember(var, {'climate', 'ecozone', 'habitat', 'embryo', 'migrate', 'food',
 end
 
 [codes, entries] = read_allEco(var); n_entries = length(entries); sel = false(n_entries,1);
+if ~iscell(code) % if code is char string, convert to cell string
+  code = {code};
+end
 n_code = length(code); N_code = zeros(n_code,1);
 for k = 1:n_code
   N_code(k) = length(code{k});
