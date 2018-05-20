@@ -435,7 +435,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Mp'};
       migrate = {};
       food    = {'biP','jiAa'};
-      gender  = {'D'};
+      gender  = {'Hh'};
       reprod  = {'O'};
 
     case 'Cerastoderma_edule'
@@ -805,7 +805,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Mp'};      
       migrate = {};
       food    = {'bjPz','jiCim'};
-      gender  = {'D'};
+      gender  = {'Hh'};
       reprod  = {'O'};
 
     case 'Adelomelon_brasiliana'
