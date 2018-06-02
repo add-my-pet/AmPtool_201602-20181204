@@ -1,28 +1,39 @@
-%% select_legend
-% graphical user interface for setting legend
+%% select_legend_eco
+% graphical user interface for setting legend using eco-codes for a given taxon
 
 %%
-function legend = select_legend(legend, k)
-% created 2016/02/28 by Bas Kooijman; modified 2016/03/08 by Dina Lika, 2018/01/22 by Bas Kooijman
+function legend = select_legend_eco(legend, taxon)
+% created 2018/05/30 by Bas Kooijman
 
 %% Syntax
-% legend = <../select_legend.m *select_legend*> (legend, k)
+% legend = <../select_legend_eco.m *select_legend_eco*> (legend, k)
 
 %% Description
-% Select or edit a legend; the active item is indicated and can be changed with button #. 
+% Select or edit a legend using eco-codes for a given taxon, such as 'Animalia' or 'Aves'.
+% The types of codes are coded as
+%
+%   C climate 
+%   E ecozone
+%   H habitat 
+%   E embryo environment
+%   M migration/torpor 
+%   F food
+%   G gender
+%   R reproduction
+%
+% Selections of several codes from a type are possible using keys Ctrl or Shift, see <select_ecoCode.html *select_ecoCode*>.
+% The active item is indicated and can be changed with button #. 
 % Edit maker specs with button marker and taxon name with button taxon.
 % Edit the sequence with buttons v and ^, insert with >, remove with x. 
-% The sequence matters if taxa are not mutually exclusive and some markers will be plotted on top of each other.
-% If second input is true, the setting of colors is ommitted; shstat then  sets colors according to a third variable
 %
 % Input:
 %
-% * legend: optional (n,2)-matrix with markers (5-vector of cells) and taxa (string)
-% * k: boolean for ommiting color setting (default false)
+% * legend: optional (n,2)-matrix with markers (5-vector of cells) and eco-codes (cell string)
+% * taxon: character strin with name of taxon
 %
 % Output: 
 % 
-% * legend: (m,2)-matrix with markers (5-vector of cells) and taxa (string)
+% * legend: (m,2)-matrix with markers (5-vector of cells) and eco-codes (string)
 
 %% Remarks
 % Press any key when done.
@@ -33,24 +44,19 @@ function legend = select_legend(legend, k)
 
   global legend_local i_legend Hlegend
   
+  if ~exist('taxon','var')
+    taxon = 'Animalia';
+  end
+  
   if ~exist('legend', 'var') && ~exist('k', 'var') || ~k
     legend_local = { ...
-        {'v', 10, 2, [0 0 1], [0 0 1]}, 'Aves'; ...
-        {'o', 10, 2, [1 0 0], [1 0 0]}, 'Chordata'; ...
-        {'.', 10, 2, [0 0 0], [0 0 0]}, 'Animalia'; ...
-        };
-    k = false;
-  elseif ~exist('legend', 'var') && k
-    legend_local = { ...
-        {'v', 10, 2}, 'Aves'; ...
-        {'o', 10, 2}, 'Chordata'; ...
-        {'.', 10, 2}, 'Animalia'; ...
+        {'o', 10, 2, [1 0 0], [1 0 0]}, {'C.MA'}; ...
+        {'o', 10, 2, [1 0 1], [1 0 1]}, {'C.MB'}; ...
+        {'o', 10, 2, [0 0 1], [0 0 1]}, {'C.MC'}; ...
+        {'o', 10, 2, [0 0 0], [0 0 0]}, {'C.ME'}; ...
         };
   else
     legend_local = legend;
-    if ~exist('k', 'var')
-      k = false;
-    end
   end
 
   i_legend = size(legend_local,1); % default index of active item
@@ -67,10 +73,10 @@ function legend = select_legend(legend, k)
            'String', 'marker',...
            'Position',[x+dx,y,.9*dx,.5*dx], ...
            'Callback', @marker_Callback);
-  Htaxon   = uicontrol('Style','pushbutton',...
-           'String', 'taxon', ...
+  HecoCode = uicontrol('Style','pushbutton',...
+           'String', 'eco-code', ...
            'Position',[x+2*dx,y, .9*dx,.5*dx], ...
-           'Callback', @taxon_Callback);
+           'Callback', @ecoCode_Callback);
   Hup   = uicontrol('Style','pushbutton',...
            'String', '^', ...
            'Position',[x+3*dx,y,.9*dx,.5*dx], ...
@@ -113,9 +119,9 @@ end
       legend_local(i_legend,1) = {select_marker(legend_local{i_legend,1})}; 
       close(Hlegend); Hlegend = shlegend(legend_local,[],[],'',i_legend);
     end
-    function C = taxon_Callback(source, eventdata) 
+    function C = ecoCode_Callback(source, eventdata) 
       global legend_local  i_legend Hlegend
-      legend_local(i_legend,2) = {select_taxon};
+      legend_local(i_legend,2) = {select_ecoCode};
       close(Hlegend); Hlegend = shlegend(legend_local,[],[],'',i_legend);
     end
     function C = up_Callback(source, eventdata) 

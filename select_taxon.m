@@ -1,4 +1,4 @@
-%% select_taxon (list)
+%% select_taxon
 % selects a taxon from list
 
 %%

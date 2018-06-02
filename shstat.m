@@ -11,7 +11,8 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 %% Description
 % plots statistics and/or parameters using allStat.mat as source (which must exist). 
 %
-% Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty and output val equals input vars.
+% Input vars can be a cell-string with names of parameters and/or statistics, 
+%   but can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty and output val equals input vars.
 % In that case, read_allStat is bypassed and labels must be set by user afterwards, see mydata_shstat.
 %
 % If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}). 
@@ -20,7 +21,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 %
 % Input:
 %
-% * vars: cell string with name(s) of 1, 2 or 3 independent variables 
+% * vars: cell string with name(s) of 1, 2 or 3 parameters and/or statistics or a data  array
 % * legend: (m,2)-array with legend: (marker, taxon)-pairs; optional for 1 independent variable
 % * label_title: optional string for title of figure
 % * Hfig: optional figure handle (to get the plot in a specified figure)
