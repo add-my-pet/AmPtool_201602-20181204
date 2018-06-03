@@ -33,7 +33,9 @@ function [sel taxa_src] = select_01(taxon_src, taxon_sel)
 % or 
 % sel_fish = select_01({'Myxini','Cephalaspidomorphi','Chondrichthyes','Actinopterygii','Sarcopterygii'}) 
 
-if ~exist('taxon_sel', 'var')
+if ~exist('taxon_src', 'var') && ~exist('taxon_sel', 'var')
+  taxon_sel = 'Animalia'; taxon_src = 'Animalia';
+elseif ~exist('taxon_sel', 'var')
   taxon_sel = taxon_src; taxon_src = 'Animalia';
 end
 
