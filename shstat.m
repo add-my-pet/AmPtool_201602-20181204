@@ -129,7 +129,6 @@ function [Hfig, Hleg, val, entries, missing] = shstat(vars, legend, label_title,
       else
         sel_taxon = select_01(label_title); % label_title should specify a valid taxon
       end
-      label_title = [label_title, ' ', datestr(date,26)]; % append date to default figure title
       % select codes
       types = {'climate', 'ecozone', 'habitat', 'embryo', 'migrate', 'food', 'gender', 'reprod'};
       n_eco = size(legend, 1); n_taxa = n_eco; % number of eco-codes to be plotted, copy to n_taxa for actual plotting section
@@ -147,7 +146,9 @@ function [Hfig, Hleg, val, entries, missing] = shstat(vars, legend, label_title,
         return
       end
       missing = entries(isnan(sum(val(any(sel,2),:),2))); % determine missing entries
-      
+      label_legend = [label_title, ' ',type];            % append date to default legend title
+      label_title = [label_title, ' ', datestr(date,26)]; % append date to default figure title
+
     else                   % taxa legend
       n_taxa = size(legend, 1); % number of taxa to be plotted
       sel = zeros(n_entries, n_taxa);
@@ -298,9 +299,13 @@ function [Hfig, Hleg, val, entries, missing] = shstat(vars, legend, label_title,
       h = datacursormode(Hfig);
       h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, val_plot);
       datacursormode on % mouse click on plot
-    
-      Hleg = shlegend(legend);
       
+      if iscell(legend{2,1})
+        Hleg = shlegend(legend,[],[],label_legend);
+      else
+        Hleg = shlegend(legend);
+      end
+          
     case 3
       if length(legend{1,1}) == 5 % all markers within a taxon are identical
         for j = 1:n_taxa % scan taxa
