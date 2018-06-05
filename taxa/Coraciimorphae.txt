@@ -1,6 +1,2 @@
 Coliiformes
-Leptosomatiformes
-Trogoniformes
-Bucerotiformes
-Coraciiformes
-Piciformes
+Cavitaves

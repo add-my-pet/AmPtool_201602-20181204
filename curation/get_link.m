@@ -5371,6 +5371,14 @@ function links = get_link(taxon, open)
       id_avibase = 'DCDDC20BDA55E5D3';
       id_birdlife = 'common-kestrel-falco-tinnunculus';
       
+    case 'Strigops_habroptila'
+      id_CoL = '20a82a91a368244a12ed957c64f608cd';
+      id_Taxo = '1125230';        
+      id_EoL = '311770';
+      id_AnAge = taxon;       
+      id_avibase = '16804FAF5DCCB288';
+      id_birdlife = '22685245';
+      
     case 'Melopsittacus_undulatus'
       id_CoL = 'f683faf1a057f5da3a1c30c0bbaf51fd';
       id_Taxo = '54299';        

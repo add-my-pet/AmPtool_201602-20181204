@@ -1,4 +1,2 @@
 Cariamiformes
-Falconiformes
-Psittaciformes
-Passeriformes
+Eufalconimorphae

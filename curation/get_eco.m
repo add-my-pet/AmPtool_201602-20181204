@@ -7268,6 +7268,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Strigops_habroptila'
+      climate = {'Cfb'};
+      ecozone = {'TAz'};
+      habitat = {'0iTh','0iTf'};
+      embryo  = {'Tnsf'};
+      migrate = {};
+      food    = {'biHs','biHe'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Melopsittacus_undulatus'
       climate = {'BWk','BSk'};
       ecozone = {'TA'};
