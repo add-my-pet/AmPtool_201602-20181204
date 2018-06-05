@@ -122,7 +122,7 @@ function [Hfig, Hleg, val, entries, missing] = shstat(vars, legend, label_title,
       legend = select_legend;
     end
     
-    if iscell(legend(1,2)) % eco-code legend
+    if iscell(legend{1,2}) % eco-code legend
       % select taxon
       if ~exist('label_title', 'var') || isempty(label_title)
         sel_taxon = ones(n_entries,1); label_title = 'Animalia';
@@ -300,7 +300,7 @@ function [Hfig, Hleg, val, entries, missing] = shstat(vars, legend, label_title,
       h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, val_plot);
       datacursormode on % mouse click on plot
       
-      if iscell(legend{2,1})
+      if iscell(legend{1,2})
         Hleg = shlegend(legend,[],[],label_legend);
       else
         Hleg = shlegend(legend);
