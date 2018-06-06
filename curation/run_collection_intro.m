@@ -5,9 +5,11 @@
 % make sure that AmPtool/taxa/ is updated
 % make sure that ../../img/tree is updated
 % make sure that AmPtool/curation/get_link is updated
-% run write_allStat
+% make sure that AmPtool/curation/get_eco is updated
 % run_collection(taxa-names) to generate files in entries_zip and entries_web
 
+write_allStat
+write_allEco
 prt_species_names
 prt_species_list
 prt_species_tree_taxa_js
