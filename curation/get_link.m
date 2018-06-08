@@ -3263,6 +3263,13 @@ function links = get_link(taxon, open)
       id_Wiki = 'Diplodus';
       id_fishbase = taxon_fish;
        
+    case 'Lithognathus_mormyrus'
+      id_CoL = '047182f721da243ddbd80be9f0ecba41';
+      id_WoRMS = '127055';
+      id_Taxo = '179018';        
+      id_EoL = '204487';
+      id_fishbase = taxon_fish;
+       
     case 'Boops_boops'
       id_CoL = 'fb99b92f46db65d7f8a22d33ee501f04';
       id_WoRMS = '127047';
@@ -5379,6 +5386,14 @@ function links = get_link(taxon, open)
       id_avibase = '16804FAF5DCCB288';
       id_birdlife = '22685245';
       
+    case 'Probosciger_aterrimus'
+      id_CoL = 'c1b2b9bf490c44f132ac4dcd7877091b';
+      id_Taxo = '54193';        
+      id_EoL = '1177829';
+      id_AnAge = taxon;       
+      id_avibase = 'ADC0F2618675AC3B';
+      id_birdlife = '22684723';
+      
     case 'Melopsittacus_undulatus'
       id_CoL = 'f683faf1a057f5da3a1c30c0bbaf51fd';
       id_Taxo = '54299';        
@@ -5402,6 +5417,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '35810386DDA72E08';
       id_birdlife = 'monk-parakeet-myiopsitta-monachus';
+      
+    case 'Acanthisitta_chloris'
+      id_CoL = '5b8863030a8922433d7393bcad9b9192';
+      id_Taxo = '56235';        
+      id_EoL = '915638';
+      id_AnAge = ''; % not present 2018/06/07       
+      id_avibase = '7D5E37D94F5EBA80';
+      id_birdlife = 'rifleman-acanthisitta-chloris';
       
     case 'Aphrastura_spinicauda'
       id_CoL = 'fc5861eec01a70a052c61fd549cbe59c';
@@ -5450,6 +5473,14 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2017/06/18 
       id_avibase = 'D4C32F8E792B65BA';
       id_birdlife = 'eurasian-jackdaw-corvus-monedula';
+      
+    case 'Picathartes_gymnocephalus'
+      id_CoL = '8f49aaf3ff51bd1b89d3460db10997ab';
+      id_Taxo = '57200';        
+      id_EoL = '918815';
+      id_AnAge = '';       
+      id_avibase = '303653379A703A4F';
+      id_birdlife = '22708108';
       
     case 'Remiz_pendulinus'
       id_CoL = '3970051da664fb71a70190918d8739e8';
