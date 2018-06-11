@@ -7129,7 +7129,7 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '13001562';
        
-    case 'Rattus_norvegicus'
+    case {'Rattus_norvegicus','Rattus_norvegicus_Wistar'}
       id_CoL = '58d474ec035208b2194df25dde8f9259';
       id_Taxo = '63135';        
       id_EoL = '328448';

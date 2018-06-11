@@ -9658,7 +9658,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
-    case 'Rattus_norvegicus'
+    case {'Rattus_norvegicus','Rattus_norvegicus_Wistar'}
       climate = {'A','B','C','D'};
       ecozone = {'TH','TP','TA','TN'};
       habitat = {'0iTa','0iTs','0iTg','0iFm'};
