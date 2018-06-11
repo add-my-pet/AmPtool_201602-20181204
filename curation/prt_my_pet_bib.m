@@ -15,8 +15,7 @@ function prt_my_pet_bib(species, biblist, destinationFolder)
 %
 % * species: string with latin name of species 
 % * biblist:  structure with each field containing a reference in bibtext format. 
-% * destinationFolder : optional string with destination folder the files
-% are printed to (default: current folder)
+% * destinationFolder : optional string with destination folder the files are printed to (default: current folder)
 
 %% Remarks
 % The name of the key corresponds to the bibtex key. The structure metaData.biblist is output from mydata_my_pet file

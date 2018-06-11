@@ -110,7 +110,7 @@ end
     end
     function C = marker_Callback(source, eventdata) 
       global legend_local  i_legend Hlegend
-      legend_local(i_legend,1) = {select_marker(legend_local{i_legend,1}, k)}; 
+      legend_local(i_legend,1) = {select_marker(legend_local{i_legend,1})}; 
       close(Hlegend); Hlegend = shlegend(legend_local,[],[],'',i_legend);
     end
     function C = taxon_Callback(source, eventdata) 

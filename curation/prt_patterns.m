@@ -98,7 +98,7 @@ close all
 % Fig 6: log p_M - log dW/W
 shstat_options('default');
 WdWpMcT = read_allStat('W_dWm', 'dWm', 'p_M', 'c_T'); W_dWm = WdWpMcT(:,1); dWm = WdWpMcT(:,2); p_M = WdWpMcT(:,3); c_T = WdWpMcT(:,4);
-[Hfig Hleg] = shstat([p_M ./ c_T, dWm ./ W_dWm ./ c_T], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
+[Hfig Hleg] = shstat([p_M, dWm ./ W_dWm ./ c_T], legend_RSED, datestr(datenum(date),'yyyy/mm/dd')); 
 %set(gca, 'FontSize', 15, 'Box', 'on')
 
 figure(Hfig) 

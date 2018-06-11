@@ -3,7 +3,7 @@
 
 %%
 function allStat = write_allStat(T, f)
-% created 2016/04/24 by Bas Kooijman, modified 2017/08/16
+% created 2016/04/24 by Bas Kooijman, modified 2017/08/16, 2018/08/16
 
 %% Syntax
 % allStat = <write_allStat *write_allStat*> (T, f)
@@ -59,6 +59,6 @@ function allStat = write_allStat(T, f)
   curation = curation(1:end - 15);         
   cd(curation)                     % goto taxa
 
-  save('../allStat')
+  save('../allStat.mat','allStat')
   
   cd(WD);

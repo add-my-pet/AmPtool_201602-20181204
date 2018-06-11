@@ -1,12 +1,12 @@
-%% select_data (data, model)
+%% select_data
 % selects taxa with a particular combination of data and models
 
 %%
-function [taxa, model, exact] = select_data (data, model)
-% created 2018/01/12 by Bas Kooijman
+function [taxa, model, exact, sel] = select_data (data, model)
+% created 2018/01/12 by Bas Kooijman, modified 2018/05/10
 
 %% Syntax
-% [taxa, models, exact] = <../select_data.m *select_data*> (data, model)
+% [taxa, models, exact, sel] = <../select_data.m *select_data*> (data, model)
 
 %% Description
 % selects taxa with a particular combination of data and models
@@ -20,12 +20,13 @@ function [taxa, model, exact] = select_data (data, model)
 % 
 % * taxa: cell string with names of taxon
 % * model: cell string with names of corresponding models
-% * exact: vector of booleans if the matxh is exact, meaning that that entry has no more data
+% * exact: vector of booleans if the match is exact, meaning that that entry has no more data
+% * sel: vector of booleans that indicate selection in the whole collection of entries
 
 %% Remarks
-% sequence of data is ignored; zero- and uni-variate data can be mixed
-% all data elements must be typified names, as mentioned in DEBwiki; if data is an empty cell string, entries are only selected on the basis of model
-% all model names must be typified model
+% Sequence of data is ignored; zero- and uni-variate data can be mixed.
+% All data elements must be typified names, as mentioned in DEBwiki; if data is an empty cell string, entries are only selected on the basis of model.
+% All model names must be typified model.
 
 %% Example of use
 % select_data({'ab'; 'am'; 'Ww-N'})

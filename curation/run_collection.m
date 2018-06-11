@@ -14,14 +14,15 @@ function run_collection(varargin)
 % This function calls function bib2bbl, which writes and deletes the .aux file as source for Bibtex.
 % It also runs Bibtex (under Matlab) to produce a bbl-file, make sure that you have it.
 % Then function bbl2html is called, which produces html code, writes it in my_pet_res.html, and deletes the bbl-file.
+% Writes my_pet_toolbar.html, which is included by my_pet_res.html, my_pet_par.html and my_pet_stat.html.
 %
 % Input:
 %
-% * entries: optional cell array with entry names, or character string with entry or node names (default 'Animalia')
+% * varargin: optional cell array with entry names, or character string with entry or node names (default 'Animalia')
 %
 % Output:
 %
-% * 1 bib-file, 3 html-files and 4 png-files per entry are written in ../entries_web 
+% * 1 bib-file, 4 html-files and 4 png-files per entry are written in ../entries_web 
 % * 1 zip-file is written in ../entries_zip
 
 %% Remarks
@@ -61,8 +62,9 @@ for i = 1:nargin
   prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:  
   cd(WD) % goto orginal path, but print to destinationFolder
   
-  prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder) % print bib file
-  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder) % print html with results
+  prt_my_pet_toolbar(metaData.species,metaData.species_en,metaData.date_acc, destinationFolder) % print toolbar
+  prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder)                          % print bib file
+  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)         % print html with results
   prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % print html with parameters
   prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
 

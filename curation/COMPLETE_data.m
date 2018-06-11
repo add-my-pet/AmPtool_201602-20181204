@@ -421,6 +421,8 @@ CD = { ...
  2.5 {'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'}
  2.5 {'ab'; 'ax'; 'aR'; 'ap'; 'am'; 'Wwb'; 'WwR'; 'Wwi'; 'Ri'; 't-Ww'} 
  2.5 {'ab'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww'} 
+ 2.5 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-L'; 't-Ww'; 'L-Ww'; 't-N'; 't-dC'; 't-WwR'}
+ 2.5 {'ab'; 'ax'; 'aR'; 'am'; 'Lb'; 'Li'; 'Ww0'; 'Wwb'; 'Wwi'; 'Ri';'t-Ww'; 't-N'; 't-Le'; 't-Wwe'}; 
  2.6 {'ab'; 'ax'; 'aR'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 'ax-Wwx_f'} 
  2.6 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Ri'; 't-L'; 't-Ww'} 
  2.6 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 'JXi'; 'pAi'; 't-L_f'; 't-Ww'} 
@@ -622,12 +624,14 @@ CD = { ...
  3.5 {'ah_T'; 'ab_T'; 'aj'; 'ap'; 'am'; 'Lh'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 't-L_fT'; 't-Ww_fT'; 't-VY_T'; 'Ww-R'; 'Ww-N_T'; 'T-ah'; 'T-JO'; 'T-JN'} 
  3.5 {'ab'; 'aj'; 'ap'; 'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wdb'; 'Wdj'; 'Wdp'; 'Wdi'; 'Ri';'t-L_f'; 'L-Ww'; 'L-Wd'; 'Wd-JO'}
  3.5 {'ab'; 'aj'; 'ap'; 'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wdb'; 'Wdj'; 'Wdp'; 'Wdi'; 'Ri'; 't-L_f'; 'L-Ww'; 'Wd-JO_T'}
+ 3.5 {'ah_T'; 'ab_T'; 'aj'; 'am'; 'Lh'; 'Lb'; 'Lj'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 't-L'; 't-Ww_T'; 'Ww-R'; 'Ww-JX_T'; 'T-JN_W'}; 
  3.6 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wd0'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ni'; 'E0'; 't-Le_T'; 'L-Wde_T'; 'T-ab'; 't-L_fT'; 't-Ww_fT'; 'L-Ww'; 'L-N'} 
  3.6 {'ab'; 'aj'; 'ap'; 'am'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wdb'; 'Wdj'; 'Wdp'; 'Wdi'; 'Ri'; 't-L_f'; 'L-Wd'; 'L-N'; 'Wd-JO_f'; 'T-JO'}
  3.8 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'GSI'; 'Ri'; 't-L'; 't-dL'; 'L-Ww'; 'X-JX_L'; 'X-JP_L'; 'JX-JO_L'; 'L-JO'} 
  3.8 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 't-Ww_f'; 't-R_f'} 
  4.0 {'tg'; 'ax'; 'ap'; 'Li'; 'Wwb'; 'Wwx';  'Wwi'; 'Ri'; 't-Wwe'; 't-Ww_f'; 't-S_f'} 
  4.5 {'ab'; 'aj'; 'ap'; 'am'; 'L0'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'Wd0'; 'Wwi'; 'Ri'; 'GSI'; 't-Le'; 't-L_fT'; 't-Ww_f'; 't-Wd_f'; 't-N'; 't-JO'; 't-S'} 
+ 4.5 {'ab'; 'ax'; 'ap'; 'Li'; 'Wwb'; 'Wwp'; 'Wwi'; 'Ri'; 'xi_WE'; 't-Wwe'; 't-Ww_f'; 't-S_f'; 'Ww-JO'}; 
  5.0 {'ab'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wdi'; 'Ri'; 't-L_f'; 't-JX_f'; 't-N_f'; 'L-Wd_f'; 'L-JO_T'; 'L-Wd'} 
  5.0 {'ab_T'; 'ap'; 'Lj'; 'Lp'; 'Li'; 'Wd0'; 'Wdb'; 'Wdi'; 'Ri'; 'JOb'; 'JOi'; 't-L_f'; 't-Ww_f'; 't-Wwe'; 't-Wd_f'; 't-N_f'; 't-JOe'; 't-S'} 
  5.0 {'am'; 'Lb'; 'Li'; 'Wwb_f'; 'Wdb_f'; 'Wwp'; 'Wdi'; 'Ri'; 'T-ab'; 't-L_fT'; 't-N_fT'; 'Ww-JO'} 

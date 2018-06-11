@@ -12,7 +12,7 @@
 
 close all    % remove any existing figure
 
-example = 13; % edit this number to see the various examples
+example = 14; % edit this number to see the various examples
 switch example
   case 1 % 2D: use default settings
     shstat_options('default');
@@ -168,4 +168,16 @@ switch example
     xlabel('_{10}log [p_M], J/d.cm^3')      
     ylabel('_{10}log \{p_{Am}\}, J/d.cm^2')  
     zlabel('_{10}log L_\infty , cm')         
+    
+   case 14 % 2D for eco-codes
+    shstat_options('default');
+    legend_eco = {...
+    {'o', 8, 3, [0 1 0], [0 1 0]}, {'B.Tnp','B.Tnw'}; ....
+    {'o', 8, 3, [1 0 0], [1 0 0]}, {'B.Tnc'}; ...
+    {'o', 8, 3, [0 0 1], [0 0 1]}, {'B.Tnf'}; ...
+    {'o', 8, 3, [0 0 0], [0 0 0]}, {'B.Tnt','B.Tns','B.Tl'}; ...
+    };
+
+    [Hfig, Hleg, val, entries, missing] = shstat({'a_p','s_Hbp'}, legend_eco, 'Aves'); 
+
 end

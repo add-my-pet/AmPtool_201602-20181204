@@ -2,7 +2,7 @@
 % plots statistics and/or parameters
 
 %%
-function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfig)
+function [Hfig, Hleg, val, entries, missing] = shstat(vars, legend, label_title, Hfig)
 % created 2016/04/23 by Bas Kooijman; modified 2017/04/20, 2017/10/14, 2018/01/22
 
 %% Syntax
@@ -11,7 +11,8 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 %% Description
 % plots statistics and/or parameters using allStat.mat as source (which must exist). 
 %
-% Input vars can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty and output val equals input vars.
+% Input vars can be a cell-string with names of parameters and/or statistics, 
+%   but can also be a numerical (n,1)- or (n,2)- or (n,3)-matrix for n = length(select), but the labels on the axis are then empty and output val equals input vars.
 % In that case, read_allStat is bypassed and labels must be set by user afterwards, see mydata_shstat.
 %
 % If the number of variables as specified in vars equals 1, legend is optional and specifies the colors of the survivor function and median (default: {'b','r'}). 
@@ -20,7 +21,7 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 %
 % Input:
 %
-% * vars: cell string with name(s) of 1, 2 or 3 independent variables 
+% * vars: cell string with name(s) of 1, 2 or 3 parameters and/or statistics or a data  array
 % * legend: (m,2)-array with legend: (marker, taxon)-pairs; optional for 1 independent variable
 % * label_title: optional string for title of figure
 % * Hfig: optional figure handle (to get the plot in a specified figure)
@@ -34,7 +35,9 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 % * missing: cell string with names of entries that should have been plotted, but are missing (because of lack of data in allStat.mat) 
 
 %% Remarks
-% Legend can be set/modified with <select_legend.html *select_legend*>. Be aware that the sequence of taxa in legend matters. 
+% Legend can be set/modified for taxa with <select_legend.html *select_legend*> and for eco-codes with <select_legend_eco.html *select_legend_eco*>. 
+% These are (n,2)-cell arrays with as as colums, character strings for taxa or cell-strings for eco-codes.
+% Be aware that the sequence of rows in legend matters. 
 % shstat composes a selection-of-entries matrix with first-to-last colum corresponding to taxa in first-to-last row of legend. 
 % In the case that a taxon is included in another one, double plotting is suppressed from first-to-last column of selection matrix, and plotting is done for last-to-first column.
 % So, if Aves and Animalia are in legend in this sequence, Animalia-markers are not plotted for Aves, and Aves-markers are on top of Animalia-markers in case of crowding.
@@ -42,6 +45,9 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
 %
 % If the marker specs have length 3 and there are 3 variables, points with a larger value for the third variable will be plotted on top of the ones with a smaller value.
 % The third variable is then used to set the colors of the markers
+%
+% If eco-codes are used, the third input is treated as taxon specification, and the title is set by default; it be overwritten afterwards.
+% The number of variables should then be larger than 1.
 %
 % Set options with <shstat_options.html *shstat_options*> (such as logarithmic transformation of axes).
 % Symbols and units are always plotted on the axes in non-numerical mode, but descriptions only if x_label, and/or y_label and/or z_label is 'on'.
@@ -115,19 +121,50 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
     if ~exist('legend','var') || isempty(legend)
       legend = select_legend;
     end
-    n_taxa = size(legend, 1); % number of taxa to be plotted
-    sel = zeros(n_entries, n_taxa);
-    [sel(:,1) entries_sel] = select_01('Animalia', legend{1,2});
-    if ~isempty(setdiff(entries_sel, entries))
-      fprintf('Error in shstat: entries in allStat do not correspond with entries in select(''Animalia'')\n')
-      Hfig = []; missing = []; return
+    
+    if iscell(legend{1,2}) % eco-code legend
+      % select taxon
+      if ~exist('label_title', 'var') || isempty(label_title)
+        sel_taxon = ones(n_entries,1); label_title = 'Animalia';
+      else
+        sel_taxon = select_01(label_title); % label_title should specify a valid taxon
+      end
+      % select codes
+      types = {'climate', 'ecozone', 'habitat', 'embryo', 'migrate', 'food', 'gender', 'reprod'};
+      n_eco = size(legend, 1); n_taxa = n_eco; % number of eco-codes to be plotted, copy to n_taxa for actual plotting section
+      sel = zeros(n_entries, n_eco); % initiate selection matrix
+      for i = 1:n_eco % scan legend rows
+       code = legend{i,2}; n_code = length(code); type = code{1}; type = types{strfind('CEHBMFR',type(1))}; 
+       for j = 1:n_code % remove type-specification from codes
+         c = code{j}; c(1:2) = []; code{j} = c; 
+       end
+       [taxa, sel_eco] = select_eco (type, code); 
+       sel(:,i) =  sel_eco & sel_taxon;
+      end
+      if sum(sum(sel)) == 0
+        fprintf('No points to plot\n')
+        return
+      end
+      missing = entries(isnan(sum(val(any(sel,2),:),2))); % determine missing entries
+      label_legend = [label_title, ' ',type];            % append date to default legend title
+      label_title = [label_title, ' ', datestr(date,26)]; % append date to default figure title
+
+    else                   % taxa legend
+      n_taxa = size(legend, 1); % number of taxa to be plotted
+      sel = zeros(n_entries, n_taxa);
+      [sel(:,1) entries_sel] = select_01('Animalia', legend{1,2});
+      if ~isempty(setdiff(entries_sel, entries))
+        fprintf('Error in shstat: entries in allStat do not correspond with entries in select(''Animalia'')\n')
+        Hfig = []; missing = []; return
+      end
+      for i = 2:n_taxa
+        sel(:,i) =  select_01('Animalia', legend{i,2});
+      end
+      sel = once(sel);    % remove double selections  
+      missing = entries(isnan(sum(val(any(sel,2),:),2))); % determine missing entries
     end
-    for i = 2:n_taxa
-      sel(:,i) =  select_01('Animalia', legend{i,2});
-    end
-    sel = once(sel);    % remove double selections  
-    missing = entries(isnan(sum(val(any(sel,2),:),2))); % determine missing entries
   end
+  
   n_missing = length(missing);
   if ~(n_missing == 0)
     fprintf(['Warning from shstat: ', num2str(n_missing), ' entries are missing in the figure\n'])
@@ -262,9 +299,13 @@ function [Hfig Hleg val entries missing] = shstat(vars, legend, label_title, Hfi
       h = datacursormode(Hfig);
       h.UpdateFcn = @(obj, event_obj)xylabels(obj, event_obj, entries, val_plot);
       datacursormode on % mouse click on plot
-    
-      Hleg = shlegend(legend);
       
+      if iscell(legend{1,2})
+        Hleg = shlegend(legend,[],[],label_legend);
+      else
+        Hleg = shlegend(legend);
+      end
+          
     case 3
       if length(legend{1,1}) == 5 % all markers within a taxon are identical
         for j = 1:n_taxa % scan taxa

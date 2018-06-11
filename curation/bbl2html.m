@@ -14,7 +14,7 @@ function bbl2html(my_pet_bib, destinationFolder, filenm)
 % Input:
 %
 % * bbl: bbl.file without extension
-% * destinationFolder: optional specification of destonations folder (default: local)
+% * destinationFolder: optional specification of destination folder (default: local)
 % * filnm: optional file name to append (default: my_pet_bib.html)
 
 %% Remarks

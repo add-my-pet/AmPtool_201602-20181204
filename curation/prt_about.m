@@ -201,7 +201,7 @@ fprintf(fid_about, '      <h2 class="clear">Data completeness and mean relative 
 fprintf(fid_about, '      <div class="sidelement2">\n');
 fprintf(fid_about, '        <img src="img/about/COMPLETE.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_blank">data completness</a>.\n');
+fprintf(fid_about, '          Survivor function of <a href="http://www.debtheory.org/wiki/index.php?title=Completeness" TARGET="_blank">data completeness</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 

@@ -5,7 +5,7 @@
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
-% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26, 2018/02/06 Bas Kooijman
+% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26, 2018/02/06, 2018/04/28, 2018/05/05 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -35,12 +35,6 @@ function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, dest
 % load(['results_',entries{i},'.mat']) % load results_my_pet.mat
 %
 % prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
-
-global eco_types
-
-if length(eco_types) == 0 
-  get_eco_types;
-end
 
 % Remove underscore and capitalize first letter of english :
 speciesprintnm = [strrep(metaData.species, '_', ' '), ' '];
@@ -117,25 +111,8 @@ fprintf(oid, '<BODY>\n\n');
 
 fprintf(oid, '<div w3-include-html="../../sys/wallpaper_entry.html"></div>\n');
 fprintf(oid, '<div w3-include-html="../../sys/toolbar_entry.html"></div>\n');
+fprintf(oid,['<div id="top2" w3-include-html="', metaData.species, '_toolbar.html"></div>\n']);
 fprintf(oid, '<script>w3IncludeHTML();</script>\n\n');
-
-fprintf(oid, '<!--------------------------------------------------------------->\n');
-fprintf(oid, '<!--  PART menuBar_species                                     -->\n');
-fprintf(oid, '<!--  TOP PART OF WEBPAGE IS FIXED                             -->\n');
-fprintf(oid, '<!--   It has the logo and the menu with Javascript            -->\n');
-fprintf(oid, '<!--  dropdown menus                                           -->\n');
-fprintf(oid, '<!--  Please put in bold and in fancy the right links          -->\n');
-fprintf(oid, '<!--------------------------------------------------------------->\n\n');
-
-fprintf(oid, '<div id="top2">\n');
-fprintf(oid, '  <h1 class="alignleft2"> &nbsp; &nbsp;\n');
-fprintf(oid,['    <a href = "../../species_list.html#', metaData.species, '">', speciesprintnm, '</A>(', speciesprintnm_en, '): &nbsp;\n']);
-fprintf(oid, '  </h1>\n\n');
-
-fprintf(oid, '  <div id="navwrapper">\n');
-prt_toolbar_species(oid, metaData.species, metaData.date_acc)
-fprintf(oid, '  </div> <!-- end of navwrapper -->\n');
-fprintf(oid, '</div> <!-- end of top2 -->\n\n');
 
 fprintf(oid, '<!--------------------------------------------------------------->\n');
 fprintf(oid, '<!--   PART main                                               -->\n');
@@ -148,73 +125,12 @@ fprintf(oid, '<div id = "main">\n');
 fprintf(oid, '  <div id = "main-wrapper">\n');
 fprintf(oid, '    <div id="contentFull">\n');
 fprintf(oid, '      <H1 id = "portaltop">Predictions & Data for this entry</H1>\n\n');	
-   
-% start content
+
+fclose(oid);
 
 % table with model, COMPLETE, MRE, SMSE, eco-codes
-[climate, ecozone, habitat, migrate, food] = get_eco(metaData.species);
-n_C = length(climate); code_C = '';
-for i = 1:n_C
-  code_C = [code_C, '<a href="" title="', eco_types.climate.(climate{i}), '">', climate{i}, '</a>, '];
-end
-code_C(end - (0:1)) = []; 
-n_E = length(ecozone); code_E = '';
-for i = 1:n_E
-  code_E = [code_E, '<a href="" title="', eco_types.ecozone.(ecozone{i}), '">', ecozone{i}, '</a>, '];
-end
-code_E(end - (0:1)) = []; 
-n_H = length(habitat); code_H = '';
-for i = 1:n_H
-  code = habitat{i}; label = [eco_types.habitat.(code(3:end)), ' for stage ', code(1:2)];
-  code_H = [code_H, '<a href="" title="', label, '">', code, '</a>, '];
-end
-code_H(end - (0:1)) = [];
-n_M = length(migrate); code_M = '';
-for i = 1:n_M
-  code_M = [code_M, '<a href="" title="', eco_types.migrate.(migrate{i}), '">', migrate{i}, '</a>, '];
-end
-if n_M > 0
-  code_M(end - (0:1)) = [];
-end
-n_F = length(food); code_F = '';
-for i = 1:n_F
-  code = food{i}; label = [eco_types.food.(code(3:end)), ' for stage ', code(1:2)];
-  code_F = [code_F, '<a href="" title="', label, '">', code, '</a>, '];
-end
-code_F(end - (0:1)) = []; 
-
-fprintf(oid, '      <table>\n');    
-fprintf(oid, '        <tr>\n');    
-fprintf(oid,['          <td width=500>Model: <a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models" >&nbsp;', metaPar.model,' &nbsp;</a></td>\n']);    
-fprintf(oid,['          <td><a href="../../AmPeco.html#C" target="_blank">climate: </a></td> <td>', code_C, '</td>\n']);
-fprintf(oid, '        </tr>\n');    
-fprintf(oid, '        <tr>\n');    
-fprintf(oid, '          <td width=300></td>\n');    
-fprintf(oid,['          <td><a href="../../AmPeco.html#E" target="_blank">ecozone: </a></td> <td>', code_E, '</td>\n']);
-fprintf(oid, '        </tr>\n');    
-fprintf(oid, '        <tr>\n');    
-fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Completeness" >COMPLETE</a>',' = %3.1f </td>\n'], metaData.COMPLETE);
-fprintf(oid,['          <td><a href="../../AmPeco.html#H" target="_blank">habitat: </a></td> <td>', code_H, '</td>\n']);
-fprintf(oid, '        </tr>\n');    
-fprintf(oid, '        <tr>\n');    
-fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Mean_relative_error" >MRE</a>',' = %8.3f </td>\n'], metaPar.MRE);   
-fprintf(oid,['          <td><a href="../../AmPeco.html#M" target="_blank">migrate: </a></td> <td>', code_M, '</td>\n']);
-fprintf(oid, '        </tr>\n');    
-fprintf(oid, '        <tr>\n');    
-fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" >SMSE</a>',' = %8.3f </td>\n'], metaPar.SMSE);   
-fprintf(oid,['          <td><a href="../../AmPeco.html#F" target="_blank">food: </a></td> <td>', code_F, '</td>\n']);
-fprintf(oid, '        </tr>\n');    
-fprintf(oid, '      </table>\n\n');     
-
-% % get predictions to compare with data: 
-% [data, auxData, metaData, txtData] = feval(['mydata_',metaData.species]); 
-% prdData = feval(['predict_',metaData.species], par, data, auxData);
-
-% appends new field to prdData with predictions for the pseudo data:
-% (the reason is that the predicted values for the pseudo data are not
-%   returned by predict_my_pet and this has to do with compatibility with the
-%   multimetadata.species parameter estimation):
-% prdData = predict_pseudodata(par, data, prdData);
+prt_my_pet_eco(metaData.species, metaPar.model, metaData.COMPLETE, metaPar.MRE, metaPar.SMSE, destinationFolder);
+fopen(fileName, 'a'); % further append to my_pet_res.html
 
 % make structure for 'real' and predicted pseudodata:
 pseudo = data.psd;
@@ -229,6 +145,7 @@ txtData    = rmfield_wtxt(txtData, 'psd');
 
 
 %  make table for zero-variate data set:
+fprintf(oid, '      <p>\n');
 fprintf(oid, '      <TABLE id="t01">\n');
 fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TH colspan="7"><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Zero-variate_data" >Zero-variate</a> data</TH></TR>\n');
 fprintf(oid, '        <TR BGCOLOR = "#FFE7C6"><TD><b>Data</b></TD><TD><b>Observed</b></TD><TD><b>Predicted</b></TD><TD><b>(RE)</b></TD><TD><b>Unit</b></TD><TD><b>Description</b></TD><TD><b>Reference</b></TD></TR>\n');
@@ -439,6 +356,7 @@ end
 
 % ----------------------------------------------------------
 
+% Discussion
 if isfield(metaData, 'discussion') == 1
   fprintf(oid, '      <H3 style="clear:both" class="pet">Discussion</H3>\n');
   fprintf(oid, '      <ul> \n');     % open the unordered list
@@ -468,7 +386,7 @@ if isfield(metaData, 'acknowledgment') == 1
   fprintf(oid, ['          ', str, '\n']);
   fprintf(oid, '          </li>\n' );  % close bullet point
    
-  fprintf(oid,'         </ul>\n\n\n');   % close the unordered list      
+  fprintf(oid,'         </ul>\n\n\n'); % close the unordered list      
 end
 % ----------------------------------------------------------
 
@@ -476,13 +394,13 @@ end
 fprintf(oid, '      <H3 style="clear:both" class="pet">Bibliography</H3>\n');
 [nm, nst] = fieldnmnst_st(metaData.biblist);
 
-fclose(oid); % insert biblist un ul format
+fclose(oid); % insert biblist in ul format
 bib2bbl([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '/']);
 bbl2html([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '/'], [metaData.species, '_res']);
 oid = fopen(fileName, 'a'); % open file for appending
 
 fprintf(oid, '      <p>\n');
-fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex files with references for this entry</A> <BR>\n']);
+fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex file with references for this entry</A> <BR>\n']);
 fprintf(oid, '      </p>\n\n' );
   
 % ----------------------------------------------------------
