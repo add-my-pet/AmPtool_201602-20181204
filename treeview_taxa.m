@@ -9,7 +9,7 @@ function treeview_taxa (taxon)
 % <../treeview_taxa.m *treeview_taxa*> (taxon) 
 
 %% Description
-% First procudes pedigree with function <pedigree.html *pedigree*> and 
+% First produces pedigree with function <pedigree.html *pedigree*> and 
 % uses the result to create file /treeview/treeview_taxa.js and 
 % opens AmPtool/taxa/treeview/treeview_taxa.html in the system browser.
 %
@@ -22,7 +22,9 @@ function treeview_taxa (taxon)
 % taxon must be  a node in the taxonomic tree, see <list_taxa.m *list_taxa*>
 
 %% Example of use
-% treeview_taxa('Cladocera');
+%  treeview_taxa('Cladocera');
+%  treeview_taxa(select_taxon('Crustacea',false));
+%  treeview_taxa(select_taxon('',false));
 
   if ~exist('taxon','var') || isempty(taxon)
     taxon = 'Animalia';

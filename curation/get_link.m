@@ -4224,6 +4224,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
+    case 'Crocodylus_acutus'
+      id_CoL = '3aeef109bdd9c386386ef71795e993b9';
+      id_Taxo = '50628';
+      id_WoRMS = '422566';
+      id_EoL = '1056415';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
     case 'Pterodaustro_guinazui'
       id_CoL = '7241febd761e916d77b5d64f223534f0';
       id_Taxo = '50713'; % present as genus        

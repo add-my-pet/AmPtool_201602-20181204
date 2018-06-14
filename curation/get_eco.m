@@ -5918,6 +5918,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dtfm'};
       reprod  = {'O'};
 
+    case 'Crocodylus_acutus'
+      climate = {'MA'};
+      ecozone = {'TN'};
+      habitat = {'0bFe','biMm'};
+      embryo  = {'Tl'};
+      migrate = {'Ms'};
+      food    = {'bpCi','biCv'};
+      gender  = {'Dtfm'};
+      reprod  = {'O'};
+
     case 'Pterodaustro_guinazui'
       climate = {'A'};
       ecozone = {'TN'};
