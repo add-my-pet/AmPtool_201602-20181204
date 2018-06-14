@@ -2,18 +2,19 @@
 % selects a taxon from list
 
 %%
-function [taxon, s, v] = select_taxon (list)
-%% created 2016/02/25 by Bas Kooijman
+function [taxon, s, v] = select_taxon (list, leaves)
+%% created 2016/02/25 by Bas Kooijman, modified 2018/06/14
 
 %% Syntax
-% [taxon, s, v] = <../select_taxon.m *select_taxon*> (list)
+% [taxon, s, v] = <../select_taxon.m *select_taxon*> (list, leaves)
 
 %% Description
 % select a taxon from a list of all possibilities
 %
 % Input:
 % 
-% * list: optional input with cell-vector of possible taxa
+% * list: optional input with cell-vector of possible taxa (default: 'Animalia')
+% * leaves: optional boolean to include leaves (default: true)
 %
 % Output: 
 % 
@@ -30,6 +31,8 @@ function [taxon, s, v] = select_taxon (list)
 
 if ~exist('list', 'var')
   list = list_taxa; 
+elseif exist('leaves', 'var')
+  list = list_taxa(list, leaves);
 end
 
 n = length(list); i = 1:n;

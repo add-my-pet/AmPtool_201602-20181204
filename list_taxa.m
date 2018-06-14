@@ -2,11 +2,11 @@
 % gets ordered list of all taxa
 
 %%
-function ol = list_taxa (taxon)
-% created 2016/02/25 by Bas Kooijman
+function ol = list_taxa (taxon, leaves)
+% created 2016/02/25 by Bas Kooijman, modified 2018/06/14
 
 %% Syntax
-% ol = <../list_taxa.m *list_taxa*> (taxon) 
+% ol = <../list_taxa.m *list_taxa*> (taxon, leaves) 
 
 %% Description
 % gets an alphabetically ordered list of all taxa that belong to taxon in the add_my_pet collection 
@@ -14,6 +14,7 @@ function ol = list_taxa (taxon)
 % Output:
 % 
 % * taxon: optional characterstring with name of taxon (default 'Animalia')
+% * leaves: boolean to include leaves (default: true)
 %
 % Output:
 % 
@@ -25,7 +26,7 @@ function ol = list_taxa (taxon)
 %% Example of use
 % ol  = list_taxa
 
-  if ~exist('taxon', 'var')
+  if ~exist('taxon', 'var') || isempty(taxon)
     taxon = 'Animalia';
   end
 
@@ -37,6 +38,9 @@ function ol = list_taxa (taxon)
   try
     ol = perl('list_taxa.pl', taxon); ol(end) = [];
     ol = eval(['{''', strrep(ol, char(10), ''';''') , '''}']);
+    if exist('leaves', 'var') && ~leaves
+      ol = ol(cellfun(@isempty, strfind(ol,'_'))); % eliminate leaves
+    end
   catch
     disp('taxon not recognized')
   end
