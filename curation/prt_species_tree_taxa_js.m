@@ -4,7 +4,7 @@
 %%
 function prt_species_tree_taxa_js(taxa)
 % created 2016/03/06 by Bas Kooijman, 
-% modified 2016/06/01 Starrlight Augustine, 2016/06/02, 2016/10/08, 2017/10/13 Bas Kooijman
+% modified 2016/06/01 Starrlight Augustine, 2016/06/02, 2016/10/08, 2017/10/13, 2018/06/15 Bas Kooijman
 
 %% Syntax
 % <../prt_species_tree_taxa_js.m *prt_species_tree_taxa_js*> (taxa) 
@@ -69,18 +69,23 @@ function prt_species_tree_taxa_js(taxa)
     % build tree
     nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
     fprintf(fid_tv, ['foldersTree = gFld("<b>', node, '</b>", "species_tree_',taxa{i},'.html")\n']);
+    fprintf(fid_tv, ['foldersTree.xID = "', taxa{i}, '"\n']);
 
     while length(pedigree_taxa) > 3
-      nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
+      nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = []; j = 0;
       level = max(strfind(node, char(9))); node(1:level) = []; L = ['L', num2str(level)]; Lnew = ['L', num2str(1 + level)];
       if level == 1
         fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", "species_tree_',taxa{i},'.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
+        fprintf(fid_tv, ['L2.xID = "', node, '"\n']);
         %fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", ""))\n']);
       elseif isempty(strfind(node, '_')) && isempty(strfind(node, ' ')) 
         fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "species_tree_',taxa{i},'.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
+        fprintf(fid_tv, [Lnew, '.xID = "', node, '"\n']);
         %fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", ""))\n']);
       else
-        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '/', node '_res.html"))\n']); 
+        j = j + 1; nm = ['lv', num2str(j)]; % name for leave
+        fprintf(fid_tv, [nm ' = insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '/', node '_res.html"))\n']); 
+        fprintf(fid_tv, [nm, '.xID = "', node, '"\n']);
       end
     end
     

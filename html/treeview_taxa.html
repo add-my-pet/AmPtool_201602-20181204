@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>treeview_taxa</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-06-14"><meta name="DC.source" content="treeview_taxa.m"><style type="text/css">
+      --><title>treeview_taxa</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-06-15"><meta name="DC.source" content="treeview_taxa.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>treeview_taxa</h1><!--introduction--><p>shows pedigree in interactive html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../treeview_taxa.m"><b>treeview_taxa</b></a> (taxon)</p><h2 id="4">Description</h2><p>First produces pedigree with function <a href="pedigree.html"><b>pedigree</b></a> and uses the result to create file /treeview/treeview_taxa.js and opens AmPtool/taxa/treeview/treeview_taxa.html in the system browser.</p><p>Input:</p><div><ul><li>taxon: optional character string with a taxon (default 'Animalia')</li></ul></div><h2 id="5">Remarks</h2><p>taxon must be  a node in the taxonomic tree, see <a href="list_taxa.m"><b>list_taxa</b></a></p><h2 id="6">Example of use</h2><pre>treeview_taxa('Cladocera');
+  </style></head><body><div class="content"><h1>treeview_taxa</h1><!--introduction--><p>shows pedigree in interactive html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../treeview_taxa.m"><b>treeview_taxa</b></a> (taxon)</p><h2 id="4">Description</h2><p>First produces pedigree with function <a href="pedigree.html"><b>pedigree</b></a> and uses the result to create file /treeview/treeview_taxa.js and opens AmPtool/taxa/treeview/treeview_taxa.html in the system browser.</p><p>Input:</p><div><ul><li>taxon: optional character string with a taxon (default 'Animalia')</li></ul></div><h2 id="5">Remarks</h2><p>taxon must be a node in the taxonomic tree, see <a href="list_taxa.m"><b>list_taxa</b></a></p><h2 id="6">Example of use</h2><pre>treeview_taxa('Cladocera');
 treeview_taxa(select_taxon('Crustacea',false));
 treeview_taxa(select_taxon('',false));</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
@@ -75,7 +75,7 @@ treeview_taxa(select_taxon('',false));</pre><p class="footer"><br><a href="http:
 
 %%
 function treeview_taxa (taxon)
-% created 2016/03/06 by Bas Kooijman, modified 2017/08/06, 2017/10/08
+% created 2016/03/06 by Bas Kooijman, modified 2017/08/06, 2017/10/08, 2018/06/15
 
 %% Syntax
 % <../treeview_taxa.m *treeview_taxa*> (taxon) 
@@ -91,7 +91,7 @@ function treeview_taxa (taxon)
 
 
 %% Remarks
-% taxon must be  a node in the taxonomic tree, see <list_taxa.m *list_taxa*>
+% taxon must be a node in the taxonomic tree, see <list_taxa.m *list_taxa*>
 
 %% Example of use
 %  treeview_taxa('Cladocera');
@@ -134,20 +134,25 @@ function treeview_taxa (taxon)
     fprintf(fid_tv, 'HIGHLIGHT = 1\n\n');  % 0: Do not highlight the selected node; 1: Highlight the selected node
   
     % build tree
-    nl = strfind(pedigree_taxa, char(10)); root = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
+    nl = strfind(pedigree_taxa, char(10)); root = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = []; i = 0; % initiate leave counter
     fprintf(fid_tv, ['foldersTree = gFld("<b>', root, '</b>", "treeview_taxa.html")\n']);
+    fprintf(fid_tv, ['foldersTree.xID = "', root, '"\n']);
 
     while length(pedigree_taxa) > 3
       nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
       level = max(strfind(node, char(9))); node(1:level) = []; L = ['L', num2str(level)]; Lnew = ['L', num2str(1 + level)];
       if level == 1
         fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", "treeview_taxa.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
+        fprintf(fid_tv, ['L2.xID = "', node, '"\n']);
         %fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", ""))\n']);
       elseif isempty(strfind(node, '_')) && isempty(strfind(node, ' ')) 
         fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "treeview_taxa.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
+        fprintf(fid_tv, [Lnew, '.xID = "', node, '"\n']);
         %fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", ""))\n']);
       else
-        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/', node, '/', node, '_res.html"))\n']); 
+        i = i + 1; nm = ['lv', num2str(i)]; % name for leave
+        fprintf(fid_tv, [nm, ' = insDoc(', L, ', gLnk("S", "', node, '", "http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/', node, '/', node, '_res.html"))\n']); 
+        fprintf(fid_tv, [nm, '.xID = "', node, '"\n']);
       end
     end
  

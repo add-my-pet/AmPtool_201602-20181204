@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>prt_species_tree_taxa_js</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-10-14"><meta name="DC.source" content="prt_species_tree_taxa_js.m"><style type="text/css">
+      --><title>prt_species_tree_taxa_js</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-06-15"><meta name="DC.source" content="prt_species_tree_taxa_js.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -23,7 +23,7 @@ a:visited { color:#004aa0; text-decoration:none; }
 
 p { padding:0px; margin:0px 0px 20px; }
 img { padding:0px; margin:0px 0px 20px; border:none; }
-p img, pre img, tt img, li img { margin-bottom:0px; } 
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
 
 ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
 ul li { padding:0px; margin:0px 0px 7px 0px; }
@@ -38,11 +38,12 @@ ol li ul li { list-style:square; }
 
 .content { font-size:1.2em; line-height:140%; padding: 20px; }
 
-pre, tt, code { font-size:12px; }
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
 pre { margin:0px 0px 20px; }
-pre.error { color:red; }
 pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
 pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
 
 @media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
 
@@ -54,9 +55,18 @@ span.syscmd { color:#B28C00 }
 
 .footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
 .footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
 
-  </style></head><body><div class="content"><h1>prt_species_tree_taxa_js</h1><!--introduction--><p>writes prt_species_tree_taxa{i}_js that is called by species_tree_taxa{i}.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2>Syntax<a name="3"></a></h2><p><a href="../prt_species_tree_taxa_js.m"><b>prt_species_tree_taxa_js</b></a> (taxa)</p><h2>Description<a name="4"></a></h2><p>Clears and creates files ../../sys/prt_species_tree_taxa{i}.js and writes java code to it</p><p>Input:</p><div><ul><li>taxa: optional cell string with taxa of the roots of the trees, default: {'Animalia','Actinopterygii','Tetrapoda','Aves'}</li></ul></div><p>Output:</p><div><ul><li>writes files ../../sys/prt_species_tree_taxa{i}.js for i = 1, 2, ..</li></ul></div><h2>Remarks<a name="5"></a></h2><p>file ../../species_tree_taxa{i}.html calls  - java-scripts ../../sys/ftiens4.js, ua.js  - gif's ../../img/nm.gif  - jpg's ../../img/tree/nm.jpg  - txt's ../../img/tree/nm.txt</p><h2>Example of use<a name="6"></a></h2><p>prt_species_tree_taxa_js; open ../../species_tree_Animalia.html and ../species_tree_Tetrapoda.html to see the results prt_species_tree_taxa_js({'Tetrapoda'}); open ../../species_tree_Tetrapoda.html to see the result</p><p class="footer"><br>
-      Published with MATLAB&reg; 7.14<br></p></div><!--
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>prt_species_tree_taxa_js</h1><!--introduction--><p>writes prt_species_tree_taxa{i}_js that is called by species_tree_taxa{i}.html</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../prt_species_tree_taxa_js.m"><b>prt_species_tree_taxa_js</b></a> (taxa)</p><h2 id="4">Description</h2><p>Clears and creates files ../../sys/prt_species_tree_taxa{i}.js and writes java code to it</p><p>Input:</p><div><ul><li>taxa: optional cell string with taxa of the roots of the trees, default: {'Animalia','Actinopterygii','Tetrapoda','Aves'}</li></ul></div><p>Output:</p><div><ul><li>writes files ../../sys/prt_species_tree_taxa{i}.js for i = 1, 2, ..</li></ul></div><h2 id="5">Remarks</h2><p>file ../../species_tree_taxa{i}.html calls  - java-scripts ../../sys/ftiens4.js, ua.js  - gif's ../../img/nm.gif  - jpg's ../../img/tree/nm.jpg  - txt's ../../img/tree/nm.txt</p><h2 id="6">Example of use</h2><p>prt_species_tree_taxa_js; open ../../species_tree_Animalia.html and ../species_tree_Tetrapoda.html to see the results prt_species_tree_taxa_js({'Tetrapoda'}); open ../../species_tree_Tetrapoda.html to see the result</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% prt_species_tree_taxa_js
 % writes prt_species_tree_taxa{i}_js that is called by species_tree_taxa{i}.html
@@ -64,7 +74,7 @@ span.syscmd { color:#B28C00 }
 %%
 function prt_species_tree_taxa_js(taxa)
 % created 2016/03/06 by Bas Kooijman, 
-% modified 2016/06/01 Starrlight Augustine, 2016/06/02, 2016/10/08, 2017/10/13 Bas Kooijman
+% modified 2016/06/01 Starrlight Augustine, 2016/06/02, 2016/10/08, 2017/10/13, 2018/06/15 Bas Kooijman
 
 %% Syntax
 % <../prt_species_tree_taxa_js.m *prt_species_tree_taxa_js*> (taxa) 
@@ -129,18 +139,23 @@ function prt_species_tree_taxa_js(taxa)
     % build tree
     nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
     fprintf(fid_tv, ['foldersTree = gFld("<b>', node, '</b>", "species_tree_',taxa{i},'.html")\n']);
+    fprintf(fid_tv, ['foldersTree.xID = "', taxa{i}, '"\n']);
 
     while length(pedigree_taxa) > 3
-      nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
+      nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = []; j = 0;
       level = max(strfind(node, char(9))); node(1:level) = []; L = ['L', num2str(level)]; Lnew = ['L', num2str(1 + level)];
       if level == 1
         fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", "species_tree_',taxa{i},'.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
+        fprintf(fid_tv, ['L2.xID = "', node, '"\n']);
         %fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", ""))\n']);
       elseif isempty(strfind(node, '_')) && isempty(strfind(node, ' ')) 
         fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "species_tree_',taxa{i},'.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
+        fprintf(fid_tv, [Lnew, '.xID = "', node, '"\n']);
         %fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", ""))\n']);
       else
-        fprintf(fid_tv, ['insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '/', node '_res.html"))\n']); 
+        j = j + 1; nm = ['lv', num2str(j)]; % name for leave
+        fprintf(fid_tv, [nm ' = insDoc(', L, ', gLnk("S", "', node, '", "entries_web/', node, '/', node '_res.html"))\n']); 
+        fprintf(fid_tv, [nm, '.xID = "', node, '"\n']);
       end
     end
     
