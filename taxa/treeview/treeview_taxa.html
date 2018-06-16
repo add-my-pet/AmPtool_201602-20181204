@@ -73,6 +73,7 @@
       var taxon = document.getElementById("Input_treeSearch").value;
       SetCookie("clickedFolder", taxon)
       clickOnFolder(taxon)
+      location.reload();
     }
 
   </SCRIPT>
@@ -102,7 +103,7 @@
  <!-- structure that contains the tree and the contents.      -->
  <!---- -------------------------------------------------------->
 
- <!-- get name for taxon to search in tree-->
+ <!-- treeSearch -->
  <div>
     <input type="text" id="Input_treeSearch" value="Search for taxon.." title="Type in a name">
     <button onclick="treeSearch()">Search</button>
@@ -173,12 +174,12 @@
     </TD>
     <TD bgcolor="white" valign="top">
 
+    <!-- picture -->
     <TABLE cellpadding="10" cellspacing="0" border="0" width="100%">
       <TR>
        <TD>
 
         <SCRIPT>
-          // Link tree nodes to pictures
           var path = "https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/"
           var string = GetCookie("clickedFolder");
           var taxon = string.split(cookieCutter); // last substring is empty
