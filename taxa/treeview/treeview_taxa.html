@@ -47,7 +47,7 @@
      font-size: 10pt; 
      font-family: verdana,helvetica;}
 
-   #Input_tn {
+   #Input_treeSearch {
      background-image: url('https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/searchicon.png');
      background-position: 2px -10px;
      background-repeat: no-repeat;
@@ -68,29 +68,12 @@
   <!-- the <HEAD> section that are needed for your site.      -->
   <!------------------------------------------------------------>
   <SCRIPT>
-  function getQueryString(index) {
-    var paramExpressions;
-    var param
-    var val
-    paramExpressions = window.location.search.substr(1).split("&");
-    if (index < paramExpressions.length) {
-      param = paramExpressions[index]; 
-      if (param.length > 0) {
-        return eval(unescape(param));
-      }
+
+    function treeSearch() { 
+      var taxon = document.getElementById("Input_treeSearch").value;
+      SetCookie("clickedFolder", taxon)
+      clickOnFolder(taxon)
     }
-    return ""
-  }
-        
-  var input = document.getElementById("Input_tn");
-  input.addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-       SetCookie("clickedFolder", "Input_tn")
-       clickOnFolder("Input_tn")
-       SetCookie("picURL", "Input_tn" + ".jpg")
-    }
-  });
 
   </SCRIPT>
 
@@ -121,7 +104,8 @@
 
  <!-- get name for taxon to search in tree-->
  <div>
-    <input type="text" id="Input_tn" placeholder="Search for taxon.." title="Type in a name">
+    <input type="text" id="Input_treeSearch" value="Search for taxon.." title="Type in a name">
+    <button onclick="treeSearch()">Search</button>
  </div>
 
  <TABLE cellpadding="0" cellspacing="0" border="0" width="772">
@@ -170,14 +154,7 @@
   </NOSCRIPT>
 
 
-  <script>
-    SetCookie("clickedFolder", "Hylobates")
-    clickOnFolder("Hylobates")
-    picURL = "Hylobates.jpg"
-  </script>
-
  </SPAN>
-
 
  <!------------------------------------------------------------->
  <!-- SECTION 7:                                              -->
@@ -201,11 +178,12 @@
        <TD>
 
         <SCRIPT>
-         // Link tree nodes to pictures
-         var picURL
-         picURL = getQueryString(0)
-         if (picURL.length > 0)
-           document.write("<img src=http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/" + picURL + " WIDTH = 400><p><embed src=http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/" + picURL + ".txt><br>");
+          // Link tree nodes to pictures
+          var path = "https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/"
+          var string = GetCookie("clickedFolder");
+          var taxon = string.split(cookieCutter); // last substring is empty
+          var n = taxon.length; 
+          document.write("<img src=" + path + taxon[n-2] + ".jpg WIDTH = 400><p><embed src=" + path + taxon[n-2] + ".jpg.txt><br>");
         </SCRIPT>
 
        </TD>
