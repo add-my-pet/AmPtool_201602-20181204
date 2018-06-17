@@ -68,15 +68,13 @@
   <!-- until the beginning of SECTION 3 with the pieces of    -->
   <!-- the <HEAD> section that are needed for your site.      -->
   <!------------------------------------------------------------>
-  <SCRIPT>
 
+  <SCRIPT>
     function TreeSearch() { 
       var taxon = document.getElementById("InputTreeSearch").value;
       SetCookie("clickedFolder", taxon)
       clickOnFolder(taxon)
-      location.reload(true);
-    }
-
+      window.location.reload(true)    }
   </SCRIPT>
 
  <!------------------------------------------------------------->
@@ -96,7 +94,7 @@
  <!-- SECTION 4:                                              -->
  <!-- Change the <BODY> tag for use with your site.           -->
  <!------------------------------------------------------------->
- <BODY bgcolor="white" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0"  onResize="if (navigator.family == 'nn4') window.location.reload()">
+ <BODY bgcolor="white" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0"  onResize="if (navigator.family == 'nn4') window.location.reload(true)">
 
 
  <!----- ------------------------------------------------------->
