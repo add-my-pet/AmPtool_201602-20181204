@@ -23,7 +23,8 @@ function zip = get_zip(my_pet)
 % zip = get_zip('Bufo_bufo')
 
 zip = cellstr(ls('../../entries_archive/')); % get ls of all files in subdir
-zip = zip(~cellfun('isempty',strfind(zip, my_pet))); % all my_pet_yyyymmdd.zip 's
+% append _2 to name of mypet to avoid selection of subspecies/races
+zip = zip(~cellfun('isempty',strfind(zip, [my_pet, '_2']))); % all my_pet_yyyymmdd.zip 's
 date = zip; n = length(zip); ntxt = 1 + length(my_pet);
 for i = 1:n
   txt = zip{i}; 
