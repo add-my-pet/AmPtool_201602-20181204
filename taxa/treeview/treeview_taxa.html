@@ -71,7 +71,9 @@
 
   <SCRIPT>
     function TreeSearch() { 
-      var taxon = document.getElementById("InputTreeSearch").value;
+      var name = document.getElementById("InputTreeSearch").value;
+      name = name.toLowerCase();
+      var taxon = name.replace(name[0],name[0].toUpperCase());
       SetCookie("clickedFolder", taxon)
       clickOnFolder(taxon)
       window.location.reload(true)    
@@ -185,7 +187,7 @@
           var string = GetCookie("clickedFolder");
           var taxon = string.split(cookieCutter);
           var n = taxon.length; // counting starts at 0, the last substring is possibly empty
-          if (taxon[n-1].length < 1) {
+          if (taxon[n-1].length == 0) {
             document.write("<img src=" + path + taxon[n-2] + ".jpg WIDTH = 400><p><embed src=" + path + taxon[n-2] + ".jpg.txt><br>");
             }
           else {
