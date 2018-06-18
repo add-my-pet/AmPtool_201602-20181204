@@ -74,7 +74,8 @@
       var taxon = document.getElementById("InputTreeSearch").value;
       SetCookie("clickedFolder", taxon)
       clickOnFolder(taxon)
-      window.location.reload(true)    }
+      window.location.reload(true)    
+    }
   </SCRIPT>
 
  <!------------------------------------------------------------->
@@ -182,9 +183,14 @@
         <SCRIPT>
           var path = "https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/"
           var string = GetCookie("clickedFolder");
-          var taxon = string.split(cookieCutter); // last substring is empty, start counting from 0
-          var n = taxon.length; 
-          document.write("<img src=" + path + taxon[n-2] + ".jpg WIDTH = 400><p><embed src=" + path + taxon[n-2] + ".jpg.txt><br>");
+          var taxon = string.split(cookieCutter);
+          var n = taxon.length; // counting starts at 0, the last substring is possibly empty
+          if (taxon[n-1].length < 1) {
+            document.write("<img src=" + path + taxon[n-2] + ".jpg WIDTH = 400><p><embed src=" + path + taxon[n-2] + ".jpg.txt><br>");
+            }
+          else {
+            document.write("<img src=" + path + taxon[n-1] + ".jpg WIDTH = 400><p><embed src=" + path + taxon[n-1] + ".jpg.txt><br>");
+          }
         </SCRIPT>
 
        </TD>
