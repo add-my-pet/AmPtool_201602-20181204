@@ -23,8 +23,8 @@ function treeview_taxa (taxon)
 
 %% Example of use
 %  treeview_taxa('Cladocera');
-%  treeview_taxa(select_taxon('Crustacea',false));
-%  treeview_taxa(select_taxon('',false));
+%  treeview_taxa(select_taxon('Crustacea',1));
+%  treeview_taxa(select_taxon('',1));
 
   if ~exist('taxon','var') || isempty(taxon)
     taxon = 'Animalia';

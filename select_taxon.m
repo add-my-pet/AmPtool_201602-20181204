@@ -2,11 +2,11 @@
 % selects a taxon from list
 
 %%
-function [taxon, s, v] = select_taxon (list, leaves)
+function [taxon, s, v] = select_taxon (list, level)
 %% created 2016/02/25 by Bas Kooijman, modified 2018/06/14
 
 %% Syntax
-% [taxon, s, v] = <../select_taxon.m *select_taxon*> (list, leaves)
+% [taxon, s, v] = <../select_taxon.m *select_taxon*> (list, level)
 
 %% Description
 % select a taxon from a list of all possibilities
@@ -14,7 +14,13 @@ function [taxon, s, v] = select_taxon (list, leaves)
 % Input:
 % 
 % * list: optional input with cell-vector of possible taxa (default: 'Animalia')
-% * leaves: optional boolean to include leaves (default: true)
+% * leaves: optional integer for level selection (default: 0)
+%
+%    0 all taxa, including leaves
+%    1 all taxa, excluding leaves
+%    2 leaves (names with "_")
+%    3 genera only (names before first "_")
+%    4 families only (names ending on "idae")
 %
 % Output: 
 % 
@@ -27,12 +33,14 @@ function [taxon, s, v] = select_taxon (list, leaves)
 % taxon is 'Animalia', and v = 1, if no selection has been made and OK is selected
 
 %% Example of use
-% select_taxon or select_taxon(list_taxa('Insecta'))
+%  select_taxon                         % for all taxa, including leaves
+%  select_taxon('',4)                   % for family names only
+%  select_taxon(list_taxa('Insecta',3)) % for insect genera
 
 if ~exist('list', 'var')
   list = list_taxa; 
-elseif exist('leaves', 'var')
-  list = list_taxa(list, leaves);
+elseif exist('level', 'var')
+  list = list_taxa(list, level);
 end
 
 n = length(list); i = 1:n;

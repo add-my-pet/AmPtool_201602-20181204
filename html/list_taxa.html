@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>list_taxa</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-06-14"><meta name="DC.source" content="list_taxa.m"><style type="text/css">
+      --><title>list_taxa</title><meta name="generator" content="MATLAB 9.1"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-06-18"><meta name="DC.source" content="list_taxa.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,17 +66,22 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>list_taxa</h1><!--introduction--><p>gets ordered list of all taxa</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>ol = <a href="../list_taxa.m"><b>list_taxa</b></a> (taxon, leaves)</p><h2 id="4">Description</h2><p>gets an alphabetically ordered list of all taxa that belong to taxon in the add_my_pet collection</p><p>Output:</p><div><ul><li>taxon: optional characterstring with name of taxon (default 'Animalia')</li><li>leaves: boolean to include leaves (default: true)</li></ul></div><p>Output:</p><div><ul><li>ordered list</li></ul></div><h2 id="5">Remarks</h2><p>The classification follows that of Wikipedia</p><h2 id="6">Example of use</h2><p>ol  = list_taxa</p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>list_taxa</h1><!--introduction--><p>gets ordered list of all taxa</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>ol = <a href="../list_taxa.m"><b>list_taxa</b></a> (taxon, level)</p><h2 id="4">Description</h2><p>gets an alphabetically ordered list of all taxa that belong to taxon in the add_my_pet collection</p><p>Output:</p><div><ul><li>taxon: optional characterstring with name of taxon (default 'Animalia')</li><li>level: optional integer for the level (default: 0)</li></ul></div><pre>  0 all taxa, including leaves
+  1 all taxa, excluding leaves
+  2 leaves (names with "_")
+  3 genera only (names before first "_")
+  4 families only (nodes ending on "idae")</pre><p>Output:</p><div><ul><li>ordered list</li></ul></div><h2 id="5">Remarks</h2><p>The classification follows that of Wikipedia</p><h2 id="6">Example of use</h2><pre>ol = list_taxa
+ol = list_taxa('Deuterostomata',4))</pre><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016b</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% list_taxa
 % gets ordered list of all taxa
 
 %%
-function ol = list_taxa (taxon, leaves)
+function ol = list_taxa (taxon, level)
 % created 2016/02/25 by Bas Kooijman, modified 2018/06/14
 
 %% Syntax
-% ol = <../list_taxa.m *list_taxa*> (taxon, leaves) 
+% ol = <../list_taxa.m *list_taxa*> (taxon, level) 
 
 %% Description
 % gets an alphabetically ordered list of all taxa that belong to taxon in the add_my_pet collection 
@@ -84,7 +89,13 @@ function ol = list_taxa (taxon, leaves)
 % Output:
 % 
 % * taxon: optional characterstring with name of taxon (default 'Animalia')
-% * leaves: boolean to include leaves (default: true)
+% * level: optional integer for the level (default: 0)
+%
+%    0 all taxa, including leaves
+%    1 all taxa, excluding leaves
+%    2 leaves (names with "_")
+%    3 genera only (names before first "_")
+%    4 families only (nodes ending on "idae")
 %
 % Output:
 % 
@@ -94,10 +105,15 @@ function ol = list_taxa (taxon, leaves)
 % The classification follows that of Wikipedia
 
 %% Example of use
-% ol  = list_taxa
+%  ol = list_taxa
+%  ol = list_taxa('Deuterostomata',4))
 
   if ~exist('taxon', 'var') || isempty(taxon)
     taxon = 'Animalia';
+  end
+  
+  if ~exist('level', 'var')
+    level = 0;
   end
 
   WD = pwd;                  % store current path
@@ -108,9 +124,29 @@ function ol = list_taxa (taxon, leaves)
   try
     ol = perl('list_taxa.pl', taxon); ol(end) = [];
     ol = eval(['{''', strrep(ol, char(10), ''';''') , '''}']);
-    if exist('leaves', 'var') && ~leaves
-      ol = ol(cellfun(@isempty, strfind(ol,'_'))); % eliminate leaves
+    switch level
+      case 0
+        % all nodes and leaves
+        
+      case 1 % exclude leaves
+        ol = ol(cellfun(@isempty, strfind(ol,'_'))); % eliminate leaves
+        
+      case 2 % leaves only
+        ol = ol(~cellfun(@isempty, strfind(ol,'_'))); % leaves only
+        
+      case 3 % genus only
+        ol = ol(~cellfun(@isempty, strfind(ol,'_'))); % leaves only
+        n = length(ol);
+        for i = 1:n
+          genus = strsplit(ol{i},'_'); genus = genus{1}; ol{i} = genus;
+        end
+        ol = unique(ol);
+        
+      case 4 % family only
+         ol = ol(~cellfun(@isempty, strfind(ol,'idae'))); 
+         
     end
+    
   catch
     disp('taxon not recognized')
   end
