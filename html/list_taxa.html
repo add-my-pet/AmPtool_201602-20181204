@@ -66,7 +66,7 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>list_taxa</h1><!--introduction--><p>gets ordered list of all taxa</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>ol = <a href="../list_taxa.m"><b>list_taxa</b></a> (taxon, level)</p><h2 id="4">Description</h2><p>gets an alphabetically ordered list of all taxa that belong to taxon in the add_my_pet collection</p><p>Output:</p><div><ul><li>taxon: optional characterstring with name of taxon (default 'Animalia')</li><li>level: optional integer for the level (default: 0)</li></ul></div><pre>  0 all taxa, including leaves
+  </style></head><body><div class="content"><h1>list_taxa</h1><!--introduction--><p>gets ordered list of all taxa</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li></ul></div><h2 id="3">Syntax</h2><p>ol = <a href="../list_taxa.m"><b>list_taxa</b></a> (taxon, level)</p><h2 id="4">Description</h2><p>gets an alphabetically ordered list of all taxa that belong to taxon in the add_my_pet collection</p><p>Intput:</p><div><ul><li>taxon: optional characterstring with name of taxon (default 'Animalia')</li><li>level: optional integer for the level (default: 0)</li></ul></div><pre>  0 all taxa, including leaves
   1 all taxa, excluding leaves
   2 leaves (names with "_")
   3 genera only (names before first "_")
@@ -89,7 +89,7 @@ function ol = list_taxa (taxon, level)
 %% Description
 % gets an alphabetically ordered list of all taxa that belong to taxon in the add_my_pet collection 
 %
-% Output:
+% Intput:
 % 
 % * taxon: optional characterstring with name of taxon (default 'Animalia')
 % * level: optional integer for the level (default: 0)
