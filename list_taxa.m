@@ -21,6 +21,9 @@ function ol = list_taxa (taxon, level)
 %    2 leaves (names with "_")
 %    3 genera only (names before first "_")
 %    4 families only (names ending on "idae")
+%    5 orders only (match with allStat.mat)
+%    6 classes only (match with allStat.mat, but does not work for Reptilia)
+%    7 phyla only (match with allStat.mat)
 %
 % Output:
 % 
@@ -70,9 +73,15 @@ function ol = list_taxa (taxon, level)
       case 4 % family only
          ol = ol(~cellfun(@isempty, strfind(ol,'idae'))); 
          
-      case 5 % phylum only
+      case 5 % order only
+         ol = ol(ismember(ol, unique(read_allStat('order'))));
+
+      case 6 % class only; does not work for Reptilia
+         ol = ol(ismember(ol, unique(read_allStat('class'))));
+
+      case 7 % phylum only
          ol = ol(ismember(ol, unique(read_allStat('phylum'))));
-         
+
     end
     
   catch

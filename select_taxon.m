@@ -21,6 +21,9 @@ function [taxon, s, v] = select_taxon (list, level)
 %    2 leaves (names with "_")
 %    3 genera only (names before first "_")
 %    4 families only (names ending on "idae")
+%    5 orders only (match with allStat.mat)
+%    6 classes only (match with allStat.mat, but does not work for Reptilia)
+%    7 phyla only (match with allStat.mat)
 %
 % Output: 
 % 

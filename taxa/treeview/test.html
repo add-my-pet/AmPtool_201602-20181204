@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to display a string as a hyperlink.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+   window.open("treeview_taxa.html");
+   var taxon = "Pan";
+   SetCookie("clickedFolder", taxon)
+   clickOnFolder(taxon)
+}
+</script>
+
+</body>
+</html>
