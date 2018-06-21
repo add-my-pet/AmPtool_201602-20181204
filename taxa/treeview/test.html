@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
+<head>
+
+  <SCRIPT src="ftiens4.js"></SCRIPT>
+  <SCRIPT src="treeview_taxa.js"></SCRIPT>
+
+  <script>
+    function OpenTreeAtTaxon(taxon) {
+      window.open("treeview_taxa.html");
+      window.location.reload(true)      
+      SetCookie("clickedFolder", taxon);
+      clickOnFolder(taxon);
+    }
+  </script>
+
+</head>
 <body>
 
-<p>Click the button to display a string as a hyperlink.</p>
+<p>Click the button to open treeview.</p>
 
-<button onclick="myFunction()">Try it</button>
+Genus:  <button id="genus"  onclick="OpenTreeAtTaxon('Loris')">Loris</button><br>
+Family: <button id="family" onclick="OpenTreeAtTaxon('Lorisidae')">Lorisidae</button><br>
+Phylum: <button id="phylum" onclick="OpenTreeAtTaxon('Homo')">Homo</button>
 
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-   window.open("treeview_taxa.html");
-   var taxon = "Pan";
-   SetCookie("clickedFolder", taxon)
-   clickOnFolder(taxon)
-}
-</script>
 
 </body>
 </html>

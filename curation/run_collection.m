@@ -65,12 +65,12 @@ for i = 1:nargin
   prt_my_pet_toolbar(metaData.species,metaData.species_en,metaData.date_acc, destinationFolder) % print toolbar
   prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder)                          % print bib file
   prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)         % print html with results
-  prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % print html with parameters
-  prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
+  %prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % print html with parameters
+  %prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
 
-  cd('../../entries_zip');
-  zip_my_pet(varargin{i}, '../entries'); % zip the entry  
-  cd(WD)  % goto original path    
+  %cd('../../entries_zip');
+  %zip_my_pet(varargin{i}, '../entries'); % zip the entry  
+  %cd(WD)  % goto original path    
 end
     
 close all

@@ -26,6 +26,8 @@ function  prt_my_pet_toolbar(species, species_en, date_acc, destinationFolder)
 % load('results_my_pet.mat');
 % prt_my_pet_toolbar(metaData.species,metaData.species_en,metaData.date_acc) if you wish to print in the current folder
 
+genus = strsplit(species,'_'); genus = genus{1}; % identify genus for link to species_tree_Animalia
+
 if exist('destinationFolder','var') && isempty('destinationFolder')
   oid = [];
 elseif exist('destinationFolder','var') 
@@ -35,7 +37,8 @@ else
 end
 
 fprintf(oid, '  <h1 class="alignleft2">\n');
-fprintf(oid,['    <a href="../../species_list.html#', species,'"> &nbsp; ', species, '</a> (', species_en, '): &nbsp;\n']);
+fprintf(oid,['    &nbsp; <a onclick="OpenListAtTaxon(''', species, ''')" title="click to go to species_list">', species,'</a> &nbsp;\n']);
+fprintf(oid,['    (<a onclick="OpenTreeAtTaxon(''', genus, ''')" title="click to go to species_tree">', species_en, '</a>): &nbsp;\n']);
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');

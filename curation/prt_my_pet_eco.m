@@ -2,27 +2,25 @@
 % writes html table with model, COMPLETE, MRE, SMRE  and eco-codes
 
 %%
-function prt_my_pet_eco(species, model, COMPLETE, MRE, SMSE, destinationFolder)
-% created 2018/05/05 by Bas Kooijman
+function prt_my_pet_eco(metaData, metaPar, destinationFolder)
+% created 2018/05/05 by Bas Kooijman, modified 2018/06/21
 
 %% Syntax
-% <prt_my_pet_eco *prt_my_pet_eco*>(species, model, MRE, SMSE, COMPLETE, destinationFolder, filenm)
+% <prt_my_pet_eco *prt_my_pet_eco*>(metaData, metaPar, destinationFolder)
 
 %% Description
-% Writes html table with model, MRE, SMRE, COMPLETE and eco-codes. 
+% Writes html table with model, MRE, SMRE, COMPLETE, eco-codes, classification 
 %
 % Input:
 %
-% * species: character string with species name
-% * model: character string with model name
-% * MRE: scalar with Mean Relative Error
-% * SMSE: scalar with Symmetric Mean Squared Error
-% * COMPLETE: scalar with COMPLETE level
+% * metaData: structure as specified by results_my_pet.mat in directory entries
+% * metaPar: structure as specified by results_my_pet.mat in directory entries
 % * destinationFolder: specification of destination folder 
 
 %% Remarks
 % Intended use is writing a snippet for my_pet_res.html. Make sure that eco-labels are updated using get_eco_types.
 % This latter function reads codes and labels in url AmPeco.html.
+% Make sure that family, oder, class, phylum as specied in results_my_pet.mat occur in lists-of-lists.
 % This function is also called by update_eco.
 
 global eco_types
@@ -30,6 +28,11 @@ global eco_types
 if length(eco_types) == 0 
   get_eco_types;
 end
+
+% unpack metaData and metaPar
+species = metaData.species; family = metaData.family; order = metaData.order; class = metaData.class; phylum = metaData.phylum; 
+COMPLETE = metaData.COMPLETE;
+model = metaPar.model; MRE = metaPar.MRE; SMSE = metaPar.SMSE;
 
 oid = fopen([destinationFolder, species, '_res.html'], 'a'); % open file for appending
 
@@ -89,27 +92,35 @@ for i = 1:n_R
 end
 code_R(end - (0:1)) = []; 
 
-% write (4,3)-table in html
+% write (4,4)-table in html
 fprintf(oid, '      <table>\n');    
 fprintf(oid, '        <tr>\n');    
 fprintf(oid,['          <td width=250><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Typified_models">Model: </a>', model,'</td>\n']);    
 fprintf(oid,['          <td><a href="../../AmPeco.html#C" target="_blank">climate: </a></td> <td width=250>', code_C, '</td>\n']);
 fprintf(oid,['          <td><a href="../../AmPeco.html#M" target="_blank">migrate: </a></td> <td width=250>', code_M, '</td>\n']);
+fprintf(oid,['          <td>phylum: <button id="phylum" onclick="OpenTreeAtTaxon(''', phylum, ''')">', phylum, '</button></td>\n']);
 fprintf(oid, '        </tr>\n');    
 fprintf(oid, '        <tr>\n');    
 fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Completeness" >COMPLETE</a>',' = %3.1f </td>\n'], COMPLETE);
 fprintf(oid,['          <td><a href="../../AmPeco.html#E" target="_blank">ecozone: </a></td> <td>', code_E, '</td>\n']);
 fprintf(oid,['          <td><a href="../../AmPeco.html#F" target="_blank">food:    </a></td> <td>', code_F, '</td>\n']);
+if strcmp(class, 'Reptilia')
+fprintf(oid,['          <td>class: Reptilia</td>\n']);
+else
+fprintf(oid,['          <td>class: <button id="class" onclick="OpenTreeAtTaxon(''', class, ''')">', class, '</button></td>\n']);
+end
 fprintf(oid, '        </tr>\n');    
 fprintf(oid, '        <tr>\n');    
 fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Mean_relative_error" >MRE</a>',' = %8.3f </td>\n'], MRE);   
 fprintf(oid,['          <td><a href="../../AmPeco.html#H" target="_blank">habitat: </a></td> <td>', code_H, '</td>\n']);
 fprintf(oid,['          <td><a href="../../AmPeco.html#G" target="_blank">gender:  </a></td> <td>', code_G, '</td>\n']);
+fprintf(oid,['          <td>order: <button id="order" onclick="OpenTreeAtTaxon(''', order, ''')">', order, '</button></td>\n']);
 fprintf(oid, '        </tr>\n');    
 fprintf(oid, '        <tr>\n');    
 fprintf(oid,['          <td><a class="link" target = "_blank" href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" >SMSE</a>',' = %8.3f </td>\n'], SMSE);   
 fprintf(oid,['          <td><a href="../../AmPeco.html#B" target="_blank">embryo:  </a></td> <td>', code_B, '</td>\n']);
 fprintf(oid,['          <td><a href="../../AmPeco.html#R" target="_blank">reprod:  </a></td> <td>', code_R, '</td>\n']);
+fprintf(oid,['          <td>family: <button id="family" onclick="OpenTreeAtTaxon(''', family, ''')">', family, '</button></td>\n']);
 fprintf(oid, '        </tr>\n');    
 fprintf(oid, '      </table>\n\n');     
 

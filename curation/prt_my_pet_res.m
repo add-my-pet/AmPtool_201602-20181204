@@ -5,7 +5,7 @@
 function prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
 % created 2015/04/11 by Starrlight & Goncalo Marques; modified 2015/08/23 Starrlight augustine; 
 % modified 2016/03/09 Bas Kooijman; 2016/09/21 Starrlight Augustine;
-% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26, 2018/02/06, 2018/04/28, 2018/05/05 Bas Kooijman
+% 2016/11/05, 2017/01/04, 2017/08/21, 2017/09/29, 2017/10/13, 2017/10/26, 2018/02/06, 2018/04/28, 2018/05/05, 2018/06/21 Bas Kooijman
 
 %% Syntax
 % <../prt_my_pet_res.m *prt_my_pet_res*> (data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)
@@ -98,15 +98,33 @@ fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');
 fprintf(oid, '<HEAD>\n');
 fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
-fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../../sys/style.css">\n'); 
+fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../../sys/style.css">\n\n');
+
 fprintf(oid, '  <script src="../../sys/dropdown.js"></script>\n');
 fprintf(oid, '  <script src="../../sys/w3data.js"></script>\n');
+fprintf(oid, '  <script src="../../sys/ftiens4.js"></srcipt>\n');
+fprintf(oid, '  <script src="../../sys/species_tree_Animalia.js"></script>\n\n');
+
+fprintf(oid, '  <script>\n');
+fprintf(oid, '    function OpenTreeAtTaxon(taxon) {\n');
+fprintf(oid, '      window.open("../../species_tree_Animalia.html");\n');
+fprintf(oid, '      window.location.reload(true)\n');      
+fprintf(oid, '      SetCookie("clickedFolder", taxon);\n');
+fprintf(oid, '      clickOnFolder(taxon);\n');
+fprintf(oid, '    }\n\n');
+
+fprintf(oid, '    function OpenListAtTaxon(taxon) {\n');
+fprintf(oid, '      window.open("../../species_list.html#"+taxon);\n');
+fprintf(oid, '    }\n\n');
+fprintf(oid, '  </script>\n\n');
+
 fprintf(oid, '  <style>\n');
 fprintf(oid, '    ul.ref{\n');
 fprintf(oid, '      list-style-type: square;\n');
 fprintf(oid, '    }\n');
 fprintf(oid, '  </style>\n');
 fprintf(oid, '</HEAD>\n\n');
+
 fprintf(oid, '<BODY>\n\n');
 
 fprintf(oid, '<div w3-include-html="../../sys/wallpaper_entry.html"></div>\n');
@@ -128,8 +146,8 @@ fprintf(oid, '      <H1 id = "portaltop">Predictions & Data for this entry</H1>\
 
 fclose(oid);
 
-% table with model, COMPLETE, MRE, SMSE, eco-codes
-prt_my_pet_eco(metaData.species, metaPar.model, metaData.COMPLETE, metaPar.MRE, metaPar.SMSE, destinationFolder);
+% table with model, COMPLETE, MRE, SMSE, eco-codes, classification
+prt_my_pet_eco(metaData, metaPar, destinationFolder);
 fopen(fileName, 'a'); % further append to my_pet_res.html
 
 % make structure for 'real' and predicted pseudodata:

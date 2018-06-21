@@ -71,12 +71,18 @@
 
   <SCRIPT>
     function TreeSearch() { 
-      var name = document.getElementById("InputTreeSearch").value;
-      name = name.toLowerCase();
-      var taxon = name.replace(name[0],name[0].toUpperCase());
-      SetCookie("clickedFolder", taxon)
-      clickOnFolder(taxon)
-      window.location.reload(true)    
+      var input = document.getElementById("InputTreeSearch");
+      input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13){
+          input.value = input.value.toLowerCase();
+          var taxon = input.value;
+          taxon = taxon.replace(taxon[0],taxon[0].toUpperCase());
+          SetCookie("clickedFolder", taxon)
+          clickOnFolder(taxon)
+          window.location.reload(true)    
+        }
+      });
     }
   </SCRIPT>
 
@@ -88,7 +94,6 @@
   <SCRIPT src="ua.js"></SCRIPT>
   <SCRIPT src="ftiens4.js"></SCRIPT>
   <SCRIPT src="treeview_taxa.js"></SCRIPT>
-  <script src="w3data.js"></script>
 
  </HEAD>
 
@@ -108,8 +113,7 @@
 
  <!-- TreeSearch -->
  <div>
-    <input type="text" id="InputTreeSearch" placeholder="Search for taxon.." title="Type in a name">
-    <button onclick="TreeSearch()">Search</button>
+   <input type="text" id="InputTreeSearch" placeholder="Search for taxon.." title="Type in a name and press Enter" onkeyup="TreeSearch()">
  </div>
 
  <TABLE cellpadding="0" cellspacing="0" border="0" width="772">
