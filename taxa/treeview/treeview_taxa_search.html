@@ -1,12 +1,12 @@
 
-<div>
-  <input id="InputTreeSearch" class="TreeSearch_dropbtn" type="text" placeholder="Search for taxon.." title="Type in a name" onkeyup="Function_TreeSearch()">
-  <ul id="TreeSearchDropdown" class="TreeSearch_dropdown-content" onclick="TreeSearch()">
-    <li id="Pan">Pan</li>
-    <li id="Tarsius">Tarsius</li>
-    <li id="Homo">Homo</li>
-    <li id="Loris">Loris</li>
-    <li id="Gorilla">Gorilla</li>
-  </ul>
+<div class="dropdown">
+  <input id="TreeSearchGenus" class="TreeSearch_dropbtn" type="text" placeholder="Search for taxon.." title="Type in a name" onclick="shdropbtn('SearchDropdown')">
+  <div id="SearchDropdown" class="SearchDropdown-content">
+    <a id="Pan">Pan</a>
+    <a id="Tarsius">Tarsius</a>
+    <a id="Homo">Homo</a>
+    <a id="Loris">Loris</a>
+    <a id="Gorilla">Gorilla</a>
+  </div>
 </div>	
     

@@ -101,22 +101,10 @@ fprintf(oid,['  <TITLE>',metaData.species,'</TITLE>\n']);
 fprintf(oid, '  <link rel="stylesheet" type="text/css" href="../../sys/style.css">\n\n');
 
 fprintf(oid, '  <script src="../../sys/dropdown.js"></script>\n');
+fprintf(oid, '  <script src="../../sys/openattaxon.js"></script>\n');
 fprintf(oid, '  <script src="../../sys/w3data.js"></script>\n');
-fprintf(oid, '  <script src="../../sys/ftiens4.js"></srcipt>\n');
+fprintf(oid, '  <script src="../../sys/ftiens4.js"></script>\n');
 fprintf(oid, '  <script src="../../sys/species_tree_Animalia.js"></script>\n\n');
-
-fprintf(oid, '  <script>\n');
-fprintf(oid, '    function OpenTreeAtTaxon(taxon) {\n');
-fprintf(oid, '      window.open("../../species_tree_Animalia.html");\n');
-fprintf(oid, '      window.location.reload(true)\n');      
-fprintf(oid, '      SetCookie("clickedFolder", taxon);\n');
-fprintf(oid, '      clickOnFolder(taxon);\n');
-fprintf(oid, '    }\n\n');
-
-fprintf(oid, '    function OpenListAtTaxon(taxon) {\n');
-fprintf(oid, '      window.open("../../species_list.html#"+taxon);\n');
-fprintf(oid, '    }\n\n');
-fprintf(oid, '  </script>\n\n');
 
 fprintf(oid, '  <style>\n');
 fprintf(oid, '    ul.ref{\n');
