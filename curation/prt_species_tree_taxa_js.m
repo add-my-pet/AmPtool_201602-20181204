@@ -68,7 +68,7 @@ function prt_species_tree_taxa_js(taxa)
   
     % build tree
     nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
-    fprintf(fid_tv, ['foldersTree = gFld("<b>', node, '</b>", "species_tree_',taxa{i},'.html")\n']);
+    fprintf(fid_tv, ['foldersTree = gFld("<b>', node, '</b>", "species_tree_',taxa{i},'.html?pic=', '%%22', node, '%%2Ejpg', '%%22")\n']);
     fprintf(fid_tv, ['foldersTree.xID = "', taxa{i}, '"\n']);
     j = 0; % initiate leave counter
 

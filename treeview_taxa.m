@@ -36,7 +36,7 @@ function treeview_taxa (taxon)
   cd(taxa)                       % goto taxa
 
   try
-    pedigree_taxa = pedigree(taxon);
+    pedigree_taxon = pedigree(taxon);
     fid_tv = fopen('./taxa/treeview/treeview_taxa.js', 'w+'); % open file for writing, delete existing content
 
     % write header
@@ -62,12 +62,12 @@ function treeview_taxa (taxon)
     fprintf(fid_tv, 'HIGHLIGHT = 1\n\n');  % 0: Do not highlight the selected node; 1: Highlight the selected node
   
     % build tree
-    nl = strfind(pedigree_taxa, char(10)); root = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = []; i = 0; % initiate leave counter
+    nl = strfind(pedigree_taxon, char(10)); root = pedigree_taxon(1:nl-1); pedigree_taxon(1:nl) = []; i = 0; % initiate leave counter
     fprintf(fid_tv, ['foldersTree = gFld("<b>', root, '</b>", "treeview_taxa.html")\n']);
     fprintf(fid_tv, ['foldersTree.xID = "', root, '"\n']);
 
-    while length(pedigree_taxa) > 3
-      nl = strfind(pedigree_taxa, char(10)); node = pedigree_taxa(1:nl-1); pedigree_taxa(1:nl) = [];
+    while length(pedigree_taxon) > 3
+      nl = strfind(pedigree_taxon, char(10)); node = pedigree_taxon(1:nl-1); pedigree_taxon(1:nl) = [];
       level = max(strfind(node, char(9))); node(1:level) = []; L = ['L', num2str(level)]; Lnew = ['L', num2str(1 + level)];
       if level == 1
         fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", "treeview_taxa.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
@@ -86,7 +86,29 @@ function treeview_taxa (taxon)
  
     fprintf(fid_tv, ['foldersTree.treeID = "', root, '"\n']);
     fclose(fid_tv);
-  
+    
+    % write treeview_taxa_search.html
+    fid_tv = fopen('./taxa/treeview/treeview_taxa_search.html', 'w+'); % open file for writing, delete existing content
+
+    fprintf(fid_tv, '<div class="TreeSearch">\n');
+    fprintf(fid_tv, '  <input id="InputTreeSearch" class="TreeSearch_dropbtn" onclick="showDropdown(''TreeSearchDropdown'')" onkeyup="FunctionInputTreeSearch(''TreeSearchDropdown'')" \n');
+    fprintf(fid_tv, '    placeholder="Search for taxon.." type="text" title="Type part of name and click on list"></input>\n');
+    fprintf(fid_tv, '  <div id="TreeSearchDropdown" class="TreeSearch-content">\n');
+    fprintf(fid_tv, '  <ul id="TreeSearchlist" class="TreeSearch">\n');
+ 
+    list = list_taxa(taxon, 1); % ordered list of all nodes, exclusind leave
+    n = length(list);
+    for i = 1:n
+    fprintf(fid_tv,['    <li><a onclick="TreeSearch(''', list{i}, ''')">', list{i}, '</a></li>\n']);
+    end
+    
+    fprintf(fid_tv, '  </ul>\n');
+    fprintf(fid_tv, '  </div>\n');
+    fprintf(fid_tv, '</div>\n');
+
+
+    fclose(fid_tv);
+
   catch
     disp('An error occured during writing file treeview_taxa.js')
   end
