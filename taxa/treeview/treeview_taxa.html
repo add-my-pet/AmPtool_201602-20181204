@@ -106,7 +106,7 @@
      line-height: 10%;
    }
 
-   #InputTreeSearch {
+   #TaxonDropdownInput {
      background-image: url('searchicon.png');
      background-position: 2px -10px;
      background-repeat: no-repeat;
@@ -161,11 +161,11 @@
       location.reload(true);
     }
 
-    function FunctionInputTreeSearch(Dropdown) {
+    function InputTreeSearch(Dropdown) {
       var input, filter, ul, li, tage, i, n;
-      input = document.getElementById("InputTreeSearch");
+      input = document.getElementById(Dropdown+'Input');
       filter = input.value.toUpperCase();
-      ul = document.getElementById("TreeSearchlist");
+      ul = document.getElementById(Dropdown+'Searchlist');
       li = ul.getElementsByTagName("li");
  
       for (i = 0; i < li.length; i++) {
@@ -309,7 +309,7 @@
           var string = GetCookie("clickedFolder");
           var taxon = string.split(cookieCutter); // last substring is empty, start counting from 0
           var n = taxon.length; 
-          document.write("<img src=" + path + taxon[n-2] + ".jpg width=400><p><embed src=" + path + taxon[n-2] + ".jpg.txt width=400>");
+          document.write("<img src=" + path + taxon[n-2] + ".jpg width=400><p><embed src=" + path + taxon[n-2] + ".jpg.txt width=400></img>");
           
         </SCRIPT>
 

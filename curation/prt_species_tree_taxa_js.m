@@ -1,24 +1,30 @@
 %% prt_species_tree_taxa_js
-% writes prt_species_tree_taxa{i}_js that is called by species_tree_taxa{i}.html
+% writes species_tree_taxa{i}.js and species_tree_taxa{i}_taxon.html that are used by species_tree_taxa{i}.html
 
 %%
 function prt_species_tree_taxa_js(taxa)
 % created 2016/03/06 by Bas Kooijman, 
-% modified 2016/06/01 Starrlight Augustine, 2016/06/02, 2016/10/08, 2017/10/13, 2018/06/15 Bas Kooijman
+% modified 2016/06/01 Starrlight Augustine, 2016/06/02, 2016/10/08, 2017/10/13, 2018/06/15, 2018/06/26 Bas Kooijman
 
 %% Syntax
 % <../prt_species_tree_taxa_js.m *prt_species_tree_taxa_js*> (taxa) 
 
 %% Description
-% Clears and creates files ../../sys/prt_species_tree_taxa{i}.js and writes java code to it
+% Clears and creates files that are used by  species_tree_taxa{i}.html for tree navigation
 %
 % Input:
 %
-% * taxa: optional cell string with taxa of the roots of the trees, default: {'Animalia','Actinopterygii','Tetrapoda','Aves'} 
+% * taxa: optional cell string with taxa of the roots of the trees, default: {'Animalia','Actinopterygii','Tetrapoda','Aves','Mollusca'} 
 %
 % Output:
 % 
-% * writes files ../../sys/prt_species_tree_taxa{i}.js for i = 1, 2, ..
+% * writes files ../../sys/species_tree_taxa{i}.js for i = 1, 2, ..
+% * writes files ../../species_tree_taxa{i}_taxon.html for i = 1, 2, ..
+% * writes files ../../species_tree_taxa{i}_genus.html for i = 1, 2, ..
+% * writes files ../../species_tree_taxa{i}_family.html for i = 1, 2, ..
+% * writes files ../../species_tree_taxa{i}_order.html for i = 1, 2, ..
+% * writes files ../../species_tree_taxa{i}_class.html for i = 1, 2, .. if taxa{i} is 'Animalia','Tetrapoda' or 'Mollusca'
+% * writes files ../../species_tree_taxa{i}_phylum.html for i = 1, 2, .. if taxa{i} is 'Animalia'
 
 %% Remarks
 % file ../../species_tree_taxa{i}.html calls 
@@ -92,4 +98,98 @@ function prt_species_tree_taxa_js(taxa)
     
     fprintf(fid_tv, ['foldersTree.treeID = "', taxa{i}, '"\n']);
     fclose(fid_tv);
+    
+    % write species_tree_taxa{i}_search.html, which is used by species_tree_taxa{i}.html for searching taxon, genus, family, order, class, phylum
+    
+    fid_tv = fopen(['../../sys/species_tree_', taxa{i}, '_search.html'], 'w+'); % open file for writing, delete existing content
+
+    % taxon 
+    fprintf(fid_tv, '<div class="TreeSearch"> <!-- taxon -->\n');
+    fprintf(fid_tv, '  <input id="TaxonDropdownInput" class="TreeSearch_dropbtn" onclick="showDropdown(''TaxonDropdown'')" onkeyup="InputTreeSearch(''TaxonDropdown'')" \n');
+    fprintf(fid_tv, '    placeholder="Search for taxon.." type="text" title="Type part of name and click on list"></input>\n');
+    fprintf(fid_tv, '  <div id="TaxonDropdown" class="TreeSearch-content">\n');
+    fprintf(fid_tv, '    <ul id="TaxonDropdownSearchlist" class="TreeSearch">\n');
+ 
+    list = list_taxa(taxa{i}, 1); % ordered list of all nodes, excluding leaves
+    n = length(list);
+    for j = 1:n
+    fprintf(fid_tv,['      <li><a onclick="TreeSearch(''', list{j}, ''')">', list{j}, '</a></li>\n']);
+    end
+    
+    fprintf(fid_tv, '    </ul> <!-- end TaxonDropdownSearchlist -->\n');
+    fprintf(fid_tv, '  </div> <!-- end TaxonDropdown -->\n');
+    fprintf(fid_tv, '</div> <!-- end taxon -->\n');
+
+    % genus
+    fprintf(fid_tv, '<div class="TreeSearch"> <!-- genus -->\n');
+    fprintf(fid_tv, '  <input id="GenusDropdownInput" class="TreeSearch_dropbtn" onclick="showDropdown(''GenusDropdown'')" onkeyup="InputTreeSearch(''GenusDropdown'')" \n');
+    fprintf(fid_tv, '    placeholder="Search for genus.." type="text" title="Type part of name and click on list"></input>\n');
+    fprintf(fid_tv, '  <div id="GenusDropdown" class="TreeSearch-content">\n');
+    fprintf(fid_tv, '    <ul id="GenusDropdownSearchlist" class="TreeSearch">\n');
+ 
+    list = list_taxa(taxa{i}, 3); % ordered list of genera
+    n = length(list);
+    for j = 1:n
+    fprintf(fid_tv,['      <li><a onclick="TreeSearch(''', list{j}, ''')">', list{j}, '</a></li>\n']);
+    end
+    
+    fprintf(fid_tv, '    </ul> <!-- end GenusDropdownSearchlist -->\n');
+    fprintf(fid_tv, '  </div> <!-- end GenusDropdown -->\n');
+    fprintf(fid_tv, '</div> <!-- end genus -->\n');
+
+    % family
+    fprintf(fid_tv, '<div class="TreeSearch"> <!-- family -->\n');
+    fprintf(fid_tv, '  <input id="FamilyDropdownInput" class="TreeSearch_dropbtn" onclick="showDropdown(''FamilyDropdown'')" onkeyup="InputTreeSearch(''FamilyDropdown'')" \n');
+    fprintf(fid_tv, '    placeholder="Search for family.." type="text" title="Type part of name and click on list"></input>\n');
+    fprintf(fid_tv, '  <div id="FamilyDropdown" class="TreeSearch-content">\n');
+    fprintf(fid_tv, '    <ul id="FamilyDropdownSearchlist" class="TreeSearch">\n');
+ 
+    list = list_taxa(taxa{i}, 4); % ordered list of all families
+    n = length(list);
+    for j = 1:n
+    fprintf(fid_tv,['      <li><a onclick="TreeSearch(''', list{j}, ''')">', list{j}, '</a></li>\n']);
+    end
+    
+    fprintf(fid_tv, '    </ul> <!-- end FamilyDropdownSearchlist -->\n');
+    fprintf(fid_tv, '  </div> <!-- end FamilyDropdown -->\n');
+    fprintf(fid_tv, '</div> <!-- end family -->\n');
+
+    % order
+    fprintf(fid_tv, '<div class="TreeSearch"> <!-- order -->\n');
+    fprintf(fid_tv, '  <input id="OrderDropdownInput" class="TreeSearch_dropbtn" onclick="showDropdown(''OrderDropdown'')" onkeyup="InputTreeSearch(''OrderDropdown'')" \n');
+    fprintf(fid_tv, '    placeholder="Search for order.." type="text" title="Type part of name and click on list"></input>\n');
+    fprintf(fid_tv, '  <div id="OrderDropdown" class="TreeSearch-content">\n');
+    fprintf(fid_tv, '    <ul id="OrderDropdownSearchlist" class="TreeSearch">\n');
+ 
+    list = list_taxa(taxa{i}, 5); % ordered list of all orders
+    n = length(list);
+    for j = 1:n
+    fprintf(fid_tv,['      <li><a onclick="TreeSearch(''', list{j}, ''')">', list{j}, '</a></li>\n']);
+    end
+    
+    fprintf(fid_tv, '    </ul> <!-- end OrderDropdownSearchList -->\n');
+    fprintf(fid_tv, '  </div> <!-- end OrderDropdown -->\n');
+    fprintf(fid_tv, '</div> <!-- end order -->\n');
+
+    % class
+    if strcmp(taxa{i},'Animalia') || strcmp(taxa{i},'Mollusca') || strcmp(taxa{i},'Tetrapoda')
+    fprintf(fid_tv, '<div class="TreeSearch"> <!-- class -->\n');
+    fprintf(fid_tv, '  <input id="ClassDropdownInput" class="TreeSearch_dropbtn" onclick="showDropdown(''ClassDropdown'')" onkeyup="InputTreeSearch(''ClassDropdown'')" \n');
+    fprintf(fid_tv, '    placeholder="Search for class.." type="text" title="Type part of name and click on list"></input>\n');
+    fprintf(fid_tv, '  <div id="ClassDropdown" class="TreeSearch-content">\n');
+    fprintf(fid_tv, '    <ul id="ClassDropdownSearchlist" class="TreeSearch">\n');
+ 
+    list = list_taxa(taxa{i}, 6); % ordered list of all classes
+    n = length(list);
+    for j = 1:n
+    fprintf(fid_tv,['      <li><a onclick="TreeSearch(''', list{j}, ''')">', list{j}, '</a></li>\n']);
+    end
+    
+    fprintf(fid_tv, '    </ul> <!-- end ClassDropdownSearchList -->\n');
+    fprintf(fid_tv, '  </div> <!-- end ClassDropdown -->\n');
+    fprintf(fid_tv, '</div> <!-- end class -->\n');
+    end
+
+    fclose(fid_tv);
+   
   end 

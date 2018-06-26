@@ -3,14 +3,14 @@
 
 %%
 function treeview_taxa (taxon)
-% created 2016/03/06 by Bas Kooijman, modified 2017/08/06, 2017/10/08, 2018/06/15
+% created 2016/03/06 by Bas Kooijman, modified 2017/08/06, 2017/10/08, 2018/06/26
 
 %% Syntax
 % <../treeview_taxa.m *treeview_taxa*> (taxon) 
 
 %% Description
 % First produces pedigree with function <pedigree.html *pedigree*> and 
-% uses the result to create file /treeview/treeview_taxa.js and 
+% uses the result to create files /treeview/treeview_taxa.js and treeview_taxa_search.html and
 % opens AmPtool/taxa/treeview/treeview_taxa.html in the system browser.
 %
 % Input:
@@ -90,11 +90,11 @@ function treeview_taxa (taxon)
     % write treeview_taxa_search.html
     fid_tv = fopen('./taxa/treeview/treeview_taxa_search.html', 'w+'); % open file for writing, delete existing content
 
-    fprintf(fid_tv, '<div class="TreeSearch">\n');
-    fprintf(fid_tv, '  <input id="InputTreeSearch" class="TreeSearch_dropbtn" onclick="showDropdown(''TreeSearchDropdown'')" onkeyup="FunctionInputTreeSearch(''TreeSearchDropdown'')" \n');
+    fprintf(fid_tv, '<div class="TreeSearch"> <!-- taxon -->\n');
+    fprintf(fid_tv, '  <input id="TaxonDropdownInput" class="TreeSearch_dropbtn" onclick="showDropdown(''TaxonDropdown'')" onkeyup="InputTreeSearch(''TaxonDropdown'')" \n');
     fprintf(fid_tv, '    placeholder="Search for taxon.." type="text" title="Type part of name and click on list"></input>\n');
-    fprintf(fid_tv, '  <div id="TreeSearchDropdown" class="TreeSearch-content">\n');
-    fprintf(fid_tv, '  <ul id="TreeSearchlist" class="TreeSearch">\n');
+    fprintf(fid_tv, '  <div id="TaxonDropdown" class="TreeSearch-content">\n');
+    fprintf(fid_tv, '  <ul id="TaxonDropdownSearchlist" class="TreeSearch">\n');
  
     list = list_taxa(taxon, 1); % ordered list of all nodes, exclusind leave
     n = length(list);
@@ -102,11 +102,9 @@ function treeview_taxa (taxon)
     fprintf(fid_tv,['    <li><a onclick="TreeSearch(''', list{i}, ''')">', list{i}, '</a></li>\n']);
     end
     
-    fprintf(fid_tv, '  </ul>\n');
-    fprintf(fid_tv, '  </div>\n');
-    fprintf(fid_tv, '</div>\n');
-
-
+    fprintf(fid_tv, '  </ul> <!-- end of TaxonDownSearchlist -->\n');
+    fprintf(fid_tv, '  </div> <!-- end of TaxonDropdown -->\n');
+    fprintf(fid_tv, '</div> <!-- end of taxon -->\n');
     fclose(fid_tv);
 
   catch
