@@ -1,5 +1,6 @@
-<HTML>
+<!DOCTYPE html>
 
+<HTML>
 <!--------------------------------------------------------------->
 <!-- Copyright (c) 2006 by Conor O'Mahony.                     -->
 <!-- For enquiries, please email GubuSoft@GubuSoft.com.        -->
@@ -10,50 +11,43 @@
 <!-- script can be found at http://www.TreeView.net.  The      -->
 <!-- script is Copyright (c) 2006 by Conor O'Mahony.           -->
 <!--------------------------------------------------------------->
-<!-- Instructions:                                             -->
-<!-- Follow the steps labeled SECTION1, SECTION2, and so on    -->
-<!-- in this file.                                             -->
-<!--------------------------------------------------------------->
-
- <HEAD>
-
-  <TITLE>TreeView of add_my_pet entries</TITLE>
 
 
-  <!------------------------------------------------------------>
-  <!-- SECTION 1:                                             -->
-  <!-- If you want, edit the styles for the remainder if the  -->
-  <!-- document.                                              -->
-  <!------------------------------------------------------------>
+<HEAD>
+  <TITLE>Species Tree Taxon</TITLE>
+
+  <link rel="stylesheet" type="text/css" href="sys/style.css"> 
+ 
   <STYLE>
+    /*                                                          */
+    /* Styles for the tree.                                     */
+    /*                                                          */
 
-   /*                                                          */
-   /* Styles for the tree.                                     */
-  /*                                                          */
-   SPAN.TreeviewSpanArea A {
-     font-size: 10pt; 
-     font-family: verdana,helvetica; 
-     text-decoration: none;
-     color: black;}
-   SPAN.TreeviewSpanArea A:hover {
-     color: '#820082';}
+    SPAN.TreeviewSpanArea A {
+      font-size: 16px; 
+      font-family: verdana,helvetica; 
+      text-decoration: none;
+      color: black;}
+    SPAN.TreeviewSpanArea A:hover {
+      color: '#820082';}
 
-   /*                                                          */
-   /* Styles for the remainder of the document.                */
-   /*                                                          */
-   BODY {
-     background-color: white;}
-   TD {
-     font-size: 10pt; 
-     font-family: verdana,helvetica;}
+    /*                                                          */
+    /* Styles for the remainder of the document.                */
+    /*                                                          */
+    BODY {
+      background-color: white;}
+    TD {
+      font-size: 10pt; 
+      font-family: verdana,helvetica;}
 
     /*                                                         */
     /*  DropDown menu                                          */
     /*                                                         */
+
     .TreeSearch_dropbtn {
        background-color: #fff;  
          color: black;
-       padding: 16px;
+         padding: 16px;
          font-size: 1.2em;
          border: none;
          cursor: pointer;  
@@ -87,78 +81,64 @@
     .show {display:block;}
 
     div.TreeSearch {
-        max-width:500px;
-        margin: auto;
+        padding: 0px 0px 0px 0px
+        margin: 0px;
         float: left;
-	margin: 10px;
-	/*-- border: 1px solid #73AD21;  --*/
     }
-   
+
     div.TreeTable {
        clear: left;
     }
-   
+
    ul.TreeSearch {
      list-style-type: none;
      font-size: 14px;
      margin: 0;
      padding: 0;
      line-height: 10%;
+     max-width: 150px;
    }
 
-   #TaxonDropdownInput {
-     background-image: url('searchicon.png');
-     background-position: 2px -10px;
-     background-repeat: no-repeat;
-     width: 100%;
-     font-size: 14px;
-     padding: 5px 10px 7px 40px;
-     border: 1px solid #ddd;
-     margin-bottom: 12px;
+    #TaxonDropdownInput {
+      background-image: url('searchicon.png'); /* Add a search icon to input */
+      background-position: 2px -10px; /* Position the search icon */
+      background-repeat: no-repeat; /* Do not repeat the icon image */
+      width: 60%; /* Width of search field */
+      font-size: 14px; /* Increase font-size */
+      padding: 5px 10px 7px 40px; /* Add some padding */
+      border: 1px solid #ddd; /* Add a grey border */
+      margin-bottom: 12px; /* Add some space below the input */
     }
 
-   #InputTreeSearchEnter {
-     background-image: url('searchicon.png');
-     background-position: 2px -10px;
-     background-repeat: no-repeat;
-     width: 15%;
-     font-size: 14px;
-     padding: 5px 10px 7px 40px;
-     border: 1px solid #ddd;
-     margin-bottom: 12px;
-     margin-top: 10px;
-    }
 
   </STYLE>
 
+  <SCRIPT src="ua.js"></SCRIPT> <!-- browser detection -->
+  <SCRIPT src="ftiens4.js"></SCRIPT> <!-- infrastructure for TreeView -->
+  <SCRIPT src="treeview_taxa.js"></SCRIPT> <!-- tree definition -->
+  <script src="w3data.js"></script> <!-- inclusion of htlm snippets -->
 
-  <!------------------------------------------------------------>
-  <!-- SECTION 2:                                             -->
-  <!-- Replace everything (HTML, JavaScript, etc.) from here  -->
-  <!-- until the beginning of SECTION 3 with the pieces of    -->
-  <!-- the <HEAD> section that are needed for your site.      -->
-  <!------------------------------------------------------------>
   <SCRIPT>
+    if (document.taxonSearch == undefined){
+      document.taxonSearch = "";     
+    }
 
-    function TreeSearchEnter() { 
-      var input = document.getElementById("InputTreeSearchEnter");
-      input.addEventListener("keyup", function(event) {
-        event.preventDefault();
-        if (event.keyCode === 13){
-          input.value = input.value.toLowerCase();
-          var taxon = input.value;
-          taxon = taxon.replace(taxon[0],taxon[0].toUpperCase());
-          SetCookie("clickedFolder", taxon)
-          clickOnFolder(taxon)
-          window.location.reload(true)    
+    function getQueryString(index) {
+      var paramExpressions = window.location.search.substr(1).split("&");
+      if (index < paramExpressions.length) {
+        var param = paramExpressions[index]; 
+        if (param.length > 0) {
+          return eval(unescape(param));
         }
-      });
+      }
+      return ""
     }
 
     function TreeSearch(taxon) { 
-      SetCookie("clickedFolder", taxon)
-      clickOnFolder(taxon)
-      location.reload(true);
+      SetCookie("clickedFolder", taxon);
+      clickOnFolder(taxon);
+      window.location = window.location.href.split('?')[0]  + '?pic="' + taxon + '.jpg"'
+      document.taxonSearch = taxon;
     }
 
     function InputTreeSearch(Dropdown) {
@@ -196,132 +176,107 @@
       }
     }
 
-  </SCRIPT>
+  </SCRIPT>  
 
- <!------------------------------------------------------------->
- <!-- SECTION 3:                                              -->
- <!-- Scripts for id bowser, tree properties and definition   -->
- <!------------------------------------------------------------->
+</HEAD>
 
-  <SCRIPT src="ua.js"></SCRIPT>
-  <SCRIPT src="ftiens4.js"></SCRIPT>
-  <SCRIPT src="treeview_taxa.js"></SCRIPT>
-  <script src="w3data.js"></script>
+ 
+<BODY>
+	
+  <div id = "main">
+    <div id = "main-wrapper">    
+      <div id="contentFull">
 
- </HEAD>
+       <!-- TreeSearch -->
+       <div w3-include-html="treeview_taxa_search.html"></div>
+         <script>w3IncludeHTML();</script>
+       
 
+       <!-- tree table -->
+       <div class="TreeTable">
+         <TABLE cellpadding="0" cellspacing="0" border="0" width="772">
+           <TR>
+             <TD width="300" valign="top">
 
- <!------------------------------------------------------------->
- <!-- SECTION 4:                                              -->
- <!-- Change the <BODY> tag for use with your site.           -->
- <!------------------------------------------------------------->
- <BODY bgcolor="white" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0"  onResize="if (navigator.family == 'nn4') window.location.reload()">
+               <TABLE cellpadding="4" cellspacing="0" border="0" width="100%">
+                 <TR>
+                   <TD bgcolor="#ECECD9">
 
+                     <TABLE cellspacing="0" cellpadding="2" border="0" width="100%">
+                       <TR>
+                         <TD bgcolor="white">
+                           <!------------------------------------------------------------->
+                           <!-- IMPORTANT NOTICE:                                       -->
+                           <!-- Removing the following link will prevent this script    -->
+                           <!-- from working.  Unless you purchase the registered       -->
+                           <!-- version of TreeView, you must include this link.        -->
+                           <!-- If you make any unauthorized changes to the following   -->
+                           <!-- code, you will violate the user agreement.  If you want -->
+                           <!-- to remove the link, see the online FAQ for instructions -->
+                           <!-- on how to obtain a version without the link.            -->
+                           <!------------------------------------------------------------->
+                           <TABLE border=0>
+                             <TR><TD>
+                               <FONT size=-2><A style="font-size:7pt;text-decoration:none;color:silver" href="http://www.treemenu.net/" target="_blank">Javascript Tree Menu</A></FONT>
+                             </TD></TR>
+                           </TABLE>
 
- <!----- ------------------------------------------------------->
- <!-- SECTION 5:                                              -->
- <!-- The main body of the page, including the table          -->
- <!-- structure that contains the tree and the contents.      -->
- <!---- -------------------------------------------------------->
+                           <SPAN class=TreeviewSpanArea>
+                             <script>initializeDocument()</script>
+                             <NOSCRIPT>
+                               A tree for site navigation will open here if you enable JavaScript in your browser.
+                             </NOSCRIPT>
+                           </SPAN>
+                         </TD>
+                       </TR>
+                     </TABLE>
 
+                   </TD>
+                 </TR>
+               </TABLE>
 
-  <!-- TreeSearch -->
-  <div w3-include-html="treeview_taxa_search.html"></div>
-  <script>w3IncludeHTML();</script>
+             </TD>
+             <TD bgcolor="white" valign="top">
 
-  <div>
-   <input type="text" id="InputTreeSearchEnter" placeholder="Search for taxon.." title="Type in a name and press Enter" onkeyup="TreeSearchEnter()">
-  </div>
+               <div id="pictxt"><TABLE><TR><TD>
+                 <script> // show picture + legend
+                   var path = "https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/"
+                   var picURL;
+                   if (document.taxonSearch.length == 0) {
+                     picURL = getQueryString(0);
+                   }
+                   else {
+                     picURL = (document.taxonSearch + '.jpg');
+                   }           
+                   if (picURL.length == 0){
+                     picURL = 'Animalia.jpg';
+                   }
+                   document.write("<img src=" + path + picURL +  " WIDTH = 400><p><embed src=" + path + picURL + ".txt width=400></img>");
+                   document.taxonSearch = "";
+                 </script>
+               </TD></TR></TABLE></div>
 
- <div class="TreeTable">
- <TABLE cellpadding="0" cellspacing="0" border="0" width="772" clear="both">
-  <TR>
-   <TD width="178" valign="top">
+               <SCRIPT> // scroll page and picture
+                 var string = GetCookie("clickedFolder");
+                 var taxonss = string.split(cookieCutter);
+                 var n = taxonss.length;
+                 var height = Math.max(0,70*n-700);
+                 document.write("<style> #pictxt {margin-top: " + height + "px;}</style>");
+                 window.scrollTo(0,height+200);
+               </SCRIPT>
 
-    <TABLE cellpadding="4" cellspacing="0" border="0" width="100%">
-     <TR>
-      <TD bgcolor="#ECECD9">
+             </TD>
+           </TR>
+         </TABLE><!-- end of Tree Table -->
+      </div><!-- end of Tree Table -->			
 
-        <TABLE cellspacing="0" cellpadding="2" border="0" width="100%">
-         <TR>
-          <TD bgcolor="white">
+    </div> <!-- end of content -->
+									
+    <div id="footer" w3-include-html="sys/footer_amp.html"></div>
+    <script>w3IncludeHTML();</script>
+			
+  </div> <!-- main wrapper -->
+</div> <!-- main -->
 
-
- <!------------------------------------------------------------->
- <!-- SECTION 6:                                              -->
- <!-- Build the tree.                                         -->
- <!------------------------------------------------------------->
-
- <!------------------------------------------------------------->
- <!-- IMPORTANT NOTICE:                                       -->
- <!-- Removing the following link will prevent this script    -->
- <!-- from working.  Unless you purchase the registered       -->
- <!-- version of TreeView, you must include this link.        -->
- <!-- If you make any unauthorized changes to the following   -->
- <!-- code, you will violate the user agreement.  If you want -->
- <!-- to remove the link, see the online FAQ for instructions -->
- <!-- on how to obtain a version without the link.            -->
- <!------------------------------------------------------------->
- <TABLE border=0>
-    <TR>
-      <TD>
-        <FONT size=-2><A style="font-size:7pt;text-decoration:none;color:silver" href="http://www.treemenu.net/" target=_blank>Javascript Tree Menu</A>
-        </FONT>
-      </TD>
-   </TR>
-</TABLE>
-
-
- <SPAN class=TreeviewSpanArea>
-  <SCRIPT>initializeDocument()</SCRIPT>
-
-  <NOSCRIPT>
-   A tree for site navigation will open here if you enable JavaScript in your browser.
-  </NOSCRIPT>
-
-
- </SPAN>
-
- <!------------------------------------------------------------->
- <!-- SECTION 7:                                              -->
- <!-- And now we have the continuation of the body of the     -->
- <!-- page, after the tree.  Replace this entire section with -->
- <!-- your site's HTML.                                       -->
- <!------------------------------------------------------------->
-          </TD>
-         </TR>
-        </TABLE>
-
-       </TD>
-      </TR>
-     </TABLE>
-
-    </TD>
-    <TD bgcolor="white" valign="top">
-
-    <!-- picture -->
-    <TABLE cellpadding="10" cellspacing="0" border="0" width="100%">
-      <TR>
-       <TD>
-
-        <SCRIPT>
-          var path = "https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/"
-          var string = GetCookie("clickedFolder");
-          var taxon = string.split(cookieCutter); // last substring is empty, start counting from 0
-          var n = taxon.length; 
-          document.write("<img src=" + path + taxon[n-2] + ".jpg width=400><p><embed src=" + path + taxon[n-2] + ".jpg.txt width=400></img>");
-          
-        </SCRIPT>
-
-       </TD>
-      </TR>
-    </TABLE>
-
-    </TD>
-   </TR>
-  </TABLE>
-  </div>
-
- </BODY>
-
+</BODY>
 </HTML>

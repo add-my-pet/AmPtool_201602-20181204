@@ -72,11 +72,9 @@ function treeview_taxa (taxon)
       if level == 1
         fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", "treeview_taxa.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
         fprintf(fid_tv, ['L2.xID = "', node, '"\n']);
-        %fprintf(fid_tv, ['L2 = insFld(foldersTree, gFld("', node, '", ""))\n']);
       elseif isempty(strfind(node, '_')) && isempty(strfind(node, ' ')) 
         fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", "treeview_taxa.html?pic=', '%%22', node, '%%2Ejpg', '%%22"))\n']);
         fprintf(fid_tv, [Lnew, '.xID = "', node, '"\n']);
-        %fprintf(fid_tv, [Lnew, ' = insFld(', L, ', gFld("', node, '", ""))\n']);
       else
         i = i + 1; nm = ['lv', num2str(i)]; % name for leave
         fprintf(fid_tv, [nm, ' = insDoc(', L, ', gLnk("S", "', node, '", "http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries_web/', node, '/', node, '_res.html"))\n']); 
@@ -94,15 +92,15 @@ function treeview_taxa (taxon)
     fprintf(fid_tv, '  <input id="TaxonDropdownInput" class="TreeSearch_dropbtn" onclick="showDropdown(''TaxonDropdown'')" onkeyup="InputTreeSearch(''TaxonDropdown'')" \n');
     fprintf(fid_tv, '    placeholder="Search for taxon.." type="text" title="Type part of name and click on list"></input>\n');
     fprintf(fid_tv, '  <div id="TaxonDropdown" class="TreeSearch-content">\n');
-    fprintf(fid_tv, '  <ul id="TaxonDropdownSearchlist" class="TreeSearch">\n');
+    fprintf(fid_tv, '    <ul id="TaxonDropdownSearchlist" class="TreeSearch">\n');
  
     list = list_taxa(taxon, 1); % ordered list of all nodes, exclusind leave
     n = length(list);
     for i = 1:n
-    fprintf(fid_tv,['    <li><a onclick="TreeSearch(''', list{i}, ''')">', list{i}, '</a></li>\n']);
+    fprintf(fid_tv,['      <li><a onclick="TreeSearch(''', list{i}, ''')">', list{i}, '</a></li>\n']);
     end
     
-    fprintf(fid_tv, '  </ul> <!-- end of TaxonDownSearchlist -->\n');
+    fprintf(fid_tv, '    </ul> <!-- end of TaxonDownSearchlist -->\n');
     fprintf(fid_tv, '  </div> <!-- end of TaxonDropdown -->\n');
     fprintf(fid_tv, '</div> <!-- end of taxon -->\n');
     fclose(fid_tv);
