@@ -14,7 +14,7 @@
 
 
 <HEAD>
-  <TITLE>Species Tree Taxon</TITLE>
+  <title>Species Tree Taxon</title>
 
   <link rel="stylesheet" type="text/css" href="sys/style.css"> 
  
@@ -135,8 +135,8 @@
     }
 
     function TreeSearch(taxon) { 
-      SetCookie("clickedFolder", taxon);
-      clickOnFolder(taxon);
+      SetCookie("clickedFolder", taxon); // open tree
+      clickOnFolder(taxon);              // set highlight
       window.location = window.location.href.split('?')[0]  + '?pic="' + taxon + '.jpg"'
       document.taxonSearch = taxon;
     }
@@ -191,7 +191,6 @@
        <div w3-include-html="treeview_taxa_search.html"></div>
          <script>w3IncludeHTML();</script>
        
-
        <!-- tree table -->
        <div class="TreeTable">
          <TABLE cellpadding="0" cellspacing="0" border="0" width="772">
@@ -249,10 +248,10 @@
                      picURL = (document.taxonSearch + '.jpg');
                    }           
                    if (picURL.length == 0){
-                     picURL = 'Animalia.jpg';
+                     picURL = foldersTree.xID + '.jpg';
                    }
                    document.write("<img src=" + path + picURL +  " WIDTH = 400><p><embed src=" + path + picURL + ".txt width=400></img>");
-                   document.taxonSearch = "";
+                   document.taxonSearch = ""; // reset search for clicking in tree
                  </script>
                </TD></TR></TABLE></div>
 
@@ -268,7 +267,9 @@
              </TD>
            </TR>
          </TABLE><!-- end of Tree Table -->
-      </div><!-- end of Tree Table -->			
+
+
+      </div><!-- end of Tree Table -->		
 
     </div> <!-- end of content -->
 									
