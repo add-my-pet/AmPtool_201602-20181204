@@ -123,6 +123,24 @@
       document.taxonSearch = "";     
     }
 
+    function getNumberOfShownTaxa (taxon) {
+      var nodeObj = findObj(taxon);
+      var idCurrent = nodeObj.id;               
+      var string = GetCookie("clickedFolder");  // list of opened folders
+      var taxonss = string.split(cookieCutter); // last substring is empty
+      var n = taxonss.length - 1;               // number of opened folders
+      var nShownTaxa = 2; // initiate counter for shown folders above taxon
+ 
+      var idCurrent = nodeObj.id; // local id of highlighted node
+      for (i=0; i < n; i++) {
+        nodeObj = findObj(taxonss[i]);
+        if (nodeObj.id < idCurrent) {
+          nShownTaxa = nShownTaxa + nodeObj.nChildren;
+        }
+      }   
+      return nShownTaxa;              
+    }
+
     function getQueryString(index) {
       var paramExpressions = window.location.search.substr(1).split("&");
       if (index < paramExpressions.length) {
@@ -190,7 +208,7 @@
        <!-- TreeSearch -->
        <div w3-include-html="treeview_taxa_search.html"></div>
          <script>w3IncludeHTML();</script>
-       
+
        <!-- tree table -->
        <div class="TreeTable">
          <TABLE cellpadding="0" cellspacing="0" border="0" width="772">
@@ -252,14 +270,13 @@
                    }
                    document.write("<img src=" + path + picURL +  " WIDTH = 400><p><embed src=" + path + picURL + ".txt width=400></img>");
                    document.taxonSearch = ""; // reset search for clicking in tree
-                 </script>
+                </script>
                </TD></TR></TABLE></div>
 
-               <SCRIPT> // scroll page and picture
-                 var string = GetCookie("clickedFolder");
-                 var taxonss = string.split(cookieCutter);
-                 var n = taxonss.length;
-                 var height = Math.max(0,70*n-700);
+               <SCRIPT> // scroll page and picture  
+                 var taxon = picURL.split('.')[0];
+                 var n = getNumberOfShownTaxa (taxon);  
+                 var height = Math.max(0,40*n-600);
                  document.write("<style> #pictxt {margin-top: " + height + "px;}</style>");
                  window.scrollTo(0,height+200);
                </SCRIPT>

@@ -42,8 +42,8 @@ fprintf(oid,['    (<a onclick="OpenTreeAtTaxon(''', genus, ''')" title="click to
 fprintf(oid, '  </h1>\n\n');
 
 fprintf(oid, '  <div id="navwrapper">\n');
-fprintf(oid, '    <div class = "dropdown"><button onclick="species()" class="dropbtn">Results</button>\n');
-fprintf(oid, '      <div id="speciesDropdown" class="dropdown-content">\n');
+fprintf(oid, '    <div class = "dropdown"><button onclick="showDropdown(''species'')" class="dropbtn">Results</button>\n');
+fprintf(oid, '      <div id="species" class="dropdown-content">\n');
 fprintf(oid,['        <a href="', species, '_par.html">Parameters</a>\n']);
 fprintf(oid,['        <a href="', species, '_stat.html">Implied properties</a>\n']);    
 fprintf(oid,['        <a href="', species, '_res.html">Predictions & Data</a>\n']);
@@ -52,8 +52,8 @@ fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 
 zip = get_zip(species); n_zip = size(zip, 1); % see if there are any obsolete zip's in the archive
-fprintf(oid, '    <div class = "dropdown"><button onclick="code()" class="dropbtn">Code</button>\n');
-fprintf(oid, '      <div id="codeDropdown" class="dropdown-content">\n');
+fprintf(oid, '    <div class = "dropdown"><button onclick="showDropdown(''code'')" class="dropbtn">Code</button>\n');
+fprintf(oid, '      <div id="code" class="dropdown-content">\n');
 fprintf(oid,['        <a href="../../entries/',species,'/mydata_',species,'.m" target="_blank">mydata</a>\n']);
 fprintf(oid,['        <a href="../../entries/',species,'/pars_init_',species,'.m" target="_blank">pars_init</a>\n']);
 fprintf(oid,['        <a href="../../entries/',species,'/predict_',species,'.m" target="_blank">predict</a>\n']);
@@ -67,8 +67,8 @@ fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 
 links = get_link(species); n_link = size(links,1);
-fprintf(oid, '    <div class = "dropdown"><button onclick="link()" class="dropbtn">Links</button>\n');
-fprintf(oid, '      <div id="linkDropdown" class="dropdown-content">\n');
+fprintf(oid, '    <div class = "dropdown"><button onclick="showDropdown(''link'')" class="dropbtn">Links</button>\n');
+fprintf(oid, '      <div id="link" class="dropdown-content">\n');
 for i = 1:n_link
 fprintf(oid,['        <a href="', links{i,1}, '" target="_blank">', links{i,2}, '</a>\n']);
 end

@@ -10,7 +10,8 @@ function prt_species_tree_taxa_js(taxa)
 % <../prt_species_tree_taxa_js.m *prt_species_tree_taxa_js*> (taxa) 
 
 %% Description
-% Clears and creates files that are used by  species_tree_taxa{i}.html for tree navigation
+% Clears and creates files that are used by  species_tree_taxa{i}.html for tree navigation.
+% These support files are a js-file that defined the tree and a search.html files that define the search dropdowns
 %
 % Input:
 %
@@ -18,13 +19,9 @@ function prt_species_tree_taxa_js(taxa)
 %
 % Output:
 % 
-% * writes files ../../sys/species_tree_taxa{i}.js for i = 1, 2, ..
 % * writes files ../../species_tree_taxa{i}_taxon.html for i = 1, 2, ..
-% * writes files ../../species_tree_taxa{i}_genus.html for i = 1, 2, ..
-% * writes files ../../species_tree_taxa{i}_family.html for i = 1, 2, ..
-% * writes files ../../species_tree_taxa{i}_order.html for i = 1, 2, ..
-% * writes files ../../species_tree_taxa{i}_class.html for i = 1, 2, .. if taxa{i} is 'Animalia','Tetrapoda' or 'Mollusca'
-% * writes files ../../species_tree_taxa{i}_phylum.html for i = 1, 2, .. if taxa{i} is 'Animalia'
+% * writes files ../../sys/species_tree_taxa{i}_search.html for i = 1, 2, ..
+% * writes files ../../sys/species_tree_taxa{i}.js for i = 1, 2, ..
 
 %% Remarks
 % file ../../species_tree_taxa{i}.html calls 
@@ -34,13 +31,13 @@ function prt_species_tree_taxa_js(taxa)
 %  - txt's ../../img/tree/nm.txt
 
 %% Example of use
-% prt_species_tree_taxa_js; open ../../species_tree_Animalia.html and ../species_tree_Tetrapoda.html to see the results
+% prt_species_tree_taxa_js; open ../../species_tree_Animalia.html  to see the results
 % prt_species_tree_taxa_js({'Tetrapoda'}); open ../../species_tree_Tetrapoda.html to see the result
     
 %  check_entries; % test presence of entries in tree against local and server
   
   if ~exist('taxa','var')
-    taxa = {'Animalia','Mollusca','Actinopterygii','Tetrapoda','Aves'};
+    taxa = {'Animalia'};
   end
     
   n = length(taxa);
@@ -101,7 +98,7 @@ function prt_species_tree_taxa_js(taxa)
     
     % write species_tree_taxa{i}_search.html, which is used by species_tree_taxa{i}.html for searching taxon, genus, family, order, class, phylum
     
-    fid_tv = fopen(['../../species_tree_', taxa{i}, '_search.html'], 'w+'); % open file for writing, delete existing content
+    fid_tv = fopen(['../../sys/species_tree_', taxa{i}, '_search.html'], 'w+'); % open file for writing, delete existing content
 
     % taxon 
     fprintf(fid_tv, '<div class="TreeSearch"> <!-- taxon -->\n');

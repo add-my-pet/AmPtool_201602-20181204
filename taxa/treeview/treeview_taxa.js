@@ -10,11 +10,10 @@
 // You can find general instructions for this file at www.treeview.net.
 //
 
-
 USETEXTLINKS = 1
+STARTALLOPEN = 0
 USEFRAMES = 0
 USEICONS = 0
-STARTALLOPEN = 0
 WRAPTEXT = 1
 PRESERVESTATE = 1
 HIGHLIGHT = 1
