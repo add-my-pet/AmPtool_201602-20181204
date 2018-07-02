@@ -117,21 +117,21 @@
   <SCRIPT src="ftiens4.js"></SCRIPT> <!-- infrastructure for TreeView -->
   <SCRIPT src="treeview_taxa.js"></SCRIPT> <!-- tree definition -->
   <script src="w3data.js"></script> <!-- inclusion of htlm snippets -->
+  <script src="dropdown.js"></script> <!-- dropbox -->
 
   <SCRIPT>
     if (document.taxonSearch == undefined){
       document.taxonSearch = "";     
     }
-
+    
     function getNumberOfShownTaxa (taxon) {
       var nodeObj = findObj(taxon);
-      var idCurrent = nodeObj.id;               
+      var idCurrent = nodeObj.id;               // local id of taxa
       var string = GetCookie("clickedFolder");  // list of opened folders
       var taxonss = string.split(cookieCutter); // last substring is empty
       var n = taxonss.length - 1;               // number of opened folders
-      var nShownTaxa = 2; // initiate counter for shown folders above taxon
+      var nShownTaxa = 2; // initiate counter for shown taxa above taxon
  
-      var idCurrent = nodeObj.id; // local id of highlighted node
       for (i=0; i < n; i++) {
         nodeObj = findObj(taxonss[i]);
         if (nodeObj.id < idCurrent) {
@@ -154,7 +154,6 @@
 
     function TreeSearch(taxon) { 
       SetCookie("clickedFolder", taxon); // open tree
-      clickOnFolder(taxon);              // set highlight
       window.location = window.location.href.split('?')[0]  + '?pic="' + taxon + '.jpg"'
       document.taxonSearch = taxon;
     }
@@ -176,24 +175,6 @@
       }
     }
 
-    function showDropdown(Dropdown) {
-      document.getElementById(Dropdown).classList.toggle("show");
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.TreeSearch_dropbtn')) {
-        var dropdowns = document.getElementsByClassName("TreeSearch-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-
   </SCRIPT>  
 
 </HEAD>
@@ -207,7 +188,7 @@
 
        <!-- TreeSearch -->
        <div w3-include-html="treeview_taxa_search.html"></div>
-         <script>w3IncludeHTML();</script>
+       <script>w3IncludeHTML();</script>
 
        <!-- tree table -->
        <div class="TreeTable">
@@ -258,25 +239,25 @@
                <div id="pictxt"><TABLE><TR><TD>
                  <script> // show picture + legend
                    var path = "https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/"
-                   var picURL;
-                   if (document.taxonSearch.length == 0) {
-                     picURL = getQueryString(0);
+                   if (document.taxonSearch.length == 0) { // result of clicking in tree
+                     var picURL = getQueryString(0);
                    }
-                   else {
-                     picURL = (document.taxonSearch + '.jpg');
+                   else {                                  // result of searching
+                     var picURL = (document.taxonSearch + '.jpg');
                    }           
-                   if (picURL.length == 0){
+                   if (picURL.length == 0){               
                      picURL = foldersTree.xID + '.jpg';
                    }
                    document.write("<img src=" + path + picURL +  " WIDTH = 400><p><embed src=" + path + picURL + ".txt width=400></img>");
                    document.taxonSearch = ""; // reset search for clicking in tree
+                   var taxon = picURL.split('.')[0];
+                   clickOnFolder(taxon);      // set highlight
                 </script>
                </TD></TR></TABLE></div>
 
                <SCRIPT> // scroll page and picture  
-                 var taxon = picURL.split('.')[0];
-                 var n = getNumberOfShownTaxa (taxon);  
-                 var height = Math.max(0,40*n-600);
+                 var n = getNumberOfShownTaxa(taxon);  
+                 var height = Math.max(0,25*n-200);
                  document.write("<style> #pictxt {margin-top: " + height + "px;}</style>");
                  window.scrollTo(0,height+200);
                </SCRIPT>
