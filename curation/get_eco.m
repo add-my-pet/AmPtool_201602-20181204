@@ -3978,6 +3978,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'D'};
       reprod  = {'O'};
 
+    case 'Dicologlossa_cuneata'
+      climate = {'MB'};
+      ecozone = {'MAE','MAm'};
+      habitat = {'0jMp','jiMcd'};
+      embryo  = {'Mp'};
+      migrate = {'Mo'};
+      food    = {'bjPz','jiCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Microchirus_azevia'
+      climate = {'MB'};
+      ecozone = {'MAE','MAm'};
+      habitat = {'0jMp','jiMcd'};
+      embryo  = {'Mp'};
+      migrate = {'Mo'};
+      food    = {'bjPz','jiCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
     case 'Psetta_maxima'
       climate = {'MC'};
       ecozone = {'MAE'};
@@ -4554,6 +4574,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iMp'};
       embryo  = {'Mp'};
       migrate = {};
+      food    = {'bjPz','jiCi'};
+      gender  = {'Hsm'};
+      reprod  = {'O'};
+
+    case 'Pagellus_acarne'
+      climate = {'MB'};
+      ecozone = {'MAE','MAm'};
+      habitat = {'0iMp'};
+      embryo  = {'Mp'};
+      migrate = {'Mo'};
       food    = {'bjPz','jiCi'};
       gender  = {'Hsm'};
       reprod  = {'O'};

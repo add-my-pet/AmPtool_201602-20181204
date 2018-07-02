@@ -2836,6 +2836,20 @@ function links = get_link(taxon, open)
       id_EoL = '994496';
       id_fishbase = taxon_fish;
        
+    case 'Dicologlossa_cuneata'
+      id_CoL = '46405cfbe7ee513e110a4e0ae142818b';
+      id_WoRMS = '127154';
+      id_Taxo = '173137';        
+      id_EoL = '620340';
+      id_fishbase = taxon_fish;
+       
+    case 'Microchirus_azevia'
+      id_CoL = 'fb2dd4397942c6a317d6b334ca8a87d4';
+      id_WoRMS = '274299';
+      id_Taxo = '465748';        
+      id_EoL = '221509';
+      id_fishbase = taxon_fish;
+       
     case 'Psetta_maxima'
       id_CoL = '614b30fcca5c61b82a3d7b6cbad26210';
       id_WoRMS = '154473'; % unaccepted, to Scophthalmus maximus (Linnaeus, 1758)
@@ -3246,6 +3260,13 @@ function links = get_link(taxon, open)
       id_WoRMS = '127060';
       id_Taxo = '45317';        
       id_EoL = '223570';
+      id_fishbase = taxon_fish;
+       
+    case 'Pagellus_acarne'
+      id_CoL = '25a72fc08aff62715178570d51b0a750';
+      id_WoRMS = '127057';
+      id_Taxo = '182483';        
+      id_EoL = '223565';
       id_fishbase = taxon_fish;
        
     case 'Sparus_aurata'
