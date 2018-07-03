@@ -186,25 +186,6 @@ function prt_species_tree_taxa_js(taxa)
     fprintf(fid_tv, '  </div> <!-- end ClassDropdown -->\n');
     fprintf(fid_tv, '</div> <!-- end class -->\n');
     end
-
-    % phylum
-    if strcmp(taxa{i},'Animalia')
-    fprintf(fid_tv, '<div class="TreeSearch"> <!-- phylum -->\n');
-    fprintf(fid_tv, '  <input id="PhylumDropdownInput" class="TreeSearch_dropbtn" onclick="showDropdown(''PhylumDropdown'')" onkeyup="InputTreeSearch(''PhylumDropdown'')" \n');
-    fprintf(fid_tv, '    placeholder="Search for phylum.." type="text" title="Type part of name and click on list"></input>\n');
-    fprintf(fid_tv, '  <div id="PhylumDropdown" class="TreeSearch-content">\n');
-    fprintf(fid_tv, '    <ul id="PhylumDropdownSearchlist" class="TreeSearch">\n');
- 
-    list = list_taxa(taxa{i}, 7); % ordered list of all phyla
-    n = length(list);
-    for j = 1:n
-    fprintf(fid_tv,['      <li><a onclick="TreeSearch(''', list{j}, ''')">', list{j}, '</a></li>\n']);
-    end
-    
-    fprintf(fid_tv, '    </ul> <!-- end PhylumDropdownSearchList -->\n');
-    fprintf(fid_tv, '  </div> <!-- end PhylumDropdown -->\n');
-    fprintf(fid_tv, '</div> <!-- end phylum -->\n');
-    end
     fclose(fid_tv);
    
   end 
