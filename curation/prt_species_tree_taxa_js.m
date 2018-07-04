@@ -15,7 +15,7 @@ function prt_species_tree_taxa_js(taxa)
 %
 % Input:
 %
-% * taxa: optional cell string with taxa of the roots of the trees, default: {'Animalia','Actinopterygii','Tetrapoda','Aves','Mollusca'} 
+% * taxa: optional cell string with taxa of the roots of the trees, default: 'Animalia' 
 %
 % Output:
 % 
@@ -96,7 +96,7 @@ function prt_species_tree_taxa_js(taxa)
     fprintf(fid_tv, ['foldersTree.treeID = "', taxa{i}, '"\n']);
     fclose(fid_tv);
     
-    % write species_tree_taxa{i}_search.html, which is used by species_tree_taxa{i}.html for searching taxon, genus, family, order, class, phylum
+    % write species_tree_taxa{i}_search.html, which is used by species_tree_taxa{i}.html for searching taxon, genus, family, order, class
     
     fid_tv = fopen(['../../sys/species_tree_', taxa{i}, '_search.html'], 'w+'); % open file for writing, delete existing content
 
