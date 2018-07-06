@@ -1,6 +1,5 @@
 Gaviiformes
-Sphenisciformes
-Procellariiformes
+Austrodyptornithes
 Ciconiiformes
 Suliformes
 Pelecaniformes

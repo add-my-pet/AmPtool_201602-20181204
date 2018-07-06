@@ -29,7 +29,8 @@ prt_about;
 % ../species_list.html 
 % ../species_names.html 
 
-% ../sys/species_tree_*.js
+% ../sys/species_tree_Animalia.js
+% ../sys/species_tree_Animalia_search.html
 
 % ../img/about/*.png 
 % ../img/pars/*.png

@@ -8138,6 +8138,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Lama_glama_guanicoe'
+      climate = {'BWk','Cfa'};
+      ecozone = {'TN'};
+      habitat = {'0iTs','0iTg','0iTh'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Sus_scrofa'
       climate = {'Aw','Cfa','Cfb','Dfa','Dfb','Dwa','Dwb'};
       ecozone = {'THp','TPi'};
@@ -8378,6 +8388,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case {'Bos_primigenius_Angus','Bos_primigenius_Holstein','Bos_primigenius_Brahman'}
+      climate = {'B','C','D'};
+      ecozone = {'THp'};
+      habitat = {'0iTi','0iTs'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Bison_bonasus'
+      climate = {'Dfb'};
+      ecozone = {'THp'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Aepyceros_melampus'
       climate = {'Aw','BWh','BSh','Cwa','Cwb'};
       ecozone = {'TPa'};
@@ -8388,30 +8418,10 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
-    case 'Bos_primigenius_Angus'
-      climate = {'B','C','D'};
-      ecozone = {'THp'};
-      habitat = {'0iTi','0iTs'};
-      embryo  = {'Tv'};
-      migrate = {};
-      food    = {'bxM','xiHl'};
-      gender  = {'Dg'};
-      reprod  = {'O'};
-
-    case 'Bos_primigenius_Holstein'
-      climate = {'B','C','D'};
-      ecozone = {'THp'};
-      habitat = {'0iTi','0iTs'};
-      embryo  = {'Tv'};
-      migrate = {};
-      food    = {'bxM','xiHl'};
-      gender  = {'Dg'};
-      reprod  = {'O'};
-
-    case 'Bos_primigenius_Brahman'
-      climate = {'B','C','D'};
-      ecozone = {'THp'};
-      habitat = {'0iTi','0iTs'};
+    case 'Ovibos_moschatus'
+      climate = {'ET'};
+      ecozone = {'TH'};
+      habitat = {'0iTd','0iTht'};
       embryo  = {'Tv'};
       migrate = {};
       food    = {'bxM','xiHl'};
@@ -8421,16 +8431,6 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Rupicapra_rupicapra'
       climate = {'ET','Cfa'};
       ecozone = {'THp'};
-      habitat = {'0iTd','0iTht'};
-      embryo  = {'Tv'};
-      migrate = {};
-      food    = {'bxM','xiHl'};
-      gender  = {'Dg'};
-      reprod  = {'O'};
-
-    case 'Ovibos_moschatus'
-      climate = {'ET'};
-      ecozone = {'TH'};
       habitat = {'0iTd','0iTht'};
       embryo  = {'Tv'};
       migrate = {};

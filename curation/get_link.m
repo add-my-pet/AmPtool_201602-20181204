@@ -6032,6 +6032,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200115';
        
+    case 'Lama_glama_guanicoe'
+      id_CoL = '9f4d153285e23f9312eb0118d6e17197';
+      id_Taxo = '154238';        
+      id_EoL = '309017';
+      id_AnAge = taxon;
+      id_MSW3 = '14200120';
+       
     case 'Sus_scrofa'
       id_CoL = '7f9608b34955e65ca451e980dec66dba';
       id_Taxo = '67678';        
@@ -6218,13 +6225,6 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200328';
        
-    case 'Aepyceros_melampus'
-      id_CoL = '0747c465edaff4d5301bd9f9baab8e52';
-      id_Taxo = '68440';        
-      id_EoL = '308540';
-      id_AnAge = taxon;
-      id_MSW3 = '14200488';
-       
     case {'Bos_primigenius_Angus','Bos_primigenius_Holstein','Bos_primigenius_Brahman'}
       id_CoL = '40e81482006c210a43ef64609163278e';
       id_Taxo = '167484'; % unaccepted, to Bos taurus primigenius Bojanus, 1827        
@@ -6234,12 +6234,19 @@ function links = get_link(taxon, open)
       id_MSW3 = '14200690'; % unaccepted, to Bos taurus primigenius
       id_ADW = 'Bos_taurus'; 
       
-    case 'Rupicapra_rupicapra'
-      id_CoL = 'd25ccfd780ea763f039935faa9b1f3c7';
-      id_Taxo = '68532';        
-      id_EoL = '331073';
+    case 'Bison_bonasus'
+      id_CoL = '03dfb5c2bf3a870ac472f60a8f4f78e4';
+      id_Taxo = '68228';        
+      id_EoL = '328110';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200670'; 
+      
+    case 'Aepyceros_melampus'
+      id_CoL = '0747c465edaff4d5301bd9f9baab8e52';
+      id_Taxo = '68440';        
+      id_EoL = '308540';
       id_AnAge = taxon;
-      id_MSW3 = '14200687'; % present as Bos taurus
+      id_MSW3 = '14200488';
        
     case 'Ovibos_moschatus'
       id_CoL = 'e4475739e4b72bc21e5596c1e24de11e';
@@ -6247,6 +6254,13 @@ function links = get_link(taxon, open)
       id_EoL = '328656';
       id_AnAge = taxon;
       id_MSW3 = '14200813';
+       
+    case 'Rupicapra_rupicapra'
+      id_CoL = 'd25ccfd780ea763f039935faa9b1f3c7';
+      id_Taxo = '68532';        
+      id_EoL = '331073';
+      id_AnAge = taxon;
+      id_MSW3 = '14200687'; 
        
     case 'Rousettus_aegyptiacus'
       id_CoL = 'e34d7bd62bb6259fca64de38f894e5f0';
