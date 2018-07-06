@@ -1,4 +1,2 @@
-Cubozoa
-Hydrozoa
-Scyphozoa
 Anthozoa
+Medusozoa
