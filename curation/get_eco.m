@@ -8388,6 +8388,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Tragelaphus_strepsiceros'
+      climate = {'BWh','BSh','Cwa','Cwb'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTs','0iTa','0iTd'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case {'Bos_primigenius_Angus','Bos_primigenius_Holstein','Bos_primigenius_Brahman'}
       climate = {'B','C','D'};
       ecozone = {'THp'};
@@ -8402,6 +8412,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Dfb'};
       ecozone = {'THp'};
       habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Antidorcas_marsupialis'
+      climate = {'BWh','BWk'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTs','0iTa','0iTd'};
       embryo  = {'Tv'};
       migrate = {};
       food    = {'bxM','xiHl'};
@@ -8432,6 +8452,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'ET','Cfa'};
       ecozone = {'THp'};
       habitat = {'0iTd','0iTht'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Connochaetes_taurinus'
+      climate = {'BWh','BSh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTs','0iTa','0iTd'};
       embryo  = {'Tv'};
       migrate = {};
       food    = {'bxM','xiHl'};

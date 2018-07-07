@@ -6225,6 +6225,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200328';
        
+    case 'Tragelaphus_strepsiceros'
+      id_CoL = 'e3ccbb01c6f2880dd10a2fcdc0a9eb2e';
+      id_Taxo = '68207';        
+      id_EoL = '1038792';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200746'; 
+      
     case {'Bos_primigenius_Angus','Bos_primigenius_Holstein','Bos_primigenius_Brahman'}
       id_CoL = '40e81482006c210a43ef64609163278e';
       id_Taxo = '167484'; % unaccepted, to Bos taurus primigenius Bojanus, 1827        
@@ -6240,6 +6247,13 @@ function links = get_link(taxon, open)
       id_EoL = '328110';  
       id_AnAge = taxon; 
       id_MSW3 = '14200670'; 
+      
+    case 'Antidorcas_marsupialis'
+      id_CoL = '2945dfdb821ebe8582a3aefa2813654a';
+      id_Taxo = '68454';        
+      id_EoL = '24917556';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200530'; 
       
     case 'Aepyceros_melampus'
       id_CoL = '0747c465edaff4d5301bd9f9baab8e52';
@@ -6261,6 +6275,13 @@ function links = get_link(taxon, open)
       id_EoL = '331073';
       id_AnAge = taxon;
       id_MSW3 = '14200687'; 
+       
+    case 'Connochaetes_taurinus'
+      id_CoL = '6741e665d816f4619aa97359762d1e03';
+      id_Taxo = '68364';        
+      id_EoL = '4447134';
+      id_AnAge = taxon;
+      id_MSW3 = '14200510'; 
        
     case 'Rousettus_aegyptiacus'
       id_CoL = 'e34d7bd62bb6259fca64de38f894e5f0';
