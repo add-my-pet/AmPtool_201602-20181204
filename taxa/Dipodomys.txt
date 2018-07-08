@@ -3,3 +3,4 @@ Dipodomys_deserti
 Dipodomys_heermanni
 Dipodomys_nitratoides
 Dipodomys_spectabilis
+Dipodomys_stephensi

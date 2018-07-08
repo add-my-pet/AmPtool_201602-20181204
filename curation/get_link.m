@@ -6255,6 +6255,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon; 
       id_MSW3 = '14200530'; 
       
+    case 'Sylvicapra_grimmia'
+      id_CoL = 'a4860932d190e6276e086a14b9e015a8';
+      id_Taxo = '68307';        
+      id_EoL = '328711';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200921'; 
+      
     case 'Aepyceros_melampus'
       id_CoL = '0747c465edaff4d5301bd9f9baab8e52';
       id_Taxo = '68440';        
@@ -6702,6 +6709,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '12700118';
        
+    case 'Dipodomys_stephensi'
+      id_CoL = 'db5ba9f15a92403d21946ffa8f8d6274';
+      id_Taxo = '62070';        
+      id_EoL = '328118';
+      id_AnAge = ''; % not present 2018/07/08
+      id_MSW3 = '12700125';
+       
     case 'Perognathus_longimembris'
       id_CoL = '9c5c1e0297c6a797711ecfd761e75f78';
       id_Taxo = '62103';        
@@ -6751,6 +6765,13 @@ function links = get_link(taxon, open)
       id_EoL = '326520';
       id_AnAge = taxon;
       id_MSW3 = '13400050';
+       
+    case 'Atherurus_africanus'
+      id_CoL = '8cf6e4cbede6861cd0d73a224acfb859';
+      id_Taxo = '63375';        
+      id_EoL = '4458218';
+      id_AnAge = taxon;
+      id_MSW3 = '13400044';
        
     case 'Geocapromys_ingrahami'
       id_CoL = '0b4d83ff43e2fc31fb32d3c7ca7d1fb7';
