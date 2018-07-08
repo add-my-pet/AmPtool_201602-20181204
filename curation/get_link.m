@@ -6255,6 +6255,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon; 
       id_MSW3 = '14200530'; 
       
+    case 'Madoqua_kirkii'
+      id_CoL = '300da862f4519ed04580fa7cea9878c1';
+      id_Taxo = '68411';        
+      id_EoL = '311498';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200596'; 
+      
     case 'Sylvicapra_grimmia'
       id_CoL = 'a4860932d190e6276e086a14b9e015a8';
       id_Taxo = '68307';        
