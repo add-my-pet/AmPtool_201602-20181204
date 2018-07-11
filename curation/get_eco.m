@@ -8158,6 +8158,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Phacochoerus_aethiopicus'
+      climate = {'BWh','BSh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTd','0iTs','0iTi'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiO'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Pecari_tajacu'
+      climate = {'A','Cfa','Cfb','Cwa'};
+      ecozone = {'TN'};
+      habitat = {'0iTf','0iTh'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiO'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Monodon_monoceros'
       climate = {'ME'};
       ecozone = {'MN','MAN'};
@@ -8328,6 +8348,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Antilocapra_americana'
+      climate = {'BSk'};
+      ecozone = {'THn'};
+      habitat = {'0iTi','0iTs'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Giraffa_camelopardalis'
       climate = {'A','B','C'};
       ecozone = {'TPa'};
@@ -8358,13 +8388,33 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Muntiacus_reevesi'
+      climate = {'Cwa','Cfa'};
+      ecozone = {'THp'};
+      habitat = {'0iTf','0iTi'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Cervus_canadensis'
       climate = {'B','C','D'};
-      ecozone = {'TH'};
+      ecozone = {'THn'};
       habitat = {'0iTf','0iTi'};
       embryo  = {'Tv'};
       migrate = {'Ms'};
       food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Capreolus_capreolus'
+      climate = {'BSk','Cfb','Dfb','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'0iTf','0iTht'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl','xiHs'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
@@ -8382,6 +8432,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Dfc'};
       ecozone = {'TH'};
       habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Taurotragus_oryx'
+      climate = {'BWh','BSh','Cwa','Cwb'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTs','0iTa','0iTd'};
       embryo  = {'Tv'};
       migrate = {};
       food    = {'bxM','xiHl'};
@@ -8418,6 +8478,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Syncerus_caffer'
+      climate = {'Af','Am','BWk','BSk','Cwa','Cwb'};
+      ecozone = {'TPa'};
+      habitat = {'0iTf','0iTi'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Gazella_subgutturosa'
+      climate = {'BSk','BWk'};
+      ecozone = {'THp'};
+      habitat = {'0iTi','0iTs','0iTa','0iTd'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Antidorcas_marsupialis'
       climate = {'BWh','BWk'};
       ecozone = {'TPa'};
@@ -8448,6 +8528,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Kobus_kob'
+      climate = {'BSh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTg'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Aepyceros_melampus'
       climate = {'Aw','BWh','BSh','Cwa','Cwb'};
       ecozone = {'TPa'};
@@ -8468,10 +8558,60 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Capra_ibex'
+      climate = {'ET','Cfa'};
+      ecozone = {'THp'};
+      habitat = {'0iTd','0iTht'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Ovis_canadensis'
+      climate = {'BSk','BWk','BWh'};
+      ecozone = {'THn'};
+      habitat = {'0iTd','0iTh'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Capricornis_crispus'
+      climate = {'Cfa','Dfa','Dfb'};
+      ecozone = {'THp'};
+      habitat = {'0iTd','0iTht','0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Oreamnos_americanus'
+      climate = {'Dsc','Dfc'};
+      ecozone = {'THn'};
+      habitat = {'0iTd','0iTht'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Rupicapra_rupicapra'
       climate = {'ET','Cfa'};
       ecozone = {'THp'};
       habitat = {'0iTd','0iTht'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Hippotragus_niger'
+      climate = {'Aw','Cwa','Cwb'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTs','0iTh'};
       embryo  = {'Tv'};
       migrate = {};
       food    = {'bxM','xiHl'};
@@ -8590,6 +8730,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
 
     case 'Lynx_lynx'
       climate = {'BWk','Dfc','Dfd'};
+      ecozone = {'THp'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCvb','xiCvm'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Lynx_pardinus'
+      climate = {'BSk','Csa'};
       ecozone = {'THp'};
       habitat = {'0iTf'};
       embryo  = {'Tv'};

@@ -6046,6 +6046,20 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200054';
        
+    case 'Phacochoerus_aethiopicus'
+      id_CoL = 'af7556fe60cc2da044faa81bc16507a2';
+      id_Taxo = '67660';        
+      id_EoL = '328331';
+      id_AnAge = ''; % not present at 2018/07/11
+      id_MSW3 = '14200019';
+       
+    case 'Pecari_tajacu'
+      id_CoL = '594e1a3c780472d755737a6c14848649';
+      id_Taxo = '169209';        
+      id_EoL = '1037712';
+      id_AnAge = taxon;
+      id_MSW3 = '14200078';
+       
     case 'Monodon_monoceros'
       id_CoL = 'ac12a283ac3c3ecb7c86d02da8dfaacc';
       id_WoRMS = '137116';
@@ -6182,12 +6196,19 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200106';
        
-    case 'Giraffa_camelopardalis'
-      id_CoL = '36ea034537a75e8ac153b4089c6d5646';
+    case 'Antilocapra_americana'
+      id_CoL = '1d7c1536f14b546ab7dcd045a719d4f2';
       id_Taxo = '68119';        
-      id_EoL = '308378';
+      id_EoL = '328661';
       id_AnAge = taxon;
       id_MSW3 = '14200476';
+       
+    case 'Giraffa_camelopardalis'
+      id_CoL = '36ea034537a75e8ac153b4089c6d5646';
+      id_Taxo = '68131';        
+      id_EoL = '308378';
+      id_AnAge = taxon;
+      id_MSW3 = '14200468';
        
     case 'Okapia_johnstoni'
       id_CoL = '6e53878317a74051cf2698e02fd631b5';
@@ -6203,6 +6224,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200278';
        
+    case 'Muntiacus_reevesi'
+      id_CoL = '259c0fb7f774eba6e8f2991b80fa0505';
+      id_Taxo = '67908'; 
+      id_EoL = '308477';
+      id_AnAge = taxon; 
+      id_MSW3 = '14200419'; 
+      
     case 'Cervus_canadensis'
       id_CoL = 'd116839109ff1e816c69b6ab69deb181';
       id_Taxo = '67943'; % unaccepeted, to Cervus elaphus canadensis Erxleben, 1777        
@@ -6211,12 +6239,19 @@ function links = get_link(taxon, open)
       id_MSW3 = '14200358'; % present as Cervus elaphus canadensis
       id_ADW = 'Cervus_elaphus'; 
       
+    case 'Capreolus_capreolus'
+      id_CoL = 'a68dfad054452fb4f0d890e296af9e2f';
+      id_Taxo = '68090';    
+      id_EoL = '308479';
+      id_AnAge = taxon;
+      id_MSW3 = '14200217';
+       
     case 'Rangifer_tarandus'
       id_CoL = '26f5c11255f895a632fd2c2df42e0f60';
       id_Taxo = '68031';        
       id_EoL = '328653';
       id_AnAge = taxon;
-      id_MSW3 = '';
+      id_MSW3 = '14200328';
        
     case 'Alces_alces'
       id_CoL = 'Alces_alces';
@@ -6225,6 +6260,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200328';
        
+    case 'Taurotragus_oryx'
+      id_CoL = 'e72425f86fc160fc77512d5156ca9e5c';
+      id_Taxo = '68200';        
+      id_EoL = '52578401';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200717'; 
+      
     case 'Tragelaphus_strepsiceros'
       id_CoL = 'e3ccbb01c6f2880dd10a2fcdc0a9eb2e';
       id_Taxo = '68207';        
@@ -6248,6 +6290,20 @@ function links = get_link(taxon, open)
       id_AnAge = taxon; 
       id_MSW3 = '14200670'; 
       
+    case 'Syncerus_caffer'
+      id_CoL = 'ac68b7fcf117c15f36c8ae17ca50b261';
+      id_Taxo = '68279';        
+      id_EoL = '328707';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200707'; 
+      
+    case 'Gazella_subgutturosa'
+      id_CoL = 'd93ff923ac333b4c53b1d789faf17564';
+      id_Taxo = '1596';        
+      id_EoL = '129520';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200583'; 
+      
     case 'Antidorcas_marsupialis'
       id_CoL = '2945dfdb821ebe8582a3aefa2813654a';
       id_Taxo = '68454';        
@@ -6269,6 +6325,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon; 
       id_MSW3 = '14200921'; 
       
+    case 'Kobus_kob'
+      id_CoL = '7ed0a16eaa2327bf0a7b4fecbdb84428';
+      id_Taxo = '68319';        
+      id_EoL = '328731';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200975'; 
+      
     case 'Aepyceros_melampus'
       id_CoL = '0747c465edaff4d5301bd9f9baab8e52';
       id_Taxo = '68440';        
@@ -6283,12 +6346,47 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200813';
        
+    case 'Capra_ibex'
+      id_CoL = 'eb202c4a92a1e7edc6521f876ea20dd2';
+      id_Taxo = '68570';        
+      id_EoL = '328692';
+      id_AnAge = taxon;
+      id_MSW3 = '14200783'; 
+       
+    case 'Ovis_canadensis'
+      id_CoL = '889b5d59b22fcf283bbfc85b2fe32430';
+      id_Taxo = '68604';   
+      id_EoL = '328658';
+      id_AnAge = taxon;
+      id_MSW3 = '14200783'; 
+       
+    case 'Capricornis_crispus'
+      id_CoL = '68d67aa10ab89ee9fb1bfa990a697965';
+      id_Taxo = '68518';   
+      id_EoL = '1038800';
+      id_AnAge = taxon;
+      id_MSW3 = '14200789'; 
+       
+    case 'Oreamnos_americanus'
+      id_CoL = 'f519c69b4ce60807c5fed75c614aeb8a';
+      id_Taxo = '68526';        
+      id_EoL = '42402';
+      id_AnAge = taxon;
+      id_MSW3 = '14200811'; 
+       
     case 'Rupicapra_rupicapra'
       id_CoL = 'd25ccfd780ea763f039935faa9b1f3c7';
       id_Taxo = '68532';        
       id_EoL = '331073';
       id_AnAge = taxon;
       id_MSW3 = '14200687'; 
+       
+    case 'Hippotragus_niger'
+      id_CoL = '88d4521ac9cb966ab72ec0ae338342b5';
+      id_Taxo = '68344';        
+      id_EoL = '331077';
+      id_AnAge = taxon;
+      id_MSW3 = '14200947'; 
        
     case 'Connochaetes_taurinus'
       id_CoL = '6741e665d816f4619aa97359762d1e03';
@@ -6428,6 +6526,13 @@ function links = get_link(taxon, open)
       id_CoL = '89f97dcbcfdbcaad43c3645951bbcaa5';
       id_Taxo = '168586';        
       id_EoL = '328603';
+      id_AnAge = taxon;
+      id_MSW3 = '14000156';
+       
+    case 'Lynx_pardinus'
+      id_CoL = '02948d4498549b8011f6185079aab076';
+      id_Taxo = '107145';        
+      id_EoL = '347432';
       id_AnAge = taxon;
       id_MSW3 = '14000156';
        
