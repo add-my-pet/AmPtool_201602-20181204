@@ -6311,6 +6311,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon; 
       id_MSW3 = '14200530'; 
       
+    case 'Saiga_tatarica'
+      id_CoL = 'fd74740449bbec04293ca517b20744fe';
+      id_Taxo = '68501';        
+      id_EoL = '103528';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200666'; 
+      
     case 'Madoqua_kirkii'
       id_CoL = '300da862f4519ed04580fa7cea9878c1';
       id_Taxo = '68411';        

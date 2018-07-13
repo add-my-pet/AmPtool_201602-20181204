@@ -8508,6 +8508,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Saiga_tatarica'
+      climate = {'BWk','BSk'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTs','0iTa','0iTd'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Madoqua_kirkii'
       climate = {'BWh','BSh'};
       ecozone = {'TPa'};

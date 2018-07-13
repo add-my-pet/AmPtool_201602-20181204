@@ -34,7 +34,7 @@ function [var units label] = read_stat(entries, varargin)
   
   persistent allStat
   
-  if length(allStat) == 0
+  if ~exist('allStat','var') || length(allStat) == 0
     load('allStat')        % get all parameters and statistics in structure allStat
   end
   
