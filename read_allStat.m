@@ -32,8 +32,13 @@ function [var, entries, units, label] = read_allStat(varargin)
 %% Example of use
 % complete_mre = read_allStat('COMPLETE', 'MRE'); 
   
-  load('allStat')        % get all parameters and statistics in structure allStat
-  entries = fieldnames(allStat); n = length(entries); 
+  persistent allStat
+  
+  if length('allStat') == 0
+    load('allStat')        % get all parameters and statistics in structure allStat
+  end
+  
+  entries = fieldnames(allStat); n = length(entries);
   if iscell(varargin{1})    
     varargin = varargin{:}; % unpack cell string
   end

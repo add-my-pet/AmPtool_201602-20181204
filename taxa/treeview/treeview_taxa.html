@@ -16,8 +16,9 @@
 
 <HEAD>
   <title>Species Tree Taxon</title>
- 
-  <STYLE>
+  
+  <style>
+   
     /*                                                          */
     /* Styles for the tree.                                     */
     /*                                                          */
@@ -110,12 +111,14 @@
       border: 1px solid #ddd; /* Add a grey border */
       margin-bottom: 12px; /* Add some space below the input */
     }
-  </STYLE>
+
+  </style> 
 
   <SCRIPT src="ua.js"></SCRIPT> <!-- browser detection -->
   <SCRIPT src="ftiens4.js"></SCRIPT> <!-- infrastructure for TreeView -->
   <SCRIPT src="treeview_taxa.js"></SCRIPT> <!-- tree definition -->
   <script src="w3data.js"></script> <!-- inclusion of htlm snippets -->
+  <script src="w3color.js"></script> <!-- conversion from rgb to hex -->
   <script src="dropdown.js"></script> <!-- dropbox -->
 
   <SCRIPT>
@@ -234,7 +237,9 @@
              </TD>
              <TD bgcolor="white" valign="top">
 
-               <div id="pictxt"><TABLE><TR><TD>
+               <link rel="stylesheet" type="text/css" href="treeview_taxa.css"></link>
+<div id="pictxt"><TABLE><TR><TD>
+                 <img id="pic" src="" width = 400><p><embed id="txt" src="" width=400></img>
                  <script> // show picture + legend
                    var path = "https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/"
                    if (document.taxonSearch.length == 0) { // result of clicking in tree
@@ -246,8 +251,9 @@
                    if (picURL.length == 0){               
                      picURL = foldersTree.xID + '.jpg';
                    }
-                   document.write("<img src=" + path + picURL +  " WIDTH = 400><p><embed src=" + path + picURL + ".txt width=400></img>");
-                   document.taxonSearch = ""; // reset search for clicking in tree
+                   document.getElementById('pic').src = path + picURL;
+                   document.getElementById('txt').src = path + picURL + '.txt';
+                   document.taxonSearch = ""; // empty search string for further clicking on tree
                    var taxon = picURL.split('.')[0];
                    clickOnFolder(taxon);      // set highlight
                 </script>
@@ -256,9 +262,10 @@
                <SCRIPT> // scroll page and picture  
                  var n = getNumberOfShownTaxa(taxon);  
                  var height = Math.max(0,25*n-200);
-                 document.write("<style> #pictxt {margin-top: " + height + "px;}</style>");
+                 document.getElementById('pictxt').style.marginTop = height + 'px';
                  window.scrollTo(0,height+200);
                </SCRIPT>
+               
 
              </TD>
            </TR>

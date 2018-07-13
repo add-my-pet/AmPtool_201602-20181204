@@ -32,7 +32,12 @@ function [var units label] = read_stat(entries, varargin)
 %% Example of use
 % complete_mre = read_stat(select('Aves'), 'COMPLETE', 'MRE'); 
   
-  load('allStat')        % get all parameters and statistics in structure allStat
+  persistent allStat
+  
+  if length(allStat) == 0
+    load('allStat')        % get all parameters and statistics in structure allStat
+  end
+  
   n = length(entries); 
   if iscell(varargin{1})    
     varargin = varargin{:}; % unpack cell string
