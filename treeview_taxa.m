@@ -135,7 +135,7 @@ function treeview_taxa (taxon, var, info)
         n_leaves = length(var);
         color_node = max(0,(round(1e3 * color_lava(var)) - 1));
         for i = 1:n_leaves
-          fprintf(fid_tv, ['#', taxa{i}, '{background: rgb(', num2str(color_node(i,1)), ',' num2str(color_node(i,2)), ',' num2str(color_node(i,3)), ')}\n']);
+          fprintf(fid_tv, ['#', taxa{i}, '{color: #BFBFBF; background: rgb(', num2str(color_node(i,1)), ',' num2str(color_node(i,2)), ',' num2str(color_node(i,3)), ')}\n']);
         end
       else % background color gradients on all nodes
         pedigree_taxon = pedigree(taxon);
@@ -146,27 +146,29 @@ function treeview_taxa (taxon, var, info)
           sel = select_01(taxon, node); var_node = sort(var(sel)); n_var_node = size(var_node,1);
           color_node = max(0,(round(1e3 * color_lava(var_node)) - 1)); pos_node = round(100*(1:n_var_node)/n_var_node); 
           if n_var_node == 1
-            color_node = color_node([1;1],:); pos_node = [0; 100]; n_var_node = 2;
-          elseif n_var_node == 2
-            color_node = color_node([1;1;2;2],:); pos_node = [0;50;51;100]; n_var_node = 4;
-          elseif n_var_node == 3
-            color_node = color_node([1;1;2;2;3;3],:); pos_node = [0;33;34;66;67;100]; n_var_node = 6;
-          elseif n_var_node == 4
-            color_node = color_node([1;1;2;2;3;3;4;4],:); pos_node = [0;25;26;50;51;75;76;100]; n_var_node = 8;
-          elseif n_var_node > 10 % find pos_node nearest to 10%,.,.90%
-            index = ones(11,1); index(11) = n_var_node; % initiate index
-            for i = 1:9
-              [s in] = sort((pos_node - i*10).^2); index(1+i) = in(1);
+            fprintf(fid_tv, ['color: #BFBFBF; background: rgb(', num2str(color_node(1,1)), ',' num2str(color_node(1,2)), ',' num2str(color_node(1,3)), ')}\n']);
+          else
+            if n_var_node == 2
+              color_node = color_node([1;1;2;2],:); pos_node = [0;50;51;100]; n_var_node = 4;
+            elseif n_var_node == 3
+              color_node = color_node([1;1;2;2;3;3],:); pos_node = [0;33;34;66;67;100]; n_var_node = 6;
+            elseif n_var_node == 4
+              color_node = color_node([1;1;2;2;3;3;4;4],:); pos_node = [0;25;26;50;51;75;76;100]; n_var_node = 8;
+            elseif n_var_node > 10 % find pos_node nearest to 10%,.,.90%
+              index = ones(11,1); index(11) = n_var_node; % initiate index
+              for i = 1:9
+                [s in] = sort((pos_node - i*10).^2); index(1+i) = in(1);
+              end
+              color_node = color_node(index,:); pos_node = pos_node(index); n_var_node = 11; % select in color_node and pos_node
             end
-            color_node = color_node(index,:); pos_node = pos_node(index); n_var_node = 11; % select in color_node and pos_node
+            txt = ''; % initiate txt for color gradient
+            for i = 1:n_var_node
+              txt = [txt, ' rgb(', num2str(color_node(i,1)), ',' num2str(color_node(i,2)), ',' num2str(color_node(i,3)), ') ', num2str(pos_node(i)), '%%,'];
+            end
+            txt(end) = []; % remove last ,
+            fprintf(fid_tv, ['  color: #BFBFBF; background: linear-gradient(to right,', txt, ');\n']);
+            fprintf(fid_tv, '}\n');
           end
-          txt = ''; % initiate txt for color gradient
-          for i = 1:n_var_node
-            txt = [txt, ' rgb(', num2str(color_node(i,1)), ',' num2str(color_node(i,2)), ',' num2str(color_node(i,3)), ') ', num2str(pos_node(i)), '%%,'];
-          end
-          txt(end) = []; % remove last ,
-          fprintf(fid_tv, ['  background: linear-gradient(to right,', txt, ');\n']);
-          fprintf(fid_tv, '}\n');
         end
       end
     end

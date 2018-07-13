@@ -1,278 +1,131 @@
 p {margin: 0px;}
 
-#Echinodermata{
-  background: linear-gradient(to right, rgb(0,0,0) 4%, rgb(233,0,999) 11%, rgb(999,0,832) 19%, rgb(999,0,138) 30%, rgb(999,0,38) 41%, rgb(999,173,173) 48%, rgb(999,538,538) 59%, rgb(999,884,884) 70%, rgb(999,956,956) 81%, rgb(999,990,990) 89%, rgb(999,999,999) 100%);
-}
-#Asterozoa{
-  background: linear-gradient(to right, rgb(0,0,0) 7%, rgb(0,0,0) 7%, rgb(974,0,999) 21%, rgb(999,0,38) 29%, rgb(999,173,173) 43%, rgb(999,441,441) 50%, rgb(999,441,441) 57%, rgb(999,774,774) 71%, rgb(999,805,805) 79%, rgb(999,997,997) 93%, rgb(999,999,999) 100%);
-}
-#Ophiuroidea{
-  background: linear-gradient(to right, rgb(999,441,441) 0%, rgb(999,441,441) 33%, rgb(999,441,441) 34%, rgb(999,441,441) 66%, rgb(999,960,960) 67%, rgb(999,960,960) 100%);
-}
-#Ophiurida{
-  background: linear-gradient(to right, rgb(999,441,441) 0%, rgb(999,441,441) 33%, rgb(999,441,441) 34%, rgb(999,441,441) 66%, rgb(999,960,960) 67%, rgb(999,960,960) 100%);
-}
-#Ophiuridae{
-  background: linear-gradient(to right, rgb(999,441,441) 0%, rgb(999,441,441) 50%, rgb(999,441,441) 51%, rgb(999,441,441) 100%);
-}
-#Ophiura{
-  background: linear-gradient(to right, rgb(999,441,441) 0%, rgb(999,441,441) 50%, rgb(999,441,441) 51%, rgb(999,441,441) 100%);
-}
-#Ophiura_ophiura{
-  background: linear-gradient(to right, rgb(999,441,441) 0%, rgb(999,441,441) 100%);
-}
-#Ophiura_albida{
-  background: linear-gradient(to right, rgb(999,441,441) 0%, rgb(999,441,441) 100%);
-}
-#Amphiuridae{
-  background: linear-gradient(to right, rgb(999,960,960) 0%, rgb(999,960,960) 100%);
-}
-#Amphiura{
-  background: linear-gradient(to right, rgb(999,960,960) 0%, rgb(999,960,960) 100%);
-}
-#Amphiura_filiformis{
-  background: linear-gradient(to right, rgb(999,960,960) 0%, rgb(999,960,960) 100%);
-}
-#Asteroidea{
-  background: linear-gradient(to right, rgb(0,0,0) 9%, rgb(0,0,0) 9%, rgb(233,0,999) 18%, rgb(974,0,999) 27%, rgb(999,0,38) 36%, rgb(999,163,163) 45%, rgb(999,538,538) 64%, rgb(999,774,774) 73%, rgb(999,805,805) 82%, rgb(999,997,997) 91%, rgb(999,999,999) 100%);
-}
-#Forcipulatida{
-  background: linear-gradient(to right, rgb(999,163,163) 0%, rgb(999,163,163) 50%, rgb(999,997,997) 51%, rgb(999,997,997) 100%);
-}
-#Asteriidae{
-  background: linear-gradient(to right, rgb(999,163,163) 0%, rgb(999,163,163) 50%, rgb(999,997,997) 51%, rgb(999,997,997) 100%);
-}
-#Asterias{
-  background: linear-gradient(to right, rgb(999,997,997) 0%, rgb(999,997,997) 100%);
-}
-#Asterias_rubens{
-  background: linear-gradient(to right, rgb(999,997,997) 0%, rgb(999,997,997) 100%);
-}
-#Pisaster{
-  background: linear-gradient(to right, rgb(999,163,163) 0%, rgb(999,163,163) 100%);
-}
-#Pisaster_ochraceus{
-  background: linear-gradient(to right, rgb(999,163,163) 0%, rgb(999,163,163) 100%);
-}
-#Paxillosida{
-  background: linear-gradient(to right, rgb(0,0,0) 0%, rgb(0,0,0) 33%, rgb(974,0,999) 34%, rgb(974,0,999) 66%, rgb(999,173,173) 67%, rgb(999,173,173) 100%);
-}
-#Astropectinidae{
-  background: linear-gradient(to right, rgb(0,0,0) 0%, rgb(0,0,0) 50%, rgb(974,0,999) 51%, rgb(974,0,999) 100%);
-}
-#Astropecten{
-  background: linear-gradient(to right, rgb(0,0,0) 0%, rgb(0,0,0) 50%, rgb(974,0,999) 51%, rgb(974,0,999) 100%);
-}
-#Astropecten_aranciacus{
-  background: linear-gradient(to right, rgb(0,0,0) 0%, rgb(0,0,0) 100%);
-}
-#Astropecten_irregularis{
-  background: linear-gradient(to right, rgb(974,0,999) 0%, rgb(974,0,999) 100%);
-}
-#Luidiidae{
-  background: linear-gradient(to right, rgb(999,173,173) 0%, rgb(999,173,173) 100%);
-}
-#Luidia{
-  background: linear-gradient(to right, rgb(999,173,173) 0%, rgb(999,173,173) 100%);
-}
-#Luidia_sarsii{
-  background: linear-gradient(to right, rgb(999,173,173) 0%, rgb(999,173,173) 100%);
-}
-#Valvatida{
-  background: linear-gradient(to right, rgb(233,0,999) 17%, rgb(999,0,38) 33%, rgb(999,538,538) 50%, rgb(999,774,774) 67%, rgb(999,805,805) 83%, rgb(999,999,999) 100%);
-}
-#Archasteridae{
-  background: linear-gradient(to right, rgb(999,774,774) 0%, rgb(999,774,774) 100%);
-}
-#Archaster{
-  background: linear-gradient(to right, rgb(999,774,774) 0%, rgb(999,774,774) 100%);
-}
-#Archaster_typicus{
-  background: linear-gradient(to right, rgb(999,774,774) 0%, rgb(999,774,774) 100%);
-}
-#Acanthasteridae{
-  background: linear-gradient(to right, rgb(233,0,999) 0%, rgb(233,0,999) 100%);
-}
-#Acanthaster{
-  background: linear-gradient(to right, rgb(233,0,999) 0%, rgb(233,0,999) 100%);
-}
-#Acanthaster_planci{
-  background: linear-gradient(to right, rgb(233,0,999) 0%, rgb(233,0,999) 100%);
-}
-#Oreasteridae{
-  background: linear-gradient(to right, rgb(999,805,805) 0%, rgb(999,805,805) 100%);
-}
-#Protoreaster{
-  background: linear-gradient(to right, rgb(999,805,805) 0%, rgb(999,805,805) 100%);
-}
-#Protoreaster_nodosus{
-  background: linear-gradient(to right, rgb(999,805,805) 0%, rgb(999,805,805) 100%);
-}
-#Solasteridae{
-  background: linear-gradient(to right, rgb(999,999,999) 0%, rgb(999,999,999) 100%);
-}
-#Crossaster{
-  background: linear-gradient(to right, rgb(999,999,999) 0%, rgb(999,999,999) 100%);
-}
-#Crossaster_papposus{
-  background: linear-gradient(to right, rgb(999,999,999) 0%, rgb(999,999,999) 100%);
-}
-#Asterinidae{
-  background: linear-gradient(to right, rgb(999,538,538) 0%, rgb(999,538,538) 100%);
-}
-#Asterina{
-  background: linear-gradient(to right, rgb(999,538,538) 0%, rgb(999,538,538) 100%);
-}
-#Asterina_gibbosa{
-  background: linear-gradient(to right, rgb(999,538,538) 0%, rgb(999,538,538) 100%);
-}
-#Odontasteridae{
-  background: linear-gradient(to right, rgb(999,0,38) 0%, rgb(999,0,38) 100%);
-}
-#Odontaster{
-  background: linear-gradient(to right, rgb(999,0,38) 0%, rgb(999,0,38) 100%);
-}
-#Odontaster_validus{
-  background: linear-gradient(to right, rgb(999,0,38) 0%, rgb(999,0,38) 100%);
-}
-#Echinozoa{
-  background: linear-gradient(to right, rgb(0,0,930) 8%, rgb(0,0,930) 8%, rgb(999,0,661) 23%, rgb(999,0,279) 31%, rgb(999,0,138) 38%, rgb(999,0,123) 46%, rgb(999,884,884) 62%, rgb(999,912,912) 69%, rgb(999,925,925) 77%, rgb(999,990,990) 92%, rgb(999,994,994) 100%);
-}
-#Echinoidea{
-  background: linear-gradient(to right, rgb(0,0,930) 9%, rgb(0,0,930) 9%, rgb(999,0,832) 18%, rgb(999,0,661) 27%, rgb(999,0,279) 36%, rgb(999,0,138) 45%, rgb(999,0,59) 64%, rgb(999,884,884) 73%, rgb(999,956,956) 82%, rgb(999,990,990) 91%, rgb(999,994,994) 100%);
-}
-#Euechinoidea{
-  background: linear-gradient(to right, rgb(0,0,930) 9%, rgb(0,0,930) 9%, rgb(999,0,832) 18%, rgb(999,0,661) 27%, rgb(999,0,279) 36%, rgb(999,0,138) 45%, rgb(999,0,59) 64%, rgb(999,884,884) 73%, rgb(999,956,956) 82%, rgb(999,990,990) 91%, rgb(999,994,994) 100%);
-}
-#Carinacea{
-  background: linear-gradient(to right, rgb(0,0,930) 11%, rgb(999,0,832) 22%, rgb(999,0,661) 33%, rgb(999,0,279) 44%, rgb(999,0,138) 56%, rgb(999,0,59) 67%, rgb(999,884,884) 78%, rgb(999,956,956) 89%, rgb(999,990,990) 100%);
-}
-#Echinacea{
-  background: linear-gradient(to right, rgb(0,0,930) 11%, rgb(999,0,832) 22%, rgb(999,0,661) 33%, rgb(999,0,279) 44%, rgb(999,0,138) 56%, rgb(999,0,59) 67%, rgb(999,884,884) 78%, rgb(999,956,956) 89%, rgb(999,990,990) 100%);
-}
-#Camarodonta{
-  background: linear-gradient(to right, rgb(0,0,930) 11%, rgb(999,0,832) 22%, rgb(999,0,661) 33%, rgb(999,0,279) 44%, rgb(999,0,138) 56%, rgb(999,0,59) 67%, rgb(999,884,884) 78%, rgb(999,956,956) 89%, rgb(999,990,990) 100%);
-}
-#Echinidae{
-  background: linear-gradient(to right, rgb(999,0,832) 0%, rgb(999,0,832) 33%, rgb(999,0,661) 34%, rgb(999,0,661) 66%, rgb(999,956,956) 67%, rgb(999,956,956) 100%);
-}
-#Echinus{
-  background: linear-gradient(to right, rgb(999,956,956) 0%, rgb(999,956,956) 100%);
-}
-#Echinus_esculentus{
-  background: linear-gradient(to right, rgb(999,956,956) 0%, rgb(999,956,956) 100%);
-}
-#Gracilechinus{
-  background: linear-gradient(to right, rgb(999,0,661) 0%, rgb(999,0,661) 100%);
-}
-#Gracilechinus_affinis{
-  background: linear-gradient(to right, rgb(999,0,661) 0%, rgb(999,0,661) 100%);
-}
-#Sterechinus{
-  background: linear-gradient(to right, rgb(999,0,832) 0%, rgb(999,0,832) 100%);
-}
-#Sterechinus_neumayeri{
-  background: linear-gradient(to right, rgb(999,0,832) 0%, rgb(999,0,832) 100%);
-}
-#Odontophora{
-  background: linear-gradient(to right, rgb(999,0,279) 0%, rgb(999,0,279) 25%, rgb(999,0,138) 26%, rgb(999,0,138) 50%, rgb(999,0,59) 51%, rgb(999,0,59) 75%, rgb(999,990,990) 76%, rgb(999,990,990) 100%);
-}
-#Strongylocentrotidae{
-  background: linear-gradient(to right, rgb(999,0,279) 0%, rgb(999,0,279) 33%, rgb(999,0,138) 34%, rgb(999,0,138) 66%, rgb(999,0,59) 67%, rgb(999,0,59) 100%);
-}
-#Mesocentrotus{
-  background: linear-gradient(to right, rgb(999,0,138) 0%, rgb(999,0,138) 100%);
-}
-#Mesocentrotus_franciscanus{
-  background: linear-gradient(to right, rgb(999,0,138) 0%, rgb(999,0,138) 100%);
-}
-#Strongylocentrotus{
-  background: linear-gradient(to right, rgb(999,0,279) 0%, rgb(999,0,279) 50%, rgb(999,0,59) 51%, rgb(999,0,59) 100%);
-}
-#Strongylocentrotus_purpuratus{
-  background: linear-gradient(to right, rgb(999,0,279) 0%, rgb(999,0,279) 100%);
-}
-#Strongylocentrotus_droebachiensis{
-  background: linear-gradient(to right, rgb(999,0,59) 0%, rgb(999,0,59) 100%);
-}
-#Toxopneustidae{
-  background: linear-gradient(to right, rgb(999,990,990) 0%, rgb(999,990,990) 100%);
-}
-#Lytechinus{
-  background: linear-gradient(to right, rgb(999,990,990) 0%, rgb(999,990,990) 100%);
-}
-#Lytechinus_variegatus{
-  background: linear-gradient(to right, rgb(999,990,990) 0%, rgb(999,990,990) 100%);
-}
-#Parechinidae{
-  background: linear-gradient(to right, rgb(0,0,930) 0%, rgb(0,0,930) 50%, rgb(999,884,884) 51%, rgb(999,884,884) 100%);
-}
-#Paracentrotus{
-  background: linear-gradient(to right, rgb(0,0,930) 0%, rgb(0,0,930) 100%);
-}
-#Paracentrotus_lividus{
-  background: linear-gradient(to right, rgb(0,0,930) 0%, rgb(0,0,930) 100%);
-}
-#Psammechinus{
-  background: linear-gradient(to right, rgb(999,884,884) 0%, rgb(999,884,884) 100%);
-}
-#Psammechinus_miliaris{
-  background: linear-gradient(to right, rgb(999,884,884) 0%, rgb(999,884,884) 100%);
-}
-#Irregularia{
-  background: linear-gradient(to right, rgb(999,0,123) 0%, rgb(999,0,123) 50%, rgb(999,994,994) 51%, rgb(999,994,994) 100%);
-}
-#Atelostomata{
-  background: linear-gradient(to right, rgb(999,994,994) 0%, rgb(999,994,994) 100%);
-}
-#Spatangoida{
-  background: linear-gradient(to right, rgb(999,994,994) 0%, rgb(999,994,994) 100%);
-}
-#Loveniidae{
-  background: linear-gradient(to right, rgb(999,994,994) 0%, rgb(999,994,994) 100%);
-}
-#Echinocardium{
-  background: linear-gradient(to right, rgb(999,994,994) 0%, rgb(999,994,994) 100%);
-}
-#Echinocardium_cordatum{
-  background: linear-gradient(to right, rgb(999,994,994) 0%, rgb(999,994,994) 100%);
-}
-#Neognathostomata{
-  background: linear-gradient(to right, rgb(999,0,123) 0%, rgb(999,0,123) 100%);
-}
-#Clypeasteroida{
-  background: linear-gradient(to right, rgb(999,0,123) 0%, rgb(999,0,123) 100%);
-}
-#Clypeasteridae{
-  background: linear-gradient(to right, rgb(999,0,123) 0%, rgb(999,0,123) 100%);
-}
-#Clypeaster{
-  background: linear-gradient(to right, rgb(999,0,123) 0%, rgb(999,0,123) 100%);
-}
-#Clypeaster_subdepressus{
-  background: linear-gradient(to right, rgb(999,0,123) 0%, rgb(999,0,123) 100%);
-}
-#Holothuroidea{
-  background: linear-gradient(to right, rgb(999,912,912) 0%, rgb(999,912,912) 50%, rgb(999,925,925) 51%, rgb(999,925,925) 100%);
-}
-#Aspidochirotida{
-  background: linear-gradient(to right, rgb(999,912,912) 0%, rgb(999,912,912) 50%, rgb(999,925,925) 51%, rgb(999,925,925) 100%);
-}
-#Holothuriidae{
-  background: linear-gradient(to right, rgb(999,912,912) 0%, rgb(999,912,912) 100%);
-}
-#Holothuria{
-  background: linear-gradient(to right, rgb(999,912,912) 0%, rgb(999,912,912) 100%);
-}
-#Holothuria_scabra{
-  background: linear-gradient(to right, rgb(999,912,912) 0%, rgb(999,912,912) 100%);
-}
-#Stichopodidae{
-  background: linear-gradient(to right, rgb(999,925,925) 0%, rgb(999,925,925) 100%);
-}
-#Stichopus{
-  background: linear-gradient(to right, rgb(999,925,925) 0%, rgb(999,925,925) 100%);
-}
-#Stichopus_vastus{
-  background: linear-gradient(to right, rgb(999,925,925) 0%, rgb(999,925,925) 100%);
-}
+#Bovidae{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(0,0,0) 5%, rgb(955,0,999) 9%, rgb(999,0,269) 18%, rgb(999,0,46) 32%, rgb(999,241,241) 41%, rgb(999,294,294) 50%, rgb(999,438,438) 59%, rgb(999,591,591) 68%, rgb(999,705,705) 82%, rgb(999,799,799) 91%, rgb(999,999,999) 100%);
+}
+#Boodontia{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(999,99,99) 14%, rgb(999,438,438) 29%, rgb(999,591,591) 43%, rgb(999,705,705) 57%, rgb(999,799,799) 71%, rgb(999,897,897) 86%, rgb(999,999,999) 100%);
+}
+#Tragelaphini{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(999,99,99) 0%, rgb(999,99,99) 50%, rgb(999,591,591) 51%, rgb(999,591,591) 100%);
+}
+#Taurotragus{
+color: #BFBFBF; background: rgb(999,99,99)}
+#Taurotragus_oryx{
+color: #BFBFBF; background: rgb(999,99,99)}
+#Tragelaphus{
+color: #BFBFBF; background: rgb(999,591,591)}
+#Tragelaphus_strepsiceros{
+color: #BFBFBF; background: rgb(999,591,591)}
+#Bovini{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(999,438,438) 20%, rgb(999,705,705) 40%, rgb(999,799,799) 60%, rgb(999,897,897) 80%, rgb(999,999,999) 100%);
+}
+#Bos{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(999,799,799) 0%, rgb(999,799,799) 33%, rgb(999,897,897) 34%, rgb(999,897,897) 66%, rgb(999,999,999) 67%, rgb(999,999,999) 100%);
+}
+#Bos_primigenius_Angus{
+color: #BFBFBF; background: rgb(999,999,999)}
+#Bos_primigenius_Holstein{
+color: #BFBFBF; background: rgb(999,799,799)}
+#Bos_primigenius_Brahman{
+color: #BFBFBF; background: rgb(999,897,897)}
+#Bison{
+color: #BFBFBF; background: rgb(999,705,705)}
+#Bison_bonasus{
+color: #BFBFBF; background: rgb(999,705,705)}
+#Syncerus{
+color: #BFBFBF; background: rgb(999,438,438)}
+#Syncerus_caffer{
+color: #BFBFBF; background: rgb(999,438,438)}
+#Aegodontia{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(0,0,0) 7%, rgb(0,0,0) 7%, rgb(999,0,603) 20%, rgb(999,0,269) 27%, rgb(999,0,108) 40%, rgb(999,0,46) 47%, rgb(999,286,286) 60%, rgb(999,294,294) 67%, rgb(999,552,552) 80%, rgb(999,671,671) 87%, rgb(999,772,772) 100%);
+}
+#Antilopinae{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(955,0,999) 0%, rgb(955,0,999) 25%, rgb(999,0,603) 26%, rgb(999,0,603) 50%, rgb(999,552,552) 51%, rgb(999,552,552) 75%, rgb(999,671,671) 76%, rgb(999,671,671) 100%);
+}
+#Antilopini{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(955,0,999) 0%, rgb(955,0,999) 33%, rgb(999,0,603) 34%, rgb(999,0,603) 66%, rgb(999,671,671) 67%, rgb(999,671,671) 100%);
+}
+#Gazella{
+color: #BFBFBF; background: rgb(955,0,999)}
+#Gazella_subgutturosa{
+color: #BFBFBF; background: rgb(955,0,999)}
+#Antidorcas{
+color: #BFBFBF; background: rgb(999,671,671)}
+#Antidorcas_marsupialis{
+color: #BFBFBF; background: rgb(999,671,671)}
+#Saiga{
+color: #BFBFBF; background: rgb(999,0,603)}
+#Saiga_tatarica{
+color: #BFBFBF; background: rgb(999,0,603)}
+#Neotragini{
+color: #BFBFBF; background: rgb(999,552,552)}
+#Madoqua{
+color: #BFBFBF; background: rgb(999,552,552)}
+#Madoqua_kirkii{
+color: #BFBFBF; background: rgb(999,552,552)}
+#Cephalophinae{
+color: #BFBFBF; background: rgb(999,772,772)}
+#Sylvicapra{
+color: #BFBFBF; background: rgb(999,772,772)}
+#Sylvicapra_grimmia{
+color: #BFBFBF; background: rgb(999,772,772)}
+#Reduncinae{
+color: #BFBFBF; background: rgb(999,422,422)}
+#Kobus{
+color: #BFBFBF; background: rgb(999,422,422)}
+#Kobus_kob{
+color: #BFBFBF; background: rgb(999,422,422)}
+#Aepycerotinae{
+color: #BFBFBF; background: rgb(0,0,0)}
+#Aepyceros{
+color: #BFBFBF; background: rgb(0,0,0)}
+#Aepyceros_melampus{
+color: #BFBFBF; background: rgb(0,0,0)}
+#Caprinae{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(999,0,269) 17%, rgb(999,0,179) 33%, rgb(999,0,46) 50%, rgb(999,241,241) 67%, rgb(999,286,286) 83%, rgb(999,294,294) 100%);
+}
+#Ovibovini{
+color: #BFBFBF; background: rgb(999,0,46)}
+#Ovibos{
+color: #BFBFBF; background: rgb(999,0,46)}
+#Ovibos_moschatus{
+color: #BFBFBF; background: rgb(999,0,46)}
+#Caprini{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(999,0,179) 0%, rgb(999,0,179) 50%, rgb(999,241,241) 51%, rgb(999,241,241) 100%);
+}
+#Capra{
+color: #BFBFBF; background: rgb(999,0,179)}
+#Capra_ibex{
+color: #BFBFBF; background: rgb(999,0,179)}
+#Ovis{
+color: #BFBFBF; background: rgb(999,241,241)}
+#Ovis_canadensis{
+color: #BFBFBF; background: rgb(999,241,241)}
+#Naemorhedini{
+  color: #BFBFBF; background: linear-gradient(to right, rgb(999,0,269) 0%, rgb(999,0,269) 33%, rgb(999,286,286) 34%, rgb(999,286,286) 66%, rgb(999,294,294) 67%, rgb(999,294,294) 100%);
+}
+#Capricornis{
+color: #BFBFBF; background: rgb(999,0,269)}
+#Capricornis_crispus{
+color: #BFBFBF; background: rgb(999,0,269)}
+#Oreamnos{
+color: #BFBFBF; background: rgb(999,294,294)}
+#Oreamnos_americanus{
+color: #BFBFBF; background: rgb(999,294,294)}
+#Rupicapra{
+color: #BFBFBF; background: rgb(999,286,286)}
+#Rupicapra_rupicapra{
+color: #BFBFBF; background: rgb(999,286,286)}
+#Hippotraginae{
+color: #BFBFBF; background: rgb(999,0,108)}
+#Hippotragus{
+color: #BFBFBF; background: rgb(999,0,108)}
+#Hippotragus_niger{
+color: #BFBFBF; background: rgb(999,0,108)}
+#Alcelaphinae{
+color: #BFBFBF; background: rgb(999,700,700)}
+#Connochaetes{
+color: #BFBFBF; background: rgb(999,700,700)}
+#Connochaetes_taurinus{
+color: #BFBFBF; background: rgb(999,700,700)}
