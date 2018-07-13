@@ -2,11 +2,11 @@
 % shows pedigree in interactive html
 
 %%
-function treeview_taxa (taxon, var)
+function treeview_taxa (taxon, var, info)
 % created 2016/03/06 by Bas Kooijman, modified 2017/08/06, 2017/10/08, 2018/06/26, 2018/07/12
 
 %% Syntax
-% <../treeview_taxa.m *treeview_taxa*> (taxon, var) 
+% <../treeview_taxa.m *treeview_taxa*> (taxon, var, info) 
 
 %% Description
 % First produces pedigree with function <pedigree.html *pedigree*> and 
@@ -17,6 +17,7 @@ function treeview_taxa (taxon, var)
 %
 % * taxon: optional character string with a taxon (default 'Animalia')
 % * var: optional character string with name of variable, or vector with values of variable
+% * info: optional boolean for background-color-gradients on all nodes (1), or background-colors on leaves only (0, default);
 
 %% Remarks
 % Taxon must be a node in the taxonomic tree, see <list_taxa.m *list_taxa*>
@@ -36,10 +37,10 @@ function treeview_taxa (taxon, var)
     taxon = 'Animalia';
   end
   
-  WD = pwd;                      % store current path
-  taxa = which('treeview_taxa'); % locate taxa
-  taxa = taxa(1:end - 15);       % path to taxa
-  cd(taxa)                       % goto taxa
+  WD = pwd;                          % store current path
+  pathTaxa = which('treeview_taxa'); % locate taxa
+  pathTaxa = pathTaxa(1:end - 15);   % path to taxa
+  cd(pathTaxa)                       % goto taxa
 
   try
     pedigree_taxon = pedigree(taxon);
@@ -130,35 +131,43 @@ function treeview_taxa (taxon, var)
       var_min = min(var); var_max = max(var); var = (var - var_min)/ (1e-5 + var_max - var_min);
       shcolor_lava([var_min; var_max], taxon); % show figure with lava colour-scheme and range of values
 
-      pedigree_taxon = pedigree(taxon);
-      while length(pedigree_taxon) > 3
-        nl = strfind(pedigree_taxon, char(10)); node = pedigree_taxon(1:nl-1); pedigree_taxon(1:nl) = [];
-        level = max(strfind(node, char(9))); node(1:level) = [];
-        fprintf(fid_tv, ['#', node, '{\n']);    
-        sel = select_01(taxon, node); var_node = sort(var(sel)); n_var_node = size(var_node,1);
-        color_node = max(0,(round(1e3 * color_lava(var_node)) - 1)); pos_node = round(100*(1:n_var_node)/n_var_node); 
-        if n_var_node == 1
-          color_node = color_node([1;1],:); pos_node = [0; 100]; n_var_node = 2;
-        elseif n_var_node == 2
-          color_node = color_node([1;1;2;2],:); pos_node = [0;50;51;100]; n_var_node = 4;
-        elseif n_var_node == 3
-          color_node = color_node([1;1;2;2;3;3],:); pos_node = [0;33;34;66;67;100]; n_var_node = 6;
-        elseif n_var_node == 4
-          color_node = color_node([1;1;2;2;3;3;4;4],:); pos_node = [0;25;26;50;51;75;76;100]; n_var_node = 8;
-        elseif n_var_node > 10
-          index = ones(11,1); index(11) = n_var_node; % initiate index
-          for i = 1:9
-            [s in] = sort((pos_node - i*10).^2); index(1+i) = in(1);
+      if ~exist('info', 'var') || info == false % background colors on leaves only
+        n_leaves = length(var);
+        color_node = max(0,(round(1e3 * color_lava(var)) - 1));
+        for i = 1:n_leaves
+          fprintf(fid_tv, ['#', taxa{i}, '{background: rgb(', num2str(color_node(i,1)), ',' num2str(color_node(i,2)), ',' num2str(color_node(i,3)), ')}\n']);
+        end
+      else % background color gradients on all nodes
+        pedigree_taxon = pedigree(taxon);
+        while length(pedigree_taxon) > 3
+          nl = strfind(pedigree_taxon, char(10)); node = pedigree_taxon(1:nl-1); pedigree_taxon(1:nl) = [];
+          level = max(strfind(node, char(9))); node(1:level) = [];
+          fprintf(fid_tv, ['#', node, '{\n']);    
+          sel = select_01(taxon, node); var_node = sort(var(sel)); n_var_node = size(var_node,1);
+          color_node = max(0,(round(1e3 * color_lava(var_node)) - 1)); pos_node = round(100*(1:n_var_node)/n_var_node); 
+          if n_var_node == 1
+            color_node = color_node([1;1],:); pos_node = [0; 100]; n_var_node = 2;
+          elseif n_var_node == 2
+            color_node = color_node([1;1;2;2],:); pos_node = [0;50;51;100]; n_var_node = 4;
+          elseif n_var_node == 3
+            color_node = color_node([1;1;2;2;3;3],:); pos_node = [0;33;34;66;67;100]; n_var_node = 6;
+          elseif n_var_node == 4
+            color_node = color_node([1;1;2;2;3;3;4;4],:); pos_node = [0;25;26;50;51;75;76;100]; n_var_node = 8;
+          elseif n_var_node > 10 % find pos_node nearest to 10%,.,.90%
+            index = ones(11,1); index(11) = n_var_node; % initiate index
+            for i = 1:9
+              [s in] = sort((pos_node - i*10).^2); index(1+i) = in(1);
+            end
+            color_node = color_node(index,:); pos_node = pos_node(index); n_var_node = 11; % select in color_node and pos_node
           end
-          color_node = color_node(index,:); pos_node = pos_node(index); n_var_node = 11;
+          txt = ''; % initiate txt for color gradient
+          for i = 1:n_var_node
+            txt = [txt, ' rgb(', num2str(color_node(i,1)), ',' num2str(color_node(i,2)), ',' num2str(color_node(i,3)), ') ', num2str(pos_node(i)), '%%,'];
+          end
+          txt(end) = []; % remove last ,
+          fprintf(fid_tv, ['  background: linear-gradient(to right,', txt, ');\n']);
+          fprintf(fid_tv, '}\n');
         end
-        txt = ''; % initiate txt for color gradient
-        for i = 1:n_var_node
-          txt = [txt, ' rgb(', num2str(color_node(i,1)), ',' num2str(color_node(i,2)), ',' num2str(color_node(i,3)), ') ', num2str(pos_node(i)), '%%,'];
-        end
-        txt(end) = []; % remove last ,
-        fprintf(fid_tv, ['  background: linear-gradient(to right, ', txt, ');\n']);
-        fprintf(fid_tv, '}\n');
       end
     end
     fclose(fid_tv);
