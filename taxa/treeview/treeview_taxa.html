@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 
 <HTML>
-<!----------------------------------------------------------------->
-<!-- Copyright (c) 2006 by Conor O'Mahony.                       -->
-<!-- For enquiries, please email GubuSoft@GubuSoft.com.          -->
-<!-- Please keep all copyright notices below.                    -->
-<!-- Original author of TreeView script is Marcelino Martins.    -->
-<!----------------------------------------------------------------->
-<!-- This document includes the TreeView script.  The TreeView   -->
-<!-- script can be found at http://www.TreeView.net.  The        -->
-<!-- script is Copyright (c) 2006 by Conor O'Mahony.             -->
-<!----------------------------------------------------------------->
-<!-- Searching and scrolling by Bas Kooijman & Bernd Brandt 2018 -->
-<!-----------------------------------------------------------------> 
+<!--------------------------------------------------------------------------->
+<!-- Copyright (c) 2006 by Conor O'Mahony.                                 -->
+<!-- For enquiries, please email GubuSoft@GubuSoft.com.                    -->
+<!-- Please keep all copyright notices below.                              -->
+<!-- Original author of TreeView script is Marcelino Martins.              -->
+<!--------------------------------------------------------------------------->
+<!-- This document includes the TreeView script.  The TreeView             -->
+<!-- script can be found at http://www.TreeView.net.  The                  -->
+<!-- script is Copyright (c) 2006 by Conor O'Mahony.                       -->
+<!--------------------------------------------------------------------------->
+<!-- Searching, scrolling and painting by Bas Kooijman & Bernd Brandt 2018 -->
+<!---------------------------------------------------------------------------> 
 
 <HEAD>
   <title>Species Tree Taxon</title>
@@ -113,6 +113,7 @@
     }
 
   </style> 
+  <link rel="stylesheet" type="text/css" href="treeview_taxa.css"></link>
 
   <SCRIPT src="ua.js"></SCRIPT> <!-- browser detection -->
   <SCRIPT src="ftiens4.js"></SCRIPT> <!-- infrastructure for TreeView -->
@@ -236,9 +237,7 @@
 
              </TD>
              <TD bgcolor="white" valign="top">
-
-               <link rel="stylesheet" type="text/css" href="treeview_taxa.css"></link>
-<div id="pictxt"><TABLE><TR><TD>
+               <div id="pictxt"><TABLE><TR><TD>
                  <img id="pic" src="" width = 400><p><embed id="txt" src="" width=400></img>
                  <script> // show picture + legend
                    var path = "https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/"
@@ -256,7 +255,7 @@
                    document.taxonSearch = ""; // empty search string for further clicking on tree
                    var taxon = picURL.split('.')[0];
                    clickOnFolder(taxon);      // set highlight
-                </script>
+                 </script>
                </TD></TR></TABLE></div>
 
                <SCRIPT> // scroll page and picture  

@@ -1,5 +1,4 @@
-Lagenorhynchus
-Delphinus
-Tursiops
-Pseudorca
-Orcinus
+Delphininae
+Lissodelphininae
+Globicephalinae
+Orcininae

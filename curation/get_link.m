@@ -6032,6 +6032,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200115';
        
+    case 'Camelus_bactrianus'
+      id_CoL = '4d8f82467f8d38ec25f865f418291f62';
+      id_Taxo = '67766';        
+      id_EoL = '344581';
+      id_AnAge = taxon;
+      id_MSW3 = '14200112';
+       
     case 'Lama_glama_guanicoe'
       id_CoL = '9f4d153285e23f9312eb0118d6e17197';
       id_Taxo = '154238';        
@@ -6084,6 +6091,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14300116';
        
+    case 'Phocoenoides_dalli'
+      id_CoL = '550c7eb789b9de28b3a78515508f30ff';
+      id_WoRMS = '254987';
+      id_Taxo = '68806';        
+      id_EoL = '328540';
+      id_AnAge = taxon;
+      id_MSW3 = '14300123';
+       
     case 'Lagenorhynchus_obscurus'
       id_CoL = '2b77c8ff7966c1a93528ee536722dd6d';
       id_WoRMS = '231434';
@@ -6091,6 +6106,22 @@ function links = get_link(taxon, open)
       id_EoL = '317317';
       id_AnAge = taxon;
       id_MSW3 = '14300065';
+       
+    case 'Stenella_coeruleoalba'
+      id_CoL = '477991df751642baf5dd4f83a7cd8ffb';
+      id_WoRMS = '137107';
+      id_Taxo = '68735';        
+      id_EoL = '129553';
+      id_AnAge = taxon;
+      id_MSW3 = '14300089';
+       
+    case 'Stenella_attenuata'
+      id_CoL = '616be000b9e69fdbab5ae0b71cf43d31';
+      id_WoRMS = '137105';
+      id_Taxo = '68733';        
+      id_EoL = '129550';
+      id_AnAge = taxon;
+      id_MSW3 = '14300085';
        
     case 'Delphinus_delphis'
       id_CoL = '53f82736e0e55a75583156a10dc0770e';
@@ -6107,6 +6138,14 @@ function links = get_link(taxon, open)
       id_EoL = '129548';
       id_AnAge = taxon;
       id_MSW3 = '14300099';
+       
+    case 'Globicephala_macrorhynchus'
+      id_CoL = '98e64c7d6cd792ae61d35482a8856703';
+      id_WoRMS = '137096';
+      id_Taxo = '68767';        
+      id_EoL = '328533';
+      id_AnAge = taxon;
+      id_MSW3 = '14300051';
        
     case 'Pseudorca_crassidens'
       id_CoL = '4d6423dbe228ecfca77db98f22b38979';
@@ -6132,6 +6171,22 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14300145';
        
+    case 'Kogia_breviceps'
+      id_CoL = '10164399882cd75e52867d5b0f7c444a';
+      id_WoRMS = '137113';
+      id_Taxo = '68817'; 
+      id_EoL = '328548';
+      id_AnAge = taxon;
+      id_MSW3 = '14300128'; 
+      
+    case 'Kogia_sima'
+      id_CoL = '72154957f43f762fdf027b059bb7ea3c';
+      id_WoRMS = '159025';
+      id_Taxo = ''; % not present 2018/07/14    
+      id_EoL = '328549';
+      id_AnAge = ''; % not present 2018/07/14
+      id_MSW3 = '14300129'; 
+      
     case 'Physeter_macrocephalus'
       id_CoL = 'b3ea740b176c587935272fe4f127db73';
       id_WoRMS = '137119';
@@ -6148,6 +6203,14 @@ function links = get_link(taxon, open)
       id_EoL = '328556';
       id_AnAge = taxon;
       id_MSW3 = '14300153';
+       
+    case 'Berardius_bairdii'
+      id_CoL = 'f96133c690f15a5343de0c866411239b';
+      id_WoRMS = '242608';
+      id_Taxo = '68825';        
+      id_EoL = '328551';
+      id_AnAge = taxon;
+      id_MSW3 = '14300149';
        
     case 'Balaenoptera_acutorostrata'
       id_CoL = '03989edf0baedd8ab5478fca2ad3b410';

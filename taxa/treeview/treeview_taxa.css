@@ -1,131 +1,55 @@
 p {margin: 0px;}
 
-#Bovidae{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(0,0,0) 5%, rgb(955,0,999) 9%, rgb(999,0,269) 18%, rgb(999,0,46) 32%, rgb(999,241,241) 41%, rgb(999,294,294) 50%, rgb(999,438,438) 59%, rgb(999,591,591) 68%, rgb(999,705,705) 82%, rgb(999,799,799) 91%, rgb(999,999,999) 100%);
-}
-#Boodontia{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(999,99,99) 14%, rgb(999,438,438) 29%, rgb(999,591,591) 43%, rgb(999,705,705) 57%, rgb(999,799,799) 71%, rgb(999,897,897) 86%, rgb(999,999,999) 100%);
-}
-#Tragelaphini{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(999,99,99) 0%, rgb(999,99,99) 50%, rgb(999,591,591) 51%, rgb(999,591,591) 100%);
-}
-#Taurotragus{
-color: #BFBFBF; background: rgb(999,99,99)}
-#Taurotragus_oryx{
-color: #BFBFBF; background: rgb(999,99,99)}
-#Tragelaphus{
-color: #BFBFBF; background: rgb(999,591,591)}
-#Tragelaphus_strepsiceros{
-color: #BFBFBF; background: rgb(999,591,591)}
-#Bovini{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(999,438,438) 20%, rgb(999,705,705) 40%, rgb(999,799,799) 60%, rgb(999,897,897) 80%, rgb(999,999,999) 100%);
-}
-#Bos{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(999,799,799) 0%, rgb(999,799,799) 33%, rgb(999,897,897) 34%, rgb(999,897,897) 66%, rgb(999,999,999) 67%, rgb(999,999,999) 100%);
-}
-#Bos_primigenius_Angus{
-color: #BFBFBF; background: rgb(999,999,999)}
-#Bos_primigenius_Holstein{
-color: #BFBFBF; background: rgb(999,799,799)}
-#Bos_primigenius_Brahman{
-color: #BFBFBF; background: rgb(999,897,897)}
-#Bison{
-color: #BFBFBF; background: rgb(999,705,705)}
-#Bison_bonasus{
-color: #BFBFBF; background: rgb(999,705,705)}
-#Syncerus{
-color: #BFBFBF; background: rgb(999,438,438)}
-#Syncerus_caffer{
-color: #BFBFBF; background: rgb(999,438,438)}
-#Aegodontia{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(0,0,0) 7%, rgb(0,0,0) 7%, rgb(999,0,603) 20%, rgb(999,0,269) 27%, rgb(999,0,108) 40%, rgb(999,0,46) 47%, rgb(999,286,286) 60%, rgb(999,294,294) 67%, rgb(999,552,552) 80%, rgb(999,671,671) 87%, rgb(999,772,772) 100%);
-}
-#Antilopinae{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(955,0,999) 0%, rgb(955,0,999) 25%, rgb(999,0,603) 26%, rgb(999,0,603) 50%, rgb(999,552,552) 51%, rgb(999,552,552) 75%, rgb(999,671,671) 76%, rgb(999,671,671) 100%);
-}
-#Antilopini{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(955,0,999) 0%, rgb(955,0,999) 33%, rgb(999,0,603) 34%, rgb(999,0,603) 66%, rgb(999,671,671) 67%, rgb(999,671,671) 100%);
-}
-#Gazella{
-color: #BFBFBF; background: rgb(955,0,999)}
-#Gazella_subgutturosa{
-color: #BFBFBF; background: rgb(955,0,999)}
-#Antidorcas{
-color: #BFBFBF; background: rgb(999,671,671)}
-#Antidorcas_marsupialis{
-color: #BFBFBF; background: rgb(999,671,671)}
-#Saiga{
-color: #BFBFBF; background: rgb(999,0,603)}
-#Saiga_tatarica{
-color: #BFBFBF; background: rgb(999,0,603)}
-#Neotragini{
-color: #BFBFBF; background: rgb(999,552,552)}
-#Madoqua{
-color: #BFBFBF; background: rgb(999,552,552)}
-#Madoqua_kirkii{
-color: #BFBFBF; background: rgb(999,552,552)}
-#Cephalophinae{
-color: #BFBFBF; background: rgb(999,772,772)}
-#Sylvicapra{
-color: #BFBFBF; background: rgb(999,772,772)}
-#Sylvicapra_grimmia{
-color: #BFBFBF; background: rgb(999,772,772)}
-#Reduncinae{
-color: #BFBFBF; background: rgb(999,422,422)}
-#Kobus{
-color: #BFBFBF; background: rgb(999,422,422)}
-#Kobus_kob{
-color: #BFBFBF; background: rgb(999,422,422)}
-#Aepycerotinae{
-color: #BFBFBF; background: rgb(0,0,0)}
-#Aepyceros{
-color: #BFBFBF; background: rgb(0,0,0)}
-#Aepyceros_melampus{
-color: #BFBFBF; background: rgb(0,0,0)}
-#Caprinae{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(999,0,269) 17%, rgb(999,0,179) 33%, rgb(999,0,46) 50%, rgb(999,241,241) 67%, rgb(999,286,286) 83%, rgb(999,294,294) 100%);
-}
-#Ovibovini{
-color: #BFBFBF; background: rgb(999,0,46)}
-#Ovibos{
-color: #BFBFBF; background: rgb(999,0,46)}
-#Ovibos_moschatus{
-color: #BFBFBF; background: rgb(999,0,46)}
-#Caprini{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(999,0,179) 0%, rgb(999,0,179) 50%, rgb(999,241,241) 51%, rgb(999,241,241) 100%);
-}
-#Capra{
-color: #BFBFBF; background: rgb(999,0,179)}
-#Capra_ibex{
-color: #BFBFBF; background: rgb(999,0,179)}
-#Ovis{
-color: #BFBFBF; background: rgb(999,241,241)}
-#Ovis_canadensis{
-color: #BFBFBF; background: rgb(999,241,241)}
-#Naemorhedini{
-  color: #BFBFBF; background: linear-gradient(to right, rgb(999,0,269) 0%, rgb(999,0,269) 33%, rgb(999,286,286) 34%, rgb(999,286,286) 66%, rgb(999,294,294) 67%, rgb(999,294,294) 100%);
-}
-#Capricornis{
-color: #BFBFBF; background: rgb(999,0,269)}
-#Capricornis_crispus{
-color: #BFBFBF; background: rgb(999,0,269)}
-#Oreamnos{
-color: #BFBFBF; background: rgb(999,294,294)}
-#Oreamnos_americanus{
-color: #BFBFBF; background: rgb(999,294,294)}
-#Rupicapra{
-color: #BFBFBF; background: rgb(999,286,286)}
-#Rupicapra_rupicapra{
-color: #BFBFBF; background: rgb(999,286,286)}
-#Hippotraginae{
-color: #BFBFBF; background: rgb(999,0,108)}
-#Hippotragus{
-color: #BFBFBF; background: rgb(999,0,108)}
-#Hippotragus_niger{
-color: #BFBFBF; background: rgb(999,0,108)}
-#Alcelaphinae{
-color: #BFBFBF; background: rgb(999,700,700)}
-#Connochaetes{
-color: #BFBFBF; background: rgb(999,700,700)}
-#Connochaetes_taurinus{
-color: #BFBFBF; background: rgb(999,700,700)}
+#Camelus_dromedarius{color: #BFBFBF; background: rgb(54,0,999)}
+#Lama_glama_guanicoe{color: #BFBFBF; background: rgb(0,0,942)}
+#Sus_scrofa{color: #BFBFBF; background: rgb(0,0,952)}
+#Phacochoerus_aethiopicus{color: #BFBFBF; background: rgb(0,0,30)}
+#Pecari_tajacu{color: #BFBFBF; background: rgb(0,0,430)}
+#Monodon_monoceros{color: #BFBFBF; background: rgb(999,999,999)}
+#Delphinapterus_leucas{color: #BFBFBF; background: rgb(999,999,999)}
+#Phocoena_phocoena{color: #BFBFBF; background: rgb(999,999,999)}
+#Lagenorhynchus_obscurus{color: #BFBFBF; background: rgb(999,999,999)}
+#Delphinus_delphis{color: #BFBFBF; background: rgb(999,999,999)}
+#Tursiops_truncatus{color: #BFBFBF; background: rgb(999,999,999)}
+#Pseudorca_crassidens{color: #BFBFBF; background: rgb(999,999,999)}
+#Orcinus_orca{color: #BFBFBF; background: rgb(999,999,999)}
+#Pontoporia_blainvillei{color: #BFBFBF; background: rgb(653,0,999)}
+#Physeter_macrocephalus{color: #BFBFBF; background: rgb(999,999,999)}
+#Hyperoodon_ampullatus{color: #BFBFBF; background: rgb(999,999,999)}
+#Balaenoptera_acutorostrata{color: #BFBFBF; background: rgb(999,999,999)}
+#Balaenoptera_musculus{color: #BFBFBF; background: rgb(999,999,999)}
+#Eschrichtius_robustus{color: #BFBFBF; background: rgb(999,999,999)}
+#Eubalaena_glacialis{color: #BFBFBF; background: rgb(999,999,999)}
+#Balaena_mysticetus{color: #BFBFBF; background: rgb(999,0,731)}
+#Hippopotamus_amphibius{color: #BFBFBF; background: rgb(999,999,999)}
+#Antilocapra_americana{color: #BFBFBF; background: rgb(0,0,355)}
+#Giraffa_camelopardalis{color: #BFBFBF; background: rgb(999,751,751)}
+#Okapia_johnstoni{color: #BFBFBF; background: rgb(0,0,0)}
+#Muntiacus_reevesi{color: #BFBFBF; background: rgb(999,834,834)}
+#Cervus_canadensis{color: #BFBFBF; background: rgb(999,0,87)}
+#Capreolus_capreolus{color: #BFBFBF; background: rgb(0,0,204)}
+#Rangifer_tarandus{color: #BFBFBF; background: rgb(0,0,525)}
+#Odocoileus_virginianus{color: #BFBFBF; background: rgb(872,0,999)}
+#Alces_alces{color: #BFBFBF; background: rgb(0,0,511)}
+#Taurotragus_oryx{color: #BFBFBF; background: rgb(999,999,999)}
+#Tragelaphus_strepsiceros{color: #BFBFBF; background: rgb(999,999,999)}
+#Bos_primigenius_Angus{color: #BFBFBF; background: rgb(355,0,999)}
+#Bos_primigenius_Holstein{color: #BFBFBF; background: rgb(999,0,241)}
+#Bos_primigenius_Brahman{color: #BFBFBF; background: rgb(999,998,998)}
+#Bison_bonasus{color: #BFBFBF; background: rgb(999,990,990)}
+#Syncerus_caffer{color: #BFBFBF; background: rgb(999,999,999)}
+#Gazella_subgutturosa{color: #BFBFBF; background: rgb(0,0,948)}
+#Antidorcas_marsupialis{color: #BFBFBF; background: rgb(999,999,999)}
+#Saiga_tatarica{color: #BFBFBF; background: rgb(0,0,872)}
+#Madoqua_kirkii{color: #BFBFBF; background: rgb(862,0,999)}
+#Sylvicapra_grimmia{color: #BFBFBF; background: rgb(0,0,467)}
+#Kobus_kob{color: #BFBFBF; background: rgb(999,999,999)}
+#Aepyceros_melampus{color: #BFBFBF; background: rgb(999,999,999)}
+#Ovibos_moschatus{color: #BFBFBF; background: rgb(999,236,236)}
+#Capra_ibex{color: #BFBFBF; background: rgb(999,999,999)}
+#Ovis_canadensis{color: #BFBFBF; background: rgb(783,0,999)}
+#Capricornis_crispus{color: #BFBFBF; background: rgb(999,999,999)}
+#Oreamnos_americanus{color: #BFBFBF; background: rgb(999,999,999)}
+#Rupicapra_rupicapra{color: #BFBFBF; background: rgb(999,998,998)}
+#Hippotragus_niger{color: #BFBFBF; background: rgb(999,999,999)}
+#Connochaetes_taurinus{color: #BFBFBF; background: rgb(999,999,999)}

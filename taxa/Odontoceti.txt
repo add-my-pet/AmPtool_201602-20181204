@@ -1,6 +1,4 @@
-Monodontidae
-Phocoenidae
-Delphinidae
-Pontoporiidae
-Physeteridae
-Ziphiidae
+Delphinoidea
+Physeteroidea
+Platanistoidea
+Ziphioidea

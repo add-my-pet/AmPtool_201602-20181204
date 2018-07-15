@@ -143,7 +143,7 @@ function treeview_taxa (taxon, var, info)
           nl = strfind(pedigree_taxon, char(10)); node = pedigree_taxon(1:nl-1); pedigree_taxon(1:nl) = [];
           level = max(strfind(node, char(9))); node(1:level) = [];
           fprintf(fid_tv, ['#', node, '{\n']);    
-          sel = select_01(taxon, node); var_node = sort(var(sel)); n_var_node = size(var_node,1);
+          var_node = sort(var(select_01(taxon, node))); n_var_node = size(var_node,1);
           color_node = max(0,(round(1e3 * color_lava(var_node)) - 1)); pos_node = round(100*(1:n_var_node)/n_var_node); 
           if n_var_node == 1
             fprintf(fid_tv, ['color: #BFBFBF; background: rgb(', num2str(color_node(1,1)), ',' num2str(color_node(1,2)), ',' num2str(color_node(1,3)), ')}\n']);
