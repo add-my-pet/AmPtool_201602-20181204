@@ -9,7 +9,7 @@
 % run_collection(taxa-names) to generate files in entries_zip and entries_web
 % make sure to export bibtex from Zotero to debtool/DEB library.bib
 
-clear all; % allStat is persistent in read_allStat
+clear all; % allStat is persistent in read_allStat and read_stat
 write_allStat; 
 write_allEco;
 prt_species_names;
