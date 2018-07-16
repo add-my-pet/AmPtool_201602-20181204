@@ -6107,6 +6107,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14300065';
        
+    case 'Lagenorhynchus_albirostris'
+      id_CoL = '7ff6461ff29f2d00011fecb10904f995';
+      id_WoRMS = '137101';
+      id_Taxo = '68724';        
+      id_EoL = '342089';
+      id_AnAge = ''; % not presebt at 2018/07/16
+      id_MSW3 = '14300061';
+       
     case 'Stenella_coeruleoalba'
       id_CoL = '477991df751642baf5dd4f83a7cd8ffb';
       id_WoRMS = '137107';
