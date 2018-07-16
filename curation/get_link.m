@@ -6115,6 +6115,14 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not presebt at 2018/07/16
       id_MSW3 = '14300061';
        
+    case 'Sotalia_fluviatilis'
+      id_CoL = '21144e096e8fc4585e6e8a33feb55839';
+      id_WoRMS = '254982';
+      id_Taxo = '68692';        
+      id_EoL = '328481';
+      id_AnAge = taxon;
+      id_MSW3 = '14300080';
+       
     case 'Stenella_coeruleoalba'
       id_CoL = '477991df751642baf5dd4f83a7cd8ffb';
       id_WoRMS = '137107';

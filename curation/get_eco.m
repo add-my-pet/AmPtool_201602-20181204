@@ -8248,6 +8248,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Sotalia_fluviatilis'
+      climate = {'MA','A'};
+      ecozone = {'MAW','TN'};
+      habitat = {'0iMp'};
+      embryo  = {'Mv'};
+      migrate = {};
+      food    = {'bxM','xiCvf','xiCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Stenella_coeruleoalba'
       climate = {'MA','MB','MC'};
       ecozone = {'MC'};

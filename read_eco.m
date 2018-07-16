@@ -26,7 +26,11 @@ function codes = read_eco(entries, varargin)
 %% Example of use
 % embryo = read_eco(select('Aves'), 'embryo'); 
   
-  load('allEco.mat')        % get all eco-codes in structure allEco
+  persistent allEco
+  
+  if ~exist('allEco','var') || length(allEco) == 0
+    load('allEco')        % get all parameters and statistics in structure allStat
+  end
   
   n = length(entries); 
   if iscell(varargin{1})    

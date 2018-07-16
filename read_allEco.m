@@ -26,7 +26,12 @@ function [codes, entries] = read_allEco(varargin)
 %% Example of use
 % gender_embryo = read_allEco('gender', 'embryo'); 
   
-  load('allEco')        % get all codes in structure allEco
+  persistent allEco
+  
+  if ~exist('allEco','var') || length(allEco) == 0
+    load('allEco')        % get all parameters and statistics in structure allStat
+  end
+
   entries = fieldnames(allEco); n = length(entries); 
   if iscell(varargin{1})    
     varargin = varargin{:}; % unpack cell string
