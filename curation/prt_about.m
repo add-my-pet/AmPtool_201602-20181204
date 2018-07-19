@@ -192,8 +192,9 @@ fprintf(fid_about, '      Examples are: \n');
 fprintf(fid_about, '        <a href="entries_web/Deinosuchus_rugosus/Deinosuchus_rugosus_res.html">Deinosuchus</a>,\n');
 fprintf(fid_about, '        <a href="entries_web/Pterodaustro_guinazui/Pterodaustro_guinazui_res.html">Pterodaustro</a>,\n');
 fprintf(fid_about, '        <a href="entries_web/Tyrannosaurus_rex/Tyrannosaurus_rex_res.html">Tyrannosaurus</a>,\n');
-fprintf(fid_about, '        <a href="entries_web/Archaeopteryx_lithographica/Archaeopteryx_lithographica_res.html">Archaeopteryx</a> and \n');
-fprintf(fid_about, '        <a href="entries_web/Pinguinus_impennis/Pinguinus_impennis_res.html">great auk</a>. \n');
+fprintf(fid_about, '        <a href="entries_web/Archaeopteryx_lithographica/Archaeopteryx_lithographica_res.html">Archaeopteryx</a>,\n');
+fprintf(fid_about, '        <a href="entries_web/Pinguinus_impennis/Pinguinus_impennis_res.html">great auk</a> and \n');
+fprintf(fid_about, '        <a href="entries_web/Hydrodamalis_gigas/Hydrodamalis_gigas_res.html">Steller''s sea cow</a>. \n');
 fprintf(fid_about, '      Needless to say, however: more data generally reduces uncertainty in parameter values.\n\n');
 
 fprintf(fid_about, '      <h2 class="clear">Data completeness and mean relative errors</h2>\n\n');  
@@ -297,7 +298,7 @@ fprintf(fid_about, '      <div class = "caption" onmouseover="changeImage(''img/
 fprintf(fid_about, '        DEB research started in the spring of 1979 \n');
 fprintf(fid_about, '          with a study on how toxicants affect reproduction in the waterflea <i>Dapnia magna</i>, \n');
 fprintf(fid_about, '          including consequences for populations.<br>\n'); 
-fprintf(fid_about, '        Software package <a href="/thb/deb/deblab/DEBtool_M/manual/" target="_top">DEBtool</a> was developed \n');
+fprintf(fid_about, '        Software package <a href="/thb/deb/deblab/debtool/DEBtool_M/manual/" target="_top">DEBtool</a> was developed \n');
 fprintf(fid_about, '          since 2000 to support applications of DEB theory, such as Add-my-Pet.\n');
 fprintf(fid_about, '      </div>\n\n');
 
