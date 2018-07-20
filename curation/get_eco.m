@@ -8398,6 +8398,17 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Lagenorhynchus_obscurus'
+      climate = {'MC'};
+      ecozone = {'MPS'};
+      habitat = {'0iMp'};
+      embryo  = {'Mv'};
+      migrate = {};
+      food    = {'bxM','xiCvf','xiCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+
     case 'Lagenorhynchus_albirostris'
       climate = {'MC'};
       ecozone = {'MAN'};
