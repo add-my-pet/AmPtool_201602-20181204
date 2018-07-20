@@ -5189,6 +5189,15 @@ function links = get_link(taxon, open)
       id_avibase = '049D9AEA4AFBFDFA';
       id_birdlife = 'northern-fulmar-fulmarus-glacialis';
       
+    case 'Puffinus_assimilis'
+      id_CoL = '85611d7fbc5bf240075248bfdcaf6135';
+      id_WoRMS = '137200';
+      id_Taxo = ''; % no access at 2018/07/19        
+      id_EoL = '1048473';
+      id_AnAge = ''; % not present at 2018/07/19       
+      id_avibase = '797B4FA77E74254B';
+      id_birdlife = 'little-shearwater-puffinus-assimilis';
+      
     case 'Diomedea_exulans'
       id_CoL = '9cf46c5413e6bef61c029d6cef69ff57';
       id_WoRMS = '212583';
@@ -5989,6 +5998,31 @@ function links = get_link(taxon, open)
       id_EoL = '328646';
       id_AnAge = taxon;
       id_MSW3 = '11600011';
+      id_WoRMS = '255026';
+       
+    case 'Trichechus_manatus'
+      id_CoL = 'c3d197ef1aab6e2fec27daf65bbee371';
+      id_Taxo = '69441';        
+      id_EoL = '328644';
+      id_AnAge = taxon;
+      id_MSW3 = '11600012';
+      id_WoRMS = '159509';
+       
+    case 'Dugong_dugon'
+      id_CoL = 'fd213122953885dcd829a317a6998c55';
+      id_Taxo = '69403';        
+      id_EoL = '328641';
+      id_AnAge = taxon;
+      id_MSW3 = '11600005';
+      id_WoRMS = '220227';
+       
+    case 'Hydrodamalis_gigas'
+      id_CoL = '1602170874866484671f52435ec52e95';
+      id_Taxo = '69421';        
+      id_EoL = '328642';
+      id_AnAge = ''; % not present at 2018/07/17
+      id_MSW3 = '11600008';
+      id_WoRMS = '255025';
        
     case 'Procavia_capensis'
       id_CoL = '2385d7456a495dac2061e5db25291a9a';
@@ -6098,23 +6132,23 @@ function links = get_link(taxon, open)
       id_EoL = '328540';
       id_AnAge = taxon;
       id_MSW3 = '14300123';
-       
-    case 'Lagenorhynchus_obscurus'
-      id_CoL = '2b77c8ff7966c1a93528ee536722dd6d';
-      id_WoRMS = '231434';
-      id_Taxo = '68729';        
-      id_EoL = '317317';
+              
+    case 'Neophocaena_phocaenoides'
+      id_CoL = '56418c1f65c6b7767279aa7e205cc8ef';
+      id_WoRMS = '254985';
+      id_Taxo = ''; % no access at 2018/07/19        
+      id_EoL = '328539';
       id_AnAge = taxon;
-      id_MSW3 = '14300065';
-       
-    case 'Lagenorhynchus_albirostris'
-      id_CoL = '7ff6461ff29f2d00011fecb10904f995';
-      id_WoRMS = '137101';
-      id_Taxo = '68724';        
-      id_EoL = '342089';
-      id_AnAge = ''; % not presebt at 2018/07/16
-      id_MSW3 = '14300061';
-       
+      id_MSW3 = '14300112';
+              
+    case 'Steno_bredanensis'
+      id_CoL = 'd74feb06e2f90b07584650f37dec6553';
+      id_WoRMS = '137110';
+      id_Taxo = ''; % no access at 2018/07/18        
+      id_EoL = '328478';
+      id_AnAge = taxon;
+      id_MSW3 = '14300096';
+
     case 'Sotalia_fluviatilis'
       id_CoL = '21144e096e8fc4585e6e8a33feb55839';
       id_WoRMS = '254982';
@@ -6122,7 +6156,15 @@ function links = get_link(taxon, open)
       id_EoL = '328481';
       id_AnAge = taxon;
       id_MSW3 = '14300080';
-       
+
+    case 'Sousa_chinensis'
+      id_CoL = 'c9a114073abd663cf11fd327edf894fe';
+      id_WoRMS = '220226';
+      id_Taxo = ''; % no access at 2018/07/18       
+      id_EoL = '328479';
+      id_AnAge = taxon;
+      id_MSW3 = '14300082';
+
     case 'Stenella_coeruleoalba'
       id_CoL = '477991df751642baf5dd4f83a7cd8ffb';
       id_WoRMS = '137107';
@@ -6138,6 +6180,22 @@ function links = get_link(taxon, open)
       id_EoL = '129550';
       id_AnAge = taxon;
       id_MSW3 = '14300085';
+       
+    case 'Stenella_longirostris'
+      id_CoL = '378c33cc36a36de73b2fdda984b281f5';
+      id_WoRMS = '137109';
+      id_Taxo = '68739';        
+      id_EoL = '129549';
+      id_AnAge = ''; % not present at 2018/07/17
+      id_MSW3 = '14300091';
+       
+    case 'Stenella_frontalis'
+      id_CoL = '50eb4f2b6b238898b5a3cb7ef5ea1077';
+      id_WoRMS = '137108';
+      id_Taxo = ''; % no access at 2018/07/19        
+      id_EoL = '1035713';
+      id_AnAge = ''; % not present at 2018/07/17
+      id_MSW3 = '14300090';
        
     case 'Delphinus_delphis'
       id_CoL = '53f82736e0e55a75583156a10dc0770e';
@@ -6155,6 +6213,46 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14300099';
        
+    case 'Lagenodelphis_hosei'
+      id_CoL = 'b299579151158a1f160415f80199b67a';
+      id_WoRMS = '137099';
+      id_Taxo = ''; % no access at 2018/07/18        
+      id_EoL = '314247';
+      id_AnAge = taxon;
+      id_MSW3 = '14300058';
+       
+    case 'Lissodelphis_borealis'
+      id_CoL = '085ba2ad8d2f8c674a783bf2a8da11f7';
+      id_WoRMS = '254975';
+      id_Taxo = '68706';        
+      id_EoL = '328527';
+      id_AnAge = ''; % not present at 2018/07/17
+      id_MSW3 = '14300065';
+       
+    case 'Cephalorhynchus_hectori'
+      id_CoL = '543a9694b1ed879527944d26deabe1ac';
+      id_WoRMS = '254979';
+      id_Taxo = '68759';        
+      id_EoL = '328526';
+      id_AnAge = ''; % not present at 2018/07/17
+      id_MSW3 = '14300040';
+       
+    case 'Lagenorhynchus_obscurus'
+      id_CoL = '2b77c8ff7966c1a93528ee536722dd6d';
+      id_WoRMS = '231434';
+      id_Taxo = '68729';        
+      id_EoL = '317317';
+      id_AnAge = taxon;
+      id_MSW3 = '14300065';
+       
+    case 'Lagenorhynchus_albirostris'
+      id_CoL = '7ff6461ff29f2d00011fecb10904f995';
+      id_WoRMS = '137101';
+      id_Taxo = '68724';        
+      id_EoL = '342089';
+      id_AnAge = ''; % not presebt at 2018/07/16
+      id_MSW3 = '14300061';
+
     case 'Globicephala_macrorhynchus'
       id_CoL = '98e64c7d6cd792ae61d35482a8856703';
       id_WoRMS = '137096';

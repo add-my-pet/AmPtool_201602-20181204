@@ -7058,6 +7058,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Puffinus_assimilis'
+      climate = {'MC'};
+      ecozone = {'MS','MC'};
+      habitat = {'0iMc'};
+      embryo  = {'Tntfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCik'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Diomedea_exulans'
       climate = {'MC'};
       ecozone = {'MC'};
@@ -8074,7 +8084,37 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iFr'};
       embryo  = {'Fv'};
       migrate = {};
-      food    = {'bxM','xiH'};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Trichechus_manatus'
+      climate = {'MA'};
+      ecozone = {'MAW'};
+      habitat = {'0iFr','0iMc'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Dugong_dugon'
+      climate = {'MA'};
+      ecozone = {'MIN','MPSE'};
+      habitat = {'0iMc'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Hydrodamalis_gigas'
+      climate = {'MC'};
+      ecozone = {'MPN'};
+      habitat = {'0iMc'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'bxM','xiHa'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
@@ -8228,19 +8268,19 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
-    case 'Lagenorhynchus_obscurus'
-      climate = {'MC'};
-      ecozone = {'MPN'};
+    case 'Neophocaena_phocaenoides'
+      climate = {'MA','MB'};
+      ecozone = {'MPW','MIN'};
       habitat = {'0iMp'};
       embryo  = {'Mv'};
       migrate = {};
-      food    = {'bxM','xiCvf','xiCic'};
+      food    = {'bxM','xiCvf'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
-    case 'Lagenorhynchus_albirostris'
-      climate = {'MC'};
-      ecozone = {'MAN'};
+    case 'Steno_bredanensis'
+      climate = {'MA','MB'};
+      ecozone = {'MC'};
       habitat = {'0iMp'};
       embryo  = {'Mv'};
       migrate = {};
@@ -8251,6 +8291,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Sotalia_fluviatilis'
       climate = {'MA','A'};
       ecozone = {'MAW','TN'};
+      habitat = {'0iMp'};
+      embryo  = {'Mv'};
+      migrate = {};
+      food    = {'bxM','xiCvf','xiCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Sousa_chinensis'
+      climate = {'MA'};
+      ecozone = {'MPW','MI'};
       habitat = {'0iMp'};
       embryo  = {'Mv'};
       migrate = {};
@@ -8278,6 +8328,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Stenella_longirostris'
+      climate = {'MA','MB'};
+      ecozone = {'MC'};
+      habitat = {'0iMp'};
+      embryo  = {'Mv'};
+      migrate = {};
+      food    = {'bxM','xiCvf','xiCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Stenella_frontalis'
+      climate = {'MA','MB'};
+      ecozone = {'MA'};
+      habitat = {'0iMp'};
+      embryo  = {'Mv'};
+      migrate = {};
+      food    = {'bxM','xiCvf','xiCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Delphinus_delphis'
       climate = {'MA','MB','MC'};
       ecozone = {'MC'};
@@ -8291,6 +8361,46 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Tursiops_truncatus'
       climate = {'MA','MB','MC'};
       ecozone = {'MC'};
+      habitat = {'0iMp'};
+      embryo  = {'Mv'};
+      migrate = {};
+      food    = {'bxM','xiCvf','xiCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Lagenodelphis_hosei'
+      climate = {'MA','MB'};
+      ecozone = {'MC'};
+      habitat = {'0iMp'};
+      embryo  = {'Mv'};
+      migrate = {};
+      food    = {'bxM','xiCvf','xiCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Lissodelphis_borealis'
+      climate = {'MC'};
+      ecozone = {'MPN'};
+      habitat = {'0iMp'};
+      embryo  = {'Mv'};
+      migrate = {};
+      food    = {'bxM','xiCvf','xiCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Cephalorhynchus_hectori'
+      climate = {'MC'};
+      ecozone = {'MPSE'};
+      habitat = {'0iMp'};
+      embryo  = {'Mv'};
+      migrate = {};
+      food    = {'bxM','xiCvf','xiCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Lagenorhynchus_albirostris'
+      climate = {'MC'};
+      ecozone = {'MAN'};
       habitat = {'0iMp'};
       embryo  = {'Mv'};
       migrate = {};
