@@ -1820,6 +1820,14 @@ function links = get_link(taxon, open)
       id_EoL = '206970';
       id_fishbase = taxon_fish;
        
+    case 'Dasyatis_pastinaca'
+      id_CoL = 'f8123ec3960f62fa377c1cef36e6b8c9';
+      id_WoRMS = '105851';
+      id_Taxo = '42133';        
+      id_EoL = '994772';
+      id_fishbase = taxon_fish;
+      id_ADW = ''; % not present at 2018/07/21
+       
     case 'Torpedo_marmorata'
       id_CoL = '522a408cbb5e8f63207652bb703c9abb';
       id_WoRMS = '271684';
@@ -5192,7 +5200,7 @@ function links = get_link(taxon, open)
     case 'Puffinus_assimilis'
       id_CoL = '85611d7fbc5bf240075248bfdcaf6135';
       id_WoRMS = '137200';
-      id_Taxo = ''; % no access at 2018/07/19        
+      id_Taxo = '51593';      
       id_EoL = '1048473';
       id_AnAge = ''; % not present at 2018/07/19       
       id_avibase = '797B4FA77E74254B';
@@ -6136,7 +6144,7 @@ function links = get_link(taxon, open)
     case 'Neophocaena_phocaenoides'
       id_CoL = '56418c1f65c6b7767279aa7e205cc8ef';
       id_WoRMS = '254985';
-      id_Taxo = ''; % no access at 2018/07/19        
+      id_Taxo = '68785';  
       id_EoL = '328539';
       id_AnAge = taxon;
       id_MSW3 = '14300112';
@@ -6144,7 +6152,7 @@ function links = get_link(taxon, open)
     case 'Steno_bredanensis'
       id_CoL = 'd74feb06e2f90b07584650f37dec6553';
       id_WoRMS = '137110';
-      id_Taxo = ''; % no access at 2018/07/18        
+      id_Taxo = '68703';      
       id_EoL = '328478';
       id_AnAge = taxon;
       id_MSW3 = '14300096';
@@ -6160,7 +6168,7 @@ function links = get_link(taxon, open)
     case 'Sousa_chinensis'
       id_CoL = 'c9a114073abd663cf11fd327edf894fe';
       id_WoRMS = '220226';
-      id_Taxo = ''; % no access at 2018/07/18       
+      id_Taxo = '68698'; 
       id_EoL = '328479';
       id_AnAge = taxon;
       id_MSW3 = '14300082';
@@ -6192,7 +6200,7 @@ function links = get_link(taxon, open)
     case 'Stenella_frontalis'
       id_CoL = '50eb4f2b6b238898b5a3cb7ef5ea1077';
       id_WoRMS = '137108';
-      id_Taxo = ''; % no access at 2018/07/19        
+      id_Taxo = '68737'; 
       id_EoL = '1035713';
       id_AnAge = ''; % not present at 2018/07/17
       id_MSW3 = '14300090';
@@ -6216,7 +6224,7 @@ function links = get_link(taxon, open)
     case 'Lagenodelphis_hosei'
       id_CoL = 'b299579151158a1f160415f80199b67a';
       id_WoRMS = '137099';
-      id_Taxo = ''; % no access at 2018/07/18        
+      id_Taxo = '68721';   
       id_EoL = '314247';
       id_AnAge = taxon;
       id_MSW3 = '14300058';
