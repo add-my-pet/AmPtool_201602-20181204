@@ -1201,6 +1201,13 @@ function links = get_link(taxon, open)
       id_Taxo = '33780';        
       id_EoL = '509431';
        
+    case 'Chorismus_antarcticus'
+      id_CoL = '55a06e6ea2678476bb19440fe7007ace';
+      id_WoRMS = '369214';
+      id_Taxo = '33859'; % only present at family level at 2018/07/22       
+      id_EoL = '330267';
+      id_Wiki = 'Hippolytidae'; % only present at family level at 2018/07/22  
+
     case 'Pandalus_borealis'
       id_CoL = 'c5bbc49e17aa816caab84f54cfc001bc';
       id_WoRMS = '158370';
@@ -3429,6 +3436,13 @@ function links = get_link(taxon, open)
       id_Taxo = '181460'; 
       id_Wiki = 'Notothenia';
       id_EoL = '204661';
+      id_fishbase = taxon_fish;
+       
+    case 'Pleuragramma_antarcticum'
+      id_CoL = 'af99906bac4bceb2fcf502c7da342560';
+      id_WoRMS = '234721';
+      id_Taxo = '184146'; 
+      id_EoL = '223358';
       id_fishbase = taxon_fish;
        
     case 'Chaenocephalus_aceratus'
@@ -6793,6 +6807,22 @@ function links = get_link(taxon, open)
       id_EoL = '328044';
       id_AnAge = taxon;
       id_MSW3 = '14001112';
+       
+    case 'Mustela_nigripes'
+      id_CoL = '50d9c54b54500504be4546ab8332eafb';
+      id_WoRMS = ''; % not present at 2018/07/22
+      id_Taxo = '66716';        
+      id_EoL = '328590';
+      id_AnAge = ''; % not present at 2018/07/22
+      id_MSW3 = '14001437';
+       
+    case 'Neovison_vison'
+      id_CoL = '5cf003221fbb88870322ee317ea43681';
+      id_WoRMS = ''; % not present at 2018/07/22
+      id_Taxo = '1684130';        
+      id_EoL = '922786';
+      id_AnAge = taxon;
+      id_MSW3 = '14001484';
        
     case 'Procyon_lotor'
       id_CoL = '14b81ecc6b8b77c9ae06b5f4d59826d5';

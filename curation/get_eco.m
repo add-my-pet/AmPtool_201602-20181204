@@ -1628,6 +1628,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'D'};
       reprod  = {'O'};
 
+    case 'Chorismus_antarcticus'
+      climate = {'ME'};
+      ecozone = {'MS'};
+      habitat = {'0bMb','bjMpe','jiMb'};
+      embryo  = {'Mbf'};
+      migrate = {};
+      food    = {'bjP','jiD','jiS'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
     case 'Pandalus_borealis'
       climate = {'MC','ME'};
       ecozone = {'MAN','MPN','MN'};
@@ -1635,7 +1645,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Mbf'};
       migrate = {};
       food    = {'bjP','jiD','jiS'};
-      gender  = {'D'};
+      gender  = {'Hsff'};
       reprod  = {'O'};
 
     case 'Dichelopandalus_bonnieri'
@@ -4805,6 +4815,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Mpe'};
       migrate = {};
       food    = {'bjPz','jiCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Pleuragramma_antarcticum'
+      climate = {'EF'};
+      ecozone = {'MS'};
+      habitat = {'0jMp','jiMcd'};
+      embryo  = {'Mpe'};
+      migrate = {};
+      food    = {'biPz'};
       gender  = {'D'};
       reprod  = {'O'};
 
@@ -9156,6 +9176,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tv'};
       migrate = {};
       food    = {'bxM','xiCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Mustela_nigripes'
+      climate = {'BSk'};
+      ecozone = {'THn'};
+      habitat = {'0iTg'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCvm'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Neovison_vison'
+      climate = {'BSk','Cfa','Cfb','Dfb','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'0iFm','0iFl','0iFr'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCv','xiCi'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
