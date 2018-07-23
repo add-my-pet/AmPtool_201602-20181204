@@ -2708,6 +2708,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'D'};
       reprod  = {'O'};
 
+    case 'Sphyrna_zygaena'
+      climate = {'MA'};
+      ecozone = {'MC'};
+      habitat = {'0iMpe'};
+      embryo  = {'Mv'};
+      migrate = {'Mo'};
+      food    = {'biCic','biCvf'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
     case 'Scyliorhinus_canicula'
       climate = {'MB','MC'};
       ecozone = {'MANE','MAm'};
@@ -8559,6 +8569,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Balaenoptera_physalus'
+      climate = {'MA','MB','MC','ME'};
+      ecozone = {'MC'};
+      habitat = {'0iMp'};
+      embryo  = {'Mv'};
+      migrate = {'Ml'};
+      food    = {'bxM','xiCvf','xiCic','xiCik'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Eschrichtius_robustus'
       climate = {'MC'};
       ecozone = {'MPN'};
@@ -9192,6 +9212,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Neovison_vison'
       climate = {'BSk','Cfa','Cfb','Dfb','Dfc'};
       ecozone = {'TH'};
+      habitat = {'0iFm','0iFl','0iFr'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCv','xiCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Martes_pennanti'
+      climate = {'Dfb','Dsb'};
+      ecozone = {'THn'};
       habitat = {'0iFm','0iFl','0iFr'};
       embryo  = {'Tv'};
       migrate = {};

@@ -1926,6 +1926,13 @@ function links = get_link(taxon, open)
       id_EoL = '994497';
       id_fishbase = taxon_fish;
        
+    case 'Sphyrna_zygaena'
+      id_CoL = '64f8277da58352bec7b757ee78d0b76a';
+      id_WoRMS = '105819';
+      id_Taxo = '42010';        
+      id_EoL = '224170';
+      id_fishbase = taxon_fish;
+       
     case 'Scyliorhinus_canicula'
       id_CoL = '384ae8eb01a30b7118797dd65f7e4915';
       id_WoRMS = '105814';
@@ -6364,6 +6371,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14300018';
        
+    case 'Balaenoptera_physalus'
+      id_CoL = 'fc70814cdb6032a77d67bf268d2fec4a';
+      id_WoRMS = '137091';
+      id_Taxo = '68892';        
+      id_EoL = '328573';
+      id_AnAge = taxon;
+      id_MSW3 = '14300023';
+       
     case 'Eschrichtius_robustus'
       id_CoL = 'b4385cf8dc677811a74fa6ae3cb43adc';
       id_WoRMS = '137112';
@@ -6824,11 +6839,19 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14001484';
        
+    case 'Martes_pennanti'
+      id_CoL = '9d97f9fb613094a861721b619df5c77b';
+      id_WoRMS = ''; % not present at 2018/07/23
+      id_Taxo = '1684130';        
+      id_EoL = '922786';
+      id_AnAge = taxon;
+      id_MSW3 = '14001254';
+       
     case 'Procyon_lotor'
       id_CoL = '14b81ecc6b8b77c9ae06b5f4d59826d5';
       id_WoRMS = ''; % not present at 2018/01/28
-      id_Taxo = '66610';       
-      id_EoL = '328598';
+      id_Taxo = '66671';       
+      id_EoL = 'overview';
       id_AnAge = taxon;
       id_MSW3 = '14001664';
        
