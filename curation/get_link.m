@@ -6379,6 +6379,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14300023';
        
+    case 'Balaenoptera_borealis'
+      id_CoL = '6efb6430c724449cc1f490fafd4a330b';
+      id_WoRMS = '137088';
+      id_Taxo = '68886';        
+      id_EoL = '328572';
+      id_AnAge = taxon;
+      id_MSW3 = '14300014';
+       
     case 'Eschrichtius_robustus'
       id_CoL = 'b4385cf8dc677811a74fa6ae3cb43adc';
       id_WoRMS = '137112';
@@ -6757,6 +6765,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14000156';
        
+    case 'Acinonyx_jubatus'
+      id_CoL = '6ce647e8a93e5794b622e28d477a7113';
+      id_Taxo = '67330';        
+      id_EoL = '328680';
+      id_AnAge = taxon;
+      id_MSW3 = '14000006';
+       
     case 'Vulpes_lagopus'
       id_CoL = '74f649c50206103b78005228c898e177';
       id_WoRMS = '404130';
@@ -6989,10 +7004,17 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14100043';
        
+    case 'Acrocodia_indica'
+      id_CoL = '9ce36ca8bf7e907829131e25ad2cb765';
+      id_Taxo = '69103';        
+      id_EoL = '328009';
+      id_AnAge = taxon;
+      id_MSW3 = '14100039';
+       
     case 'Rhinoceros_unicornis'
       id_CoL = '2a40e3919813c0f16e7083e4301d72bb';
       id_Taxo = '69154';        
-      id_EoL = '129475';
+      id_EoL = '129470';
       id_AnAge = taxon;
       id_MSW3 = '14100071';
        
