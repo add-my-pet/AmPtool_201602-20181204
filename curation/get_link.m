@@ -6744,12 +6744,33 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14000678';
 
+    case 'Neofelis_nebulosa'
+      id_CoL = 'c0dc3b3850869e22d6c3e67f0841c371';
+      id_Taxo = '67260';        
+      id_EoL = '328675';
+      id_AnAge = taxon;
+      id_MSW3 = '14000222';
+       
     case 'Panthera_leo'
       id_CoL = 'c67c449dc0cc8bf14732d7fabf8f2b10';
       id_Taxo = '67265';        
       id_EoL = '328672';
       id_AnAge = taxon;
       id_MSW3 = '14000228';
+       
+    case 'Panthera_onca'
+      id_CoL = '4ffa941b074645715ff39f515fb9fcea';
+      id_Taxo = '67276';        
+      id_EoL = '328606';
+      id_AnAge = taxon;
+      id_MSW3 = '14000240';
+       
+    case 'Caracal_caracal'
+      id_CoL = 'e12e3486709068246795a98ddfaedb8e';
+      id_Taxo = '167589';        
+      id_EoL = '312855';
+      id_AnAge = taxon;
+      id_MSW3 = '14000014';
        
     case 'Lynx_lynx'
       id_CoL = '89f97dcbcfdbcaad43c3645951bbcaa5';
@@ -6764,6 +6785,13 @@ function links = get_link(taxon, open)
       id_EoL = '347432';
       id_AnAge = taxon;
       id_MSW3 = '14000156';
+       
+    case 'Puma_concolor'
+      id_CoL = '0b4c73f8591ab777e49e32be159e3a18';
+      id_Taxo = '169680';        
+      id_EoL = '46367484';
+      id_AnAge = taxon;
+      id_MSW3 = '14000204';
        
     case 'Acinonyx_jubatus'
       id_CoL = '6ce647e8a93e5794b622e28d477a7113';
