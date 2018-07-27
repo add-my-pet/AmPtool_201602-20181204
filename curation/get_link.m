@@ -3745,6 +3745,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
+    case 'Peltophryne_lemur'
+      id_CoL = 'e53ae9ac85ef2c141a509f6405bc98f7';
+      id_Taxo = '137440';        
+      id_EoL = '331265';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
     case 'Rana_temporaria'
       id_CoL = '2722b8314c6250b8a73cbe019f621cd2';
       id_Taxo = '47660';        
@@ -3930,12 +3937,27 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
+    case 'Phrynosoma_ditmarsi'
+      id_CoL = 'a880dfa6c2b0b6182fd710fc6a361eb3';
+      id_Taxo = '524515';        
+      id_EoL = '791087';
+      id_AnAge = ''; % not present at 2018/07/26
+      id_ReptileDB = '';  % not present at 2018/07/26
+       
     case 'Python_regius'
       id_CoL = '6d0035229236a4c7583a934a4b310b15';
       id_Taxo = '49851';        
       id_EoL = '1055460';
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
+       
+    case 'Apodora_papuana'
+      id_CoL = 'dc3a391b21ff04ac35bdf3abaded55b8';
+      id_Taxo = '644250';        
+      id_EoL = '1057117';
+      id_AnAge = ''; % not present at 2018/07/67
+      id_ReptileDB = 'genus=Liasis&species=papuanus';
+      id_Wiki = 'Apodora';
        
     case 'Eunectes_murinus'
       id_CoL = 'a97cd0d051262be8ea1c9b162f28b25f';
@@ -4279,6 +4301,14 @@ function links = get_link(taxon, open)
       id_Taxo = '50628';
       id_WoRMS = '422566';
       id_EoL = '1056415';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
+    case 'Crocodylus_moreletii'
+      id_CoL = '0144c3ff17ca8872a046ca332981e37d';
+      id_Taxo = '50632';
+      id_WoRMS = ''; % not present at 2018/07/27
+      id_EoL = '795280';
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
@@ -5038,13 +5068,13 @@ function links = get_link(taxon, open)
       id_avibase = '2143A8526CA7C809';
       id_birdlife = 'american-golden-plover-pluvialis-dominica';
       
-    case 'Gallinula_chloropus'
-      id_CoL = '8c1a4e2718730f2ad6171f96fb6c6fa3';
-      id_Taxo = '53395';      
-      id_EoL = '1049299';
-      id_AnAge = taxon;       
-      id_avibase = '8F82FF8C30667D90';
-      id_birdlife = 'common-moorhen-gallinula-chloropus';
+    case 'Psophia_crepitans'
+      id_CoL = '79cc7ed2868e70fd1a9c47f97f9d2061';
+      id_Taxo = '53287';        
+      id_EoL = '915407';
+      id_AnAge = ''; % not present at 2018/07/26       
+      id_avibase = 'BCBFFF6A2798E83E';
+      id_birdlife = 'grey-winged-trumpeter-psophia-crepitans';
       
     case 'Grus_japonensis'
       id_CoL = '6fde6b82ab0ac42b5d8bbd69e9433010';
@@ -5485,6 +5515,14 @@ function links = get_link(taxon, open)
       id_avibase = '35810386DDA72E08';
       id_birdlife = 'monk-parakeet-myiopsitta-monachus';
       
+    case 'Ara_ararauna'
+      id_CoL = '6a101975b78c4f5c22ff46fc4be8b43f';
+      id_Taxo = '54396';        
+      id_EoL = '1177961';
+      id_AnAge = taxon;       
+      id_avibase = '18AEC3532537ACCB';
+      id_birdlife = 'blue-and-yellow-macaw-ara-ararauna';
+      
     case 'Acanthisitta_chloris'
       id_CoL = '5b8863030a8922433d7393bcad9b9192';
       id_Taxo = '56235';        
@@ -5516,7 +5554,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '62CA2AF81AF5B68D';
       id_birdlife = 'eastern-phoebe-sayornis-phoebe';
-      
+
+    case 'Paradisaea_rubra'
+      id_CoL = '150e58f547fcbceda2a7149c865a9c36';
+      id_Taxo = '59419';        
+      id_EoL = '1051878';
+      id_AnAge = ''; % not present at 2018/07/27       
+      id_avibase = '2215C01D11B737E6';
+      id_birdlife = 'red-bird-of-paradise-paradisaea-rubra';
+
     case 'Lanius_senator'
       id_CoL = '2f89fd5f925b02ec2152336e3e270879';
       id_Taxo = '56645';        
@@ -5540,6 +5586,14 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2017/06/18 
       id_avibase = 'D4C32F8E792B65BA';
       id_birdlife = 'eurasian-jackdaw-corvus-monedula';
+      
+    case 'Corvus_hawaiiensis'
+      id_CoL = '373f45316d19bbb301d547ad775f6276';
+      id_Taxo = '87773';        
+      id_EoL = '1177475';
+      id_AnAge = taxon; 
+      id_avibase = '2CDECD36D1A0E5F3';
+      id_birdlife = 'hawaiian-crow-corvus-hawaiiensis';
       
     case 'Picathartes_gymnocephalus'
       id_CoL = '8f49aaf3ff51bd1b89d3460db10997ab';
@@ -5778,12 +5832,21 @@ function links = get_link(taxon, open)
       id_ADW = 'Spizella_arborea';
       id_birdlife = 'american-tree-sparrow-passerella-arborea';
       
+    case 'Chlorodrepanis_virens'
+      id_CoL = '3362e7a2fffa3335d25516046a693e21';
+      id_Taxo = '408685';  % present as Hemignathus virens
+      id_EoL = '921996';   % present as Hemignathus virens
+      id_AnAge = taxon;       
+      id_avibase = 'A2BB98A9A61F777B';
+      id_ADW = ''; % not present at 2018/07/27
+      id_birdlife = 'hawaii-amakihi-chlorodrepanis-virens';
+      
     case 'Acanthis_flammea'
       id_CoL = '67942f4f3c2cad73a6cc089d61db86cc';
       id_Taxo = '58520';  % present as Carduelis flammea 
       id_EoL = '1051077'; % present as Carduelis flammea 
       id_AnAge = taxon;       
-      id_avibase = 'A2BB98A9A61F777B';
+      id_avibase = 'ABB15738E3BBDEE6';
       id_ADW = ''; % not present at 2017/12/17
       id_birdlife = 'redpoll-acanthis-flammea';
       
@@ -6495,6 +6558,13 @@ function links = get_link(taxon, open)
       id_EoL = '1038792';  
       id_AnAge = taxon; 
       id_MSW3 = '14200746'; 
+      
+     case 'Tragelaphus_imberbis'
+      id_CoL = '0f2ae15d1a6ef6198ef73e2bf588c035';
+      id_Taxo = '68198';        
+      id_EoL = '1038789';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200730'; 
       
     case {'Bos_primigenius_Angus','Bos_primigenius_Holstein','Bos_primigenius_Brahman'}
       id_CoL = '40e81482006c210a43ef64609163278e';
@@ -7968,6 +8038,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '11900016';
        
+    case 'Tupaia_belangeri'
+      id_CoL = '9f6a4502634a7f2d0e4ebb99bb921068';
+      id_Taxo = '61380';        
+      id_EoL = '289557';
+      id_AnAge = taxon;
+      id_MSW3 = '11900011';
+       
     case 'Galeopterus_variegatus'
       id_CoL = '4dcbb7c6e643932361541981ae29374b';
       id_Taxo = '1003254';        
@@ -8037,6 +8114,13 @@ function links = get_link(taxon, open)
       id_EoL = '46326375'; % cripple entry
       id_AnAge = 'Tarsius_spectrum';
       id_MSW3 = '12100176';
+       
+    case 'Carlito_syrichta'
+      id_CoL = '25c88cc21071fd50bf7dbf6e5b806394';
+      id_Taxo = '65621';        
+      id_EoL = '126789'; 
+      id_AnAge = taxon;
+      id_MSW3 = '12100175';
        
     case 'Callithrix_pygmaea'
       id_CoL = 'd19f292374779e32b7ebc28a2c57d829';
