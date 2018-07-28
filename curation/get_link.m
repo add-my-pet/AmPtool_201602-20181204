@@ -5059,6 +5059,24 @@ function links = get_link(taxon, open)
       id_avibase = '0F0DCC2F28E4E83B';
       id_birdlife = 'kittlitzs-plover-charadrius-pecuarius';
       
+    case 'Charadrius_melodus'
+      id_CoL = '070053dfb32c30e5ce1cbaf73d64a9f9';
+      id_WoRMS = '159125';
+      id_Taxo = '53600';        
+      id_EoL = '1049343';
+      id_AnAge = taxon;   
+      id_avibase = '671B69FE824DC9FF';
+      id_birdlife = 'piping-plover-charadrius-melodus';
+      
+    case 'Charadrius_vociferus'
+      id_CoL = 'ef3901bc807d4a401db8c8ff26422989';
+      id_WoRMS = '159127';
+      id_Taxo = '53610';        
+      id_EoL = '1049356';
+      id_AnAge = taxon;
+      id_avibase = 'BCF9A19AFE372627';
+      id_birdlife = 'killdeer-charadrius-vociferus';
+      
     case 'Pluvialis_dominica'
       id_CoL = 'aa24423d09987a0d571d2e28180b1960';
       id_WoRMS = '159136';
@@ -5075,6 +5093,16 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present at 2018/07/26       
       id_avibase = 'BCBFFF6A2798E83E';
       id_birdlife = 'grey-winged-trumpeter-psophia-crepitans';
+      id_ADW = ''; % not present at 2018/07/26
+      
+    case 'Psophia_leucoptera'
+      id_CoL = '13ca4973b62b3b7c106c12d5c1a4a710';
+      id_Taxo = '53288';        
+      id_EoL = '915406';
+      id_AnAge = ''; % not present at 2018/07/28       
+      id_avibase = '41782204D6C1956E';
+      id_birdlife = 'white-winged-trumpeter-psophia-leucoptera';
+      id_ADW = ''; % not present at 2018/07/28
       
     case 'Grus_japonensis'
       id_CoL = '6fde6b82ab0ac42b5d8bbd69e9433010';
@@ -5523,6 +5551,15 @@ function links = get_link(taxon, open)
       id_avibase = '18AEC3532537ACCB';
       id_birdlife = 'blue-and-yellow-macaw-ara-ararauna';
       
+    case 'Amazona_amazonica'
+      id_CoL = 'c19a03f82708bd327ac7ba77a8d4bb80';
+      id_Taxo = '54344';        
+      id_EoL = '1178051';
+      id_AnAge = taxon;       
+      id_avibase = '0F2066D5BB706CD2';
+      id_birdlife = 'orange-winged-amazon-amazona-amazonica';
+      id_ADW = 'not present at 2018/07/28';
+      
     case 'Acanthisitta_chloris'
       id_CoL = '5b8863030a8922433d7393bcad9b9192';
       id_Taxo = '56235';        
@@ -5750,6 +5787,22 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_avibase = 'B904BB227C07317E';
       id_birdlife = 'grey-cheeked-thrush-catharus-minimus';
+
+    case 'Myadestes_obscurus'
+      id_CoL = 'cb55927e7a3df3d00f28dad38627af8e';
+      id_Taxo = '84317';        
+      id_EoL = '1177908';
+      id_AnAge = ''; % not present at 2018/07/28
+      id_avibase = 'A1C41A3FDDC9EA25';
+      id_birdlife = 'omao-myadestes-obscurus';
+
+    case 'Myadestes_palmeri'
+      id_CoL = 'f98e3376b047ee8476ce49b3508a07fe';
+      id_Taxo = '84319';        
+      id_EoL = '1177952';
+      id_AnAge = ''; % not present at 2018/07/28
+      id_avibase = '62B955D337163376';
+      id_birdlife = 'puaiohi-myadestes-palmeri';
 
     case 'Sturnus_vulgaris'
       id_CoL = 'cbb6ad24ade1b086f9f6ad89fe92ac3d';

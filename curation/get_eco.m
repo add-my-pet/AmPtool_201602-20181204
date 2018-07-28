@@ -6928,6 +6928,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Charadrius_melodus'
+      climate = {'Dfb'};
+      ecozone = {'THn'};
+      habitat = {'0iTd','0iFm'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Charadrius_vociferus'
+      climate = {'Dfb','Dfc'};
+      ecozone = {'THn'};
+      habitat = {'0iTg','0iTh','0iFm'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Pluvialis_dominica'
       climate = {'ET','Dfc'};
       ecozone = {'THn'};
@@ -6942,7 +6962,17 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Af','Am'};
       ecozone = {'TN'};
       habitat = {'xiTf'};
-      embryo  = {'Tnsfm'};
+      embryo  = {'Tnwfm'};
+      migrate = {};
+      food    = {'biCi','xiO'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Psophia_leucoptera'
+      climate = {'Af','Am'};
+      ecozone = {'TN'};
+      habitat = {'xiTf'};
+      embryo  = {'Tnwfm'};
       migrate = {};
       food    = {'biCi','xiO'};
       gender  = {'Dg'};
@@ -7478,6 +7508,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Amazona_amazonica'
+      climate = {'Af','Am'};
+      ecozone = {'TN'};
+      habitat = {'0iTf','0iTi'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Acanthisitta_chloris'
       climate = {'Cfb'};
       ecozone = {'TAz'};
@@ -7747,13 +7787,33 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       food    = {'biCi','xiHs'};
       gender  = {'Dg'};
       reprod  = {'O'};
-
-    case 'Catharus_minimus'
+      
+   case 'Catharus_minimus'
       climate = {'Cfa','Dfa','Dfb','Dfc'};
       ecozone = {'TH'};
       habitat = {'0iTh','0iTf'};
       embryo  = {'Tnpf','Tnsf'}; 
       migrate = {'Ml'};
+      food    = {'biCi','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Myadestes_obscurus'
+      climate = {'Am'};
+      ecozone = {'TO'};
+      habitat = {'0iTh','0iTf'};
+      embryo  = {'Tnpfm'}; 
+      migrate = {};
+      food    = {'biCi','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Myadestes_palmeri'
+      climate = {'Am'};
+      ecozone = {'TO'};
+      habitat = {'0iTh','0iTf'};
+      embryo  = {'Tnpfm'}; 
+      migrate = {};
       food    = {'biCi','xiHs'};
       gender  = {'Dg'};
       reprod  = {'O'};

@@ -1,1 +1,3 @@
 Charadrius_pecuarius
+Charadrius_melodus
+Charadrius_vociferus
