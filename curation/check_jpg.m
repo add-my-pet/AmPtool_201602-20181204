@@ -24,9 +24,10 @@ function check_jpg(info)
 
 %% Remarks
 % The root of the tree is Animalia
-% Assumes that this function is run in dir entries_admin and that entries is a sister directory
-% Assumes that jpg's and txt's are in sister directory img/tree
+% Assumes that this function is ran in dir AmPtool/curation and that entries is a sister directory of AmPtool
+% Assumes that jpg's and txt's are in sister directory img/tree of AmPtool
 % Assumes that path to jpg's on server is: http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree
+% All files in img/tree must have extension '.jpg' or '.jpg.txt' 
 
 %% Example of use
 % check_jpg
@@ -36,7 +37,7 @@ if ~exist('info','var')
 end
 
 if ~(info == 1)
-  tree = list_taxa; tree = tree(cellfun('isempty',strfind(tree, '_'))); tree = tree(cellfun('isempty',strfind(tree, 'Animalia'))); n_tree = length(tree);   % cell string with node names of tree, excluding entries
+  tree = list_taxa('', 1); n_tree = length(tree); % cell string with node names of tree, excluding entries
 end
 
 local = cellstr(ls('../../img/tree')); local([1 2]) = [];  % cell string with local node names 
@@ -44,11 +45,19 @@ i = cellfun('isempty',strfind(local, '.txt')); local_txt = local(i); local_jpg =
 % reduce jpg and txt names to that of nodes 
 n_jpg = length(local_jpg);
 for i = 1:n_jpg
-  txt = local_jpg{i}; txt = txt(1:strfind(txt, '.')-1); local_jpg{i} = txt;
+  txt = local_jpg{i}; txt = strsplit(txt,'.'); 
+  if ~length(txt) == 2 || ~strcmp(txt{2},'jpg')
+    fprintf(['warning from check_jpg: present in local: ', local_jpg{i}, '\n']);
+  end
+  local_jpg{i} = txt{1};
 end
 n_txt = length(local_txt);
 for i = 1:n_txt
-  txt = local_txt{i}; txt = txt(1:strfind(txt, '.')-1); local_txt{i} = txt;
+  txt = local_txt{i}; txt = strsplit(txt,'.'); 
+  if ~length(txt) == 3 || ~strcmp(txt{2},'jpg')
+    fprintf(['warning from check_jpg: present in local: ', local_txt{i}, '\n']);
+  end
+  local_txt{i} = txt{1};
 end
 
 % check presence of txt file for each jpg in local
@@ -66,7 +75,7 @@ end
 
 if info > 0
   % cell string with server nodes stored in server
-  txt = urlread('http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree');
+  txt = urlread('https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/img/tree/');
   head = strfind(txt,'[IMG]'); txt(1:head(1)) = []; 
   n_server = length(strfind(txt,'href="')); server = cell(n_server,1);
   for i = 1:n_server
