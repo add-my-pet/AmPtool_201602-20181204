@@ -3752,6 +3752,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
+    case 'Anaxyrus_baxteri'
+      id_CoL = 'c24915f7e2759cc72b4c9fb15d2d52a8';
+      id_Taxo = '988886';        
+      id_EoL = '311046';
+      id_AnAge = ''; % not present at 2018/07/31
+      id_amphweb = taxon_amph;
+       
     case 'Rana_temporaria'
       id_CoL = '2722b8314c6250b8a73cbe019f621cd2';
       id_Taxo = '47660';        
@@ -3936,6 +3943,14 @@ function links = get_link(taxon, open)
       id_EoL = '793971';
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
+       
+    case 'Sceloporus_occidentalis'
+      id_CoL = '489944a4e2afe310ce2b89d8cbd2c580';
+      id_Taxo = '49020';        
+      id_EoL = '790717';
+      id_AnAge = ''; % not present at 2018/07/31
+      id_ReptileDB = taxon_rep;
+      id_ADW = ''; % not present at 2018/07/31
        
     case 'Phrynosoma_ditmarsi'
       id_CoL = 'a880dfa6c2b0b6182fd710fc6a361eb3';
@@ -4661,6 +4676,14 @@ function links = get_link(taxon, open)
       id_avibase = '4FC41CA0DC1B12AF';
       id_birdlife = 'kori-bustard-ardeotis-kori';
       
+    case 'Chlamydotis_undulata'
+      id_CoL = 'e1a6f7d9973a2e36b5e93bcd917941c5';
+      id_Taxo = '53453';        
+      id_EoL = '915384';
+      id_AnAge = taxon;     
+      id_avibase = '5714C710ACE4DA8B';
+      id_birdlife = 'african-houbara-chlamydotis-undulata';
+      
     case 'Opisthocomus_hoazin'
       id_CoL = 'ad3bcef887f4c268792c37f0d373faff';
       id_Taxo = '54479';        
@@ -5365,6 +5388,15 @@ function links = get_link(taxon, open)
       id_avibase = 'A0A584C1E7D786FE';
       id_birdlife = 'eurasian-spoonbill-platalea-leucorodia';
       
+    case 'Geronticus_eremita'
+      id_CoL = 'f562beb5c711d2f61ad9594ed3cd693f';
+      id_WoRMS = ''; % not present at 2018/07/30
+      id_Taxo = '51905'; 
+      id_EoL = '1049656';
+      id_AnAge = taxon;
+      id_avibase = 'B20FECE2231097F4';
+      id_birdlife = 'northern-bald-ibis-geronticus-eremita';
+      
     case 'Ardea_herodias'
       id_CoL = '6efeb35a87864c70193c0a75b38d01aa';
       id_WoRMS = '159382';
@@ -5827,6 +5859,14 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2017/06/18       
       id_avibase = 'CBE7EC407BB927CB';
       id_birdlife = 'olive-backed-sunbird-cinnyris-jugularis';
+      
+    case 'Foudia_rubra'
+      id_CoL = '190ff237ae7e40a8765423fe50be4bf6';
+      id_Taxo = '59062';        
+      id_EoL = '919647';
+      id_AnAge = taxon;       
+      id_avibase = '2F37FD057AB5E306';
+      id_birdlife = 'mauritius-fody-foudia-rubra';
       
     case 'Passer_domesticus'
       id_CoL = '9cd9581803902beb26aee9ddcc6e4575';
@@ -6669,6 +6709,41 @@ function links = get_link(taxon, open)
       id_EoL = '311498';  
       id_AnAge = taxon; 
       id_MSW3 = '14200596'; 
+      
+    case 'Cephalophus_dorsalis'
+      id_CoL = '8ac3df7e3fc90fc0ddac5c0e445ad99e';
+      id_Taxo = '68286';        
+      id_EoL = '328703';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200870'; 
+      
+    case 'Cephalophus_niger'
+      id_CoL = '3e3f5735be1f0e8c5c8d30d32556b3e5';
+      id_Taxo = '68292';        
+      id_EoL = '328709';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200880'; 
+      
+    case 'Cephalophus_rufilatus'
+      id_CoL = '9a5d422b7963705648c6d98985edc6fc';
+      id_Taxo = '68295';        
+      id_EoL = '328711';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200921'; 
+      
+    case 'Cephalophus_sylvicultor'
+      id_CoL = 'a4860932d190e6276e086a14b9e015a8';
+      id_Taxo = '68307';        
+      id_EoL = '328721';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200891'; 
+      
+    case 'Cephalophus_zebra'
+      id_CoL = '0632d1dc0e608d95c2fa2509b205a251';
+      id_Taxo = '68299';        
+      id_EoL = '328710';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200902'; 
       
     case 'Sylvicapra_grimmia'
       id_CoL = 'a4860932d190e6276e086a14b9e015a8';
