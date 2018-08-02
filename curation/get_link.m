@@ -1905,6 +1905,13 @@ function links = get_link(taxon, open)
       id_EoL = '212023';
       id_fishbase = taxon_fish;
        
+    case 'Hemiscyllium_ocellatum'
+      id_CoL = 'ea474af232d5b00da7e03f51f1077519';
+      id_WoRMS = '281037';
+      id_Taxo = '94275';        
+      id_EoL = '208201';
+      id_fishbase = taxon_fish;
+       
     case 'Chiloscyllium_plagiosum'
       id_CoL = '52239f24c95c370cbca53d5404f355a8';
       id_WoRMS = '277832';
@@ -3014,6 +3021,81 @@ function links = get_link(taxon, open)
       id_Taxo = '44613';        
       id_fishbase = taxon_fish;
        
+    case 'Quintana_atrizona'
+      id_CoL = '8b3fdbc91b147cc8e1d38ce76c14c0c9';
+      id_WoRMS = ''; % not present 2018/08/02
+      id_EoL = '218128';
+      id_Taxo = '185682';        
+      id_fishbase = taxon_fish;
+       
+    case 'Limia_vittata'
+      id_CoL = 'f6eb84b770aec1fd4a795954d12d0109';
+      id_WoRMS = '281357'; 
+      id_EoL = '46377016';
+      id_Taxo = '178848';        
+      id_fishbase = taxon_fish;
+ 
+    case 'Gambusia_puncticulata'
+      id_CoL = '117756501c778f52fc164e987e7268dc';
+      id_WoRMS = '276140'; 
+      id_EoL = '222492';
+      id_Taxo = '192857';        
+      id_fishbase = taxon_fish;
+      id_Wiki = 'Gambusia';
+ 
+    case 'Gambusia_punctata'
+      id_CoL = '633eec83b8d07c3d5409cbd191baec73';
+      id_WoRMS = ''; % not present 2018/08/02
+      id_EoL = '604097';
+      id_Taxo = '174700';        
+      id_fishbase = taxon_fish;
+ 
+    case 'Girardinus_metallicus'
+      id_CoL = '2be6eac6f0550837097a82c9c89c211e';
+      id_WoRMS = ''; % not present 2018/08/02
+      id_EoL = '1012105';
+      id_Taxo = '174976';        
+      id_fishbase = taxon_fish;
+ 
+    case 'Girardinus_uninotatus'
+      id_CoL = 'e5beadb04ff9ab7f95e76dbe5e85caa9';
+      id_WoRMS = ''; % not present 2018/08/02
+      id_EoL = '605235';
+      id_Taxo = '174978';        
+      id_fishbase = taxon_fish;
+      id_Wiki = 'Girardinus';
+ 
+    case 'Girardinus_creolus'
+      id_CoL = 'cbd5015bfb141aaa03fd3c1a1655856c';
+      id_WoRMS = ''; % not present 2018/08/02
+      id_EoL = '604695';
+      id_Taxo = '174972';        
+      id_fishbase = taxon_fish;
+      id_Wiki = 'Girardinus';
+ 
+    case 'Girardinus_denticulatus'
+      id_CoL = '23bdd1b442cf1404155914fc772fcd90';
+      id_WoRMS = ''; % not present 2018/08/02
+      id_EoL = '620749';
+      id_Taxo = '174974';        
+      id_fishbase = taxon_fish;
+      id_Wiki = 'Girardinus';
+ 
+    case 'Girardinus_microdactylus'
+      id_CoL = 'd5e3fe981e4a00bc9abd3c5b72a4b074';
+      id_WoRMS = ''; % not present 2018/08/02
+      id_EoL = '219365';
+      id_Taxo = '174977';        
+      id_fishbase = taxon_fish;
+      id_Wiki = 'Girardinus';
+ 
+    case 'Girardinus_falcatus'
+      id_CoL = '23450aa78b79ca6952f504379e74d2ed';
+      id_WoRMS = ''; % not present 2018/08/02
+      id_EoL = '604928';
+      id_Taxo = '174975';        
+      id_fishbase = taxon_fish;
+ 
     case 'Aphanius_fasciatus'
       id_CoL = 'ca3b317c12ad025398bec05b234d8a98';
       id_WoRMS = '126428';
@@ -4071,6 +4153,15 @@ function links = get_link(taxon, open)
       id_EoL = '794804';
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
+       
+    case 'Emydura_victoriae'
+      id_CoL = '2ed822a666379339541ff00d3bf83269';
+      id_WoRMS = ''; % not present 2018/08/01
+      id_Taxo = '48266';
+      id_EoL = '1056914';
+      id_AnAge = '';  % not present 2018/08/01
+      id_ReptileDB = taxon_rep;
+      id_ADW = ''; % not present 2018/08/01
        
     case 'Hydromedusa_maximiliani'
       id_CoL = 'e99db52a9453446ed652e4389cab0a12';
@@ -5859,6 +5950,15 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2017/06/18       
       id_avibase = 'CBE7EC407BB927CB';
       id_birdlife = 'olive-backed-sunbird-cinnyris-jugularis';
+      
+    case 'Ploceus_castaneiceps'
+      id_CoL = '2c70a58aced703a025fb477fa7dd690f';
+      id_Taxo = '58970';        
+      id_EoL = '919008';
+      id_AnAge = ''; % not present 2018/08/01       
+      id_avibase = '2379E3EBD59FFCE6';
+      id_birdlife = 'taveta-golden-weaver-ploceus-castaneiceps';
+      id_ADW = ''; % not present 2018/08/01      
       
     case 'Foudia_rubra'
       id_CoL = '190ff237ae7e40a8765423fe50be4bf6';

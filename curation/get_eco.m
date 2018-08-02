@@ -2678,6 +2678,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'D'};
       reprod  = {'O'};
 
+    case 'Hemiscyllium_ocellatum'
+      climate = {'MA'};
+      ecozone = {'MPSW'};
+      habitat = {'0iMr','0iMd'};
+      embryo  = {'Ms'};
+      migrate = {};
+      food    = {'biCi','biCvf'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
     case 'Chiloscyllium_plagiosum'
       climate = {'MA'};
       ecozone = {'MIE','MPW'};
@@ -4222,6 +4232,106 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Af','Am','Cfa'};
       ecozone = {'TN'};
       habitat = {'0iFm','0iMm'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Quintana_atrizona'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iFp','0iFm'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Limia_vittata'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iFp','0iFm'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Gambusia_puncticulata'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iFp','0iFm'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Gambusia_punctata'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iFc'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Girardinus_metallicus'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iFp','0iFm'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Girardinus_uninotatus'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iFc'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Girardinus_creolus'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iFc'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Girardinus_denticulatus'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iFc'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Girardinus_microdactylus'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iFc'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Girardinus_falcatus'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iFp','0iFm'};
       embryo  = {'Fv'};
       migrate = {};
       food    = {'biCi'};
@@ -5852,6 +5962,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Cfa','Cfb'};
       ecozone = {'TA'};
       habitat = {'0bTd','biFr'};
+      embryo  = {'Tt'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Emydura_victoriae'
+      climate = {'Aw','BSh'};
+      ecozone = {'TA'};
+      habitat = {'0bTd','biFr','biFl'};
       embryo  = {'Tt'};
       migrate = {};
       food    = {'biCi'};
@@ -7885,6 +8005,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tnpf'};
       migrate = {};
       food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Ploceus_castaneiceps'
+      climate = {'Aw'};
+      ecozone = {'TPa'}; 
+      habitat = {'0iTi'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biHs'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
