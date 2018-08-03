@@ -3813,7 +3813,14 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2017/06/18
       id_amphweb = taxon_amph;
        
-    case 'Pseudophryne_bibronii'
+    case 'Geocrinia_rosea'
+      id_CoL = 'aaded8bde8cf5b7ec805fc99a19b72b9';
+      id_Taxo = '79112';        
+      id_EoL = '333364';
+      id_AnAge = ''; % not present 2017/06/18
+      id_amphweb = taxon_amph;
+      
+     case 'Pseudophryne_bibronii'
       id_CoL = '30e9b7c92c5bc6dc80518b2c9ec2d126';
       id_Taxo = '88189';        
       id_EoL = '1025125';
@@ -4360,6 +4367,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon; 
       id_ReptileDB = taxon_rep;
 
+    case 'Batagur_baska'
+      id_CoL = 'fc24ddcc0425418a0bff73c6a4b5d86f';
+      id_WoRMS = ''; % not present 2018/08/03
+      id_Taxo = '48530'; 
+      id_EoL = '795612';
+      id_AnAge = taxon; 
+      id_ReptileDB = taxon_rep;
+      id_ADW = '';  % not present 2018/08/03
+
     case 'Deinosuchus_rugosus'
       id_CoL = ''; % not present 2010/06/16
       id_Taxo = '50639'; % present as genus 2010/06/16      
@@ -4686,6 +4702,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = 'BBA263C235B15B88';
       id_birdlife = 'rock-dove-columba-livia';
+
+    case 'Patagioenas_fasciata'
+      id_CoL = '0b47943f1e932f8673021f8eb9ac0771';
+      id_Taxo = ''; % not present 2018/08/03       
+      id_EoL = '1064947';
+      id_AnAge = taxon;       
+      id_avibase = '31ACA9981952B4C4';
+      id_birdlife = 'northern-band-tailed-pigeon-patagioenas-fasciata';
 
     case 'Mesitornis_variegatus'
       id_CoL = 'a990bffed92b9b55d3f6cfb8572597e8';
@@ -5673,6 +5697,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '18AEC3532537ACCB';
       id_birdlife = 'blue-and-yellow-macaw-ara-ararauna';
+      
+    case 'Ara_macao'
+      id_CoL = '3c4dad9b93db0297037993866e72329d';
+      id_Taxo = '54398';        
+      id_EoL = '1177962';
+      id_AnAge = taxon;       
+      id_avibase = '5B015EDA14786E2D';
+      id_birdlife = 'scarlet-macaw-ara-macao';
       
     case 'Amazona_amazonica'
       id_CoL = 'c19a03f82708bd327ac7ba77a8d4bb80';
@@ -6949,6 +6981,13 @@ function links = get_link(taxon, open)
       id_EoL = '4437149';
       id_AnAge = taxon;
       id_MSW3 = '13802613';
+       
+    case 'Mystacina_tuberculata'
+      id_CoL = '34bbdfa4ed006609c8454241ecc933a7';
+      id_Taxo = '65183';        
+      id_EoL = '1038741';
+      id_AnAge = taxon;
+      id_MSW3 = '13801090';
        
     case 'Desmodus_rotundus'
       id_CoL = '5ed68b3442894a2a01c67ec56d5bc32a';
@@ -8405,6 +8444,13 @@ function links = get_link(taxon, open)
       id_EoL = '323919';
       id_AnAge = taxon;
       id_MSW3 = '12100385';
+       
+    case 'Lagothrix_lagothricha'
+      id_CoL = 'c34625c16245785ce9b441b53e92475a';
+      id_Taxo = '107088';        
+      id_EoL = '323940';
+      id_AnAge = taxon;
+      id_MSW3 = '12100415';
        
     case 'Chlorocebus_aethiops'
       id_CoL = '76233bc1b7b6845442a6b98f93ac8124';
