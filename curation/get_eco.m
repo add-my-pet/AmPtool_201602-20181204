@@ -5668,6 +5668,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Cyclura_pinguis'
+      climate = {'Af'};
+      ecozone = {'TN'};
+      habitat = {'0iTd','0iTh'};
+      embryo  = {'Tt'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Sceloporus_undulatus'
       climate = {'Cfa','Dfa','BSk'};
       ecozone = {'THn'};
@@ -6378,6 +6388,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Oreophasis_derbianus'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Tetrastes_bonasia'
       climate = {'Dfb','Dfc','Dwb','Dwc'};
       ecozone = {'THp'};
@@ -6388,7 +6408,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
-    case 'Gallus_gallus'
+    case {'Gallus_gallus','Gallus_gallus_IR','Gallus_gallus_WL'}
       climate = {'A'};
       ecozone = {'TPi'};
       habitat = {'0iTf'};
@@ -6398,18 +6418,8 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
-    case 'Gallus_gallus_IR'
-      climate = {'A'};
-      ecozone = {'TPi'};
-      habitat = {'0iTf'};
-      embryo  = {'Tnsf'};
-      migrate = {};
-      food    = {'bxCi','biHs'};
-      gender  = {'Dg'};
-      reprod  = {'O'};
-
-    case 'Gallus_gallus_WL'
-      climate = {'A'};
+    case 'Polyplectron_inopinatum'
+      climate = {'Af'};
       ecozone = {'TPi'};
       habitat = {'0iTf'};
       embryo  = {'Tnsf'};
@@ -6520,6 +6530,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
 
     case 'Phoeniconaias_minor'
       climate = {'BSh','Cw'};
+      ecozone = {'TPa'};
+      habitat = {'0iS'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biP'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Phoenicopterus_roseus'
+      climate = {'B','C'};
       ecozone = {'TPa'};
       habitat = {'0iS'};
       embryo  = {'Tnsfm'};
@@ -7398,6 +7418,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Ciconia_stormi'
+      climate = {'Af'};
+      ecozone = {'TPi'};
+      habitat = {'0iTf'};
+      embryo  = {'Tncfm'};
+      migrate = {};
+      food    = {'biCv','biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Phalacrocorax_auritus'
       climate = {'Dfa','Dfb'};
       ecozone = {'THn'};
@@ -7683,6 +7713,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       ecozone = {'TN'};
       habitat = {'0iTg','0iTh','0iTi'};
       embryo  = {'Tnpfm'};
+      migrate = {};
+      food    = {'biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Cyanopsitta_spixii'
+      climate = {'Aw'};
+      ecozone = {'TN'};
+      habitat = {'0iTf','0iTi'};
+      embryo  = {'Tnpf'};
       migrate = {};
       food    = {'biHs'};
       gender  = {'Dg'};
@@ -8412,6 +8452,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Aw','Cfa','Cfb'};
       ecozone = {'TA'};
       habitat = {'0iTh','0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Choloepus_didactylus'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTi','0iTh'};
       embryo  = {'Tv'};
       migrate = {};
       food    = {'bxM','xiHl'};
@@ -9699,6 +9749,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Pteronura_brasiliensis'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iFm','0iFl','0iFr'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Mustela_nigripes'
       climate = {'BSk'};
       ecozone = {'THn'};
@@ -9881,7 +9941,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
 
     case 'Odobenus_rosmarus_rosmarus'
       climate = {'MC','ME'};
-      ecozone = {'MN','MPN','MAN'};
+      ecozone = {'MN','MAN'};
       habitat = {'0iMp'};
       embryo  = {'Tv'};
       migrate = {'Mo'};
@@ -9889,6 +9949,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Odobenus_rosmarus_divergens'
+      climate = {'MC','ME'};
+      ecozone = {'MN','MPN'};
+      habitat = {'0iMp'};
+      embryo  = {'Tv'};
+      migrate = {'Mo'};
+      food    = {'bxM','xiCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
     case 'Equus_quagga'
       climate = {'BSh','Cwa','Cwb'};
       ecozone = {'TPa'};
@@ -11309,6 +11379,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Perodicticus_potto'
+      climate = {'Af','Am'};
+      ecozone = {'TPa'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {}; 
+      food    = {'bxM','xiCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Loris_tardigradus'
       climate = {'Af'};
       ecozone = {'TPi'};
@@ -11446,6 +11526,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tv'};
       migrate = {}; 
       food    = {'bxM','xiO'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Mandrillus_sphinx'
+      climate = {'Am','Af'};
+      ecozone = {'TPa'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {}; 
+      food    = {'bxM','xiHs','xiCi','xiCv'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
