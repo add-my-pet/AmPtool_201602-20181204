@@ -7678,6 +7678,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Cacatua_ophthalmica'
+      climate = {'Af'};
+      ecozone = {'TAz'}; % endemic to New Britain
+      habitat = {'0iTf'};
+      embryo  = {'Tnwfm'};
+      migrate = {};
+      food    = {'biHs','biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Probosciger_aterrimus'
       climate = {'Am','Af'};
       ecozone = {'TA'};

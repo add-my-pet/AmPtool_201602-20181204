@@ -5699,6 +5699,14 @@ function links = get_link(taxon, open)
       id_avibase = '16804FAF5DCCB288';
       id_birdlife = '22685245';
       
+    case 'Cacatua_ophthalmica'
+      id_CoL = '0efc677801d94a8928c8a4872806803b';
+      id_Taxo = '70577';        
+      id_EoL = '1178084';
+      id_AnAge = taxon;       
+      id_avibase = '54B51CFD75691AE9';
+      id_birdlife = 'blue-eyed-cockatoo-cacatua-ophthalmica';
+      
     case 'Probosciger_aterrimus'
       id_CoL = 'c1b2b9bf490c44f132ac4dcd7877091b';
       id_Taxo = '54193';        
