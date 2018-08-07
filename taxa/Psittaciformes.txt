@@ -1,4 +1,3 @@
-Strigopidae
-Cacatuidae
-Psittaculidae
-Psittacidae
+Strigopoidea
+Cacatuoidea
+Psittacoidea

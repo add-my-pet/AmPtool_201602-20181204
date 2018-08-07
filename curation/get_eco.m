@@ -7078,6 +7078,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Himantopus_novaezelandiae'
+      climate = {'Cfb'};
+      ecozone = {'TAz'};
+      habitat = {'xiFm','xiFe'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Haematopus_moquini'
       climate = {'BWk','BSh','BSk'};
       ecozone = {'TPa'};
@@ -7678,9 +7688,29 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Nestor_notabilis'
+      climate = {'Cfb'};
+      ecozone = {'TAz'};
+      habitat = {'0iTh','0iTf','0iTd'};
+      embryo  = {'Tnsf'};
+      migrate = {};
+      food    = {'biHs','biCi','biSv'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Cacatua_ophthalmica'
       climate = {'Af'};
       ecozone = {'TAz'}; % endemic to New Britain
+      habitat = {'0iTf'};
+      embryo  = {'Tnwfm'};
+      migrate = {};
+      food    = {'biHs','biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Cacatua_moluccensis'
+      climate = {'Af'};
+      ecozone = {'TAz'}; % endemic to Seram archipelago
       habitat = {'0iTf'};
       embryo  = {'Tnwfm'};
       migrate = {};
@@ -7694,16 +7724,6 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iTf'};
       embryo  = {'Tnwfm'};
       migrate = {};
-      food    = {'biHs'};
-      gender  = {'Dg'};
-      reprod  = {'O'};
-
-    case 'Melopsittacus_undulatus'
-      climate = {'BWk','BSk'};
-      ecozone = {'TA'};
-      habitat = {'0iTa','0iTd'};
-      embryo  = {'Tnwf'};
-      migrate = {'Ms'};
       food    = {'biHs'};
       gender  = {'Dg'};
       reprod  = {'O'};
@@ -7764,6 +7784,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iTf','0iTi'};
       embryo  = {'Tnpf'};
       migrate = {};
+      food    = {'biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Psittrichas_fulgidus'
+      climate = {'Af'};
+      ecozone = {'TA'}; % endemic to New Guinea
+      habitat = {'0iTf'};
+      embryo  = {'Tnwf'};
+      migrate = {'Ms'};
+      food    = {'biHs'}; % almost only figs
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Melopsittacus_undulatus'
+      climate = {'BWk','BSk'};
+      ecozone = {'TA'};
+      habitat = {'0iTa','0iTd'};
+      embryo  = {'Tnwf'};
+      migrate = {'Ms'};
       food    = {'biHs'};
       gender  = {'Dg'};
       reprod  = {'O'};

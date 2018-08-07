@@ -393,9 +393,8 @@ function links = get_link(taxon, open)
     case 'Parathyasira_sp'
       id_CoL = 'bdff2d9e399937a2ecb4d5c92c92b596';
       id_WoRMS = '861611';
-      id_Taxo = '113636'; % only present at genus level 2017/11/22       
+      id_Taxo = '113636';       
       id_EoL = '3028005';
-      id_ADW = ''; % not present at 2017/11/22
       id_molluscabase = '141663';
       id_Wiki = '';
       id_ADW = 'Parathyasira';
@@ -5185,6 +5184,16 @@ function links = get_link(taxon, open)
       id_avibase = 'C1D4E1DD9ABDEF3C';
       id_birdlife = ''; % not present at 2018/04/27
       
+    case 'Himantopus_novaezelandiae'
+      id_CoL = '5e3107251b509cea23ffd1d69197d786';
+      id_WoRMS = ''; % not present 2018/08/07
+      id_Taxo = '158875'; 
+      id_EoL = '1049127';
+      id_AnAge = ''; % not present 2018/08/07
+      id_ADW = ''; % not present 2018/08/07
+      id_avibase = 'C26304D6CC0AA676';
+      id_birdlife = 'black-stilt-himantopus-novaezelandiae'; 
+      
     case 'Haematopus_moquini'
       id_CoL = '35a448e347c4bb7b28695e9fcb3c744b';
       id_WoRMS = '212720';
@@ -5699,6 +5708,14 @@ function links = get_link(taxon, open)
       id_avibase = '16804FAF5DCCB288';
       id_birdlife = '22685245';
       
+    case 'Nestor_notabilis'
+      id_CoL = '664d6a3ea4220b6b8b7bc36205567848';
+      id_Taxo = '54207';        
+      id_EoL = '1177837';
+      id_AnAge = taxon;       
+      id_avibase = 'D2E2AE57ABAD79F3';
+      id_birdlife = 'kea-nestor-notabilis';
+      
     case 'Cacatua_ophthalmica'
       id_CoL = '0efc677801d94a8928c8a4872806803b';
       id_Taxo = '70577';        
@@ -5707,6 +5724,15 @@ function links = get_link(taxon, open)
       id_avibase = '54B51CFD75691AE9';
       id_birdlife = 'blue-eyed-cockatoo-cacatua-ophthalmica';
       
+     case 'Cacatua_moluccensis'
+      id_CoL = '6bf09cd69058be85068c56af7154421b';
+      id_Taxo = '54180';        
+      id_EoL = '1178085';
+      id_AnAge = taxon;       
+      id_avibase = '0B5492FA03FB597B';
+      id_birdlife = 'salmon-crested-cockatoo-cacatua-moluccensis';
+      id_ADW = ''; % nor present 2018/08/06
+      
     case 'Probosciger_aterrimus'
       id_CoL = 'c1b2b9bf490c44f132ac4dcd7877091b';
       id_Taxo = '54193';        
@@ -5714,14 +5740,6 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = 'ADC0F2618675AC3B';
       id_birdlife = '22684723';
-      
-    case 'Melopsittacus_undulatus'
-      id_CoL = 'f683faf1a057f5da3a1c30c0bbaf51fd';
-      id_Taxo = '54299';        
-      id_EoL = '914969';
-      id_AnAge = taxon;       
-      id_avibase = 'D17D101A132D3FB2';
-      id_birdlife = 'budgerigar-melopsittacus-undulatus';
       
     case 'Forpus_passerinus'
       id_CoL = '9dde78344c3ce809f5af4d35947c6ae0';
@@ -5771,6 +5789,23 @@ function links = get_link(taxon, open)
       id_avibase = '0F2066D5BB706CD2';
       id_birdlife = 'orange-winged-amazon-amazona-amazonica';
       id_ADW = 'not present at 2018/07/28';
+      
+    case 'Psittrichas_fulgidus'
+      id_CoL = 'c4e116ad8d3e8bcbf9c175f5768134c0';
+      id_Taxo = '54276';        
+      id_EoL = '1177869';
+      id_AnAge = taxon;       
+      id_avibase = '110E01EA39D4647F';
+      id_birdlife = 'pesquets-parrot-psittrichas-fulgidus';
+      id_ADW = ''; % not present 2018/08/07
+      
+    case 'Melopsittacus_undulatus'
+      id_CoL = 'f683faf1a057f5da3a1c30c0bbaf51fd';
+      id_Taxo = '54299';        
+      id_EoL = '914969';
+      id_AnAge = taxon;       
+      id_avibase = 'D17D101A132D3FB2';
+      id_birdlife = 'budgerigar-melopsittacus-undulatus';
       
     case 'Acanthisitta_chloris'
       id_CoL = '5b8863030a8922433d7393bcad9b9192';
