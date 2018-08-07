@@ -7528,6 +7528,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Gyps_rueppellii'
+      climate = {'BSh','BSh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTg','0iTht'};
+      embryo  = {'Tncf'};
+      migrate = {'Ms'};
+      food    = {'biSvm'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Circus_aeruginosus'
       climate = {'Cfb','Dfb','Dfc'};
       ecozone = {'THp'};
@@ -7795,6 +7805,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tnwf'};
       migrate = {'Ms'};
       food    = {'biHs'}; % almost only figs
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Eos_histrio'
+      climate = {'Af'};
+      ecozone = {'TA'}; % endemic to Karakelang, Indonesia
+      habitat = {'0iTf'};
+      embryo  = {'Tnwf'};
+      migrate = {};
+      food    = {'biHn'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
@@ -11406,6 +11426,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tv'};
       migrate = {}; 
       food    = {'bxM','xiH'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Hapalemur_alaotrensis'
+      climate = {'Am'};
+      ecozone = {'TPam'};
+      habitat = {'0iTg'};
+      embryo  = {'Tv'};
+      migrate = {}; 
+      food    = {'bxM','xiHl'};
       gender  = {'Dg'};
       reprod  = {'O'};
 

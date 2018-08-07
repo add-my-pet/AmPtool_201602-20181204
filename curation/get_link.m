@@ -5579,6 +5579,15 @@ function links = get_link(taxon, open)
       id_avibase = '5F8E7CA845BD413F';
       id_birdlife = 'golden-eagle-aquila-chrysaetos';
       
+    case 'Gyps_rueppellii'
+      id_CoL = 'd20945b21051ecce4ea8346951047ba6';
+      id_Taxo = '52470'; 
+      id_EoL = '1047563';
+      id_AnAge = taxon;      
+      id_avibase = '76B512B1EE9B10EC';
+      id_birdlife = 'ruppells-vulture-gyps-rueppelli';
+      id_ADW = ''; % not present 2018/08/07
+      
     case 'Circus_aeruginosus'
       id_CoL = '86e884dce0543b20ad3f399fc9ce5198';
       id_Taxo = '52508';        
@@ -5798,6 +5807,14 @@ function links = get_link(taxon, open)
       id_avibase = '110E01EA39D4647F';
       id_birdlife = 'pesquets-parrot-psittrichas-fulgidus';
       id_ADW = ''; % not present 2018/08/07
+      
+    case 'Eos_histrio'
+      id_CoL = '520503d51d2f744dbcf7e45bf21d1cf3';
+      id_Taxo = '70541';        
+      id_EoL = '1177801';
+      id_AnAge = taxon;       
+      id_avibase = '5B9183E866BDCA6D';
+      id_birdlife = 'red-and-blue-lory-eos-histrio';
       
     case 'Melopsittacus_undulatus'
       id_CoL = 'f683faf1a057f5da3a1c30c0bbaf51fd';
@@ -8462,6 +8479,13 @@ function links = get_link(taxon, open)
       id_EoL = '326545';
       id_AnAge = taxon;
       id_MSW3 = '12100072';
+       
+    case 'Hapalemur_alaotrensis'
+      id_CoL = '20d8a3172bc2fe9b9f839a0bc7ce2252';
+      id_Taxo = '1003272';        
+      id_EoL = '4454348';
+      id_AnAge = taxon;
+      id_MSW3 = '12100049';
        
     case 'Varecia_variegata'
       id_CoL = 'c8883cad4f1b3301686bf6ad91663991';
