@@ -1,6 +1,2 @@
-Neofelis
-Panthera
-Caracal
-Lynx
-Puma
-Acinonyx
+Pantherinae
+Felinae

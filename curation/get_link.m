@@ -5653,13 +5653,21 @@ function links = get_link(taxon, open)
       id_avibase = 'BCC6CD0D279E592A';
       id_birdlife = 'eared-quetzal-euptilotis-neoxenus';
       
+    case 'Rhabdotorrhinus_exarhatus'
+      id_CoL = 'b1273e386f95abf5dd47986f8e09cc4b';
+      id_Taxo = '72968';        
+      id_EoL = '1047995';
+      id_AnAge = ''; % not present 2018/08/08        
+      id_avibase = 'C0BD105FF3017FFC';
+      id_birdlife = 'sulawesi-hornbill-rhabdotorrhinus-exarhatus';
+      
     case 'Bucorvus_leadbeateri'
       id_CoL = 'c37431d15839c9b467569ad3045869be';
       id_Taxo = '105636';        
       id_EoL = '1048004';
       id_AnAge = taxon;       
       id_avibase = '4192DE77F2F73998';
-      id_birdlife = '';
+      id_birdlife = 'southern-ground-hornbill-bucorvus-leadbeateri';
       
     case 'Todiramphus_cinnamominus'
       id_CoL = '1c50b024147aadb63f1f128e5afa7e79';
@@ -7133,6 +7141,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '13802094';
        
+    case 'Hypsugo_savii'
+      id_CoL = 'f34d43a00d990b21d09297759436320e';
+      id_Taxo = '2677544';        
+      id_EoL = '127025';
+      id_AnAge = ''; % not present 2018/08/08
+      id_MSW3 = '13802235';
+       
     case 'Manis_crassicaudata'
       id_CoL = '736a2ea04e95eb28f95226cc77b01c98';
       id_Taxo = '168633';        
@@ -7225,6 +7240,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14000014';
        
+    case 'Leopardus_wiedii'
+      id_CoL = '2077ee04ff75244cb8e6236cdffc3e38';
+      id_Taxo = '168445';        
+      id_EoL = '311954';
+      id_AnAge = taxon;
+      id_MSW3 = '14000119';
+       
     case 'Lynx_lynx'
       id_CoL = '89f97dcbcfdbcaad43c3645951bbcaa5';
       id_Taxo = '168586';        
@@ -7253,6 +7275,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14000006';
        
+    case 'Prionailurus_rubiginosus'
+      id_CoL = '7af061152c657a9222e9a50732d36737';
+      id_Taxo = '67242';        
+      id_EoL = '312856';
+      id_AnAge = taxon;
+      id_MSW3 = '14000195';
+       
     case 'Vulpes_lagopus'
       id_CoL = '74f649c50206103b78005228c898e177';
       id_WoRMS = '404130';
@@ -7267,6 +7296,13 @@ function links = get_link(taxon, open)
       id_EoL = '328609';
       id_AnAge = taxon;
       id_MSW3 = '14000892';
+       
+    case 'Chrysocyon_brachyurus'
+      id_CoL = '0b3e53b24ae32db8b7f60d943b8c3814';
+      id_Taxo = '66468';        
+      id_EoL = '328686';
+      id_AnAge = taxon;
+      id_MSW3 = '14000791';
        
     case 'Canis_lupus'
       id_CoL = 'bcd6035778291a7feaad52cb7ac167cb';
@@ -7515,6 +7551,13 @@ function links = get_link(taxon, open)
       id_EoL = '129470';
       id_AnAge = taxon;
       id_MSW3 = '14100071';
+       
+    case 'Diceros_bicornis'
+      id_CoL = 'aac59ebec67cc13e0f7b15c8da03efd6';
+      id_Taxo = '69139';        
+      id_EoL = '311501';
+      id_AnAge = taxon;
+      id_MSW3 = '14100059';
        
     case 'Dicerorhinus_sumatrensis'
       id_CoL = '43f507935a136e2a4c6221db63021549';
