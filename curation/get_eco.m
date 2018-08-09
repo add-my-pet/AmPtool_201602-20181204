@@ -7338,6 +7338,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Spheniscus_demersus'
+      climate = {'MB','MC'};
+      ecozone = {'MISW','MASE'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf','biCic','biCik'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Eudyptula_minor'
       climate = {'MC'};
       ecozone = {'MISE','MPSW'};
@@ -7435,6 +7445,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tncfm'};
       migrate = {};
       food    = {'biCv','biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Mycteria_cinerea'
+      climate = {'Af'};
+      ecozone = {'TPi'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Leptoptilos_crumeniferus'
+      climate = {'A','BSh','Cwb','Cwc'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTs'};
+      embryo  = {'Tnpfm'};
+      migrate = {'Ms'};
+      food    = {'biCv','biSv'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
@@ -9469,6 +9499,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Oryx_leucoryx'
+      climate = {'BWh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTs','0iTh','0iTd'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Connochaetes_taurinus'
       climate = {'BWh','BSh'};
       ecozone = {'TPa'};
@@ -10099,6 +10139,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Tapirus_bairdii'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Tapirus_pinchaque'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
     case 'Acrocodia_indica'
       climate = {'A'};
       ecozone = {'TPi'};

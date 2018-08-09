@@ -5411,6 +5411,15 @@ function links = get_link(taxon, open)
       id_avibase = '7E02237895784E9A';
       id_birdlife = 'common-loon-gavia-immer';
       
+    case 'Spheniscus_demersus'
+      id_CoL = '087e5c5bb1f385433ef0c42bb996c869';
+      id_WoRMS = '212659';
+      id_Taxo = '51420';        
+      id_EoL = '1049617';
+      id_AnAge = taxon;       
+      id_avibase = '9B183BDD66511DD8';
+      id_birdlife = 'african-penguin-spheniscus-demersus';
+      
     case 'Eudyptula_minor'
       id_CoL = 'e838f924c9d3a989c346b7b3b54d9f33';
       id_WoRMS = '225932';
@@ -5498,6 +5507,25 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '0C6D8B195D83534D';
       id_birdlife = 'storms-stork-ciconia-stormi';
+      
+    case 'Mycteria_cinerea'
+      id_CoL = '1588cd2799c7bd0e70978127fce8d5bf';
+      id_Taxo = '51883'; 
+      id_EoL = '1049138';
+      id_AnAge = taxon;       
+      id_avibase = '44B6A65ABD9348F4';
+      id_birdlife = 'milky-stork-mycteria-cinerea';
+      id_ADW = ''; % not present 2018/08/09
+      
+    case 'Leptoptilos_crumeniferus'
+      id_CoL = 'a75452d9328a21d27cee78530b249e05';
+      id_Taxo = '51878'; 
+      id_EoL = '1049153';
+      id_AnAge = taxon;       
+      id_avibase = '03C0F97C496962D8'; % present as Leptoptilos_crumenifer
+      id_birdlife = 'marabou-leptoptilos-crumenifer';
+      id_ADW = ''; % not present 2018/08/09
+      id_Wiki = 'Leptoptilos_crumenifer';
       
     case 'Phalacrocorax_auritus'
       id_CoL = '0db1d944fd592b2e7d18ed5aec730aca';
@@ -7071,6 +7099,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200947'; 
        
+    case 'Oryx_leucoryx'
+      id_CoL = 'd97cb5fd5dc2ea595d70e2ab1f6badb2';
+      id_Taxo = '68358';        
+      id_EoL = '331080';
+      id_AnAge = taxon;
+      id_MSW3 = '14200958'; 
+       
     case 'Connochaetes_taurinus'
       id_CoL = '6741e665d816f4619aa97359762d1e03';
       id_Taxo = '68364';        
@@ -7538,10 +7573,24 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14100043';
        
+    case 'Tapirus_bairdii'
+      id_CoL = '8de94ae97704e5f5a7732fd89b34d5d0';
+      id_Taxo = '69106';        
+      id_EoL = '129476';
+      id_AnAge = taxon;
+      id_MSW3 = '14100038';
+       
+    case 'Tapirus_pinchaque'
+      id_CoL = '57ed851c9e69ce5fdd866f751c961190';
+      id_Taxo = '69104';        
+      id_EoL = '129472';
+      id_AnAge = taxon;
+      id_MSW3 = '14100042';
+       
     case 'Acrocodia_indica'
       id_CoL = '9ce36ca8bf7e907829131e25ad2cb765';
-      id_Taxo = '69103';        
-      id_EoL = '328009';
+      id_Taxo = '69102';        
+      id_EoL = '129470';
       id_AnAge = taxon;
       id_MSW3 = '14100039';
        
