@@ -8593,7 +8593,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '12100114';
        
-    case 'Perodicticus_potto'
+    case 'Nycticebus_pygmaeus'
+      id_CoL = 'bd143782fe2e7646c4a2d374b07ba6b8';
+      id_Taxo = '65546';        
+      id_EoL = '326539';
+      id_AnAge = taxon;
+      id_MSW3 = '12100118';
+      
+     case 'Perodicticus_potto'
       id_CoL = 'b1698df810567be01d469d5105920a08';
       id_Taxo = '65548';        
       id_EoL = '326540';
@@ -8676,6 +8683,13 @@ function links = get_link(taxon, open)
       id_EoL = '327956';
       id_AnAge = taxon;
       id_MSW3 = '12100291';
+       
+    case 'Ateles_geoffroyi'
+      id_CoL = 'd184718db081d387d0269dc1262c766c';
+      id_Taxo = '65860';        
+      id_EoL = '323938';
+      id_AnAge = taxon;
+      id_MSW3 = '12100399';
        
     case 'Alouatta_palliata'
       id_CoL = '06bc9289566826026b931f3c8667a0c2';

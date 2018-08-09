@@ -11579,6 +11579,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Nycticebus_pygmaeus'
+      climate = {'Am','Aw'};
+      ecozone = {'TPi'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {}; 
+      food    = {'bxM','xiH','xiCim','xiCvbe'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Perodicticus_potto'
       climate = {'Af','Am'};
       ecozone = {'TPa'};
@@ -11696,6 +11706,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tv'};
       migrate = {}; 
       food    = {'bxM','xiHs','xiCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Ateles_geoffroyi'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {}; 
+      food    = {'bxM','xiHs'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
