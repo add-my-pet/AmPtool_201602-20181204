@@ -5420,6 +5420,15 @@ function links = get_link(taxon, open)
       id_avibase = '9B183BDD66511DD8';
       id_birdlife = 'african-penguin-spheniscus-demersus';
       
+    case 'Spheniscus_humboldti'
+      id_CoL = '73db5c796cbf49d281949616cb2decd7';
+      id_WoRMS = '293019';
+      id_Taxo = '51421';        
+      id_EoL = '1049618';
+      id_AnAge = taxon;       
+      id_avibase = '37FC130FE446358F';
+      id_birdlife = 'humboldt-penguin-spheniscus-humboldti';
+      
     case 'Eudyptula_minor'
       id_CoL = 'e838f924c9d3a989c346b7b3b54d9f33';
       id_WoRMS = '225932';
@@ -5860,6 +5869,14 @@ function links = get_link(taxon, open)
       id_avibase = 'D17D101A132D3FB2';
       id_birdlife = 'budgerigar-melopsittacus-undulatus';
       
+    case 'Psittaculirostris_salvadorii'
+      id_CoL = '87acc58bee3ad5aa750b76f0f6ef7728';
+      id_Taxo = '70587';        
+      id_EoL = '1177847';
+      id_AnAge = taxon;       
+      id_avibase = '66AC2F1833D93970';
+      id_birdlife = 'salvadoris-fig-parrot-psittaculirostris-salvadorii';
+      
     case 'Acanthisitta_chloris'
       id_CoL = '5b8863030a8922433d7393bcad9b9192';
       id_Taxo = '56235';        
@@ -6007,6 +6024,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '88F4B969622B8268';
       id_birdlife = 'willow-warbler-phylloscopus-trochilus';
+      
+    case 'Garrulax_strepitans'
+      id_CoL = 'f1c6695d476872862420f7a6325db0f0';
+      id_Taxo = '84574';        
+      id_EoL = '1052627';
+      id_AnAge = ''; % not present 2018/08/10       
+      id_avibase = '830EF7CF19980BBD';
+      id_birdlife = 'white-necked-laughingthrush-garrulax-strepitans';
       
     case 'Regulus_regulus'
       id_CoL = '39de64eea659b04cfd67c5d4ff5633f4';
@@ -7106,6 +7131,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200958'; 
        
+    case 'Connochaetes_gnou'
+      id_CoL = '771038eda5b175a6aefcd49d3711850e';
+      id_Taxo = '68363';        
+      id_EoL = '308530';
+      id_AnAge = taxon;
+      id_MSW3 = '14200509'; 
+       
     case 'Connochaetes_taurinus'
       id_CoL = '6741e665d816f4619aa97359762d1e03';
       id_Taxo = '68364';        
@@ -7414,6 +7446,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14001484';
        
+    case 'Gulo_gulo'
+      id_CoL = 'cc7f1e94c7b74bcdd7ddef185e92d22a';
+      id_WoRMS = ''; % not present at 2018/08/10
+      id_Taxo = '66650';        
+      id_EoL = '328585';
+      id_AnAge = taxon;
+      id_MSW3 = '14001166';
+      
     case 'Martes_pennanti'
       id_CoL = '9d97f9fb613094a861721b619df5c77b';
       id_WoRMS = ''; % not present at 2018/07/23
@@ -8557,6 +8597,13 @@ function links = get_link(taxon, open)
       id_EoL = '326457';
       id_AnAge = taxon;
       id_MSW3 = '12100089';
+       
+    case 'Propithecus_tattersalli'
+      id_CoL = 'bcaf138ec9ec5d8c920ef4d316bdbecb';
+      id_Taxo = '65524';        
+      id_EoL = '326523';
+      id_AnAge = taxon;
+      id_MSW3 = '12100094';
        
     case 'Microcebus_murinus'
       id_CoL = 'fed2451960a842ce940ad5d48d81d81c';
