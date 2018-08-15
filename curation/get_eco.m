@@ -5198,16 +5198,6 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
-    case 'Lissotriton_vulgaris'
-      climate = {'Cfb','Dfb'};
-      ecozone = {'THp'};
-      habitat = {'0jFp','jiTg'};
-      embryo  = {'Fh'};
-      migrate = {'TT'};
-      food    = {'biCi'};
-      gender  = {'Dg'};
-      reprod  = {'O'};
-
     case 'Salamandra_salamandra'
       climate = {'Csb','Cfb','Dfb'};
       ecozone = {'THp'};
@@ -5223,6 +5213,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       ecozone = {'THp'};
       habitat = {'biTg','biTf'};
       embryo  = {'Fs'};
+      migrate = {'TT'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Lissotriton_vulgaris'
+      climate = {'Cfb','Dfb'};
+      ecozone = {'THp'};
+      habitat = {'0jFp','jiTg'};
+      embryo  = {'Fh'};
+      migrate = {'TT'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Neurergus_microspilotus'
+      climate = {'BSh'};
+      ecozone = {'THp'};
+      habitat = {'0jFp','jiTh','jiFm'};
+      embryo  = {'Fh'};
       migrate = {'TT'};
       food    = {'biCi'};
       gender  = {'Dg'};

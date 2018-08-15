@@ -3708,14 +3708,7 @@ function links = get_link(taxon, open)
       id_EoL = '330494';
       id_AnAge = 'Dicamptodon_ensatus';
       id_amphweb = taxon_amph;
-       
-    case 'Lissotriton_vulgaris'
-      id_CoL = '8eb8ecd651629c0276ce18bb308d38e8';
-      id_Taxo = '985978';        
-      id_EoL = '10194926';
-      id_AnAge = taxon;
-      id_amphweb = taxon_amph;
-       
+      
     case 'Salamandra_salamandra'
       id_CoL = '2da5d094f1f3b4d8bd13a461c5054291';
       id_Taxo = '47311';        
@@ -3728,6 +3721,20 @@ function links = get_link(taxon, open)
       id_Taxo = '151422';        
       id_EoL = '331870';
       id_AnAge = ''; % not present at 2017/10/17
+      id_amphweb = taxon_amph;
+       
+    case 'Lissotriton_vulgaris'
+      id_CoL = '8eb8ecd651629c0276ce18bb308d38e8';
+      id_Taxo = '985978';        
+      id_EoL = '10194926';
+      id_AnAge = taxon;
+      id_amphweb = taxon_amph;
+       
+    case 'Neurergus_microspilotus'
+      id_CoL = 'e9de7f687d86242d1a2e0561609ae934';
+      id_Taxo = '149411';        
+      id_EoL = '331870';
+      id_AnAge = ''; % not present at 2018/08/15
       id_amphweb = taxon_amph;
        
     case 'Proteus_anguinus'
