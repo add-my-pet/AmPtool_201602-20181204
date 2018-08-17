@@ -43,50 +43,7 @@ if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
   speciesprintnm_en(1)=char(speciesprintnm_en(1)-32);
 end
 
-n_author = length(metaData.author); % number of authors
-
-switch n_author
-    
-    case 1
-    txt_author = metaData.author{1};
-
-    case 2
-    txt_author = [metaData.author{1}, ', ', metaData.author{2}];
-    
-    case 3
-    txt_author = [metaData.author{1}, ', ', metaData.author{2}, ' &', metaData.author{3}];
- 
-    otherwise    
-    txt_author = [metaData.author{1}, ', et al.'];
-  
-end
-
-txt_date = datestr(datenum(metaData.date_subm), 'yyyy/mm/dd'); 
-txt_date_acc = datestr(datenum(metaData.date_acc), 'yyyy/mm/dd'); 
-
-% modifications
-mod = 0; % latest modification version
-for i = 1:10 % identify latest modification
-  if isfield(metaData,['author_mod_', num2str(i)])
-    mod = i;
-  end
-end
-if mod > 0
-  author_mod = ['author_mod_', num2str(mod)]; 
-  n_author_mod = length(metaData.(author_mod));
-  switch n_author_mod
-    case 1
-      txt_author_mod = metaData.(author_mod){1};
-    case 2
-      txt_author_mod = [metaData.(author_mod){1}, ', ', metaData.(author_mod){2}];
-    otherwise    
-      txt_author_mod = [metaData.(author_mod){1}, ', et al.'];
-  end
-  date_mod = ['date_mod_', num2str(mod)]; date_mod = metaData.(date_mod);
-  txt_date_mod = datestr(datenum(date_mod),'yyyy/mm/dd'); 
-end    
-
-% remove the underscore in the species name
+% get output file name
 if exist('destinationFolder','var')
   fileName = [destinationFolder, metaData.species, '_res.html'];
 else
@@ -325,13 +282,6 @@ fprintf(oid,['        <TR BGCOLOR = "#FFE7C6"><TD><B>Data</B></TD><TD><B>General
   end
  fprintf(oid, '      </TABLE>\n\n'); 
  
-%  work in progress : (it is to make a link to html page with all of the figures on it)
-%  if isempty(metaData.data_1) == 0
-%    prt_unidata_my_pet_html(metaData, metaPar)
-%  end  
-
-% ----------------------------------------------------------
-
 % Facts:
 if isfield(metaData, 'facts') 
   fprintf(oid, '      <H3 style="clear:both" class="pet">Facts</H3>\n');
@@ -360,8 +310,6 @@ if isfield(metaData, 'facts')
   fprintf(oid,'      </ul>\n');       % close the unordered list    
 end
 
-% ----------------------------------------------------------
-
 % Discussion
 if isfield(metaData, 'discussion') == 1
   fprintf(oid, '      <H3 style="clear:both" class="pet">Discussion</H3>\n');
@@ -380,7 +328,6 @@ if isfield(metaData, 'discussion') == 1
   end
   fprintf(oid,'      </ul>\n\n');     % open the unordered list      
 end
-% ----------------------------------------------------------
 
 % Acknowledgment:
 if isfield(metaData, 'acknowledgment') == 1
@@ -394,33 +341,16 @@ if isfield(metaData, 'acknowledgment') == 1
    
   fprintf(oid,'         </ul>\n\n\n'); % close the unordered list      
 end
-% ----------------------------------------------------------
 
 % Bibliography:
-fprintf(oid, '      <H3 style="clear:both" class="pet">Bibliography</H3>\n');
-[nm, nst] = fieldnmnst_st(metaData.biblist);
-
-fclose(oid); % insert biblist in ul format
-bib2bbl([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '/']);
-bbl2html([metaData.species, '_bib'], [ '../../entries_web/', metaData.species, '/'], [metaData.species, '_res']);
-oid = fopen(fileName, 'a'); % open file for appending
-
-fprintf(oid, '      <p>\n');
-fprintf(oid,['        <A class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibtex file with references for this entry</A> <BR>\n']);
-fprintf(oid, '      </p>\n\n' );
+fprintf(oid,['      <H3 style="clear:both" class="pet"><a class="link" href = "',metaData.species,'_bib.bib" target = "_blank">Bibliography</a></H3>\n']);
+fprintf(oid,['      <div w3-include-html="', metaData.species, '_bib.html"></div>\n']);
+fprintf(oid, '      <script>w3IncludeHTML();</script>\n\n');
   
-% ----------------------------------------------------------
-% Authors and last date of modification
-fprintf(oid, '      <HR> \n');
-
-if mod == 0 % no modifications exist
-  fprintf(oid,['      <H3 ALIGN="CENTER">', txt_author, ', ', txt_date,'</H3>\n\n']);
-else % modifications do exist
-  fprintf(oid,['      <H3 ALIGN="CENTER">', txt_author, ', ', txt_date, ...
-    ' (last modified by ', txt_author_mod, '\n', txt_date_mod,')','</H3>\n\n']);
-end
-  fprintf(oid,['      <H3 ALIGN="CENTER"> accepted: ', txt_date_acc,'</H3>\n\n']);
-  fprintf(oid,['      <H3 ALIGN="CENTER"> refer to this entry as: AmP ', speciesprintnm, ' version ' txt_date_acc,' bio.vu.nl/thb/deb/deblab/add_my_pet/</H3>\n\n']);
+% Citation:
+fprintf(oid,['      <H3 style="clear:both" class="pet">Citation</H3>\n']);
+fprintf(oid,['      <div w3-include-html="', metaData.species, '_cit.html"></div>\n']);
+fprintf(oid, '      <script>w3IncludeHTML();</script>\n\n');
 
 % ----------------------------------------------------------
 

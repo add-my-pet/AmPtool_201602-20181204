@@ -61,16 +61,19 @@ for i = 1:nargin
   prdData = feval(['predict_',metaData.species], par, data, auxData); % run predict_* to compute predictions
   prdData = predict_pseudodata(par, data, prdData); % appends new field to prdData with predictions for the pseudo data:  
   cd(WD) % goto orginal path, but print to destinationFolder
-  
-  prt_my_pet_toolbar(metaData.species,metaData.species_en,metaData.date_acc, destinationFolder) % print toolbar
-  prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder)                          % print bib file
-  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)         % print html with results
-  prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder) % print html with parameters
-  prt_my_pet_stat(metaData, metaPar, par, destinationFolder) % print html with implied properties, including pie-png's
 
   cd('../../entries_zip');
-  zip_my_pet(varargin{i}, '../entries'); % zip the entry  
+  filenm = zip_my_pet(varargin{i}, '../entries'); % zip the entry 
+  doi = 'yyyy';
   cd(WD)  % goto original path    
+
+  % print files
+  prt_my_pet_toolbar(metaData.species,metaData.species_en,metaData.date_acc, destinationFolder) % toolbar
+  prt_my_pet_bib(metaData.species,metaData.biblist, destinationFolder)                          % bib files (.bib and .html)
+  prt_my_pet_cit(metaData, doi, destinationFolder)                                              % citation file
+  prt_my_pet_res(data, prdData, auxData, metaData, txtData, metaPar, destinationFolder)         % results
+  prt_my_pet_par(metaData, metaPar, par, txtPar, destinationFolder)                             % parameters
+  prt_my_pet_stat(metaData, metaPar, par, destinationFolder)                                    % implied properties, including pie-png's
 end
     
 close all

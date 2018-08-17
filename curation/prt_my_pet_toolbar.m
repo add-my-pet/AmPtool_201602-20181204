@@ -48,6 +48,7 @@ fprintf(oid,['        <a href="', species, '_par.html">Parameters</a>\n']);
 fprintf(oid,['        <a href="', species, '_stat.html">Implied properties</a>\n']);    
 fprintf(oid,['        <a href="', species, '_res.html">Predictions & Data</a>\n']);
 fprintf(oid,['        <a href="', species, '_bib.bib">Bibliography</a>\n']);
+fprintf(oid,['        <a href="', species, '_cit.html">Citation</a>\n']);
 fprintf(oid, '      </div>\n');
 fprintf(oid, '    </div>\n\n');
 
