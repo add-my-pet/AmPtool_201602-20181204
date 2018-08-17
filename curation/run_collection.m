@@ -64,6 +64,7 @@ for i = 1:nargin
 
   cd('../../entries_zip');
   filenm = zip_my_pet(varargin{i}, '../entries'); % zip the entry 
+  % !Rscript zip2DataOne.r
   doi = 'yyyy';
   cd(WD)  % goto original path    
 
