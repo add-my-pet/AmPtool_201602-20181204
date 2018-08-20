@@ -1,5 +1,5 @@
 %% prt_my_pet_bib
-% read results_my_pet.mat to write my_pet_bib.bib and my_pet_bib.html
+% read results_my_pet.mat to write my_pet_bib.bib
 
 %%
 function prt_my_pet_bib(species, biblist, destinationFolder)
@@ -9,7 +9,7 @@ function prt_my_pet_bib(species, biblist, destinationFolder)
 % <../prt_my_pet_bib.m *prt_my_pet_bib*> (species, biblist, destinationFolder) 
 
 %% Description
-% Prints my_pet_bib.bib and my_pet_bib.html with the entry's bibliography from results_my_pet.mat
+% Prints my_pet_bib.bib with the entry's bibliography from results_my_pet.mat
 %
 % Input:
 %
@@ -19,8 +19,7 @@ function prt_my_pet_bib(species, biblist, destinationFolder)
 
 %% Remarks
 % The name of the key corresponds to the bibtex key. The structure metaData.biblist is output from mydata_my_pet file
-% If you load results_my_pet.mat then species is found in metaData.species
-% and biblist is metaData.biblist. 
+% If you load results_my_pet.mat then species is found in metaData.species and biblist is metaData.biblist. 
 
 %% Example of use
 % load('results_my_pet.mat');
@@ -56,8 +55,3 @@ for j = 1:nst
 end
     
 fclose(oid); % close my_pet_bib.bib  
-
-% write my_pet_bib.html from my_pet_bib.bib
-bib2bbl([species, '_bib'], [ '../../entries_web/', species, '/']);
-bbl2html([species, '_bib'], [ '../../entries_web/', species, '/'], [species, '_bib']);
-
