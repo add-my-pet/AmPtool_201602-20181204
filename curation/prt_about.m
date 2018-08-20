@@ -226,22 +226,9 @@ fprintf(fid_about, '        <div class = "caption">\n');
 fprintf(fid_about, '        The relationship between <a href="http://www.debtheory.org/wiki/index.php?title=Symmetric_mean_squared_error" TARGET="_blanck">symmetric mean squared error (SMSE)</a> and mean relative error. \n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
-        
-fprintf(fid_about, '      <H2 id="disclaimer" class = "clear"> Disclaimer</H2>\n\n');    
 
-fprintf(fid_about, '      Add-my-pet is optimized for learning, training and research.\n');
-fprintf(fid_about, '      Some of the text on this website might be simplified to improve reading and basic understanding.\n');
-fprintf(fid_about, '      Files, references, and code are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.\n\n');
-
-fprintf(fid_about, '      <p>\n');
-fprintf(fid_about, '      The entries continue to change as the collection grows for several reasons: \n');
-fprintf(fid_about, '      errors are spotted and corrected; more data is included; assumptions about data quality change; entries are split up by population; \n');
-fprintf(fid_about, '      our understanding of what are the best priors to use for particular taxa increases; algorithms for estimation are improved; the model changed.\n\n');
-
-fprintf(fid_about, '      <p>\n');
-fprintf(fid_about, '      Add-my-pet makes explicit a number of wide spread scientific problems such as: data quality, differences between experiments etc. \n');
-fprintf(fid_about, '      The resulting parameter estimates depend on a lot of assumptions concerning which data we choose to include and exclude as well as how the data is interpreted\n');
-fprintf(fid_about, '      (e.g. what we are willing to assume about the initial conditions of the organism.)\n\n');
+fprintf(fid_about, '      <div w3-include-html="sys/disclaimer.html"></div>\n');
+fprintf(fid_about, '      <script>w3IncludeHTML();</script>\n\n');
 
 fprintf(fid_about, '    </div> <!-- end of content -->\n\n');
 %%

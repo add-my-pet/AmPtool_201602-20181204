@@ -50,7 +50,7 @@ else
   fprintf([my_pet, ' is not yet in AmP\n']);
 
   % check species/lineage info with CoL
-  [lin rank] = lineage_CoL(metaData.species); % print warning if species name is not accepeted in Catalog of Life
+  [lin rank] = lineage_CoL(metaData.species); % print warning if species name is not accepted in Catalog of Life
   if length(lin) == 0
     return
   else

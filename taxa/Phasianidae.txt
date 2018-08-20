@@ -1,4 +1,4 @@
-Tetrastes
-Gallus
-Polyplectron
 Coturnix
+Meleagris
+Phasianinae
+Tetrastes

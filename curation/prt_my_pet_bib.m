@@ -1,15 +1,15 @@
 %% prt_my_pet_bib
-% read and write my_pet_bib.bib
+% read results_my_pet.mat to write my_pet_bib.bib and my_pet_bib.html
 
 %%
 function prt_my_pet_bib(species, biblist, destinationFolder)
-% created 2015/07/17 by Starrlight ; modified 2016/11/03 Starrlight, 2017/05/18 Bas Kooijman
+% created 2015/07/17 by Starrlight ; modified 2016/11/03 Starrlight, 2017/05/18 Bas Kooijman, 2018/08/17 Bas Kooijman
 
 %% Syntax
-% <../prt_bib_my_pet.m *prt_bib_my_pet*> (species, biblist, destinationFolder) 
+% <../prt_my_pet_bib.m *prt_my_pet_bib*> (species, biblist, destinationFolder) 
 
 %% Description
-% Prints a my_pet_bib.bib file with the entry's bibliography 
+% Prints my_pet_bib.bib and my_pet_bib.html with the entry's bibliography from results_my_pet.mat
 %
 % Input:
 %
@@ -55,5 +55,9 @@ for j = 1:nst
   end
 end
     
-% close my_pet_bib.bib  
-fclose(oid);
+fclose(oid); % close my_pet_bib.bib  
+
+% write my_pet_bib.html from my_pet_bib.bib
+bib2bbl([species, '_bib'], [ '../../entries_web/', species, '/']);
+bbl2html([species, '_bib'], [ '../../entries_web/', species, '/'], [species, '_bib']);
+
