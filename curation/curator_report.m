@@ -5,20 +5,23 @@
 function curator_report(speciesnm)
   % created 2015/08/01 by Goncalo Marques
   % modified 2015/08/06 Dina Lika, 2018/01/23 by Bas Kooijman, 2018/04/15
-  % by Starrlight
+  % Starrlight, 2018/08/20 Starrlight
   
   %% Syntax 
   % <../curator_report.m *curator_report*> (speciesnm)
 
   %% Description
-  % Produces a report to help curators analyse a submission.
+  % Produces step by step instuctions and informations to help curators analyse a submission.
   %
   % Follows :
   %
-  % * - check species name and lineage
-  % * - runs check_my_pet
+  % * - runs check_speciesnm:  checks species name and lineage
   % * - runs check_data: displays data_0, data_1, data fields, and COMPLETE
-  % * - compares par, metaPar and txtPar in pars_init and .mat
+  % * - generates html file of bibliography 
+  % * - displays additional parameters that have been used
+  % * - displays parameters which were free
+  % * - runs statistics_st and prt_report_my_pet: displays implied
+  % properties and generates html of implied properties
   %
   % Input
   %
@@ -27,35 +30,28 @@ function curator_report(speciesnm)
   % Output is printed to screen
 
   %% Remarks
-  % This function is supposed to be run in the directory of the source files: mydata_speciesnm, pars_init_speciesnm
+  % This function is supposed to be run in the directory of the source
+  % files: mydata_speciesnm, pars_init_speciesnm, 
   
   %% Example of use
   % curator_report('my_pet') 
 
-%% check species name and lineage
+%%% Step 1: Check species name and lineage
 
 pointNumber = 1; 
 
 fprintf('\n%d. Checking if the species already in AmP:\n\n', pointNumber);
+
 check_speciesnm(speciesnm);
 
 fprintf('Hit a key to continue\n'); pause
 
-
-%% run check_my_pet
-
-pointNumber = pointNumber + 1; 
-
-fprintf('\n%d. Warnings from check_my_pet:\n\n', pointNumber);
-check_my_pet(speciesnm);
-
-fprintf('Hit a key to continue\n'); pause
-
-%% run check_data for data_0, data_1 and COMPLETE
+%%% Step 2: run check_data for data_0, data_1 and COMPLETE
 
 pointNumber = pointNumber + 1; 
 
 fprintf('\n%d. Data types:\n\n', pointNumber);
+
 check_data(speciesnm);
 
 fprintf('\nCheck the consistency between metaData and data.\n');
@@ -64,10 +60,14 @@ fprintf('Contact the web administrator with any new labels that should be added 
 
 fprintf('Hit a key to continue\n'); pause
 
-%% check bibliography and url's
+%%% Step 3: check bibliography and url's
 
 pointNumber = pointNumber + 1; 
-fprintf('\n%d. Check Bibliography and check the Urls in the bib \n\n', pointNumber);
+fprintf([...
+    '\n%d. Check Bibliography: \n - verify that all the Urls work  \n', ...
+      '- make sure each reference has a DOI \n',...
+    '- species names need \emph{} \n' ...
+    '\n', pointNumber]);
 
 [data, auxData, metaData] = feval(['mydata_', speciesnm]); % get metaData.biblist
 prt_my_pet_bib(speciesnm, metaData.biblist) % biblist2bib
@@ -78,34 +78,7 @@ web([speciesnm,'_bib.html'],'-browser');    % open html of bibliography in syste
 fprintf('Hit a key to continue\n'); pause
 delete([speciesnm,'_bib.bib'],[speciesnm,'_bib.html']); % delete produced files
 
-%% compare values in pars_init with values in the .mat
-
-pointNumber = pointNumber + 1; 
-fprintf('\n%d. Comparison of parameters in pars_init with .mat file:\n\n', pointNumber);
-
-[infoPar, infoMetaPar, infoTxtPar] = matisinit(speciesnm);
-
-if infoPar
-  fprintf('The parameter values are the same in pars_init and .mat.\n');
-else
-  fprintf('The parameter values are different in pars_init and .mat.\n');
-end
-
-if infoMetaPar
-  fprintf('The metaPar.model is equal in pars_init and .mat.\n');
-else
-  fprintf('The metaPar is different in pars_init and .mat.\n');
-end
-
-if infoTxtPar
-  fprintf('The txtPar is equal in pars_init and .mat.\n');
-else
-  fprintf('The txtPar is different in pars_init and .mat.\n');
-end
-
-fprintf('Hit a key to continue\n'); pause
-
-%% check extra parameters
+%%% Step 4: check extra parameters
 
 pointNumber = pointNumber + 1; 
 
@@ -129,11 +102,11 @@ for i = 1:length(extraParFields)
 end
 
 fprintf('\nCheck if these are all used in predict.\n');
-fprintf('Check if there should exist customized filters involving these parameters.\n');
+fprintf('Check if there should exist customized filters involving these parameters. \n Check that there is a discussion point relating to the use of these parameters. \n');
 
 fprintf('Hit a key to continue\n'); pause
 
-%% check freeing of parameters
+%%% Step 5: check which parameters were estimated:
 
 pointNumber = pointNumber + 1; 
 
@@ -163,12 +136,12 @@ fprintf('\nCheck if the values above are reasonable and if there is enough data 
 
 fprintf('Hit a key to continue\n'); pause; 
 
-%% check implied properties 
+%%% Step 6: check implied properties 
 
 pointNumber = pointNumber + 1; 
 
 fprintf('\n%d. Check implied model properties and parameter values of my_pet. Creates my_pet.html.\n\n', pointNumber);
-prnt = input('Enter: 1 to compute statistics else 0 ton continue: ');
+prnt = input('Enter: 1 to compute statistics else 0 to continue: ');
 
 if prnt
   [stat, txt_stat] = statistics_st(metaPar.model, par, metaData.T_typical, 1);
@@ -184,61 +157,12 @@ fprintf('Hit a key to continue\n'); pause;
 delete(['report_',speciesnm,'.html']); % delete produced file
 
 
-% save figures
-% global pets
-% pets = {speciesnm};
-% 
-% estim_options('default');
-% estim_options('pars_init_method', 0);
-% estim_options('results_output', 2);
-% 
-% load(['results_', speciesnm, '.mat']);
-% clear data auxData metaData txtData weights
-% [data.pet1, auxData.pet1, metaData.pet1, txtData.pet1, weights.pet1] = feval(['mydata_', speciesnm]);
-% results_pets(par, metaPar, txtPar, data, auxData, metaData, txtData, weights);
 
 pause; 
 
-%% make sure figures are saved
+%%% Step 7: make sure figures are saved
 
 pointNumber = pointNumber + 1;
 
 fprintf('\n%d. Please after the curation process execute the run file with estim_option, results_output=2 \n\n', pointNumber);
-
-fprintf('Hit a key to continue\n'); pause; 
-
-%% check if the parameter set was obtained after continuation from .mat 
-
-pointNumber = pointNumber + 1;
-
-fprintf('\n%d. Check if the parameter set was obtained after continuation from .mat.\n\n', pointNumber);
-
-fprintf('Copy results_my_pet.mat to results_my_pet_author.mat %s \n\n', pointNumber);
-
-filenm1 = ['results_', speciesnm, '.mat']; 
-filenm2 = ['results_', speciesnm, '_author.mat'];
-copyfile(filenm1,filenm2)
-
-fprintf('Run estimation, check if there is successful convergence:\n\n');
-
-autoEst = input('Do you want to run estimation automatically? - if so enter 1, otherwise enter 0: ');
-
-if autoEst
-  eval(['run_', speciesnm]);
-
-  fprintf('Restart from .mat after first convergence. Press enter:\n\n');
-
-  fprintf('Hit a key to continue\n'); pause
-
-  eval(['run_', speciesnm]);
-
-  [info_par, info_metaPar, info_txtPar] = matismat(speciesnm, [speciesnm, '_author']);
-
-  if info_par
-    fprintf('The parameter values were obtained after continuation from .mat file.\n');
-  else
-    fprintf('The parameter values were not obtained after continuation from .mat file.\n');
-  end
-
-end
 
