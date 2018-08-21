@@ -1,5 +1,5 @@
 %% curator_report
-% Produces a report to help curators analyse a submission
+% Produces a report to help curators review an entry that has been submitted to the AmP collection 
 
 %%
 function curator_report(speciesnm, stepnb)
