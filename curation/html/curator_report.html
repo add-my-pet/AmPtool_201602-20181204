@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>curator_report</title><meta name="generator" content="MATLAB 9.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-08-20"><meta name="DC.source" content="curator_report.m"><style type="text/css">
+      --><title>curator_report</title><meta name="generator" content="MATLAB 9.2"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2018-08-21"><meta name="DC.source" content="curator_report.m"><style type="text/css">
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
 
 html { min-height:100%; margin-bottom:1px; }
@@ -66,13 +66,13 @@ table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px soli
 
 
 
-  </style></head><body><div class="content"><h1>curator_report</h1><!--introduction--><p>Produces a report to help curators analyse a submission</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Example of use</a></li><li><a href="#7">Step 1: Check species name and lineage</a></li><li><a href="#8">Step 2: run check_data for data_0, data_1 and COMPLETE</a></li><li><a href="#9">Step 3: check bibliography and url's</a></li><li><a href="#10">Step 4: check extra parameters</a></li><li><a href="#11">Step 5: check which parameters were estimated:</a></li><li><a href="#12">Step 6: check implied properties</a></li><li><a href="#13">Step 7: make sure figures are saved</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../curator_report.m"><b>curator_report</b></a> (speciesnm)</p><h2 id="4">Description</h2><p>Produces step by step instuctions and informations to help curators analyse a submission.</p><p>Follows :</p><div><ul><li>- runs check_speciesnm:  checks species name and lineage</li><li>- runs check_data: displays data_0, data_1, data fields, and COMPLETE</li><li>- generates html file of bibliography</li><li>- displays additional parameters that have been used</li><li>- displays parameters which were free</li><li>- runs statistics_st and prt_report_my_pet: displays implied properties and generates html of implied properties</li></ul></div><p>Input</p><div><ul><li>speciesnm: string with species name</li></ul></div><p>Output is printed to screen</p><h2 id="5">Remarks</h2><p>This function is supposed to be run in the directory of the source files: mydata_speciesnm, pars_init_speciesnm,</p><h2 id="6">Example of use</h2><p>curator_report('my_pet')</p><h2 id="7">Step 1: Check species name and lineage</h2><h2 id="8">Step 2: run check_data for data_0, data_1 and COMPLETE</h2><h2 id="9">Step 3: check bibliography and url's</h2><h2 id="10">Step 4: check extra parameters</h2><h2 id="11">Step 5: check which parameters were estimated:</h2><h2 id="12">Step 6: check implied properties</h2><h2 id="13">Step 7: make sure figures are saved</h2><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
+  </style></head><body><div class="content"><h1>curator_report</h1><!--introduction--><p>Produces a report to help curators analyse a submission</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#3">Syntax</a></li><li><a href="#4">Description</a></li><li><a href="#5">Remarks</a></li><li><a href="#6">Examples of use</a></li><li><a href="#7">Step 1: Check species name and lineage</a></li><li><a href="#8">Step 2: run check_data for data_0, data_1 and COMPLETE</a></li><li><a href="#9">Step 3: check bibliography and url's</a></li><li><a href="#10">Step 4: check extra parameters</a></li><li><a href="#11">Step 5: check which parameters were estimated:</a></li><li><a href="#12">Step 6: check implied properties</a></li></ul></div><h2 id="3">Syntax</h2><p><a href="../curator_report.m"><b>curator_report</b></a> (speciesnm)</p><h2 id="4">Description</h2><p>Produces step by step instuctions and informations to help curators analyse a submission.</p><p>Input</p><div><ul><li>speciesnm: string with species name</li><li>stepnb: scalar with the step number the report should execute</li></ul></div><p>Output is printed to screen</p><h2 id="5">Remarks</h2><p>This function is supposed to be run in the directory of the source files: mydata_speciesnm, pars_init_speciesnm,</p><h2 id="6">Examples of use</h2><div><ul><li>curator_report('my_pet')</li><li>curator_report('my_pet', 2) : and then only start the report at step 2 -</li></ul></div><h2 id="7">Step 1: Check species name and lineage</h2><h2 id="8">Step 2: run check_data for data_0, data_1 and COMPLETE</h2><h2 id="9">Step 3: check bibliography and url's</h2><h2 id="10">Step 4: check extra parameters</h2><h2 id="11">Step 5: check which parameters were estimated:</h2><h2 id="12">Step 6: check implied properties</h2><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2017a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% curator_report
 % Produces a report to help curators analyse a submission
 
 %%
-function curator_report(speciesnm)
+function curator_report(speciesnm, stepnb)
   % created 2015/08/01 by Goncalo Marques
   % modified 2015/08/06 Dina Lika, 2018/01/23 by Bas Kooijman, 2018/04/15
   % Starrlight, 2018/08/20 Starrlight
@@ -83,19 +83,10 @@ function curator_report(speciesnm)
   %% Description
   % Produces step by step instuctions and informations to help curators analyse a submission.
   %
-  % Follows :
-  %
-  % * - runs check_speciesnm:  checks species name and lineage
-  % * - runs check_data: displays data_0, data_1, data fields, and COMPLETE
-  % * - generates html file of bibliography 
-  % * - displays additional parameters that have been used
-  % * - displays parameters which were free
-  % * - runs statistics_st and prt_report_my_pet: displays implied
-  % properties and generates html of implied properties
-  %
   % Input
   %
   % * speciesnm: string with species name
+  % * stepnb: scalar with the step number the report should execute
   %  
   % Output is printed to screen
 
@@ -103,61 +94,76 @@ function curator_report(speciesnm)
   % This function is supposed to be run in the directory of the source
   % files: mydata_speciesnm, pars_init_speciesnm, 
   
-  %% Example of use
-  % curator_report('my_pet') 
+  %% Examples of use
+  %
+  % * curator_report('my_pet') 
+  % * curator_report('my_pet', 2) : and then only start the report at step
+  % 2 - 
 
-%%% Step 1: Check species name and lineage
-
-pointNumber = 1; 
-
-fprintf('\n%d. Checking if the species already in AmP:\n\n', pointNumber);
-
-check_speciesnm(speciesnm);
-
-fprintf('Hit a key to continue\n'); pause
-
-%%% Step 2: run check_data for data_0, data_1 and COMPLETE
-
-pointNumber = pointNumber + 1; 
-
-fprintf('\n%d. Data types:\n\n', pointNumber);
-
-check_data(speciesnm);
-
-fprintf('\nCheck the consistency between metaData and data.\n');
-fprintf('Check that the labels for each data type are used and consistent with the contents.\n');
-fprintf('Contact the web administrator with any new labels that should be added to the table (http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction)\n');
-
-fprintf('Hit a key to continue\n'); pause
-
-%%% Step 3: check bibliography and url's
-
-pointNumber = pointNumber + 1; 
-fprintf([...
-    '\n%d. Check Bibliography: \n - verify that all the Urls work  \n', ...
-      '- make sure each reference has a DOI \n',...
-    '- species names need \emph{} \n' ...
-    '\n', pointNumber]);
-
-[data, auxData, metaData] = feval(['mydata_', speciesnm]); % get metaData.biblist
-prt_my_pet_bib(speciesnm, metaData.biblist) % biblist2bib
-bib2bbl([speciesnm,'_bib']);                % runs Bibtex to convert bib to bbl
-bbl2html([speciesnm,'_bib']);               % converts bbl to html
-web([speciesnm,'_bib.html'],'-browser');    % open html of bibliography in system browser
-
-fprintf('Hit a key to continue\n'); pause
-delete([speciesnm,'_bib.bib'],[speciesnm,'_bib.html']); % delete produced files
-
-%%% Step 4: check extra parameters
-
-pointNumber = pointNumber + 1; 
-
-fprintf('\n%d. Checking extra parameters:\n\n', pointNumber);
-
+if  ~exist('stepnb', 'var')
+    stepnb = [];
+elseif stepnb > 6
+    warning('The maximum step number for the curation report is 6')
+end
+  
 [data, auxData, metaData, txtData, weights] = feval(['mydata_', speciesnm]);
 [par, metaPar, txtPar] = feval(['pars_init_', speciesnm], metaData);
-standChem = addchem([], [], [], [], metaData.phylum, metaData.class);
 
+%%% Step 1: Check species name and lineage
+pointNumber = 1; 
+
+if isempty(stepnb) || stepnb == 1 
+fprintf('\n Step %d. Checking if the species is already in AmP:\n\n', pointNumber);
+check_speciesnm(speciesnm);
+end 
+
+if isempty(stepnb)
+    fprintf('Hit a key to continue\n'); pause
+end
+
+%%% Step 2: run check_data for data_0, data_1 and COMPLETE
+pointNumber = pointNumber + 1; 
+
+if   isempty(stepnb) || stepnb == 2
+fprintf('\n Step %d. Data types:\n\n', pointNumber);
+check_data(speciesnm);
+fprintf('\nCheck the consistency between metaData and data.\n');
+fprintf('Check that the labels for each data type are used and consistent with the contents.\n');
+fprintf('Contact the web administrator with any new labels that should be added to the table. \n');
+fprintf('http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction)\n');
+end
+
+if isempty(stepnb)
+    fprintf('Hit a key to continue\n'); pause
+end
+
+%%% Step 3: check bibliography and url's
+pointNumber = pointNumber + 1; 
+
+if   isempty(stepnb) || stepnb == 3
+    
+fprintf( '\n Step %d. Check Bibliography', pointNumber);
+[data, auxData, metaData] = feval(['mydata_', speciesnm]); % get metaData.biblist
+prt_my_pet_bib(speciesnm, metaData.biblist) % biblist2bib
+% bib2bbl([speciesnm,'_bib']);                % runs Bibtex to convert bib to bbl
+bib2html([speciesnm,'_bib']);               % converts bbl to html
+web([speciesnm,'_bib.html'],'-browser');    % open html of bibliography in system browser
+
+end
+
+if isempty(stepnb)
+    fprintf('Hit a key to continue\n'); pause
+    delete([speciesnm,'_bib.bib'],[speciesnm,'_bib.html']); % delete produced files
+end
+
+
+%%% Step 4: check extra parameters
+pointNumber = pointNumber + 1; 
+
+if   isempty(stepnb) || stepnb == 4
+    
+fprintf('\n Step %d. Checking extra parameters:\n\n', pointNumber);
+standChem = addchem([], [], [], [], metaData.phylum, metaData.class);
 parFields = fields(par);        standChemFields = fields(standChem);
 parFields  = setdiff(parFields, {'free'});
 nonChemParFields = setdiff(parFields, standChemFields);
@@ -174,13 +180,22 @@ end
 fprintf('\nCheck if these are all used in predict.\n');
 fprintf('Check if there should exist customized filters involving these parameters. \n Check that there is a discussion point relating to the use of these parameters. \n');
 
-fprintf('Hit a key to continue\n'); pause
+end
+
+if isempty(stepnb)
+    fprintf('Hit a key to continue\n'); pause
+end
+
 
 %%% Step 5: check which parameters were estimated:
-
 pointNumber = pointNumber + 1; 
 
-fprintf('\n%d. Checking choice of free parameters:\n\n', pointNumber);
+if   isempty(stepnb) || stepnb == 5
+fprintf('\n Step %d. Checking choice of free parameters:\n\n', pointNumber);
+
+standChem = addchem([], [], [], [], metaData.phylum, metaData.class);
+parFields = fields(par);        standChemFields = fields(standChem);
+parFields  = setdiff(parFields, {'free'});
 
 freeFixedFields = fields(par.free);
 
@@ -203,14 +218,17 @@ end
 
 fprintf('\nCheck if the values above are reasonable and if there is enough data to estimate them.\n\n');
 
+end
 
-fprintf('Hit a key to continue\n'); pause; 
+if isempty(stepnb)
+    fprintf('Hit a key to continue\n'); pause
+end
 
 %%% Step 6: check implied properties 
-
 pointNumber = pointNumber + 1; 
 
-fprintf('\n%d. Check implied model properties and parameter values of my_pet. Creates my_pet.html.\n\n', pointNumber);
+if   isempty(stepnb) || stepnb == 6
+fprintf('\n Step %d. Check implied model properties and parameter values of my_pet. Creates my_pet.html.\n\n', pointNumber);
 prnt = input('Enter: 1 to compute statistics else 0 to continue: ');
 
 if prnt
@@ -222,20 +240,21 @@ if prnt
   
 end
 
-fprintf('Hit a key to continue\n'); pause; 
+end
 
-delete(['report_',speciesnm,'.html']); % delete produced file
+if isempty(stepnb)
+    fprintf('Hit a key to continue\n'); pause
+   delete(['report_',speciesnm,'.html']); % delete produced file
+end
 
-
-
-pause; 
-
-%%% Step 7: make sure figures are saved
+% Step 7: make sure figures are saved (this only prints if the full reprot
+% is executed)
 
 pointNumber = pointNumber + 1;
 
-fprintf('\n%d. Please after the curation process execute the run file with estim_option, results_output=2 \n\n', pointNumber);
-
+if isempty(stepnb)
+fprintf('\n Step %d. Please after the curation process execute the run file with estim_option, results_output=2 \n\n', pointNumber);
+end
 
 ##### SOURCE END #####
 --></body></html>

@@ -13,21 +13,10 @@ function curator_report(speciesnm, stepnb)
   %% Description
   % Produces step by step instuctions and informations to help curators analyse a submission.
   %
-  % Follows :
-  %
-  % * - runs check_speciesnm:  checks species name and lineage
-  % * - runs check_data: displays data_0, data_1, data fields, and COMPLETE
-  % * - generates html file of bibliography 
-  % * - displays additional parameters that have been used
-  % * - displays parameters which were free
-  % * - runs statistics_st and prt_report_my_pet: displays implied
-  % properties and generates html of implied properties
-  %
   % Input
   %
   % * speciesnm: string with species name
-  % * stepnb: scalar with the step number the report should start
-  % performing
+  % * stepnb: scalar with the step number the report should execute
   %  
   % Output is printed to screen
 
@@ -39,12 +28,17 @@ function curator_report(speciesnm, stepnb)
   %
   % * curator_report('my_pet') 
   % * curator_report('my_pet', 2) : and then only start the report at step
-  % two
+  % 2 - 
 
 if  ~exist('stepnb', 'var')
     stepnb = [];
+elseif stepnb > 6
+    warning('The maximum step number for the curation report is 6')
 end
   
+[data, auxData, metaData, txtData, weights] = feval(['mydata_', speciesnm]);
+[par, metaPar, txtPar] = feval(['pars_init_', speciesnm], metaData);
+
 %%% Step 1: Check species name and lineage
 pointNumber = 1; 
 
@@ -81,8 +75,8 @@ if   isempty(stepnb) || stepnb == 3
 fprintf( '\n Step %d. Check Bibliography', pointNumber);
 [data, auxData, metaData] = feval(['mydata_', speciesnm]); % get metaData.biblist
 prt_my_pet_bib(speciesnm, metaData.biblist) % biblist2bib
-bib2bbl([speciesnm,'_bib']);                % runs Bibtex to convert bib to bbl
-bbl2html([speciesnm,'_bib']);               % converts bbl to html
+% bib2bbl([speciesnm,'_bib']);                % runs Bibtex to convert bib to bbl
+bib2html([speciesnm,'_bib']);               % converts bbl to html
 web([speciesnm,'_bib.html'],'-browser');    % open html of bibliography in system browser
 
 end
@@ -99,10 +93,7 @@ pointNumber = pointNumber + 1;
 if   isempty(stepnb) || stepnb == 4
     
 fprintf('\n Step %d. Checking extra parameters:\n\n', pointNumber);
-[data, auxData, metaData, txtData, weights] = feval(['mydata_', speciesnm]);
-[par, metaPar, txtPar] = feval(['pars_init_', speciesnm], metaData);
 standChem = addchem([], [], [], [], metaData.phylum, metaData.class);
-
 parFields = fields(par);        standChemFields = fields(standChem);
 parFields  = setdiff(parFields, {'free'});
 nonChemParFields = setdiff(parFields, standChemFields);
@@ -131,6 +122,10 @@ pointNumber = pointNumber + 1;
 
 if   isempty(stepnb) || stepnb == 5
 fprintf('\n Step %d. Checking choice of free parameters:\n\n', pointNumber);
+
+standChem = addchem([], [], [], [], metaData.phylum, metaData.class);
+parFields = fields(par);        standChemFields = fields(standChem);
+parFields  = setdiff(parFields, {'free'});
 
 freeFixedFields = fields(par.free);
 
@@ -182,7 +177,8 @@ if isempty(stepnb)
    delete(['report_',speciesnm,'.html']); % delete produced file
 end
 
-%%% Step 7: make sure figures are saved
+% Step 7: make sure figures are saved (this only prints if the full reprot
+% is executed)
 
 pointNumber = pointNumber + 1;
 
