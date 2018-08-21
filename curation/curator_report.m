@@ -78,6 +78,32 @@ prt_my_pet_bib(speciesnm, metaData.biblist) % biblist2bib
 % bib2bbl([speciesnm,'_bib']);                % runs Bibtex to convert bib to bbl
 bib2html([speciesnm,'_bib']);               % converts bbl to html
 web([speciesnm,'_bib.html'],'-browser');    % open html of bibliography in system browser
+fprintf('*****************************************************************  \n');
+fprintf('*********** Check the bibliography very carefully **************  \n');
+fprintf('*****************************************************************  \n');
+fprintf('Formatting problems that appear in the html come from formatting errors in the mydata files.\n');
+fprintf('Title field: \n');
+fprintf('Species (and genus) names are in italic and the first character of the genus name is in upper case.\n');
+fprintf('Species names in the title field are italisized using \\emph{}\n');
+fprintf('Other taxa (family, order, class etc) should not be in italics, but the first character in upper case.  \n');
+fprintf('Common names in lower case. \n');
+fprintf('First character of country and site names require upper cases. \n');
+fprintf('Do not use nested braces in \\emph or \\textit; \\em accepts nested braces \n')
+fprintf('Put braces around the letters than need to be upper case: e.g. {Y}ellow {S}tone {N}ational {P}ark  \n');
+fprintf('Authors field: Check that names appear correctly \n');
+fprintf('Howpublished field:  make sure url''s do not contain the character %% \n');
+fprintf('DOI field: this is obligatory when applicable (most articles) and must be implemented if absent \n');
+fprintf('ISBN field: this is obligatory when applicable (books) and must be implemented if absent  \n');
+fprintf('General things:\n');
+fprintf('Some bib''s might be used in pars_init; check_my_pet does not check this. Make sure those ref are in the mydata file. \n');
+fprintf('Use Latex-rules to construct special characters (such as accents), else html cannot show them.  \n');
+fprintf('Like in standard Bibtex, authors and journals should only have first characters in uppercase, the rest in lower case.     \n');
+fprintf('Check the standard entry types here: https://en.wikipedia.org/wiki/BibTeX#Bibliographic_information_file \n');
+fprintf('Check that the links to web pages in the references list actually work. \n');
+fprintf('*****************************************************************  \n');
+fprintf('*****************************************************************  \n');
+% fprintf(' \n');
+
 
 end
 
@@ -107,8 +133,15 @@ for i = 1:length(extraParFields)
   fprintf([extraParFields{i}, ', ', txtPar.label.(extraParFields{i}), '\n']);
 end
 
-fprintf('\nCheck if these are all used in predict.\n');
-fprintf('Check if there should exist customized filters involving these parameters. \n Check that there is a discussion point relating to the use of these parameters. \n');
+fprintf('*****************************************************************  \n');
+fprintf('*****************************************************************  \n');
+fprintf('Check if these extra paramaters are indeed used in predict.\n');
+fprintf('If it isn''t delete it from the pars_init.\n');
+fprintf('Check if there should exist customized filters involving these parameters.\n');
+fprintf('Check that there is a discussion point (in mydata) relating to the use of these extra parameters.\n');
+fprintf('Make sure that the labels for the scaled functional response specify\n which datasets they were used for.\n Look at the predict file and then add the datasets in the label in pars_init. \n');
+fprintf('*****************************************************************  \n');
+fprintf('*****************************************************************  \n');
 
 end
 
@@ -146,7 +179,12 @@ for i = 1:length(freeFields)
   fprintf([freeFields{i}, ' = ', num2str(par.(freeFields{i})), ' ', txtPar.units.(freeFields{i}), ', ' , txtPar.label.(freeFields{i}), '\n']);
 end
 
-fprintf('\nCheck if the values above are reasonable and if there is enough data to estimate them.\n\n');
+fprintf('********************************************************************  \n');
+fprintf('********************************************************************  \n');
+fprintf('Check if the values above are reasonable and if there is enough data to estimate them.\n');
+fprintf('If kappa < 0.3, or energy cond. v > 0.5 cm/d other local minima might exist with more realistic parameters\n');
+fprintf('*****************************************************************  \n');
+fprintf('*****************************************************************  \n');
 
 end
 
@@ -177,7 +215,7 @@ if isempty(stepnb)
    delete(['report_',speciesnm,'.html']); % delete produced file
 end
 
-% Step 7: make sure figures are saved (this only prints if the full reprot
+% Step 7: make sure figures are saved (this only prints if the full report
 % is executed)
 
 pointNumber = pointNumber + 1;
