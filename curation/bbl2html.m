@@ -2,11 +2,11 @@
 % translates .bbl to .html
 
 %%
-function bbl2html(my_pet_bib, destinationFolder, filenm)
+function bbl2html(my_pet_bib, filenm)
 % created 2018/02/02 by Bas Kooijman
 
 %% Syntax
-% <bbl2html *bbl2hmtl*>(my_pet_bib, destinationFolder, filenm)
+% <bbl2html *bbl2hmtl*>(my_pet_bib, filenm)
 
 %% Description
 % Translates a bbl-file into a html-file
@@ -28,16 +28,13 @@ function bbl2html(my_pet_bib, destinationFolder, filenm)
 % This code does not handle nested {} in \emph{...} or \textit{...}, but is does in {\em ...}
 % Uppercase project handles single character only, so: {P}{S}dfre, not {PS}dfre
 
-if ~exist('destinationFolder', 'var')
-  destinationFolder = '';
-end
 
 if ~exist('filenm', 'var')
-   fid = fopen([destinationFolder, my_pet_bib, '.html'], 'w+'); % open file for reading and writing and deletes old content
+   fid = fopen([my_pet_bib, '.html'], 'w+'); % open file for reading and writing and deletes old content
 else
-   fid = fopen([destinationFolder, filenm, '.html'], 'a'); % open file for appending
+   fid = fopen([filenm, '.html'], 'a'); % open file for appending
 end
-bbl = fileread([destinationFolder, my_pet_bib, '.bbl']); 
+bbl = fileread([my_pet_bib, '.bbl']); 
 
 % general edits for whole bbl
 bbl = strrep(bbl, '\begin{thebibliography}{1}', ''); 
@@ -181,7 +178,7 @@ fprintf(fid, '      </ul>\n\n'); % close unordered list
 fclose(fid);
 
 % remove bbl file
-delete([destinationFolder, my_pet_bib, '.bbl'])
+delete([my_pet_bib, '.bbl'])
 
 end
 

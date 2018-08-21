@@ -2,11 +2,11 @@
 % translates .bib to .bbl by running Latex under Matlab
 
 %%
-function bib2bbl(my_pet_bib, destinationFolder)
+function bib2bbl(my_pet_bib)
 % created 2018/02/03 by Bas Kooijman
 
 %% Syntax
-% <bib2bbl *bib2bbl*>(my_pet_bib, destinationFolder)
+% <bib2bbl *bib2bbl*>(my_pet_bib)
 
 %% Description
 % Translates a bib-file into a bbl-file
@@ -14,10 +14,9 @@ function bib2bbl(my_pet_bib, destinationFolder)
 % Input:
 %
 % * my_pet_bib: bib-file name without extension
-% * destinationFolder: optional specification of destinations folder (default: empty)
 
 %% Remarks
-% assumes that Bibtex can be ran onder dos.
+% assumes that Bibtex can be ran onder dos and operations occurs in current directory
 % The intended use is 
 % 
 % * convert biblist in results_my_pet.mat to bib by prt_my_pet_bib
@@ -31,25 +30,20 @@ function bib2bbl(my_pet_bib, destinationFolder)
 % * web-adress cannot contain spaces or %20; use ~ instead; this will be replaced by a space in function bbl2html
 
 % create aux file
-if ~exist('destinationFolder', 'var')
-  destinationFolder = '';
-end
-fid = fopen([destinationFolder, my_pet_bib, '.aux'], 'w+'); % open file for reading and writing and deletes old content
+
+fid = fopen([my_pet_bib, '.aux'], 'w+'); % open file for reading and writing and deletes old content
 
 fprintf(fid,[ ...
    '\\relax\n' ...
    '\\citation{*}\n' ...
-   '\\bibstyle{plain}\n' ...
+   '\\bibstyle{apalike}\n' ...
    '\\bibdata{', my_pet_bib, '}\n']);
-fclose(fid);
+fclose(fid); 
 
 % run bibtex
-WD = pwd;
-if ~isempty(destinationFolder)
-  cd(destinationFolder)
-end
 dos(['bibtex ', my_pet_bib]);
-cd(WD)
 
 % remove help files
-delete([destinationFolder, my_pet_bib, '.aux'], [destinationFolder, my_pet_bib, '.blg'])
+%delete([my_pet_bib, '.aux'], [my_pet_bib, '.blg'])
+delete([my_pet_bib, '.aux'])
+

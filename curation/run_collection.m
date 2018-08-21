@@ -11,9 +11,7 @@ function run_collection(varargin)
 %% Description
 % Writes html and bib pages in entries_web and zip file in entries_zip.
 % Deletes .cache, .wn, .asv, .bib,  .bbl', .html files from entries.
-% This function calls function bib2bbl, which writes and deletes the .aux file as source for Bibtex.
-% It also runs Bibtex (under Matlab) to produce a bbl-file, make sure that you have it.
-% Then function bbl2html is called, which produces html code, writes it in my_pet_res.html, and deletes the bbl-file.
+% Calls function bib2html, which writes and deletes the .aux file as source for Bibtex, runs Bibtex, which writes a bbl-file, which is also deleted.
 % Writes my_pet_toolbar.html, which is included by my_pet_res.html, my_pet_par.html and my_pet_stat.html.
 %
 % Input:
