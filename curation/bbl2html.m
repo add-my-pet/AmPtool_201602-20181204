@@ -178,8 +178,7 @@ fprintf(fid, '      </ul>\n\n'); % close unordered list
 fclose(fid);
 
 % remove bbl file
-delete([my_pet_bib, '.bbl'])
-
+delete([my_pet_bib, '.bbl'], [my_pet_bib, '.blg']);
 end
 
 

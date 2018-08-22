@@ -44,6 +44,39 @@ fclose(fid);
 dos(['bibtex ', my_pet_bib]);
 
 % remove help files
-%delete([my_pet_bib, '.aux'], [my_pet_bib, '.blg'])
 delete([my_pet_bib, '.aux'])
 
+% search for doi's in my_pet_bib.bib to add in my_pet_bib.bbl
+bib = fileread([my_pet_bib, '.bib']);
+ind = strfind(bib, 'doi');
+if isempty(ind) % no doi's
+  return
+else % doi's present
+  % construct (n,2)-table with bibkey's and doi's
+  n = length(ind);  doi = cell(n,2);
+  for i = 1:n
+    str = bib(ind(i):end); ind0 = strfind(str, '{'); ind1 = strfind(str, '}');
+    doi{i,2} = str(ind0(1)+1:ind1(1)-1);
+    str = bib(1:ind(i)); ind0 = strfind(str, '@'); str = str(ind0(end):end); ind0 = strfind(str, '{'); ind1 = strfind(str, ',');
+    doi{i,1} = str(ind0(1)+1:ind1(1)-1);
+  end
+end
+% add doi's to my_pet_bib.bbl
+bbl = fileread([my_pet_bib, '.bbl']); % read bbl-file
+bbl = strrep(bbl,'\','\\'); % replace \ by \\ else fprintf will protest
+for i = 1:n
+  % find index ind of insertion of doi i
+  ind0 = strfind(bbl, doi{i,1}); ind1 = strfind(bbl, '\bibitem'); 
+  ind1 = ind1(ind1 > ind0); ind0 = strfind(bbl, '.');
+  if ~isempty(ind1) % not last \bibitem
+    ind1 = ind1(1); ind0 = ind0(ind0 < ind1); 
+  end
+  ind = 1 + ind0(end);
+  % insert
+  bbl = [bbl(1:ind), '<a href="http://www.doi.org/', doi{i,2}, '"  target="_top"> doi:', doi{i,2}, '</a>.', bbl(ind+1:end)];
+end
+
+% overwrite bbl file
+fid = fopen([my_pet_bib, '.bbl'], 'w+');
+fprintf(fid, bbl);
+fclose(fid);
