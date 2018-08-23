@@ -73,7 +73,7 @@ for i = 1:n
   end
   ind = 1 + ind0(end);
   % insert
-  bbl = [bbl(1:ind), '<a href="http://www.doi.org/', doi{i,2}, '"  target="_top"> doi:', doi{i,2}, '</a>.', bbl(ind+1:end)];
+  bbl = [bbl(1:ind), '<a href="http://www.doi.org/', doi{i,2}, '"  target="_blanc"> doi:', doi{i,2}, '</a>.', bbl(ind+1:end)];
 end
 
 % overwrite bbl file

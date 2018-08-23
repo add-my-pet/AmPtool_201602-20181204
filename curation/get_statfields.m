@@ -46,11 +46,11 @@ function [webStatFields, webColStat]= get_statfields(model)
  
   webColStat.del_Wb = '#FFFF9C'; webColStat.del_Wp   = '#FFFF9C'; webColStat.del_V = '#FFFF9C'; webColStat.r_B = '#FFFF9C'; 
   webColStat.E_m    = '#FFC6A5'; webColStat.t_starve = '#FFC6A5'; webColStat.t_E   = '#FFC6A5'; webColStat.xi_WE = '#FFC6A5'; 
-  webColStat.J_Cb   = '#FFFFFF'; webColStat.J_Cp     = '#FFFFFF'; webColStat.J_Ci  = '#FFFFFF';
-  webColStat.J_Hb   = '#FFFFFF'; webColStat.J_Hp     = '#FFFFFF'; webColStat.J_Hi  = '#FFFFFF';
-  webColStat.J_Ob   = '#FFFFFF'; webColStat.J_Op     = '#FFFFFF'; webColStat.J_Oi  = '#FFFFFF';
+  webColStat.J_Cb   = '#E0E0E0'; webColStat.J_Cp     = '#E0E0E0'; webColStat.J_Ci  = '#E0E0E0';
+  webColStat.J_Hb   = '#C6EFF7'; webColStat.J_Hp     = '#C6EFF7'; webColStat.J_Hi  = '#C6EFF7';
+  webColStat.J_Ob   = '#CEEFBD'; webColStat.J_Op     = '#CEEFBD'; webColStat.J_Oi  = '#CEEFBD';
   webColStat.J_Nb   = '#FFFFFF'; webColStat.J_Np     = '#FFFFFF'; webColStat.J_Ni  = '#FFFFFF';
-  webColStat.p_Ti   = '#FFFFFF';
+  webColStat.p_Ti   = '#FFC6A5';
 
   
   switch model
