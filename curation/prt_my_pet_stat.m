@@ -24,12 +24,12 @@ function prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
 % load('results_my_pet.mat');
 % prt_my_pet_stat(metaData, metaPar, par, destinationFolder)
 
-% Removes underscores and makes first letter of english name be in capital:
-speciesprintnm = [strrep(metaData.species, '_', ' '), ' '];
-speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
-if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
-  speciesprintnm_en(1)=char(speciesprintnm_en(1)-32);
-end
+% % Removes underscores and makes first letter of english name be in capital:
+% speciesprintnm = [strrep(metaData.species, '_', ' '), ' '];
+% speciesprintnm_en = strrep(metaData.species_en, '_', ' ');
+% if speciesprintnm_en(1)>='a' && speciesprintnm_en(1)<='z'
+%   speciesprintnm_en(1)=char(speciesprintnm_en(1)-32);
+% end
 
 f = 1; % ad libitum feeding
 [stat, txtStat] = statistics_st(metaPar.model, par, metaData.T_typical, f);
@@ -124,5 +124,3 @@ fprintf(oid, '</BODY>\n');
 fprintf(oid, '</HTML>\n');
 
 fclose(oid);
-
-

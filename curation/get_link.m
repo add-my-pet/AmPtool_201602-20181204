@@ -2947,7 +2947,7 @@ function links = get_link(taxon, open)
       id_Taxo = '421966';        
       id_EoL = '995096';
       id_fishbase = taxon_fish;
-       
+              
     case 'Pleuronectes_platessa'
       id_CoL = '27a6782add287c044111388cc4996f04';
       id_WoRMS = '127143';
@@ -7314,7 +7314,14 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/08/08
       id_MSW3 = '13802235';
        
-    case 'Manis_crassicaudata'
+    case 'Scotophilus_kuhlii'
+      id_CoL = '3ba39a5a10f605bf60d3e501deb80c4c';
+      id_Taxo = '64970';        
+      id_EoL = '310390';
+      id_AnAge = ''; % not present 2018/08/26s
+      id_MSW3 = '13801973';
+
+      case 'Manis_crassicaudata'
       id_CoL = '736a2ea04e95eb28f95226cc77b01c98';
       id_Taxo = '168633';        
       id_EoL = '982442';
@@ -8892,6 +8899,13 @@ function links = get_link(taxon, open)
       id_EoL = '327960';
       id_AnAge = taxon;
       id_MSW3 = '12100551';
+       
+    case 'Macaca_fuscata'
+      id_CoL = '061be7de98f5e928f0094eab26c73b82';
+      id_Taxo = '168593';        
+      id_EoL = '1037940';
+      id_AnAge = taxon;
+      id_MSW3 = '12100545';
        
     case 'Hylobates_lar'
       id_CoL = 'b567774eedd1fd38ce9a26e2fddfc628';

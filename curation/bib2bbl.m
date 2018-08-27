@@ -48,6 +48,8 @@ delete([my_pet_bib, '.aux'])
 
 % search for doi's in my_pet_bib.bib to add in my_pet_bib.bbl
 bib = fileread([my_pet_bib, '.bib']);
+bib = strrep(bib, 'DOI', 'doi');
+bib = strrep(bib, 'Doi', 'doi');
 ind = strfind(bib, 'doi');
 if isempty(ind) % no doi's
   return
@@ -66,7 +68,7 @@ bbl = fileread([my_pet_bib, '.bbl']); % read bbl-file
 bbl = strrep(bbl,'\','\\'); % replace \ by \\ else fprintf will protest
 for i = 1:n
   % find index ind of insertion of doi i
-  ind0 = strfind(bbl, doi{i,1}); ind1 = strfind(bbl, '\bibitem'); 
+  ind0 = strfind(bbl, [doi{i,1},'}']); ind1 = strfind(bbl, '\bibitem'); 
   ind1 = ind1(ind1 > ind0); ind0 = strfind(bbl, '.');
   if ~isempty(ind1) % not last \bibitem
     ind1 = ind1(1); ind0 = ind0(ind0 < ind1); 

@@ -35,7 +35,7 @@ end
 function fid_Spec = open_species_list_html
 % opens up species_list.html for reading and writing
 
-fid_Spec = fopen('../../species_list.html', 'w+'); % open file for writing, delete existing content
+fid_Spec = fopen('../../add_my_pet_web/species_list.html', 'w+'); % open file for writing, delete existing content
   
 % make head and header for species_list.html :
 fprintf(fid_Spec, '<!DOCTYPE html>\n');

@@ -57,7 +57,7 @@ fprintf(fid, '      <ul class="ref">\n'); % open unordered list
 
 for i = 1:n_bib % scan bibitems
   bibitem_i = bbl(i_bib(i): (i_bib(i+1)-2));
-  i_0 = 1+ strfind(bibitem_i, '{'); i_1 = strfind(bibitem_i, '}') - 1; 
+  i_0 = 2 + strfind(bibitem_i, ']{'); i_1 = strfind(bibitem_i, '}') - 1; 
   bibkey_i = bibitem_i(i_0:i_1);
   
   % edit bibitem_i
@@ -89,7 +89,7 @@ for i = 1:n_bib % scan bibitems
 
   % special characters
   %
-  % single characters
+  % single characters: https://www.starr.net/is/type/htmlcodes.html
   bibitem_i = strrep(bibitem_i, '\&',    '&amp;');
   bibitem_i = strrep(bibitem_i, '{\o}',  '&oslash;');
   bibitem_i = strrep(bibitem_i, '{\O}',  '&Oslash;');
@@ -108,6 +108,8 @@ for i = 1:n_bib % scan bibitems
   bibitem_i = strrep(bibitem_i, '\v{c}', '&#269;');
   bibitem_i = strrep(bibitem_i, '\v{e}', '&#283;');
   bibitem_i = strrep(bibitem_i, '\v{g}', '&#287;');
+  bibitem_i = strrep(bibitem_i, '\v{s}', '&#347;');
+  bibitem_i = strrep(bibitem_i, '\v{S}', '&#346;');
   bibitem_i = strrep(bibitem_i, '\v{z}', '&#382;');
   bibitem_i = strrep(bibitem_i, '\v{Z}', '&#381;');
   bibitem_i = strrep(bibitem_i, '{\i}',  '&#305;');

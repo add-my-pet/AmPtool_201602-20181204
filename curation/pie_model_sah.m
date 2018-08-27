@@ -35,7 +35,8 @@ function [n model index] = pie_model_sah
   
   txt = {'s-models'; 'a-models'; 'h-models'}; y = zeros(3,1);
   y(1) = sum(n(1:5)); y(2) = sum(n([6,7,8])); y(3) = sum(n([9,10]));
-  pie3s(y, 'Bevel', 'Elliptical', 'Labels', txt);
+  % pie3s(y, 'Bevel', 'Elliptical', 'Labels', txt);
+  pie(y, txt);
 
   if ~(sum(n) == ne)
     fprintf('Warning: model types need updating')

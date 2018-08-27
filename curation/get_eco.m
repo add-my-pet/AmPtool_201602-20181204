@@ -9789,6 +9789,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Scotophilus_kuhlii'
+      climate = {'A'};
+      ecozone = {'TPi'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Manis_crassicaudata'
       climate = {'Aw','BSh','Cwa'};
       ecozone = {'TPi'};
@@ -11983,6 +11993,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Am','BSh','Cwa','Cfa'};
       ecozone = {'TPi'};
       habitat = {'0iTf','0iTg','0iTa','0iTi'};
+      embryo  = {'Tv'};
+      migrate = {}; 
+      food    = {'bxM','xiO'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Macaca_fuscata'
+      climate = {'Cfa','Dfa'};
+      ecozone = {'THp'};
+      habitat = {'0iTf'};
       embryo  = {'Tv'};
       migrate = {}; 
       food    = {'bxM','xiO'};

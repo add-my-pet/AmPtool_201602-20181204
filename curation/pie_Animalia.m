@@ -116,7 +116,8 @@ function [x taxa] = pie_Animalia (n)
       end
   end
   
-  pie3s(x, 'Bevel', 'Elliptical', 'Labels', taxa);
+  %pie3s(x, 'Bevel', 'Elliptical', 'Labels', taxa);
+  pie(x, taxa(1:length(x)));
 
   if ~(sum(x) == length(select('Animalia')))
      fprintf('Warning from pie_Animalia: taxa specification needs updating\n')

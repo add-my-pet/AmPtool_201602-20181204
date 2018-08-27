@@ -117,7 +117,7 @@ close all
 
 % Write about.html
 path = 'entries_web/'; % path to entries
-fid_about = fopen('../../about.html', 'w+'); % open file for writing, delete existing content
+fid_about = fopen('../../add_my_pet_web/about.html', 'w+'); % open file for writing, delete existing content
 
 fprintf(fid_about, '<!DOCTYPE html>\n');
 fprintf(fid_about, '<HTML>\n');

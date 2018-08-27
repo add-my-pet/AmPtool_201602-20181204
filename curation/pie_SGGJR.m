@@ -3,7 +3,7 @@
 
 %%
 function  pSGGJR = pie_SGGJR (species, model, par, stat, destinationFolder)
-% created 2016/05/02 by Bas Kooijman, modified 2017/01/04; 2017/10/14
+% created 2016/05/02 by Bas Kooijman, modified 2017/01/04; 2017/10/14; 2018/08/23
 
 %% Syntax
 % pSGGJR = <../pie_SGGJR.m *pie_SGGJR*> (species, model, par, stat, destinationFolder)
@@ -60,7 +60,8 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, destinationFolder)
     ['p_S ', num2str(p(1), '% 3.2f')], ['p_G ', num2str(p(2), '% 3.2f')], ['p_G ', num2str(p(3), '% 3.2f')], ...
     ['p_J ', num2str(p(4), '% 3.2f')], ['p_R ', num2str(p(5), '% 3.2f')]};
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(p(:,1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
+  %pie3s(p(:,1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
+  pie(p(:,1), [1 0 1 1 1], txt);
   colormap(pie_color);
   title({['Birth at ', T_txt, ', f = 1'], ...
       ['p_A = ', num2str(pA(1), '% 1.3e'), ' J/d, p_C = ', num2str(pC(1), '% 1.3e'), ' J/d'], ...
@@ -78,7 +79,8 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, destinationFolder)
     ['p_S ', num2str(p(1), '% 3.2f')], ['p_G ', num2str(p(2), '% 3.2f')], ['p_G ', num2str(p(3), '% 3.2f')], ...
     ['p_J ', num2str(p(4), '% 3.2f')], ['p_R ', num2str(p(5), '% 3.2f')]};
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(p(:,1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
+  %pie3s(p(:,1), 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 1]);
+  pie(p(:,1), [1 0 1 1 1], txt);
   colormap(pie_color);
   title({['Puberty at ', T_txt, ', f = 1'], ...
       ['p_A = ', num2str(pA(2), '% 1.3e'), ' J/d,  p_C = ', num2str(pC(2), '% 1.3e'), ' J/d'], ...
@@ -97,7 +99,8 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, destinationFolder)
     ['p_J ', num2str(p(4), '% 3.2f')], ['p_R ', num2str(p(5), '% 3.2f')]};
   txt{2} = '';
   set(gca, 'FontSize', 15, 'Box', 'on')
-  pie3s(p, 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 0]);
+  %pie3s(p, 'Bevel', 'Elliptical', 'Labels', txt, 'Explode', [1 0 1 1 0]);
+  pie(p, [1 0 1 1 0], txt);
   colormap(pie_color);
   if strcmp(model,'hex')
     title({['Pupation at ', T_txt], ...
@@ -129,7 +132,8 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, destinationFolder)
     pie_color = [1 1 .8; 1 0 0; 1 0 1; 0 0 1; 0 1 0; .8 1 .8];
     colormap(pie_color);
     set(gca, 'FontSize', 15, 'Box', 'on')
-    pie3s(EMJHG, 'Explode', [0 1 1 1 1 0], 'Labels', pie_txt, 'Bevel', 'Elliptical');
+    %pie3s(EMJHG, 'Explode', [0 1 1 1 1 0], 'Labels', pie_txt, 'Bevel', 'Elliptical');
+    pie(EMJHG, [0 1 1 1 1 0], pie_txt);
     title({'cum. investment in foetus, e_b = 1', ...
         ['E_0 = ', num2str(E_0,'% 1.2e'), ' J']})
   else
@@ -140,7 +144,8 @@ function  pSGGJR = pie_SGGJR (species, model, par, stat, destinationFolder)
     pie_color = [1 1 .8; 1 0 0; 1 0 1; 0 0 1; 0 1 0; .8 1 .8];
     colormap(pie_color);
     set(gca, 'FontSize', 15, 'Box', 'on')
-    pie3s(EMJHG, 'Explode', [0 1 1 1 1 0], 'Labels', pie_txt, 'Bevel', 'Elliptical');
+    %pie3s(EMJHG, 'Explode', [0 1 1 1 1 0], 'Labels', pie_txt, 'Bevel', 'Elliptical');
+    pie(EMJHG, [0 1 1 1 1 0],  pie_txt);
     title({'Cum. investment at birth, e_b = 1', ...
         ['E_0 = ', num2str(E_0,'% 1.2e'), ' J']})      
   end

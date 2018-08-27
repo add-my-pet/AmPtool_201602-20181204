@@ -29,15 +29,16 @@ species = metaData.species; txt_species = strrep(species, '_', ' ');
 date = metaData.date_acc;
 txt_date_acc = datestr(datenum(date), 'yyyy/mm/dd'); 
 
-author = metaData.author;  % initiate author list
+author = metaData.author(:);  % initiate author list
 % modifications
 if isfield(metaData,'author_mod')
-  author = [author; metaData.author_mod];
+  author = [author; metaData.author_mod(:)];
 end
 for i = 1:100 % identify latest modification
   mod = ['author_mod_', num2str(i)];
   if isfield(metaData, mod)
-    author = [author; metaData.(mod)];
+    authormod = metaData.(mod);
+    author = [author; authormod(:)];
   else
     break
   end
@@ -58,7 +59,7 @@ for i = 2:n_author
 end
 fprintf(oid, ['. ', num2str(date(1)), '. \n']);
 fprintf(oid, ['AmP <i>', txt_species, '</i>, version ', txt_date_acc, ', \n']);
-fprintf(oid, ['doi: ', doi, '\n']);
+fprintf(oid, ['<a href="http://www.doi.org/', doi, '">doi: ', doi, '</a>\n']);
 
 fclose(oid);
 
