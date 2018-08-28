@@ -6518,6 +6518,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Oxyura_jamaicensis'
+      climate = {'BSk','Cfa','Dfa','Dfb'};
+      ecozone = {'THn'};
+      habitat = {'biFp','biFm','biMm'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ml'};
+      food    = {'biCi','xiHl','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Anas_platyrhynchos'
       climate = {'Cfa','Cfb','Csa','Csb','Dfa','Dfb','Dfc'};
       ecozone = {'TH','TPi','TA'};
@@ -7645,6 +7655,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tncf'};
       migrate = {'Ms'};
       food    = {'biCvb','biCvm','biSvm'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Haliaeetus_albicilla'
+      climate = {'Cfb','Dfb','Dfc','Dwb','Dwc'};
+      ecozone = {'THp'};
+      habitat = {'0iTi','0iTs','0iTg','0iTht','0iThh'};
+      embryo  = {'Tnpf'};
+      migrate = {'Ms'};
+      food    = {'biCv','biCvm','biCvf'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
@@ -8878,6 +8898,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Atelerix_albiventris'
+      climate = {'Am'};
+      ecozone = {'TPa'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCi','xiHs','xiF'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Camelus_dromedarius'
       climate = {'BWh'};
       ecozone = {'THp','TPa'};
@@ -9296,6 +9326,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Fv'};
       migrate = {};
       food    = {'bxM','xiHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Hexaprotodon_liberiensis'
+      climate = {'Am'};
+      ecozone = {'TPa'};
+      habitat = {'0iFr','0iFl','0iTf'};
+      embryo  = {'Fv'};
+      migrate = {};
+      food    = {'bxM','xiHl','xiHs'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
