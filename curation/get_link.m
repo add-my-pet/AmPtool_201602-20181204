@@ -4683,6 +4683,15 @@ function links = get_link(taxon, open)
       id_avibase = '91CCBC719C97AE19';
       id_birdlife = 'northern-bobwhite-colinus-virginianus';
 
+    case 'Oxyura_jamaicensis'
+      id_CoL = 'b6ae3729b1f8cda01a8038a499269df4';
+      id_WoRMS = '159100';
+      id_Taxo = '52292';
+      id_EoL = '1048999';
+      id_AnAge = taxon;       
+      id_avibase = 'CD7DC84B28AE24C8';
+      id_birdlife = 'ruddy-duck-oxyura-jamaicensis';
+
     case 'Anas_platyrhynchos'
       id_CoL = 'd5d9d6e502eb4c9f10b094dfdd935e65';
       id_WoRMS = '148791';
@@ -5678,6 +5687,14 @@ function links = get_link(taxon, open)
       id_avibase = '5F8E7CA845BD413F';
       id_birdlife = 'golden-eagle-aquila-chrysaetos';
       
+    case 'Haliaeetus_albicilla'
+      id_CoL = '61d3e9ec4bba1729c234095596d5e452';
+      id_Taxo = '52680'; 
+      id_EoL = '1049120';
+      id_AnAge = taxon;      
+      id_avibase = '5A3D91D3254A568D';
+      id_birdlife = 'white-tailed-sea-eagle-haliaeetus-albicilla';
+      
     case 'Gyps_rueppellii'
       id_CoL = 'd20945b21051ecce4ea8346951047ba6';
       id_Taxo = '52470'; 
@@ -6638,6 +6655,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '13600020';
        
+    case 'Atelerix_albiventris'
+      id_CoL = 'b46493af25f49ac40f8aeb488bbafa9d';
+      id_Taxo = '167398';        
+      id_EoL = '1178677';
+      id_AnAge = taxon;
+      id_MSW3 = '13600005';
+       
     case 'Camelus_dromedarius'
       id_CoL = '2ce3845d28d43f30229bf4bcad752a19';
       id_Taxo = '67767';        
@@ -6967,6 +6991,13 @@ function links = get_link(taxon, open)
       id_EoL = '311532';
       id_AnAge = taxon;
       id_MSW3 = '14200106';
+       
+    case 'Hexaprotodon_liberiensis'
+      id_CoL = '6cfa4c85eed64c9e83c3d0b3b695255b';
+      id_Taxo = '67730';   
+      id_EoL = '317313';
+      id_AnAge = taxon;
+      id_MSW3 = '14200102';
        
     case 'Antilocapra_americana'
       id_CoL = '1d7c1536f14b546ab7dcd045a719d4f2';
