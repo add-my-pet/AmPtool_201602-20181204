@@ -5788,6 +5788,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Daboia_russelii'
+      climate = {'Aw','BSh','Cwa'};
+      ecozone = {'TPi'};
+      habitat = {'0iThh','0iTg','0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'biCv','biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Crotalus_horridus'
       climate = {'Cfa'};
       ecozone = {'THn'};

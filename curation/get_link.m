@@ -4111,6 +4111,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
+    case 'Daboia_russelii'
+      id_CoL = '9c471f69c409e3bea6eb2a44e8b8a645';
+      id_Taxo = '646304';        
+      id_EoL = '795118';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
     case 'Crotalus_horridus'
       id_CoL = 'e9f8350bf5f3e9c9dc286e5c54a9807d';
       id_Taxo = '50384';        
