@@ -488,6 +488,7 @@ CD = { ...
  2.6 {'ab'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww_f'} 
  2.6 {'tg'; 'ax'; 'ap'; 'am'; 'Wwb'; 'Wwx'; 'Wwi'; 'Ri'; 't-L_f'; 't-Ww_f'} 
  2.6 {'ab'; 'ax'; 'ap'; 'am'; 'Li'; 'Wwb'; 'Wwi'; 'Ri'; 't-Ww_f'} 
+ 2.6 {'ab'; 'aj'; 'ap'; 'am'; 'Wwb'; 'Lb'; 'Lj'; 'Lp'; 'Li'; 'GSI'; 't-L'; 'L-Ww'; 'T-JO'} 
  2.7 {'ap'; 'am'; 'Lb'; 'Li'; 'Wwi'; 'Ri'; 't-L_f'; 't-Ww_f'} 
  2.7 {'ab'; 'aj'; 'ap'; 'am'; 'Lj'; 'Li'; 'Wwb'; 'Wwj'; 'Wwi'; 'Ri'; 't-L_f'} 
  2.7 {'tg'; 'ax'; 'ap'; 'am'; 'Lb'; 'Lp'; 'Li'; 'Wwb'; 'Wwx'; 'Wwp'; 'Wwi'; 'Ri'; 'pXi'; 't-L'} 
