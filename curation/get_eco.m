@@ -6668,6 +6668,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Caloenas_nicobarica'
+      climate = {'Af'};
+      ecozone = {'TPi'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpfm'};
+      migrate = {};
+      food    = {'biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Mesitornis_variegatus'
       climate = {'A'};
       ecozone = {'TPam'};
@@ -7713,6 +7723,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       ecozone = {'TN'};
       habitat = {'0iTa','0iTd'};
       embryo  = {'Tncfm'};
+      migrate = {};
+      food    = {'biSvm','biSvb'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Sarcoramphus_papa'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnwfm'};
       migrate = {};
       food    = {'biSvm','biSvb'};
       gender  = {'Dg'};
@@ -8779,6 +8799,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       reprod  = {'O'};
 
     case 'Macroscelides_proboscideus'
+      climate = {'BWh','BWk'};
+      ecozone = {'TPa'};
+      habitat = {'0iTh','0iTd'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCii','xiH'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Elephantulus_rufescens'
       climate = {'BWh','BWk'};
       ecozone = {'TPa'};
       habitat = {'0iTh','0iTd'};
@@ -11931,6 +11961,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
 
     case 'Pithecia_pithecia'
       climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {}; 
+      food    = {'bxM','xiH','xiCii','xiCvm','xiCvb'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Pithecia_monachus'
+      climate = {'Af'};
       ecozone = {'TN'};
       habitat = {'0iTf'};
       embryo  = {'Tv'};

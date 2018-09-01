@@ -4813,6 +4813,15 @@ function links = get_link(taxon, open)
       id_avibase = '31ACA9981952B4C4';
       id_birdlife = 'northern-band-tailed-pigeon-patagioenas-fasciata';
 
+    case 'Caloenas_nicobarica'
+      id_CoL = 'ea496f20e6c2411aaf5fe84a8389a39c';
+      id_Taxo = '53957';        
+      id_EoL = '1047263';
+      id_AnAge = taxon;       
+      id_avibase = '0FFC77EF1BC55357';
+      id_birdlife = 'nicobar-pigeon-caloenas-nicobarica';
+      id_ADW = ''; % not present at 2018/08/31
+
     case 'Mesitornis_variegatus'
       id_CoL = 'a990bffed92b9b55d3f6cfb8572597e8';
       id_Taxo = '1122776';        
@@ -5735,6 +5744,14 @@ function links = get_link(taxon, open)
       id_avibase = '659E8F5C0AEA27F2';
       id_birdlife = 'andean-condor-vultur-gryphus';
       
+    case 'Sarcoramphus_papa'
+      id_CoL = 'd4f208e55ab5b06e088645870c406d60';
+      id_Taxo = '52311';        
+      id_EoL = '1049159';
+      id_AnAge = taxon;       
+      id_avibase = '9306DA2F3B23E74C';
+      id_birdlife = 'king-vulture-sarcoramphus-papa';
+      
     case 'Tyto_alba'
       id_CoL = '6fcd23e9a266d2ec77f69e02b75fbead';
       id_Taxo = '54626';        
@@ -6573,6 +6590,13 @@ function links = get_link(taxon, open)
       id_EoL = '326395';
       id_AnAge = taxon;
       id_MSW3 = '11200023';
+       
+    case 'Elephantulus_rufescens'
+      id_CoL = '20df5cab78f3cb488470d9bc1d61ecd7';
+      id_Taxo = '61599';        
+      id_EoL = '326393';
+      id_AnAge = taxon;
+      id_MSW3 = '11200014';
        
     case 'Hemicentetes_semispinosus'
       id_CoL = '2a69b74156efdf595db62090e21e94f5';
@@ -8861,6 +8885,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '12100369';
        
+    case 'Pithecia_monachus'
+      id_CoL = 'c4b3eb7d5513d542ac109ed7cc6b238d';
+      id_Taxo = '65835';        
+      id_EoL = '1010832';
+      id_AnAge = taxon;
+      id_MSW3 = '12100366';
+      id_ADW = ''; % not present at 2018/08/31
+      
     case 'Cebus_capucinus'
       id_CoL = '0b4728552da36e92bba7b084a347127a';
       id_Taxo = '65749';        
