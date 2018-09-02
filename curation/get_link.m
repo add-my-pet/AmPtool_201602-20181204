@@ -4862,6 +4862,14 @@ function links = get_link(taxon, open)
       id_avibase = '175A7534149FDC90';
       id_birdlife = 'australian-owlet-nightjar-aegotheles-cristatus';
 
+    case 'Chordeiles_minor'
+      id_CoL = '48104bea3d3cf8b74f31be21bdb7e297';
+      id_Taxo = '54809';        
+      id_EoL = '915489';
+      id_AnAge = taxon;    
+      id_avibase = '24E39ACD5692DA4A';
+      id_birdlife = 'common-nighthawk-chordeiles-minor';
+      
     case 'Podargus_strigoides'
       id_CoL = '77210dd21b917f4baf425d753ad78f02';
       id_Taxo = '54798';        
@@ -5776,6 +5784,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = 'FC366114BD3B51A0';
       id_birdlife = 'great-horned-owl-bubo-virginianus';
+      
+    case 'Ninox_novaeseelandiae'
+      id_CoL = '7d44fc621bf240f281a88fa5fb15a468';
+      id_Taxo = '54695';        
+      id_EoL = '1178330';
+      id_AnAge = ''; % not present 2018/09/02       
+      id_avibase = 'E8E9C26DAFD46DC2';
+      id_birdlife = 'morepork-ninox-novaeseelandiae';
       
     case 'Urocolius_macrourus'
       id_CoL = 'e563e083718e4eb3a35fbcbde6fcaadd';
@@ -7461,6 +7477,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14000228';
        
+    case 'Panthera_tigris'
+      id_CoL = '9c35aba4cb7f388bf29a05fba221135c';
+      id_Taxo = '67312';        
+      id_EoL = '45890457';
+      id_AnAge = taxon;
+      id_MSW3 = '14000259';
+       
     case 'Panthera_onca'
       id_CoL = '4ffa941b074645715ff39f515fb9fcea';
       id_Taxo = '67276';        
@@ -7474,6 +7497,13 @@ function links = get_link(taxon, open)
       id_EoL = '312855';
       id_AnAge = taxon;
       id_MSW3 = '14000014';
+       
+    case 'Profelis_aurata'
+      id_CoL = '408359af435a5d6b3f65338dc01ae280';
+      id_Taxo = '169617';        
+      id_EoL = '328036';
+      id_AnAge = taxon;
+      id_MSW3 = '14000200';
        
     case 'Leopardus_wiedii'
       id_CoL = '2077ee04ff75244cb8e6236cdffc3e38';
@@ -7539,12 +7569,19 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14000791';
        
+    case 'Cerdocyon_thous'
+      id_CoL = '9491363ed5ec89660e88360f5b26371d';
+      id_Taxo = '66474';        
+      id_EoL = '328685';
+      id_AnAge = taxon;
+      id_MSW3 = '14000791';
+       
     case 'Canis_lupus'
       id_CoL = 'bcd6035778291a7feaad52cb7ac167cb';
       id_Taxo = '66415';        
       id_EoL = '328607';
       id_AnAge = taxon;
-      id_MSW3 = '14000738';
+      id_MSW3 = '14000783';
        
     case 'Nyctereutes_procyonoides'
       id_CoL = '6ec904764dc49972c516a4e145fe1119';
@@ -7621,6 +7658,14 @@ function links = get_link(taxon, open)
       id_EoL = '328585';
       id_AnAge = taxon;
       id_MSW3 = '14001166';
+      
+    case 'Eira_barbara'
+      id_CoL = '37edd78088c43fec3bd4b1ee3566ac99';
+      id_WoRMS = ''; % not present at 2018/09/02
+      id_Taxo = '66639';        
+      id_EoL = '328036';
+      id_AnAge = taxon;
+      id_MSW3 = '14001144';
       
     case 'Martes_pennanti'
       id_CoL = '9d97f9fb613094a861721b619df5c77b';
