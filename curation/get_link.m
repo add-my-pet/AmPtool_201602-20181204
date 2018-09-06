@@ -4761,12 +4761,30 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = 'B77377EEB852D0AF';
       id_birdlife = 'common-eider-somateria-mollissima';
+
+    case 'Cereopsis_novaehollandiae'
+      id_CoL = '6fcfa7cd5faa33888bdd3b5258ed9f23';
+      id_WoRMS = '137074';
+      id_Taxo = '52255';        
+      id_EoL = '1048993';
+      id_AnAge = taxon;       
+      id_avibase = 'CA875F313CC1FB4B';
+      id_birdlife = '22679958';
+      
+    case 'Cygnus_cygnus'
+      id_CoL = '048c3604858bbf6d70ab496964f3ba52';
+      id_WoRMS = '159089';
+      id_Taxo = '52045';        
+      id_EoL = '';
+      id_AnAge = taxon;       
+      id_avibase = 'BDDB5670D2D20A55';
+      id_birdlife = 'whooper-swan-cygnus-cygnus';
       
     case 'Podilymbus_podiceps'
       id_CoL = 'efd1147e3604cc229f2e7dcafb95ca0b';
-      id_WoRMS = '159062';
-      id_Taxo = '51455';        
-      id_EoL = '1047342';
+      id_WoRMS = '';
+      id_Taxo = '51980';        
+      id_EoL = '1048513';
       id_AnAge = taxon;       
       id_avibase = '9A8E55D00554A088';
       id_birdlife = 'pied-billed-grebe-podilymbus-podiceps';
@@ -7560,6 +7578,13 @@ function links = get_link(taxon, open)
       id_EoL = '312856';
       id_AnAge = taxon;
       id_MSW3 = '14000195';
+      
+    case 'Felis_nigripes'
+      id_CoL = '10ce4d605a3b3dc0933b2debdb40fdc0';
+      id_Taxo = '168142';        
+      id_EoL = '328666';
+      id_AnAge = taxon;
+      id_MSW3 = '14000054';
        
     case 'Vulpes_lagopus'
       id_CoL = '74f649c50206103b78005228c898e177';
@@ -8043,6 +8068,13 @@ function links = get_link(taxon, open)
       id_EoL = '326517';
       id_AnAge = taxon;
       id_MSW3 = '13400218';
+      
+    case 'Dolichotis_patagonum'
+      id_CoL = '6ba4eeee06aa0f9b6661ec4dab259e93';
+      id_Taxo = '63457';        
+      id_EoL = '326517';
+      id_AnAge = taxon;
+      id_MSW3 = '13400212';
        
     case 'Chinchilla_lanigera'
       id_CoL = '4cebac0788bb127166d0646c9ab23a33';
@@ -8054,7 +8086,7 @@ function links = get_link(taxon, open)
     case 'Lagostomus_maximus'
       id_CoL = 'fab7b2591249ffbbaa04ac931fd36c4a';
       id_Taxo = '63504';        
-      id_EoL = '326930';
+      id_EoL = '1038700';
       id_AnAge = taxon;
       id_MSW3 = '13400161';
        

@@ -6608,6 +6608,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Cereopsis_novaehollandiae'
+      climate = {'Cfb','BSk'};
+      ecozone = {'TA'};
+      habitat = {'xiMc'};
+      embryo  = {'Tns'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
+    case 'Cygnus_cygnus'
+      climate = {'A','B','C'};
+      ecozone = {'TH','TPi'};
+      habitat = {'xiF'};
+      embryo  = {'Tns'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
     case 'Podilymbus_podiceps'
       climate = {'BSk','Cf','Csb','Dfa','Dfb'};
       ecozone = {'THn','TN'};
@@ -10039,6 +10059,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+   case 'Felis_nigripes'
+      climate = {'B'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTg','0iTa'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiC'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
     case 'Arctictis_binturong'
       climate = {'A'};
       ecozone = {'TPi'};
@@ -10779,6 +10809,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Dolichotis_patagonum'
+      climate = {'C','B'};
+      ecozone = {'TN'};
+      habitat = {'0iTg','0iTh'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiH'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
     case 'Chinchilla_lanigera'
       climate = {'BWk','Csb'};
       ecozone = {'TN'};

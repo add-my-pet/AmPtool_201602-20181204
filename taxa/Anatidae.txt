@@ -4,3 +4,5 @@ Aythya
 Mergus
 Melanitta
 Somateria
+Anserinae
+Cygnus
