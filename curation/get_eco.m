@@ -8807,6 +8807,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       food    = {'bxM','xiCii'};
       gender  = {'Dg'};
       reprod  = {'O'};
+      
+    case 'Dasypus_septemcinctus'
+      climate = {'A','BSh','Cwa','Cwb','Cfa'};
+      ecozone = {'TN','THn'};
+      habitat = {'0iTi','0iTh'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
 
     case 'Orycteropus_afer'
       climate = {'A','BWh','BSh','Cwa','Cwb'};
@@ -10109,6 +10119,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Cryptoprocta_ferox'
+      climate = {'Af','Am','Aw','As'};
+      ecozone = {'TPam'};
+      habitat = {'0iTf','0iTf','0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCv'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
     case 'Vulpes_lagopus'
       climate = {'Dfc','ET'};
       ecozone = {'TH'};

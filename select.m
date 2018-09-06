@@ -36,8 +36,8 @@ function species = select(taxon)
   end
   
   WD = pwd;                % store current path
-  taxa = which('select.pl');  % locate DEBtool_M/taxa/
-  taxa = taxa(1:end - 9);  % path to DEBtool_M/taxa/
+  taxa = which('select.pl');  % locate AmPtool_M/taxa/
+  taxa = taxa(1:end - 9);  % path to AmPtool_M/taxa/
   cd(taxa)                 % goto taxa
   
   if ~isempty(strfind(taxon, '_'))

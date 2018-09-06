@@ -6588,10 +6588,17 @@ function links = get_link(taxon, open)
        
     case 'Dasypus_novemcinctus'
       id_CoL = 'f4765b154fabeda6821bb372a27914fa';
-      id_Taxo = '60596';        
+      id_Taxo = '328482';        
       id_EoL = '328482';
       id_AnAge = taxon;
       id_MSW3 = '11700009';
+      
+    case 'Dasypus_septemcinctus'
+      id_CoL = '12f3fef7c33878c7093dca29b4c1414d';
+      id_Taxo = '60601';        
+      id_EoL = '328487';
+      id_AnAge = taxon;
+      id_MSW3 = '11700018';
        
     case 'Orycteropus_afer'
       id_CoL = 'fa01640674c52e1bc9664c729beebce7';
@@ -7462,6 +7469,13 @@ function links = get_link(taxon, open)
       id_EoL = '311580';
       id_AnAge = taxon;
       id_MSW3 = '14000678';
+      
+   case 'Cryptoprocta_ferox'
+      id_CoL = '26cba61f8182dafb47d6fe03dc54db8a';
+      id_Taxo = '66938';        
+      id_EoL = '46321719';
+      id_AnAge = taxon;
+      id_MSW3 = '14000446';
 
     case 'Neofelis_nebulosa'
       id_CoL = 'c0dc3b3850869e22d6c3e67f0841c371';
