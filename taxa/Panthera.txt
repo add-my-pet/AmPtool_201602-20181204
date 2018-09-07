@@ -1,3 +1,4 @@
 Panthera_leo
 Panthera_tigris
 Panthera_onca
+Panthera_pardus

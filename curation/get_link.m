@@ -7523,6 +7523,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14000240';
        
+    case 'Panthera_pardus'
+      id_CoL = 'fd90e5f300d0c6eb358333ea2ad7f92e';
+      id_Taxo = '67285';        
+      id_EoL = '328606';
+      id_AnAge = taxon;
+      id_MSW3 = '14000250';
+      
     case 'Caracal_caracal'
       id_CoL = 'e12e3486709068246795a98ddfaedb8e';
       id_Taxo = '167589';        
@@ -7585,7 +7592,14 @@ function links = get_link(taxon, open)
       id_EoL = '328666';
       id_AnAge = taxon;
       id_MSW3 = '14000054';
-       
+  
+    case 'Felis_silvestris'
+      id_CoL = '831a91e848fe73787ed3c97aa0d5b349';
+      id_Taxo = '168147';        
+      id_EoL = '328605';
+      id_AnAge = taxon;
+      id_MSW3 = '14000057';
+
     case 'Vulpes_lagopus'
       id_CoL = '74f649c50206103b78005228c898e177';
       id_WoRMS = '404130';
@@ -7650,14 +7664,6 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14001283';
        
-    case 'Enhydra_lutris'
-      id_CoL = 'f16ca52d25de7fb367832b86dac2e970';
-      id_WoRMS = '242598';
-      id_Taxo = '66804';        
-      id_EoL = '328583';
-      id_AnAge = taxon;
-      id_MSW3 = '14001090';
-       
     case 'Lutra_lutra'
       id_CoL = 'bb5ed0ac46e6bd2037497c639615f07e';
       id_WoRMS = '137076';
@@ -7673,7 +7679,23 @@ function links = get_link(taxon, open)
       id_EoL = '328029';
       id_AnAge = taxon;
       id_MSW3 = '14001131';
-       
+   
+    case 'Enhydra_lutris'
+      id_CoL = 'f16ca52d25de7fb367832b86dac2e970';
+      id_WoRMS = '242598';
+      id_Taxo = '66804';        
+      id_EoL = '328583';
+      id_AnAge = taxon;
+      id_MSW3 = '14001090';
+      
+   case 'Lutrogale_perspicillata'
+      id_CoL = '327858d33b6be4d3345ea4e550442718';
+      id_WoRMS = '404088';
+      id_Taxo = '66816';        
+      id_EoL = '328583';
+      id_AnAge = taxon;
+      id_MSW3 = '14001127';
+      
     case 'Mustela_nigripes'
       id_CoL = '50d9c54b54500504be4546ab8332eafb';
       id_WoRMS = ''; % not present at 2018/07/22
@@ -7728,7 +7750,14 @@ function links = get_link(taxon, open)
       id_EoL = '328581';
       id_AnAge = taxon;
       id_MSW3 = '14000970';
-       
+      
+    case 'Ursus_arctos_middendorffi'
+      id_CoL = '04c8bf0dc540147b82dcdac40369bfb7';
+      id_Taxo = '973088';        
+      id_EoL = '1266086';
+      id_AnAge = taxon;
+      id_MSW3 = '14000982';
+     
     case 'Ursus_maritimus'
       id_CoL = 'ecf9a73302aa9be16e68c89fb524feb8';
       id_WoRMS = '137085';
@@ -7737,6 +7766,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14000987';
        
+   case 'Ursus_americanus'
+      id_CoL = 'd10fb048779c2a96bf447fb4d3d50591';
+      id_WoRMS = '';
+      id_Taxo = '170191';        
+      id_EoL = '328582';
+      id_AnAge = taxon;
+      id_MSW3 = '14000953';
+      
     case 'Ailuropoda_melanoleuca'
       id_CoL = 'e2e3653c631047a2e41328c4dc46151e';
       id_Taxo = '66575';        
