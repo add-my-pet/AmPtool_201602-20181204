@@ -7290,6 +7290,13 @@ function links = get_link(taxon, open)
       id_EoL = '328658';
       id_AnAge = taxon;
       id_MSW3 = '14200783'; 
+      
+    case 'Ovis_ammon'
+      id_CoL = '324c2c66140c2405e379f3c6bc85beb0';
+      id_Taxo = '68593';   
+      id_EoL = '328677';
+      id_AnAge = taxon;
+      id_MSW3 = '14200815';
        
     case 'Capricornis_crispus'
       id_CoL = '68d67aa10ab89ee9fb1bfa990a697965';
@@ -7424,12 +7431,19 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/08/26s
       id_MSW3 = '13801973';
 
-      case 'Manis_crassicaudata'
+    case 'Manis_crassicaudata'
       id_CoL = '736a2ea04e95eb28f95226cc77b01c98';
       id_Taxo = '168633';        
       id_EoL = '982442';
       id_AnAge = taxon;
       id_MSW3 = '13900009';
+      
+   case 'Manis_pentadactyla'
+      id_CoL = '0103f1733efea9fe8678f7a7e5eac782';
+      id_Taxo = '168636';        
+      id_EoL = '337658';
+      id_AnAge = taxon;
+      id_MSW3 = '13900013';
        
     case 'Arctictis_binturong'
       id_CoL = '3c735d7b095669a2a48998e96246a492';
@@ -7515,6 +7529,13 @@ function links = get_link(taxon, open)
       id_EoL = '45890457';
       id_AnAge = taxon;
       id_MSW3 = '14000259';
+      
+   case 'Panthera_tigris_tigris'
+      id_CoL = '2e22c32cf3f2d235ac8befd16e04a27d';
+      id_Taxo = '67319';        
+      id_EoL = '1240403';
+      id_AnAge = taxon;
+      id_MSW3 = '14000260';
        
     case 'Panthera_onca'
       id_CoL = '4ffa941b074645715ff39f515fb9fcea';
@@ -7599,6 +7620,13 @@ function links = get_link(taxon, open)
       id_EoL = '328605';
       id_AnAge = taxon;
       id_MSW3 = '14000057';
+      
+    case 'Pardofelis_marmorata'
+      id_CoL = '9936a9948cb6bea51b1330cc3931f1e4';
+      id_Taxo = '169207';        
+      id_EoL = '311554';
+      id_AnAge = taxon;
+      id_MSW3 = '14000177';
 
     case 'Vulpes_lagopus'
       id_CoL = '74f649c50206103b78005228c898e177';
@@ -7663,6 +7691,13 @@ function links = get_link(taxon, open)
       id_EoL = '328046';
       id_AnAge = taxon;
       id_MSW3 = '14001283';
+      
+   case 'Mellivora_capensis'
+      id_CoL = 'b97e91ce1fcdc534969ca750e4356ce4';
+      id_Taxo = '66740';        
+      id_EoL = '328035';
+      id_AnAge = taxon;
+      id_MSW3 = '14001293';
        
     case 'Lutra_lutra'
       id_CoL = 'bb5ed0ac46e6bd2037497c639615f07e';
@@ -9042,6 +9077,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '12100399';
        
+   case 'Ateles_paniscus'
+      id_CoL = 'a374189736a8a040793f9ff7e618efa2';
+      id_Taxo = '65865';        
+      id_EoL = '323933';
+      id_AnAge = taxon;
+      id_MSW3 = '12100407';
+      
     case 'Alouatta_palliata'
       id_CoL = '06bc9289566826026b931f3c8667a0c2';
       id_Taxo = '65846';        
