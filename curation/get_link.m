@@ -3853,6 +3853,13 @@ function links = get_link(taxon, open)
       id_EoL = '311046';
       id_AnAge = ''; % not present at 2018/07/31
       id_amphweb = taxon_amph;
+      
+    case 'Rhaebo_blombergi'
+      id_CoL = '60781d72757fa86f6e4933a66bb69223';
+      id_Taxo = '989058';        
+      id_EoL = '331046';
+      id_AnAge = ''; % not present at 2018/07/31
+      id_amphweb = taxon_amph;
        
     case 'Rana_temporaria'
       id_CoL = '2722b8314c6250b8a73cbe019f621cd2';
@@ -5370,6 +5377,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '2143A8526CA7C809';
       id_birdlife = 'american-golden-plover-pluvialis-dominica';
+ 
+   case 'Turnix_sylvaticus'
+      id_CoL = '8e5d61de7b34711df8fb0d91fabb2b7e';
+      id_WoRMS = '';
+      id_Taxo = '1122791';        
+      id_EoL = '900373';
+      id_AnAge = taxon;       
+      id_avibase = '0DA8BB90D5401FDB';
+      id_birdlife = 'common-buttonquail-turnix-sylvaticus';
       
     case 'Psophia_crepitans'
       id_CoL = '79cc7ed2868e70fd1a9c47f97f9d2061';
@@ -7179,6 +7195,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon; 
       id_MSW3 = '14200670'; 
       
+    case 'Bison_bison'
+      id_CoL = '0f1f822b2020d3a6449ef19b6197ba51';
+      id_Taxo = '68224';        
+      id_EoL = '328109';  
+      id_AnAge = taxon; 
+      id_MSW3 = '14200669'; 
+      
     case 'Syncerus_caffer'
       id_CoL = 'ac68b7fcf117c15f36c8ae17ca50b261';
       id_Taxo = '68279';        
@@ -7551,6 +7574,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14000250';
       
+   case 'Uncia_uncia'
+      id_CoL = '0beb05194a457cca0a963057e9d89cb4';
+      id_Taxo = '170178';        
+      id_EoL = '328676';
+      id_AnAge = taxon;
+      id_MSW3 = '14000269';
+      
     case 'Caracal_caracal'
       id_CoL = 'e12e3486709068246795a98ddfaedb8e';
       id_Taxo = '167589';        
@@ -7642,6 +7672,13 @@ function links = get_link(taxon, open)
       id_EoL = '328609';
       id_AnAge = taxon;
       id_MSW3 = '14000892';
+      
+    case 'Vulpes_zerda'
+      id_CoL = '0974e2e971e67503122402cf46b5fb1e';
+      id_Taxo = '66461';        
+      id_EoL = '328001';
+      id_AnAge = taxon;
+      id_MSW3 = '14000938';
        
     case 'Chrysocyon_brachyurus'
       id_CoL = '0b3e53b24ae32db8b7f60d943b8c3814';
@@ -7670,6 +7707,13 @@ function links = get_link(taxon, open)
       id_EoL = '328684';
       id_AnAge = taxon;
       id_MSW3 = '14000825';
+      
+   case 'Speothos_venaticus'
+      id_CoL = '1c649d85dbd9ca61520070161bbb35b2';
+      id_Taxo = '66499';    
+      id_EoL = '328687';
+      id_AnAge = taxon;
+      id_MSW3 = '14000836';
        
     case 'Ailurus_fulgens'
       id_CoL = 'a07ca43a0c727b51a5b150c820059dda';

@@ -5397,6 +5397,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       food    = {'biCi'};
       gender  = {'Dg'};
       reprod  = {'O'};
+      
+   case 'Rhaebo_blombergi'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0jF','jiF'};
+      embryo  = {'Fh'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
 
     case 'Rana_temporaria'
       climate = {'Cfb','Dfb','Dfc'};
@@ -7298,6 +7308,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+   case 'Turnix_sylvaticus'
+      climate = {'A','B','C','D'};
+      ecozone = {'THp','TPa','TPi'};
+      habitat = {'0iTh','0iTg'};
+      embryo  = {'Tnsm'};
+      migrate = {};
+      food    = {'biCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
     case 'Psophia_crepitans'
       climate = {'Af','Am'};
       ecozone = {'TN'};
@@ -9578,7 +9598,17 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       food    = {'bxM','xiHl'};
       gender  = {'Dg'};
       reprod  = {'O'};
-
+      
+    case 'Bison_bison'
+      climate = {'BS','Df'};
+      ecozone = {'THn'};
+      habitat = {'0iTg'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiH'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
     case 'Syncerus_caffer'
       climate = {'Af','Am','BWk','BSk','Cwa','Cwb'};
       ecozone = {'TPa'};
@@ -10019,6 +10049,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
       
+   case 'Uncia_uncia'
+      climate = {'B','D'};
+      ecozone = {'THp'};
+      habitat = {'0iT'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCv'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
     case 'Caracal_caracal'
       climate = {'BSh','Cwa','Cwb'};
       ecozone = {'TPa'};
@@ -10238,6 +10278,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       food    = {'bxM','xiO'};
       gender  = {'Dg'};
       reprod  = {'O'};
+      
+   case 'Vulpes_zerda'
+      climate = {'BWh'};
+      ecozone = {'TP'};
+      habitat = {'0iTa'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiO'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
 
     case 'Chrysocyon_brachyurus'
       climate = {'Aw','Cwa','Cwb'};
@@ -10279,6 +10329,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+   case 'Speothos_venaticus'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf','0iTi','0iTg'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCv'};
+      gender  = {'Dg'};
+      reprod  = {'O'};  
+      
     case 'Ailurus_fulgens'
       climate = {'Cwa','Cwb','Cfa'};
       ecozone = {'THp'};

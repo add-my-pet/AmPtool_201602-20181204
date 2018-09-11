@@ -3,3 +3,4 @@ Chrysocyon
 Cerdocyon
 Canis
 Nyctereutes
+Speothos
