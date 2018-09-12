@@ -1,5 +1,5 @@
-Panthera_leo
 Panthera_tigris
 Panthera_tigris_tigris
-Panthera_onca
 Panthera_pardus
+Panthera_onca
+Panthera_leo

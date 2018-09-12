@@ -1,9 +1,5 @@
+Pardofelis
 Caracal
 Profelis
 Leopardus
-Lynx
-Puma
-Acinonyx
-Prionailurus
-Felis
-Pardofelis
+Felini
