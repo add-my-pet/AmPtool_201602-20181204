@@ -7318,6 +7318,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+   case 'Burhinus_capensis'
+      climate = {'A','B','C'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTg'};
+      embryo  = {'Tnsfm'};
+      migrate = {};
+      food    = {'biC'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
    case 'Turnix_sylvaticus'
       climate = {'A','B','C','D'};
       ecozone = {'THp','TPa','TPi'};
@@ -7575,6 +7585,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tntfm'};
       migrate = {'Ml'};
       food    = {'biCvf','biCik'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
+    case 'Puffinus_tenuirostris'
+      climate = {'MC'};
+      ecozone = {'MS','MC'};
+      habitat = {'0iMc'};
+      embryo  = {'Tn'};
+      migrate = {'Ml'};
+      food    = {'biCv','biCv'};
       gender  = {'Dg'};
       reprod  = {'O'};
 

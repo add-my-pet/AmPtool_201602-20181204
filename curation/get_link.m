@@ -5384,6 +5384,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '2143A8526CA7C809';
       id_birdlife = 'american-golden-plover-pluvialis-dominica';
+      
+    case 'Burhinus_capensis'
+      id_CoL = '2968497db12845a1f4ee51d6d9c81076';
+      id_WoRMS = ''; % no entry as of 2018/09/14
+      id_Taxo = '53522';        
+      id_EoL = '1049041';
+      id_AnAge = taxon;       
+      id_avibase = '862F6F04186871A8';
+      id_birdlife = 'american-golden-plover-pluvialis-dominica';
  
    case 'Turnix_sylvaticus'
       id_CoL = '8e5d61de7b34711df8fb0d91fabb2b7e';
@@ -5392,7 +5401,7 @@ function links = get_link(taxon, open)
       id_EoL = '900373';
       id_AnAge = taxon;       
       id_avibase = '0DA8BB90D5401FDB';
-      id_birdlife = 'common-buttonquail-turnix-sylvaticus';
+      id_birdlife = '22693589';
       
     case 'Psophia_crepitans'
       id_CoL = '79cc7ed2868e70fd1a9c47f97f9d2061';
@@ -5610,6 +5619,15 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present at 2018/07/19       
       id_avibase = '797B4FA77E74254B';
       id_birdlife = 'little-shearwater-puffinus-assimilis';
+      
+    case 'Puffinus_tenuirostris'
+      id_CoL = '218975a2e27edbac73b0f1f715d1162d';
+      id_WoRMS = '225770';
+      id_Taxo = '51591';      
+      id_EoL = '1047365';
+      id_AnAge = taxon;      
+      id_avibase = '60825BF601060350';
+      id_birdlife = ''; % not present at 2018/09/14
       
     case 'Diomedea_exulans'
       id_CoL = '9cf46c5413e6bef61c029d6cef69ff57';
