@@ -4081,7 +4081,14 @@ function links = get_link(taxon, open)
       id_EoL = '1055460';
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
-       
+ 
+    case 'Python_sebae'
+      id_CoL = '82e45e06aca6d5066eb4bfd034ae17c8';
+      id_Taxo = '49853';        
+      id_EoL = '1055462';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+      
     case 'Apodora_papuana'
       id_CoL = 'dc3a391b21ff04ac35bdf3abaded55b8';
       id_Taxo = '644250';        
@@ -6721,6 +6728,13 @@ function links = get_link(taxon, open)
       id_EoL = '124497';
       id_AnAge = taxon;
       id_MSW3 = '13700459';
+      
+    case 'Crocidura_russula'
+      id_CoL = '8f9e91369c3c40c674d13412c96d9d95';
+      id_Taxo = '61149';        
+      id_EoL = '1178862';
+      id_AnAge = taxon;
+      id_MSW3 = '13700198';
        
     case 'Talpa_europaea'
       id_CoL = '3f6d0f42542751148164e4e7a2a67132';
@@ -7822,6 +7836,14 @@ function links = get_link(taxon, open)
       id_EoL = 'overview';
       id_AnAge = taxon;
       id_MSW3 = '14001664';
+      
+   case 'Potos_flavus'
+      id_CoL = 'cfbac87b78e63895bab1a1b67e7dd37c';
+      id_WoRMS = ''; % not present at 2018/09/13
+      id_Taxo = '66603';       
+      id_EoL = '328067';
+      id_AnAge = taxon;
+      id_MSW3 = '14001650';
        
     case 'Ursus_arctos'
       id_CoL = '3620a6afc683c9cb9e66e3bc9d143133';
