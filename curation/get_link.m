@@ -5610,6 +5610,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '049D9AEA4AFBFDFA';
       id_birdlife = 'northern-fulmar-fulmarus-glacialis';
+            
+    case 'Fulmarus_glacialoides'
+      id_CoL = '0f3e43a89423b1e72248c3e7ed0cc369';
+      id_WoRMS = '212638';
+      id_Taxo = '51496';        
+      id_EoL = '1049463';
+      id_AnAge = taxon;       
+      id_avibase = '10C2881A1F9704A0';
+      id_birdlife = 'southern-fulmar-fulmarus-glacialoides';
       
     case 'Puffinus_assimilis'
       id_CoL = '85611d7fbc5bf240075248bfdcaf6135';
@@ -5620,6 +5629,24 @@ function links = get_link(taxon, open)
       id_avibase = '797B4FA77E74254B';
       id_birdlife = 'little-shearwater-puffinus-assimilis';
       
+    case 'Puffinus_baroli'
+      id_CoL      = '1297b3c441e1b5d106b62e4f6c8c7b80';
+      id_WoRMS    = '514084';
+      id_Taxo     = '';      % not present at 2018/09/18  
+      id_EoL      = '1265539';      
+      id_AnAge    = '';      % not present at 2018/09/18       
+      id_avibase  = '5F555FDD48DEAC1C';
+      id_birdlife = '';      % not present at 2018/09/18 
+      
+   case 'Puffinus_gravis'
+      id_CoL = '97d7ce52607a8dff51555ec630d34434';
+      id_WoRMS = '137201';
+      id_Taxo = '51576';      
+      id_EoL = '1047353';
+      id_AnAge = ''; % not present at 2018/09/17       
+      id_avibase = '8B879DFA2AFB1481';
+      id_birdlife = ''; % not present at 2018/09/17   
+      
     case 'Puffinus_tenuirostris'
       id_CoL = '218975a2e27edbac73b0f1f715d1162d';
       id_WoRMS = '225770';
@@ -5627,7 +5654,52 @@ function links = get_link(taxon, open)
       id_EoL = '1047365';
       id_AnAge = taxon;      
       id_avibase = '60825BF601060350';
-      id_birdlife = ''; % not present at 2018/09/14
+      id_birdlife = ''; % not present at 2018/09/14    
+           
+    case 'Puffinus_puffinus'
+      id_CoL = '21994168db2427586c692250492bc588';
+      id_WoRMS = '137203';
+      id_Taxo = '51586';      
+      id_EoL = '1048471';
+      id_AnAge = taxon;      
+      id_avibase = '5AEDC00231A5201C';
+      id_birdlife = 'manx-shearwater-puffinus-puffinus';     
+            
+    case 'Daption_capense'
+      id_CoL = '07bdf667192e261ac62db546e44be6dd';
+      id_WoRMS = '212640';
+      id_Taxo = '51492';      
+      id_EoL = '1049462';
+      id_AnAge = taxon;      
+      id_avibase = 'AAC2D6136C46A743';
+      id_birdlife = 'cape-petrel-daption-capense'; 
+                 
+    case 'Pelecanoides_georgicus'
+      id_CoL = '55cf7113fc5892aa31cdefc64fba4cc2';
+      id_WoRMS = '225780';
+      id_Taxo = '51630';      
+      id_EoL = '1049390';
+      id_AnAge = ''; % not present at 2018/09/18      
+      id_avibase = 'D5FE30FFAB104DF9';
+      id_birdlife = 'south-georgia-diving-petrel-pelecanoides-georgicus'; 
+                     
+    case 'Pelecanoides_urinatrix'
+      id_CoL = '46bc176b6af3967651301e24c18e7573';
+      id_WoRMS = '344007';
+      id_Taxo = '51632';      
+      id_EoL = '1049392';
+      id_AnAge = ''; % not present at 2018/09/18      
+      id_avibase = '5F7E4AD66C0BE9FA';
+      id_birdlife = 'common-diving-petrel-pelecanoides-urinatrix';
+                          
+    case 'Thalassoica_antarctica'
+      id_CoL = '37161527f6aaef09c824b26af4b00230';
+      id_WoRMS = '212639';
+      id_Taxo = '51505';      
+      id_EoL = '';
+      id_AnAge = ''; % not present at 2018/09/18      
+      id_avibase = '535186178E86447B';
+      id_birdlife = 'antarctic-petrel-thalassoica-antarctica';
       
     case 'Diomedea_exulans'
       id_CoL = '9cf46c5413e6bef61c029d6cef69ff57';
@@ -5646,6 +5718,42 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2017/06/18       
       id_avibase = 'F9CBC9EB6CE43281'; % present as Thalassarche melanophris 
       id_birdlife = 'black-browed-albatross-thalassarche-melanophris';
+      
+  case 'Hydrobates_pelagicus'
+      id_CoL = '0c0cf51c42ff062ed29579d7aa535af7';
+      id_WoRMS = '137190'; 
+      id_Taxo = '51612';        
+      id_EoL = '1048565'; 
+      id_AnAge = taxon;       
+      id_avibase = 'E1638A370D09095C'; 
+      id_birdlife = 'european-storm-petrel-hydrobates-pelagicus';
+      
+  case 'Oceanites_oceanicus'
+      id_CoL = 'ccc02ca2816781ee4e0f1bc6f72b532f';
+      id_WoRMS = '137189'; 
+      id_Taxo = '51605';        
+      id_EoL = '1048563'; 
+      id_AnAge = taxon;       
+      id_avibase = 'D295D249BDB7E046'; 
+      id_birdlife = 'wilsons-storm-petrel-oceanites-oceanicus';
+      
+  case 'Oceanodroma_microsoma'
+      id_CoL = 'fe0077357bfea993f059921e8cbd686a';
+      id_WoRMS = '343968'; 
+      id_Taxo = '51610';        
+      id_EoL = '1048562'; 
+      id_AnAge = '';       % not present at 2018/09/18
+      id_avibase = '183CC218DF7221D8'; 
+      id_birdlife = ''; % not present at 2018/09/18
+      
+   case 'Pelagodroma_marina'
+      id_CoL = 'ca4bb40f2f029595a3b5ad0653b7041b';
+      id_WoRMS = '212700'; 
+      id_Taxo = '51607';        
+      id_EoL = '1048498'; 
+      id_AnAge = ''; % not present at 2018/09/18       
+      id_avibase = 'E9DF118ED56564A9'; 
+      id_birdlife = 'white-faced-storm-petrel-pelagodroma-marina';     
       
     case 'Ciconia_ciconia'
       id_CoL = '1f8d320bdebfb912da9ef2433da92a85';
