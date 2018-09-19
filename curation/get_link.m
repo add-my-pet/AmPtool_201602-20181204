@@ -5696,10 +5696,55 @@ function links = get_link(taxon, open)
       id_CoL = '37161527f6aaef09c824b26af4b00230';
       id_WoRMS = '212639';
       id_Taxo = '51505';      
-      id_EoL = '';
+      id_EoL = ''; % not present at 2018/09/18 
       id_AnAge = ''; % not present at 2018/09/18      
       id_avibase = '535186178E86447B';
       id_birdlife = 'antarctic-petrel-thalassoica-antarctica';
+                               
+    case 'Halobaena_caerulea'
+      id_CoL = 'c21761425403dc3a5df26a7e1941d2cd';
+      id_WoRMS = '212645';
+      id_Taxo = '51498';      
+      id_EoL = '1049500';
+      id_AnAge = ''; % not present at 2018/09/19      
+      id_avibase = '68D6A13AE63C762C';
+      id_birdlife = 'blue-petrel-halobaena-caerulea';
+      
+   case 'Pterodroma_pycrofti'
+      id_CoL = '5342b21a165e1e07ee3dc781daa26d8d';
+      id_WoRMS = '343982';
+      id_Taxo = '51555';      
+      id_EoL = '1049493';
+      id_AnAge = ''; % not present at 2018/09/19      
+      id_avibase = '3786AD4E1A186AC1';
+      id_birdlife = 'pycrofts-petrel-pterodroma-pycrofti';
+           
+   case 'Procellaria_cinerea'
+      id_CoL = '60896a810b53eec7a1a5ac18c877bacd';
+      id_WoRMS = '212652';
+      id_Taxo = '51566';      
+      id_EoL = '1049511';
+      id_AnAge = ''; % not present at 2018/09/19      
+      id_avibase = '843C1B8689E0935F';
+      id_birdlife = 'grey-petrel-procellaria-cinerea';
+                
+   case 'Calonectris_borealis'
+      id_CoL = '87879847b94db8a5155ca79297d8d36b';
+      id_WoRMS = '226024';
+      id_Taxo = '';     % not present at 2018/09/19  
+      id_EoL = '10408853';
+      id_AnAge = 'Calonectris_diomedea'; % synonym at 2018/09/19      
+      id_avibase = '710BB4E6D1B2E7FF';
+      id_birdlife = 'corys-shearwater-calonectris-borealis';
+                      
+   case 'Pseudobulweria_rostrata'
+      id_CoL = '4126163f68731aec7951da5905f007d1';
+      id_WoRMS = '344112';
+      id_Taxo = '169634';   
+      id_EoL = '1049520';
+      id_AnAge = ''; % not present at 2018/09/19     
+      id_avibase = '214D92DF8B14CD7B';
+      id_birdlife = 'tahiti-petrel-pseudobulweria-rostrata';
       
     case 'Diomedea_exulans'
       id_CoL = '9cf46c5413e6bef61c029d6cef69ff57';
@@ -5718,6 +5763,15 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2017/06/18       
       id_avibase = 'F9CBC9EB6CE43281'; % present as Thalassarche melanophris 
       id_birdlife = 'black-browed-albatross-thalassarche-melanophris';
+               
+    case 'Thalassarche_cauta'
+      id_CoL = 'ef16648fa6380befd9176af1d0265358';
+      id_WoRMS = '225902'; 
+      id_Taxo = '101910';        
+      id_EoL = '1178554'; 
+      id_AnAge = ''; % not present 2018/09/19       
+      id_avibase = 'CBF213CC23F92569';
+      id_birdlife = 'shy-albatross-thalassarche-cauta';
       
   case 'Hydrobates_pelagicus'
       id_CoL = '0c0cf51c42ff062ed29579d7aa535af7';
@@ -5737,6 +5791,15 @@ function links = get_link(taxon, open)
       id_avibase = 'D295D249BDB7E046'; 
       id_birdlife = 'wilsons-storm-petrel-oceanites-oceanicus';
       
+  case 'Oceanodroma_leucorhoa'
+      id_CoL = 'c32a07dc07b2878aa726c8a72b4d5029';
+      id_WoRMS = '137192'; 
+      id_Taxo = '51618';        
+      id_EoL = '1048500'; 
+      id_AnAge = taxon;      
+      id_avibase = '438405AAE820DE9C'; 
+      id_birdlife = ''; % not present at 2018/09/19
+               
   case 'Oceanodroma_microsoma'
       id_CoL = 'fe0077357bfea993f059921e8cbd686a';
       id_WoRMS = '343968'; 
@@ -6446,6 +6509,23 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '2B37C1B59B70D72B';
       id_birdlife = 'curve-billed-thrasher-toxostoma-curvirostre';
+      
+    case 'Saxicola_rubicola'
+      id_CoL = '3a7ef4deaf1586f777dff42cee7be10d';
+      id_Taxo = '';    % not present at 2018/09/19    
+      id_EoL = '2870505';
+      id_AnAge = ''; % not present at 2018/09/19      
+      id_avibase = '0EA8F8B905405FB3';
+      id_birdlife = ''; % not present at 2018/09/19 
+      
+           
+    case 'Saxicola_torquata'
+      id_CoL = '0f543dacea5bfb58b1564ecca0a610d1';
+      id_Taxo = '1126423';   
+      id_EoL = '284202';
+      id_AnAge = taxon;   
+      id_avibase = '222CAA6E0DDDFE7E';
+      id_birdlife = 'common-stonechat-saxicola-torquatus'; 
       
     case 'Cinnyris_jugularis'
       id_CoL = 'd7ff4b36e31373ca9a0d3b401e370436';
