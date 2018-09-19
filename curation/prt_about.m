@@ -24,7 +24,7 @@ function prt_about
 %      - MRE_SMSE.png
 %      - DEBlib.png
 %
-% * file is written in ../about.html 
+% * file is written in ../../add_my_pet_web/about.html
 
 %% Remarks
 % First run write_allStat

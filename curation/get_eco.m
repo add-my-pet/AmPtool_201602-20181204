@@ -7677,6 +7677,56 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       food    = {'biCvf','biCik','biCic'};
       gender  = {'Dg'};
       reprod  = {'O'};
+                 
+    case 'Halobaena_caerulea'
+      climate = {'ME'};
+      ecozone = {'MS'};
+      habitat = {'0iMc'};
+      embryo  = {'Tntfm'};
+      migrate = {};
+      food    = {'biCvf','biCik','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+                      
+    case 'Pterodroma_pycrofti'
+      climate = {'MC'};
+      ecozone = {'MP'};
+      habitat = {'0iMc'};
+      embryo  = {'Tntfm'};
+      migrate = {};
+      food    = {'biCvf','biCik','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
+    case 'Procellaria_cinerea'
+      climate = {'ME'};
+      ecozone = {'MS'};
+      habitat = {'0iMc'};
+      embryo  = {'Tntfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCik','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+           
+    case 'Calonectris_borealis'
+      climate = {'MC'};
+      ecozone = {'MA'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm','Tntfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCim'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+                
+    case 'Pseudobulweria_rostrata'
+      climate = {'MC'};
+      ecozone = {'MPS'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm','Tntfm'};
+      migrate = {};
+      food    = {'biSic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
 
     case 'Diomedea_exulans'
       climate = {'MC'};
@@ -7695,6 +7745,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tnsfm'};
       migrate = {'Ml'};
       food    = {'biCic','biCik','biSv'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
+    case 'Thalassarche_cauta'
+      climate = {'MC'};
+      ecozone = {'MIS'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCic','biCik','biCit','biSv'};
       gender  = {'Dg'};
       reprod  = {'O'};
       
@@ -7725,6 +7785,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tntfm'};
       migrate = {'Ml'};
       food    = {'biCvf','biCik'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+              
+  case 'Oceanodroma_leucorhoa'
+      climate = {'MC'};
+      ecozone = {'MC'};
+      habitat = {'0iMc'};
+      embryo  = {'Tntfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCik','biCic'};
       gender  = {'Dg'};
       reprod  = {'O'};
       
@@ -8572,6 +8642,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'BWh','BSh','BSk'};
       ecozone = {'THn'};
       habitat = {'0iTd','0iTa'};
+      embryo  = {'Tnwf'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
+    case 'Saxicola_rubicola'
+      climate = {'B','C'};
+      ecozone = {'THp'};
+      habitat = {'0iTd','0iThh','0iTg'};
+      embryo  = {'Tnwf'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+           
+    case 'Saxicola_torquata'
+      climate = {'B','C'};
+      ecozone = {'THp','TPa'};
+      habitat = {'0iTd','0iThh','0iTg'};
       embryo  = {'Tnwf'};
       migrate = {};
       food    = {'biCi'};

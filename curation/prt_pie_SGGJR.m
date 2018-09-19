@@ -10,7 +10,7 @@ function prt_pie_SGGJR
 
 %% Description
 % Writes html files that present 4 types of allocation pies (png files) that are in dir
-% add_py_pet/entries_web. These html-files should be parked in dir add_my_pet.
+% add_py_pet/entries_web. These html-files should be parked in dir add_my_pet/add_my_pet_web/.
 % Function select is used to identify all entries
 
 %% Example of use
@@ -41,7 +41,7 @@ function prt_pie_SGGJR
 
 for  j = 1:4 % scan pies
     
-oid = fopen(['../../', pie{j}, '.html'], 'w+'); % open file for writing, delete existing content
+oid = fopen(['../../add_my_pet_web/', pie{j}, '.html'], 'w+'); % open file for writing, delete existing content
 
 fprintf(oid, '<!DOCTYPE html>\n');
 fprintf(oid, '<HTML>\n');
