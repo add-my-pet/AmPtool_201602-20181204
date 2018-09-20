@@ -5638,7 +5638,7 @@ function links = get_link(taxon, open)
       id_avibase  = '5F555FDD48DEAC1C';
       id_birdlife = '';      % not present at 2018/09/18 
       
-   case 'Puffinus_gravis'
+   case 'Ardenna_gravis'
       id_CoL = '97d7ce52607a8dff51555ec630d34434';
       id_WoRMS = '137201';
       id_Taxo = '51576';      
@@ -5647,7 +5647,7 @@ function links = get_link(taxon, open)
       id_avibase = '8B879DFA2AFB1481';
       id_birdlife = ''; % not present at 2018/09/17   
       
-    case 'Puffinus_tenuirostris'
+    case 'Ardenna_tenuirostris'
       id_CoL = '218975a2e27edbac73b0f1f715d1162d';
       id_WoRMS = '225770';
       id_Taxo = '51591';      

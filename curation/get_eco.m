@@ -7608,7 +7608,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
       
-   case 'Puffinus_gravis'
+   case 'Ardenna_gravis'
       climate = {'M'};
       ecozone = {'MA'};
       habitat = {'0iMc'};
@@ -7618,7 +7618,7 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
       
-    case 'Puffinus_tenuirostris'
+    case 'Ardenna_tenuirostris'
       climate = {'MC'};
       ecozone = {'MS','MC'};
       habitat = {'0iMc'};
