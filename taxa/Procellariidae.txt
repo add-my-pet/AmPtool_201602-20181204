@@ -1,11 +1,2 @@
-Fulmarus
-Puffinus
-Daption
-Pelecanoides
-Thalassoica
-Halobaena
-Pterodroma
-Procellaria
-Calonectris
-Pseudobulweria
-Ardenna
+Procellariinae
+Pelecanoidinae
