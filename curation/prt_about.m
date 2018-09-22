@@ -209,7 +209,7 @@ fprintf(fid_about, '      </div>\n\n');
 fprintf(fid_about, '      <div class="sidelement2">\n');
 fprintf(fid_about, '        <img src="img/about/MRE.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
-fprintf(fid_about, '          Survivor functions of the <a href="http://www.debtheory.org/wiki/index.php?title=Add-my-pet_Introduction#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE) and Symmetric Mean Squared Error (SMSE)</a>.\n');
+fprintf(fid_about, '          Survivor functions of the <a href="http://www.debtheory.org/wiki/index.php?title=AmP_estimation_procedure#Data_quality_and_availability" TARGET="_blank">Mean Relative Error (MRE) and Symmetric Mean Squared Error (SMSE)</a>.\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 
@@ -302,7 +302,7 @@ fprintf(fid_about, '      </div>\n\n');
 
 fprintf(fid_about, '      <H2 class="clear">Background documentation </H2>\n\n');
     
-fprintf(fid_about, '      <a href="http://www.debtheory.org/wiki/index.php?title=AmP_estimation_procedure#Add-my-pet_papers" TARGET="_blank">\n');
+fprintf(fid_about, '      <a href="http://www.debtheory.org/wiki/index.php?title=AmP_estimation_procedure#References:_Add-my-pet_papers" TARGET="_blank">\n');
 fprintf(fid_about, '      An increasing number of papers has been published on the add-my-pet collection, \n');
 fprintf(fid_about, '        both on the methodology and ecological and evolutionary patterns in parameter values among species.</a>\n\n');
 
