@@ -5709,6 +5709,15 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present at 2018/09/19      
       id_avibase = '68D6A13AE63C762C';
       id_birdlife = 'blue-petrel-halobaena-caerulea';
+                                  
+    case 'Bulweria_bulwerii'
+      id_CoL = '7b4a294b8cfb2c1fbbba83ad4494016f';
+      id_WoRMS = '137193';
+      id_Taxo = '51516';      
+      id_EoL = '1178495';
+      id_AnAge = 'taxon';      
+      id_avibase = '058773E4925D5D2E';
+      id_birdlife = 'bulwers-petrel-bulweria-bulwerii';
       
    case 'Pterodroma_pycrofti'
       id_CoL = '5342b21a165e1e07ee3dc781daa26d8d';
