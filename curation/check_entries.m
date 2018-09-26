@@ -29,7 +29,7 @@ local = cellstr(ls('../../entries')); local([1 2]) = []; n_local = length(local)
 stat = read_allStat('species');
 
 % cell string with server entries stored on server
-txt = urlread('http://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/');
+txt = urlread('https://www.bio.vu.nl/thb/deb/deblab/add_my_pet/entries/');
 head = strfind(txt,'folder.gif'); txt(1:head(1)) = []; 
 n_server = length(strfind(txt,'href="')); server = cell(n_server,1);
 for i = 1:n_server

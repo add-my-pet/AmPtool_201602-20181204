@@ -1,2 +1,4 @@
-Cereopsis
 Cygnus
+Anser
+Branta
+Cereopsis
