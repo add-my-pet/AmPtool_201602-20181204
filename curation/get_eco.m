@@ -7687,6 +7687,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       food    = {'biCvf','biCik','biCic'};
       gender  = {'Dg'};
       reprod  = {'O'};
+                 
+    case 'Bulweria_bulwerii'
+      climate = {'MA'};
+      ecozone = {'MC'};
+      habitat = {'0iMc'};
+      embryo  = {'Tntfm'};
+      migrate = {};
+      food    = {'biCvf','biCik','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
                       
     case 'Pterodroma_pycrofti'
       climate = {'MC'};
