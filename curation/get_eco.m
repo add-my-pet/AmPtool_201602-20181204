@@ -7777,12 +7777,17 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       food    = {'biCvf','biCik','biCic'};
       gender  = {'Dg'};
       reprod  = {'O'};
-<<<<<<< HEAD
       
     case 'Pterodroma_leucoptera'
       climate = {'MA','MB','MC'};
-=======
-                 
+      ecozone = {'MP'};
+      habitat = {'0iMc'};
+      embryo  = {'Tntfm'};
+      migrate = {};
+      food    = {'biCvf','biCik','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+ 
     case 'Bulweria_bulwerii'
       climate = {'MA'};
       ecozone = {'MC'};
@@ -7795,7 +7800,6 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
                       
     case 'Pterodroma_pycrofti'
       climate = {'MC'};
->>>>>>> 2a118222b8d197322bd84753e9d8c6a95eecf097
       ecozone = {'MP'};
       habitat = {'0iMc'};
       embryo  = {'Tntfm'};
