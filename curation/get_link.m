@@ -4669,6 +4669,14 @@ function links = get_link(taxon, open)
       id_avibase = '110CF4251A857B0D';
       id_birdlife = 'japanese-quail-coturnix-japonica';
 
+    case 'Numida_meleagris'
+      id_CoL = '458ff2b044b064bcb660d802d9210136';
+      id_Taxo = '53223';    
+      id_EoL = '1049265';
+      id_AnAge = taxon;       
+      id_avibase = '1044B438EE7556BB';
+      id_birdlife = 'helmeted-guineafowl-numida-meleagris';
+
     case 'Meleagris_gallopavo'
       id_CoL = '90f32bb8ffc73aa187bb7c2a7d266bbe';
       id_Taxo = '52932';    
@@ -4890,6 +4898,15 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/09/26       
       id_avibase = 'D9DEA77E9D637151';
       id_birdlife = 'south-african-shelduck-tadorna-cana';
+      
+    case 'Aix_galericulata'
+      id_CoL = 'f68b161ded0c00096f5557a6c189f3e4';
+      id_WoRMS = '416679';
+      id_Taxo = '52226';        
+      id_EoL = '1048478';
+      id_AnAge = taxon;      
+      id_avibase = 'E1714A09EA1DFD1D';
+      id_birdlife = 'mandarin-duck-aix-galericulata';
       
     case 'Podilymbus_podiceps'
       id_CoL = 'efd1147e3604cc229f2e7dcafb95ca0b';

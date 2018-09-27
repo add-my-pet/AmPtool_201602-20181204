@@ -6508,6 +6508,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Numida_meleagris'
+      climate = {'A','B','C'};
+      ecozone = {'TPa'};
+      habitat = {'0iTf','0iTi','0iTg'};
+      embryo  = {'Tnsf'};
+      migrate = {};
+      food    = {'bxCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Meleagris_gallopavo'
       climate = {'BSk'};
       ecozone = {'TN'};
@@ -6751,10 +6761,20 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Tadorna_cana'
       climate = {'B','C'};
       ecozone = {'TPa'};
-      habitat = {'xiMc'};
-      embryo  = {'Tns'};
+      habitat = {'xiFm'};
+      embryo  = {'Tntf'};
       migrate = {};
-      food    = {'biCi'};
+      food    = {'biCi','xiH'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
+    case 'Aix_galericulata'
+      climate = {'Cfa','Dfa','Dwc'};
+      ecozone = {'THp'};
+      habitat = {'xiTf'};
+      embryo  = {'Tnwf'};
+      migrate = {'Ml'};
+      food    = {'biCi','xiHs','xiHl'};
       gender  = {'Dg'};
       reprod  = {'O'};
       
