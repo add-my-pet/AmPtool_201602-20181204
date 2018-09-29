@@ -6558,6 +6558,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Tympanuchus_pallidicinctus'
+      climate = {'Cfa','Dfa'};
+      ecozone = {'THn'};
+      habitat = {'0iTg'};
+      embryo  = {'Tnsf'};
+      migrate = {};
+      food    = {'bxCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Colinus_virginianus'
       climate = {'Cfa','Dfa','Dfb'};
       ecozone = {'THn'};
@@ -7208,6 +7218,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Aethia_pygmaea'
+      climate = {'MC','ME'};
+      ecozone = {'MPNW'};
+      habitat = {'xiMcp','0bTd'};
+      embryo  = {'Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCik'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Cerorhinca_monocerata'
       climate = {'MC'};
       ecozone = {'MPN'};
@@ -7271,6 +7291,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Thalasseus_sandvicensis'
       climate = {'Dfb','Dfc'};
       ecozone = {'MA'};
+      habitat = {'0iTht','0iThh'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Thalasseus_elegans'
+      climate = {'MA','MB'};
+      ecozone = {'MPE'};
       habitat = {'0iTht','0iThh'};
       embryo  = {'Tnsfm'};
       migrate = {'Ml'};
@@ -8319,12 +8349,32 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       reprod  = {'O'};
 
     case 'Phalacrocorax_auritus'
-      climate = {'Dfa','Dfb'};
-      ecozone = {'THn'};
-      habitat = {'0xTf','0iMi','xiFl','xiFp'};
+      climate = {'MA'};
+      ecozone = {'MA','MPE'};
+      habitat = {'0xMc'};
       embryo  = {'Tnpfm','Tncfm'};
       migrate = {'Ms'};
       food    = {'biCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Phalacrocorax_aristotelis'
+      climate = {'MC'};
+      ecozone = {'MAE'};
+      habitat = {'0xMc'};
+      embryo  = {'Tnpfm','Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Fregata_magnificens'
+      climate = {'Dfa','Dfb'};
+      ecozone = {'THn'};
+      habitat = {'0xTf','0iMi','xiFl','xiFp'};
+      embryo  = {'Tnpf'};
+      migrate = {'Ms'};
+      food    = {'biCvf','biCic'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
@@ -8362,6 +8412,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Csa','Dfa','Dfb'};
       ecozone = {'TPa','THp'};
       habitat = {'0iFl','0iFe'};
+      embryo  = {'Tnpfm','Tnsfm'};
+      migrate = {};
+      food    = {'biCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Pelecanus_occidentalis'
+      climate = {'MA','MB'};
+      ecozone = {'MPE','MAW'};
+      habitat = {'0iMc'};
       embryo  = {'Tnpfm','Tnsfm'};
       migrate = {};
       food    = {'biCvf'};
@@ -8504,6 +8564,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iTf'};
       embryo  = {'Tnpf'};
       migrate = {};
+      food    = {'biCi','biCv'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Asio_otus'
+      climate = {'Cfa','Cfb','Dfb','Dfc'};
+      ecozone = {'TH'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi','biCv'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Asio_flammeus'
+      climate = {'A','B','C','D'};
+      ecozone = {'TH'};
+      habitat = {'0iTh','0iTi','0iTs'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ml'};
       food    = {'biCi','biCv'};
       gender  = {'Dg'};
       reprod  = {'O'};
@@ -8808,12 +8888,42 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Tyrannus_forficatus'
+      climate = {'Cfa','Dfa'};
+      ecozone = {'THn'};
+      habitat = {'0iTi'};
+      embryo  = {'Tnpfm'};
+      migrate = {'Ml'};
+      food    = {'biCii','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Tyrannus_savana'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTi'};
+      embryo  = {'Tnpfm'};
+      migrate = {};
+      food    = {'biCii','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Sayornis_phoebe'
       climate = {'Cfa','Dfa','Dfb'};
       ecozone = {'THn'};
       habitat = {'0iTi'};
       embryo  = {'Tnpfm'};
       migrate = {'Ms'};
+      food    = {'biCii','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Empidonax_oberholseri'
+      climate = {'BSk','Dsa'};
+      ecozone = {'THn'};
+      habitat = {'0iTi'};
+      embryo  = {'Tnpfm'};
+      migrate = {'Ml'};
       food    = {'biCii','xiHs'};
       gender  = {'Dg'};
       reprod  = {'O'};
@@ -8962,6 +9072,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Aw'};
       ecozone = {'TPi'};
       habitat = {'0iTf'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Argya_squamiceps'
+      climate = {'BWh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTh','0iTd'};
       embryo  = {'Tnpf'};
       migrate = {};
       food    = {'biCi','biHs'};
@@ -9220,6 +9340,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
 
     case 'Spizelloides_arborea'
       climate = {'BSk','Dfa','Dfb','Dfc'};
+      ecozone = {'THn'};
+      habitat = {'0iTh','0iTi','0iTs'};
+      embryo  = {'Tnpf','Tnsf'};
+      migrate = {'Ml'};
+      food    = {'biCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Spizella_passerina'
+      climate = {'BSk','Cfa','Dfa','Dfb','Dfc'};
       ecozone = {'THn'};
       habitat = {'0iTh','0iTi','0iTs'};
       embryo  = {'Tnpf','Tnsf'};

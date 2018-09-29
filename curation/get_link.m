@@ -4711,6 +4711,14 @@ function links = get_link(taxon, open)
       id_avibase = 'B8CA2EEB4E7E0CA3';
       id_birdlife = 'hazel-grouse-bonasa-bonasia';
 
+    case 'Tympanuchus_pallidicinctus'
+      id_CoL = '3123bfee017d2a744e0f11759e0b2c90';
+      id_Taxo = '52978';        
+      id_EoL = '1049178';
+      id_AnAge = taxon;       
+      id_avibase = 'CFFD1491D1F401D8';
+      id_birdlife = 'lesser-prairie-chicken-tympanuchus-pallidicinctus';
+
     case 'Colinus_virginianus'
       id_CoL = '724211a845f6689a43faca49e240b73a';
       id_Taxo = '5';    
@@ -5279,6 +5287,16 @@ function links = get_link(taxon, open)
       id_avibase = '3DC4EBB85AB96A2A';
       id_birdlife = 'crested-auklet-aethia-cristatella';
       
+    case 'Aethia_pygmaea'
+      id_CoL = '82b9cdc66b37c419cd9c67cca5d41860';
+      id_WoRMS = '344017';
+      id_Taxo = '53929';        
+      id_EoL = '1049905';
+      id_AnAge = taxon;
+      id_avibase = 'E3893615A5AF83A3';
+      id_birdlife = 'whiskered-auklet-aethia-pygmaea';
+      id_ADW = ''; % not presetn 2018/09/29
+      
     case 'Cerorhinca_monocerata'
       id_CoL = '505164cb8828600e0b0fa29f255fe3e5';
       id_WoRMS = '344029';
@@ -5342,6 +5360,16 @@ function links = get_link(taxon, open)
       id_ADW = 'Sterna_sandvicensis'; 
       id_avibase = '04B49AE78FFF9B68';
       id_birdlife = 'sandwich-tern-thalasseus-sandvicensis';
+      
+    case 'Thalasseus_elegans'
+      id_CoL = 'd5dd7f97aec2244f6af29b6dfa662466';
+      id_WoRMS = '225959'; % present as Sterna elegans 2018/09/29
+      id_Taxo = '70333'; % present as Sterna elegans 2018/09/29       
+      id_EoL = '1049729';
+      id_AnAge = taxon;
+      id_ADW = ''; % not present 2018/09/29
+      id_avibase = '3F9E1C51FBD48FC1';
+      id_birdlife = 'elegant-tern-thalasseus-elegans';
       
     case 'Chroicocephalus_ridibundus'
       id_CoL = '619c28ecb10081c76f0926710fdc982a';
@@ -6267,6 +6295,24 @@ function links = get_link(taxon, open)
       id_avibase = '3AC46C54EE4A6251';
       id_birdlife = 'double-crested-cormorant-phalacrocorax-auritus';
       
+    case 'Phalacrocorax_aristotelis'
+      id_CoL = '1df29fe43a0a63533a572ba503c536ac';
+      id_WoRMS = '159059';
+      id_Taxo = '51681'; 
+      id_EoL = '1049403';
+      id_AnAge = taxon;      
+      id_avibase = 'CECC7B264A61BD22';
+      id_birdlife = 'european-shag-phalacrocorax-aristotelis';
+      
+    case 'Fregata_magnificens'
+      id_CoL = '9052c0bf905f0d62c9957700812e4360';
+      id_WoRMS = '137178';
+      id_Taxo = '51677'; 
+      id_EoL = '1048653';
+      id_AnAge = taxon;      
+      id_avibase = '8AA3B42E976C7B2A';
+      id_birdlife = 'magnificent-frigatebird-fregata-magnificens';
+      
     case 'Sula_bassana'
       id_CoL = '4dc3e535a6a6253e4adceb72157431fe'; % unaccepted, to Morus bassanus (Linnaeus, 1758)
       id_WoRMS = '137180';  % unaccepted, to Morus bassanus (Linnaeus, 1758)
@@ -6302,6 +6348,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_avibase = '8BAFB01E85D7AF4B';
       id_birdlife = 'great-white-pelican-pelecanus-onocrotalus';
+      
+    case 'Pelecanus_occidentalis'
+      id_CoL = 'fedeb1874452ed896bb42c4dfc17b08f';
+      id_WoRMS = '343935';
+      id_Taxo = '51646'; 
+      id_EoL = '1048599';
+      id_AnAge = taxon;
+      id_avibase = 'F59AB6B357BF97D8';
+      id_birdlife = 'brown-pelican-pelecanus-occidentalis';
       
     case 'Platalea_leucorodia'
       id_CoL = '94c683511cf31861591cdf435513d232';
@@ -6420,11 +6475,27 @@ function links = get_link(taxon, open)
       id_avibase = 'E8E9C26DAFD46DC2';
       id_birdlife = 'morepork-ninox-novaeseelandiae';
       
+    case 'Asio_otus'
+      id_CoL = '74712e866357bed002de74350710c8c8';
+      id_Taxo = '54695';        
+      id_EoL = '915724';
+      id_AnAge = taxon;
+      id_avibase = 'FC4D40D2D5CEA6BE';
+      id_birdlife = 'northern-long-eared-owl-asio-otus';
+      
+    case 'Asio_flammeus'
+      id_CoL = 'fd0d693dcff690444079656e8325fea4';
+      id_Taxo = '54765';        
+      id_EoL = '915724';
+      id_AnAge = taxon;
+      id_avibase = '8F123A11E5DADFDD';
+      id_birdlife = 'short-eared-owl-asio-flammeus';
+      
     case 'Urocolius_macrourus'
       id_CoL = 'e563e083718e4eb3a35fbcbde6fcaadd';
       id_Taxo = '55152';        
-      id_EoL = '1049674';
-      id_AnAge = ''; % not present 2017/06/18       
+      id_EoL = '915736';
+      id_AnAge = taxon;     
       id_avibase = 'E45D9EB2FE2364EE';
       id_birdlife = 'blue-naped-mousebird-urocolius-macrourus';
       
@@ -6663,6 +6734,23 @@ function links = get_link(taxon, open)
       id_avibase = '082D833CF61D6360';
       id_birdlife = 'eastern-kingbird-tyrannus-tyrannus';
       
+    case 'Tyrannus_forficatus'
+      id_CoL = 'e47386fbfbc03f9d58ae46cb41fb9a41';
+      id_Taxo = '56160';        
+      id_EoL = '917499';
+      id_AnAge = ''; % not present 2018/09/28     
+      id_avibase = '6F65F82B4A1BA7F2';
+      id_birdlife = 'scissor-tailed-flycatcher-tyrannus-forficatus';
+      
+    case 'Tyrannus_savana'
+      id_CoL = 'cead207da2850dd87d2dd12ac78bae9d';
+      id_Taxo = '81074';        
+      id_EoL = '917500';
+      id_AnAge = ''; % not present 2018/09/28     
+      id_avibase = 'A2510EF44C67DD52';
+      id_birdlife = 'fork-tailed-flycatcher-tyrannus-savana';
+      id_ADW = ''; % not present 2018/09/28
+      
     case 'Sayornis_phoebe'
       id_CoL = 'a15591a5779bfc04754d9082dbfc27dd';
       id_Taxo = '56141';        
@@ -6670,6 +6758,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '62CA2AF81AF5B68D';
       id_birdlife = 'eastern-phoebe-sayornis-phoebe';
+
+    case 'Empidonax_oberholseri'
+      id_CoL = '9103cb570d8c573e92b3c3b6c9794d25';
+      id_Taxo = '80942';        
+      id_EoL = '1046725';
+      id_AnAge = taxon;       
+      id_avibase = '499FFF98B510A2C8';
+      id_birdlife = 'american-dusky-flycatcher-empidonax-oberholseri';
+      id_ADW = ''; % not present 2018/09/29
 
     case 'Paradisaea_rubra'
       id_CoL = '150e58f547fcbceda2a7149c865a9c36';
@@ -6794,6 +6891,16 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/08/10       
       id_avibase = '830EF7CF19980BBD';
       id_birdlife = 'white-necked-laughingthrush-garrulax-strepitans';
+      
+    case 'Argya_squamiceps'
+      id_CoL = '7a520c6434abc2ace93e7ebd5676f614'; % present as Turdoides squamiceps 2018/09/29
+      id_Taxo = '84542'; % present as Turdoides squamiceps 2018/09/29       
+      id_EoL = '1052432'; % present as Turdoides squamiceps 2018/09/29  
+      id_AnAge = 'Turdoides_squamiceps';    
+      id_avibase = 'E99FE2FE9B88115E';
+      id_birdlife = 'arabian-babbler-argya-squamiceps';
+      id_Wiki = 'Turdoides_squamiceps';
+      id_ADW = ''; % not present 2018/09/29 
       
     case 'Regulus_regulus'
       id_CoL = '39de64eea659b04cfd67c5d4ff5633f4';
@@ -7005,6 +7112,14 @@ function links = get_link(taxon, open)
       id_avibase = '2A86F9C93636CDA3';
       id_ADW = 'Spizella_arborea';
       id_birdlife = 'american-tree-sparrow-passerella-arborea';
+      
+    case 'Spizella_passerina'
+      id_CoL = '2fd94651fc14ab9ad28ee966cbf8a52f';
+      id_Taxo = '58126'; 
+      id_EoL = '1053011';
+      id_AnAge = taxon;       
+      id_avibase = '37E9CCDA7A4B06ED';
+      id_birdlife = 'chipping-sparrow-spizella-passerina';
       
     case 'Chlorodrepanis_virens'
       id_CoL = '3362e7a2fffa3335d25516046a693e21';

@@ -50,7 +50,7 @@ delete([my_pet_bib, '.aux'])
 bib = fileread([my_pet_bib, '.bib']);
 bib = strrep(bib, 'DOI', 'doi');
 bib = strrep(bib, 'Doi', 'doi');
-ind = strfind(bib, 'doi');
+ind = strfind(bib, 'doi ');
 if isempty(ind) % no doi's
   return
 else % doi's present

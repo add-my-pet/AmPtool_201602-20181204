@@ -239,7 +239,7 @@ fprintf(fid_about, '    <!------------------------------------------------------
 fprintf(fid_about, '    <div id = "sidebar">\n\n');  
 
 fprintf(fid_about, '      <H1 id = "portaltop"> &nbsp;</H1> <!--   This is here to make heading across both columns even  -->\n');   
-fprintf(fid_about, '      <H2 class="clear">Entries in time </H2>\n\n');
+fprintf(fid_about, '      <H2 class="clear">AmP entries in time </H2>\n\n');
 
 fprintf(fid_about, '      <div class="sidelement">\n');
 fprintf(fid_about, '        <img src="img/about/entries.png" width="350px">\n');
