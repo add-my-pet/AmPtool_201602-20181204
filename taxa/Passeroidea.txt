@@ -1,7 +1,10 @@
 Nectariniidae
 Ploceidae
 Passeridae
+Estrildidae
 Motacillidae
-Emberizidae
+Calcariidae
+Passerellidae
 Fringillidae
+Thraupidae
 Parulidae

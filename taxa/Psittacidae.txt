@@ -2,4 +2,5 @@ Forpus
 Myiopsitta
 Cyanopsitta
 Ara
+Cyanoliseus
 Amazona

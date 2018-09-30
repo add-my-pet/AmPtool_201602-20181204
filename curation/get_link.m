@@ -5008,6 +5008,14 @@ function links = get_link(taxon, open)
       id_avibase = '4BB4F25726A8B123';
       id_birdlife = 'black-chinned-hummingbird-archilochus-alexandri';
 
+    case 'Sternoclyta_cyanopectus'
+      id_CoL = 'f644eb33e84502dbe136f4fcb483edec';
+      id_Taxo = '72450';        
+      id_EoL = '1048842';
+      id_AnAge = ''; % not present 2018/09/30      
+      id_avibase = 'B1A4A6A075AAE499';
+      id_birdlife = 'violet-chested-hummingbird-sternoclyta-cyanopectus';
+
     case 'Aegotheles_cristatus'
       id_CoL = 'e77dc5c18f2a229366e15a70c599332f';
       id_Taxo = '54805';        
@@ -5407,6 +5415,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '58B576ED088D10F9';
       id_birdlife = 'red-legged-kittiwake-rissa-brevirostris';
+      
+    case 'Anous_tenuirostris'
+      id_CoL = '4ff17fb60e51a339ce386dc00025b7a8';
+      id_WoRMS = '212630';
+      id_Taxo = '53839';        
+      id_EoL = '1049358';
+      id_AnAge = ''; % not present 2018/09/30       
+      id_avibase = '03F9EB153E1DD50C';
+      id_birdlife = 'lesser-noddy-anous-tenuirostris';
       
     case 'Stercorarius_longicaudus'
       id_CoL = '7463b0f804c2d9ab6acd1e21194c690a';
@@ -6652,6 +6669,14 @@ function links = get_link(taxon, open)
       id_avibase = 'FB8F32C30473F64B';
       id_birdlife = 'spixs-macaw-cyanopsitta-spixii';
       
+    case 'Cyanoliseus_patagonus'
+      id_CoL = '7fa6e83064c52d5d31e55651a857099d';
+      id_Taxo = '54421';        
+      id_EoL = '1177987';
+      id_AnAge = taxon;       
+      id_avibase = '1A7D8F6BCD3DFE25';
+      id_birdlife = 'burrowing-parrot-cyanoliseus-patagonus';
+      
     case 'Ara_ararauna'
       id_CoL = '6a101975b78c4f5c22ff46fc4be8b43f';
       id_Taxo = '54396';        
@@ -6998,6 +7023,14 @@ function links = get_link(taxon, open)
       id_avibase = '62B955D337163376';
       id_birdlife = 'puaiohi-myadestes-palmeri';
 
+    case 'Hylocichla_mustelina'
+      id_CoL = 'd3caee875b2cc0a2a47f1e1eae7f3f2b';
+      id_Taxo = '56878';        
+      id_EoL = '1177531';
+      id_AnAge = taxon; 
+      id_avibase = '8E1D9327B8DAFD54';
+      id_birdlife = 'wood-thrush-hylocichla-mustelina';
+
     case 'Sturnus_vulgaris'
       id_CoL = 'cbb6ad24ade1b086f9f6ad89fe92ac3d';
       id_Taxo = '59258';        
@@ -7064,6 +7097,14 @@ function links = get_link(taxon, open)
       id_avibase = '240E33900CE34D44';
       id_birdlife = 'house-sparrow-passer-domesticus';
       
+    case 'Taeniopygia_guttata'
+      id_CoL = '06ff618268d51f635be7a84662273262';
+      id_Taxo = '58868';        
+      id_EoL = '1050500';
+      id_AnAge = taxon;       
+      id_avibase = 'CF7D71B0FC773B09';
+      id_birdlife = 'timor-zebra-finch-taeniopygia-guttata';
+      
     case 'Anthus_pratensis'
       id_CoL = 'eb78a0bc492c93711d4c1ca8426d71d9';
       id_Taxo = '56453';        
@@ -7079,6 +7120,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;    
       id_avibase = '5983D6776C4C4F85';
       id_birdlife = 'western-yellow-wagtail-motacilla-flava';
+      
+    case 'Calcarius_lapponicus'
+      id_CoL = 'bd8ade26596fee00d0d7d72a59703c7f';
+      id_Taxo = '58033';        
+      id_EoL = '1052765';
+      id_AnAge = taxon;    
+      id_avibase = '3534E4CEBACCB166';
+      id_birdlife = 'lapland-longspur-calcarius-lapponicus';
+      id_ADW = ''; % not present 2018/09/30
       
     case 'Passerculus_sandwichensis'
       id_CoL = 'a40e57e0efe04426fca93156aee1edf4';
@@ -7146,6 +7196,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '1B235E0052ACC519';
       id_birdlife = 'european-goldfinch-carduelis-carduelis';
+
+    case 'Sporophila_beltoni'
+      id_CoL = '40551a82f07481b666e4eedd9ada5aa9';
+      id_Taxo = '58154'; % present at genus level only 2018/09/30      
+      id_EoL = '39632523'; 
+      id_AnAge = ''; % not present 2018/09/30      
+      id_avibase = '8C17A126452E9B87';
+      id_ADW = ''; % not present at 2019/09/30
+      id_birdlife = 'tropeiro-seedeater-sporophila-beltoni';
 
     case 'Setophaga_striata'
       id_CoL = '891172a2730002d57948ac2b10c03c80';
