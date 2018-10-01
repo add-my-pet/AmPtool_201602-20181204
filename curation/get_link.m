@@ -5016,12 +5016,20 @@ function links = get_link(taxon, open)
       id_avibase = 'B1A4A6A075AAE499';
       id_birdlife = 'violet-chested-hummingbird-sternoclyta-cyanopectus';
 
+    case 'Doricha_eliza'
+      id_CoL = 'a7a7d18577ba3cef29b49e505ab55abe';
+      id_Taxo = '72511';        
+      id_EoL = '914889';
+      id_AnAge = ''; % not present 2018/10/01      
+      id_avibase = 'B1A4A6A075AAE499';
+      id_birdlife = 'mexican-sheartail-doricha-eliza';
+
     case 'Aegotheles_cristatus'
       id_CoL = 'e77dc5c18f2a229366e15a70c599332f';
       id_Taxo = '54805';        
       id_EoL = '1178113';
       id_AnAge = ''; % not present at 2017/06/18       
-      id_avibase = '175A7534149FDC90';
+      id_avibase = 'FAF780DFD2BE5ED7';
       id_birdlife = 'australian-owlet-nightjar-aegotheles-cristatus';
 
     case 'Chordeiles_minor'
@@ -5055,6 +5063,15 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present at 2017/06/18       
       id_avibase = '3D67C56A490A60AE';
       id_birdlife = 'great-spotted-cuckoo-clamator-glandarius';
+      
+    case 'Dromococcyx_pavoninus'
+      id_CoL = '4c358f03116fb953072cfb94d499aee6';
+      id_Taxo = '54591';        
+      id_EoL = '913255';
+      id_AnAge = ''; % not present at 2018/10/01      
+      id_avibase = '489295C7AEBFA666';
+      id_birdlife = 'pavonine-cuckoo-dromococcyx-pavoninus';
+      id_ADW = ''; % not present at 2018/10/01   
       
     case 'Tauraco_erythrolophus'
       id_CoL = '4044ed76e392318b4727c7de43ddb7a5';
@@ -6792,6 +6809,22 @@ function links = get_link(taxon, open)
       id_avibase = '499FFF98B510A2C8';
       id_birdlife = 'american-dusky-flycatcher-empidonax-oberholseri';
       id_ADW = ''; % not present 2018/09/29
+
+    case 'Leptopogon_amaurocephalus'
+      id_CoL = '76f8498ae10915e3c6817294a9b3fc16';
+      id_Taxo = '80712';        
+      id_EoL = '1053171';
+      id_AnAge = ''; % not present 2018/10/01      
+      id_avibase = '61EA91A86889AEAB';
+      id_birdlife = 'sepia-capped-flycatcher-leptopogon-amaurocephalus';
+
+    case 'Mionectes_oleagineus'
+      id_CoL = '1a173e25ca8c37c9f56623949e1cf9df';
+      id_Taxo = '56199';        
+      id_EoL = '1053189';
+      id_AnAge = ''; % not present 2018/10/01      
+      id_avibase = '0EFCDBB88117489F';
+      id_birdlife = 'ochre-bellied-flycatcher-mionectes-oleagineus';
 
     case 'Paradisaea_rubra'
       id_CoL = '150e58f547fcbceda2a7149c865a9c36';

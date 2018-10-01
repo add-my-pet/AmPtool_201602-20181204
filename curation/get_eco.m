@@ -6908,6 +6908,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Doricha_eliza'
+      climate = {'Am'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi','xiHn'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Aegotheles_cristatus'
       climate = {'Cfa','Cfb'};
       ecozone = {'TA'};
@@ -6954,6 +6964,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iTh','0iTf','0iTi'};
       embryo  = {'Tnpo'};
       migrate = {'Ml'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Dromococcyx_pavoninus'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpo'};
+      migrate = {};
       food    = {'biCi'};
       gender  = {'Dg'};
       reprod  = {'O'};
@@ -8944,6 +8964,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iTi'};
       embryo  = {'Tnpfm'};
       migrate = {'Ml'};
+      food    = {'biCii','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Leptopogon_amaurocephalus'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTi'};
+      embryo  = {'Tnpfm'};
+      migrate = {};
+      food    = {'biCii','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Mionectes_oleagineus'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTi'};
+      embryo  = {'Tnpfm'};
+      migrate = {};
       food    = {'biCii','xiHs'};
       gender  = {'Dg'};
       reprod  = {'O'};
