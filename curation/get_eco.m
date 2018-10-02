@@ -6978,6 +6978,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Chalcites_basalis'
+      climate = {'BWh','BSh','Cfc'};
+      ecozone = {'TA','TAt'};
+      habitat = {'0iTf','0iTh'};
+      embryo  = {'Tnpo'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Chalcites_lucidus'
+      climate = {'Cfb','Cfc'};
+      ecozone = {'TA','TAt','TAz'};
+      habitat = {'0iTf','0iTh'};
+      embryo  = {'Tnpo'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Tauraco_erythrolophus'
       climate = {'Cwb'};
       ecozone = {'TPa'};
@@ -7381,6 +7401,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Anous_tenuirostris'
       climate = {'MA'};
       ecozone = {'MI'};
+      habitat = {'biMc'};
+      embryo  = {'Tnpfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Onychoprion_fuscatus'
+      climate = {'MA'};
+      ecozone = {'MC'};
       habitat = {'biMc'};
       embryo  = {'Tnpfm'};
       migrate = {'Ms'};
@@ -8985,6 +9015,36 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tnpfm'};
       migrate = {};
       food    = {'biCii','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Malurus_splendens'
+      climate = {'BWh','BSh'};
+      ecozone = {'TA'};
+      habitat = {'0iTf','0iTh'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Acanthiza_chrysorrhoa'
+      climate = {'BWh','BSh','Cfb','Cfc'};
+      ecozone = {'TA'};
+      habitat = {'0iTf','0iTh'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Acanthiza_inornata'
+      climate = {'BSk','Csa','Csb'};
+      ecozone = {'TA'};
+      habitat = {'0iTf','0iTh'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi'};
       gender  = {'Dg'};
       reprod  = {'O'};
 

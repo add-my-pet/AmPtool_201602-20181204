@@ -5073,6 +5073,24 @@ function links = get_link(taxon, open)
       id_birdlife = 'pavonine-cuckoo-dromococcyx-pavoninus';
       id_ADW = ''; % not present at 2018/10/01   
       
+    case 'Chalcites_basalis'
+      id_CoL = '9f4bb6f75b40fb4c867ba69289f15238'; % present as Chrysococcyx basalis 2018/10/01
+      id_Taxo = '54498'; % present as Chrysococcyx basalis 2018/10/01      
+      id_EoL = '914664'; % present as Chrysococcyx basalis 2018/10/01
+      id_AnAge = ''; % not present at 2018/10/01      
+      id_avibase = '91248B47E0E2F515';
+      id_birdlife = 'horsfields-bronze-cuckoo-chalcites-basalis';
+      id_ADW = ''; % not present at 2018/10/01   
+      
+    case 'Chalcites_lucidus'
+      id_CoL = '0ab9528c1efa108c20d5a91254367de4'; % present as Chrysococcyx lucidus 2018/10/01
+      id_Taxo = '54502'; % present as Chrysococcyx lucidus 2018/10/01      
+      id_EoL = '914909'; % present as Chrysococcyx lucidus 2018/10/01
+      id_AnAge = ''; % not present at 2018/10/01      
+      id_avibase = '1926839510D8C228';
+      id_birdlife = 'shining-bronze-cuckoo-chalcites-lucidus';
+      id_ADW = ''; % not present at 2018/10/01   
+      
     case 'Tauraco_erythrolophus'
       id_CoL = '4044ed76e392318b4727c7de43ddb7a5';
       id_Taxo = '54466';        
@@ -5441,6 +5459,16 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/09/30       
       id_avibase = '03F9EB153E1DD50C';
       id_birdlife = 'lesser-noddy-anous-tenuirostris';
+      
+    case 'Onychoprion_fuscatus'
+      id_CoL = '73d5cdfcd88481a314574567a0c7c906';
+      id_WoRMS = '567827';
+      id_Taxo = '53868'; % present as Sterna fuscata 2018/10/01     
+      id_EoL = '1049685';
+      id_AnAge = taxon;    
+      id_avibase = '3E7F825D03C0DC3E';
+      id_birdlife = 'sooty-tern-onychoprion-fuscatus';
+      id_ADW = 'Sterna_fuscata';
       
     case 'Stercorarius_longicaudus'
       id_CoL = '7463b0f804c2d9ab6acd1e21194c690a';
@@ -6825,6 +6853,31 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/10/01      
       id_avibase = '0EFCDBB88117489F';
       id_birdlife = 'ochre-bellied-flycatcher-mionectes-oleagineus';
+
+    case 'Malurus_splendens'
+      id_CoL = '2604fb76c7c942370309f9a64870599d';
+      id_Taxo = '85322';        
+      id_EoL = '918371';
+      id_AnAge = ''; % not present at 2018/10/01       
+      id_avibase = '391EA6CB4F70C90F';
+      id_birdlife = 'splendid-fairy-wren-malurus-splendens';
+
+    case 'Acanthiza_chrysorrhoa'
+      id_CoL = 'abee6623e4e8633c35d81f7cd4dc3cb4';
+      id_Taxo = '57622';        
+      id_EoL = '1051894';
+      id_AnAge = ''; % not present at 2018/10/02       
+      id_avibase = 'B1B0E34392DDCE8B';
+      id_birdlife = 'yellow-rumped-thornbill-acanthiza-chrysorrhoa';
+      id_ADW = ''; %  not present at 2018/10/02
+
+    case 'Acanthiza_inornata'
+      id_CoL = '60e979634ccf4e67804cedb2ff8bb67f';
+      id_Taxo = '85359';        
+      id_EoL = '1051896';
+      id_AnAge = ''; % not present at 2018/10/02       
+      id_avibase = '6601168A1B3CCECF';
+      id_birdlife = 'western-thornbill-acanthiza-inornata';
 
     case 'Paradisaea_rubra'
       id_CoL = '150e58f547fcbceda2a7149c865a9c36';
