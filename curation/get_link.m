@@ -6366,6 +6366,15 @@ function links = get_link(taxon, open)
       id_avibase = 'CECC7B264A61BD22';
       id_birdlife = 'european-shag-phalacrocorax-aristotelis';
       
+    case 'Fregata_minor'
+      id_CoL = '223abd6f6e2a3ffab50991ce0c949026';
+      id_WoRMS = '212654';
+      id_Taxo = '51730'; 
+      id_EoL = '1048654';
+      id_AnAge = taxon;      
+      id_avibase = '788EBCAB63213E04';
+      id_birdlife = 'great-frigatebird-fregata-minor';
+      
     case 'Fregata_magnificens'
       id_CoL = '9052c0bf905f0d62c9957700812e4360';
       id_WoRMS = '137178';
@@ -6374,6 +6383,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;      
       id_avibase = '8AA3B42E976C7B2A';
       id_birdlife = 'magnificent-frigatebird-fregata-magnificens';
+      
+    case 'Fregata_ariel'
+      id_CoL = 'a01ca40f26e4a02c1df62dbd2f058176';
+      id_WoRMS = '212655';
+      id_Taxo = '51728'; 
+      id_EoL = '1048655';
+      id_AnAge = taxon;      
+      id_avibase = '09ED7E926715445E';
+      id_birdlife = 'lesser-frigatebird-fregata-ariel';
       
     case 'Sula_bassana'
       id_CoL = '4dc3e535a6a6253e4adceb72157431fe'; % unaccepted, to Morus bassanus (Linnaeus, 1758)
@@ -6393,6 +6411,24 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '649F85B5CED953D5';
       id_birdlife = 'blue-footed-booby-sula-nebouxii';
+      
+    case 'Sula_dactylatra'
+      id_CoL = '683dec48774282e3a2fcc82ce816d57b';
+      id_WoRMS = '212599';
+      id_Taxo = '51661';        
+      id_EoL = '1048601';
+      id_AnAge = taxon;       
+      id_avibase = '22D1B4A2F0911712';
+      id_birdlife = 'masked-booby-sula-dactylatra';
+      
+    case 'Sula_leucogaster'
+      id_CoL = '76358cc2af96ab41d7de587799bd53c5';
+      id_WoRMS = '212597';
+      id_Taxo = '51662';        
+      id_EoL = '1048611';
+      id_AnAge = taxon;       
+      id_avibase = '5EC21767FC58DB7D';
+      id_birdlife = 'brown-booby-sula-leucogaster';
       
     case 'Balaeniceps_rex'
       id_CoL = '16bde12b82a99c26cf61f1229cd3f41a';
@@ -6978,6 +7014,14 @@ function links = get_link(taxon, open)
       id_ADW = 'Parus_ater'; 
       id_avibase = 'A4EBA919FCAFED5E';
       id_birdlife = 'coal-tit-periparus-ater';
+      
+    case 'Delichon_urbicum'
+      id_CoL = '1f9be412a6454b0bfd18f48e515e2592';
+      id_Taxo = '1125977';        
+      id_EoL = '284079';
+      id_AnAge = taxon;       
+      id_avibase = 'E4BB82F50C488B8B';
+      id_birdlife = 'northern-house-martin-delichon-urbicum';
       
     case 'Sylvia_atricapilla'
       id_CoL = '4134d00c993b71067bfeb807a0d09c4b';

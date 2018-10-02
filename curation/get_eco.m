@@ -8438,9 +8438,29 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Fregata_minor'
+      climate = {'MA'};
+      ecozone = {'MC'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnpf'};
+      migrate = {'Ms'};
+      food    = {'biCvf','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Fregata_magnificens'
-      climate = {'Dfa','Dfb'};
-      ecozone = {'THn'};
+      climate = {'MA'};
+      ecozone = {'MA','MPE'};
+      habitat = {'0xTf','0iMi','xiFl','xiFp'};
+      embryo  = {'Tnpf'};
+      migrate = {'Ms'};
+      food    = {'biCvf','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Fregata_ariel'
+      climate = {'MA'};
+      ecozone = {'MC'};
       habitat = {'0xTf','0iMi','xiFl','xiFp'};
       embryo  = {'Tnpf'};
       migrate = {'Ms'};
@@ -8461,6 +8481,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Sula_nebouxii'
       climate = {'MA','MB'};
       ecozone = {'MPE'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {};
+      food    = {'biCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Sula_dactylatra'
+      climate = {'MA'};
+      ecozone = {'MC'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {};
+      food    = {'biCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Sula_leucogaster'
+      climate = {'MA'};
+      ecozone = {'MC'};
       habitat = {'0iMc'};
       embryo  = {'Tnsfm'};
       migrate = {};
@@ -9174,6 +9214,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iTf'};
       embryo  = {'Tnwf'};
       migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Delichon_urbicum'
+      climate = {'BSk','Cfb','Dfb','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'0iTh','0iTf'};
+      embryo  = {'Tncf'};
+      migrate = {'Ml'};
       food    = {'biCi'};
       gender  = {'Dg'};
       reprod  = {'O'};
