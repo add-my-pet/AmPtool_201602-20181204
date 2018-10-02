@@ -5451,6 +5451,15 @@ function links = get_link(taxon, open)
       id_avibase = '58B576ED088D10F9';
       id_birdlife = 'red-legged-kittiwake-rissa-brevirostris';
       
+    case 'Gygis_alba'
+      id_CoL = 'c74b53181940057af1a5435c0c0b8885';
+      id_WoRMS = '344045';
+      id_Taxo = '53847';        
+      id_EoL = '1049751';
+      id_AnAge = taxon; 
+      id_avibase = '78D0F675ABF2EF48';
+      id_birdlife = 'common-white-tern-gygis-alba';
+      
     case 'Anous_tenuirostris'
       id_CoL = '4ff17fb60e51a339ce386dc00025b7a8';
       id_WoRMS = '212630';
@@ -5459,6 +5468,16 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/09/30       
       id_avibase = '03F9EB153E1DD50C';
       id_birdlife = 'lesser-noddy-anous-tenuirostris';
+      
+    case 'Anous_stolidus'
+      id_CoL = '9904109753703f88640b2d1ed9977354';
+      id_WoRMS = '212629';
+      id_Taxo = '53838';        
+      id_EoL = '1049739';
+      id_AnAge = ''; % not present 2018/10/02       
+      id_avibase = 'A070171E774B95B5';
+      id_birdlife = 'brown-noddy-anous-stolidus';
+      id_ADW = ''; % not present 2018/10/02       
       
     case 'Onychoprion_fuscatus'
       id_CoL = '73d5cdfcd88481a314574567a0c7c906';

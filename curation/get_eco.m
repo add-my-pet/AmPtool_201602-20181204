@@ -7398,9 +7398,29 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Gygis_alba'
+      climate = {'MA'};
+      ecozone = {'MC'};
+      habitat = {'biMc'};
+      embryo  = {'Tnwfm','Tncfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Anous_tenuirostris'
       climate = {'MA'};
       ecozone = {'MI'};
+      habitat = {'biMc'};
+      embryo  = {'Tnpfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Anous_stolidus'
+      climate = {'MA'};
+      ecozone = {'MC'};
       habitat = {'biMc'};
       embryo  = {'Tnpfm'};
       migrate = {'Ms'};
