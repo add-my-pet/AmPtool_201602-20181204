@@ -8058,6 +8058,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
       
+   case 'Puffinus_lherminieri'
+      climate = {'MA','MB','MC'};
+      ecozone = {'MA'};
+      habitat = {'0iMc'};
+      embryo  = {'Tntfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCik','biCic'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+      
     case 'Puffinus_puffinus'
       climate = {'MC','ME'};
       ecozone = {'MA','MN'};
@@ -8629,7 +8639,17 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       reprod  = {'O'};
 
     case 'Gyps_rueppellii'
-      climate = {'BSh','BSh'};
+      climate = {'Am','BSh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTg','0iTht'};
+      embryo  = {'Tncf'};
+      migrate = {'Ms'};
+      food    = {'biSvm'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Gyps_africanus'
+      climate = {'Am','BSh','Cwb','Cwc'};
       ecozone = {'TPa'};
       habitat = {'0iTi','0iTg','0iTht'};
       embryo  = {'Tncf'};

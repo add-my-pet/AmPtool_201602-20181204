@@ -6019,6 +6019,15 @@ function links = get_link(taxon, open)
       id_avibase  = '5F555FDD48DEAC1C';
       id_birdlife = '';      % not present at 2018/09/18 
       
+    case 'Puffinus_lherminieri'
+      id_CoL      = '52b8e7e2b40b569321c655709b7f4b98';
+      id_WoRMS    = '212633';
+      id_Taxo     = '51581';
+      id_EoL      = '1048474';      
+      id_AnAge    = taxon; 
+      id_avibase  = '06C36D41443C29AF';
+      id_birdlife = 'audubons-shearwater-puffinus-lherminieri'; 
+      
     case 'Puffinus_puffinus'
       id_CoL = '21994168db2427586c692250492bc588';
       id_WoRMS = '225752';
@@ -6540,6 +6549,14 @@ function links = get_link(taxon, open)
       id_avibase = '76B512B1EE9B10EC';
       id_birdlife = 'ruppells-vulture-gyps-rueppelli';
       id_ADW = ''; % not present 2018/08/07
+      
+    case 'Gyps_africanus'
+      id_CoL = 'bf65f5edb9673a0e76788ca16f01e088';
+      id_Taxo = '52462'; 
+      id_EoL = '1047564';
+      id_AnAge = taxon;      
+      id_avibase = '0419DDC2F668EEE5';
+      id_birdlife = 'white-backed-vulture-gyps-africanus';
       
     case 'Circus_aeruginosus'
       id_CoL = '86e884dce0543b20ad3f399fc9ce5198';

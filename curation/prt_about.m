@@ -149,7 +149,7 @@ fprintf(fid_about, '  <div id = "main-wrapper">    \n');
 fprintf(fid_about, '    <div id="content">\n');
 
 %%
-fprintf(fid_about, '      <H1 id = "portaltop">About Add-my-pet</H1>\n'); 
+fprintf(fid_about, '      <H1 id = "portaltop">About Add-my-Pet</H1>\n'); 
 fprintf(fid_about, '      <H2 id = "aims">Overview of the collection</H2>\n\n');
 
 fprintf(fid_about, '      <div class="sidelement2">\n');
