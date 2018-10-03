@@ -530,6 +530,13 @@ function links = get_link(taxon, open)
       id_ADW = ''; % not present at 2017/08/09
       id_molluscabase = '367822';
       
+    case 'Perna_perna'
+      id_CoL = '550e68bd80ea1046404db3659e71ffee';
+      id_WoRMS = '140483';
+      id_Taxo = ''; % not present at 2018/10/03       
+      id_EoL = '468743';
+      id_molluscabase = '541374';
+      
     case 'Mytilus_edulis'
       id_CoL = 'fd90faaa60b00c787b864db5935122a0';
       id_WoRMS = '140480';
@@ -3737,6 +3744,13 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present at 2018/08/15
       id_amphweb = taxon_amph;
        
+    case 'Neurergus_kaiseri'
+      id_CoL = 'e0a58004255069949b8e42543afff44b';
+      id_Taxo = '149407';        
+      id_EoL = '330971';
+      id_AnAge = ''; % not present at 2018/10/03
+      id_amphweb = taxon_amph;
+       
     case 'Proteus_anguinus'
       id_CoL = '902f579a3013675de3ac2a27821e4433';
       id_Taxo = '985978';        
@@ -6909,6 +6923,31 @@ function links = get_link(taxon, open)
       id_avibase = '0EFCDBB88117489F';
       id_birdlife = 'ochre-bellied-flycatcher-mionectes-oleagineus';
 
+    case 'Archboldia_papuensis'
+      id_CoL = '263acd7a02c49b8ca297932078040d08';
+      id_Taxo = '59360';        
+      id_EoL = '919930';
+      id_AnAge = ''; % not present at 2018/10/03       
+      id_avibase = '1146BB4A502AE807';
+      id_birdlife = 'archbolds-bowerbird-archboldia-papuensis';
+      id_ADW = ''; % not present at 2018/10/03 
+
+    case 'Chlamydera_nuchalis'
+      id_CoL = '8d1d45c6650fc058ed2b2722e9ffa9fc';
+      id_Taxo = '59367';        
+      id_EoL = '919935';
+      id_AnAge = ''; % not present at 2018/10/03       
+      id_avibase = '0F4DA8F3F7DEB379';
+      id_birdlife = 'great-bowerbird-chlamydera-nuchalis';
+
+    case 'Ailuroedus_crassirostris'
+      id_CoL = 'b8b495ce243e7bed223013b0d346a951';
+      id_Taxo = '59352';        
+      id_EoL = '919925';
+      id_AnAge = ''; % not present at 2018/10/03       
+      id_avibase = 'D0C1FDA27471E909';
+      id_birdlife = 'green-catbird-ailuroedus-crassirostris';
+
     case 'Malurus_splendens'
       id_CoL = '2604fb76c7c942370309f9a64870599d';
       id_Taxo = '85322';        
@@ -6934,6 +6973,14 @@ function links = get_link(taxon, open)
       id_avibase = '6601168A1B3CCECF';
       id_birdlife = 'western-thornbill-acanthiza-inornata';
 
+    case 'Gerygone_igata'
+      id_CoL = '391dd50a3cba64d9e4f12407cb921729';
+      id_Taxo = '85384';        
+      id_EoL = '1051927/';
+      id_AnAge = ''; % not present at 2018/10/02       
+      id_avibase = 'C3D7DC15FA86C16E';
+      id_birdlife = 'grey-gerygone-gerygone-igata';
+
     case 'Paradisaea_rubra'
       id_CoL = '150e58f547fcbceda2a7149c865a9c36';
       id_Taxo = '59419';        
@@ -6941,6 +6988,14 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present at 2018/07/27       
       id_avibase = '2215C01D11B737E6';
       id_birdlife = 'red-bird-of-paradise-paradisaea-rubra';
+
+    case 'Paradigalla_brevicauda'
+      id_CoL = 'be1fad7542c3889cc7931e6db54c37f2';
+      id_Taxo = '87735';        
+      id_EoL = '1051871';
+      id_AnAge = ''; % not present at 2018/07/27       
+      id_avibase = '1444D04FE604ADD9';
+      id_birdlife = 'short-tailed-paradigalla-paradigalla-brevicauda';
 
     case 'Lanius_senator'
       id_CoL = '2f89fd5f925b02ec2152336e3e270879';
@@ -7042,6 +7097,14 @@ function links = get_link(taxon, open)
       id_avibase = 'E4BB82F50C488B8B';
       id_birdlife = 'northern-house-martin-delichon-urbicum';
       
+    case 'Hirundo_tahitica'
+      id_CoL = '7904554037aab6bd85484fad221e9ab7';
+      id_Taxo = '56383';        
+      id_EoL = '1050787';
+      id_AnAge = taxon;       
+      id_avibase = 'B9AC53DEE40266A7';
+      id_birdlife = 'tahiti-swallow-hirundo-tahitica';
+      
     case 'Sylvia_atricapilla'
       id_CoL = '4134d00c993b71067bfeb807a0d09c4b';
       id_Taxo = '57368';        
@@ -7057,6 +7120,22 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '88F4B969622B8268';
       id_birdlife = 'willow-warbler-phylloscopus-trochilus';
+      
+    case 'Acrocephalus_arundinaceus'
+      id_CoL = '246b509e1f2c8e458fa21727049844e2';
+      id_Taxo = '57226';        
+      id_EoL = '1052541';
+      id_AnAge = taxon;       
+      id_avibase = 'B283E33243C17D97';
+      id_birdlife = 'great-reed-warbler-acrocephalus-arundinaceus';
+      
+    case 'Acrocephalus_scirpaceus'
+      id_CoL = '52f40a2e6ff37f8b358b05b2f708f774';
+      id_Taxo = '57235';        
+      id_EoL = '1052563';
+      id_AnAge = ''; % not present 2018/10/03       
+      id_avibase = '4B3E6D256004B252';
+      id_birdlife = 'common-reed-warbler-acrocephalus-scirpaceus';
       
     case 'Garrulax_strepitans'
       id_CoL = 'f1c6695d476872862420f7a6325db0f0';
