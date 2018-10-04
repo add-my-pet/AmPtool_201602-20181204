@@ -6639,6 +6639,14 @@ function links = get_link(taxon, open)
       id_avibase = '8F123A11E5DADFDD';
       id_birdlife = 'short-eared-owl-asio-flammeus';
       
+    case 'Athene_noctua'
+      id_CoL = 'f021258882a76882cfe825b4184b33c1';
+      id_Taxo = '54645';        
+      id_EoL = '1178306';
+      id_AnAge = taxon;
+      id_avibase = '9A7B268C4EF6F803';
+      id_birdlife = 'little-owl-athene-noctua';
+      
     case 'Urocolius_macrourus'
       id_CoL = 'e563e083718e4eb3a35fbcbde6fcaadd';
       id_Taxo = '55152';        
@@ -6678,6 +6686,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '4192DE77F2F73998';
       id_birdlife = 'southern-ground-hornbill-bucorvus-leadbeateri';
+      
+    case 'Upupa_epops'
+      id_CoL = 'b43247ae6156750fcfdbf4b472d3645b';
+      id_Taxo = '55348';        
+      id_EoL = '917145';
+      id_AnAge = taxon;       
+      id_avibase = 'F4D0DB8E39216416';
+      id_birdlife = 'common-hoopoe-upupa-epops';
       
     case 'Todiramphus_cinnamominus'
       id_CoL = '1c50b024147aadb63f1f128e5afa7e79';
@@ -7030,6 +7046,15 @@ function links = get_link(taxon, open)
       id_avibase = '1EB2E3C72A6B688A';
       id_birdlife = 'eurasian-magpie-pica-pica';
       
+    case 'Cyanopica_cyanus'
+      id_CoL = 'f1da4d5d17fb0e8b6dc8803996bba073';
+      id_Taxo = '93367';        
+      id_EoL = '916487';
+      id_AnAge = ''; % not present 2018/10/04       
+      id_avibase = '659D6E44CDDBC5F1';
+      id_birdlife = 'asian-azure-winged-magpie-cyanopica-cyanus';
+      id_ADW = ''; % not present 2018/10/04       
+      
     case 'Corvus_monedula'
       id_CoL = '8b1d7741c6b8ad881d4f28e0bbe0bdeb';
       id_Taxo = '59548';        
@@ -7309,6 +7334,15 @@ function links = get_link(taxon, open)
       id_avibase = '222CAA6E0DDDFE7E';
       id_birdlife = 'common-stonechat-saxicola-torquatus'; 
       
+    case 'Ficedula_hypoleuca'
+      id_CoL = 'abf8789e1d20be70f734faf3bac68ef9';
+      id_Taxo = '168169';   
+      id_EoL = '1051410';
+      id_AnAge = taxon;   
+      id_avibase = '6E352E1870A195B7';
+      id_birdlife = 'european-pied-flycatcher-ficedula-hypoleuca'; 
+      id_ADW = ''; % not present 2018/10/04
+      
     case 'Cinnyris_jugularis'
       id_CoL = 'd7ff4b36e31373ca9a0d3b401e370436';
       id_Taxo = '1126557';        
@@ -7374,6 +7408,15 @@ function links = get_link(taxon, open)
       id_avibase = '3534E4CEBACCB166';
       id_birdlife = 'lapland-longspur-calcarius-lapponicus';
       id_ADW = ''; % not present 2018/09/30
+      
+    case 'Emberiza_calandra'
+      id_CoL = '0b7699ffcd0234298096adc11e685bfe';
+      id_Taxo = '58051';        
+      id_EoL = '892214';
+      id_AnAge = taxon;    
+      id_avibase = '9A87EBB0B75C410B';
+      id_birdlife = 'corn-bunting-emberiza-calandra';
+      id_ADW = ''; % not present 2018/10/04
       
     case 'Passerculus_sandwichensis'
       id_CoL = 'a40e57e0efe04426fca93156aee1edf4';
