@@ -7358,6 +7358,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Sterna_dougallii'
+      climate = {'MA'};
+      ecozone = {'MC'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Thalasseus_sandvicensis'
       climate = {'Dfb','Dfc'};
       ecozone = {'MA'};
@@ -7548,6 +7558,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Haematopus_ostralegus'
+      climate = {'Cfb','Dfa','Dfb','Dwa','Dwb'};
+      ecozone = {'THp'};
+      habitat = {'0xTs','xiFm','xiFe'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCim'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Vanellus_vanellus'
       climate = {'Cfb'};
       ecozone = {'THp'};
@@ -7611,6 +7631,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Pluvialis_dominica'
       climate = {'ET','Dfc'};
       ecozone = {'THn'};
+      habitat = {'0iTht'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Pluvialis_apricaria'
+      climate = {'ET','Dfc'};
+      ecozone = {'THp'};
       habitat = {'0iTht'};
       embryo  = {'Tnsfm'};
       migrate = {'Ml'};
@@ -7734,6 +7764,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iFm'};
       embryo  = {'Tnffm'};
       migrate = {'Ms'};
+      food    = {'biCi','biHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Crex_crex'
+      climate = {'BWk','BSk','Cfb','Dfb'};
+      ecozone = {'THp'};
+      habitat = {'0iFm'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
       food    = {'biCi','biHl'};
       gender  = {'Dg'};
       reprod  = {'O'};
@@ -9008,6 +9048,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Amazona_finschi'
+      climate = {'Cwa','Cwb'};
+      ecozone = {'TN'};
+      habitat = {'0iTf','0iTi'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Psittrichas_fulgidus'
       climate = {'Af'};
       ecozone = {'TA'}; % endemic to New Guinea
@@ -9355,6 +9405,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tnwf'};
       migrate = {};
       food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Alauda_arvensis'
+      climate = {'B','C','D'};
+      ecozone = {'THp'};
+      habitat = {'0iTi','0iTs','0iTg'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ml'};
+      food    = {'biCi','xiHs','xiHl'};
       gender  = {'Dg'};
       reprod  = {'O'};
 

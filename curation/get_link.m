@@ -5408,6 +5408,15 @@ function links = get_link(taxon, open)
       id_avibase = '4D2FF6F13790ED7E';
       id_birdlife = 'common-tern-sterna-hirundo';
       
+    case 'Sterna_dougallii'
+      id_CoL = 'e6cd6beff86e385e4d942021abacd2da';
+      id_WoRMS = '137160';
+      id_Taxo = '53866';        
+      id_EoL = '1049641';
+      id_AnAge = taxon;       
+      id_avibase = '74236837A4AFD042';
+      id_birdlife = 'roseate-tern-sterna-dougallii';
+      
     case 'Thalasseus_sandvicensis'
       id_CoL = 'fd712ba9ea195d3cc049c283c6ba3caa';
       id_WoRMS = '413044'; % unaccepted, to Sterna sandvicensis Latham, 1787
@@ -5586,6 +5595,15 @@ function links = get_link(taxon, open)
       id_avibase = 'C078081EB45D895F';
       id_birdlife = 'african-oystercatcher-haematopus-moquini';
       
+    case 'Haematopus_ostralegus'
+      id_CoL = 'aa9b32f4498c9918873c902d95302fac';
+      id_WoRMS = '147436';
+      id_Taxo = '53505';        
+      id_EoL = '1049333';
+      id_AnAge = taxon; 
+      id_avibase = 'ED66316522B99A30';
+      id_birdlife = 'eurasian-oystercatcher-haematopus-ostralegus';
+      
     case 'Vanellus_vanellus'
       id_CoL = 'a72664542a6c3a33c679530309994536';
       id_WoRMS = '159142'; 
@@ -5648,6 +5666,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '2143A8526CA7C809';
       id_birdlife = 'american-golden-plover-pluvialis-dominica';
+      
+    case 'Pluvialis_apricaria'
+      id_CoL = 'bc2553ab83451495ee121328c8d28762';
+      id_WoRMS = '159135';
+      id_Taxo = '53622';        
+      id_EoL = '1049364';
+      id_AnAge = taxon;       
+      id_avibase = '25A20BA6F7EA9D9A';
+      id_birdlife = 'eurasian-golden-plover-pluvialis-apricaria';
       
     case 'Psophia_crepitans'
       id_CoL = '79cc7ed2868e70fd1a9c47f97f9d2061';
@@ -5750,6 +5777,22 @@ function links = get_link(taxon, open)
       id_Wiki = 'Grus_leucogeranus';
       id_ADW = 'Grus_leucogeranus';
       
+     case 'Gallinula_chloropus'
+      id_CoL = '8c1a4e2718730f2ad6171f96fb6c6fa3';
+      id_Taxo = '53395';
+      id_EoL = '1048567';
+      id_AnAge = '';       
+      id_avibase = '8F82FF8C30667D90';
+      id_birdlife = 'common-moorhen-gallinula-chloropus';
+
+     case 'Crex_crex'
+      id_CoL = '81f2c86266e0066201e927f7bc2d8265';
+      id_Taxo = '53351';
+      id_EoL = '1049299';
+      id_AnAge = taxon; % not present 2018/10/05       
+      id_avibase = '7E2572426E200D08';
+      id_birdlife = 'corncrake-crex-crex';
+
     case 'Phaethon_lepturus'
       id_CoL = '9c0e9cb143508bda222bd0adec5383db';
       id_WoRMS = '212594';
@@ -6847,7 +6890,16 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '0F2066D5BB706CD2';
       id_birdlife = 'orange-winged-amazon-amazona-amazonica';
-      id_ADW = 'not present at 2018/07/28';
+      id_ADW = ''; % not present at 2018/07/2';
+      
+    case 'Amazona_finschi'
+      id_CoL = 'a17c95bc09df808e3c0ee4f0343e44b5';
+      id_Taxo = '107781';        
+      id_EoL = '1178070';
+      id_AnAge = taxon;       
+      id_avibase = '66C32CC9A92F6633';
+      id_birdlife = 'lilac-crowned-amazon-amazona-finschi';
+      id_ADW = ''; % not present at 2018/10/04';
       
     case 'Psittrichas_fulgidus'
       id_CoL = 'c4e116ad8d3e8bcbf9c175f5768134c0';
@@ -7130,6 +7182,15 @@ function links = get_link(taxon, open)
       id_ADW = 'Parus_ater'; 
       id_avibase = 'A4EBA919FCAFED5E';
       id_birdlife = 'coal-tit-periparus-ater';
+      
+    case 'Alauda_arvensis'
+      id_CoL = 'f42843b15106ffcf24b9e321c81480f6';
+      id_Taxo = '56272';        
+      id_EoL = '916864';
+      id_AnAge = taxon;       
+      id_avibase = '2D9A361995111F42';
+      id_birdlife = 'eurasian-skylark-alauda-arvensis';
+      id_ADW = ''; % not present 2018/10/04
       
     case 'Delichon_urbicum'
       id_CoL = '1f9be412a6454b0bfd18f48e515e2592';
