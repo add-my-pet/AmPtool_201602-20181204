@@ -4938,6 +4938,15 @@ function links = get_link(taxon, open)
       id_avibase = 'E1714A09EA1DFD1D';
       id_birdlife = 'mandarin-duck-aix-galericulata';
       
+    case 'Chloephaga_picta'
+      id_CoL = 'd8faf6eabe3517ba21021e5551aed9c5';
+      id_WoRMS = ''; % not present 2018/10/11
+      id_Taxo = '52101';     
+      id_EoL = '1048516';
+      id_AnAge = '';  % not present 2018/10/11      
+      id_avibase = '74FC5DAB02BDF076';
+      id_birdlife = 'upland-goose-chloephaga-picta';
+      
     case 'Podilymbus_podiceps'
       id_CoL = 'efd1147e3604cc229f2e7dcafb95ca0b';
       id_WoRMS = '';
@@ -5045,7 +5054,17 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/10/05      
       id_avibase = '711541ED8D72AB0F';
       id_birdlife = 'edible-nest-swiftlet-aerodramus-fuciphagus';
+      id_ADW = ''; % not present 2018/10/11
 
+    case 'Aerodramus_spodiopygius'
+      id_CoL = '5a2063684286a3190213fc163ac6ee9d';
+      id_Taxo = '72154';        
+      id_EoL = '916126';
+      id_AnAge = ''; % not present 2018/10/11      
+      id_avibase = 'E1989B1D2C76266F';
+      id_birdlife = 'white-rumped-swiftlet-aerodramus-spodiopygius';
+      id_ADW = ''; % not present 2018/10/11
+      
     case 'Archilochus_alexandri'
       id_CoL = '6b01e05030a20cc0e9fb9e44afb24ea0';
       id_Taxo = '72515';        
@@ -5861,6 +5880,15 @@ function links = get_link(taxon, open)
       id_avibase = 'C412CD623EDA1B28';
       id_birdlife = 'red-tailed-tropicbird-phaethon-rubricauda';
       
+    case 'Phaethon_aethereus'
+      id_CoL = '99f324908523a3680168651a1089aeee';
+      id_WoRMS = '137177';
+      id_Taxo = '51637';
+      id_EoL = '1048566';
+      id_AnAge = taxon;       
+      id_avibase = '7EE005BD2701D129';
+      id_birdlife = 'red-billed-tropicbird-phaethon-aethereus';
+      
     case 'Rhynochetos_jubatus'
       id_CoL = '7a9792a8c9f4eb22d6d286d64456516c';
       id_Taxo = '53431';        
@@ -5913,6 +5941,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '151738D51BE6DDA4';
       id_birdlife = 'little-penguin-eudyptula-minor';
+      
+    case 'Eudyptes_pachyrhynchus'
+      id_CoL = '19c097d0adcc854ff96b7e0eb6f9ccc9';
+      id_WoRMS = '225971';
+      id_Taxo = '51400';        
+      id_EoL = '1049610';
+      id_AnAge = ''; % not present 2018/10/11       
+      id_avibase = 'A143FB33F08F1A0B';
+      id_birdlife = 'fiordland-penguin-eudyptes-pachyrhynchus';
       
     case 'Pygoscelis_adeliae'
       id_CoL = '1b57a7bf98db087e0a1a8d9757cbf688';
@@ -6600,6 +6637,16 @@ function links = get_link(taxon, open)
       id_avibase = 'F59AB6B357BF97D8';
       id_birdlife = 'brown-pelican-pelecanus-occidentalis';
       
+    case 'Scopus_umbretta'
+      id_CoL = '9662bfb7db9b03adc1bca8cf7f493673';
+      id_WoRMS = ''; % not present 2018/10/12
+      id_Taxo = '51839'; 
+      id_EoL = '1049601';
+      id_AnAge = ''; % not present 2018/10/12
+      id_avibase = 'FC10F6ED31D29188';
+      id_birdlife = 'hamerkop-scopus-umbretta';
+      id_ADW = ''; % not present 2018/10/12
+      
     case 'Platalea_leucorodia'
       id_CoL = '94c683511cf31861591cdf435513d232';
       id_WoRMS = '416678';
@@ -6659,6 +6706,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;      
       id_avibase = '0419DDC2F668EEE5';
       id_birdlife = 'white-backed-vulture-gyps-africanus';
+      
+    case 'Neophron_percnopterus'
+      id_CoL = 'b209dec88cafe4aeec24aa1d83280319';
+      id_Taxo = '52475'; 
+      id_EoL = '914577';
+      id_AnAge = taxon;      
+      id_avibase = '6D3480A64B4953CE';
+      id_birdlife = 'egyptian-vulture-neophron-percnopterus';
       
     case 'Circus_aeruginosus'
       id_CoL = '86e884dce0543b20ad3f399fc9ce5198';
@@ -7306,6 +7361,22 @@ function links = get_link(taxon, open)
       id_avibase = '2D9A361995111F42';
       id_birdlife = 'eurasian-skylark-alauda-arvensis';
       id_ADW = ''; % not present 2018/10/04
+      
+    case 'Galerida_cristata'
+      id_CoL = 'c9baf55211fff56d2918637118277b53';
+      id_Taxo = '56309';        
+      id_EoL = '913308';
+      id_AnAge = taxon;       
+      id_avibase = 'FC79EB47AF9F3925';
+      id_birdlife = 'crested-lark-galerida-cristata';
+      
+    case 'Ammomanes_deserti'
+      id_CoL = '0483e5663c20bc90300e591479b37700';
+      id_Taxo = '56275';        
+      id_EoL = '915660';
+      id_AnAge = taxon;       
+      id_avibase = 'A977348D32FB435E';
+      id_birdlife = 'desert-lark-ammomanes-deserti';
       
     case 'Delichon_urbicum'
       id_CoL = '1f9be412a6454b0bfd18f48e515e2592';
