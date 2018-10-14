@@ -4905,11 +4905,20 @@ function links = get_link(taxon, open)
      case 'Branta_hutchinsii'
       id_CoL = 'd3cd280ccb0c29ebb0fecb847da9fe4a';
       id_WoRMS = '422569';
-      id_Taxo = '52023'; % present as Brants canadensis      
+      id_Taxo = '52023'; % present as Branta canadensis      
       id_EoL = '1065131'; 
       id_AnAge = taxon;       
       id_avibase = '60214D4970BA4158';
       id_birdlife = 'cackling-goose-branta-hutchinsii';
+      
+     case 'Branta_leucopsis'
+      id_CoL = '898775cafe3c7b335815f149525575d0';
+      id_WoRMS = '159177';
+      id_Taxo = '52028';  
+      id_EoL = '1048436'; 
+      id_AnAge = taxon;       
+      id_avibase = '3163ED86A508BB83';
+      id_birdlife = 'barnacle-goose-branta-leucopsis';
       
     case 'Cereopsis_novaehollandiae'
       id_CoL = '6fcfa7cd5faa33888bdd3b5258ed9f23';
@@ -5432,15 +5441,6 @@ function links = get_link(taxon, open)
       id_avibase = 'F79373497BC9C8FD';
       id_birdlife = 'tufted-puffin-fratercula-cirrhata';
       
-    case 'Chlidonias_leucopterus'
-      id_CoL = 'a666e4b62baba1a7edf044f52f7eefd5';
-      id_WoRMS = '137136';
-      id_Taxo = '93234';        
-      id_EoL = '1049371';
-      id_AnAge = ''; % not present at 2017/06/18       
-      id_avibase = '43CAAEE3B0D305D9';
-      id_birdlife = 'white-winged-tern-chlidonias-leucopterus';
-      
     case 'Sterna_paradisaea'
       id_CoL = 'b20a894252b52f4c191ef168d1a7aaad';
       id_WoRMS = '137165';
@@ -5468,6 +5468,15 @@ function links = get_link(taxon, open)
       id_avibase = '74236837A4AFD042';
       id_birdlife = 'roseate-tern-sterna-dougallii';
       
+    case 'Sterna_sumatrana'
+      id_CoL = '1cbddd16b4a6b4061b0b9e84723d684c';
+      id_WoRMS = '212608';
+      id_Taxo = '70339';        
+      id_EoL = '1049717';
+      id_AnAge = ''; % not present 2018/10/14       
+      id_avibase = '9D6704AC5D349A16';
+      id_birdlife = 'black-naped-tern-sterna-sumatrana';
+      
     case 'Thalasseus_sandvicensis'
       id_CoL = 'fd712ba9ea195d3cc049c283c6ba3caa';
       id_WoRMS = '413044'; % unaccepted, to Sterna sandvicensis Latham, 1787
@@ -5487,6 +5496,44 @@ function links = get_link(taxon, open)
       id_ADW = ''; % not present 2018/09/29
       id_avibase = '3F9E1C51FBD48FC1';
       id_birdlife = 'elegant-tern-thalasseus-elegans';
+      
+    case 'Chlidonias_leucopterus'
+      id_CoL = 'a666e4b62baba1a7edf044f52f7eefd5';
+      id_WoRMS = '137136';
+      id_Taxo = '93234';        
+      id_EoL = '1049371';
+      id_AnAge = ''; % not present at 2017/06/18       
+      id_avibase = '43CAAEE3B0D305D9';
+      id_birdlife = 'white-winged-tern-chlidonias-leucopterus';
+      
+    case 'Chlidonias_hybrida'
+      id_CoL = 'd1c6569436ff34e1bdc688405b7ae7e7';
+      id_WoRMS = '137135';
+      id_Taxo = '53841';        
+      id_EoL = '1065007';
+      id_AnAge = ''; % not present at 2018/10/13       
+      id_avibase = '7AB4E42B260B5954';
+      id_birdlife = 'whiskered-tern-chlidonias-hybrida';
+      
+    case 'Gelochelidon_nilotica'
+      id_CoL = '1e05bb72cdb9b5c430dd624998082238';
+      id_WoRMS = '148798';
+      id_Taxo = '53845';        
+      id_EoL = '1049737';
+      id_AnAge = taxon;        
+      id_avibase = '441918B5AE353C3B';
+      id_birdlife = 'common-gull-billed-tern-gelochelidon-nilotica';
+      id_ADW = 'Sterna_nilotica'; 
+      
+    case 'Sternula_albifrons'
+      id_CoL = '1ef3bb17c2e53c170fba27107f4075e9';
+      id_WoRMS = '567480';
+      id_Taxo = '53858'; % present as Sternula albifrons       
+      id_EoL = '1049714';
+      id_AnAge = taxon;       
+      id_avibase = '17310BF0FE9BAC8A';
+      id_birdlife = 'little-tern-sternula-albifrons';
+      id_ADW = ''; % not present 2018/10/13
       
     case 'Chroicocephalus_ridibundus'
       id_CoL = '619c28ecb10081c76f0926710fdc982a';
@@ -6538,6 +6585,15 @@ function links = get_link(taxon, open)
       id_avibase = 'CECC7B264A61BD22';
       id_birdlife = 'european-shag-phalacrocorax-aristotelis';
       
+    case 'Phalacrocorax_carbo'
+      id_CoL = '591cf8f011508b9a31813c25fc9f5304';
+      id_WoRMS = '137179';
+      id_Taxo = '51686'; 
+      id_EoL = '46323495';
+      id_AnAge = taxon;      
+      id_avibase = 'ACD40E8C3CC720BF';
+      id_birdlife = 'great-cormorant-phalacrocorax-carbo';
+      
     case 'Fregata_minor'
       id_CoL = '223abd6f6e2a3ffab50991ce0c949026';
       id_WoRMS = '212654';
@@ -6738,6 +6794,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '4E76C8C0085794FE';
       id_birdlife = 'red-kite-milvus-milvus';
+      
+    case 'Butastur_rufipennis'
+      id_CoL = 'fc88155b922c5fb3cbc8bbcabb6ab085';
+      id_Taxo = '52625';        
+      id_EoL = '1047310';
+      id_AnAge = ''; % not present 2018/10/14       
+      id_avibase = '45A1D850C0690AD0';
+      id_birdlife = 'grasshopper-buzzard-butastur-rufipennis';
       
     case 'Sagittarius_serpentarius'
       id_CoL = 'ec311a0d228794fde1b568883133f0ac';
@@ -7293,6 +7357,14 @@ function links = get_link(taxon, open)
       id_avibase = '2CDECD36D1A0E5F3';
       id_birdlife = 'hawaiian-crow-corvus-hawaiiensis';
       
+    case 'Corvus_splendens'
+      id_CoL = 'b4d718fbe5ad0d58713d39068a8a0064';
+      id_Taxo = '59557';        
+      id_EoL = '916246';
+      id_AnAge = ''; % not present 2018/10/14 
+      id_avibase = '3986890399CA4859';
+      id_birdlife = 'house-crow-corvus-splendens';
+      
     case 'Picathartes_gymnocephalus'
       id_CoL = '8f49aaf3ff51bd1b89d3460db10997ab';
       id_Taxo = '57200';        
@@ -7378,6 +7450,15 @@ function links = get_link(taxon, open)
       id_avibase = 'A977348D32FB435E';
       id_birdlife = 'desert-lark-ammomanes-deserti';
       
+    case 'Calendulauda_erythrochlamys'
+      id_CoL = 'c78fc3c9ed92dd2e06d3039495dc1ada';
+      id_Taxo = '80786'; % present as Certhilauda erythrochlamys 2018/10/14       
+      id_EoL = '915697';
+      id_AnAge = ''; % not present 2018/10/14       
+      id_avibase = '214FC4649C27757F';
+      id_birdlife = 'dune-lark-calendulauda-erythrochlamys';
+      id_ADW = ''; % not present 2018/10/14    
+      
     case 'Delichon_urbicum'
       id_CoL = '1f9be412a6454b0bfd18f48e515e2592';
       id_Taxo = '1125977';        
@@ -7409,6 +7490,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = 'B9AC53DEE40266A7';
       id_birdlife = 'tahiti-swallow-hirundo-tahitica';
+      
+    case 'Hirundo_rustica'
+      id_CoL = 'fecc373b4a53e6c2e4c850b903531594';
+      id_Taxo = '56376';        
+      id_EoL = '917688';
+      id_AnAge = taxon;       
+      id_avibase = '58C502EA7AF3E023';
+      id_birdlife = 'barn-swallow-hirundo-rustica';
       
     case 'Sylvia_atricapilla'
       id_CoL = '4134d00c993b71067bfeb807a0d09c4b';

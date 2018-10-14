@@ -4,3 +4,4 @@ Gyps
 Neophron
 Circus
 Milvus
+Butastur

@@ -2,3 +2,5 @@ Onychoprion
 Sterna
 Thalasseus
 Chlidonias
+Gelochelidon
+Sternula
