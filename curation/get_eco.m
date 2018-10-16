@@ -9098,6 +9098,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Merops_bulocki'
+      climate = {'BSh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnwfm','Tntfm'};
+      migrate = {};
+      food    = {'biCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Ramphastos_toco'
       climate = {'Aw'};
       ecozone = {'TN'};
@@ -9788,6 +9798,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Petrochelidon_spilodera'
+      climate = {'Cwa','Cwb'};
+      ecozone = {'TH'};
+      habitat = {'0iTh','0iTf'};
+      embryo  = {'Tncf'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Sylvia_atricapilla'
       climate = {'BSk','Cfb','Dfb','Dfc'};
       ecozone = {'THp'};
@@ -10025,6 +10045,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tnwf'};
       migrate = {'Ml'};
       food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Myrmecocichla_formicivora'
+      climate = {'BWh','BWk','BSh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTd','0iThh','0iTg'};
+      embryo  = {'Tnwf'};
+      migrate = {};
+      food    = {'biCii'};
       gender  = {'Dg'};
       reprod  = {'O'};
 

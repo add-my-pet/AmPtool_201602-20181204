@@ -6956,6 +6956,14 @@ function links = get_link(taxon, open)
       id_avibase = '3FD21E0406D6A736';
       id_birdlife = 'guam-kingfisher-todiramphus-cinnamominus';
       
+    case 'Merops_bulocki'
+      id_CoL = '92edd4c2f907dae8786acec63c9f7786';
+      id_Taxo = '93273';        
+      id_EoL = '1050036';
+      id_AnAge = ''; % not present 2018/10/16       
+      id_avibase = 'E6DC5DA11534CBD6';
+      id_birdlife = 'red-throated-bee-eater-merops-bulocki';
+      
     case 'Ramphastos_toco'
       id_CoL = '5cf6207f05c77e03bcbcd85733db072f';
       id_Taxo = '55573';        
@@ -7525,6 +7533,14 @@ function links = get_link(taxon, open)
       id_avibase = '58C502EA7AF3E023';
       id_birdlife = 'barn-swallow-hirundo-rustica';
       
+    case 'Petrochelidon_spilodera'
+      id_CoL = '71189ed208e795bf13932045e8813238';
+      id_Taxo = '56405';        
+      id_EoL = '917688';
+      id_AnAge = taxon;       
+      id_avibase = '58C502EA7AF3E023';
+      id_birdlife = 'barn-swallow-hirundo-rustica';
+      
     case 'Sylvia_atricapilla'
       id_CoL = '4134d00c993b71067bfeb807a0d09c4b';
       id_Taxo = '57368';        
@@ -7721,6 +7737,14 @@ function links = get_link(taxon, open)
       id_birdlife = 'european-pied-flycatcher-ficedula-hypoleuca'; 
       id_ADW = ''; % not present 2018/10/04
       
+    case 'Myrmecocichla_formicivora'
+      id_CoL = '7dac65c12557ec13699c6d7b19b6a233';
+      id_Taxo = '93293';   
+      id_EoL = '1051590';
+      id_AnAge = ''; % not present 2018/10/16   
+      id_avibase = '400A83B9AE890813';
+      id_birdlife = 'southern-anteater-chat-myrmecocichla-formicivora'; 
+      
     case 'Cinnyris_jugularis'
       id_CoL = 'd7ff4b36e31373ca9a0d3b401e370436';
       id_Taxo = '1126557';        
@@ -7768,7 +7792,7 @@ function links = get_link(taxon, open)
       id_EoL = '1050409';
       id_AnAge = ''; % not present 2018/10/15      
       id_avibase = 'ECC40D44CF305866';
-      id_birdlife = 'zebra-waxbill-amandava-subflava';
+      id_birdlife = 'timor-zebra-finch-taeniopygia-guttata';
       
     case 'Anthus_pratensis'
       id_CoL = 'eb78a0bc492c93711d4c1ca8426d71d9';
