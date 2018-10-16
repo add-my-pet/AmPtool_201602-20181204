@@ -8998,6 +8998,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Otus_senegalensis'
+      climate = {'A','B','C'};
+      ecozone = {'TPa'};
+      habitat = {'0iTh','0iTi','0iTf'};
+      embryo  = {'Tnsf'};
+      migrate = {};
+      food    = {'biCi','biCv'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Athene_noctua'
       climate = {'B','C','D'};
       ecozone = {'TH'};
@@ -9298,6 +9308,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Coracopsis_barklyi'
+      climate = {'Af'};
+      ecozone = {'TA'}; % endemic to Prasin
+      habitat = {'0iTf'};
+      embryo  = {'Tnwf'};
+      migrate = {};
+      food    = {'biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Eos_histrio'
       climate = {'Af'};
       ecozone = {'TA'}; % endemic to Karakelang, Indonesia
@@ -9502,6 +9522,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Cfb'};
       ecozone = {'TAz'};
       habitat = {'0iTf','0iTh'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Pomatostomus_temporalis'
+      climate = {'Am','BSh','BWh'};
+      ecozone = {'TA'};
+      habitat = {'0iTf'};
       embryo  = {'Tnpf'};
       migrate = {};
       food    = {'biCi'};
@@ -10042,6 +10072,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'Af'};
       ecozone = {'TPi','TA'};
       habitat = {'0iTh','0iTi','0iTs','0iTg','0iTa'};
+      embryo  = {'Tnwf','Tncf'};
+      migrate = {};
+      food    = {'biCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Amandava_subflava'
+      climate = {'A','C'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTg'};
       embryo  = {'Tnwf','Tncf'};
       migrate = {};
       food    = {'biCi','biHs'};

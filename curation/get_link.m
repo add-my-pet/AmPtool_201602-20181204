@@ -6876,6 +6876,14 @@ function links = get_link(taxon, open)
       id_avibase = '8F123A11E5DADFDD';
       id_birdlife = 'short-eared-owl-asio-flammeus';
       
+    case 'Otus_senegalensis'
+      id_CoL = '63852ffa1673f7c03497044276f64f5c';
+      id_Taxo = '54735';        
+      id_EoL = '1036379';
+      id_AnAge = 'Otus_scops';
+      id_avibase = 'F0AA4FE4EE5F5395';
+      id_birdlife = 'african-scops-owl-otus-senegalensis';
+      
     case 'Athene_noctua'
       id_CoL = 'f021258882a76882cfe825b4184b33c1';
       id_Taxo = '54645';        
@@ -7128,6 +7136,15 @@ function links = get_link(taxon, open)
       id_birdlife = 'pesquets-parrot-psittrichas-fulgidus';
       id_ADW = ''; % not present 2018/08/07
       
+    case 'Coracopsis_barklyi'
+      id_CoL = '80e1be27f5d7bd1205f366d66c3b23bf'; % present as Coracopsis nigra 2018/10/14
+      id_Taxo = '54359';  % present as Coracopsis nigra 2018/10/14       
+      id_EoL = '43000262';
+      id_AnAge = 'Coracopsis_nigra';       
+      id_avibase = 'EB97C0F2675AD210';
+      id_birdlife = 'seychelles-parrot-coracopsis-barklyi';
+      id_ADW = 'Coracopsis_nigra';
+      
     case 'Eos_histrio'
       id_CoL = '520503d51d2f744dbcf7e45bf21d1cf3';
       id_Taxo = '70541';        
@@ -7299,6 +7316,15 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present at 2018/10/02       
       id_avibase = 'C3D7DC15FA86C16E';
       id_birdlife = 'grey-gerygone-gerygone-igata';
+
+    case 'Pomatostomus_temporalis'
+      id_CoL = 'c92091998117188ba812c3b5660ba295';
+      id_Taxo = '57054';        
+      id_EoL = '919822';
+      id_AnAge = ''; % not present at 2018/10/15       
+      id_avibase = 'B783AA95BBE71F78';
+      id_birdlife = 'grey-crowned-babbler-pomatostomus-temporalis';
+      id_ADW = '';  % not present at 2018/10/15   
 
     case 'Paradisaea_rubra'
       id_CoL = '150e58f547fcbceda2a7149c865a9c36';
@@ -7735,6 +7761,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = 'CF7D71B0FC773B09';
       id_birdlife = 'timor-zebra-finch-taeniopygia-guttata';
+      
+    case 'Amandava_subflava'
+      id_CoL = '30d5788e4061c63641d5dbd58349eb37';
+      id_Taxo = '167305';        
+      id_EoL = '1050409';
+      id_AnAge = ''; % not present 2018/10/15      
+      id_avibase = 'ECC40D44CF305866';
+      id_birdlife = 'zebra-waxbill-amandava-subflava';
       
     case 'Anthus_pratensis'
       id_CoL = 'eb78a0bc492c93711d4c1ca8426d71d9';
