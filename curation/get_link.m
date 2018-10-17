@@ -6798,6 +6798,14 @@ function links = get_link(taxon, open)
       id_avibase = '6D3480A64B4953CE';
       id_birdlife = 'egyptian-vulture-neophron-percnopterus';
       
+    case 'Necrosyrtes_monachus'
+      id_CoL = '677a8f57af0272a5504e67028c77d1fc';
+      id_Taxo = '52473'; 
+      id_EoL = '1048942';
+      id_AnAge = taxon;      
+      id_avibase = '131038ADDA3373B0';
+      id_birdlife = 'hooded-vulture-necrosyrtes-monachus';
+      
     case 'Circus_aeruginosus'
       id_CoL = '86e884dce0543b20ad3f399fc9ce5198';
       id_Taxo = '52508';        
@@ -7451,6 +7459,14 @@ function links = get_link(taxon, open)
       id_avibase = '3986890399CA4859';
       id_birdlife = 'house-crow-corvus-splendens';
       
+    case 'Corvus_albus'
+      id_CoL = '512cfa54fde63929123878fb014a5d93';
+      id_Taxo = '59521';        
+      id_EoL = '917338';
+      id_AnAge = ''; % not present 2018/10/17 
+      id_avibase = '34D538E14AA16E13';
+      id_birdlife = 'pied-crow-corvus-albus';
+      
     case 'Picathartes_gymnocephalus'
       id_CoL = '8f49aaf3ff51bd1b89d3460db10997ab';
       id_Taxo = '57200';        
@@ -7870,6 +7886,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;    
       id_avibase = '5983D6776C4C4F85';
       id_birdlife = 'western-yellow-wagtail-motacilla-flava';
+      
+    case 'Motacilla_aguimp'
+      id_CoL = 'ce26c7b210a316bd482c036ae2052894';
+      id_Taxo = '82699';        
+      id_EoL = '1051307';
+      id_AnAge = ''; % not present 2018/10/17    
+      id_avibase = 'CE7D41A6447BCC86';
+      id_birdlife = 'african-pied-wagtail-motacilla-aguimp';
       
     case 'Calcarius_lapponicus'
       id_CoL = 'bd8ade26596fee00d0d7d72a59703c7f';

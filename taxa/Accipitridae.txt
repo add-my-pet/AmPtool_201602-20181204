@@ -2,6 +2,7 @@ Aquila
 Haliaeetus
 Gyps
 Neophron
+Necrosyrtes
 Circus
 Milvus
 Butastur
