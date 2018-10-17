@@ -4785,6 +4785,15 @@ function links = get_link(taxon, open)
       id_avibase = '56CCA7179C9FA71D';
       id_birdlife = 'northern-pintail-anas-acuta';
 
+    case 'Anas_sparsa'
+      id_CoL = '3cde9bf292c2d4cf3dbebc8aa1018d70';
+      id_WoRMS = ''; % not present 2018/10/17
+      id_Taxo = '52176';
+      id_EoL = '914434';
+      id_AnAge = ''; % not present 2018/10/17       
+      id_avibase = '1EAFAD9FAED6B99B';
+      id_birdlife = 'african-black-duck-anas-sparsa';
+
     case 'Mareca_strepera'
       id_CoL = '42e48afc8f660b16f95a96fecb2917ea'; % present as Anas strepera 26/09/26
       id_WoRMS = '159171'; % present as Anas strepera 26/09/26
@@ -5609,6 +5618,16 @@ function links = get_link(taxon, open)
       id_avibase = '3E7F825D03C0DC3E';
       id_birdlife = 'sooty-tern-onychoprion-fuscatus';
       id_ADW = 'Sterna_fuscata';
+      
+    case 'Onychoprion_anaethetus'
+      id_CoL = '6dde5b4302290c1858542ea44d32d609';
+      id_WoRMS = '567792';
+      id_Taxo = '53860'; % present as Sterna anaethetus 2018/10/17     
+      id_EoL = '1049713';
+      id_AnAge = taxon;    
+      id_avibase = 'E6518B9D5C802F2A';
+      id_birdlife = 'bridled-tern-onychoprion-anaethetus';
+      id_ADW = 'Sterna_anaethetus';
       
     case 'Stercorarius_longicaudus'
       id_CoL = '7463b0f804c2d9ab6acd1e21194c690a';
@@ -6763,6 +6782,14 @@ function links = get_link(taxon, open)
       id_avibase = '0419DDC2F668EEE5';
       id_birdlife = 'white-backed-vulture-gyps-africanus';
       
+    case 'Gyps_coprotheres'
+      id_CoL = '4ccc6035b905d7bd01564007e0366560';
+      id_Taxo = '52464'; 
+      id_EoL = '912805';
+      id_AnAge = ''; % not present 2018/10/17      
+      id_avibase = 'F85BEEB442E4D57D';
+      id_birdlife = 'cape-vulture-gyps-coprotheres';
+      
     case 'Neophron_percnopterus'
       id_CoL = 'b209dec88cafe4aeec24aa1d83280319';
       id_Taxo = '52475'; 
@@ -7028,6 +7055,30 @@ function links = get_link(taxon, open)
       id_avibase = 'D2E2AE57ABAD79F3';
       id_birdlife = 'kea-nestor-notabilis';
       
+    case 'Calyptorhynchus_lathami'
+      id_CoL = 'adf0301d062ec2ea740e1e67228c4a77'; 
+      id_Taxo = '70575';      
+      id_EoL = '1177831';
+      id_AnAge = taxon;       
+      id_avibase = 'D090A8A4A7716960';
+      id_birdlife = 'glossy-black-cockatoo-calyptorhynchus-lathami';
+      
+    case 'Zanda_funerea'
+      id_CoL = '7a47e67a03092b7e9be4de5b1b6df5ea'; % present as Calyptorhynchus funereus 2018/10/09
+      id_Taxo = '54189'; % present as Calyptorhynchus funereus 2018/10/09       
+      id_EoL = '1177830'; % present as Calyptorhynchus funereus 2018/10/09
+      id_AnAge = 'Calyptorhynchus_funereus';       
+      id_avibase = 'E6DFA7077084129A';
+      id_birdlife = 'yellow-tailed-black-cockatoo-zanda-funerea';
+      
+    case 'Probosciger_aterrimus'
+      id_CoL = 'c1b2b9bf490c44f132ac4dcd7877091b';
+      id_Taxo = '54193';        
+      id_EoL = '1177829';
+      id_AnAge = taxon;       
+      id_avibase = 'ADC0F2618675AC3B';
+      id_birdlife = '22684723';
+      
     case 'Cacatua_ophthalmica'
       id_CoL = '0efc677801d94a8928c8a4872806803b';
       id_Taxo = '70577';        
@@ -7052,22 +7103,6 @@ function links = get_link(taxon, open)
       id_avibase = '0B5492FA03FB597B';
       id_birdlife = 'salmon-crested-cockatoo-cacatua-moluccensis';
       id_ADW = ''; % nor present 2018/08/06
-      
-    case 'Probosciger_aterrimus'
-      id_CoL = 'c1b2b9bf490c44f132ac4dcd7877091b';
-      id_Taxo = '54193';        
-      id_EoL = '1177829';
-      id_AnAge = taxon;       
-      id_avibase = 'ADC0F2618675AC3B';
-      id_birdlife = '22684723';
-      
-    case 'Zanda_funerea'
-      id_CoL = '7a47e67a03092b7e9be4de5b1b6df5ea'; % present as Calyptorhynchus funereus 2018/10/09
-      id_Taxo = '54189'; % present as Calyptorhynchus funereus 2018/10/09       
-      id_EoL = '1177830'; % present as Calyptorhynchus funereus 2018/10/09
-      id_AnAge = 'Calyptorhynchus_funereus';       
-      id_avibase = 'E6DFA7077084129A';
-      id_birdlife = 'yellow-tailed-black-cockatoo-zanda-funerea';
       
     case 'Forpus_passerinus'
       id_CoL = '9dde78344c3ce809f5af4d35947c6ae0';
@@ -7300,6 +7335,14 @@ function links = get_link(taxon, open)
       id_avibase = '391EA6CB4F70C90F';
       id_birdlife = 'splendid-fairy-wren-malurus-splendens';
 
+    case 'Ramsayornis_modestus'
+      id_CoL = '8fde52516c3f6b9aa10172f19fb57b79';
+      id_Taxo = '57988';        
+      id_EoL = '918796';
+      id_AnAge = ''; % not present at 2018/10/17       
+      id_avibase = '8C34DEDF626266FD';
+      id_birdlife = 'brown-backed-honeyeater-ramsayornis-modestus';
+
     case 'Acanthiza_chrysorrhoa'
       id_CoL = 'abee6623e4e8633c35d81f7cd4dc3cb4';
       id_Taxo = '57622';        
@@ -7349,6 +7392,15 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present at 2018/07/27       
       id_avibase = '1444D04FE604ADD9';
       id_birdlife = 'short-tailed-paradigalla-paradigalla-brevicauda';
+
+    case 'Astrapia_mayeri'
+      id_CoL = '2ed62ac51a588c41ffaa169601a2b7e0';
+      id_Taxo = '59387';        
+      id_EoL = '1051849';
+      id_AnAge = ''; % not present at 2018/10/17       
+      id_avibase = '8F49F93299C815A4';
+      id_birdlife = 'ribbon-tailed-astrapia-astrapia-mayeri';
+      id_ADW = ''; % not present at 2018/10/17  
 
     case 'Lanius_senator'
       id_CoL = '2f89fd5f925b02ec2152336e3e270879';
@@ -7662,6 +7714,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_avibase = 'D77E4B418D581FB2';
       id_birdlife = 'american-robin-turdus-migratorius';
+      
+    case 'Turdus_eremita'
+      id_CoL = '070c73c2aa0e407d7fe37fe0e0391d0f'; % present as Nesocichla eremita 2018/10/16
+      id_Taxo = '84397'; % present as Nesocichla eremita 2018/10/16       
+      id_EoL = '1052828'; % present as Nesocichla eremita 2018/10/16   
+      id_AnAge = ''; % not present 2018/10/16
+      id_avibase = 'C740512DF96766B1';
+      id_birdlife = 'tristan-thrush-turdus-eremita';
+      id_ADW = 'Nesocichla_eremita';
       
     case 'Catharus_minimus'
       id_CoL = 'a396879ac8ff28c620d38e100c18fa5d';
