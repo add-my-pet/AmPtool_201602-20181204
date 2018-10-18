@@ -7038,6 +7038,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Caprimulgus_pectoralis'
+      climate = {'A','B','C'};
+      ecozone = {'TPa'};
+      habitat = {'0iTh','0iTf','0iTi'};
+      embryo  = {'Tnpfm'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Podargus_strigoides'
       climate = {'BSh','BSk','Cfa'};
       ecozone = {'TA'};
@@ -8838,6 +8848,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Bubulcus_ibis'
+      climate = {'A','B','C'};
+      ecozone = {'TH','TN','TP','TA'};
+      habitat = {'0iFm','0iFe','0iMm'};
+      embryo  = {'Tnpfm'};
+      migrate = {'Ms'};
+      food    = {'biCi','biCv'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Aquila_chrysaetos'
       climate = {'BSk','Cfa','Cfb','Dfa','Dfb','Dfc'};
       ecozone = {'TH'};
@@ -8908,6 +8928,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Accipiter_fasciatus'
+      climate = {'A','B','C'};
+      ecozone = {'TA'};
+      habitat = {'0iFm','0iTh'};
+      embryo  = {'Tnsf'};
+      migrate = {};
+      food    = {'biCvb','biCvm','biCva','biCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Circus_aeruginosus'
       climate = {'Cfb','Dfb','Dfc'};
       ecozone = {'THp'};
@@ -8945,6 +8975,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tnsf'};
       migrate = {'Ms'};
       food    = {'biCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Buteo_oreophilus'
+      climate = {'A','BSh'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTf'};
+      embryo  = {'Tnsf'};
+      migrate = {};
+      food    = {'biCv','biCi'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
@@ -9288,21 +9328,11 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
-    case 'Forpus_passerinus'
-      climate = {'A'};
-      ecozone = {'TN'};
-      habitat = {'0iTf','0iTh','0iTi'};
+    case 'Poicephalus_robustus'
+      climate = {'Cw'};
+      ecozone = {'TPa'};
+      habitat = {'0iTf','0iTi'};
       embryo  = {'Tnwf'};
-      migrate = {};
-      food    = {'biHs'};
-      gender  = {'Dg'};
-      reprod  = {'O'};
-
-    case 'Myiopsitta_monachus'
-      climate = {'Aw','Cwa','Cfa'};
-      ecozone = {'TN'};
-      habitat = {'0iTg','0iTh','0iTi'};
-      embryo  = {'Tnpfm'};
       migrate = {};
       food    = {'biHs'};
       gender  = {'Dg'};
@@ -9353,6 +9383,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       ecozone = {'TN'};
       habitat = {'0iTf','0iTi'};
       embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Myiopsitta_monachus'
+      climate = {'Aw','Cwa','Cfa'};
+      ecozone = {'TN'};
+      habitat = {'0iTg','0iTh','0iTi'};
+      embryo  = {'Tnpfm'};
+      migrate = {};
+      food    = {'biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Forpus_passerinus'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf','0iTh','0iTi'};
+      embryo  = {'Tnwf'};
       migrate = {};
       food    = {'biHs'};
       gender  = {'Dg'};
@@ -10232,6 +10282,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       climate = {'A','B','C'};
       ecozone = {'TPa'};
       habitat = {'0iTh','0iTi','0iTs','0iTg'};
+      embryo  = {'Tnsf'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Motacilla_clara'
+      climate = {'Am'};
+      ecozone = {'TPa'};
+      habitat = {'0iTh','0iTi','0iTf'};
       embryo  = {'Tnsf'};
       migrate = {};
       food    = {'biCi'};

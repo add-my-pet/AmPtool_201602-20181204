@@ -5123,6 +5123,14 @@ function links = get_link(taxon, open)
       id_avibase = '24E39ACD5692DA4A';
       id_birdlife = 'common-nighthawk-chordeiles-minor';
       
+    case 'Caprimulgus_pectoralis'
+      id_CoL = 'f7ff6f0a74d8721acada5cb8893073f0';
+      id_Taxo = '72121';        
+      id_EoL = '1178156';
+      id_AnAge = ''; % not present 2018/10/18    
+      id_avibase = '62ED1974CD8DF56F';
+      id_birdlife = 'fiery-necked-nightjar-caprimulgus-pectoralis';
+      
     case 'Podargus_strigoides'
       id_CoL = '77210dd21b917f4baf425d753ad78f02';
       id_Taxo = '54798';        
@@ -6749,6 +6757,15 @@ function links = get_link(taxon, open)
       id_avibase = '93694BB5492F7012';
       id_birdlife = 'great-blue-heron-ardea-herodias';
       
+    case 'Bubulcus_ibis'
+      id_CoL = 'd0eded93aea3f404ba4f291897195150';
+      id_WoRMS = ''; % not present 2018/10/18
+      id_Taxo = '51763'; 
+      id_EoL = '1048666';
+      id_AnAge = taxon;
+      id_avibase = 'AB1CB2161CDC177A';
+      id_birdlife = 'cattle-egret-bubulcus-ibis';
+      
     case 'Aquila_chrysaetos'
       id_CoL = '5b68758c108a10b7c6be9f990d3ad0a3';
       id_Taxo = '52605'; 
@@ -6806,6 +6823,14 @@ function links = get_link(taxon, open)
       id_avibase = '131038ADDA3373B0';
       id_birdlife = 'hooded-vulture-necrosyrtes-monachus';
       
+    case 'Accipiter_fasciatus'
+      id_CoL = '2c4dded548b877f5b5cb38a9cc9c136a';
+      id_Taxo = '52540';        
+      id_EoL = '1047987';
+      id_AnAge = ''; % not present 2018/10/18       
+      id_avibase = '8257AE54E56538E3';
+      id_birdlife = 'brown-goshawk-accipiter-fasciatus';
+      
     case 'Circus_aeruginosus'
       id_CoL = '86e884dce0543b20ad3f399fc9ce5198';
       id_Taxo = '52508';        
@@ -6837,6 +6862,14 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/10/14       
       id_avibase = '45A1D850C0690AD0';
       id_birdlife = 'grasshopper-buzzard-butastur-rufipennis';
+      
+    case 'Buteo_oreophilus'
+      id_CoL = '54786ca59ccae2ae00dab160b16e8691';
+      id_Taxo = '52652';        
+      id_EoL = '1048454';
+      id_AnAge = ''; % not present 2018/10/18       
+      id_avibase = '5BFEFD9AB8F3FD64';
+      id_birdlife = 'mountain-buzzard-buteo-oreophilus';
       
     case 'Sagittarius_serpentarius'
       id_CoL = 'ec311a0d228794fde1b568883133f0ac';
@@ -7112,21 +7145,13 @@ function links = get_link(taxon, open)
       id_birdlife = 'salmon-crested-cockatoo-cacatua-moluccensis';
       id_ADW = ''; % nor present 2018/08/06
       
-    case 'Forpus_passerinus'
-      id_CoL = '9dde78344c3ce809f5af4d35947c6ae0';
-      id_Taxo = '54427';        
-      id_EoL = '1178014';
+    case 'Poicephalus_robustus'
+      id_CoL = '31ab651454981a843b7828d79a2fcb29';
+      id_Taxo = '54376';        
+      id_EoL = '1177918';
       id_AnAge = taxon;       
-      id_avibase = 'E43CCCA642160851';
-      id_birdlife = 'green-rumped-parrotlet-forpus-passerinus';
-      
-    case 'Myiopsitta_monachus'
-      id_CoL = '66379bf2092e6d5ed3e6728d671bc89f';
-      id_Taxo = '54433';        
-      id_EoL = '915945';
-      id_AnAge = taxon;       
-      id_avibase = '35810386DDA72E08';
-      id_birdlife = 'monk-parakeet-myiopsitta-monachus';
+      id_avibase = 'D21C1A59BBB9A895';
+      id_birdlife = 'cape-parrot-poicephalus-robustus';
       
     case 'Cyanopsitta_spixii'
       id_CoL = '186620ee8938aeb164c570ca8f42e46a';
@@ -7135,14 +7160,6 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = 'FB8F32C30473F64B';
       id_birdlife = 'spixs-macaw-cyanopsitta-spixii';
-      
-    case 'Cyanoliseus_patagonus'
-      id_CoL = '7fa6e83064c52d5d31e55651a857099d';
-      id_Taxo = '54421';        
-      id_EoL = '1177987';
-      id_AnAge = taxon;       
-      id_avibase = '1A7D8F6BCD3DFE25';
-      id_birdlife = 'burrowing-parrot-cyanoliseus-patagonus';
       
     case 'Ara_ararauna'
       id_CoL = '6a101975b78c4f5c22ff46fc4be8b43f';
@@ -7159,6 +7176,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '5B015EDA14786E2D';
       id_birdlife = 'scarlet-macaw-ara-macao';
+      
+    case 'Cyanoliseus_patagonus'
+      id_CoL = '7fa6e83064c52d5d31e55651a857099d';
+      id_Taxo = '54421';        
+      id_EoL = '1177987';
+      id_AnAge = taxon;       
+      id_avibase = '1A7D8F6BCD3DFE25';
+      id_birdlife = 'burrowing-parrot-cyanoliseus-patagonus';
       
     case 'Amazona_amazonica'
       id_CoL = 'c19a03f82708bd327ac7ba77a8d4bb80';
@@ -7177,6 +7202,22 @@ function links = get_link(taxon, open)
       id_avibase = '66C32CC9A92F6633';
       id_birdlife = 'lilac-crowned-amazon-amazona-finschi';
       id_ADW = ''; % not present at 2018/10/04';
+      
+    case 'Myiopsitta_monachus'
+      id_CoL = '66379bf2092e6d5ed3e6728d671bc89f';
+      id_Taxo = '54433';        
+      id_EoL = '915945';
+      id_AnAge = taxon;       
+      id_avibase = '35810386DDA72E08';
+      id_birdlife = 'monk-parakeet-myiopsitta-monachus';
+      
+    case 'Forpus_passerinus'
+      id_CoL = '9dde78344c3ce809f5af4d35947c6ae0';
+      id_Taxo = '54427';        
+      id_EoL = '1178014';
+      id_AnAge = taxon;       
+      id_avibase = 'E43CCCA642160851';
+      id_birdlife = 'green-rumped-parrotlet-forpus-passerinus';
       
     case 'Psittrichas_fulgidus'
       id_CoL = 'c4e116ad8d3e8bcbf9c175f5768134c0';
@@ -7894,6 +7935,14 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/10/17    
       id_avibase = 'CE7D41A6447BCC86';
       id_birdlife = 'african-pied-wagtail-motacilla-aguimp';
+      
+    case 'Motacilla_clara'
+      id_CoL = 'd88708530dba109eafae7f64c0a9729c';
+      id_Taxo = '82696';        
+      id_EoL = '1051314';
+      id_AnAge = ''; % not present 2018/10/18    
+      id_avibase = '747B3A52F2260C65';
+      id_birdlife = 'mountain-wagtail-motacilla-clara';
       
     case 'Calcarius_lapponicus'
       id_CoL = 'bd8ade26596fee00d0d7d72a59703c7f';

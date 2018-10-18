@@ -1,6 +1,2 @@
-Forpus
-Myiopsitta
-Cyanopsitta
-Ara
-Cyanoliseus
-Amazona
+Psittacinae
+Arinae
