@@ -7642,13 +7642,29 @@ function links = get_link(taxon, open)
       id_avibase = '58C502EA7AF3E023';
       id_birdlife = 'barn-swallow-hirundo-rustica';
       
+    case 'Hirundo_neoxena'
+      id_CoL = '7d9a4f1f514c16b797f68c0b7289ed55';
+      id_Taxo = '81105';        
+      id_EoL = '1050772';
+      id_AnAge = ''; % not present 2018/10/18       
+      id_avibase = 'F8F6B79557EFD5FA';
+      id_birdlife = 'welcome-swallow-hirundo-neoxena';
+      
     case 'Petrochelidon_spilodera'
       id_CoL = '71189ed208e795bf13932045e8813238';
       id_Taxo = '56405';        
-      id_EoL = '917688';
-      id_AnAge = taxon;       
-      id_avibase = '58C502EA7AF3E023';
-      id_birdlife = 'barn-swallow-hirundo-rustica';
+      id_EoL = '1050785'; % present as Hirundo spilodera 2018/10/18
+      id_AnAge = ''; % not present 2018/10/18      
+      id_avibase = '7D1AE743D8097CD7';
+      id_birdlife = 'south-african-swallow-petrochelidon-spilodera';
+      
+    case 'Petrochelidon_ariel'
+      id_CoL = 'cf5073a09ebb8d9bb2def5a61013f379';
+      id_Taxo = '56397';        
+      id_EoL = '1050757'; % present as Hirundo ariel 2018/10/18
+      id_AnAge = ''; % not present 2018/10/18       
+      id_avibase = '7FB743966F7573BB';
+      id_birdlife = 'fairy-martin-petrochelidon-ariel';
       
     case 'Sylvia_atricapilla'
       id_CoL = '4134d00c993b71067bfeb807a0d09c4b';
@@ -7820,6 +7836,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '94A4403295E2D9BE';
       id_birdlife = 'common-starling-sturnus-vulgaris';
+
+    case 'Buphagus_erythrorhynchus'
+      id_CoL = '3e8f6e0b090a6f84931f2b7c00219ffe';
+      id_Taxo = '59266';        
+      id_EoL = '1052164';
+      id_AnAge = ''; % not present 2018/10/18       
+      id_avibase = '7471E71D4A122CE3';
+      id_birdlife = 'red-billed-oxpecker-buphagus-erythrorynchus'; % watch deviating spelling
 
     case 'Toxostoma_curvirostre'
       id_CoL = '004ebe47b553114eda7f8ccc707f1348';

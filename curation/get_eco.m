@@ -9928,12 +9928,32 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Hirundo_neoxena'
+      climate = {'A','B','C'};
+      ecozone = {'TA','TAz'};
+      habitat = {'0iTh','0iTf'};
+      embryo  = {'Tncf'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Petrochelidon_spilodera'
       climate = {'Cwa','Cwb'};
       ecozone = {'TH'};
       habitat = {'0iTh','0iTf'};
       embryo  = {'Tncf'};
       migrate = {'Ml'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Petrochelidon_ariel'
+      climate = {'A','B','C'};
+      ecozone = {'TA'};
+      habitat = {'0iTh','0iTf'};
+      embryo  = {'Tncf'};
+      migrate = {};
       food    = {'biCi'};
       gender  = {'Dg'};
       reprod  = {'O'};
@@ -10145,6 +10165,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tnwfm'}; 
       migrate = {'Ml'};
       food    = {'biCi','xiHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Buphagus_erythrorhynchus'
+      climate = {'A','B','C'};
+      ecozone = {'TPa'};
+      habitat = {'0iTi','0iTs'};
+      embryo  = {'Tnwfm'}; 
+      migrate = {'Ms'};
+      food    = {'biCi'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
