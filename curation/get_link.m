@@ -4992,6 +4992,22 @@ function links = get_link(taxon, open)
       id_avibase = '0F9B5174A8ACF737';
       id_birdlife = 'greater-flamingo-phoenicopterus-roseus';
 
+    case 'Patagioenas_fasciata'
+      id_CoL = '0b47943f1e932f8673021f8eb9ac0771';
+      id_Taxo = ''; % not present 2018/08/03       
+      id_EoL = '1064947';
+      id_AnAge = taxon;       
+      id_avibase = '31ACA9981952B4C4';
+      id_birdlife = 'northern-band-tailed-pigeon-patagioenas-fasciata';
+
+    case 'Streptopelia_decaocto'
+      id_CoL = 'be859a5ea349fa8486b88d34163c83d1';
+      id_Taxo = '54033';        
+      id_EoL = '915275';
+      id_AnAge = taxon;       
+      id_avibase = '41FACE6330A2F073';
+      id_birdlife = 'eurasian-collared-dove-streptopelia-decaocto';
+
     case 'Columba_oenas'
       id_CoL = 'ed30f61f67a50dfc7efd082e23ec61b9';
       id_Taxo = '53977'; 
@@ -5016,14 +5032,6 @@ function links = get_link(taxon, open)
       id_avibase = '760F307A30689D66';
       id_birdlife = 'common-woodpigeon-columba-palumbus';
 
-    case 'Patagioenas_fasciata'
-      id_CoL = '0b47943f1e932f8673021f8eb9ac0771';
-      id_Taxo = ''; % not present 2018/08/03       
-      id_EoL = '1064947';
-      id_AnAge = taxon;       
-      id_avibase = '31ACA9981952B4C4';
-      id_birdlife = 'northern-band-tailed-pigeon-patagioenas-fasciata';
-
     case 'Caloenas_nicobarica'
       id_CoL = 'ea496f20e6c2411aaf5fe84a8389a39c';
       id_Taxo = '53957';        
@@ -5033,13 +5041,13 @@ function links = get_link(taxon, open)
       id_birdlife = 'nicobar-pigeon-caloenas-nicobarica';
       id_ADW = ''; % not present at 2018/08/31
 
-    case 'Streptopelia_decaocto'
-      id_CoL = 'be859a5ea349fa8486b88d34163c83d1';
-      id_Taxo = '54033';        
-      id_EoL = '915275';
-      id_AnAge = taxon;       
-      id_avibase = '41FACE6330A2F073';
-      id_birdlife = 'eurasian-collared-dove-streptopelia-decaocto';
+    case 'Hemiphaga_novaeseelandiae'
+      id_CoL = 'd13a6a3fbb7c93b283b24514d976ebb2';
+      id_Taxo = '54075';        
+      id_EoL = '1049942';
+      id_AnAge = ''; % not present 2018/10/19       
+      id_avibase = '0A127E49E9FB6263';
+      id_birdlife = 'new-zealand-pigeon-hemiphaga-novaeseelandiae';
 
     case 'Mesitornis_variegatus'
       id_CoL = 'a990bffed92b9b55d3f6cfb8572597e8';
@@ -5295,6 +5303,25 @@ function links = get_link(taxon, open)
       id_avibase = 'D6BFC73A3E067711';
       id_birdlife = 'common-redshank-tringa-totanus';
       
+    case 'Coenocorypha_huegeli'
+      id_CoL = 'b67c28a73b6f183d08de8a576d3432f5';
+      id_WoRMS = ''; % not present 2018/10/19
+      id_Taxo = '53705'; % present as Coenocorypha aucklandica 2018/10/19     
+      id_EoL = '4373934';
+      id_AnAge = ''; % not present 2018/10/19       
+      id_avibase = '90E8B13BBB299CCD';
+      id_birdlife = 'snares-snipe-coenocorypha-huegeli';
+      id_ADW = 'Coenocorypha_aucklandica_huegeli';
+      
+    case 'Coenocorypha_pusilla'
+      id_CoL = '81afa953177d6f7ab87b2b67e7de1111';
+      id_WoRMS = ''; % not present 2018/10/19
+      id_Taxo = '158863';        
+      id_EoL = '10634856';
+      id_AnAge = ''; % not present 2018/10/19       
+      id_avibase = '168E36269B6A854B';
+      id_birdlife = 'chatham-snipe-coenocorypha-pusilla';
+      
     case 'Limnodromus_griseus'
       id_CoL = 'e45c6cab6f6609688ad3f1f3fcd1ff3f';
       id_WoRMS = '158955';
@@ -5542,6 +5569,16 @@ function links = get_link(taxon, open)
       id_birdlife = 'common-gull-billed-tern-gelochelidon-nilotica';
       id_ADW = 'Sterna_nilotica'; 
       
+    case 'Hydroprogne_caspia'
+      id_CoL = '0157981931f48e7789e7a35e9a200f37';
+      id_WoRMS = '567825';
+      id_Taxo = '53865'; % present as Sterns caspia 2018/10/19      
+      id_EoL = '1049728';
+      id_AnAge = taxon;        
+      id_avibase = 'BC06BC0D1056BC7B';
+      id_birdlife = 'caspian-tern-hydroprogne-caspia';
+      id_ADW = 'Sterns_caspia'; 
+      
     case 'Sternula_albifrons'
       id_CoL = '1ef3bb17c2e53c170fba27107f4075e9';
       id_WoRMS = '567480';
@@ -5570,6 +5607,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;      
       id_avibase = 'F002188E226DF09C';
       id_birdlife = 'european-herring-gull-larus-argentatus';
+      
+    case 'Larus_dominicanus'
+      id_CoL = '6498deca624b16a592410799f4ebfa66';
+      id_WoRMS = '212624';
+      id_Taxo = '53803';        
+      id_EoL = '1049305';
+      id_AnAge = ''; % not present 2018/10/19      
+      id_avibase = 'E6536E4E904EF414';
+      id_birdlife = 'kelp-gull-larus-dominicanus';
       
     case 'Rissa_tridactyla'
       id_CoL = 'bab5d031b01e7f12e85e1bdcf9726828';
@@ -5663,6 +5709,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;      
       id_avibase = '7D1A9D5CCCDC597C';
       id_birdlife = 'south-polar-skua-catharacta-maccormicki';
+      
+    case 'Stercorarius_antarcticus'
+      id_CoL = 'd423ef9bb2e5afea7a6cb0df78840e8a';
+      id_WoRMS = '567471';
+      id_Taxo = '947071';        
+      id_EoL = '1064977';
+      id_AnAge = taxon;      
+      id_avibase = 'FF895105AB0ABCE1';
+      id_birdlife = 'brown-skua-catharacta-antarctica';
       
     case 'Dromas_ardeola'
       id_CoL = 'f9363934762b33e323d2debe6472575b';
@@ -6621,6 +6676,15 @@ function links = get_link(taxon, open)
       id_avibase = 'ACD40E8C3CC720BF';
       id_birdlife = 'great-cormorant-phalacrocorax-carbo';
       
+    case 'Microcarbo_coronatus'
+      id_CoL = 'ffdf05e81b2b76e5d58183fae43d1d92';
+      id_WoRMS = '344614'; % present as Phalacrocorax coronatus 2018/10/19
+      id_Taxo = '51691'; % present as Phalacrocorax coronatus 2018/10/19
+      id_EoL = '1049411';
+      id_AnAge = ''; % not present 2018/10/19      
+      id_avibase = '446E8F9D1E2E281D';
+      id_birdlife = 'crowned-cormorant-microcarbo-coronatus';
+      
     case 'Fregata_minor'
       id_CoL = '223abd6f6e2a3ffab50991ce0c949026';
       id_WoRMS = '212654';
@@ -6648,15 +6712,23 @@ function links = get_link(taxon, open)
       id_avibase = '09ED7E926715445E';
       id_birdlife = 'lesser-frigatebird-fregata-ariel';
       
-    case 'Sula_bassana'
-      id_CoL = '4dc3e535a6a6253e4adceb72157431fe'; % unaccepted, to Morus bassanus (Linnaeus, 1758)
-      id_WoRMS = '137180';  % unaccepted, to Morus bassanus (Linnaeus, 1758)
-      id_Taxo = '51654';    % unaccepted, to Morus bassanus (Linnaeus, 1758)       
-      id_EoL = '1048640';   % unaccepted, to Morus bassanus (Linnaeus, 1758)       
-      id_AnAge = 'Morus_bassanus';
-      id_ADW = 'Morus_bassanus';
-      id_avibase = '534FB490884C6D33'; % present as Morus bassanus
+    case 'Morus_bassanus'
+      id_CoL = '4dc3e535a6a6253e4adceb72157431fe'; 
+      id_WoRMS = '137180';  
+      id_Taxo = '51654';       
+      id_EoL = '1048640'; 
+      id_AnAge = taxon;
+      id_avibase = '534FB490884C6D33';
       id_birdlife = 'northern-gannet-morus-bassanus';
+      
+    case 'Morus_serrator'
+      id_CoL = '662d4c8ba17ec2d907ff0285215b687e'; 
+      id_WoRMS = '343991';  
+      id_Taxo = '51664';       
+      id_EoL = '1049632'; 
+      id_AnAge = taxon;
+      id_avibase = '136103448480BB9C';
+      id_birdlife = 'australasian-gannet-morus-serrator';
       
     case 'Sula_nebouxii'
       id_CoL = 'ea3be33231335317a364427a5bcc38f3';
@@ -6756,6 +6828,15 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_avibase = '93694BB5492F7012';
       id_birdlife = 'great-blue-heron-ardea-herodias';
+      
+    case 'Ardea_purpurea'
+      id_CoL = 'b3b7059145f5bf471fcb7cfb65edc3a4';
+      id_WoRMS = ''; % not present 2018/10/19
+      id_Taxo = '51747'; 
+      id_EoL = '1048985';
+      id_AnAge = taxon;
+      id_avibase = '8D6CB009B4D20368';
+      id_birdlife = 'purple-heron-ardea-purpurea';
       
     case 'Bubulcus_ibis'
       id_CoL = 'd0eded93aea3f404ba4f291897195150';
@@ -7152,6 +7233,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = 'D21C1A59BBB9A895';
       id_birdlife = 'cape-parrot-poicephalus-robustus';
+      
+    case 'Poicephalus_cryptoxanthus'
+      id_CoL = 'd7ba32ae3a3d3dfa5a11b841b9c3cc53';
+      id_Taxo = '70666';        
+      id_EoL = '1177914';
+      id_AnAge = taxon;       
+      id_avibase = '4A03982169A8494D';
+      id_birdlife = 'brown-headed-parrot-poicephalus-cryptoxanthus';
       
     case 'Cyanopsitta_spixii'
       id_CoL = '186620ee8938aeb164c570ca8f42e46a';
