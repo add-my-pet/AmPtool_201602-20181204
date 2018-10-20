@@ -5121,6 +5121,14 @@ function links = get_link(taxon, open)
       id_avibase = 'B1A4A6A075AAE499';
       id_birdlife = 'mexican-sheartail-doricha-eliza';
 
+    case 'Coeligena_torquata'
+      id_CoL = 'f6cb50499f3592012fc425264178c3bd';
+      id_Taxo = '54984';        
+      id_EoL = '1048861';
+      id_AnAge = ''; % not present 2018/10/20      
+      id_avibase = 'EEC0213C766906AE';
+      id_birdlife = 'collared-inca-coeligena-torquata';
+
     case 'Aegotheles_cristatus'
       id_CoL = 'e77dc5c18f2a229366e15a70c599332f';
       id_Taxo = '54805';        
@@ -7388,6 +7396,22 @@ function links = get_link(taxon, open)
       id_avibase = '42F16BDC71348982';
       id_birdlife = 'thorn-tailed-rayadito-aphrastura-spinicauda';
       
+    case 'Dendroplex_picus'
+      id_CoL = '0a5f580f14c149511c9f975e7cbc972f'; % present as Xiphorhynchus picus 2018/10/20
+      id_Taxo = '74728'; % present as Xiphorhynchus picus 2018/10/20        
+      id_EoL = '1050730'; % present as Xiphorhynchus picus 2018/10/20
+      id_AnAge = ''; % not present 2018/10/20       
+      id_avibase = '9C163605D9726273';
+      id_birdlife = 'straight-billed-woodcreeper-dendroplex-picus';
+      
+    case 'Premnoplex_brunnescens'
+      id_CoL = '07e1049d593035b296a48aa535263d32';
+      id_Taxo = '74932';         
+      id_EoL = '1050159'; 
+      id_AnAge = ''; % not present 2018/10/20       
+      id_avibase = 'B023E37883BB7D29';
+      id_birdlife = 'spotted-barbtail-premnoplex-brunnescens';
+      
     case 'Tyrannus_tyrannus'
       id_CoL = 'e2f3ff2fc877b9322dbd4fbe6a87f5f7';
       id_Taxo = '56162';        
@@ -8137,6 +8161,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '37E9CCDA7A4B06ED';
       id_birdlife = 'chipping-sparrow-spizella-passerina';
+      
+    case 'Atlapetes_melanolaemus'
+      id_CoL = '1aec0d913c7d2012f784386d26321b5a';
+      id_Taxo = '1126733'; 
+      id_EoL = '268983';
+      id_AnAge = ''; % not present 2018/10/20       
+      id_avibase = 'F0263CAC25552FBF';
+      id_birdlife = 'black-faced-brush-finch-atlapetes-melanolaemus';
       
     case 'Chlorodrepanis_virens'
       id_CoL = '3362e7a2fffa3335d25516046a693e21';

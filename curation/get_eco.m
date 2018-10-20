@@ -7038,6 +7038,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Coeligena_torquata'
+      climate = {'Am'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi','xiHn'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Aegotheles_cristatus'
       climate = {'Cfa','Cfb'};
       ecozone = {'TA'};
@@ -9608,6 +9618,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Dendroplex_picus'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnwfm'};
+      migrate = {};
+      food    = {'biCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Premnoplex_brunnescens'
+      climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnwfm'};
+      migrate = {};
+      food    = {'biCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Tyrannus_tyrannus'
       climate = {'Cfa','Dfa','Dfb'};
       ecozone = {'THn'};
@@ -10524,6 +10554,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iTh','0iTi','0iTs'};
       embryo  = {'Tnpf','Tnsf'};
       migrate = {'Ml'};
+      food    = {'biCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Atlapetes_melanolaemus'
+      climate = {'Cwb'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpf'};
+      migrate = {};
       food    = {'biCi','biHs'};
       gender  = {'Dg'};
       reprod  = {'O'};
