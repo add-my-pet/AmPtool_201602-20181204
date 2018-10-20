@@ -1491,6 +1491,12 @@ function links = get_link(taxon, open)
       id_Wiki = 'Chaoborus';
       id_EoL = '746432';
        
+    case 'Sericostoma_personatum'
+      id_CoL = 'ab91d88ffd9c3e76ed3fb8c63f61fe74';
+      id_WoRMS = ''; % not present 2018/10/20
+      id_Taxo = '29326';
+      id_EoL = '593127';
+       
     case 'Plodia_interpunctella'
       id_CoL = '6b0d3d4ddb2f7b52424f8da510c91e10';
       id_WoRMS = ''; % not present 2017/06/15
@@ -8008,6 +8014,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '240E33900CE34D44';
       id_birdlife = 'house-sparrow-passer-domesticus';
+      
+    case 'Passer_montanus'
+      id_CoL = '67221704ec8940302afd7725ddba87be';
+      id_Taxo = '59125';        
+      id_EoL = '922242';
+      id_AnAge = taxon;       
+      id_avibase = 'C22FBF8D36F91BCA';
+      id_birdlife = 'eurasian-tree-sparrow-passer-montanus';
       
     case 'Taeniopygia_guttata'
       id_CoL = '06ff618268d51f635be7a84662273262';

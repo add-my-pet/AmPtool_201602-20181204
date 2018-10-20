@@ -2068,6 +2068,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'D'};
       reprod  = {'O'};
 
+    case 'Sericostoma_personatum'
+      climate = {'B','C','D'};
+      ecozone = {'THp'};
+      habitat = {'0iFm'};
+      embryo  = {'Fs'};
+      migrate = {};
+      food    = {'bjH'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
     case 'Plodia_interpunctella'
       climate = {'A','B'};
       ecozone = {'TH','TN','TP','TA'};
@@ -10361,6 +10371,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Passer_domesticus'
       climate = {'A','B','C','D'};
       ecozone = {'TH','TN','TP','TA'};
+      habitat = {'0iTh','0iTi','0iTs','0iTg','0iTa'};
+      embryo  = {'Tnwf','Tncf'};
+      migrate = {};
+      food    = {'biCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Passer_montanus'
+      climate = {'A','B','C','D'};
+      ecozone = {'THp','TPi'};
       habitat = {'0iTh','0iTi','0iTs','0iTg','0iTa'};
       embryo  = {'Tnwf','Tncf'};
       migrate = {};
