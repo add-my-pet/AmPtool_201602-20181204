@@ -4,3 +4,4 @@ Zonotrichia
 Spizelloides
 Spizella
 Atlapetes
+Chlorospingus

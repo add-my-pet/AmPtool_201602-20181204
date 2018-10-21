@@ -5129,6 +5129,14 @@ function links = get_link(taxon, open)
       id_avibase = 'EEC0213C766906AE';
       id_birdlife = 'collared-inca-coeligena-torquata';
 
+    case 'Lampornis_clemenciae'
+      id_CoL = '742d5d06aba6714a9b4283f322c4282f';
+      id_Taxo = '55044';        
+      id_EoL = '18120';
+      id_AnAge = taxon;  
+      id_avibase = '97FB2BC90F977D37';
+      id_birdlife = 'blue-throated-hummingbird-lampornis-clemenciae';
+
     case 'Aegotheles_cristatus'
       id_CoL = 'e77dc5c18f2a229366e15a70c599332f';
       id_Taxo = '54805';        
@@ -6690,6 +6698,15 @@ function links = get_link(taxon, open)
       id_avibase = 'ACD40E8C3CC720BF';
       id_birdlife = 'great-cormorant-phalacrocorax-carbo';
       
+    case 'Phalacrocorax_brasilianus'
+      id_CoL = '9e824e68427e1bba1ef60fb148c68e26';
+      id_WoRMS = '343939';
+      id_Taxo = '149444'; 
+      id_EoL = '1065006';
+      id_AnAge = taxon;      
+      id_avibase = '56036504EDE6F930';
+      id_birdlife = 'neotropical-cormorant-phalacrocorax-brasilianus';
+      
     case 'Microcarbo_coronatus'
       id_CoL = 'ffdf05e81b2b76e5d58183fae43d1d92';
       id_WoRMS = '344614'; % present as Phalacrocorax coronatus 2018/10/19
@@ -6965,6 +6982,14 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/10/18       
       id_avibase = '5BFEFD9AB8F3FD64';
       id_birdlife = 'mountain-buzzard-buteo-oreophilus';
+      
+    case 'Buteo_lineatus'
+      id_CoL = 'ba66abc0d0859e26ad70d38c3fd49434';
+      id_Taxo = '52649';        
+      id_EoL = '1049068';
+      id_AnAge = taxon;       
+      id_avibase = 'EA4D6C0B76852200';
+      id_birdlife = 'red-shouldered-hawk-buteo-lineatus';
       
     case 'Sagittarius_serpentarius'
       id_CoL = 'ec311a0d228794fde1b568883133f0ac';
@@ -7531,10 +7556,18 @@ function links = get_link(taxon, open)
     case 'Gerygone_igata'
       id_CoL = '391dd50a3cba64d9e4f12407cb921729';
       id_Taxo = '85384';        
-      id_EoL = '1051927/';
+      id_EoL = '1051927';
       id_AnAge = ''; % not present at 2018/10/02       
       id_avibase = 'C3D7DC15FA86C16E';
       id_birdlife = 'grey-gerygone-gerygone-igata';
+
+    case 'Gerygone_flavolateralis'
+      id_CoL = '98f9466ac13b2e51430a63da93055088';
+      id_Taxo = '85381';        
+      id_EoL = '1051924';
+      id_AnAge = ''; % not present at 2018/10/21       
+      id_avibase = 'B7AC535886BF296E';
+      id_birdlife = 'fan-tailed-gerygone-gerygone-flavolateralis';
 
     case 'Pomatostomus_temporalis'
       id_CoL = 'c92091998117188ba812c3b5660ba295';
@@ -7979,8 +8012,7 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present at 2018/09/19      
       id_avibase = '0EA8F8B905405FB3';
       id_birdlife = ''; % not present at 2018/09/19 
-      
-           
+                 
     case 'Saxicola_torquata'
       id_CoL = '0f543dacea5bfb58b1564ecca0a610d1';
       id_Taxo = '1126423';   
@@ -7988,6 +8020,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;   
       id_avibase = '222CAA6E0DDDFE7E';
       id_birdlife = 'common-stonechat-saxicola-torquatus'; 
+      
+    case 'Saxicola_rubetra'
+      id_CoL = 'a6bea4e070afe0013dbc45b0ce7e513b';
+      id_Taxo = '56975';   
+      id_EoL = '1051480';
+      id_AnAge = taxon;   
+      id_avibase = 'A0EDAEA2E89A9A96';
+      id_birdlife = 'whinchat-saxicola-rubetra'; 
       
     case 'Ficedula_hypoleuca'
       id_CoL = 'abf8789e1d20be70f734faf3bac68ef9';
@@ -8164,11 +8204,19 @@ function links = get_link(taxon, open)
       
     case 'Atlapetes_melanolaemus'
       id_CoL = '1aec0d913c7d2012f784386d26321b5a';
-      id_Taxo = '1126733'; 
+      id_Taxo = '86344'; 
       id_EoL = '268983';
       id_AnAge = ''; % not present 2018/10/20       
       id_avibase = 'F0263CAC25552FBF';
       id_birdlife = 'black-faced-brush-finch-atlapetes-melanolaemus';
+      
+    case 'Chlorospingus_flavigularis'
+      id_CoL = '44328d16bf36cdece73b120d3b97f473';
+      id_Taxo = '1126733'; 
+      id_EoL = '920869';
+      id_AnAge = ''; % not present 2018/10/21       
+      id_avibase = '3B14D5D64BDFCAB0';
+      id_birdlife = 'yellow-throated-bush-tanager-chlorospingus-flavigularis';
       
     case 'Chlorodrepanis_virens'
       id_CoL = '3362e7a2fffa3335d25516046a693e21';

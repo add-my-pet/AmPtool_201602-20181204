@@ -7048,6 +7048,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Lampornis_clemenciae'
+      climate = {'Am','Cwa'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi','xiHn'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Aegotheles_cristatus'
       climate = {'Cfa','Cfb'};
       ecozone = {'TA'};
@@ -8778,6 +8788,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Phalacrocorax_brasilianus'
+      climate = {'A','B'};
+      ecozone = {'TN'};
+      habitat = {'0xMc','0xFm'};
+      embryo  = {'Tnpfm','Tncfm'};
+      migrate = {};
+      food    = {'biCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Microcarbo_coronatus'
       climate = {'MC'};
       ecozone = {'MASE'};
@@ -9094,6 +9114,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       habitat = {'0iTi','0iTf'};
       embryo  = {'Tnsf'};
       migrate = {};
+      food    = {'biCv','biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Buteo_lineatus'
+      climate = {'Cfa','Dfa','Dfb'};
+      ecozone = {'THn'};
+      habitat = {'0iTi','0iTf'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ms'};
       food    = {'biCv','biCi'};
       gender  = {'Dg'};
       reprod  = {'O'};
@@ -9788,6 +9818,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Gerygone_flavolateralis'
+      climate = {'Af'};
+      ecozone = {'TA'};
+      habitat = {'0iTf','0iTh'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Pomatostomus_temporalis'
       climate = {'Am','BSh','BWh'};
       ecozone = {'TA'};
@@ -10348,6 +10388,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Saxicola_rubetra'
+      climate = {'B','C','D'};
+      ecozone = {'THp'};
+      habitat = {'0iThh'};
+      embryo  = {'Tnwf'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Ficedula_hypoleuca'
       climate = {'BSk','Cfb','Dfa','Dfb'};
       ecozone = {'THp'};
@@ -10560,6 +10610,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
 
     case 'Atlapetes_melanolaemus'
       climate = {'Cwb'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnpf'};
+      migrate = {};
+      food    = {'biCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Chlorospingus_flavigularis'
+      climate = {'A'};
       ecozone = {'TN'};
       habitat = {'0iTf'};
       embryo  = {'Tnpf'};
