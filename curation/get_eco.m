@@ -7618,6 +7618,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Larus_pacificus'
+      climate = {'MB','MC'};
+      ecozone = {'MIS','MPSW'};
+      habitat = {'0iMm','biMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCi','biSi','biSv'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Ichthyaetus_audouinii'
+      climate = {'MB'};
+      ecozone = {'MAm','MAE'};
+      habitat = {'biMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ms'};
+      food    = {'biCvf'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Rissa_tridactyla'
       climate = {'MC','ME'};
       ecozone = {'MAN','MPN','MN'};
@@ -8121,6 +8141,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Eudyptes_pachyrhynchus'
       climate = {'MC'};
       ecozone = {'MISE','MPSW'};
+      habitat = {'0iMc'};
+      embryo  = {'Tnsfm'};
+      migrate = {'Ml'};
+      food    = {'biCvf','biCic','biCik'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Eudyptes_chrysocome'
+      climate = {'MC'};
+      ecozone = {'MC'};
       habitat = {'0iMc'};
       embryo  = {'Tnsfm'};
       migrate = {'Ml'};
@@ -10378,6 +10408,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
            
+    case 'Oenanthe_oenanthe'
+      climate = {'B','C','D'};
+      ecozone = {'TH'};
+      habitat = {'0iTd','0iThh','0iTg'};
+      embryo  = {'Tntf'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+           
     case 'Saxicola_torquata'
       climate = {'B','C'};
       ecozone = {'THp','TPa'};
@@ -10498,7 +10538,27 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
-    case 'Motacilla_flava'
+    case 'Anthus_pratensis'
+      climate = {'Cfb','Dfb','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'0iTh','0iTi','0iTs','0iTg'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ml'};
+      food    = {'biCi','biHs'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Anthus_spinoletta'
+      climate = {'BSk','Csa','Cfb','Dfb','Dfc'};
+      ecozone = {'THp'};
+      habitat = {'0iTh','0iTi','0iTs','0iTg'};
+      embryo  = {'Tnsf'};
+      migrate = {'Ml'};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Motacilla_citreola'
       climate = {'BSk','Csa','Cfb','Dfb','Dfc'};
       ecozone = {'THp'};
       habitat = {'0iTh','0iTi','0iTs','0iTg'};

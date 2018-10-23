@@ -5639,6 +5639,25 @@ function links = get_link(taxon, open)
       id_avibase = 'E6536E4E904EF414';
       id_birdlife = 'kelp-gull-larus-dominicanus';
       
+    case 'Larus_pacificus'
+      id_CoL = '8dbbb1e77ec32ff7e676c6aa878ff4d8';
+      id_WoRMS = '343917';
+      id_Taxo = '70317';        
+      id_EoL = '1049316';
+      id_AnAge = ''; % not present 2018/10/22      
+      id_avibase = 'C08157E78A294559';
+      id_birdlife = 'pacific-gull-larus-pacificus';
+      
+    case 'Ichthyaetus_audouinii'
+      id_CoL = '6501f3bade6037b1e6554528fd12013c';
+      id_WoRMS = '137139'; % present as Larus audouinii 2018/10/22
+      id_Taxo = '53796'; % present as Larus audouinii 2018/10/22       
+      id_EoL = '1049301';
+      id_AnAge = taxon; 
+      id_avibase = 'F7B9355E42C3F987';
+      id_birdlife = 'audouins-gull-larus-audouinii';
+      id_ADW = 'Larus_audouinii';
+      
     case 'Rissa_tridactyla'
       id_CoL = 'bab5d031b01e7f12e85e1bdcf9726828';
       id_WoRMS = '137156';
@@ -6101,6 +6120,15 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/10/11       
       id_avibase = 'A143FB33F08F1A0B';
       id_birdlife = 'fiordland-penguin-eudyptes-pachyrhynchus';
+      
+    case 'Eudyptes_chrysocome'
+      id_CoL = 'e567cc3f94114f0fb4ae02a59e61fc68';
+      id_WoRMS = '212657';
+      id_Taxo = '51395';        
+      id_EoL = '1049612';
+      id_AnAge = ''; % not present 2018/10/22       
+      id_avibase = 'ECEE0622D6435B0C';
+      id_birdlife = 'southern-rockhopper-penguin-eudyptes-chrysocome';
       
     case 'Pygoscelis_adeliae'
       id_CoL = '1b57a7bf98db087e0a1a8d9757cbf688';
@@ -8005,6 +8033,14 @@ function links = get_link(taxon, open)
       id_avibase = '2B37C1B59B70D72B';
       id_birdlife = 'curve-billed-thrasher-toxostoma-curvirostre';
       
+    case 'Oenanthe_oenanthe'
+      id_CoL = 'a98ec4f444eec6222c26db7465a6866e';
+      id_Taxo = '56939';
+      id_EoL = '1177543';
+      id_AnAge = taxon; 
+      id_avibase = 'DF526047637004DD';
+      id_birdlife = 'northern-wheatear-oenanthe-oenanthe';
+                 
     case 'Saxicola_rubicola'
       id_CoL = '3a7ef4deaf1586f777dff42cee7be10d';
       id_Taxo = '';    % not present at 2018/09/19    
@@ -8111,6 +8147,14 @@ function links = get_link(taxon, open)
       id_avibase = '14873249B607CEB1';
       id_birdlife = 'meadow-pipit-anthus-pratensis';
       
+    case 'Anthus_spinoletta'
+      id_CoL = '3d31f2037ae8838b4234d121738d39f8';
+      id_Taxo = '56456';        
+      id_EoL = '1282295';
+      id_AnAge = taxon;       
+      id_avibase = '0A3FA18502F4FC70';
+      id_birdlife = 'water-pipit-anthus-spinoletta';
+      
     case 'Motacilla_flava'
       id_CoL = 'eca91fcd14896fe760fc1c8eef9774bf';
       id_Taxo = '56477';        
@@ -8118,6 +8162,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;    
       id_avibase = '5983D6776C4C4F85';
       id_birdlife = 'western-yellow-wagtail-motacilla-flava';
+      
+    case 'Motacilla_citreola'
+      id_CoL = '9f8c207270d7843d72f06265f6c0553d';
+      id_Taxo = '56476';        
+      id_EoL = '1178526';
+      id_AnAge = ''; % not present 2018/10/22    
+      id_avibase = '5B0295C122B63ED3';
+      id_birdlife = 'citrine-wagtail-motacilla-citreola';
       
     case 'Motacilla_aguimp'
       id_CoL = 'ce26c7b210a316bd482c036ae2052894';

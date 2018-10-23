@@ -1,6 +1,7 @@
 Sterninae
 Chroicocephalus
 Larus
+Ichthyaetus
 Rissa
 Gygis
 Anous

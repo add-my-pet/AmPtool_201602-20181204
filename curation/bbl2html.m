@@ -3,7 +3,7 @@
 
 %%
 function bbl2html(my_pet_bib, filenm)
-% created 2018/02/02 by Bas Kooijman
+% created 2018/02/02 by Bas Kooijman, modified 2018/10/22
 
 %% Syntax
 % <bbl2html *bbl2hmtl*>(my_pet_bib, filenm)
@@ -57,11 +57,11 @@ fprintf(fid, '      <ul class="ref">\n'); % open unordered list
 
 for i = 1:n_bib % scan bibitems
   bibitem_i = bbl(i_bib(i): (i_bib(i+1)-2));
-  i_0 = 2 + strfind(bibitem_i, ']{'); i_1 = strfind(bibitem_i, '}') - 1; 
+  i_0 = 2 + strfind(bibitem_i, ']{'); i_1 = strfind(bibitem_i, '}') - 1; i_1 = i_1(i_1 > i_0);
   bibkey_i = bibitem_i(i_0:i_1);
   
   % edit bibitem_i
-  j = strfind(bibitem_i,'}'); bibitem_i(1:j+1) = []; % remove header from content
+  j = strfind(bibitem_i, bibkey_i); bibitem_i(1:j + 1 + length(bibkey_i)) = []; % remove header from content
   
   url = regexp(bibitem_i, '\url{\S.*}', 'match'); n = length(url);
   for j=1:n
