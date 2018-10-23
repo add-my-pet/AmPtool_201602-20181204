@@ -3,7 +3,7 @@
 
 %%
 function allEco = write_allEco
-% created 2018/04/04 by Bas Kooijman, modified 2018/05/10
+% created 2018/04/04 by Bas Kooijman, modified 2018/05/10, 2018/10/23
 
 %% Syntax
 % allEco = <write_allEco *write_allEco*>
@@ -34,5 +34,12 @@ function allEco = write_allEco
      allEco.(entries{i}).reprod] = get_eco(entries{i});
   end
 
+  WD = pwd;                        % store current path
+  curation = which('write_allEco');   
+  curation = curation(1:end - 15);         
+  cd(curation)                     % goto taxa
+
   save('../allEco.mat', 'allEco')
+  
+  cd(WD);
   
