@@ -1,2 +1,5 @@
 Gallus
 Polyplectron
+Phasianus
+Pavo
+

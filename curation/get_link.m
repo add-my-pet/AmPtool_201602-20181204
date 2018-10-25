@@ -4723,6 +4723,22 @@ function links = get_link(taxon, open)
       id_avibase = 'B79C272AEE35468A';
       id_birdlife = 'mountain-peacock-pheasant-polyplectron-inopinatum';
 
+    case 'Phasianus_colchicus'
+      id_CoL = '0a0fba2155026aed25c91e441dd10e39';
+      id_Taxo = '53178';    
+      id_EoL = '1049238';
+      id_AnAge = taxon;       
+      id_avibase = '2FA39DCD42F80BC9';
+      id_birdlife = 'common-pheasant-phasianus-colchicus';
+
+    case 'Pavo_cristatus'
+      id_CoL = '43ca8de77a0ff6be8503f4c059e08531';
+      id_Taxo = '53209';    
+      id_EoL = '1049264';
+      id_AnAge = taxon;       
+      id_avibase = 'A8C34DC9655204ED';
+      id_birdlife = 'indian-peafowl-pavo-cristatus';
+
     case 'Tetrastes_bonasia'
       id_CoL = '48797b9cd84c84166eca6c1bc4a3b01f';
       id_Taxo = '52966';        
@@ -4997,6 +5013,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = '0F9B5174A8ACF737';
       id_birdlife = 'greater-flamingo-phoenicopterus-roseus';
+
+    case 'Zenaida_macroura'
+      id_CoL = '87953fddcf786f5bf12dd480a8b0ae12';
+      id_Taxo = '54054';   
+      id_EoL = '1050134';
+      id_AnAge = taxon;       
+      id_avibase = '00124D987C95811B';
+      id_birdlife = 'mourning-dove-zenaida-macroura';
 
     case 'Patagioenas_fasciata'
       id_CoL = '0b47943f1e932f8673021f8eb9ac0771';
@@ -7782,6 +7806,14 @@ function links = get_link(taxon, open)
       id_birdlife = 'dune-lark-calendulauda-erythrochlamys';
       id_ADW = ''; % not present 2018/10/14    
       
+    case 'Eremophila_alpestris'
+      id_CoL = '23385a5da2c69da434c39cd4ab5c1a5a';
+      id_Taxo = '56302'; 
+      id_EoL = '915655';
+      id_AnAge = taxon; 
+      id_avibase = '77AFF9B86BC9FEE3';
+      id_birdlife = 'horned-lark-eremophila-alpestris';
+      
     case 'Delichon_urbicum'
       id_CoL = '1f9be412a6454b0bfd18f48e515e2592';
       id_Taxo = '1125977';        
@@ -8270,6 +8302,14 @@ function links = get_link(taxon, open)
       id_avibase = '3B14D5D64BDFCAB0';
       id_birdlife = 'yellow-throated-bush-tanager-chlorospingus-flavigularis';
       
+    case 'Melospiza_melodia'
+      id_CoL = '8cb008e58c8f06a69b97f0e18548faca';
+      id_Taxo = '58090'; 
+      id_EoL = '1052763';
+      id_AnAge = taxon; 
+      id_avibase = 'A5F09E0521019564';
+      id_birdlife = 'song-sparrow-melospiza-melodia';
+      
     case 'Chlorodrepanis_virens'
       id_CoL = '3362e7a2fffa3335d25516046a693e21';
       id_Taxo = '408685';  % present as Hemignathus virens
@@ -8313,6 +8353,14 @@ function links = get_link(taxon, open)
       id_avibase = '544A5E6BC69CEAAC';
       id_ADW = ''; % not present at 2017/12/17
       id_birdlife = 'blackpoll-warbler-setophaga-striata';
+
+    case 'Xanthocephalus_xanthocephalus'
+      id_CoL = '95f15b97996c8c47552339fb8cebce70';
+      id_Taxo = '58485';    
+      id_EoL = '1052016'; 
+      id_AnAge = taxon;       
+      id_avibase = '3E2D0C9BADB782DB';
+      id_birdlife = 'yellow-headed-blackbird-xanthocephalus-xanthocephalus';
 
     case 'Ornithorhynchus_anatinus'
       id_CoL = '3bc186304963c8d2e15564c630a7021e';
@@ -10027,12 +10075,35 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '13400014';
        
+    case 'Cryptomys_damarensis'
+      id_CoL = '0d865a20cd237791a8ac342e37f5f012';
+      id_Taxo = '63619';        
+      id_EoL = '326229';
+      id_AnAge = taxon;
+      id_MSW3 = '13400011';
+       
     case 'Georychus_capensis'
       id_CoL = '5b2f433372fa56fabd0527276e828080';
       id_Taxo = '63623';        
-      id_EoL = '326230';
+      id_EoL = '128073';
       id_AnAge = taxon;
       id_MSW3 = '13400027';
+       
+    case 'Bathyergus_suillus'
+      id_CoL = '5806af0cfdd3e49f6af3011cd2600604';
+      id_Taxo = '63617';        
+      id_EoL = '127507';
+      id_AnAge = ''; % not present 2018/10/25
+      id_MSW3 = '13400006';
+      id_ADW = ''; % not present 2018/10/25
+       
+    case 'Bathyergus_janetta'
+      id_CoL = '449f33328e5451dcdca92bcea38c238b';
+      id_Taxo = '89611';        
+      id_EoL = '326572';
+      id_AnAge = ''; % not present 2018/10/25
+      id_MSW3 = '13400005';
+      id_ADW = ''; % not present 2018/10/25
        
     case 'Hystrix_africaeaustralis'
       id_CoL = '2acff5dbbbdae886a56163692f0c86bb';
