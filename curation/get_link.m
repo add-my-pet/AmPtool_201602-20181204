@@ -1161,6 +1161,14 @@ function links = get_link(taxon, open)
       id_Taxo = '34250';        
       id_EoL = '343656';
        
+    case 'Dynamene_bidentata'
+      id_CoL = '29d27fd635617b428baa6b121b44fb88';
+      id_WoRMS = '256988';
+      id_Taxo = '226773';  % present at genus level only 2018/10/29      
+      id_EoL = '1022158';
+      id_ADW = ''; % not present 2018/10/29
+      id_Wiki = 'Sphaeromatidae';
+       
     case 'Porcellio_scaber'
       id_CoL = 'f7f2e3aa63418de280d2441a2f50a353';
       id_WoRMS = ''; % not present 2017/06/15
@@ -1767,6 +1775,13 @@ function links = get_link(taxon, open)
       id_WoRMS = ''; % not present 2017/06/15
       id_Taxo = '41687';      
       id_EoL = '206412';
+      id_fishbase = taxon_fish;
+       
+    case 'Petromyzon_marinus'
+      id_CoL = 'c5009c72fe95cd52a5a18ad82d67bf22';
+      id_WoRMS = '101174';
+      id_Taxo = '41690';      
+      id_EoL = '31414595';
       id_fishbase = taxon_fish;
        
     case 'Callorhinchus_capensis'
@@ -9429,6 +9444,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '13802094';
        
+    case 'Pipistrellus_subflavus'
+      id_CoL = '7ca757a5fb1cdf6112061aed3bef766c';
+      id_Taxo = '169457';        
+      id_EoL = '327665';
+      id_AnAge = taxon;
+      id_MSW3 = '13802110';
+       
     case 'Hypsugo_savii'
       id_CoL = 'f34d43a00d990b21d09297759436320e';
       id_Taxo = '2677544';        
@@ -9449,6 +9471,13 @@ function links = get_link(taxon, open)
       id_EoL = '289433';
       id_AnAge = taxon; 
       id_MSW3 = '13802155';
+
+    case 'Eptesicus_fuscus'
+      id_CoL = 'e96775f92a3bb541e376d759c5cdd59d';
+      id_Taxo = '168011';        
+      id_EoL = '327553';
+      id_AnAge = taxon; 
+      id_MSW3 = '13801829';
 
     case 'Manis_crassicaudata'
       id_CoL = '736a2ea04e95eb28f95226cc77b01c98';

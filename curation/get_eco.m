@@ -1568,6 +1568,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'D'};
       reprod  = {'O'};
 
+    case 'Dynamene_bidentata'
+      climate = {'MC'};
+      ecozone = {'MAE'};
+      habitat = {'0iMc'};
+      embryo  = {'Ms'};
+      migrate = {};
+      food    = {'biD'};
+      gender  = {'D'};
+      reprod  = {'O'};
+      
     case 'Porcellio_scaber'
       climate = {'Cfb','Dfb','Dfc'};
       ecozone = {'TH','TA'}; % originally European
@@ -2495,6 +2505,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Ft'};
       migrate = {'Mp'};
       food    = {'biD'};
+      gender  = {'D'};
+      reprod  = {'O'};
+
+    case 'Petromyzon_marinus'
+      climate = {'Dfb','Dfc','ME','MC'};
+      ecozone = {'THp'};
+      habitat = {'0pFc','piMc'};
+      embryo  = {'Ft'};
+      migrate = {'Mda'};
+      food    = {'bpD','piCvf'};
       gender  = {'D'};
       reprod  = {'O'};
 
@@ -12269,6 +12289,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Pipistrellus_subflavus'
+      climate = {'Cfa','Dfa','Dfb'};
+      ecozone = {'THn'};
+      habitat = {'0iTf','0iTi'};
+      embryo  = {'Tv'};
+      migrate = {'TT'};
+      food    = {'bxM','xiCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Hypsugo_savii'
       climate = {'BSk','Csa'};
       ecozone = {'THp'};
@@ -12292,6 +12322,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
     case 'Plecotus_auritus'
       climate = {'C','D'};
       ecozone = {'THp'};
+      habitat = {'0iTf'};
+      embryo  = {'Tv'};
+      migrate = {};
+      food    = {'bxM','xiCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Eptesicus_fuscus'
+      climate = {'A','B','Cfa','Df'};
+      ecozone = {'THn'};
       habitat = {'0iTf'};
       embryo  = {'Tv'};
       migrate = {};
