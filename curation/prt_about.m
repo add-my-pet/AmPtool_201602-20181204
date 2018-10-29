@@ -62,6 +62,7 @@ set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('time, yr')
 ylabel('# of AmP entries')
 xlim([2009; max(dates)])
+title([num2str(n), ' @ ', datestr(date,26)])
 saveas (gca,'../../img/about/entries.png')
 close all
 
@@ -111,7 +112,7 @@ set(gca, 'FontSize', 15, 'Box', 'on')
 xlabel('time, yr')
 ylabel('# of DEB publications')
 xlim([1979; max(dates)])
-title(datestr(date,26))
+title([num2str(n), ' @ ', datestr(date,26)])
 saveas (gca,'../../img/about/DEBlib.png')
 close all
 
@@ -244,9 +245,8 @@ fprintf(fid_about, '      <H2 class="clear">AmP entries in time </H2>\n\n');
 fprintf(fid_about, '      <div class="sidelement">\n');
 fprintf(fid_about, '        <img src="img/about/entries.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">\n');
-fprintf(fid_about, '          The add-my-pet collection started at 2009/02/12 as part of the \n');
-fprintf(fid_about, '          <A HREF ="https://deb2019.sciencesconf.org/" target="_blank">DEB tele course</A>.<br>\n');
-fprintf(fid_about,['          It has ', num2str(n_entries), ' entries at ', datestr(date,26), '\n']);
+fprintf(fid_about, '          The Add-my-Pet collection started at 2009/02/12 as part of the \n');
+fprintf(fid_about, '          <A HREF ="https://deb2019.sciencesconf.org/" target="_blank">DEB course</A>.<br>\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
     
@@ -296,7 +296,7 @@ fprintf(fid_about, '        <img src="img/about/DEBlib.png" width="350px">\n');
 fprintf(fid_about, '        <div class = "caption">   \n');
 fprintf(fid_about, '          Publications in which DEB theory plays a substantial role.\n');
 fprintf(fid_about, '          <a HREF ="https://www.zotero.org/groups/500643/deb_library/" target="_blank">They can be found in the DEB library on Zotero</a>, \n');
-fprintf(fid_about, '          including all pdf''s, which you can access if you are <a href="index.html#DEBlib">member</a>.\n');
+fprintf(fid_about, '          including all pdf''s, which you can access if you become <a href="index.html#DEBlib">member</a> (no fees).\n');
 fprintf(fid_about, '        </div>\n');
 fprintf(fid_about, '      </div>\n\n');
 

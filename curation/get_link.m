@@ -833,6 +833,13 @@ function links = get_link(taxon, open)
       id_EoL = '593211';       
       id_molluscabase = '342001';
       
+    case 'Octopus_joubini'
+      id_CoL = '69e4ddfd7aa58ed6a3f5138fd3ba5a61';
+      id_WoRMS = '341985';
+      id_Taxo = '158240';        
+      id_EoL = '492283';       
+      id_molluscabase = '341985';
+      
     case 'Ferosagitta_hispida'
       id_CoL = '5fa5c1982af0297dfe25875928c2570c';
       id_WoRMS = '105454'; 
@@ -896,6 +903,12 @@ function links = get_link(taxon, open)
       id_Taxo = '143153'; 
       id_Wiki = 'Rhizoglyphus';
       id_EoL = '10409051';
+       
+    case 'Alaskozetes_antarcticus'
+      id_CoL = '582d8ac86ecd0503e83606fce33a4689';
+      id_WoRMS = '508284'; 
+      id_Taxo = '1394187'; 
+      id_EoL = '588540';
        
     case 'Aglaoctenus_lagotis'
       id_CoL = '4f7f7da06de383e86a5bfe76f10bb859';
@@ -5095,6 +5108,14 @@ function links = get_link(taxon, open)
       id_avibase = '493C4CF8D0200AB4';
       id_birdlife = 'pin-tailed-sandgrouse-pterocles-alchata';
       
+    case 'Pterocles_orientalis'
+      id_CoL = 'c27bb1168b228b5d2613727b79939782';
+      id_Taxo = '53945';        
+      id_EoL = '1049533';
+      id_AnAge = ''; % not present at 2018/10/28       
+      id_avibase = '06B41945B9E57EC4';
+      id_birdlife = 'black-bellied-sandgrouse-pterocles-orientalis';
+      
     case 'Apus_apus'
       id_CoL = '9623ca15e5c36c273a9e571b97ba8107';
       id_Taxo = '54867';        
@@ -8345,6 +8366,22 @@ function links = get_link(taxon, open)
       id_ADW = ''; % not present at 2019/09/30
       id_birdlife = 'tropeiro-seedeater-sporophila-beltoni';
 
+    case 'Geospiza_fortis'
+      id_CoL = 'bdce3d15863ee1c521230265f6c3adf0';
+      id_Taxo = '58154'; % present at genus level only 2018/09/30      
+      id_EoL = '1050332'; 
+      id_AnAge = ''; % not present 2018/10/26      
+      id_avibase = '4112A42BE83BAE8A';
+      id_birdlife = 'medium-ground-finch-geospiza-fortis';
+
+    case 'Geospiza_scandens'
+      id_CoL = 'ad7f0e5eb903702fde182d5ca17bbf60';
+      id_Taxo = '58186';       
+      id_EoL = '1050335'; 
+      id_AnAge = ''; % not present 2018/10/26      
+      id_avibase = 'EFA269E49108F1D9';
+      id_birdlife = 'common-cactus-finch-geospiza-scandens';
+
     case 'Setophaga_striata'
       id_CoL = '891172a2730002d57948ac2b10c03c80';
       id_Taxo = '58396'; % present at genus level only 2017/12/17      
@@ -8389,6 +8426,13 @@ function links = get_link(taxon, open)
       id_EoL = '328501';
       id_AnAge = taxon;
       id_MSW3 = '10400045';
+       
+    case 'Monodelphis_domestica'
+      id_CoL = '01e68657062e2a98f079c956ad6f99f1';
+      id_Taxo = '63619';        
+      id_EoL = '1039322';
+      id_AnAge = taxon;
+      id_MSW3 = '10400138';
        
     case 'Sarcophilus_harrisii'
       id_CoL = '5ce2db014e2fa02fef465ca6c68f66b3';
@@ -9068,6 +9112,13 @@ function links = get_link(taxon, open)
       id_MSW3 = '14200358'; % present as Cervus elaphus canadensis
       id_ADW = 'Cervus_elaphus'; 
       
+    case 'Cervus_elaphus'
+      id_CoL = 'a457faad0aee57cb2ab9cf7b1b850d84';
+      id_Taxo = '167650'; 
+      id_EoL = '46244532';
+      id_AnAge = taxon; 
+      id_MSW3 = '14200352'; 
+      
     case 'Capreolus_capreolus'
       id_CoL = 'a68dfad054452fb4f0d890e296af9e2f';
       id_Taxo = '68090';    
@@ -9389,8 +9440,15 @@ function links = get_link(taxon, open)
       id_CoL = '3ba39a5a10f605bf60d3e501deb80c4c';
       id_Taxo = '64970';        
       id_EoL = '310390';
-      id_AnAge = ''; % not present 2018/08/26s
+      id_AnAge = ''; % not present 2018/08/26
       id_MSW3 = '13801973';
+
+    case 'Plecotus_auritus'
+      id_CoL = '6a47e8a076cf215b2d6c70b3714c4e69';
+      id_Taxo = '169514';        
+      id_EoL = '289433';
+      id_AnAge = taxon; 
+      id_MSW3 = '13802155';
 
     case 'Manis_crassicaudata'
       id_CoL = '736a2ea04e95eb28f95226cc77b01c98';
@@ -9829,6 +9887,14 @@ function links = get_link(taxon, open)
       id_EoL = '328623';
       id_AnAge = taxon;
       id_MSW3 = '14000998';
+       
+    case 'Arctocephalus_tropicalis'
+      id_CoL = '6fd8b84fd278f83f3b5cd61c18a8cec1';
+      id_WoRMS = '231432';
+      id_Taxo = '67397';        
+      id_EoL = '328622';
+      id_AnAge = taxon;
+      id_MSW3 = '14001007';
        
     case 'Otaria_flavescens'
       id_CoL = 'f2a4b03712694cd124d8fd6b81c0da0e';
@@ -10587,6 +10653,13 @@ function links = get_link(taxon, open)
       id_EoL = '1179370';
       id_AnAge = taxon;
       id_MSW3 = '13001744';
+       
+    case 'Rattus_exulans'
+      id_CoL = '74f0af5f2df65835ee9b991847f4fad4';
+      id_Taxo = '63125';        
+      id_EoL = '328449';
+      id_AnAge = ''; % not present 2018/10/26
+      id_MSW3 = '13001742';
        
     case 'Apodemus_sylvaticus'
       id_CoL = 'aaeda2082619f754c1fd3debd9bddbc0';
