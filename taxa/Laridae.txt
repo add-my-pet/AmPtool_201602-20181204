@@ -1,7 +1,4 @@
 Sterninae
-Chroicocephalus
-Larus
-Ichthyaetus
-Rissa
+Larinae
 Gygis
 Anous
