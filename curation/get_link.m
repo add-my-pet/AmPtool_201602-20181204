@@ -1216,6 +1216,14 @@ function links = get_link(taxon, open)
       id_EoL = '3033511';
       id_ADW = ''; % not present at 2017/10/27 
       
+    case 'Arcitalitrus_dorrieni' 
+      id_CoL = '935bbd7e8fe0924e95d16e3e24016736';
+      id_WoRMS = ''; % not present 2018/10/30 
+      id_Taxo = '1383682';  % present at genus level only 2018/10/30 
+      id_EoL = '2946886';
+      id_ADW = ''; % not present at 2018/10/30
+      id_Wiki = 'Arcitalitrus';
+      
     case 'Euphausia_superba'
       id_CoL = '9b5816e13fe1783d6d65f7075aba514f';
       id_WoRMS = '236217';
@@ -3609,6 +3617,13 @@ function links = get_link(taxon, open)
       id_EoL = '581139';
       id_fishbase = taxon_fish;
        
+    case 'Sebastes_capensis'
+      id_CoL = 'b19afca12efc5ecb316c666067b38a08';
+      id_WoRMS = '221446';
+      id_Taxo = '187257';        
+      id_EoL = '994487';
+      id_fishbase = taxon_fish;
+       
     case 'Anarhichas_denticulatus'
       id_CoL = '82231bb18c0352f531625d3a170c6d25';
       id_WoRMS = '126757';
@@ -4205,6 +4220,13 @@ function links = get_link(taxon, open)
       id_CoL = '27ec70b00734b68213ff0972f7360650';
       id_Taxo = '50029';        
       id_EoL = '791395';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
+    case 'Thamnophis_gigas'
+      id_CoL = '67b9b76c276b95d99f4883fad92e690f';
+      id_Taxo = '50075';        
+      id_EoL = '1055211';
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
@@ -8463,12 +8485,26 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '10800025';
        
+    case 'Phascogale_calura'
+      id_CoL = '8974d37010484473520e968ea6a47a17';
+      id_Taxo = '59939';        
+      id_EoL = '323736';
+      id_AnAge = taxon;
+      id_MSW3 = '10800075';
+       
     case 'Perameles_nasuta'
       id_CoL = '42469df66a2b4861d91637f73b420616';
       id_Taxo = '60062';        
       id_EoL = '323870';
       id_AnAge = taxon;
       id_MSW3 = '10900026';
+       
+    case 'Isoodon_macrourus'
+      id_CoL = '0b13200f76e06b47e32b3375684ad03c';
+      id_Taxo = '60050';        
+      id_EoL = '323866';
+      id_AnAge = taxon;
+      id_MSW3 = '10900016';
        
     case 'Phascolarctos_cinereus'
       id_CoL = '4d7e8acef0e44fe001cc83caff8712ae';
@@ -9429,6 +9465,14 @@ function links = get_link(taxon, open)
       id_EoL = '327438';
       id_AnAge = taxon;
       id_MSW3 = '13801300';
+       
+    case 'Dermanura_watsoni'
+      id_CoL = '036d07e727e3f5b150385bb5ac40e415';
+      id_Taxo = '64468'; % present as Artibeus watsoni 2018/10/30       
+      id_EoL = '4438521';
+      id_AnAge = ''; % not present 2018/10/30
+      id_MSW3 = '13801395'; % present as Artibeus watsoni 2018/10/30
+      id_ADW = ''; % not present 2018/10/30
        
     case 'Tadarida_brasiliensis'
       id_CoL = 'f6ac3f27f010ac109c046f34d2b68ccf';
@@ -10776,6 +10820,13 @@ function links = get_link(taxon, open)
       id_EoL = '1179573';
       id_AnAge = taxon; 
       id_MSW3 = '13001898';
+       
+    case 'Parotomys_brantsii'
+      id_CoL = '5d900a29b7a191aadb0b8b7e4d091115';
+      id_Taxo = '88886'; 
+      id_EoL = '1179582';
+      id_AnAge = ''; % not present 2018/10/30 
+      id_MSW3 = '13001910';
        
     case 'Praomys_tullbergi'
       id_CoL = '4fa1fb7d2d166432fa1cc84726d881f9';
