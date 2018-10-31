@@ -5578,6 +5578,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       gender  = {'Dg'};
       reprod  = {'O'};
 
+    case 'Rhacophorus_moltrechti'
+      climate = {'Cfa'};
+      ecozone = {'THp'};
+      habitat = {'0jFp','jiTf'};
+      embryo  = {'Fpf'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
     case 'Sphenodon_punctatus'
       climate = {'Cfb'};
       ecozone = {'TA'};
@@ -6045,6 +6055,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       embryo  = {'Tt'};
       migrate = {};
       food    = {'biCi','biHl'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Pelodiscus_sinensis'
+      climate = {'Cfa','Cwa','Cfa'};
+      ecozone = {'THp'};
+      habitat = {'0bTd','biFp','biFl','biFr'};
+      embryo  = {'Tt'};
+      migrate = {};
+      food    = {'biCi','biCv'};
       gender  = {'Dg'};
       reprod  = {'O'};
 
@@ -9800,6 +9820,26 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
 
     case 'Premnoplex_brunnescens'
       climate = {'A'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnwfm'};
+      migrate = {};
+      food    = {'biCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Phacellodomus_ruber'
+      climate = {'Am'};
+      ecozone = {'TN'};
+      habitat = {'0iTf'};
+      embryo  = {'Tnwfm'};
+      migrate = {};
+      food    = {'biCii'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
+
+    case 'Phacellodomus_sibilatrix'
+      climate = {'Cfa','Cwa'};
       ecozone = {'TN'};
       habitat = {'0iTf'};
       embryo  = {'Tnwfm'};

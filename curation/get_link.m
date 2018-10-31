@@ -3981,6 +3981,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_amphweb = taxon_amph;
        
+    case 'Rhacophorus_moltrechti'
+      id_CoL = '293c3047a79c3bc81a1ca7f75d5b3585';
+      id_Taxo = '149358';        
+      id_EoL = '1019266';
+      id_AnAge = ''; % not present 2018/10/31
+      id_amphweb = taxon_amph;
+       
     case 'Sphenodon_punctatus'
       id_CoL = '25b1757fa601bfa9d01e3e9460c93b06';
       id_Taxo = '48794';        
@@ -4318,6 +4325,14 @@ function links = get_link(taxon, open)
       id_Taxo = '48407';
       id_EoL = '795751';
       id_AnAge = taxon; 
+      id_ReptileDB = taxon_rep;
+
+    case 'Pelodiscus_sinensis'
+      id_CoL = '17dc384b0c37a70b562261c8f9f1df1d';
+      id_WoRMS = ''; % not present 2018/10/31
+      id_Taxo = '48432';
+      id_EoL = '791178';
+      id_AnAge = '';  % not present 2018/10/31
       id_ReptileDB = taxon_rep;
 
     case 'Chelydra_serpentina'
@@ -7546,6 +7561,22 @@ function links = get_link(taxon, open)
       id_AnAge = ''; % not present 2018/10/20       
       id_avibase = 'B023E37883BB7D29';
       id_birdlife = 'spotted-barbtail-premnoplex-brunnescens';
+      
+    case 'Phacellodomus_ruber'
+      id_CoL = '4521031bee484b4d61395c744d53cdd6';
+      id_Taxo = '74917';         
+      id_EoL = '1050149'; 
+      id_AnAge = ''; % not present 2018/10/31       
+      id_avibase = 'ABE64671CA2ED32C';
+      id_birdlife = 'greater-thornbird-phacellodomus-ruber';
+      
+    case 'Phacellodomus_sibilatrix'
+      id_CoL = '829a4898dd10221253665fca47579f29';
+      id_Taxo = '74912';         
+      id_EoL = '1050151'; 
+      id_AnAge = ''; % not present 2018/10/31       
+      id_avibase = '01BB9F459559232B';
+      id_birdlife = 'little-thornbird-phacellodomus-sibilatrix';
       
     case 'Tyrannus_tyrannus'
       id_CoL = 'e2f3ff2fc877b9322dbd4fbe6a87f5f7';
