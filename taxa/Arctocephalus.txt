@@ -1,2 +1,4 @@
 Arctocephalus_australis
 Arctocephalus_tropicalis
+Arctocephalus_gazella
+Arctocephalus_forsteri

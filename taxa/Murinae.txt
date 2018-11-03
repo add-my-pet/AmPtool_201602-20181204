@@ -1,6 +1,6 @@
 Micaelamys
 Mus
-Parotomys
+Praomys
 Rattus
 Apodemus
 Chiropodomys
@@ -11,4 +11,5 @@ Lemniscomys
 Rhabdomys
 Pseudomys
 Otomys
-Praomys
+Parotomys
+Aethomys
