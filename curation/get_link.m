@@ -2265,6 +2265,14 @@ function links = get_link(taxon, open)
       id_fishbase = taxon_fish;
       id_ADW = ''; % not present 2017/08/12
 
+    case 'Enteromius_liberiensis'
+      id_CoL = '6eb324d8e9ec0ee0a49781d04d76d2ee';
+      id_WoRMS = ''; % not present 2018/11/04
+      id_Taxo = '163116'; % present as Barbus liberiensis 2018/11/04
+      id_EoL = '211844'; % present as Barbus liberiensis 2018/11/04
+      id_fishbase = taxon_fish;
+      id_ADW = 'Barbus_liberiensis';
+
     case 'Luciobarbus_sclateri'
       id_CoL = '9c12f86d9e0181905f22e2497dc4f741';
       id_WoRMS = '474116'; 
@@ -4249,6 +4257,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_ReptileDB = taxon_rep;
        
+    case 'Bitis_gabonica'
+      id_CoL = '39e0b014fc85615f45f535de5dc7bc39';
+      id_Taxo = '50312';        
+      id_EoL = '1057054';
+      id_AnAge = taxon;
+      id_ReptileDB = taxon_rep;
+       
     case 'Coronella_austriaca'
       id_CoL = '7449215b10f0b0e3d3b66b04beff2d3d';
       id_Taxo = '49966';        
@@ -4844,6 +4859,14 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;       
       id_avibase = 'B8CA2EEB4E7E0CA3';
       id_birdlife = 'hazel-grouse-bonasa-bonasia';
+
+    case 'Lagopus_lagopus'
+      id_CoL = 'cc44b7c6ba27a371b4574fd49d093e73';
+      id_Taxo = '52946';        
+      id_EoL = '1049176';
+      id_AnAge = taxon;       
+      id_avibase = '6CCEAF5D74B10547';
+      id_birdlife = 'willow-grouse-lagopus-lagopus';
 
     case 'Dendragapus_obscurus'
       id_CoL = 'eb714e41b187b71a43032fcf8e28e830';
@@ -7801,6 +7824,14 @@ function links = get_link(taxon, open)
       id_avibase = '1EB2E3C72A6B688A';
       id_birdlife = 'eurasian-magpie-pica-pica';
       
+    case 'Aphelocoma_coerulescens'
+      id_CoL = '178c32cd8d9b9b96aec67d3b8f66ab93';
+      id_Taxo = '59439';        
+      id_EoL = '855943';
+      id_AnAge = taxon;       
+      id_avibase = 'D78D24B97846B620';
+      id_birdlife = 'florida-scrub-jay-aphelocoma-coerulescens';
+      
     case 'Cyanopica_cyanus'
       id_CoL = 'f1da4d5d17fb0e8b6dc8803996bba073';
       id_Taxo = '93367';        
@@ -8563,6 +8594,13 @@ function links = get_link(taxon, open)
       id_EoL = '323736';
       id_AnAge = taxon;
       id_MSW3 = '10800075';
+       
+    case 'Planigale_tenuirostris'
+      id_CoL = '2943952d712f27eadc09e679dac0bbc0';
+      id_Taxo = '59954';        
+      id_EoL = '323744';
+      id_AnAge = taxon;
+      id_MSW3 = '10800121';
        
     case 'Perameles_nasuta'
       id_CoL = '42469df66a2b4861d91637f73b420616';
@@ -9509,6 +9547,13 @@ function links = get_link(taxon, open)
       id_EoL = '327335';
       id_AnAge = taxon;
       id_MSW3 = '13800097';
+      
+    case 'Megaderma_lyra'
+      id_CoL = '843e42882d96b0e24e2c7030919c6681';
+      id_Taxo = '168689';        
+      id_EoL = '328821';
+      id_AnAge = taxon;
+      id_MSW3 = '13800875';
       
     case 'Rhinolophus_hipposideros'
       id_CoL = 'c17422dcc16d254fd33cb3ff9389f12e';
