@@ -3558,6 +3558,13 @@ function links = get_link(taxon, open)
       id_EoL = '207660';
       id_fishbase = taxon_fish;
        
+    case 'Micropterus_dolomieu'
+      id_CoL = '34217446a5151e238d438354bfac2a2a';
+      id_WoRMS = ''; % not present 2018/11/06
+      id_Taxo = '45141';   
+      id_EoL = '207898';
+      id_fishbase = taxon_fish;
+       
     case 'Epinephelus_marginatus'
       id_CoL = 'b19367bf6c4b12ca0ea001ea9953c9c9';
       id_WoRMS = '127036';
@@ -9534,6 +9541,13 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '14200510'; 
        
+    case 'Eidolon_helvum'
+      id_CoL = 'e734438d4d6d888c4526530f829f62cc';
+      id_Taxo = '63745';        
+      id_EoL = '327335';
+      id_AnAge = taxon;
+      id_MSW3 = '13800097';
+      
     case 'Rousettus_aegyptiacus'
       id_CoL = 'e34d7bd62bb6259fca64de38f894e5f0';
       id_Taxo = '63887';        
@@ -9541,12 +9555,19 @@ function links = get_link(taxon, open)
       id_AnAge = taxon;
       id_MSW3 = '13800397';
        
-    case 'Eidolon_helvum'
-      id_CoL = 'e734438d4d6d888c4526530f829f62cc';
+    case 'Epomops_buettikoferi'
+      id_CoL = '1ef96271e3e6443927fbbd1233cc6015';
       id_Taxo = '63745';        
-      id_EoL = '327335';
-      id_AnAge = taxon;
-      id_MSW3 = '13800097';
+      id_EoL = '327343';
+      id_AnAge = ''; % not present 2018/11/06
+      id_MSW3 = '13800121';
+      
+    case 'Micropteropus_pusillus'
+      id_CoL = 'f64e807530d1f410729e00cf39c09117';
+      id_Taxo = '63783';        
+      id_EoL = '289597';
+      id_AnAge = ''; % not present 2018/11/06
+      id_MSW3 = '13800174';
       
     case 'Megaderma_lyra'
       id_CoL = '843e42882d96b0e24e2c7030919c6681';
@@ -9561,6 +9582,14 @@ function links = get_link(taxon, open)
       id_EoL = '328775';
       id_AnAge = taxon;
       id_MSW3 = '13800555';
+      
+    case 'Rhinolophus_cornutus'
+      id_CoL = '2c7cff1f44a655ee9a187b7edbcde369';
+      id_Taxo = '64111';        
+      id_EoL = '328763';
+      id_AnAge = ''; % not present 2018/11/06
+      id_MSW3 = '13800506';
+      id_ADW = ''; % not present 2018/11/06
       
     case 'Miniopterus_schreibersii'
       id_CoL = 'e41c465b3340bc16c35ac03d158a1ab6';
@@ -10122,6 +10151,14 @@ function links = get_link(taxon, open)
       id_EoL = '328621';
       id_AnAge = taxon;
       id_MSW3 = '14000999';
+       
+    case 'Arctocephalus_pusillus'
+      id_CoL = 'e380c525933b3cb81672c786e5257032';
+      id_WoRMS = '231410';
+      id_Taxo = '67392';
+      id_EoL = '328619';
+      id_AnAge = taxon;
+      id_MSW3 = '14001003';
        
     case 'Otaria_flavescens'
       id_CoL = 'f2a4b03712694cd124d8fd6b81c0da0e';
