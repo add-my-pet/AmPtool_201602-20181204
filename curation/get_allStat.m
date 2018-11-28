@@ -51,7 +51,7 @@ function allStat = get_allStat(T, f)
     for i = 1:ne
       cd (['../', entries{i}])
       fprintf([entries{i}, '\n']); % show progress on screen (takes some time)
-      load (['results_', entries{i}])
+      load(['results_', entries{i}])
       
       % metaData
       allStat.(entries{i}).species = metaData.species; allStat.(entries{i}).units.species = '-'; allStat.(entries{i}).label.species = 'taxon';

@@ -25,7 +25,7 @@ for i = 1:n
 end
 nms(:,2) = cnm; [cnm index] = sort(cnm);
 
-fid_Spec = fopen('../../species_names.html', 'w+'); % open file for writing, delete existing content
+fid_Spec = fopen('../../add_my_pet_web/species_names.html', 'w+'); % open file for writing, delete existing content
   
 % make the header for species_names.html
 fprintf(fid_Spec, '<!DOCTYPE html>\n');
