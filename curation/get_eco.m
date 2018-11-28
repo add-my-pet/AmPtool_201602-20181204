@@ -5857,6 +5857,16 @@ function [climate, ecozone, habitat, embryo, migrate, food, gender, reprod] = ge
       food    = {'biCi'};
       gender  = {'Dg'};
       reprod  = {'O'};
+      
+   case 'Ctenophorus_adelaidensis'
+      climate = {'B'};
+      ecozone = {'TA'};
+      habitat = {'0iThh'};
+      embryo  = {'Tt'};
+      migrate = {};
+      food    = {'biCi'};
+      gender  = {'Dg'};
+      reprod  = {'O'};
 
     case 'Cyclura_pinguis'
       climate = {'Af'};

@@ -22,7 +22,7 @@ function allStat = write_allStat(T, f)
 
 %% Remarks
 % See <write_addStat.html *write_addStat*> for appending a few entries to allStat.
-% For 411 entries, the allStat.mat file is 2.6 Mb. and write_allStat takes 8 minutes to generate.
+% For a11 entries, the allStat.mat file is 2.6 Mb. and write_allStat takes 8 minutes to generate.
 % See <read_allStat.html *read_allStat*> for extracting values from allStat.mat.
 
 %% Example of use

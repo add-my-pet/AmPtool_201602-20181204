@@ -4156,6 +4156,13 @@ function links = get_link(taxon, open)
       id_EoL = '795255';
       id_AnAge = ''; % not present 2017/06/18
       id_ReptileDB = taxon_rep;
+      
+     case 'Ctenophorus_adelaidensis'
+      id_CoL = '25df45b7c28e2d75903c4bd456ac62f6';
+      id_Taxo = ''; % website down        2018/11/28
+      id_EoL = '460054';
+      id_AnAge = ''; % not present 2018/11/28
+      id_ReptileDB = taxon_rep;
        
     case 'Cyclura_pinguis'
       id_CoL = 'cd0a0be37487b6c5a21d500eb3b3b8a2';
